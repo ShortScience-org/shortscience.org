@@ -1,0 +1,19 @@
+RewriteEngine On
+
+#Force www:
+RewriteCond %{HTTP_HOST} ^shortscience.org [NC]
+RewriteRule ^(.*)$ http://www.shortscience.org/$1 [L,R=301,NC]
+
+#RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php
+
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+</IfModule>
+
+<FilesMatch "\.(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
