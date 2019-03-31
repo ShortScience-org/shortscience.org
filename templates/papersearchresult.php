@@ -1,6 +1,6 @@
 <?//print_r($paper);?>
 <div>
-<a href="paper?bibtexKey=<?=$paper->bibtexKey?>"><?=htmlspecialchars(utf8_encode($paper->title))?></a>
+<a href="paper?bibtexKey=<?=$paper->bibtexKey?>"><?=htmlspecialchars($paper->title)?></a>
 
 
 <?php if ($paper->numOfVignettes == 1){ ?>

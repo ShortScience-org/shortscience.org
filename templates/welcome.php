@@ -1,4 +1,5 @@
 <?php require("header.php");?>
+<?php global $SCRIPT_VERSION ?>
 
 <body>
 

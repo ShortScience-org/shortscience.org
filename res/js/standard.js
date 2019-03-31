@@ -10,14 +10,70 @@ function processCitations(input){
 
 	  	var citation = match[0].substring(6,match[0].length-1);
 	  	
-	  	toReturn = toReturn.replace(match[0], "<a href='paper?bibtexKey=" + citation + "'>[" + citation + "]</a>");
+	  	toReturn = toReturn.replace(match[0], "[[" + citation + "]](/paper?bibtexKey=" + citation + ")");
 	    //params[decode(match[1])] = decode(match[2]);
 	  }
 
 	return toReturn;
 }
 
-$(function(){
+
+//$("img").one("load", function(i) {
+//	more_less_btns();
+//	console.log("Asdasda" + i)
+//	}).each(function() {
+//	  if(this.complete) $(this).load();
+//	});
+
+
+//$(function() {
+//    function imageLoaded() {
+//    	more_less_btns();
+//    }
+//    $('img').each(function() {
+//        if( this.complete ) {
+//            imageLoaded.call( this );
+//        } else {
+//            $(this).one('load', imageLoaded);
+//        }
+//    });
+//});
+
+function isOverflowed(element){
+    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}
+
+function more_less_btns(){
+
+	// enable more/less on summaries
+	$(".panel").each(function(i,e){
+		
+		var rendered = $(e).find(".rendered");
+		var more = $(e).find(".more");
+		var less = $(e).find(".less");
+		
+		
+		// test if there is no need for buttns
+		if (isOverflowed(rendered[0])){
+		
+			$(more).show();
+			$(more).click(function(ee){
+				$(rendered).css("max-height","10000px");
+				$(more).hide();
+				$(less).show();
+			});
+			
+			$(less).click(function(ee){
+				$(rendered).css("max-height","400px");
+				$(less).hide();
+				$(more).show();
+			});
+		}
+	});
+}
+
+
+$(document).ready(function() {
 	$(".source").each(function(e, markdownEl){
 		//console.log(g);
 
@@ -41,7 +97,7 @@ $(function(){
 		});
 		rawtext = fixedrawtext;
 		
-		rawtext = $('<div/>').text(rawtext).html();
+		//rawtext = $('<div/>').text(rawtext).html();
 
 		rawtext =  processCitations(rawtext);
 		
@@ -65,8 +121,19 @@ $(function(){
 		
 		$(this).wrap($('<center>'));
 		
+		// on image load
+		$(this).one("load", function(i) {
+			
+			more_less_btns();
+			
+			}).each(function() {
+				// if cached
+				if(this.complete) $(this).load();
+			});
 	});
-
+	
+	more_less_btns();
+	
 	$('.rendered table').addClass("table");
 
 	
@@ -224,7 +291,7 @@ $(function(){
 
 
 
-$(function(){
+$(document).ready(function() {
 	
 	var originalLeave = $.fn.popover.Constructor.prototype.leave;
 	$.fn.popover.Constructor.prototype.leave = function(obj){
@@ -258,6 +325,12 @@ $(function(){
 		placement:"left",
 		delay: {show: 50, hide: 400}});
 	
+	$('.nodisplaynameiconpop').popover({ trigger: "hover focus",
+		animation:true,
+		html:true,
+		placement:"right",
+		delay: {show: 50, hide: 400}});
+		
 	$('.arxivsanitypop').popover({ trigger: "hover click",
 		animation:true,
 		html:true,
@@ -284,6 +357,17 @@ $(function(){
 
 
 var renderer = new marked.Renderer();
+
+/// here reduce the size of headings so they are not huge
+renderer.heading2 = renderer.heading;
+renderer.heading = function(){
+	
+	arguments[1] = arguments[1]+2
+	
+	return renderer.heading2.apply(renderer,arguments);
+}
+
+/// here render the links that are videos as videos
 renderer.link2 = renderer.link;
 renderer.link = function(){
 	//console.log(arguments);
@@ -326,7 +410,7 @@ marked.setOptions({
 	  tables: true,
 	  breaks: false,
 	  pedantic: false,
-	  sanitize: false,
+	  sanitize: true,
 	  smartLists: true,
 	  smartypants: false
 });
@@ -414,4 +498,26 @@ function mediaParseIdFromUrl(provider, url) {
 }
 
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 

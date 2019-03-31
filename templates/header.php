@@ -16,31 +16,62 @@
 <meta property="og:description" content="<?=$description?>">
 <meta name="description" content="<?=$description?>">
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor">
+<meta property="og:image" content="http://www.shortscience.org/res/albert2.jpg" />
 
 <?php } else if (isset($paper)) { ?>
 
-<title>Summary of <?=$paper->title?> on ShortScience.org</title>
-<meta property="og:title" content="Summary of <?=$paper->title?> on ShortScience.org">
+<?php 
+$pattern = '/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/';
+preg_match($pattern, $vignette->text, $matches);
+if (count($matches) > 0){
+	$imgurl = $matches[0];
+}else{
+	$imgurl = "http://www.shortscience.org/res/albert-s.jpg";
+}
+?>
+
+<title><?=$paper->title?> on ShortScience.org</title>
+<meta property="og:title" content="<?=$paper->title?> - ShortScience.org">
 <meta property="og:description" content="<?=htmlspecialchars($vignette->text)?>">
 <meta name="description" content="<?=htmlspecialchars($vignette->text)?>">
 <meta property="og:keywords" content='summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor, <?=implode(", ", $paper->tags)?>'>
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor,  <?=implode(", ", $paper->tags)?>">
 <meta property="og:url" content="http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?>" />
+<meta property="og:image" content="<?=$imgurl?>" />
+
+
+<?php } else if (isset($venue)) { ?>
+
+<?php 
+if ($venue->imgurl != ""){
+	$imgurl = $venue->imgurl;
+}else{
+	$imgurl = "http://www.shortscience.org/res/albert-s.jpg";
+}
+?>
+
+<title>Summaries from <?=$paper->title?> on ShortScience.org</title>
+<meta property="og:title" content="Summaries from <?=$venue->name?> on ShortScience.org">
+<meta property="og:description" content="Summaries of the research papers published in <?=$venue->name?>">
+<meta name="description" content="Summaries of the research papers published in <?=$venue->name?>">
+<meta property="og:url" content="http://www.shortscience.org/venue?key=<?=$venue->id?>" />
+<meta property="og:image" content="<?=$imgurl?>" />
 
 <?php } else { ?>
 
 <title>ShortScience.org - Making Science Accessible!</title>
 <meta property="og:title" content="ShortScience.org - Making Science Accessible!">
-<meta property="og:description" content='ShortScience.org allows researchers to publish paper summaries that are voted on and ranked until the best and most accessible summary has been found! The goal is to make all the seminal ideas in science accessible to the people that want to understand them.'>
-<meta name="description" content="ShortScience.org allows researchers to publish paper summaries that are voted on and ranked until the best and most accessible summary has been found! The goal is to make all the seminal ideas in science accessible to the people that want to understand them.">
+<meta property="og:description" content='ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.'>
+<meta name="description" content="ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.">
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor">
+<meta property="og:image" content="http://www.shortscience.org/res/albert2.jpg" />
 
 <?php } ?>
 
 <meta property="og:site_name" content="www.shortscience.org" />
 <meta property="og:locale" content="en_US" />  
 <meta property="og:type" content="article" />
-<meta property="og:image" content="http://www.shortscience.org/res/albert2.jpg" />
+
 
 
 <?php 
@@ -74,7 +105,7 @@ if ($extraheader != ""){ print($extraheader); }
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="res/css/standard.css">
+<link rel="stylesheet" href="res/css/standard.css?v=1">
 
 <?php } ?>
 

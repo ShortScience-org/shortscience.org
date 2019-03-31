@@ -23,14 +23,16 @@
 </style>
 
 <script>
-document.write('<a href="mailto:joseph@' + 'josephpcohen.com?subject=Feedback" id="chat-link" target="_blank"><i class="glyphicon glyphicon-envelope"></i>Send Feedback</a>')
+document.write('<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank"><i class="glyphicon glyphicon-envelope"></i>Send Feedback</a>')
 </script>
 
 
 <hr>
 <center>
-Short Science allows researchers to publish paper summaries that are voted on and ranked!<br>
+ShortScience.org allows researchers to publish paper summaries that are voted on and ranked!<br>
 <a href="./about">About</a><br><Br>
 </center>
+
+<?php require("sponsors.php");?>
 </body>
 </html>

@@ -3,3 +3,34 @@
     z-index: 9999;
     position: fixed;
 }
+
+
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+  
+  div[name=links] {display:none}
+  
+  #yourentry {display:none}
+  
+  #chat-link {display:none}
+  
+  .newcomment {display:none}
+  
+  div {opacity: 1.0 !important; }
+    
+  .rendered {max-height:1000000px !important;}
+  
+  .rendered img {max-width:80% !important;}
+  
+  .nav {display:none}
+  
+  .paddingdiv {display:none}
+    
+}
+
+
+
+
+

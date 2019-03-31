@@ -1,6 +1,8 @@
 <?//print_r($venues);?>
 <?php require("header.php");?>
 <?php require("menu.php");?>
+<?php global $SCRIPT_VERSION ?>
+<?php global $MATHJAX_URL?>
 
 <br>
 <div class="container" style="max-width:700px; margin:0 auto;">
@@ -56,14 +58,14 @@ $venue = $venues[$i];
 
 
 <script src="./res/marked/marked.min.js"></script>
-<script src="./res/js/standard.js"></script>
+<script src="./res/js/standard.js?v=<?=$SCRIPT_VERSION?>"></script>
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 </script>
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" async src="<?=$MATHJAX_URL?>"></script>
 
 
 <?php require("footer.php");?>

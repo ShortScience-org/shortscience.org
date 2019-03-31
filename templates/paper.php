@@ -1,10 +1,25 @@
 <?php require("header.php");?>
 <?php require("menu.php");?>
+<?php global $SCRIPT_VERSION ?>
+<?php global $MATHJAX_URL?>
 <?php //we are given $paper, $paperBib, and $vignettes
 //print_r($paperBib);
 ?>
 
 <?if (sizeof($vignettes) != 0){?>
+
+<?php 
+$pattern = '/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/';
+preg_match($pattern, $vignette->text, $matches);
+
+if (count($matches) > 0){
+	$imgurl = $matches[0];
+}else{
+	$imgurl = "http://www.shortscience.org/res/albert2.jpg";
+}
+?>
+
+
 <div style="display:none;">
 <div itemscope itemtype="http://schema.org/Review">
   <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Article">
@@ -16,19 +31,15 @@
     
 	<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
 		<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-			<img src="http://www.shortscience.org/res/albert-s.jpg"/>
-			<meta itemprop="url" content="http://www.shortscience.org/res/albert-s.jpg">
-			<meta itemprop="width" content="267">
-			<meta itemprop="height" content="270">
+			<img src="<?=$imgurl?>"/>
+			<meta itemprop="url" content="<?=$imgurl?>">
 		</div>
     	<meta itemprop="name" content="<?=$paper->venue?>">
 	</div>
     
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-		<img src="http://www.shortscience.org/res/albert-s.jpg"/>
-		<meta itemprop="url" content="http://www.shortscience.org/res/albert-s.jpg">
-		<meta itemprop="width" content="267">
-		<meta itemprop="height" content="270">
+		<img src="<?=$imgurl?>"/>
+		<meta itemprop="url" content="<?=$imgurl?>">
 	</div>
     <a itemprop="mainEntityOfPage" href="http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?>">
   </a>
@@ -67,9 +78,16 @@ Other scientists are still reading the paper! Why not add a summary yourself?
 <?php 
 for ($v = 0; $v < sizeof($vignettes); $v++){
 	$vignette = $vignettes[$v];
-	
 	$showcomments = true;
-	include("templates/vignette.php");
+	
+	if ($authorfocus != ""){
+	    $vignettefocus = ($vignette->username == $authorfocus);
+	    if  ($vignettefocus){
+    	   include("templates/vignette.php");
+	    }
+	}else{
+	    include("templates/vignette.php");
+	}
 }?>
 
 </div>
@@ -85,7 +103,13 @@ for ($v = 0; $v < sizeof($vignettes); $v++){
 	<div class="row">
 		<button class="btn btn-default pull-left" type="delete" id="deleteentry" style="margin:10px;" <?=($currentuser->userid == -1)?"disabled":""?>>Delete</button>
 		<div class="form-inline pull-right">
-	
+		
+		
+
+		
+
+		<button class="btn btn-default" id="imgUploadBtn" style="margin:10px" onclick="document.querySelector('#imgUpload').click()" <?=($currentuser->userid == -1)?"disabled":""?>>Add Image</button>
+		<input id="imgUpload" style="visibility: collapse; width: 0px; display:none;" type="file" onchange="uploadImage(this.files[0], '#entrytext')" >
 
 		<label for="priv" title="Your name will not be shown with this summary">
 		<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Anon
@@ -130,17 +154,11 @@ for ($v = 0; $v < sizeof($vignettes); $v++){
 
 </div>
 
-<div style="padding-top:100px;">
-</div>
-
-
-
-
 
 <script src="./res/marked/marked.min.js"></script>
 <script src="./res/js/jquery.taboverride.min.js"></script>
-<script src="./res/js/standard.js"></script>
-<script src="./res/js/paper.js"></script>
+<script src="./res/js/standard.js?v=<?=$SCRIPT_VERSION?>"></script>
+<script src="./res/js/paper.js?v=<?=$SCRIPT_VERSION?>"></script>
 
 
 <script type="text/x-mathjax-config">
@@ -148,9 +166,9 @@ MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 </script>
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" async src="<?=$MATHJAX_URL?>"></script>
 
-<div style="height:100px;"></div>
+<div class="paddingdiv" style="height:200px;"></div>
 <?php require("footer.php");?>
 
 

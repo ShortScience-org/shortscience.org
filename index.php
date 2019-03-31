@@ -35,13 +35,22 @@ $app->get('/', function (Request $request, Response $response) {
 	
 	$currentuser = getcurrentuser();
 	$tab = $request->getParam('tab');
+	$sections = $request->getParam('s');
 	
+	$valid_sections= array("cs","bio", "ph");
+	$sections = implode(",",array_intersect($valid_sections,explode(',',$sections)));
+	
+	$page = 1*$request->getParam('page', 0);
+	$page = max($page,1);
+	//print $page;
 	if ($tab == "recent"){
-		$vignettes = getRecentVignettes($user->userid, 15);
+		$vignettes = getRecentVignettes($user->userid, 20, $page, $sections);
 	}else if($tab == "best"){
-		$vignettes = getBestVignettes($user->userid, 15);
+		$vignettes = getBestVignettes($user->userid, 20, $page, $sections);
+	}else if($tab == "popularweek"){
+		$vignettes = getPopularVignettes($user->userid, 20, $page, $sections, $howmanydays=7);
 	}else{
-		$vignettes = getPopularVignettes($user->userid, 15);
+		$vignettes = getPopularVignettes($user->userid, 20, $page, $sections, $howmanydays=1);
 	}
 		
 	include("templates/home.php");
@@ -69,7 +78,7 @@ $app->get('/search', function (Request $request, Response $response) {
 });
 
 $app->get('/internalsearch', function (Request $request, Response $response) {
-	$term = $request->getParam('term');
+	$q = $request->getParam('q');
 
 
 	//print_r($results);
@@ -88,7 +97,22 @@ $app->get('/internalsearch', function (Request $request, Response $response) {
 $app->get('/paper', function (Request $request, Response $response) {
 	
 	$bibtexKey = $request->getParam('bibtexKey');
+	
+	$code = $request->getParam('code');
+	
+	$authorfocus = $request->getParam('a');
+	
 	$paper = getPaper($bibtexKey);
+	
+	//When no paper is found redirect
+	if (!isset($paper->bibtexKey)){
+	
+		header("HTTP/1.1 303 See Other");
+		header("Location: ./search?term=".$bibtexKey);
+		die();
+	}
+	
+	
 
 	$currentuser = getcurrentuser();
 	
@@ -110,7 +134,7 @@ $app->get('/paper', function (Request $request, Response $response) {
 		}
 	}
 	
-	$vignettes = getVignettes($paper->bibtexKey);
+	$vignettes = getVignettes($paper->bibtexKey, $code=$code);
 
 	
 	for ($v = 0; $v < sizeof($vignettes); $v++){
@@ -136,6 +160,7 @@ $app->get('/paper', function (Request $request, Response $response) {
 		$myvignette->paperid = $paper->bibtexKey;
 		$myvignette->userid=getcurrentuser()->userid;
 		$myvignette->username=getcurrentuser()->username;
+		$myvignette->displayname=getcurrentuser()->displayname;
 		$myvignette->email=getcurrentuser()->email;
 		$myvignette->vote=0;
 		$myvignette->myvote=0;
@@ -148,6 +173,8 @@ $app->get('/paper', function (Request $request, Response $response) {
 	}
 		
 	include("templates/paper.php");
+	
+	logVisit($paper->bibtexKey);
 	die();
 });
 
@@ -262,6 +289,12 @@ $app->get('/user', function (Request $request, Response $response) {
 	
 	$vignettes = getUsersVignettes($user->userid);
 	
+	if ($currentuser->userid == $user->userid){
+	
+		$likedvignettes = getUsersLikedVignettes($user->userid);
+		$dislikedvignettes = getUsersDisLikedVignettes($user->userid);
+	}
+	
 	$title = htmlspecialchars(($user->displayname)?$user->displayname:$user->username)."'s profile";
 	
 	if ($user->description == ""){
@@ -339,8 +372,23 @@ $app->get('/venue', function (Request $request, Response $response) {
 
 		//print_r($years[$defaultyear][0]->a);die();
 		
-		$title = "Summaries from ".$venue->name;
+		//$title = "Summaries from ".$venue->name;
 		include("templates/venue.php");
+	}
+	die();
+});
+
+
+$app->get('/users', function (Request $request, Response $response) {
+
+	if ($key == ""){
+
+		$users = getUsers();
+
+		$title = "All users";
+		$description = "Browse users with summaries";
+		include("templates/allusers.php");
+
 	}
 	die();
 });
@@ -420,9 +468,12 @@ $app->post('/login', function (Request $request, Response $response) {
 	$loginresult = takelogin($login);
 	
 	//print_r($loginresult);die();
-	if ($loginresult->message != "")
+	if ($loginresult->message == "No user"){
+		header("HTTP/1.1 303 See Other");
+		header("Location: ./signup");
+	}else if ($loginresult->message != ""){
 		include("templates/login.php");
-	else if ($returnto != ""){
+	}else if ($returnto != ""){
 		
 		header("HTTP/1.1 303 See Other");
 		header("Location: ./".$returnto);
@@ -484,6 +535,7 @@ $app->post('/signup', function (Request $request, Response $response) {
 	$signup = (object)[];
 	$signup->username = $request->getParam('username');
 	$signup->email = $request->getParam('email');
+	$signup->displayname = $request->getParam('displayname');
 	$signup->password = $request->getParam('password');
 	
 	$signupresult = addUser($signup);
@@ -524,21 +576,32 @@ $app->get('/sitemap.xml', function (Request $request, Response $response) {
 $app->get('/rss-generate', function (Request $request, Response $response) {
 	
 	ob_start();
-		$vignettes = getRecentVignettes(0, 20);
-		header('Content-Type: text/xml');
-		include("templates/rss.php");
+	$vignettes = getRecentVignettes(0, 100, 1, "");
+	header('Content-Type: text/xml');
+	include("templates/rss.php");
 	$contents = ob_get_flush();
+	$contents = stripInvalidXml($contents);
 	$xml = new SimpleXMLElement($contents);
 	file_put_contents("rss.xml",$xml->asXML());
 	
 	ob_start();
-	$vignettes = getRecentVignettes(0, 1000000);
+	$vignettes = getRecentVignettes(0, 1000000, 1, "");
 	header('Content-Type: text/xml');
 	include("templates/rss.php");
 	$contents = ob_get_flush();
-	
+	$contents = stripInvalidXml($contents);
 	$xml = new SimpleXMLElement($contents);
 	file_put_contents("rss-all.xml",$xml->asXML());
+	
+	ob_start();
+	$vignettes = getRecentVignettes(0, 1000000, 1, "");
+	$full = True;
+	header('Content-Type: text/xml');
+	include("templates/rss.php");
+	$contents = ob_get_flush();
+	$contents = stripInvalidXml($contents);
+	$xml = new SimpleXMLElement($contents);
+	file_put_contents("rss-full.xml",$xml->asXML());
 	
 	die();
 });
@@ -606,7 +669,32 @@ $app->get('/questions', function (Request $request, Response $response) {
 	echo json_encode($questions);
 	die();
 });
+
+$app->get('/visits', function (Request $request, Response $response) {
+		
+	$bibtexKey = $request->getParam('bibtexKey');
+	$report = $request->getParam('report');
+	$userid = $request->getParam('userid');
 	
+	$previousdays = 7;
+	if ($report == "1m"){
+		$previousdays = 30;
+	}
+	
+	if ($bibtexKey){
+		$views = getVisitCounts($bibtexKey, $previousdays);
+	}
+	
+	if ($userid){
+		$views = getVisitCountsUser($userid, $previousdays);
+	}
+	
+	//print_r($views);
+	
+	include("templates/visits.php");
+	die();
+});
+
 
 $app->run();
 

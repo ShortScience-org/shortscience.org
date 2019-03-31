@@ -2,9 +2,11 @@
 //$preview
 //passed
 //$showcomments
+//$vignettefocus
 
 
-$shareurl = "http://www.shortscience.org/paper?bibtexKey=".$vignette->paperid."#".(($vignette->anon == 0)?$vignette->username:"anon");
+$baseshareurl = "https://www.shortscience.org/paper?bibtexKey=".$vignette->paperid;
+$shareurl = "https://www.shortscience.org/paper?bibtexKey=".$vignette->paperid."&a=".(($vignette->anon == 0)?$vignette->username:"anon");
 $sharetext = "Summary of ".$paper->title;
 $shareanchor = base64_encode($vignette->paperid).(($vignette->anon == 0)?$vignette->username:"anon");
 $shareanchor = str_replace("=","",$shareanchor);
@@ -17,7 +19,7 @@ $shareanchor = str_replace("=","",$shareanchor);
 word-break: break-all;
 }
 </style>
-	<div id="<?=($vignette->anon == 0)?$vignette->username:"anon"?>" class="vignette <?=($v>0 && !$preview)?"vignette-alt":"vignette-top"?> <?=($preview)?"vignette-preview":""?>" style="width:100%;<?=($v>0 && !$preview)?"opacity:0.3;":""?>; margin-bottom:20px;">
+	<div id="<?=($vignette->anon == 0)?$vignette->username:"anon"?>" class="vignette <?=($v>0 && !$preview)?"vignette-alt":"vignette-top"?> <?=($preview)?"vignette-preview":""?>" style="width:100%;<?=($v>0 && !$preview)?"opacity:1;":""?>; margin-bottom:20px;">
 	  
 	  <table style="table-layout:fixed;width:100%;">
 	  <tr>
@@ -31,10 +33,10 @@ word-break: break-all;
 	      <?php if ($vignette->anon == 1){?>
 	      <span class="glyphicon glyphicon-user" style="font-size:2em;" aria-hidden="true" alt="Name hidden"></span>
 	      <?php } else {?>	      
-	      <a href="user?name=<?=$vignette->username?>" class="usericonpop" data-content="Username: <?=$vignette->username?><br>Posted: <?=time_elapsed_string($vignette->added)?> <?php if ($vignette->added != $vignette->edited){?><br>Edited: <?=time_elapsed_string($vignette->edited)?><?php }?>"
+	      <a href="user?name=<?=$vignette->username?>" class="usericonpop" data-content="Username: <?=$vignette->username?><br>Posted: <?=time_elapsed_string($vignette->added)?> <?php if ($vignette->added != $vignette->edited){?><br>Edited: <?=time_elapsed_string($vignette->edited)?><?php }?><br>Paper ID:<br><small><?=$vignette->paperid?></small>"
 	      title='
 	      <center><a href="user?name=<?=$vignette->username?>"><?=get_gravatar($vignette->email,150,identicon,"g",true,[style=> "border-radius: 50%;height:150px;" ])?><br>
-	      <span style="font-size:15pt"><?=($vignette->displayname == "")?$vignette->username:htmlspecialchars($vignette->displayname)?></span>
+	      <span style="font-size:15pt"><?=($vignette->displayname == "")?$vignette->username:htmlspecialchars($vignette->displayname,ENT_QUOTES)?></span>
 	      </a></center>' >
 	      <?=get_gravatar($vignette->email,30,identicon,'g',true,[style=> "border-radius: 50%;height:30px;" ])?>
 	      </a>
@@ -97,18 +99,48 @@ word-break: break-all;
 	  
 	  
 	  </td>
-	  <td class="vignette-right" style="overflow: auto;width:100%;">
+	  <td class="vignette-right" style="width:100%;">
 
 
 	  	<?php 
 		require("shareblock.php")
 		?>
-	  	<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;">
+	  	<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+	  	
+	  	    <span style="position:absolute;right:0px;">	  	    	
+	  	    	<a href="<?=$shareurl?>" title="Link">[link]</a>
+	  		<?php if ($currentuser->userid == $vignette->userid){?>
+	  			<a href="#entrytext" title="Edit">[edit]</a>
+	  		<?php }?>
+	  		</span>
+	  		
+	  		<?php if ($vignette->anon == 1){?>
+	  		<span class="authorbanner" style="color:gray;"><span><center style="background-color: #eeeeee;">Summary by Anonymous <?=time_elapsed_string($vignette->added)?></center></span></span>
+	  		<?php } else {?>
+			<a class="authorbanner" href="user?name=<?=$vignette->username?>" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">
+			<span class="<?=($currentuser->userid == $vignette->userid && $vignette->displayname == "")?"nodisplaynameiconpop":""?>" data-content="A display name helps you receive attribution for your work and builds trust in the summaries you post.<br><a href='/settings'>Click here to set your display name.</a>">Summary by <?=($vignette->displayname == "")?$vignette->username:htmlspecialchars($vignette->displayname,ENT_QUOTES)?> <?=time_elapsed_string($vignette->added)?></span></center></span></a>
+			<?php }?>
+			
+			
+		  	
 		  	<pre class="source panel-body entry <?=($preview)?'userentry':'';?>" 
-		  		 style="width:100%;min-height:250px;max-height:1000px;overflow:auto; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"><?=htmlspecialchars($vignette->text)?></pre>
-			<div class="rendered panel-body <?=($preview)?'userentry':'';?>" style="width:100%;min-height:250px;max-height:1000px;overflow:auto;"><center><img style="padding-top:70px;" alt="Loading..." src="https://i.imgur.com/yoS0cXm.gif"/></center></div>
+		  		 style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"><?=htmlspecialchars($vignette->text)?></pre>
+			<div class="rendered panel-body <?=($preview)?'userentry':'';?>" style="width:100%;min-height:250px;overflow:hidden;<?=(!$preview && !$vignettefocus)?'max-height:400px;':'';?>"><center><img style="padding-top:70px;" alt="Loading..." src="https://i.imgur.com/yoS0cXm.gif"/></center></div>
+			<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+			<a class="less" style="cursor: pointer;color:gray;display:none;" ><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+		
 		</div>
-
+		
+		<?php if ($vignette->priv == 1){?>
+		<div class="alert alert-info">
+		<center>
+		This summary is private. You can share this link for others to view it:<br>
+		<span style="font-size:7pt">
+		<a href="<?=$baseshareurl?>&code=<?=base64_encode($vignette->added)?>"><?=$baseshareurl?>&code=<?=base64_encode($vignette->added)?></a>
+		</span>
+		</center>
+		</div>
+		<?php }?>
 		
 		<?php 
 		$comments = getComments($vignette->paperid, $vignette->userid);

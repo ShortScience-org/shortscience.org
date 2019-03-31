@@ -14,7 +14,7 @@
  * @source http://gravatar.com/site/implement/images/php/
  */
 function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
-	$url = 'http://www.gravatar.com/avatar/';
+	$url = '//www.gravatar.com/avatar/';
 	$url .= md5( strtolower( trim( $email ) ) );
 	$url .= "?s=$s&d=$d&r=$r";
 	if ( $img ) {
@@ -29,7 +29,7 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
 
 //https://stackoverflow.com/questions/1416697/converting-timestamp-to-time-ago-in-php-e-g-1-day-ago-2-days-ago
 function time_elapsed_string($datetime, $full = false) {
-	$now = new DateTime;
+	$now = new DateTime(getTimeDB());
 	$ago = new DateTime($datetime);
 	$diff = $now->diff($ago);
 
@@ -59,9 +59,9 @@ function time_elapsed_string($datetime, $full = false) {
 
 function performSearch($term){
 	
-	if ($term == "") $term = "\"Cohen, Joseph Paul\"";
+	if ($term == "") return;
 	
-	$term = str_replace("-"," ",$term);
+	//$term = str_replace("-"," ",$term);
 	$term = str_replace("+"," ",$term);
 	
 	$results = (object)[];
@@ -245,7 +245,11 @@ function searchLocal($term, $searchjustkey = false){
 			
 			$paper->tags = explode(",",$paper->tags);
 			
-			$paper->source = "Local";
+			if ($paper->source != "")
+				$paper->source = "Local ".$paper->source;
+			else
+				$paper->source = "Local";
+			
 			
 		}
 
@@ -264,7 +268,7 @@ function searchLocal($term, $searchjustkey = false){
 
 
 function searchCrossRef($term){
-	
+
 	if ($term == "") die("must have keyword to search");
 	
 	//http://search.crossref.org/dois?q=renear+palmer
@@ -337,7 +341,7 @@ function searchBibsonomy($term){
 
 	$urlterm = urlencode($term);
 	
-	$xml = cachedWebRequest("bibsonomy",$term,"http://".$BIBSONOMY_LOGIN."@www.bibsonomy.org/api/posts?resourcetype=bibtex&search=$urlterm");
+	$xml = cachedWebRequest("bibsonomy",$term,"https://".$BIBSONOMY_LOGIN."@www.bibsonomy.org/api/posts?resourcetype=bibtex&search=$urlterm");
 	
 	$xmlp = simplexml_load_string($xml);
 	
@@ -485,7 +489,7 @@ function searchArXiv($term){
 	return $toreturn;
 }
 
-ini_set('default_socket_timeout', 10);
+ini_set('default_socket_timeout', 5);
 function cachedWebRequest($tag, $key, $url){
 	
 	//print_r($url);
@@ -498,7 +502,12 @@ function cachedWebRequest($tag, $key, $url){
 		
 		@mkdir("cache");
 		@mkdir("cache/".$tag);
-		$data = file_get_contents($url);
+		try {
+		  $data = file_get_contents($url);
+		} catch (Exception $e) {
+		  $data = "";
+		  return $data;
+		}
 		$myfile = fopen($file, "w") or unlink($file);
 		fwrite($myfile, $data);
 		fclose($myfile);
@@ -544,31 +553,37 @@ function getPaper($bibtexKey) {
 		
 		$results0 = searchLocal($bibtexKey, true);
 		
-		// check arxiv
-		$numfound = preg_match("/(\\d{4}\\.\\d{4}\\d*)/",$bibtexKey, $matches);
-		if ($numfound > 0){
-			$arxivid = $matches[0];
-			$results11 = searchArXivMeta($arxivid);
-			//$results11 = searchBibsonomy($arxivid);
+		// if local then don't try to resolve it
+		if (count($results0) > 0){
+			$paper= $results0[0];
 		}else{
-			$results12 = searchBibsonomy("\"".$bibtexKey."\"");
+		
+			// check arxiv
+			$numfound = preg_match("/(\\d{4}\\.\\d{4}\\d*)/",$bibtexKey, $matches);
+			if ($numfound > 0){
+				$arxivid = $matches[0];
+				$results11 = searchArXivMeta($arxivid);
+				//$results11 = searchBibsonomy($arxivid);
+			}else{
+				$results12 = searchBibsonomy("\"".$bibtexKey."\"");
+			}
+			$results1 = mergeResults(array($results11, $results12));
+			
+			//$results1 = searchBibsonomy("\"".$bibtexKey."\"");
+			//$results2 = searchArXivMeta($bibtexKey);
+			$results3 = searchCrossRef($bibtexKey);
+			$results = mergeResults(array($results0, $results1, $results3));
+					
+			
+			$paper = $results[0];
+	 		for ($r = 0; $r < sizeof($results); $r++) {
+	 			
+	 			if (strcmp($results[$r]->bibtexKey,$bibtexKey) == 0){
+	 				$paper = $results[$r];
+	 				break;
+	 			}
+	 		}
 		}
-		$results1 = mergeResults(array($results11, $results12));
-		
-		//$results1 = searchBibsonomy("\"".$bibtexKey."\"");
-		//$results2 = searchArXivMeta($bibtexKey);
-		$results3 = searchCrossRef($bibtexKey);
-		$results = mergeResults(array($results0, $results1, $results3));
-				
-		
-		$paper = $results[0];
- 		for ($r = 0; $r < sizeof($results); $r++) {
- 			
- 			if (strcmp($results[$r]->bibtexKey,$bibtexKey) == 0){
- 				$paper = $results[$r];
- 				break;
- 			}
- 		}
  		
 //  		print_r($results);
 //  		print_r($paper);
@@ -583,8 +598,10 @@ function getPaper($bibtexKey) {
 				$paper->metavenue = getVenueForBibtexKey($paper->bibtexKey);
 			}
 		}
-			
-
+		
+		if (isset($paper->source) & substr($paper->source , 0, 5) != "Local"){
+ 			writePaper2DB($paper);
+		}
 		
 		return $paper;
 
@@ -593,6 +610,71 @@ function getPaper($bibtexKey) {
 		include("templates/error.php");
 	}
 }
+
+function writePaper2DB($paper){
+
+	
+$sql  = <<<EOT
+INSERT INTO papers (
+bibtexKey,
+title, 
+authors,
+year,
+venue,
+tags,
+urls,
+source,
+category,
+abstract,
+published
+) VALUES (
+:bibtexKey,
+:title, 
+:authors,
+:year,
+:venue,
+:tags,
+:urls,
+:source,
+:category,
+:abstract,
+:published
+)
+EOT;
+
+// format string so string matches work
+$title = preg_replace('/ {2,}/', ' ', trim($paper->title));
+$title = preg_replace( "/\r|\n/", "", $title);
+
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam("bibtexKey", $paper->bibtexKey);
+		$stmt->bindParam("title", $title);
+		$stmt->bindParam("authors", $paper->authors);
+		$stmt->bindParam("year", $paper->year);
+		$stmt->bindParam("venue", $paper->venue);
+		$stmt->bindParam("tags", implode(", ",$paper->tags));
+		$stmt->bindParam("urls", implode(", ",$paper->urls));
+		$stmt->bindParam("source", $paper->source);
+		$stmt->bindParam("category", $paper->category);
+		
+		$stmt->bindParam("abstract", $paper->abstract?$paper->abstract:"");
+		$stmt->bindParam("published", $paper->published?$paper->published:"");
+		
+		$stmt->execute();
+		$paper->id = $db->lastInsertId();
+		$db = null;
+		
+		return $paper->id;
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		echo $message;
+		//include("templates/error.php");
+	}
+	
+}
+
 
 
 function numOfVignettes($paperid){
@@ -612,8 +694,9 @@ EOT;
 	return $result[0]->count;
 }
 
-function getVignettes($paperid) {
-	//$sql = "select * FROM vignettes WHERE paperid=:id AND (priv = 0 OR userid = :userid)";
+function getVignettes($paperid, $code="aaa") {
+	
+	$code = base64_decode($code);
 
 	$sql  = <<<EOT
 SELECT * FROM vignettes
@@ -621,7 +704,11 @@ LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM v
 ON paperid=vpaperid AND userid=vuserid
 LEFT JOIN users
 ON vignettes.userid = users.userid
-WHERE vignettes.paperid=:id AND (priv = 0 OR vignettes.userid = :userid)
+WHERE (vignettes.paperid=:id OR vignettes.paperid IN 
+	(SELECT bibtexKey FROM papers WHERE 
+		RTRIM(REPLACE(title,".","")) IN 
+			(SELECT RTRIM(REPLACE(title,".","")) FROM papers WHERE bibtexKey=:id)))
+AND (priv = 0 OR vignettes.userid = :userid OR vignettes.added=:code)
 ORDER BY vote DESC
 EOT;
 
@@ -630,6 +717,7 @@ EOT;
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("id", $paperid);
+		$stmt->bindParam("code", $code);
 		$stmt->bindParam("userid", getcurrentuser()->userid);
 		$stmt->execute();
 		$vignettes = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -706,8 +794,68 @@ EOT;
 	}
 }
 
-function getRecentVignettes($userid, $limit){
+function getUsersLikedVignettes($userid){
+	
+	
+	$sql  = <<<EOT
+SELECT * FROM (SELECT * from vignettes WHERE (vignettes.userid, vignettes.paperid) IN (SELECT userid,paperid FROM votes WHERE vote = 1 AND voteruserid = :userid AND userid != :userid)) as vignettes
+LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM votes GROUP BY vpaperid, vuserid) as votes
+ON paperid=vpaperid AND userid=vuserid
+LEFT JOIN users
+ON vignettes.userid = users.userid
+ORDER BY vignettes.added DESC
+EOT;
+	
+	//print_r(getUser());
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam("userid", $userid);
+		//$stmt->bindParam("currentuserid", getcurrentuser()->userid);
+		$stmt->execute();
+		$vignettes = $stmt->fetchAll(PDO::FETCH_OBJ);
+		$db = null;
+		
+		return $vignettes;
+		
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		include("templates/error.php");
+	}
+}
 
+function getUsersDislikedVignettes($userid){
+	
+	$sql  = <<<EOT
+SELECT * FROM (SELECT * from vignettes WHERE (vignettes.userid, vignettes.paperid) IN (SELECT userid,paperid FROM votes WHERE vote = -1 AND voteruserid = :userid)) as vignettes
+LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM votes GROUP BY vpaperid, vuserid) as votes
+ON paperid=vpaperid AND userid=vuserid
+LEFT JOIN users
+ON vignettes.userid = users.userid
+ORDER BY vignettes.added DESC
+EOT;
+	
+	//print_r(getUser());
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam("userid", $userid);
+		//$stmt->bindParam("currentuserid", getcurrentuser()->userid);
+		$stmt->execute();
+		$vignettes = $stmt->fetchAll(PDO::FETCH_OBJ);
+		$db = null;
+		
+		return $vignettes;
+		
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		include("templates/error.php");
+	}
+}
+
+
+function getRecentVignettes($userid, $limit, $page, $sections){
+	$offset = $limit*($page-1);
 
 	$sql  = <<<EOT
 SELECT
@@ -718,9 +866,17 @@ LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM v
 ON paperid=vpaperid AND userid=vuserid
 LEFT JOIN users
 ON vignettes.userid = users.userid
-WHERE priv = 0 AND vote > -1
+LEFT JOIN papers
+ON vignettes.paperid = papers.bibtexKey
+WHERE priv = 0 AND vote > -1 AND (:sections = "" OR RTRIM(REPLACE(papers.title,".",""))
+IN (SELECT title FROM papers 
+	INNER JOIN (SELECT section,id,tag from sections WHERE FIND_IN_SET(sections.section,:sections)>0) as subsection
+	ON (subsection.id != "" AND papers.bibtexKey LIKE CONCAT(subsection.id,'%')) OR
+	(subsection.tag != "" AND (papers.tags LIKE CONCAT('%',subsection.tag,'%') OR papers.bibtexKey LIKE CONCAT('%',subsection.tag,'%')))
+))
 ORDER BY vignettes.edited DESC
-LIMIT :resultlimit;
+LIMIT :resultlimit
+OFFSET :offset
 EOT;
 
 	//print_r(getUser());
@@ -729,6 +885,8 @@ EOT;
 		$stmt = $db->prepare($sql);
 		//$stmt->bindParam("currentuserid", getcurrentuser()->userid);
 		$stmt->bindParam("resultlimit", $limit, PDO::PARAM_INT);
+		$stmt->bindParam("offset", $offset, PDO::PARAM_INT);
+		$stmt->bindParam("sections", $sections);
 		$stmt->execute();
 		$vignettes = $stmt->fetchAll(PDO::FETCH_OBJ);
 		$db = null;
@@ -741,9 +899,12 @@ EOT;
 	}
 }
 
-function getPopularVignettes($userid, $limit){
+function getPopularVignettes($userid, $limit, $page, $sections, $howmanydays=1){
 
-
+	$offset = $limit*($page-1);
+	
+	$startdate = date('Y-m-d H:i:s',time()-($howmanydays*86400));
+	
 	$sql  = <<<EOT
 SELECT
 text, paperid, vignettes.userid, priv, anon, vignettes.added, vignettes.edited, vote,
@@ -751,11 +912,22 @@ username,email,displayname, orcid
 FROM vignettes
 LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM votes GROUP BY vpaperid, vuserid) as votes
 ON paperid=vpaperid AND userid=vuserid
+LEFT JOIN (SELECT bibtexKey, sum(count) as visitcount FROM visits WHERE date >:startdate GROUP BY bibtexKey) as visits
+ON paperid=bibtexKey
 LEFT JOIN users
 ON vignettes.userid = users.userid
-WHERE priv = 0 AND vote > 2
-ORDER BY vignettes.edited DESC
-LIMIT :resultlimit; 
+LEFT JOIN papers
+ON vignettes.paperid = papers.bibtexKey
+WHERE priv = 0 AND vote > 2 AND (:sections = "" OR RTRIM(REPLACE(papers.title,".",""))
+IN (SELECT title FROM papers 
+	INNER JOIN (SELECT section,id,tag from sections WHERE sections.section IN (:sections)) as subsection
+	ON (subsection.id != "" AND papers.bibtexKey LIKE CONCAT(subsection.id,'%')) OR
+	(subsection.tag != "" AND (papers.tags LIKE CONCAT('%',subsection.tag,'%') OR papers.bibtexKey LIKE CONCAT('%',subsection.tag,'%')))
+))
+GROUP BY paperid
+ORDER BY visitcount DESC
+LIMIT :resultlimit
+OFFSET :offset
 EOT;
 
 	//print_r(getUser());
@@ -764,6 +936,9 @@ EOT;
 		$stmt = $db->prepare($sql);
 		//$stmt->bindParam("currentuserid", getcurrentuser()->userid);
 		$stmt->bindParam("resultlimit", $limit, PDO::PARAM_INT);
+		$stmt->bindParam("offset", $offset, PDO::PARAM_INT);
+		$stmt->bindParam("sections", $sections);
+		$stmt->bindParam("startdate", $startdate);
 		$stmt->execute();
 		$vignettes = $stmt->fetchAll(PDO::FETCH_OBJ);
 		$db = null;
@@ -776,9 +951,10 @@ EOT;
 	}
 }
 
-function getBestVignettes($userid, $limit){
+function getBestVignettes($userid, $limit, $page, $sections){
 
-
+	$offset = $limit*($page-1);
+	
 	$sql  = <<<EOT
 SELECT
 text, paperid, vignettes.userid, priv, anon, vignettes.added, vignettes.edited, vote,
@@ -788,9 +964,17 @@ LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM v
 ON paperid=vpaperid AND userid=vuserid
 LEFT JOIN users
 ON vignettes.userid = users.userid
-WHERE priv = 0 AND vote > -1
+LEFT JOIN papers
+ON vignettes.paperid = papers.bibtexKey
+WHERE priv = 0 AND vote > -1 AND (:sections = "" OR RTRIM(REPLACE(papers.title,".",""))
+IN (SELECT title FROM papers 
+	INNER JOIN (SELECT section,id,tag from sections WHERE sections.section IN (:sections)) as subsection
+	ON (subsection.id != "" AND papers.bibtexKey LIKE CONCAT(subsection.id,'%')) OR
+	(subsection.tag != "" AND (papers.tags LIKE CONCAT('%',subsection.tag,'%') OR papers.bibtexKey LIKE CONCAT('%',subsection.tag,'%')))
+))
 ORDER BY vote DESC
-LIMIT :resultlimit;
+LIMIT :resultlimit
+OFFSET :offset
 EOT;
 
 	//print_r(getUser());
@@ -799,6 +983,8 @@ EOT;
 		$stmt = $db->prepare($sql);
 		//$stmt->bindParam("currentuserid", getcurrentuser()->userid);
 		$stmt->bindParam("resultlimit", $limit, PDO::PARAM_INT);
+		$stmt->bindParam("offset", $offset, PDO::PARAM_INT);
+		$stmt->bindParam("sections", $sections);
 		$stmt->execute();
 		$vignettes = $stmt->fetchAll(PDO::FETCH_OBJ);
 		$db = null;
@@ -945,6 +1131,64 @@ EOT;
 
 }
 
+function getUsers(){
+
+	$delay_days = 2;
+	// 	$sql  = <<<EOT
+	// SELECT * FROM
+	// (SELECT DISTINCT substring_index(paperid, '/', 2)as venueid, count(text) FROM vignettes WHERE paperid LIKE "journal%" OR paperid LIKE "conf/%") as allvenues
+	// LEFT JOIN venues ON id=venueid
+	// ORDER BY name DESC
+	//
+
+	$sql  = <<<EOT
+SELECT 
+users.userid, 
+email,
+username, 
+displayname, 
+description, 
+count(*) as numOfVignettes,
+sum(vote)/count(vote) as sciscore
+FROM vignettes
+LEFT JOIN (SELECT paperid,userid, sum(vote) as vote FROM votes WHERE edited < DATE_ADD(NOW(), INTERVAL -:delay_days DAY)GROUP BY paperid,userid) as avgvotes
+ON avgvotes.paperid=vignettes.paperid AND avgvotes.userid=vignettes.userid
+INNER JOIN users 
+ON users.userid = vignettes.userid
+WHERE vignettes.priv != 1
+GROUP BY users.userid
+ORDER BY sciscore DESC, added DESC
+LIMIT 1000
+EOT;
+
+
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam("delay_days", $delay_days);
+		//$stmt->bindParam("key", $key);
+		$stmt->execute();
+		$users = $stmt->fetchAll(PDO::FETCH_OBJ);
+		$db = null;
+
+// 		for ($i = 0; $i < sizeof($users); $i++) {
+// 			if ($users[$i]->id == ""){
+// 				$users[$i]->id = $venues[$i]->doiprefix;
+// 			}
+// 		}
+
+
+		//print_r($venues);die();
+
+		return $users;
+
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		include("templates/error.php");
+	}
+
+}
+
 function getTopVenueVignettes($key, $year){
 
 	
@@ -952,18 +1196,23 @@ function getTopVenueVignettes($key, $year){
 	
 	
 	$sql  = <<<EOT
-SELECT * FROM vignettes
+SELECT * FROM (SELECT * FROM vignettes
 LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM votes GROUP BY vpaperid, vuserid) as votes
 ON paperid=vpaperid AND userid=vuserid
+WHERE vote > 0
+ORDER BY vote DESC) as vignettes
 LEFT JOIN users
 ON vignettes.userid = users.userid
 LEFT JOIN papers
 ON vignettes.paperid = papers.bibtexKey
 WHERE priv = 0 AND (
-	((:doiprefix != "" AND (paperid LIKE CONCAT(:doiprefix,'%') OR venuekey LIKE CONCAT(:doiprefix,'%'))))
-	OR ((:bibtexKey != "" AND (paperid LIKE CONCAT(:bibtexKey,'%') OR venuekey LIKE CONCAT(:bibtexKey,'%'))))
-			)
-ORDER BY vote DESC
+	RTRIM(REPLACE(papers.title,".","")) IN ( 
+		SELECT RTRIM(REPLACE(title,".","")) FROM papers WHERE 
+			((:doiprefix != "" AND (papers.bibtexKey LIKE CONCAT(:doiprefix,'%') OR venuekey LIKE CONCAT(:doiprefix,'%'))))
+			OR ((:bibtexKey != "" AND (papers.bibtexKey LIKE CONCAT(:bibtexKey,'%') OR papers.venuekey LIKE CONCAT(:bibtexKey,'%'))))
+    ))
+GROUP BY title
+ORDER BY added DESC
 EOT;
 //OR LIKE CONCAT(:doiprefix,'%')	
 	try {
@@ -1014,29 +1263,31 @@ EOT;
 
 function getUserVignettePoints($userid){
 
+	$delay_days = 2;
 	$sql  = <<<EOT
-SELECT sum(vote)/count(vote) as count FROM (SELECT sum(vote) as vote FROM votes WHERE userid=:userid GROUP BY paperid) as avgvotes;
+SELECT sum(vote)/count(vote) as count FROM (SELECT sum(vote) as vote FROM votes WHERE userid=:userid AND edited < DATE_ADD(NOW(), INTERVAL -:delay_days DAY)GROUP BY paperid) as avgvotes;
 EOT;
 	
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("userid", $userid);
+		$stmt->bindParam("delay_days", $delay_days);
 		$stmt->execute();
 		$result = $stmt->fetchAll(PDO::FETCH_OBJ);
 		$db = null;
 
 		$base = $result[0]->count+0;
 		
-		$random = ((float)rand()/(float)getrandmax())-0.5;
+		#$random = ((float)rand()/(float)getrandmax())-0.5;
 		
-		$base = $base + $random;
+		$base = $base; # + $random;
 		
 		return round($base, 3);
 
 	} catch(PDOException $e) {
 		$message = $e->getMessage();
-		include("templates/error.php");
+		#include("templates/error.php");
 	}
 }
 
@@ -1382,7 +1633,120 @@ EOT;
 	}
 }
 
+function getTimeDB() {
+	
+$sql  = <<<EOT
+SELECT NOW()
+EOT;
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		
+		$stmt->execute();
+		$res = $stmt->fetchAll();
+		$db = null;
+		
+		return $res[0][0];
+		
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		echo $message;
+	}
+}
 
+
+function logVisit($bibtexKey){
+	
+	//check if cookie is set to same page don't count it
+	if (strcmp($_COOKIE['pageview'],$bibtexKey) == 0){
+		//print "T";
+		return;
+	}
+	
+	//if no cookie then set one for 1 hour
+	setcookie("pageview", $bibtexKey, time()+60*60);
+	
+	//print "R";
+	
+$sql  = <<<EOT
+INSERT INTO visits (bibtexKey, date, count) VALUES (:bibtexKey, CURRENT_DATE(),1)
+  ON DUPLICATE KEY UPDATE count=count+1;
+EOT;
+
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam("bibtexKey", $bibtexKey);
+		
+		$stmt->execute();
+		$stmt = null;
+		$db = null;
+		
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		echo $message;
+	}
+}
+
+
+function getVisitCounts($bibtexKey, $previousdays){
+	
+$sql  = <<<EOT
+SELECT UNIX_TIMESTAMP(date) as date, count FROM visits 
+WHERE bibtexKey = :bibtexKey
+AND date > DATE_ADD(NOW(), INTERVAL -:previousdays DAY)
+ORDER BY date
+EOT;
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam("bibtexKey", $bibtexKey);
+		$stmt->bindParam("previousdays", $previousdays);
+		
+		$stmt->execute();
+		$stats = $stmt->fetchAll();
+		$db = null;
+		
+		return $stats;
+		
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		echo $message;
+		//include("templates/error.php");
+	}
+	
+	
+}
+
+function getVisitCountsUser($userid, $previousdays){
+	
+$sql  = <<<EOT
+SELECT UNIX_TIMESTAMP(date) as date, sum(count)as count 
+FROM visits 
+WHERE bibtexKey IN (SELECT paperid FROM vignettes WHERE userid = :userid) 
+AND date > DATE_ADD(NOW(), INTERVAL -:previousdays DAY)
+GROUP BY date ORDER BY date
+EOT;
+	try {
+		$db = getConnection();
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam("userid", $userid);
+		$stmt->bindParam("previousdays", $previousdays);
+		
+		$stmt->execute();
+		$stats = $stmt->fetchAll();
+		$db = null;
+		
+		return $stats;
+		
+	} catch(PDOException $e) {
+		$message = $e->getMessage();
+		echo $message;
+		//include("templates/error.php");
+	}
+	
+	
+}
 
 
 function getarxivid($paper){
@@ -1400,6 +1764,34 @@ function getarxivid($paper){
 }
 
 
-
+function stripInvalidXml($value)
+{
+	$ret = "";
+	$current;
+	if (empty($value))
+	{
+		return $ret;
+	}
+	
+	$length = strlen($value);
+	for ($i=0; $i < $length; $i++)
+	{
+		$current = ord($value{$i});
+		if (($current == 0x9) ||
+				($current == 0xA) ||
+				($current == 0xD) ||
+				(($current >= 0x20) && ($current <= 0xD7FF)) ||
+				(($current >= 0xE000) && ($current <= 0xFFFD)) ||
+				(($current >= 0x10000) && ($current <= 0x10FFFF)))
+		{
+			$ret .= chr($current);
+		}
+		else
+		{
+			$ret .= " ";
+		}
+	}
+	return $ret;
+}
 
 ?>

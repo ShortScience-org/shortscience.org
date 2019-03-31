@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /random
+Disallow: /search
+Disallow: /login
+Disallow: /signup
+Disallow: /recover
+Sitemap: http://www.shortscience.org/sitemap.xml

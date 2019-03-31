@@ -22,9 +22,12 @@ function takelogin($login){
 	//die();
 	
 	$user = fetchUser($login->loginname, $hash);
-
 	
-	if (isset($user) && $user->hash == $realuser->hash){
+	if (isset($user) && !isset($realuser->hash)){
+		$loginresult->message = "No user";
+	}
+	
+	if (isset($user) && isset($user->hash) && $user->hash == $realuser->hash){
 		$loginresult->message = "";
 		logincookie($user->username, $hash, true);
 		return $loginresult;
@@ -138,6 +141,10 @@ EOT;
 		$user = $stmt->fetch(PDO::FETCH_OBJ);
 		$db = null;
 
+		if (!isset($user->username)){
+			return $user;
+		}
+		
 		$user->username = strtolower($user->username);
 		
 		return $user;
@@ -268,7 +275,7 @@ function addUser($signup){
 	}
 	
 	if (! validemail ( $signup->email )){
-		$signupresult->message = "Our LSTM based RNN refuses to accept that email address. Please use a valid one or email us!";
+		$signupresult->message = "Please use a valid email or let us know your email is not accepted";
 		return $signupresult;
 	}
 	
@@ -294,14 +301,15 @@ function addUser($signup){
 
 		
 	$sql  = <<<EOT
-INSERT INTO users (username, hash, secret, editsecret, email)
-VALUES (:username, :hash, :secret, :editsecret, :email);
+INSERT INTO users (username, displayname, hash, secret, editsecret, email)
+VALUES (:username, :displayname, :hash, :secret, :editsecret, :email);
 EOT;
 
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("username", $signup->username);
+		$stmt->bindParam("displayname", $signup->displayname);
 		$stmt->bindParam("hash", $wantpasshash);
 		$stmt->bindParam("secret", $secret);
 		$stmt->bindParam("editsecret", $editsecret);
@@ -531,8 +539,10 @@ function logincookie($username, $passhash, $updatedb = 1, $expires = 0x7fffffff)
 }
 
 function logoutcookie() {
-	setcookie("u", "", 0x7fffffff, "/");
-	setcookie("p", "", 0x7fffffff, "/");
+	if (!headers_sent()) {
+		setcookie("u", "", 0x7fffffff, "/");
+		setcookie("p", "", 0x7fffffff, "/");
+	}
 }
 
 // function loggedinorreturn() {

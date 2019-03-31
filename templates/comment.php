@@ -42,5 +42,10 @@
   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
   You must log in before you can post this comment!
 </div>
+<?php } else {?>
+<div class="alert alert-warning" role="alert" style="margin:10px;">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  This is a draft. The comment is not posted yet.
+</div>
 <?php }?>
 </div>

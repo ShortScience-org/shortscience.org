@@ -12,11 +12,32 @@
     height: 29px; !important;
 }
 
+table.gsc-search-box td {
+    vertical-align: top;
+}
+
+.gsc-zippy {
+	display:none;
+}
+
+.gsc-url-top {
+	display:none;
+}
+
+.gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+    padding-left: 0px;
+}
+
 </style>
+
+<a href="/search?term=<?=htmlspecialchars($q)?>">
+<center><div class="alert alert-info">Cannot find a paper? Click here to add it!</div></center>
+</a>
+
 
 <script>
   (function() {
-    var cx = '002389347978459607138:jpjvbib-kwm';
+    var cx = '009958962865329865701:0pd-b8qugwy';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
@@ -26,7 +47,6 @@
   })();
 </script>
 <gcse:search enableAutoComplete="true"></gcse:search>
-
 
 
 </div>

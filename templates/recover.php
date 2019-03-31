@@ -35,7 +35,7 @@ background: url(res/trinity_college_dublin.jpg) no-repeat center center fixed;
 	</div>
 	<?php }else{?>
 	
-		<input name="email" id="email" type="text" class="form-control" placeholder="E-Mail" value="<?=$recover->email?>" required="">
+		<input name="email" id="email" type="text" class="form-control" placeholder="E-Mail" value="<?=htmlspecialchars($recover->email)?>" required="">
 		<br>
 		<button class="btn btn-lg btn-primary btn-block" type="submit">
 			Send Recovery Email

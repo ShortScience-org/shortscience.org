@@ -23,7 +23,7 @@ function updatepreview(){
 	
 	console.log("ran");
 	
-	$('.userentry.source').first().html(rawtext);
+	$('.userentry.source').first().text(rawtext);
 	
 	fixedrawtext = rawtext;
 	rawtext.replace(/\$+[^$]*[^\](\_)[^$]*\$+/gi, function(match, p1, p2, p3, offset, string){
@@ -38,7 +38,7 @@ function updatepreview(){
 	rawtext = fixedrawtext;
 	
 	
-	rawtext = $('<div/>').text(rawtext).html();
+	//rawtext = $('<div/>').text(rawtext).html();
 
 	rawtext =  processCitations(rawtext);
 	
@@ -70,7 +70,7 @@ function updatepreview(){
 }
 
 
-$(function(){
+$(document).ready(function() {
 
 	$(updatepreview);
 	//$("#entrytext").tabOverride();
@@ -152,40 +152,40 @@ $(function(){
 		
 	});
 
-	var hash = document.location.hash
+//	var hash = document.location.hash
+//	
+//	if (hash != ""){
+//		//console.log("test" + hash);
+////		$(".vignette").css('opacity', 0.3);
+////		$(".vignette-preview").css('opacity', 1);
+////		
+////		$(hash).css('opacity', 1);
+//		
+//		$(hash.replace("comments","")).css('opacity', 1);
+//	}
+		
 	
-	if (hash != ""){
-		//console.log("test" + hash);
-		$(".vignette").css('opacity', 0.3);
-		$(".vignette-preview").css('opacity', 1);
-		
-		$(hash).css('opacity', 1);
-		
-		$(hash.replace("comments","")).css('opacity', 1);
-	}
-		
+//	$(".vignette").click(function(){
+//		
+//		if(history.pushState) {
+//		    history.replaceState(null, null, "#" + $(this).attr("id"));
+//		}
+//	});
 	
-	$(".vignette").click(function(){
-		
-		if(history.pushState) {
-		    history.replaceState(null, null, "#" + $(this).attr("id"));
-		}
-	});
-	
-	$(".vignette").mouseenter(function(e){
-		
-		$(".vignette").css('opacity', 0.3);
-		$(".vignette-preview").css('opacity', 1);
-		
-		$(this).css('opacity', 1);
-	});
+//	$(".vignette").mouseenter(function(e){
+//		
+//		$(".vignette").css('opacity', 0.3);
+//		$(".vignette-preview").css('opacity', 1);
+//		
+//		$(this).css('opacity', 1);
+//	});
 	
 });
 
 
 
 
-$(function(){
+$(document).ready(function() {
 	
 	$(".commententry").tabOverride();
 	$(".newcomment").keyup(updatecommentpreview);
@@ -301,4 +301,81 @@ function updatecommentpreview(d){
 	if (typeof MathJax !== 'undefined')
 		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 }
+
+
+
+
+///// image business
+
+function getBase64(file, callback) {
+	var reader = new FileReader();
+	reader.readAsDataURL(file);
+	reader.onload = function() {
+		console.log(callback(reader.result.split(',')[1]));
+	};
+	reader.onerror = function(error) {
+		alert("Image upload error: " + 'Error: ', error);
+		console.log('Error: ', error);
+	};
+}
+
+function uploadImageCore(file, callback) {
+
+	/* Is the file an image? */
+	if (!file || !file.type.match(/image.*/))
+		return;
+
+	getBase64(file, function(dataBase64) {
+
+		clientId = 'a39a4b064281566';
+		auth = 'Client-ID ' + clientId;
+
+		console.log("Image upload started");
+
+		$.ajax({
+			url : 'https://api.imgur.com/3/image',
+			type : 'POST',
+			headers : {
+				Authorization : auth,
+				Accept : 'application/json'
+			},
+			data : {
+				image : dataBase64,
+				type : 'base64'
+			},
+			success : function(result) {
+				var id = result.data.id;
+
+				imgUrl = "https://i.imgur.com/" + id + ".png"
+				console.log("Uploaded:" + imgUrl);
+
+				if (callback)
+					callback(imgUrl);
+			},
+			error : function(jqXHR, textStatus, errorThrown){
+				alert("Image upload error: " + 'Error: ', textStatus)
+			}
+		});
+
+	});
+}
+
+
+function uploadImage(file, target) {
+
+	$("#imgUploadBtn").text("Uploading...");
+	uploadImageCore(file, function(link) {
+
+		var $txt = $(target);
+		var caretPos = $txt[0].selectionStart;
+		var textAreaTxt = $txt.val();
+		var txtToAdd = link;
+		$txt.val(textAreaTxt.substring(0, caretPos) + txtToAdd + textAreaTxt.substring(caretPos));
+
+		$("#imgUploadBtn").text("Add Image");
+		updatepreview();
+	});
+}
+
+
 

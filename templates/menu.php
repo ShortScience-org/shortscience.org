@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-inverse " style="margin:0px;background-image: url(res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
   <div class="container">
-  <a class="navbar-brand" href="/" style="float:left;width:300px;margin-left:-100px">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px">
   </a>
 	
       <ul class="nav navbar-nav navbar-right">
@@ -15,6 +15,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=get_gravatar($currentuser->email,20,identicon,'g',true,[style=> "border-radius: 50%;padding:0px;margin:0px;" ])?> <?=$currentuser->username?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="./user">My Profile</a></li>
+            <li><a href="./search?term=">Add Summary</a></li>
             <li><a href="./settings">Settings</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./logout">Log Out</a></li>
@@ -40,17 +41,17 @@
 		<input class="btn btn-default" type="submit" style="" value="About"/>
 		</a>
 
-      	<a class="" style="" href="./">
-		<input class="btn btn-default" type="submit" style="" value="Home"/>
+      	<a class="" style="" href="./users">
+		<input class="btn btn-default" type="submit" style="" value="Users"/>
 		</a>
 		
 </div>
 
 
       
-     <form class="navbar-form navbar-right" role="search" action="search" style="border: none;">
+     <form class="navbar-form navbar-right" role="search" action="internalsearch" style="border: none;">
 	  <div class="input-group">
-	    <input type="text" name="term" class="form-control" placeholder="Search for a paper..." value="<?=htmlspecialchars($term)?>">
+	    <input type="text" name="q" class="form-control" placeholder="Search for a summary..." value="<?=htmlspecialchars($q)?>">
 	    <span class="input-group-btn">
         	<input class="btn btn-default" type="submit" style="" value="Go!"/>
         	

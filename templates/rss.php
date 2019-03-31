@@ -23,10 +23,24 @@ if ($arxivid){?>
 	<shortscience:arxivid><?=$arxivid?></shortscience:arxivid>
 <?php }?>
 	<shortscience:bibtexkey><?=$paper->bibtexKey?></shortscience:bibtexkey>
-	<title>Summary of <?=htmlspecialchars($paper->title)?></title>
-	<description><?=(strlen(htmlspecialchars($vignette->text)) > 500) ? htmlspecialchars(substr($vignette->text,0,500)).'...' : htmlspecialchars($vignette->text)?></description>
-	<link>http://www.shortscience.org/paper?bibtexKey=<?=urlencode($vignette->paperid)?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></link>
-	<guid>http://www.shortscience.org/paper?bibtexKey=<?=urlencode($vignette->paperid)?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></guid>
+	<shortscience:votes><?=$vignette->vote?></shortscience:votes>
+	<title><?=htmlspecialchars($paper->title)?></title>
+  	<?php if ($vignette->anon == 1){?>
+  	<author>Anonymous</author>
+  	<?php } else { ?>
+  	<author><?=($vignette->displayname == "")?$vignette->username:htmlspecialchars($vignette->displayname,ENT_QUOTES|ENT_DISALLOWED|ENT_XML1)?></author>
+	<?php }?>
+	<?php 
+	$text = preg_replace('/\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i', '', $vignette->text);
+	
+	?>
+	<?php if ($full == True){?>
+	<description><?=htmlspecialchars($text)?></description>
+	<?php }else{?>
+	<description><?=(strlen(htmlspecialchars($text,ENT_QUOTES|ENT_DISALLOWED|ENT_XML1)) > 500) ? htmlspecialchars(substr($text,0,500),ENT_QUOTES|ENT_DISALLOWED|ENT_XML1).'...' : htmlspecialchars($text,ENT_QUOTES|ENT_DISALLOWED|ENT_XML1)?></description>
+	<?php }?>
+	<link>http://www.shortscience.org/paper?bibtexKey=<?=$vignette->paperid?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></link>
+	<guid>http://www.shortscience.org/paper?bibtexKey=<?=$vignette->paperid?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></guid>
 	<pubDate><?=date('r', strtotime($vignette->edited))?></pubDate>
 </item>
 <?php }?>

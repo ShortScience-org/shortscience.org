@@ -28,7 +28,7 @@
 	<a target="_blank" href="http://www.arxiv-sanity.com/<?=$arxivsanityid?>"
 	class="arxivsanitypop"
 	title="Arxiv Sanity Preview"
-	data-content='<img style="width:100%" src="http://www.arxiv-sanity.com/static/thumbs/<?=$arxivsanityid?>v1.pdf.jpg" alt=" Image loading error"/>'
+	data-content='<img style="width:550px;height:100px" src="http://www.arxiv-sanity.com/static/thumbs/<?=$arxivsanityid?>v1.pdf.jpg" alt=" Image loading error"/>'
 	><span  class="glyphicon glyphicon-link"></span> arxiv-sanity.com</a><br>
 	
 	
@@ -39,9 +39,11 @@
 			  $urlhost != "www.jmlr.org" &&
 			  $urlhost != "papers.nips.cc" &&
 			  $urlhost != "www.cv-foundation.org" &&
+			  $urlhost != "proceedings.mlr.press" &&
 			  !endsWith($urlhost,".edu")){?>
 	
-	<a target="_blank" href="http://sci-hub.cc/<?=$url?>"><span  class="glyphicon glyphicon-link"></span> sci-hub.cc</a><br>
+	<?php // Other IP: http://80.82.77.83/?>
+	<a target="_blank" href="http://sci-hub.tw/<?=$url?>"><span  class="glyphicon glyphicon-circle-arrow-down"></span> sci-hub</a><br>
 	<?php }?>
 	
 <?php }?>
@@ -86,10 +88,10 @@ break;
 <br>
 <?php if ($paper->metavenue != null){?>
 	<?$venue = $paper->metavenue->name." - ".$paper->year;?>
-	<a style="color:black;" href='venue?key=<?=$paper->metavenue->id?>&year=<?=$paper->year?>'><?=$venue?></a> via <?=$paper->source?>
+	<a style="color:black;" href='venue?key=<?=$paper->metavenue->id?>&year=<?=$paper->year?>'><?=$venue?></a> <small>via <?=$paper->source?></small>
 <?php }else{?>
 	<?$venue = $paper->venue." - ".$paper->year;?>
-	<a style="color:black;" rel="nofollow" href='search?term="<?=$venue?>"'><?=$venue?></a> via <?=$paper->source?>
+	<a style="color:black;" rel="nofollow" href='search?term="<?=$venue?>"'><?=$venue?></a> <small>via <?=$paper->source?></small>
 <?php }?>
 <br>
 Keywords: 
@@ -100,9 +102,16 @@ for ($x = 0; $x < sizeof($paper->tags); $x++) {
 <a style="color:black;" rel="nofollow" href='search?term="<?=htmlspecialchars($paper->tags[$x])?>"'><?=htmlspecialchars($paper->tags[$x])?></a><?php }?>
 </small>
 <br>
+
+<?php 
+
+$more_hash = str_replace("=","",base64_encode($vignette->paperid));
+
+?>
+
 <?php if ($paper->abstract){?>
 <small>
-<div style="display:none" id="more-<?=base64_encode($vignette->paperid);?>">
+<div style="display:none" id="more-<?=$more_hash?>">
 <hr style="border-color:gray;margin:5px;">
 <b>First published:</b> <?=date_format(date_create($paper->published),"Y/m/d")?> (<?=time_elapsed_string($paper->published)?>)<br>
 <b>Abstract:</b><?=$paper->abstract?>
@@ -111,10 +120,8 @@ for ($x = 0; $x < sizeof($paper->tags); $x++) {
 <small>
 
 <span style="position:absolute;left:50%;width:100px;margin-left:-50px">
-<center>
-<span id="showmore-<?=base64_encode($vignette->paperid);?>"><a style="color:gray;" href="javascript:void($('#showmore-<?=base64_encode($vignette->paperid);?>').hide());void($('#showless-<?=base64_encode($vignette->paperid);?>').show());void($('#more-<?=base64_encode($vignette->paperid);?>').show());"><span class="glyphicon glyphicon-info-sign"></span> more</a></span>
-<span id="showless-<?=base64_encode($vignette->paperid);?>" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-<?=base64_encode($vignette->paperid);?>').show());void($('#showless-<?=base64_encode($vignette->paperid);?>').hide());void($('#more-<?=base64_encode($vignette->paperid);?>').hide());"><span class="glyphicon glyphicon-info-sign"></span> less</a></span>
-</center>
+<span id="showmore-<?=$more_hash?>"><a style="color:gray;" href="javascript:void($('#showmore-<?=$more_hash?>').hide());void($('#showless-<?=$more_hash?>').show());void($('#more-<?=$more_hash?>').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-<?=$more_hash?>" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-<?=$more_hash?>').show());void($('#showless-<?=$more_hash?>').hide());void($('#more-<?=$more_hash?>').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
 </span>
 </small>
 <?php }?>

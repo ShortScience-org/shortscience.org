@@ -1,7 +1,7 @@
 <?php require("header.php");?>
 <?php require("menu.php");?>
-
 <?php require("orcid.php");?>
+<?php global $SCRIPT_VERSION ?>
 
 <br>
 <div class="container" style="max-width:700px; margin:0 auto;">
@@ -83,7 +83,7 @@ Last Login:
 Display Name:
 </td>
 <td>
-<input name="displayname" id="displayname" type="text" class="form-control" value="<?=$user->displayname?>" autocomplete="off">
+<input name="displayname" id="displayname" type="text" class="form-control" value="<?=htmlspecialchars($user->displayname)?>" autocomplete="off">
 </td>
 </tr>
 
@@ -142,7 +142,7 @@ Export Data:
 </div>
 </div>
 
-<script src="./res/js/standard.js"></script>
+<script src="./res/js/standard.js?v=<?=$SCRIPT_VERSION?>"></script>
 
 
 <?php require("footer.php");?>
