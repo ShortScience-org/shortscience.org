@@ -11,7 +11,7 @@
 <div class="row">
 <div class="col-xl-8">
 <h1 style='margin:0px;padding-left:10px;' >
-<a href="<?=($currentuser->userid == $user->userid)?"https://en.gravatar.com/site/login/":""?>"><?=get_gravatar($user->email,80,identicon,'g',true,[style=> "border-radius: 50%;" ])?></span></a>
+<a href="<?=($currentuser->userid == $user->userid)?"https://en.gravatar.com/site/login/":""?>"><?=get_gravatar($user->email,80,"identicon",'g',true,["style"=> "border-radius: 50%;" ])?></span></a>
 
 <?=htmlspecialchars(($user->displayname)?$user->displayname:$user->username,ENT_QUOTES)?>
 </h1>

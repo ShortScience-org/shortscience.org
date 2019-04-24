@@ -35,10 +35,10 @@ word-break: break-all;
 	      <?php } else {?>	      
 	      <a href="user?name=<?=$vignette->username?>" class="usericonpop" data-content="Username: <?=$vignette->username?><br>Posted: <?=time_elapsed_string($vignette->added)?> <?php if ($vignette->added != $vignette->edited){?><br>Edited: <?=time_elapsed_string($vignette->edited)?><?php }?><br>Paper ID:<br><small><?=$vignette->paperid?></small>"
 	      title='
-	      <center><a href="user?name=<?=$vignette->username?>"><?=get_gravatar($vignette->email,150,identicon,"g",true,[style=> "border-radius: 50%;height:150px;" ])?><br>
+	      <center><a href="user?name=<?=$vignette->username?>"><?=get_gravatar($vignette->email,150,"identicon","g",true,["style"=> "border-radius: 50%;height:150px;" ])?><br>
 	      <span style="font-size:15pt"><?=($vignette->displayname == "")?$vignette->username:htmlspecialchars($vignette->displayname,ENT_QUOTES)?></span>
 	      </a></center>' >
-	      <?=get_gravatar($vignette->email,30,identicon,'g',true,[style=> "border-radius: 50%;height:30px;" ])?>
+	      <?=get_gravatar($vignette->email,30,"identicon",'g',true,["style"=> "border-radius: 50%;height:30px;" ])?>
 	      </a>
 	      <?php }?>
 	      <div class="row"> 
