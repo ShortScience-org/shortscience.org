@@ -68,15 +68,20 @@ function performSearch($term){
 	if (strpos($term, "\"") !== false) {
 		// has quotes
 	
+	    // perform crossref first because it can add to local
+	    $results3 = searchCrossRef($term);
+	    
 		$results0 = searchLocal($term, false);
 		
 		$results1 = searchBibsonomy($term);
 		$results2 = searchArXivMeta($term);
-		$results3 = searchCrossRef($term);
+		
 		$results = mergeResults(array($results0, $results1, $results2, $results3));
 		
 	}else{
 		
+	    // perform crossref first because it can add to local
+	    $results3 = searchCrossRef($term);
 		
 		$results0 = searchLocal($term, false);
 		
@@ -91,7 +96,6 @@ function performSearch($term){
 		
 		$results1 = mergeResults(array($results11, $results12));
 		$results2 = searchArXivMeta($term);
-		$results3 = searchCrossRef($term);
 		$results4 = searchBibsonomy($term);	
 		
 		$results = mergeResults(array($results0, $results1, $results2, $results3, $results4));
@@ -614,6 +618,10 @@ function getPaper($bibtexKey) {
 
 function writePaper2DB($paper){
 
+    if ($paper->authors == ""){
+        //just ignore papers without authors.
+        return;
+    }
 	
 $sql  = <<<EOT
 INSERT INTO papers (
