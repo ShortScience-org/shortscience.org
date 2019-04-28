@@ -12,6 +12,9 @@ require 'functions.php';
 ?>
 <pre>
 <?php 
+print("<br><br>Local");
+print_r(searchLocal("".$_GET["q"]));
+
 print("<br><br>Bibsonomy");
 print_r(searchBibsonomy("".$_GET["q"]));
 
