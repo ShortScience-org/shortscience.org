@@ -8,6 +8,10 @@ require 'db.php';
 require 'auth.php';
 require 'functions.php';
 
+
+?>
+<pre>
+<?php 
 print("<br><br>Bibsonomy");
 print_r(searchBibsonomy("".$_GET["q"]));
 
@@ -19,3 +23,4 @@ print_r(searchArXiv("cohen".$_GET["q"]));
 
 
 ?>
+</pre>
