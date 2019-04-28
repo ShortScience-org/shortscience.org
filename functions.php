@@ -295,6 +295,7 @@ function searchCrossRef($term){
 		$coins = str_getcsv($rawcoins, $delimiter = ";");
 
 		$firstauth = true;
+		$paper->authors = "";
 		for ($v = 0; $v < sizeof($coins); $v++) {
 			
 			$coin = $coins[$v];
@@ -322,7 +323,9 @@ function searchCrossRef($term){
 		
 		$paper->source = "CrossRef";
 		
-		//print_r($paper);
+		//write paper during search to avoid issues with future crossref
+		//requests not containing the correct paper
+		writePaper2DB($paper);
 		
 		if ($paper->title != "" && $paper->authors != "")
 			$toreturn[] = $paper;
@@ -335,8 +338,6 @@ function searchBibsonomy($term){
 
 	global $BIBSONOMY_LOGIN;
 	
-	//1c414c050cd5b96c3858e0fa84f8ec82
-
 	if ($term == "") die("must have keyword to search");
 
 	$urlterm = urlencode($term);
@@ -640,6 +641,7 @@ published
 :abstract,
 :published
 )
+ON DUPLICATE KEY UPDATE bibtexKey=bibtexKey
 EOT;
 
 // format string so string matches work
@@ -659,8 +661,10 @@ $title = preg_replace( "/\r|\n/", "", $title);
 		$stmt->bindParam("source", $paper->source);
 		$stmt->bindParam("category", $paper->category);
 		
-		$stmt->bindParam("abstract", $paper->abstract?$paper->abstract:"");
-		$stmt->bindParam("published", $paper->published?$paper->published:"");
+		$abstract = $paper->abstract?$paper->abstract:"";
+		$stmt->bindParam("abstract", $abstract);
+		$published = $paper->published?$paper->published:"";
+		$stmt->bindParam("published", $published);
 		
 		$stmt->execute();
 		$paper->id = $db->lastInsertId();
