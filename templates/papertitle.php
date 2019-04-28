@@ -8,6 +8,7 @@
 		$parse = parse_url($url);
 		$urlhost = $parse['host'];
 		if ($urlhost == "dblp.uni-trier.de") continue;
+		if ($urlhost == "") continue;
 	?>
 	<a target="_blank" href="<?=$url?>"><span  class="glyphicon glyphicon-link"></span> <?=$urlhost?></a><br>
 	
@@ -40,6 +41,7 @@
 			  $urlhost != "papers.nips.cc" &&
 			  $urlhost != "www.cv-foundation.org" &&
 			  $urlhost != "proceedings.mlr.press" &&
+	          $urlhost != "aclweb.org" &&
 			  !endsWith($urlhost,".edu")){?>
 	
 	<?php // Other IP: http://80.82.77.83/?>
