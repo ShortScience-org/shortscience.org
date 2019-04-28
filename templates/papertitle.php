@@ -8,7 +8,10 @@
 		$parse = parse_url($url);
 		$urlhost = $parse['host'];
 		if ($urlhost == "dblp.uni-trier.de") continue;
-		if ($urlhost == "") continue;
+		if ($urlhost == ""){
+		    $url = "https://doi.org/".$url;
+		    $urlhost = "doi.org";
+		}
 	?>
 	<a target="_blank" href="<?=$url?>"><span  class="glyphicon glyphicon-link"></span> <?=$urlhost?></a><br>
 	
