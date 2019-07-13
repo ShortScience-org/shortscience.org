@@ -298,7 +298,7 @@ $app->get('/user', function (Request $request, Response $response) {
 	$title = htmlspecialchars(($user->displayname)?$user->displayname:$user->username)."'s profile";
 	
 	if ($user->description == ""){
-		$description = "Here are summaries of research papers by user " + htmlspecialchars(($user->displayname)?$user->displayname:$user->username);
+		$description = "Here are summaries of research papers by user ".htmlspecialchars(($user->displayname)?$user->displayname:$user->username);
 	}else{
 		$description = htmlspecialchars($user->description);
 	}

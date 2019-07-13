@@ -17,12 +17,12 @@
 		<a href="user?name=<?=$comment->username?>" class="commentusericonpop" 
 	      placement="top"
 	      title='
-	      <center><a href="user?name=<?=$comment->username?>"><?=get_gravatar($comment->email,150,identicon,"g",true,[style=> "border-radius: 50%;height:150px;" ])?><br>
+	      <center><a href="user?name=<?=$comment->username?>"><?=get_gravatar($comment->email,150,"identicon","g",true,["style"=> "border-radius: 50%;height:150px;" ])?><br>
 	      <span style="font-size:15pt"><?=($comment->displayname == "")?$comment->username:htmlspecialchars($comment->displayname)?></span>
 	      </a></center>'
 	      data-content="Username: <?=$comment->username?><br>Posted: <?=time_elapsed_string($comment->added)?>"
 	      >
-  		<?=get_gravatar($comment->email,20,identicon,'g',true,[style=> "border-radius: 50%;height:20px;" ])?></a>
+  		<?=get_gravatar($comment->email,20,"identicon",'g',true,["style"=> "border-radius: 50%;height:20px;" ])?></a>
       	
 
 	</center>
