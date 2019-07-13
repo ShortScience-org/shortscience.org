@@ -44,13 +44,13 @@ $app->get('/', function (Request $request, Response $response) {
 	$page = max($page,1);
 	//print $page;
 	if ($tab == "recent"){
-		$vignettes = getRecentVignettes($user->userid, 20, $page, $sections);
+		$vignettes = getRecentVignettes($user->userid, 10, $page, $sections);
 	}else if($tab == "best"){
-		$vignettes = getBestVignettes($user->userid, 20, $page, $sections);
+		$vignettes = getBestVignettes($user->userid, 10, $page, $sections);
 	}else if($tab == "popularweek"){
-		$vignettes = getPopularVignettes($user->userid, 20, $page, $sections, $howmanydays=7);
+		$vignettes = getPopularVignettes($user->userid, 10, $page, $sections, $howmanydays=7);
 	}else{
-		$vignettes = getPopularVignettes($user->userid, 20, $page, $sections, $howmanydays=1);
+		$vignettes = getPopularVignettes($user->userid, 10, $page, $sections, $howmanydays=1);
 	}
 		
 	include("templates/home.php");
