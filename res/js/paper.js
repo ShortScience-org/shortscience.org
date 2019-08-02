@@ -311,16 +311,19 @@ function getBase64(file, callback) {
 	var reader = new FileReader();
 	reader.readAsDataURL(file);
 	reader.onload = function() {
-		console.log(callback(reader.result.split(',')[1]));
+		if (callback)
+			console.log(callback(reader.result.split(',')[1]));
 	};
 	reader.onerror = function(error) {
-		alert("Image upload error: " + 'Error: ', error);
+		alert("Image upload error: " + 'Error: ' + error);
 		console.log('Error: ', error);
+		if (callback)
+			callback("");
 	};
 }
 
 function uploadImageCore(file, callback) {
-
+	
 	/* Is the file an image? */
 	if (!file || !file.type.match(/image.*/))
 		return;
@@ -353,7 +356,9 @@ function uploadImageCore(file, callback) {
 					callback(imgUrl);
 			},
 			error : function(jqXHR, textStatus, errorThrown){
-				alert("Image upload error: " + 'Error: ', textStatus)
+				alert("Image upload error: " + 'Error: ' + textStatus + " " + errorThrown + " Copy your summary into the clipboard in case there is an error saving after this.")
+				if (callback)
+					callback("");
 			}
 		});
 
