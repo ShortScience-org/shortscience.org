@@ -101,7 +101,10 @@ for ($v = 0; $v < sizeof($vignettes); $v++){
 		<input type="hidden" id="userid" value="<?=$myvignette->userid?>"/>
 	</div>
 	<div class="row">
-		<button class="btn btn-default pull-left" type="delete" id="deleteentry" style="margin:10px;" <?=($currentuser->userid == -1)?"disabled":""?>>Delete</button>
+		
+		<div class="form-inline pull-left">
+		<button class="btn btn-default" type="delete" id="deleteentry" style="margin-top:10px;" <?=($currentuser->userid == -1)?"disabled":""?>> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</button>
+		</div>
 		<div class="form-inline pull-right">
 		
 		
@@ -116,10 +119,10 @@ for ($v = 0; $v < sizeof($vignettes); $v++){
 		</label> <input type="checkbox" <?=($myvignette->anon == 1)?"checked":""?> id="entryanon">
 
 		<label for="priv" title="No one will be able to see this summary but you">
-		<span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Private
+		<span class="glyphicon glyphicon-lock" aria-hidden="true" style="margin-left:10px"></span> Private
 		</label> <input type="checkbox" <?=($myvignette->priv == 1)?"checked":""?> id="entrypriv">
 
-		  <button class="btn btn-default" type="submit" id="submitentry" style="margin:10px" <?=($currentuser->userid == -1)?"disabled":""?>>Submit</button>
+		  <button class="btn btn-default" type="submit" id="submitentry" style="margin-left:10px" <?=($currentuser->userid == -1)?"disabled":""?>><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Save</button>
 		</div>  
 	</div>
 	
