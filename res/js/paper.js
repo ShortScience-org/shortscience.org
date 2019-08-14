@@ -324,10 +324,15 @@ function getBase64(file, callback) {
 
 function uploadImageCore(file, callback) {
 	
-	/* Is the file an image? */
-	if (!file || !file.type.match(/image.*/))
-		return;
+	console.log(file);
 
+	/* Is the file an image? */
+	if (!file || !file.type.match(/image.*/)){
+		alert("File is not an image. Must be jpg, png, or bmp")
+		callback("");
+		return;
+	}
+	
 	getBase64(file, function(dataBase64) {
 
 		clientId = 'a39a4b064281566';
@@ -348,8 +353,10 @@ function uploadImageCore(file, callback) {
 			},
 			success : function(result) {
 				var id = result.data.id;
+				
+				ext = file.name.split('.').pop();
 
-				imgUrl = "https://i.imgur.com/" + id + ".png"
+				imgUrl = "https://i.imgur.com/" + id + "." + ext
 				console.log("Uploaded:" + imgUrl);
 
 				if (callback)
