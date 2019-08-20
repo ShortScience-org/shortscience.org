@@ -354,7 +354,7 @@ function uploadImageCore(file, callback) {
 			success : function(result) {
 				var id = result.data.id;
 				
-				ext = file.name.split('.').pop();
+				ext = file.name.split('.').pop().toLowerCase();
 
 				imgUrl = "https://i.imgur.com/" + id + "." + ext
 				console.log("Uploaded:" + imgUrl);
