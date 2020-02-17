@@ -45,6 +45,7 @@
 			  $urlhost != "www.cv-foundation.org" &&
 			  $urlhost != "proceedings.mlr.press" &&
 	          $urlhost != "aclweb.org" &&
+	          $urlhost != "openreview.net" &&
 			  !endsWith($urlhost,".edu")){?>
 	
 	<?php // Other IP: http://80.82.77.83/?>
