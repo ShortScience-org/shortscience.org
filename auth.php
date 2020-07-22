@@ -26,8 +26,15 @@ function takelogin($login){
 	if (isset($user) && !isset($realuser->hash)){
 		$loginresult->message = "No user";
 	}
-	
+		
 	if (isset($user) && isset($user->hash) && $user->hash == $realuser->hash){
+	    
+	    // auth good, check if banned
+	    if ($realuser->banned == 1){
+	        $loginresult->message = "User banned";
+	        return $loginresult;
+	    }
+	    
 		$loginresult->message = "";
 		logincookie($user->username, $hash, true);
 		return $loginresult;
@@ -58,11 +65,42 @@ function getcurrentuser(){
 			$user->username = "guest";
 			$user->email = "none";
 			$CURUSER = $user;
+		}else{
+		    recorduserinfo($CURUSER->userid);
 		}
 		
 		return $CURUSER;
 		
 	}
+}
+
+function recorduserinfo($userid){
+    
+    $lastip = $_SERVER['REMOTE_ADDR'];
+    $lastuseragent = $_SERVER['HTTP_USER_AGENT'];
+
+    $sql  = <<<EOT
+    UPDATE users
+    SET lastip=:lastip, lastuseragent=:lastuseragent
+    WHERE userid = :userid;
+    EOT;
+    
+    try {
+        $db = getConnection();
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam("lastip", $lastip);
+        $stmt->bindParam("lastuseragent", $lastuseragent);
+        $stmt->bindParam("userid", $userid);
+        $stmt->execute();
+        $db = null;
+        
+    } catch(PDOException $e) {
+        $message = $e->getMessage();
+        
+        http_response_code(400);
+        print(json_encode($message));
+        die();
+    }
 }
 
 
