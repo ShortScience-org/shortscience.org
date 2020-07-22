@@ -65,6 +65,7 @@ The search can access all papers in the
 
 <ul>
 <li>Do not post only a link or an image. There should be text discussing the paper as well.
+<li>Links for more information or a source of the summary should appear at the end of the summary.
 <li>Do not repeat the text of the abstract. 
 </ul>
 
