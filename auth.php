@@ -81,7 +81,7 @@ function recorduserinfo($userid){
 
     $sql  = <<<EOT
     UPDATE users
-    SET lastip=:lastip, lastuseragent=:lastuseragent
+    SET lastip=:lastip, lastuseragent=:lastuseragent, last_seen=NOW()
     WHERE userid = :userid;
     EOT;
     
