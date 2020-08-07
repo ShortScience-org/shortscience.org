@@ -465,7 +465,7 @@ function searchArXiv($term){
 			$authors[] = strval($paperBib->author[$a]->name);
 		$paper->authors = implode(" and ", $authors);
 		
-		$paper->year = date_parse($paperBib->published)['year'];
+		$paper->year = (int)date_parse($paperBib->published)['year'];
 		$paper->venue = "arXiv";
 
 		$paper->tags = array();
@@ -634,8 +634,7 @@ tags,
 urls,
 source,
 category,
-abstract,
-published
+abstract
 ) VALUES (
 :bibtexKey,
 :title, 
@@ -646,8 +645,7 @@ published
 :urls,
 :source,
 :category,
-:abstract,
-:published
+:abstract
 )
 ON DUPLICATE KEY UPDATE bibtexKey=bibtexKey
 EOT;
@@ -662,7 +660,7 @@ $title = preg_replace( "/\r|\n/", "", $title);
 		$stmt->bindParam("bibtexKey", $paper->bibtexKey);
 		$stmt->bindParam("title", $title);
 		$stmt->bindParam("authors", $paper->authors);
-		$stmt->bindParam("year", $paper->year);
+		$stmt->bindValue("year", (int)$paper->year);
 		$stmt->bindParam("venue", $paper->venue);
 		$stmt->bindParam("tags", implode(", ",$paper->tags));
 		$stmt->bindParam("urls", implode(", ",$paper->urls));
@@ -671,8 +669,8 @@ $title = preg_replace( "/\r|\n/", "", $title);
 		
 		$abstract = $paper->abstract?$paper->abstract:"";
 		$stmt->bindParam("abstract", $abstract);
-		$published = $paper->published?$paper->published:"";
-		$stmt->bindParam("published", $published);
+// 		$published = $paper->published?$paper->published:null;
+// 		$stmt->bindValue("published", (int)$published);
 		
 		$stmt->execute();
 		$paper->id = $db->lastInsertId();
@@ -1788,7 +1786,7 @@ function stripInvalidXml($value)
 	$length = strlen($value);
 	for ($i=0; $i < $length; $i++)
 	{
-		$current = ord($value{$i});
+		$current = ord($value[$i]);
 		if (($current == 0x9) ||
 				($current == 0xA) ||
 				($current == 0xD) ||
