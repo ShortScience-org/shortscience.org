@@ -46,13 +46,16 @@
 </div>
 <?php }?>
 <?php 
-for ($i = 0; $i < sizeof($results); $i++) {
-$paper = $results[$i];
-include("papersearchresult.php");
+if ($results){
+    for ($i = 0; $i < sizeof($results); $i++) {
+        $paper = $results[$i];
+        include("papersearchresult.php");
+        ?>
+        <br>	
+        <?
+    }
+}
 ?>
-<br>	
-<?
-}?>
 </div>
 </div>
 </div>

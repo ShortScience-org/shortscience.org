@@ -172,22 +172,23 @@ function mergeResults($multipleresults){
 	for ($r = 0; $r < sizeof($multipleresults); $r++) {
 		
 		$singleresults = $multipleresults[$r];
-		
-		for ($i = 0; $i < sizeof($singleresults); $i++) {
-		
-			if ($singleresults[$i]->bibtexKey != ""){
-			
-				$unique = true;
-				for ($j = 0; $j < sizeof($results); $j++) {
-					
-					
-					if ($results[$j]->bibtexKey == $singleresults[$i]->bibtexKey)
-						$unique = false;
-				}
-			
-				if ($unique)
-					$results[] = $singleresults[$i];
-			}
+		if ($singleresults){
+    		for ($i = 0; $i < sizeof($singleresults); $i++) {
+    		
+    			if ($singleresults[$i]->bibtexKey != ""){
+    			
+    				$unique = true;
+    				for ($j = 0; $j < sizeof($results); $j++) {
+    					
+    					
+    					if ($results[$j]->bibtexKey == $singleresults[$i]->bibtexKey)
+    						$unique = false;
+    				}
+    			
+    				if ($unique)
+    					$results[] = $singleresults[$i];
+    			}
+    		}
 		}
 	}
 	return $results;
@@ -284,55 +285,59 @@ function searchCrossRef($term){
 	$obj = json_decode($json);
 	
 	$toreturn = array();	
-	for ($i = 0; $i < sizeof($obj); $i++) {
-	
-		$paperBib = $obj[$i];
-		
-		//print_r($paperBib);
-
-		$paper = (object)[];		
-		$paper->bibtexKey = trim(str_replace("http://dx.doi.org/","",$paperBib->doi));
-		$paper->title = trim($paperBib->title);
-		$paper->year = trim($paperBib->year);
-		
-		$rawcoins = str_replace("&amp","",urldecode($paperBib->coins));
-		$coins = str_getcsv($rawcoins, $delimiter = ";");
-
-		$firstauth = true;
-		$paper->authors = "";
-		for ($v = 0; $v < sizeof($coins); $v++) {
-			
-			$coin = $coins[$v];
-			
-			if (strpos($coin, 'rft.au=') !== false) {
-				if (!$firstauth){
-					$paper->authors .= " and ";
-				}
-				$firstauth = false;
-				$paper->authors .= trim(explode("=", $coin)[1]);
-			}
-			
-			if (strpos($coin, 'rft.jtitle=') !== false) {
-				$paper->venue .= trim(explode("=", $coin)[1]);
-			}			
-		}
-		$paper->tags = array();
-	
-		for ($x = 0; $x < sizeof($paperBib->tag); $x++) {
-			$paper->tags[] = trim($paperBib->tag[$x]['name']);
-		}
-	
-		$paper->urls = array();
-		$paper->urls[] = trim($paperBib->doi);
-		
-		$paper->source = "CrossRef";
-		
-		//write paper during search to avoid issues with future crossref
-		//requests not containing the correct paper
-		writePaper2DB($paper);
-		
-		if ($paper->title != "" && $paper->authors != "")
-			$toreturn[] = $paper;
+	if ($obj){
+    	for ($i = 0; $i < sizeof($obj); $i++) {
+    	
+    		$paperBib = $obj[$i];
+    		
+    		//print_r($paperBib);
+    
+    		$paper = (object)[];		
+    		$paper->bibtexKey = trim(str_replace("http://dx.doi.org/","",$paperBib->doi));
+    		$paper->title = trim($paperBib->title);
+    		$paper->year = trim($paperBib->year);
+    		
+    		$rawcoins = str_replace("&amp","",urldecode($paperBib->coins));
+    		$coins = str_getcsv($rawcoins, $delimiter = ";");
+    
+    		$firstauth = true;
+    		$paper->authors = "";
+    		for ($v = 0; $v < sizeof($coins); $v++) {
+    			
+    			$coin = $coins[$v];
+    			
+    			if (strpos($coin, 'rft.au=') !== false) {
+    				if (!$firstauth){
+    					$paper->authors .= " and ";
+    				}
+    				$firstauth = false;
+    				$paper->authors .= trim(explode("=", $coin)[1]);
+    			}
+    			
+    			if (strpos($coin, 'rft.jtitle=') !== false) {
+    				$paper->venue .= trim(explode("=", $coin)[1]);
+    			}			
+    		}
+    		$paper->tags = array();
+    	
+    		if ($paperBib->tag){		   
+        		for ($x = 0; $x < sizeof($paperBib->tag); $x++) {
+        			$paper->tags[] = trim($paperBib->tag[$x]['name']);
+        		}
+    		}
+    	
+    		$paper->urls = array();
+    		$paper->urls[] = trim($paperBib->doi);
+    		
+    		$paper->source = "CrossRef";
+    		
+    		//write paper during search to avoid issues with future crossref
+    		//requests not containing the correct paper
+    		writePaper2DB($paper);
+    		
+    		if ($paper->title != "" && $paper->authors != "")
+    			$toreturn[] = $paper;
+    	}
 	}
 	return $toreturn;
 }
@@ -1246,11 +1251,13 @@ EOT;
 			
 			// I cannot figure out how to make the sql query do this!
 			$alreadyseen = false;
-			for ($y = 0; $y < sizeof($years[$vignette->paper->year]); $y++) {
-			
-				if ($years[$vignette->paper->year][$y]->paperid == $vignette->paperid)
-					$alreadyseen = true;
-					
+			if ($years[$vignette->paper->year]){
+    			for ($y = 0; $y < sizeof($years[$vignette->paper->year]); $y++) {
+    			
+    				if ($years[$vignette->paper->year][$y]->paperid == $vignette->paperid)
+    					$alreadyseen = true;
+    					
+    			}
 			}
 			
 			//print_r($vignette->paper->year);

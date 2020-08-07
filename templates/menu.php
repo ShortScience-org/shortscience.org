@@ -12,7 +12,7 @@
         <li style="float:right;"><a href="./login">Login</a></li>
         <?php }else{?>
           <li class="dropdown" style="float:right;">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=get_gravatar($currentuser->email,20,identicon,'g',true,[style=> "border-radius: 50%;padding:0px;margin:0px;" ])?> <?=$currentuser->username?> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=get_gravatar($currentuser->email,20,"identicon",'g',true,["style"=> "border-radius: 50%;padding:0px;margin:0px;" ])?> <?=$currentuser->username?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="./user">My Profile</a></li>
             <li><a href="./search?term=">Add Summary</a></li>

@@ -19,7 +19,7 @@ $user = $users[$i];
 	<h3 style='margin:0px;padding-left:10px;' >
 	
 	<a href="user?name=<?=$user->username?>">
-	<?=get_gravatar($user->email,50,identicon,"g",true,[style=> "border-radius: 50%;height:50px;" ])?></a>
+	<?=get_gravatar($user->email,50,"identicon","g",true,["style"=> "border-radius: 50%;height:50px;" ])?></a>
 	
 	<br>
 	
