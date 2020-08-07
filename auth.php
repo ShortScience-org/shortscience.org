@@ -395,6 +395,7 @@ We hope you enjoy the site. Feel free to contact us!
 EOD;
 //$email = "ieee8023@localhost";
 	mail($email, "$SITENAME user registration confirmation", $body, "From: $SITENAME <noreply@shortscience.org>", "-f noreply@shortscience.org");
+	logwarn("sendsignupemail",$email." ".$_SERVER["REMOTE_ADDR"]." ".$username);
 	
 }
 
@@ -506,7 +507,7 @@ We hope you enjoy the site. Feel free to contact us!
 EOD;
 	//$email = "ieee8023@localhost";
 	mail($email, "$SITENAME password reset", $body, "From: $SITENAME <noreply@shortscience.org>","-f noreply@shortscience.org");
-
+	logwarn("sendrecoveremail",$email." ".$_SERVER["REMOTE_ADDR"]." ".$username);
 }
 
 function validaterecoveremail($email, $psecret){

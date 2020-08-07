@@ -1481,6 +1481,7 @@ EOD;
 
 	//ini_set('sendmail_from', $SITEEMAIL);
 	mail($email, "New comment on your $SITENAME summary!", $body, "From: $SITENAME <noreply@shortscience.org>","-f noreply@shortscience.org");
+	logwarn("sendcommentemail",$email." ".$_SERVER["REMOTE_ADDR"]." ".$user->username);
 }
 
 function sendcommentresponseemail($email, $commentuser, $responseuser, $summaryuser, $paper, $commenttext){
@@ -1505,6 +1506,7 @@ EOD;
 
 	//ini_set('sendmail_from', $SITEEMAIL);
 	mail($email, "New response to your comment on $SITENAME!", $body, "From: $SITENAME <noreply@shortscience.org>", "-f noreply@shortscience.org");
+	logwarn("sendcommentresponseemail",$email." ".$_SERVER["REMOTE_ADDR"]." ".$user->username);
 }
 
 function delComment($comment) {

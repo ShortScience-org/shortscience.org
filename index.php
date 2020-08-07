@@ -8,6 +8,7 @@ require 'db.php';
 require 'auth.php';
 require 'functions.php';
 require 'qa.php';
+require 'logging.php';
 
 $configuration = [
     'settings' => [

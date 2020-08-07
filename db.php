@@ -20,7 +20,9 @@ function getConnection() {
 			$dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 		} catch (PDOException $e) {
 			// TODO: use something better than die
-			die($e->getMessage());
+		    logerror("dbConnection",$e->getMessage());
+		    die("<!DOCTYPE HTML><html><head><meta http-equiv=refresh content=\"5\"></head><body><table border=0 width=100% height=100%><tr><td><h3 align=center>The server load is very high at the moment. Retrying, please wait...</h3></td></tr></table></body></html>");
+			//die($e->getMessage());
 		}
 		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
