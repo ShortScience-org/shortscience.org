@@ -11,18 +11,48 @@ require 'functions.php';
 
 ?>
 <pre>
-<?php 
+<?php
+
+if( ini_get('allow_url_fopen') ) {
+    print('allow_url_fopen is enabled. file_get_contents should work well');
+} else {
+    print('allow_url_fopen is disabled. file_get_contents would not work');
+}
+
+
+
 print("<br><br>Local");
-print_r(searchLocal("".$_GET["q"]));
+$res = searchLocal("".$_GET["q"]);
+if (count($res)>0){
+    print_r($res);
+}else{
+    print_r(error_get_last());
+}
+
 
 print("<br><br>Bibsonomy");
-print_r(searchBibsonomy("".$_GET["q"]));
+$res = searchBibsonomy("".$_GET["q"]);
+if (count($res)>0){
+    print_r($res);
+}else{
+    print_r(error_get_last());
+}
 
 print("<br><br>CrossRef");
-print_r(searchCrossRef("cohen".$_GET["q"]));
+$res = searchCrossRef("".$_GET["q"]);
+if (count($res)>0){
+    print_r($res);
+}else{
+    print_r(error_get_last());
+}
 
 print("<br><br>Arxiv");
-print_r(searchArXiv("cohen".$_GET["q"]));
+$res = searchArXiv("".$_GET["q"]);
+if (count($res)>0){
+    print_r($res);
+}else{
+    print_r(error_get_last());
+}
 
 
 ?>
