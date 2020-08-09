@@ -14,7 +14,7 @@
 <img src="res/cabin.png" style="width:60px;padding:5px;"/>
 </td>
 <td>
-<span style="vertical-align: middle;">
+<span style="vertical-align: middle;color:white;">
 
 Welcome to ShortScience.org! <br>
 
