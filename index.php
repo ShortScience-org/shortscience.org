@@ -35,6 +35,20 @@ $app = new \Slim\App($c);
 $app->get('/', function (Request $request, Response $response) {
 	
 	$currentuser = getcurrentuser();
+	
+	if ($currentuser->userid == -1 && empty($_GET)){
+	    $cache_file = "./cache-index.html";
+	    //print("cache");
+	    if (file_exists($cache_file)) {
+	        $cached = file_get_contents($cache_file);
+	        if (strlen($cached) > 500){
+	            print($cached);
+    	        print("<small>Cache was last modified: " . date ("F d Y H:i:s.", filemtime($cache_file)) ."</small>");
+    	        die();
+	        }
+	    }
+	}
+	
 	$tab = $request->getParam('tab');
 	$sections = $request->getParam('s');
 	
