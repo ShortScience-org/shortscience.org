@@ -49,7 +49,7 @@
 			  !endsWith($urlhost,".edu")){?>
 	
 	<?php // Other IP: http://80.82.77.83/?>
-	<a target="_blank" href="http://sci-hub.tw/<?=$url?>"><span  class="glyphicon glyphicon-circle-arrow-down"></span> sci-hub</a><br>
+	<a target="_blank" href="http://sci-hub.st/<?=$url?>"><span  class="glyphicon glyphicon-circle-arrow-down"></span> sci-hub</a><br>
 	<?php }?>
 	
 <?php }?>
