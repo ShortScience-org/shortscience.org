@@ -1,4 +1,4 @@
-<?//print_r($paper);?>
+<?php //print_r($paper);?>
 <div>
 <a href="paper?bibtexKey=<?=$paper->bibtexKey?>"><?=htmlspecialchars($paper->title)?></a>
 
@@ -11,7 +11,8 @@
 
 <br>
 <small>
-<?$authors = $paper->authors;
+<?php 
+$authors = $paper->authors;
 $authors = explode(" and ",$authors);
 //print_r($authors);
 for ($x = 0; $x < sizeof($authors); $x++) { 
@@ -31,10 +32,10 @@ break;
 <br>
 
 <?php if ($paper->metavenue != null){?>
-	<?$venue = $paper->metavenue->name." - ".$paper->year;?>
+	<?php $venue = $paper->metavenue->name." - ".$paper->year;?>
 	<a style="color:black;" href='venue?key=<?=$paper->metavenue->id?>&year=<?=$paper->year?>'><?=htmlspecialchars($venue)?></a> via <?=$paper->source?>
 <?php }else{?>
-	<?$venue = $paper->venue." - ".$paper->year;?>
+	<?php $venue = $paper->venue." - ".$paper->year;?>
 	<a style="color:black;" rel="nofollow" href='search?term="<?=htmlspecialchars($venue)?>"'><?=htmlspecialchars($venue)?></a> via <?=$paper->source?>
 <?php }?>
 

@@ -17,7 +17,7 @@ function getConnection() {
 		$dbpass=$DBCONFIG->pass;
 		$dbname=$DBCONFIG->name;
 		try {
-			$dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+			$dbh = new PDO("mysql:host=$dbhost;dbname=$dbname;charset=latin1", $dbuser, $dbpass);
 		} catch (PDOException $e) {
 			// TODO: use something better than die
 		    logerror("dbConnection",$e->getMessage());

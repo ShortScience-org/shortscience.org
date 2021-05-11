@@ -59,13 +59,13 @@ $app->get('/', function (Request $request, Response $response) {
 	$page = max($page,1);
 	//print $page;
 	if ($tab == "recent"){
-		$vignettes = getRecentVignettes($user->userid, 10, $page, $sections);
+	    $vignettes = getRecentVignettes($currentuser->userid, 10, $page, $sections);
 	}else if($tab == "best"){
-		$vignettes = getBestVignettes($user->userid, 10, $page, $sections);
+	    $vignettes = getBestVignettes($currentuser->userid, 10, $page, $sections);
 	}else if($tab == "popularweek"){
-		$vignettes = getPopularVignettes($user->userid, 10, $page, $sections, $howmanydays=7);
+	    $vignettes = getPopularVignettes($currentuser->userid, 10, $page, $sections, $howmanydays=7);
 	}else{
-		$vignettes = getPopularVignettes($user->userid, 10, $page, $sections, $howmanydays=1);
+	    $vignettes = getPopularVignettes($currentuser->userid, 10, $page, $sections, $howmanydays=1);
 	}
 		
 	include("templates/home.php");
@@ -131,7 +131,7 @@ $app->get('/paper', function (Request $request, Response $response) {
 
 	$currentuser = getcurrentuser();
 	
-	if ($paper->bibtexKey != "" && $bibtexKey != "" && $bibtexKey != $paper->bibtexKey){
+	if (($paper->bibtexKey != "") && ($bibtexKey != "" && $bibtexKey) != ($paper->bibtexKey)){
 		
 		$vignettes = getVignettes($bibtexKey);
 		
@@ -396,15 +396,12 @@ $app->get('/venue', function (Request $request, Response $response) {
 
 $app->get('/users', function (Request $request, Response $response) {
 
-	if ($key == ""){
+	$users = getUsers();
 
-		$users = getUsers();
+	$title = "All users";
+	$description = "Browse users with summaries";
+	include("templates/allusers.php");
 
-		$title = "All users";
-		$description = "Browse users with summaries";
-		include("templates/allusers.php");
-
-	}
 	die();
 });
 

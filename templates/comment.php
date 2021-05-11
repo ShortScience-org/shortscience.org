@@ -35,7 +35,7 @@
 	</td>
 	</tr>
 	</table>
-<? if (!$comment->preview){?>
+<?php if (!$comment->preview){?>
 <hr style="margin:5px;">
 <?php }else if (getcurrentuser()->userid == -1){?>
 <div class="alert alert-danger" role="alert" style="margin:10px;">

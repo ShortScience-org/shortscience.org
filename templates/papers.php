@@ -1,7 +1,7 @@
 <?php require("header.php");?>
 <?php require("menu.php");?>
 <?php global $MATHJAX_URL?>
-<?//print_r($results);die();?>
+<?php //print_r($results);die();?>
 <div class="container">
 
 <div class="col-md-1"></div>
@@ -52,8 +52,7 @@ if ($results){
         include("papersearchresult.php");
         ?>
         <br>	
-        <?
-    }
+        <?php     }
 }
 ?>
 </div>

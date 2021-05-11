@@ -1,5 +1,6 @@
 <?php require("header.php");?>
 <?php require("menu.php");?>
+<?php global $SCRIPT_VERSION ?>
 <?php global $MATHJAX_URL?>
 
 <br>

@@ -6,7 +6,7 @@
 //print_r($paperBib);
 ?>
 
-<?if (sizeof($vignettes) != 0){?>
+<?php if (sizeof($vignettes) != 0){?>
 
 <?php 
 $pattern = '/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/';
@@ -68,12 +68,12 @@ if (count($matches) > 0){
 
 
 
-<?if (sizeof($vignettes) == 0){?>
+<?php if (sizeof($vignettes) == 0){?>
 <center>
 <img style="width:200px;max-width:100%;" src="res/searching.png"/><br><Br>
 Other scientists are still reading the paper! Why not add a summary yourself?
 </center>
-<?}?>
+<?php } ?>
 
 <?php 
 for ($v = 0; $v < sizeof($vignettes); $v++){

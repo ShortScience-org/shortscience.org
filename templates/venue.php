@@ -1,4 +1,4 @@
-<?//print_r($years);?>
+<?php //print_r($years);?>
 <?php require("header.php");?>
 <?php require("menu.php");?>
 <?php global $SCRIPT_VERSION ?>

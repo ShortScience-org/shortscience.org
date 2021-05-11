@@ -64,7 +64,7 @@ Receive Comments: <input name="email_receive_comments" id="email_receive_comment
 Account Created:
 </td>
 <td>
-<?=$user->added?>
+<?=isset($user->added)?$user->added:"unknown"?>
 </td>
 </tr>
 

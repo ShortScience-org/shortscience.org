@@ -109,11 +109,12 @@ function performSearch($term){
 	// set the venue
 	for ($i = 0; $i < sizeof($results); $i++) {
 		
-		if ($results[$i]->venuekey)
+	    if (isset($results[$i]->venuekey)){
 			// if we hard coded the venue
 			$results[$i]->metavenue = getVenueForBibtexKey($results[$i]->venuekey);
-		else
+	    }else{
 			$results[$i]->metavenue = getVenueForBibtexKey($results[$i]->bibtexKey);
+	    }
 	}
 	
 	// sort based on numOfVignettes
@@ -231,8 +232,9 @@ function searchLocal($term, $searchjustkey = false){
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("term", $term);
-		if ($searchterm)
+		if (isset($searchterm)){
 			$stmt->bindParam("searchterm", $searchterm);
+		}
 		$stmt->execute();
 		$papers = $stmt->fetchAll(PDO::FETCH_OBJ);
 		$db = null;
@@ -601,7 +603,7 @@ function getPaper($bibtexKey) {
  		
 		
 		// set the venue		
-		if ($paper->metavenue == ""){
+		if (!isset($paper->metavenue) || ($paper->metavenue == "")){
 			if ($paper->venuekey){
 				$paper->metavenue = getVenueForBibtexKey($paper->venuekey);
 			}else{
@@ -709,7 +711,7 @@ EOT;
 	return $result[0]->count;
 }
 
-function getVignettes($paperid, $code="aaa") {
+function getVignettes($paperid, $code="MA=") {
 	
 	$code = base64_decode($code);
 
@@ -723,7 +725,7 @@ WHERE (vignettes.paperid=:id OR vignettes.paperid IN
 	(SELECT bibtexKey FROM papers WHERE 
 		RTRIM(REPLACE(title,".","")) IN 
 			(SELECT RTRIM(REPLACE(title,".","")) FROM papers WHERE bibtexKey=:id)))
-AND (priv = 0 OR vignettes.userid = :userid OR vignettes.added=:code)
+AND (priv = 0 OR vignettes.userid = :userid OR vignettes.added=DATE(:code))
 ORDER BY vote DESC
 EOT;
 
@@ -1251,7 +1253,7 @@ EOT;
 			
 			// I cannot figure out how to make the sql query do this!
 			$alreadyseen = false;
-			if ($years[$vignette->paper->year]){
+			if (array_key_exists($vignette->paper->year,$years) && $years[$vignette->paper->year]){
     			for ($y = 0; $y < sizeof($years[$vignette->paper->year]); $y++) {
     			
     				if ($years[$vignette->paper->year][$y]->paperid == $vignette->paperid)

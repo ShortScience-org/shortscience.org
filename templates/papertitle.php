@@ -66,7 +66,7 @@
 <br>
 <small>
 <span class="paperauthors">
-<?$authors = $paper->authors;
+<?php $authors = $paper->authors;
 $authors = explode(" and ",$authors);
 //print_r($authors);
 for ($x = 0; $x < sizeof($authors); $x++) {
@@ -93,10 +93,10 @@ break;
 
 <br>
 <?php if ($paper->metavenue != null){?>
-	<?$venue = $paper->metavenue->name." - ".$paper->year;?>
+	<?php $venue = $paper->metavenue->name." - ".$paper->year;?>
 	<a style="color:black;" href='venue?key=<?=$paper->metavenue->id?>&year=<?=$paper->year?>'><?=$venue?></a> <small>via <?=$paper->source?></small>
 <?php }else{?>
-	<?$venue = $paper->venue." - ".$paper->year;?>
+	<?php $venue = $paper->venue." - ".$paper->year;?>
 	<a style="color:black;" rel="nofollow" href='search?term="<?=$venue?>"'><?=$venue?></a> <small>via <?=$paper->source?></small>
 <?php }?>
 <br>

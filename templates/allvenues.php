@@ -1,4 +1,4 @@
-<?//print_r($venues);?>
+<?php //print_r($venues);?>
 <?php require("header.php");?>
 <?php require("menu.php");?>
 <?php global $SCRIPT_VERSION ?>

@@ -1,6 +1,6 @@
 <?php require("header.php");?>
 <?php require("menu.php");?>
-<?//print_r($results);die();?>
+<?php //print_r($results);die();?>
 <div class="container">
 <div class="col-md-1"></div>
 <div class="col-md-10">

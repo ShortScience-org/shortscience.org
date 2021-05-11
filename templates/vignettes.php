@@ -22,7 +22,7 @@ include("templates/papertitle.php");
 
 include("templates/vignette.php");
 ?>
-<?//print_r($paperBib);?>
+<?php //print_r($paperBib);?>
 
 <?php }?>
 

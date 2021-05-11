@@ -543,19 +543,21 @@ function validaterecoveremail($email, $psecret){
 
 function userfromcookie(){
 	
-	$username = $_COOKIE["u"];
-	$hash = $_COOKIE["p"];
-	
-	if ($username != "" && $hash != ""){
-		$user = fetchUser($username, $hash);
-
-		if (!isset($user) || ($user->hash != $hash) || ($user->username != $username)){
-			logoutcookie();
-			return;
-		}
-		
-		return $user;
-	}
+    if (array_key_exists("u",$_COOKIE) && array_key_exists("p",$_COOKIE)){
+    	$username = $_COOKIE["u"];
+    	$hash = $_COOKIE["p"];
+    	
+    	if ($username != "" && $hash != ""){
+    		$user = fetchUser($username, $hash);
+    
+    		if (!isset($user) || ($user->hash != $hash) || ($user->username != $username)){
+    			logoutcookie();
+    			return;
+    		}
+    		
+    		return $user;
+    	}
+    }
 	
 	logoutcookie();
 	return;

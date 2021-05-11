@@ -1,4 +1,4 @@
-<?//print_r($userss);?>
+<?php //print_r($userss);?>
 <?php require("header.php");?>
 <?php require("menu.php");?>
 <?php global $SCRIPT_VERSION ?>

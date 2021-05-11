@@ -133,11 +133,11 @@ These plots shows the visits per day of all papers you have written summaries fo
 </div>
 </center>
 <center>
-<iframe id="iframe-<?=$more_hash?>" style="padding-top: 10px; width:100%; height:280px; max-width:100%" scrolling="no" src="/visits?userid=<?=$user->userid?>&report=7d"  frameborder="0" >Loading...</iframe>
+<iframe id="iframe" style="padding-top: 10px; width:100%; height:280px; max-width:100%" scrolling="no" src="/visits?userid=<?=$user->userid?>&report=7d"  frameborder="0" >Loading...</iframe>
 </center>
 
 <center>
-<iframe id="iframe-<?=$more_hash?>" style="padding-top: 10px; width:100%; height:280px; max-width:100%" scrolling="no" src="/visits?userid=<?=$user->userid?>&report=1m"  frameborder="0" >Loading...</iframe>
+<iframe id="iframe" style="padding-top: 10px; width:100%; height:280px; max-width:100%" scrolling="no" src="/visits?userid=<?=$user->userid?>&report=1m"  frameborder="0" >Loading...</iframe>
 </center>
 </div>
 <?php }?>
