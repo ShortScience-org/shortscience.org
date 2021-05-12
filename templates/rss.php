@@ -1,12 +1,15 @@
-<?php print('<?xml version="1.0" encoding="UTF-8"?>');?>
+<?php 
+global $DEFAULTBASEURL;
+print('<?xml version="1.0" encoding="UTF-8"?>');
+?>
 
 <rss 
 version="2.0"
-xmlns:shortscience="http://www.shortscience.org/">
+xmlns:shortscience="<?=$DEFAULTBASEURL?>">
 <channel>
  <title>ShortScience.org Latest Summaries</title>
  <description>ShortScience.org Latest Summaries</description>
- <link>http://www.shortscience.org/</link>
+ <link><?=$DEFAULTBASEURL?></link>
  <ttl>60</ttl>
  <lastBuildDate><?=date('r', strtotime(date("Y-m-d H:i:s")))?></lastBuildDate>
 <?php for ($i = 0; $i < sizeof($vignettes); $i++) { 
@@ -39,8 +42,8 @@ if ($arxivid){?>
 	<?php }else{?>
 	<description><?=(strlen(htmlspecialchars($text,ENT_QUOTES|ENT_DISALLOWED|ENT_XML1)) > 500) ? htmlspecialchars(substr($text,0,500),ENT_QUOTES|ENT_DISALLOWED|ENT_XML1).'...' : htmlspecialchars($text,ENT_QUOTES|ENT_DISALLOWED|ENT_XML1)?></description>
 	<?php }?>
-	<link>http://www.shortscience.org/paper?bibtexKey=<?=$vignette->paperid?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></link>
-	<guid>http://www.shortscience.org/paper?bibtexKey=<?=$vignette->paperid?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></guid>
+	<link><?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$vignette->paperid?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></link>
+	<guid><?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$vignette->paperid?>#<?=(($vignette->anon == 0)?$vignette->username:"anon")?></guid>
 	<pubDate><?=date('r', strtotime($vignette->edited))?></pubDate>
 </item>
 <?php }?>

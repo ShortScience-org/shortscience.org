@@ -617,7 +617,7 @@ $app->get('/sitemap.xml', function (Request $request, Response $response) {
 $app->get('/rss-generate', function (Request $request, Response $response) {
 	
 	ob_start();
-	$vignettes = getRecentVignettes(0, 100, 1, "");
+	$vignettes = getRecentVignettes(100, 1, "");
 	header('Content-Type: text/xml');
 	include("templates/rss.php");
 	$contents = ob_get_flush();
@@ -626,7 +626,7 @@ $app->get('/rss-generate', function (Request $request, Response $response) {
 	file_put_contents("rss.xml",$xml->asXML());
 	
 	ob_start();
-	$vignettes = getRecentVignettes(0, 1000000, 1, "");
+	$vignettes = getRecentVignettes(1000000, 1, "");
 	header('Content-Type: text/xml');
 	include("templates/rss.php");
 	$contents = ob_get_flush();
@@ -635,7 +635,7 @@ $app->get('/rss-generate', function (Request $request, Response $response) {
 	file_put_contents("rss-all.xml",$xml->asXML());
 	
 	ob_start();
-	$vignettes = getRecentVignettes(0, 1000000, 1, "");
+	$vignettes = getRecentVignettes(1000000, 1, "");
 	$full = True;
 	header('Content-Type: text/xml');
 	include("templates/rss.php");

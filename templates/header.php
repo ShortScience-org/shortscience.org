@@ -1,3 +1,4 @@
+<?php global $DEFAULTBASEURL; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
 <meta property="og:description" content="<?=$description?>">
 <meta name="description" content="<?=$description?>">
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor">
-<meta property="og:image" content="http://www.shortscience.org/res/albert2.jpg" />
+<meta property="og:image" content="<?=$DEFAULTBASEURL?>/res/albert2.jpg" />
 
 <?php } else if (isset($paper)) { ?>
 
@@ -23,7 +24,7 @@ preg_match($pattern, $vignette->text, $matches);
 if (count($matches) > 0){
 	$imgurl = $matches[0];
 }else{
-	$imgurl = "http://www.shortscience.org/res/albert-s.jpg";
+	$imgurl = "<?=$DEFAULTBASEURL?>/res/albert-s.jpg";
 }
 ?>
 
@@ -46,7 +47,7 @@ $text_clean = htmlspecialchars($text_clean);
 <meta name="description" content="<?=$text_clean?>">
 <meta property="og:keywords" content='summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor, <?=implode(", ", $paper->tags)?>'>
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor,  <?=implode(", ", $paper->tags)?>">
-<meta property="og:url" content="http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?>" />
+<meta property="og:url" content="<?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$paper->bibtexKey?>" />
 <meta property="og:image" content="<?=$imgurl?>" />
 
 
@@ -72,7 +73,7 @@ $text_clean = htmlspecialchars($text_clean);
 		<img src="<?=$imgurl?>"/>
 		<meta itemprop="url" content="<?=$imgurl?>">
 	</div>
-    <a itemprop="mainEntityOfPage" href="http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?>">
+    <a itemprop="mainEntityOfPage" href="<?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$paper->bibtexKey?>">
   </a>
   </div>
   
@@ -88,7 +89,7 @@ $text_clean = htmlspecialchars($text_clean);
   <span itemprop="datePublished"><?=$vignette->added?></span>
   <span itemprop="dateModified"><?=$vignette->edited?></span>
   <span itemprop="description">A summary of the paper titled "<?=$paper->title?>"</span>
-  <span itemprop="url">http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?></span>
+  <span itemprop="url"><?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$paper->bibtexKey?></span>
 </div>
 
 </div>
@@ -100,7 +101,7 @@ $text_clean = htmlspecialchars($text_clean);
 if ($venue->imgurl != ""){
 	$imgurl = $venue->imgurl;
 }else{
-	$imgurl = "http://www.shortscience.org/res/albert-s.jpg";
+	$imgurl = "<?=$DEFAULTBASEURL?>/res/albert-s.jpg";
 }
 ?>
 
@@ -108,7 +109,7 @@ if ($venue->imgurl != ""){
 <meta property="og:title" content="Summaries from <?=$venue->name?> on ShortScience.org">
 <meta property="og:description" content="Summaries of the research papers published in <?=$venue->name?>">
 <meta name="description" content="Summaries of the research papers published in <?=$venue->name?>">
-<meta property="og:url" content="http://www.shortscience.org/venue?key=<?=$venue->id?>" />
+<meta property="og:url" content="<?=$DEFAULTBASEURL?>/venue?key=<?=$venue->id?>" />
 <meta property="og:image" content="<?=$imgurl?>" />
 
 <?php } else { ?>
@@ -118,11 +119,11 @@ if ($venue->imgurl != ""){
 <meta property="og:description" content='ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.'>
 <meta name="description" content="ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.">
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor">
-<meta property="og:image" content="http://www.shortscience.org/res/albert2.jpg" />
+<meta property="og:image" content="<?=$DEFAULTBASEURL?>/res/albert2.jpg" />
 
 <?php } ?>
 
-<meta property="og:site_name" content="www.shortscience.org" />
+<meta property="og:site_name" content="shortscience.org" />
 <meta property="og:locale" content="en_US" />  
 
 

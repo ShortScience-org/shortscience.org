@@ -1,12 +1,13 @@
 <?php 
+global $DEFAULTBASEURL;
 //$preview
 //passed
 //$showcomments
 //$vignettefocus
 
 
-$baseshareurl = "https://www.shortscience.org/paper?bibtexKey=".$vignette->paperid;
-$shareurl = "https://www.shortscience.org/paper?bibtexKey=".$vignette->paperid."&a=".(($vignette->anon == 0)?$vignette->username:"anon");
+$baseshareurl = $DEFAULTBASEURL."/paper?bibtexKey=".$vignette->paperid;
+$shareurl = $DEFAULTBASEURL."/paper?bibtexKey=".$vignette->paperid."&a=".(($vignette->anon == 0)?$vignette->username:"anon");
 $sharetext = "Summary of ".$paper->title;
 $shareanchor = base64_encode($vignette->paperid).(($vignette->anon == 0)?$vignette->username:"anon");
 $shareanchor = str_replace("=","",$shareanchor);

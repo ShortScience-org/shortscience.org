@@ -1,4 +1,7 @@
-<?php print('<?xml version="1.0" encoding="UTF-8"?>');?>
+<?php 
+global $DEFAULTBASEURL;
+print('<?xml version="1.0" encoding="UTF-8"?>');
+?>
 
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -7,18 +10,18 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://www.shortscience.org/</loc>
+  <loc><?=$DEFAULTBASEURL?></loc>
 </url>
 <url>
-  <loc>http://www.shortscience.org/about</loc>
+  <loc><?=$DEFAULTBASEURL?>/about</loc>
 </url>
 <url>
-  <loc>http://www.shortscience.org/venue</loc>
+  <loc><?=$DEFAULTBASEURL?>/venue</loc>
 </url>
 
 <?php for ($i = 0; $i < sizeof($vignettes); $i++) { ?>
 <url>
-  <loc>http://www.shortscience.org/paper?bibtexKey=<?=urlencode($vignettes[$i]->paperid)?></loc>
+  <loc><?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$vignettes[$i]->paperid?></loc>
 </url>
 <?php }?>
 
@@ -27,7 +30,7 @@
 for ($i = 0; $i < sizeof($venues); $i++) {
 	if ($venues[$i]->name != ""){?>
 <url>
-  <loc>http://www.shortscience.org/venue?key=<?=urlencode($venues[$i]->id)?></loc>
+  <loc><?=$DEFAULTBASEURL?>/venue?key=<?=$venues[$i]->id?></loc>
 </url>
 <?php }}?>
 </urlset>
