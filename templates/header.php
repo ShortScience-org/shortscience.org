@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<?php if ($title != ""){ ?>
+<?php if (isset($title) && $title != ""){ ?>
 
 <title><?=$title?> - ShortScience.org</title>
 <meta property="og:title" content="<?=$title?> - ShortScience.org">
@@ -128,7 +128,7 @@ if ($venue->imgurl != ""){
 
 
 <?php 
-if ($extraheader != ""){ print($extraheader); }
+if (isset($extraheader) && $extraheader != ""){ print($extraheader); }
 ?>
 
 

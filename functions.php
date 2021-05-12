@@ -812,7 +812,7 @@ EOT;
 }
 
 function getUsersLikedVignettes($userid){
-	
+    prof_flag("getUsersLikedVignettes");
 	
 	$sql  = <<<EOT
 SELECT * FROM (SELECT * from vignettes WHERE (vignettes.userid, vignettes.paperid) IN (SELECT userid,paperid FROM votes WHERE vote = 1 AND voteruserid = :userid AND userid != :userid)) as vignettes
@@ -842,6 +842,7 @@ EOT;
 }
 
 function getUsersDislikedVignettes($userid){
+    prof_flag("getUsersDislikedVignettes");
 	
 	$sql  = <<<EOT
 SELECT * FROM (SELECT * from vignettes WHERE (vignettes.userid, vignettes.paperid) IN (SELECT userid,paperid FROM votes WHERE vote = -1 AND voteruserid = :userid)) as vignettes
@@ -871,7 +872,8 @@ EOT;
 }
 
 
-function getRecentVignettes($userid, $limit, $page, $sections){
+function getRecentVignettes($limit, $page, $sections){
+    prof_flag("getRecentVignettes");
 	$offset = $limit*($page-1);
 
 	$sql  = <<<EOT
@@ -916,14 +918,14 @@ EOT;
 	}
 }
 
-function getPopularVignettes($userid, $limit, $page, $sections, $howmanydays=1){
-
+function getPopularVignettes($limit, $page, $sections, $howmanydays=1){
+    prof_flag("getPopularVignettes");
 	$offset = $limit*($page-1);
 	
 	$startdate = date('Y-m-d H:i:s',time()-($howmanydays*86400));
 	
 	$sql  = <<<EOT
-SELECT
+SELECT 
 text, paperid, vignettes.userid, priv, anon, vignettes.added, vignettes.edited, vote,
 username,email,displayname, orcid
 FROM vignettes
@@ -968,8 +970,8 @@ EOT;
 	}
 }
 
-function getBestVignettes($userid, $limit, $page, $sections){
-
+function getBestVignettes($limit, $page, $sections){
+    prof_flag("getBestVignettes");
 	$offset = $limit*($page-1);
 	
 	$sql  = <<<EOT
@@ -1016,7 +1018,7 @@ EOT;
 
 
 function getVignettePapers(){
-
+    prof_flag("getVignettePapers");
 
 	$sql  = <<<EOT
 SELECT DISTINCT paperid FROM vignettes

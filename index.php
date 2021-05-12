@@ -9,6 +9,10 @@ require 'auth.php';
 require 'functions.php';
 require 'qa.php';
 require 'logging.php';
+require 'profile.php';
+require 'filecache.php';
+
+prof_flag("Start");
 
 $configuration = [
     'settings' => [
@@ -16,6 +20,8 @@ $configuration = [
     ],
 ];
 
+prof_flag("Init Cache");
+$cache = new FileCache();
 
 $configuration['notFoundHandler'] = function ($c) {
 	return function ($request, $response) use ($c) {
@@ -34,6 +40,9 @@ $app = new \Slim\App($c);
 
 $app->get('/', function (Request $request, Response $response) {
 	
+    global $cache;
+    prof_flag("Enter /");
+    
 	$currentuser = getcurrentuser();
 	
 	if ($currentuser->userid == -1 && empty($_GET)){
@@ -59,16 +68,31 @@ $app->get('/', function (Request $request, Response $response) {
 	$page = max($page,1);
 	//print $page;
 	if ($tab == "recent"){
-	    $vignettes = getRecentVignettes($currentuser->userid, 10, $page, $sections);
+	    $key = "getRecentVignettes 5, $page, $sections";
+	    if (!$vignettes = $cache->fetch($key)) {
+	       $vignettes = getRecentVignettes(5, $page, $sections);
+	       $cache->store($key,$vignettes,60);
+	    }
 	}else if($tab == "best"){
-	    $vignettes = getBestVignettes($currentuser->userid, 10, $page, $sections);
-	}else if($tab == "popularweek"){
-	    $vignettes = getPopularVignettes($currentuser->userid, 10, $page, $sections, $howmanydays=7);
+	    $key = "getBestVignettes 5, $page, $sections";
+	    if (!$vignettes = $cache->fetch($key)) {
+	       $vignettes = getBestVignettes(5, $page, $sections);
+	       $cache->store($key,$vignettes,1440);
+	    }
 	}else{
-	    $vignettes = getPopularVignettes($currentuser->userid, 10, $page, $sections, $howmanydays=1);
+	    $key = "getPopularVignettes 5, $page, $sections, 1";
+	    if (!$vignettes = $cache->fetch($key)) {
+	       $vignettes = getPopularVignettes(5, $page, $sections, 1);
+	       $cache->store($key,$vignettes,1440);
+	    }
 	}
 		
+	prof_flag("Render page");
+	
 	include("templates/home.php");
+	
+	prof_flag("Done");
+	prof_print();
 	die();
 });
 
