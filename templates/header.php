@@ -27,14 +27,71 @@ if (count($matches) > 0){
 }
 ?>
 
+
+<?php 
+// clean desc for seo
+
+$text_clean = preg_replace('/\b((https?|ftp|file):\/\/|www\.)[-A-Z0-9+&@#\/%?=~_|$!:,.;]*[A-Z0-9+&@#\/%=~_|$]/i', ' ', $vignette->text);
+
+$text_clean = substr($text_clean, 0,100)."...";
+
+$text_clean = htmlspecialchars($text_clean);
+
+?>
+
+
 <title><?=$paper->title?> on ShortScience.org</title>
 <meta property="og:title" content="<?=$paper->title?> - ShortScience.org">
-<meta property="og:description" content="<?=htmlspecialchars($vignette->text)?>">
-<meta name="description" content="<?=htmlspecialchars($vignette->text)?>">
+<meta property="og:description" content="<?=$text_clean?>">
+<meta name="description" content="<?=$text_clean?>">
 <meta property="og:keywords" content='summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor, <?=implode(", ", $paper->tags)?>'>
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor,  <?=implode(", ", $paper->tags)?>">
 <meta property="og:url" content="http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?>" />
 <meta property="og:image" content="<?=$imgurl?>" />
+
+
+<div style="display:none;">
+
+<div itemscope itemtype="http://schema.org/Article">
+  <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Book">
+    <span itemprop="name"><?=$paper->title?></span>
+    <span itemprop="headline"><?=$paper->title?></span>
+    <span itemprop="author"><?=$paper->authors?></span>
+    <?php //<span itemprop="isbn"><?=$paper->bibtexKey?></span> ?>
+    <span itemprop="datePublished"><?=$paper->year?></span>
+    
+	<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+	    <?php if ($paper->metavenue != null){?>
+    	<meta itemprop="name" content="<?=$paper->metavenue->name?>">
+    	<?php }else{?>
+    	<meta itemprop="name" content="<?=$paper->venue?>">
+    	<?php }?>
+	</div>
+    
+    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+		<img src="<?=$imgurl?>"/>
+		<meta itemprop="url" content="<?=$imgurl?>">
+	</div>
+    <a itemprop="mainEntityOfPage" href="http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?>">
+  </a>
+  </div>
+  
+  
+  <span itemprop="name">Paper summary</span>
+  <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<span itemprop="name"><?=($vignette->anon == 1)?"anonymous":$vignette->username?></span>
+  </span>
+  <span itemprop="reviewBody"><?=htmlspecialchars($text_clean)?></span>
+  <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ShortScience.org">
+  </div>
+  <span itemprop="datePublished"><?=$vignette->added?></span>
+  <span itemprop="dateModified"><?=$vignette->edited?></span>
+  <span itemprop="description">A summary of the paper titled "<?=$paper->title?>"</span>
+  <span itemprop="url">http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?></span>
+</div>
+
+</div>
 
 
 <?php } else if (isset($venue)) { ?>
@@ -47,7 +104,7 @@ if ($venue->imgurl != ""){
 }
 ?>
 
-<title>Summaries from <?=$paper->title?> on ShortScience.org</title>
+<title>Summaries from <?=$venue->name?> on ShortScience.org</title>
 <meta property="og:title" content="Summaries from <?=$venue->name?> on ShortScience.org">
 <meta property="og:description" content="Summaries of the research papers published in <?=$venue->name?>">
 <meta name="description" content="Summaries of the research papers published in <?=$venue->name?>">
@@ -67,7 +124,6 @@ if ($venue->imgurl != ""){
 
 <meta property="og:site_name" content="www.shortscience.org" />
 <meta property="og:locale" content="en_US" />  
-<meta property="og:type" content="article" />
 
 
 

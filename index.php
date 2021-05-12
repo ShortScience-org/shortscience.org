@@ -169,6 +169,11 @@ $app->get('/paper', function (Request $request, Response $response) {
 		}
 	}
 	
+	// set first vignette to be this variable for the header
+	if (sizeof($vignettes) > 0){
+	    $vignette = $vignettes[0];
+	}
+	
 	if (!isset($myvignette)){
 		
 		$myvignette = (object)[];

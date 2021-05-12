@@ -8,53 +8,9 @@
 
 <?php if (sizeof($vignettes) != 0){?>
 
-<?php 
-$pattern = '/https?:\/\/[^ ]+?(?:\.jpg|\.png|\.gif)/';
-preg_match($pattern, $vignette->text, $matches);
-
-if (count($matches) > 0){
-	$imgurl = $matches[0];
-}else{
-	$imgurl = "http://www.shortscience.org/res/albert2.jpg";
-}
-?>
-
-
-<div style="display:none;">
-<div itemscope itemtype="http://schema.org/Review">
-  <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Article">
-    <span itemprop="name"><?=$paper->title?></span>
-    <span itemprop="headline"><?=$paper->title?></span>
-    <span itemprop="author"><?=$paper->authors?></span>
-    <span itemprop="datePublished"><?=$paper->year?></span>
-    <span itemprop="dateModified" content="<?=$vignette->edited?>"/>
-    
-	<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-		<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-			<img src="<?=$imgurl?>"/>
-			<meta itemprop="url" content="<?=$imgurl?>">
-		</div>
-    	<meta itemprop="name" content="<?=$paper->venue?>">
-	</div>
-    
-    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-		<img src="<?=$imgurl?>"/>
-		<meta itemprop="url" content="<?=$imgurl?>">
-	</div>
-    <a itemprop="mainEntityOfPage" href="http://www.shortscience.org/paper?bibtexKey=<?=$paper->bibtexKey?>">
-  </a>
-  </div>
-  <span itemprop="name">Paper summary</span>
-  <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-	<span itemprop="name"><?=($vignette->anon == 1)?"anonymous":$vignette->username?></span>
-  </span>
-  <span itemprop="reviewBody"><?=htmlspecialchars($vignette->text)?></span>
-  <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Short Science">
-  </div>
-</div>
-</div>
 <?php }?>
+
+
 
 <div class="container main" style="max-width:700px; margin:0 auto;">
 <div class="row">
