@@ -929,9 +929,9 @@ SELECT
 text, paperid, vignettes.userid, priv, anon, vignettes.added, vignettes.edited, vote,
 username,email,displayname, orcid
 FROM vignettes
-LEFT JOIN (SELECT sum(vote) as vote,paperid as vpaperid,userid as vuserid FROM votes GROUP BY vpaperid, vuserid) as votes
+LEFT JOIN (SELECT SUM(vote) as vote,paperid as vpaperid,userid as vuserid FROM votes GROUP BY vpaperid, vuserid) as votes
 ON paperid=vpaperid AND userid=vuserid
-LEFT JOIN (SELECT bibtexKey, sum(count) as visitcount FROM visits WHERE date >:startdate GROUP BY bibtexKey) as visits
+LEFT JOIN (SELECT bibtexKey, SUM(count) as visitcount FROM visits WHERE date >:startdate GROUP BY bibtexKey) as visits
 ON paperid=bibtexKey
 LEFT JOIN users
 ON vignettes.userid = users.userid
