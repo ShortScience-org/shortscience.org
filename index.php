@@ -71,7 +71,7 @@ $app->get('/', function (Request $request, Response $response) {
 	    $key = "getRecentVignettes 5, $page, $sections";
 	    if (!$vignettes = $cache->fetch($key)) {
 	       $vignettes = getRecentVignettes(5, $page, $sections);
-	       $cache->store($key,$vignettes,60);
+	       $cache->store($key,$vignettes,1440);
 	    }
 	}else if($tab == "best"){
 	    $key = "getBestVignettes 5, $page, $sections";
@@ -378,21 +378,35 @@ $app->get('/settings', function (Request $request, Response $response) {
 });
 
 $app->get('/venue', function (Request $request, Response $response) {
+    
+    global $cache;
+    prof_flag("Enter /venue");
 	$key = $request->getParam('key');
 	$year = $request->getParam('year');
 
 	if ($key == ""){
 		
-		$venues = getVenues();
+	    prof_flag("getVenues");
+	    $cachekey = "getVenues";
+	    if (!$venues = $cache->fetch($cachekey)) {
+		  $venues = getVenues();
+		  $cache->store($cachekey,$venues,2880);
+	    }
 		
 		$title = "All venues with summaries";
 		$description = "Browse papers with summaries from these conferences.";
 		include("templates/allvenues.php");
 		
 	}else{
-		$years = getTopVenueVignettes($key, $year);
+	    
+	    prof_flag("getTopVenueVignettes");
+	    $cachekey = "getTopVenueVignettes, $key, $year";
+	    if (!$years = $cache->fetch($cachekey)) {
+	        $years = getTopVenueVignettes($key, $year);
+	        $cache->store($cachekey,$years,2880);
+	    }
 		
-
+	    prof_flag("krsort");
 		// if no year pick most recent year
 		krsort($years);
 		reset($years);
@@ -401,6 +415,7 @@ $app->get('/venue', function (Request $request, Response $response) {
 			$year = $defaultyear;
 		
 			
+		prof_flag("getVenue(key)");
 		$venue = getVenue($key);
 		if ($venue == null){
 			$venue = (object)[];
@@ -409,16 +424,19 @@ $app->get('/venue', function (Request $request, Response $response) {
 		}
 			
 			
-
+		prof_flag("ksort");
 		ksort($years);
 		//$year = $years->paper->year;
 		$vignettes = $years[$year];
 
 		//print_r($years[$defaultyear][0]->a);die();
 		
+		prof_flag("render");
 		//$title = "Summaries from ".$venue->name;
 		include("templates/venue.php");
 	}
+	prof_flag("Done");
+	prof_print();
 	die();
 });
 
