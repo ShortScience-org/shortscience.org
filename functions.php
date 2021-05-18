@@ -603,7 +603,7 @@ function getPaper($bibtexKey) {
  		
 		
 		// set the venue		
-		if (!isset($paper->metavenue) || ($paper->metavenue == "")){
+		if (isset($paper) && (!isset($paper->metavenue) || ($paper->metavenue == ""))){
 			if ($paper->venuekey){
 				$paper->metavenue = getVenueForBibtexKey($paper->venuekey);
 			}else{
