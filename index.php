@@ -427,7 +427,11 @@ $app->get('/venue', function (Request $request, Response $response) {
 		prof_flag("ksort");
 		ksort($years);
 		//$year = $years->paper->year;
-		$vignettes = $years[$year];
+		if (array_key_exists($year, $years)){
+            $vignettes = $years[$year];
+		}else{
+		    $vignettes = [];
+		}
 
 		//print_r($years[$defaultyear][0]->a);die();
 		

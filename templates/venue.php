@@ -47,7 +47,7 @@
 
 
 
-<?php if ($tab == ""){?>
+<?php if (!isset($tab) || ($tab == "")){?>
 <br>
 <div id="vignettes">
 <?php if (sizeof($vignettes) ==0){?>
