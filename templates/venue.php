@@ -55,7 +55,7 @@
 	<br>
 	
 	<div class="well">
-	There are no summaries for this venue.
+	There are no summaries for this venue for the year selected.
 	</div>
 	</center>
 <?php }?>
