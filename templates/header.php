@@ -24,7 +24,7 @@ preg_match($pattern, $vignette->text, $matches);
 if (count($matches) > 0){
 	$imgurl = $matches[0];
 }else{
-	$imgurl = "<?=$DEFAULTBASEURL?>/res/albert-s.jpg";
+	$imgurl = "$DEFAULTBASEURL/res/albert-s.jpg";
 }
 ?>
 
@@ -53,6 +53,36 @@ $text_clean = htmlspecialchars($text_clean);
 
 <div style="display:none;">
 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "<?=$paper->authors?>"
+  },
+  "headline": "<?=$paper->title?>",
+  "description": "Summary of <?=$paper->title?>",
+  "datePublished" : "<?=$vignette->added?>",
+  "dateModified" : "<?=$vignette->edited?>",
+  "image" : {
+      "@context": "http://schema.org",
+      "@type": "ImageObject",
+      "url": "<?=$imgurl?>"
+    },
+  "mainEntityOfPage" : "<?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$paper->bibtexKey?>",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "ShortScience.org",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "<?=$DEFAULTBASEURL?>/res/albert2.jpg"
+    }
+  }
+}
+</script>
+
+<?php
+/*
 <div itemscope itemtype="http://schema.org/Article">
   <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Book">
     <span itemprop="name"><?=$paper->title?></span>
@@ -91,7 +121,8 @@ $text_clean = htmlspecialchars($text_clean);
   <span itemprop="description">A summary of the paper titled "<?=$paper->title?>"</span>
   <span itemprop="url"><?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$paper->bibtexKey?></span>
 </div>
-
+*/
+?>
 </div>
 
 
