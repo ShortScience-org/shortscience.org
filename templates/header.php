@@ -10,11 +10,13 @@
 <?php if (isset($title) && $title != ""){ ?>
 
 <title><?=$title?> - ShortScience.org</title>
+<meta property="og:type" content="article" />
 <meta property="og:title" content="<?=$title?> - ShortScience.org">
 <meta property="og:description" content="<?=$description?>">
 <meta name="description" content="<?=$description?>">
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor">
 <meta property="og:image" content="<?=$DEFAULTBASEURL?>/res/albert2.jpg" />
+
 
 <?php } else if (isset($paper)) { ?>
 
@@ -42,6 +44,7 @@ $text_clean = htmlspecialchars($text_clean);
 
 
 <title><?=$paper->title?> on ShortScience.org</title>
+<meta property="og:type" content="article" />
 <meta property="og:title" content="<?=$paper->title?> - ShortScience.org">
 <meta property="og:description" content="<?=$text_clean?>">
 <meta name="description" content="<?=$text_clean?>">
@@ -50,7 +53,6 @@ $text_clean = htmlspecialchars($text_clean);
 <meta property="og:url" content="<?=$DEFAULTBASEURL?>/paper?bibtexKey=<?=$paper->bibtexKey?>" />
 <meta property="og:image" content="<?=$imgurl?>" />
 
-
 <div style="display:none;">
 
 <script type="application/ld+json">
@@ -58,10 +60,10 @@ $text_clean = htmlspecialchars($text_clean);
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "<?=$paper->authors?>"
+    "name" : "<?=htmlspecialchars($paper->authors)?>"
   },
   "headline": "<?=$paper->title?>",
-  "description": "Summary of <?=$paper->title?>",
+  "description": "Summary of <?=htmlspecialchars($paper->title)?>",
   "datePublished" : "<?=$vignette->added?>",
   "dateModified" : "<?=$vignette->edited?>",
   "image" : {
@@ -137,6 +139,7 @@ if ($venue->imgurl != ""){
 ?>
 
 <title>Summaries from <?=$venue->name?> on ShortScience.org</title>
+<meta property="og:type" content="article" />
 <meta property="og:title" content="Summaries from <?=$venue->name?> on ShortScience.org">
 <meta property="og:description" content="Summaries of the research papers published in <?=$venue->name?>">
 <meta name="description" content="Summaries of the research papers published in <?=$venue->name?>">
@@ -146,6 +149,7 @@ if ($venue->imgurl != ""){
 <?php } else { ?>
 
 <title>ShortScience.org - Making Science Accessible!</title>
+<meta property="og:type" content="article" />
 <meta property="og:title" content="ShortScience.org - Making Science Accessible!">
 <meta property="og:description" content='ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.'>
 <meta name="description" content="ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.">
