@@ -1,5 +1,16 @@
 
-
+<center>
+<div class="adunit" style="width:330px;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- chargemaster -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:330px;height:127px"
+     data-ad-client="ca-pub-2068283315745938"
+     data-ad-slot="5217750003"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></center>
 
 <style>
 #chat-link {
