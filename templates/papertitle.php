@@ -29,15 +29,10 @@
 		$arxivsanityid = $arxivid;
 		?>
 	
-	<a target="_blank" href="http://www.arxiv-sanity.com/<?=$arxivsanityid?>"
-	class="arxivsanitypop"
-	title="Arxiv Sanity Preview"
-	data-content='<img style="width:550px;height:100px" src="http://www.arxiv-sanity.com/static/thumbs/<?=$arxivsanityid?>v1.pdf.jpg" alt=" Image loading error"/>'
-	><span  class="glyphicon glyphicon-link"></span> arxiv-sanity.com</a><br>
-	
-	
+	<a target="_blank" href="http://www.arxiv-vanity.com/papers/<?=$arxivsanityid?>"><span  class="glyphicon glyphicon-link"></span> arxiv-vanity.com</a><br>
 	
 	<?php }}?>
+	
 	<?php if ($urlhost != "arxiv.org" && 
 			  $urlhost != "jmlr.org" && 
 			  $urlhost != "www.jmlr.org" &&
