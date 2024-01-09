@@ -9,9 +9,9 @@
 
 <?php if (isset($title) && $title != ""){ ?>
 
-<title><?=$title?> - ShortScience.org</title>
+<title><?=htmlspecialchars($title)?> - ShortScience.org</title>
 <meta property="og:type" content="article" />
-<meta property="og:title" content="<?=$title?> - ShortScience.org">
+<meta property="og:title" content="<?=htmlspecialchars($title)?> - ShortScience.org">
 <meta property="og:description" content="<?=$description?>">
 <meta name="description" content="<?=$description?>">
 <meta name="keywords" content="summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor">
@@ -43,9 +43,9 @@ $text_clean = htmlspecialchars($text_clean);
 ?>
 
 
-<title><?=$paper->title?> on ShortScience.org</title>
+<title><?=htmlspecialchars($paper->title)?> on ShortScience.org</title>
 <meta property="og:type" content="article" />
-<meta property="og:title" content="<?=$paper->title?> - ShortScience.org">
+<meta property="og:title" content="<?=htmlspecialchars($paper->title)?> - ShortScience.org">
 <meta property="og:description" content="<?=$text_clean?>">
 <meta name="description" content="<?=$text_clean?>">
 <meta property="og:keywords" content='summary, summaries, intuition, breakdown, short, understanding, explain, explanation, comment, interpretation, motivation, commentary, example, science, researchers, academic, academia, university, college, professor, <?=implode(", ", $paper->tags)?>'>
@@ -62,7 +62,7 @@ $text_clean = htmlspecialchars($text_clean);
   "author": {
     "name" : "<?=htmlspecialchars($paper->authors)?>"
   },
-  "headline": "<?=$paper->title?>",
+  "headline": "<?=htmlspecialchars($paper->title)?>",
   "description": "Summary of <?=htmlspecialchars($paper->title)?>",
   "datePublished" : "<?=$vignette->added?>",
   "dateModified" : "<?=$vignette->edited?>",
