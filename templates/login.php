@@ -46,7 +46,9 @@ background: url(res/trinity_college_dublin.jpg) no-repeat center center fixed;
 <div id="google-signin" class="g-signin2" id="signin-button" data-onsuccess="onGoogleSignIn" data-theme="dark"></div>
 
 <Br>
-<a href="./signup"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create Account</a></p>
+<?php 
+///<a href="./signup"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create Account</a></p>
+?>
 </div>
 
 </div>

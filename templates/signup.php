@@ -1,6 +1,6 @@
 <?php require("header.php");?>
 <?php require("menu.php");?>
-
+<?php die('Signups are disabled')?>
 <style>
 
 body{

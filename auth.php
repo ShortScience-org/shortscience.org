@@ -287,6 +287,11 @@ function addUser($signup){
 	
 	$signup->username = strtolower($signup->username);
 
+	// Close signups
+	$signupresult->message = "Signup is disabled";
+	return $signupresult;
+	// Close signups
+	
 	if (empty ( $signup->username ) || empty ( $signup->password ) || empty ( $signup->email )){
 		$signupresult->message = "Don't leave any fields blank.";
 		return $signupresult;
