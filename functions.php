@@ -569,7 +569,8 @@ function getPaper($bibtexKey) {
 		if (count($results0) > 0){
 			$paper= $results0[0];
 		}else{
-		
+			http_response_code(404);
+			die("Unknown paper");
 			// check arxiv
 			$numfound = preg_match("/(\\d{4}\\.\\d{4}\\d*)/",$bibtexKey, $matches);
 			if ($numfound > 0){
