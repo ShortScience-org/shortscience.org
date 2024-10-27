@@ -104,7 +104,7 @@ $app->get('/welcome', function (Request $request, Response $response) {
 
 $app->get('/search', function (Request $request, Response $response) {
 	$term = $request->getParam('term');
-	
+	die("Internal search disabled");
 	$results = performSearch($term);
 	
 	//print_r($results);

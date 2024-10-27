@@ -30,10 +30,6 @@ table.gsc-search-box td {
 
 </style>
 
-<a href="/search?term=<?=htmlspecialchars($q)?>">
-<center><div class="alert alert-info">Cannot find a paper? Click here to add it!</div></center>
-</a>
-
 
 <script>
   (function() {

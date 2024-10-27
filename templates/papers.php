@@ -1,7 +1,7 @@
 <?php require("header.php");?>
 <?php require("menu.php");?>
 <?php global $MATHJAX_URL?>
-<?php //print_r($results);die();?>
+<?php die(); //print_r($results);die();?>
 <div class="container">
 
 <div class="col-md-1"></div>
