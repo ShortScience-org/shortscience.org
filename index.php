@@ -80,6 +80,7 @@ $app->get('/', function (Request $request, Response $response) {
 	       $cache->store($key,$vignettes,1440);
 	    }
 	}else{
+		$tab = ""; // to prevent XSS
 	    $key = "getPopularVignettes 5, $page, $sections, 1";
 	    if (!$vignettes = $cache->fetch($key)) {
 	       $vignettes = getPopularVignettes(5, $page, $sections, 1);
