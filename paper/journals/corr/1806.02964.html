@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSN: Boundary Sensitive Network for Temporal Action Proposal Generation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BSN: Boundary Sensitive Network for Temporal Action Proposal Generation - ShortScience.org">
+<meta property="og:description" content="## Boundary sensitive network
+### **keyword**: action detection in video; accurate proposal 
+
+**Summ...">
+<meta name="description" content="## Boundary sensitive network
+### **keyword**: action detection in video; accurate proposal 
+
+**Summ...">
+<meta property="og:image" content="https://i.imgur.com/VjJLQDc.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.02964">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1806.02964" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Tianwei Lin and Xu Zhao and Haisheng Su and Chongjing Wang and Ming Yang"}, "headline": "BSN: Boundary Sensitive Network for Temporal Action Proposal Generation", "description": "Summary of BSN: Boundary Sensitive Network for Temporal Action Proposal Generation", "datePublished": "2018-12-03 09:16:52", "dateModified": "2018-12-04 03:11:41", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/VjJLQDc.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1806.02964", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1806.02964v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22BSN%3A%20Boundary%20Sensitive%20Network%20for%20Temporal%20Action%20Proposal%20Generation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">BSN: Boundary Sensitive Network for Temporal Action Proposal Generation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Tianwei%20Lin">Tianwei Lin</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xu%20Zhao">Xu Zhao</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Haisheng%20Su">Haisheng Su</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chongjing%20Wang">Chongjing Wang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ming%20Yang">Ming Yang</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/06/08<br><b>Abstract:</b>   Temporal action proposal generation is an important yet challenging problem,
+since temporal proposals with rich action content are indispensable for
+analysing real-world videos with long duration and high proportion irrelevant
+content. This problem requires methods not only generating proposals with
+precise temporal boundaries, but also retrieving proposals to cover truth
+action instances with high recall and high overlap using relatively fewer
+proposals. To address these difficulties, we introduce an effective proposal
+generation method, named Boundary-Sensitive Network (BSN), which adopts &quot;local
+to global&quot; fashion. Locally, BSN first locates temporal boundaries with high
+probabilities, then directly combines these boundaries as proposals. Globally,
+with Boundary-Sensitive Proposal feature, BSN retrieves proposals by evaluating
+the confidence of whether a proposal contains an action within its region. We
+conduct experiments on two challenging datasets: ActivityNet-1.3 and THUMOS14,
+where BSN outperforms other state-of-the-art temporal action proposal
+generation methods with high recall and high temporal precision. Finally,
+further experiments demonstrate that by combining existing action classifiers,
+our method significantly improves the state-of-the-art temporal action
+detection performance.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354').hide());void($('#showless-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354').show());void($('#more-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354').show());void($('#showless-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354').hide());void($('#more-am91cm5hbHMvY29yci8xODA2LjAyOTY0-1354').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1806.02964">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="daisy" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=daisy" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=daisy&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/bfe16356fea064d706b99c51e0de1ab0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;shiyu&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: daisy&lt;br&gt;Posted: 2018-12-03&lt;br&gt;Edited: 2018-12-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1806.02964&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/bfe16356fea064d706b99c51e0de1ab0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1355').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1806.02964%26a%3Ddaisy" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1355" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.02964&amp;a=daisy" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.02964%26a%3Ddaisy&amp;text=Summary%20of%20BSN%3A%20Boundary%20Sensitive%20Network%20for%20Temporal%20Action%20Proposal%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.02964%26a%3Ddaisy" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20BSN%3A%20Boundary%20Sensitive%20Network%20for%20Temporal%20Action%20Proposal%20Generation&amp;Body=Summary%20of%20BSN%3A%20Boundary%20Sensitive%20Network%20for%20Temporal%20Action%20Proposal%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.02964%26a%3Ddaisy"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.02964%26a%3Ddaisy" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.02964%26a%3Ddaisy&amp;title=Summary%20of%20BSN%3A%20Boundary%20Sensitive%20Network%20for%20Temporal%20Action%20Proposal%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.02964&amp;a=daisy" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=daisy" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by shiyu 2018-12-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## Boundary sensitive network
+### **keyword**: action detection in video; accurate proposal 
+
+**Summary**: In order to generate precise temporal boundaries and improve recall with lesses proposals, Tianwei Lin et al use BSN which first combine temporal boundaries with high probability to form proposals and then select proposals by evaluating whether a proposal contains an action(confidence score+ boundary probability).   
+
+**Model**:
+1. video feature encoding: use the two-stream extractor to form the input of BSN. $F = \{f_{tn}\}_{n=1}^{l_s} = \{(f_{S,Tn}, f_{T,t_n}\}_{n=1}^{l_s)} $
+2. BSN:
+* temporal evaluation: input feature sequence, using 3-layer CNN+3 fiter with sigmoid, to generate start, end, and actioness probability
+* proposal generation: 1.combine bound with high start/end probability or if probility peak to form proposal; 2. use actioness probability to generate proposal feature for each proposal by sampling the actioness probability during proposal region. 
+* proposal evaluation: using 1 hidden layer perceptron to evaluate confidence score based on proposal features. 
+proposal $\varphi =(t_s,t_e,p_{conf},p_{t_s}^s,p_{t_e}^e) $ $p_{t_e}^e$ is the end probability,and $p_{conf}$ is confidence score
+
+https://i.imgur.com/VjJLQDc.png
+
+**Training**: 
+* **Learn to generate probility curve**:
+In order to calculate the accuracy of proposals the loss in the temporal evaluation is calculated as following: 
+ $L_{TEM} = \lambda L^{action} + L ^{start} + L^{end}$; 
+$L = \frac{1}{l_w} \sum_{i =1}^{l_w}(\frac{l_w}{l_w-\sum_i g_i} b_i*log(p_i)+\frac{l_w}{\sum_i g_i} (1-b_i)*log(1-p_i))$
+$ b_i = sign(g_i-\theta_{IoP})$ 
+
+
+Thus, if start region proposal is highly overlapped with ground truth, the start point probability should increase to lower the loss, after training, the information of ground truth region could be leveraged to predict the accurate probability for start. actions and end probability could apply the same rule.
+
+* **Learn to choose right proposal**:
+In order to choose the right proposal based on confidence score, push confidence score to match with IOU of the groud truth and proposal is important. So the loss to do this is described as follow:
+$L_p = \frac{1}{N_{train}} \sum_{i=1}^{N_{train}}  (p_{conf,i}-g_{iou,i})^2$. $N_{train}$ is number of training proposals and among it the ratio of positive to negative proposal is 1:2.$g_{iou,i}$ is the ith proposal&#x27;s overlap with its corresponding ground truth.
+    During test and prediction, the final confidence is calculated to fetch and suppress proposals using gaussian decaying soft-NMS. and final confidence score for each proposal is  $p_f = p_{conf}p_{ts}^sp_{te}^e$
+
+Thus, after training, the confidence score should reveal the iou between the proposal and its corresponding ground truth based on the proposal feature which is generated through actionness probability, whereas final proposal is achieved by ranking final confidence score.
+
+**Conclusion**: Different with segment proposal or use RNN to decide where to look next, this paper generate proposals with boundary probability and select them using the confidence score-- the IOU between the proposal and corresponding ground truth. with sufficient data, it can provide right bound probability and confidence score. and the highlight of the paper is it can be very accurate within feature sequence. 
+
+*However, it only samples part of the video for feature sequence. so it is possible it will jump over the boundary point. if an accurate policy to decide where to sample is used, accuracy should be further boosted. *
+
+* **computation complexity**: within this network, computation includes
+  1. two-stream feature extractor for video samples
+  2. probility generation module: 3-layers cnn for the generated sequence 
+  3. proposal generation using combination
+  4. sampler to generate proposal feature
+  5. 1-hidden layer perceptron to generate confidence score.
+major computing complexity should attribute to feature extractor(1&#x27;) and proposal relate module if lots of proposals are generated(3&#x27;,4&#x27;)
+
+**Performance**: when combined with SCNN-classifier, it reach map@0.5 = 36.9 on THUMOS14 dataset
+ 
+
+
+
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

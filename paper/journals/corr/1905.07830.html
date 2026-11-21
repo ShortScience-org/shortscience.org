@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HellaSwag: Can a Machine Really Finish Your Sentence? - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="HellaSwag: Can a Machine Really Finish Your Sentence? - ShortScience.org">
+<meta property="og:description" content="[Machine learning is a nuanced, complicated, intellectually serious topic...but sometimes it’s refre...">
+<meta name="description" content="[Machine learning is a nuanced, complicated, intellectually serious topic...but sometimes it’s refre...">
+<meta property="og:image" content="https://i.imgur.com/CoSeh51.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.07830">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1905.07830" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Rowan Zellers and Ari Holtzman and Yonatan Bisk and Ali Farhadi and Yejin Choi"}, "headline": "HellaSwag: Can a Machine Really Finish Your Sentence?", "description": "Summary of HellaSwag: Can a Machine Really Finish Your Sentence?", "datePublished": "2019-05-23 06:21:17", "dateModified": "2019-05-23 06:22:23", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/CoSeh51.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1905.07830", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CL">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1905.07830v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22HellaSwag%3A%20Can%20a%20Machine%20Really%20Finish%20Your%20Sentence%3F%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">HellaSwag: Can a Machine Really Finish Your Sentence?</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Rowan%20Zellers">Rowan Zellers</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ari%20Holtzman">Ari Holtzman</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yonatan%20Bisk">Yonatan Bisk</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ali%20Farhadi">Ali Farhadi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yejin%20Choi">Yejin Choi</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CL">cs.CL</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2019/05/19<br><b>Abstract:</b>   Recent work by Zellers et al. (2018) introduced a new task of commonsense
+natural language inference: given an event description such as &quot;A woman sits at
+a piano,&quot; a machine must select the most likely followup: &quot;She sets her fingers
+on the keys.&quot; With the introduction of BERT, near human-level performance was
+reached. Does this mean that machines can perform human level commonsense
+inference?
+  In this paper, we show that commonsense inference still proves difficult for
+even state-of-the-art models, by presenting HellaSwag, a new challenge dataset.
+Though its questions are trivial for humans (&gt;95% accuracy), state-of-the-art
+models struggle (&lt;48%). We achieve this via Adversarial Filtering (AF), a data
+collection paradigm wherein a series of discriminators iteratively select an
+adversarial set of machine-generated wrong answers. AF proves to be
+surprisingly robust. The key insight is to scale up the length and complexity
+of the dataset examples towards a critical &#x27;Goldilocks&#x27; zone wherein generated
+text is ridiculous to humans, yet often misclassified by state-of-the-art
+models.
+  Our construction of HellaSwag, and its resulting difficulty, sheds light on
+the inner workings of deep pretrained models. More broadly, it suggests a new
+path forward for NLP research, in which benchmarks co-evolve with the evolving
+state-of-the-art in an adversarial way, so as to present ever-harder
+challenges.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479').hide());void($('#showless-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479').show());void($('#more-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479').show());void($('#showless-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479').hide());void($('#more-am91cm5hbHMvY29yci8xOTA1LjA3ODMw-1479').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1905.07830">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-05-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1905.07830&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1480').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1905.07830%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1480" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.07830&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.07830%26a%3Ddecodyng&amp;text=Summary%20of%20HellaSwag%3A%20Can%20a%20Machine%20Really%20Finish%20Your%20Sentence%3F&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.07830%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20HellaSwag%3A%20Can%20a%20Machine%20Really%20Finish%20Your%20Sentence%3F&amp;Body=Summary%20of%20HellaSwag%3A%20Can%20a%20Machine%20Really%20Finish%20Your%20Sentence%3F%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.07830%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.07830%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.07830%26a%3Ddecodyng&amp;title=Summary%20of%20HellaSwag%3A%20Can%20a%20Machine%20Really%20Finish%20Your%20Sentence%3F" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.07830&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-05-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">[Machine learning is a nuanced, complicated, intellectually serious topic...but sometimes it’s refreshing to let ourselves be a bit less serious, especially when it’s accompanied by clear, cogent writing on a topic. This particular is a particularly delightful example of good-natured silliness - from the dataset name HellaSwag to figures containing cartoons of BERT and ELMO representing language models - combined with interesting science.] 
+
+https://i.imgur.com/CoSeh51.png
+
+This paper tackles the problem of natural language comprehension, which asks: okay, our models can generate plausible looking text, but do they actually exhibit what we would consider true understanding of language? One natural structure of task for this is to take questions or “contexts”, and, given a set of possible endings or completion, pick the correct one. Positive examples are relatively easy to come by: adjacent video captions and question/answer pairs from WikiHow are two datasets used in this paper. However, it’s more difficult to come up with *negative* examples. Even though our incorrect endings won’t be a meaningful continuation of the sentence, we want them to be “close enough” that we can feel comfortable attributing a model’s ability to pick the correct answer as evidence of some meaningful kind of comprehension. As an obvious failure mode, if the alternative multiple choice options were all the same word repeated ten times, that would be recognizable as being not real language, and it would be easy for a model to select the answer with the distributional statistics of real language, but it wouldn’t prove much. Typically failure modes aren’t this egregious, but the overall intuition still holds, and will inform the rest of the paper: your ability to test comprehension on a given dataset is a function of how contextually-relevant and realistic your negative examples are.
+
+Previous work (by many of the same authors as are on this paper), proposed a technique called Adversarial Filtering to try to solve this problem. In Adversarial Filtering, a generative language model is used to generate possible many endings conditioned on the input context, to be used as negative examples. Then, a discriminator is trained to predict the correct ending given the context. The generated samples that the discriminator had the highest confidence classifying as negative are deemed to be not challenging enough comparisons, and they’re thrown out and replaced with others from our pool of initially-generated samples. Eventually, once we’ve iterated through this process, we have a dataset with hopefully realistic negative examples. The negative examples are then given to humans to ensure none of them are conceptually meaningful actual endings to the sentence. The dataset released by the earlier paper, which used as it’s generator a relatively simple LSTM model, was called Swag. 
+
+However, the authors came to notice that the performance of new language models (most centrally BERT) on this dataset might not be quite what it appears: its success rate of 86% only goes down to 76% if you don’t give the classifier access to the input context, which means it can get 76% (off of a random baseline of 25%, with 4 options) simply by evaluating which endings are coherent as standalone bits of natural language, without actually having to understand or even see the context. Also, shuffling the words in the words in the possible endings had a similarly small effect: the authors are able to get BERT to perform at 60% accuracy on the SWAG dataset with no context, and with shuffled words in the possible answers, meaning it’s purely selecting based on the distribution of words in the answer, rather than on the meaningfully-ordered sequence of words. 
+
+https://i.imgur.com/f6vqJWT.png
+
+The authors overall conclusion with this is: this adversarial filtering method is only as good as the generator, and, more specifically, the training dynamic between the generator that produces candidate endings, and the discriminator that filters them. If the generator is too weak, the negative examples can be easily detected as fake by a stronger model, but if the generator is too strong, then the discriminator can’t get good enough to usefully contribute by weeding samples out. They demonstrate this by creating a new version of Swag, which they call HellaSwag (for the expected acronym-optimization reasons), with a GPT generator rather than the simpler one used before: on this new dataset, all existing models get relatively poor results (30-40% performance). However, the authors’ overall point wasn’t “we’ve solved it, this new dataset is the end of the line,” but rather a call in the future to be wary, and generally aware that with benchmarks like these, especially with generated negative examples, it’s going to be a constantly moving target as generation systems get better. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

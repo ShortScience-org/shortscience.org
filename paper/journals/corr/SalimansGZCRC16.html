@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Improved Techniques for Training GANs - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Improved Techniques for Training GANs - ShortScience.org">
+<meta property="og:description" content="This is heavily derived from the top voted summary above, but I had to review this paper for a lab m...">
+<meta name="description" content="This is heavily derived from the top voted summary above, but I had to review this paper for a lab m...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Salimans, Tim and Goodfellow, Ian J. and Zaremba, Wojciech and Cheung, Vicki and Radford, Alec and Chen, Xi"}, "headline": "Improved Techniques for Training GANs", "description": "Summary of Improved Techniques for Training GANs", "datePublished": "2016-11-24 16:10:06", "dateModified": "2016-11-24 16:10:06", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.03498"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Improved%20Techniques%20for%20Training%20GANs%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Improved Techniques for Training GANs</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Salimans%2C%20Tim">Salimans, Tim</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Goodfellow%2C%20Ian%20J.">Goodfellow, Ian J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zaremba%2C%20Wojciech">Zaremba, Wojciech</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Cheung%2C%20Vicki">Cheung, Vicki</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Radford%2C%20Alec">Radford, Alec</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chen%2C%20Xi">Chen, Xi</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/SalimansGZCRC16">Summaries/Notes <span class="badge">5</span></a></li></ul><br>
+<div id="gngdb" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=gngdb" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=gngdb&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Gavin Gray&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: gngdb&lt;br&gt;Posted: 2016-11-24&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/SalimansGZCRC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1734').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/SalimansGZCRC16%26a%3Dgngdb" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1734" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=gngdb" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dgngdb&amp;text=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;Body=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dgngdb"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dgngdb&amp;title=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=gngdb" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=gngdb" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Gavin Gray 2016-11-24</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This is heavily derived from the top voted summary above, but I had to review this paper for a lab meeting so I expanded on it a bit. I hope this doesn&#x27;t offend anyone, but this should be, at worst, redundant to the summary above.
+
+This paper has two parts: five recommended techniques for training GANs and
+a thorough evaluation with visual Turing tests and semi-supervised tasks.
+That is more concrete than the feature extraction and visualisation in, for
+example, Radford&#x27;s [DCGAN paper][dcgan].
+
+### Feature Matching
+
+Problem: instability from overtraining on the current discriminator.
+Intuition is that the discriminator will have learnt the kind of useful
+representation we see in deep image models, and there is more information
+available by matching those than the single classifier output.
+
+Solution: Match activations at some hidden with an L2 loss. This is
+the same as the &quot;content&quot; loss in the [neural style paper][style]:
+
+$$
+\newcommand{\aB}{\mathbf{a}}
+\newcommand{\bB}{\mathbf{b}}
+\newcommand{\cB}{\mathbf{c}}
+\newcommand{\dB}{\mathbf{d}}
+\newcommand{\eB}{\mathbf{e}}
+\newcommand{\fB}{\mathbf{f}}
+\newcommand{\gB}{\mathbf{g}}
+\newcommand{\hB}{\mathbf{h}}
+\newcommand{\iB}{\mathbf{i}}
+\newcommand{\jB}{\mathbf{j}}
+\newcommand{\kB}{\mathbf{k}}
+\newcommand{\lB}{\mathbf{l}}
+\newcommand{\mB}{\mathbf{m}}
+\newcommand{\nB}{\mathbf{n}}
+\newcommand{\oB}{\mathbf{o}}
+\newcommand{\pB}{\mathbf{p}}
+\newcommand{\qB}{\mathbf{q}}
+\newcommand{\rB}{\mathbf{r}}
+\newcommand{\sB}{\mathbf{s}}
+\newcommand{\tB}{\mathbf{t}}
+\newcommand{\uB}{\mathbf{u}}
+\newcommand{\vB}{\mathbf{v}}
+\newcommand{\wB}{\mathbf{w}}
+\newcommand{\xB}{\mathbf{x}}
+\newcommand{\yB}{\mathbf{y}}
+\newcommand{\zB}{\mathbf{z}}
+\newcommand{\Exp}{\mathbb{E}}
+|| \Exp_{\xB \sim p_{\text{data}}} \fB (\xB) - \Exp_{\zB \sim p_{\zB}(\zB)} \fB (G(\zB)) ||_2^2
+$$
+
+Where $\fB (\xB)$ and $\fB (\zB)$ are the activations in some hidden layer
+corresponding to either a real or generated image.
+
+### Minibatch Discrimination
+
+Problem: generators like to collapse to a single mode (ie just generate a
+single image), because it&#x27;s a decent local optimum.
+
+Solution: make sure the discriminator can look at samples in combination,
+so it will know if it&#x27;s getting the same (or similar) images more easily.
+Just give the discriminator features that tell it about the distance of
+each image to other images in the same batch. The diagram in the paper
+describes this best.
+
+They mention this tensor $T$ in the paper, but don&#x27;t really explain what it
+is. In [the code][mbcode], it appears to be basically a weight matrix,
+which means that it is also learnt as part of the discriminator.
+
+### Historical Averaging
+
+Problem: no guarantee with gradient descent that a two player game like
+this won&#x27;t go into extended orbits.
+
+Solution: encourage parameters to revert to their historical mean, with an
+L2 penalty:
+
+$$
+\newcommand{\thetaB}{\boldsymbol{\theta}}
+|| \thetaB - \frac{1}{t} \sum_{i=1}^t \thetaB[i] ||^2
+$$
+
+Orbits are penalised by always being far from their mean, and this is
+supposed to correspond to a &quot;fictitious play&quot; algorithm. I&#x27;m not sure if
+that&#x27;s true, but maybe?
+
+### One-sided label smoothing
+
+Problem: vulnerability of discriminator to adversarial examples? (Not
+explicitly stated).
+
+Solution: replace positive (ie probability that a sample is real?) labels
+with a target _smaller than 1_.
+
+### Virtual Batch Normalisation
+
+Problem: batch normalisation is highly variable, as it is based on
+statistics of the current minibatch (enough so that you can sometimes avoid
+using dropout if you&#x27;re using batchnorm).
+
+Solution: for every minibatch, use the statistics gathered from a
+_reference minibatch_ for your batch normalisation. For every minibatch,
+you&#x27;ll have to first propagate through the reference minibatch with your
+current parameter settings, but then you can use the statistics you gather
+by doing this for the minibatch you&#x27;re actually going to use for training.
+
+_Interesting sidenote_: in the [code][impcode], they are actually using
+[weight normalization][weightnorm] instead of batchnorm (not in all cases).
+Probably because both papers have Tim Salimans as first author.
+
+### Assessing Image Quality
+
+Problem: noisy labelling from mechanical turk.
+
+Solution: aim for low entropy conditional categorical distribution when
+labelling samples with Google&#x27;s inception model. The inception model gives
+you $p(y|\xB)$, so you want to maximise:
+
+$$
+\Exp_{\xB} KL (p(y|\xB)||p(y))
+$$
+
+Then they exponentiate the resulting value for no real reason, just to make
+values easier to compare. Since they say this matches human judgement in
+their experiments, this means we can all start using this measure and just
+cite this paper!
+
+### Semi-supervised Learning
+
+Problem: standard semi-supervised, we have some data that is labelled and
+some that isn&#x27;t, how to learn a conditional model that will give us
+$p(y|\xB)$.
+
+Solution: make &quot;generated&quot; a class in your classification problem. Now you
+can put generated samples into your dataset, but even better you can
+produce a loss on unlabeled samples that you just _don&#x27;t want them to be
+labeled as &quot;generated&quot;_. So we end up with the following two losses for
+supervised and unsupervised data:
+
+$$
+L_{\text{supervised}} = - \Exp_{\xB,y \sim p_{\text{data}} (\xB, y)} \log p_{\text{model}} (y | \xB, y &lt; K + 1)
+$$
+
+$$
+L_{\text{unsupervised}} = - \{ \Exp_{\xB \sim p_{\text{data}} (\xB)} \log [
+1- p_{\text{model}} (y = K+1 | \xB) ] + \Exp_{\xB \sim G}\log [
+p_{\text{model}} (y=K+1 | \xB)] \}
+$$
+
+With this method, and using feature matching but _not minibatch
+discrimination_, they show SOTA results for semi-supervised learning on
+MNIST, SVHN and CIFAR-10.
+
+[mbcode]: https://github.com/openai/improved-gan/blob/master/mnist_svhn_cifar10/nn.py#L132-L170
+[impcode]: https://github.com/openai/improved-gan/blob/master/mnist_svhn_cifar10/nn.py#L45-L91
+[weightnorm]: https://arxiv.org/abs/1602.07868
+[short]: http://www.shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16#udibr
+[improved]: https://arxiv.org/abs/1606.03498
+[dcgan]: https://arxiv.org/abs/1511.06434
+[style]: https://arxiv.org/abs/1508.06576
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="udibr" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=udibr" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=udibr&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Udibr&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: udibr&lt;br&gt;Posted: 2016-07-11&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/SalimansGZCRC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1735').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/SalimansGZCRC16%26a%3Dudibr" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1735" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=udibr" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr&amp;text=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;Body=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr&amp;title=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=udibr" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=udibr" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Udibr 2016-07-11</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">[code](https://github.com/openai/improved-gan),
+[demo](http://infinite-chamber-35121.herokuapp.com/cifar-minibatch/1/?),
+[related](http://www.inference.vc/understanding-minibatch-discrimination-in-gans/)
+
+### Feature matching
+problem: overtraining on the current discriminator
+
+solution:
+￼$||E_{x \sim p_{\text{data}}}f(x) - E_{z \sim p_{z}(z)}f(G(z))||_{2}^{2}$
+
+were f(x) activations intermediate layer in discriminator
+### Minibatch discrimination
+problem: generator to collapse to a single point
+
+solution: for each sample i, concatenate to $f(x_i)$ features $b$ measuring its distance to other samples j (i and j are both real or generated samples in same batch):
+$\sum_j \exp(-||M_{i, b} - M_{j, b}||_{L_1})$
+￼
+this generates visually appealing samples very quickly
+### Historical averaging
+problem: SGD fails by going into extended orbits
+
+solution: parameters revert to the mean
+$|| \theta - \frac{1}{t} \sum_{i=1}^t \theta[i] ||^2$
+￼
+### One-sided label smoothing
+problem: discriminator vulnerability to adversarial examples
+
+solution: discriminator target for positive samples is 0.9 instead of 1
+
+### Virtual batch normalization
+problem: using BN cause output of examples in batch to be dependent
+
+solution: use reference batch chosen once at start of training and each sample is normalized using itself and the reference. It&#x27;s
+expensive so used only on generation
+
+### Assessment of image quality
+problem: MTurk not reliable
+
+solution: use inception model p(y|x) to compute 
+￼$\exp(\mathbb{E}_x \text{KL}(p(y | x) || p(y)))$
+on 50K generated images x
+
+### Semi-supervised learning
+use the discriminator to also classify on K labels when known and
+use all real samples (labels and unlabeled) in the discrimination task
+￼$D(x) = \frac{Z(x)}{Z(x) + 1}, \text{ where } Z(x) = \sum_{k=1}^{K} \exp[l_k(x)]$.
+In this case use feature matching but not minibatch discrimination.
+It also improves the quality of generated images.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="udibrcomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=joecohen" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=joecohen&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Joseph Paul Cohen&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: joecohen&lt;br&gt;Posted: 2016-07-27">
+<img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">I love the format of this summary. Thanks! The historical averaging idea is interesting. This is basically just a momentum update rule right?</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=udibr" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=udibr&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Udibr&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: udibr&lt;br&gt;Posted: 2016-07-27">
+<img src="https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">that&#x27;s what I understood (dont have first hand experience)</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=gngdb" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=gngdb&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Gavin Gray&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: gngdb&lt;br&gt;Posted: 2016-11-24">
+<img src="https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">In minibatch discrimination, we have these $M$ matrices by multiplying with the $T$ tensor. What is the $T$ tensor? In the code it looks like you initialise it like a weight matrix, which means you learn it?</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+<div id="inference" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=inference" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=inference&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;inFERENCe&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: inference&lt;br&gt;Posted: 2016-07-14&lt;br&gt;Edited: 2016-07-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/SalimansGZCRC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1736').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/SalimansGZCRC16%26a%3Dinference" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1736" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=inference" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dinference&amp;text=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;Body=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dinference"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dinference&amp;title=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=inference" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=inference" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by inFERENCe 2016-07-14</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Summary of this post
+
+ - How does this minibatch discrimination heuristic work and how does it change the behaviour of the GAN algorithm? Does it change the underlying objective function that is being minimized?
+ - the answer is: for the original GAN algorithm that minimises Jensen-Shannon divergence it does change the behaviour in a non-trivial way. One side-effect is assigning a higher relative penalty for low-entropy generators.
+ - when using the blended update rule from here, the algorithm minimises the reverse KL-divergence. In this case, using minibatch discrimination leaves the underlying objective unchanged: the algorithm can still be shown to miminise KL divergence.
+ - even if the underlying objectives remain the same, using minibatch discrimination may be a very good idea practically. It may stabilise the algorithm by, for example, providing a lower variance estimator to log-probability-ratios.
+
+[Here is the ipython/jupyter notebook](https://gist.github.com/fhuszar/a91c7d0672036335c1783d02c3a3dfe5) I used to draw the plots and test some of the things in this post in practice.
+
+### What is minibatch discrimination?
+
+In the vanilla Generative Adversarial Networks (GAN) algorithm, a discriminator is trained to tell apart generated synthetic examples from real data. One way GAN training can fail is to massively undershoot the entropy of the data-generating distribution, and concentrate all it&#x27;s parameters on generating just a single or few examples.
+
+To remedy this, the authors play with the idea of discriminating between whole minibatches of samples, rather than between individual samples. If the generator has low entropy, much lower than real data, it may be easier to detect this with a discriminator that sees multiple samples.
+
+Here, I&#x27;m going to look at this technique in general: modifying an unsupervised learning algorithm by replacing individual samples with i.i.d. minibatches of samples. Note, that this is not exactly what the authors end up doing in the paper referenced above, but it&#x27;s an interesting trick to think about.
+
+#### How does the minibatch heuristic effect divergences?
+
+The reason I&#x27;m so keen on studying GANs is the connection to principled information theoretic divergence criteria. Under some assumptions, it can be shown that GANs minimise the Jensen-Shannon (JS) divergence, or with a slight modification the reverse-KL divergence. In fact, a recent paper showed that you can use GAN-like algorithms to minimise any $f$-divergence.
+
+So my immediate question looking at the minibatch discrimination idea was: how does this heuristic change the divergences that GANs minimise.
+
+#### KL divergence
+
+Let&#x27;s assume we have any algorithm (GAN or anything else) that minimises KL divergence $\operatorname{KL}[P\|Q]$ between two distributions $P$ and $Q$. Let&#x27;s now modify this algorithm so that instead of looking at distributions $P$ and $Q$ of a single sample $x$, it looks at distributions $P^{(N)}$ and $Q^{(N)}$ of whole a minibatch $(x_1,\ldots,x_N)$. I use $P^{(N)}$ to denote the following distribution:
+
+$$ P^{(N)}(x_1,\ldots,x_N) = \prod_{n=1}^N P(x_n) 
+$$
+
+The resulting algorithm will therefore minimise the following divergence:
+
+$$ d[P\|Q] = \operatorname{KL}[P^{(N)}\|Q^{(N)}] 
+$$
+
+It is relatively easy to show why this divergence $d$ behaves exactly like the KL divergence between $P$ and $Q$. Here&#x27;s the maths for minibatch size of $N=2$:
+
+\begin{align} d[P\|Q] &amp;= \operatorname{KL}[P^{(2)}\|Q^{(2)}] \\ 
+&amp;= \mathbb{E}_{x_1\sim P,x_2\sim P}\log\frac{P(x_1)P(x_2)}{Q(x_1)Q(x_2)} \\ &amp;= \mathbb{E}_{x_1\sim P,x_2\sim P}\log\frac{P(x_1)}{Q(x_1)} + \mathbb{E}_{x_1\sim P,x_2\sim P}\log\frac{P(x_2)}{Q(x_2)} \\ &amp;= \mathbb{E}_{x_1\sim P}\log\frac{P(x_1)}{Q(x_1)} + \mathbb{E}_{x_2\sim P}\log\frac{P(x_2)}{Q(x_2)} \\ &amp;= 2\operatorname{KL}[P\|Q] \end{align}
+
+In full generality we can say that:
+
+$$ \operatorname{KL}[P^{(N)}\|Q^{(N)}] = N \operatorname{KL}[P\|Q] $$
+
+So changing the KL-divergence to minibatch KL-divergence does not change the objective of the training algorithm at all. Thus, if one uses minibatch discrimination with the blended training objective, one can rest assured that the algorithm still performs approximate gradient descent on the KL divergence. It may still work differently in practice, for example by reducing the variance of the estimators involved.
+
+This property of the KL divergence is not surprising if one considers its compression/information theoretic definition: the extra bits needed to compress data drawn from $P$, using model $Q$. Compressing a minibatch of i.i.d. samples corresponds to compressing the samples independently. Their codelengths would add up linearly, hence KL-divergences add up linearly, too.
+
+#### JS divergence
+
+The same thing does not hold for the JS-divergence. Generally speaking, minibatch JS divergence behaves differently from ordinary JS-divergence. Instead of equality, for JS divergences the following inequality holds:
+
+$$ JS[P^{(N)}\|Q^{(N)}] \leq N \cdot JS[P\|Q] 
+$$
+
+In fact for fixed $P$ and $Q$, $JS[P^{(N)}\|Q^{(N)}]/N$ is monotonically non-increasing. This can be seen intuitively by considering the definition of JS divergence as the mutual information between the samples and the binary indicator $y$ of whether the samples were drawn from $Q$ or $P$. Using this we have that:
+
+\begin{align} \operatorname{JS}[P^{(2)}\|Q^{(2)}] &amp;= \mathbb{I}[y ; x_1, x_2] \\ &amp;= \mathbb{I}[y ; x_1] + \mathbb{I}[y ; x_2 \vert x_1] \\ &amp;\leq \mathbb{I}[y ; x_1] + \mathbb{I}[y ; x_2] \\ &amp;= 2 \operatorname{JS}[P\|Q] \end{align}
+
+Below I plotted the minibatch-JS-divergence $JS[P^{(N)}\|Q^{(N)}]$ for various minibatch-sizes $N=1,2,3,8$, between univariate Bernoulli distributions with parameters $p$ and $q$. For the plots below, $p$ is kept fixed at $p=0.2$, and the parameter $q$ is varied between $0$ and $1$.
+
+![](http://www.inference.vc/content/images/2016/06/fr9ra2qB2t9stl8sVnqIAAH1GqAAAhM3YsWOVkpKiTz75RD6fL9D-0UcfhbEqAEBfRYe7AABA5DIMQ-vXr9eLL76op556So8--qjOnDmjsrIyGYYR7vIAAL3ESAUAIKxmzpyp9957T52dndqyZYuOHTum4uJi7v4EAIMIIxUAgLCbPn26pk-fHtj2er1hrAYA0FeMVAAAAAAICaECAAAAQEgIFQCAm5JhGFysDQCDhOHnSjgAAAAAIWCkA.png)
+
+You can see that all divergences have a unique global minimum around $p=q=0.2$. However, their behaviour at the tails changes as the minibatch-size increases. This change in behaviour is due to saturation: JS divergence is upper bounded by $1$, which corresponds to 1 bit of information. If I continued increasing the minibatch-size (which would blow up the memory footprint of my super-naive script), eventually the divergence would reach $1$ almost everywhere except for a dip down to $0$ around $p=q=0.2$.
+
+Below are the same divergences normalised to be roughly the same scale.
+
+![](http://www.inference.vc/content/images/2016/06/Rle8idcTS3gAAAABJRU5ErkJggg--.png)
+
+The problem of GANs that minibatch discrimination was meant to fix is that it favours low-entropy solutions. In this plot, this would correspond to the $q&lt;0.1$ regime. You can argue that as the batch-size increases, the relative penalty for low-entropy approximations $q&lt;0.1$ do indeed decrease when compared to completely wrong solutions $q&gt;0.5$. However, the effect is pretty subtle.
+
+Bonus track: adversarial preference loss
+
+In this context, I also revisited the adversarial preference loss. Here, the discriminator receives two inputs $x_1$ and $x_2$ (one synthetic, one real) and it has to decide which one was real.
+
+This algorithm, too, can be related to the minibatch discrimination approach, as it minimises the following divergence:
+
+$$ d(P,Q) = d(P\times Q\|Q\times P), 
+$$
+
+where $P\times Q(x_1,x_2) = P(x_1)Q(x_2)$. Again, if $d$ is the $KL$ divergence, the training objective boils down to the same thing as the original GAN. However, if $d$ is the JS divergence, we will end up minimising something weird, $\operatorname{JS}[Q\times P\| P\times Q]$</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="nipsreviews" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nipsreviews" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nipsreviews&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;NIPS Conference Reviews&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nipsreviews&lt;br&gt;Posted: 2017-04-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/SalimansGZCRC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1737').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/SalimansGZCRC16%26a%3Dnipsreviews" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1737" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=nipsreviews" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dnipsreviews&amp;text=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;Body=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dnipsreviews"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dnipsreviews&amp;title=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=nipsreviews" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nipsreviews" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by NIPS Conference Reviews 2017-04-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The Authors provide a bag of tricks for training GAN&#x27;s in the image domain. Using these, they achieve very strong semi-supervised results on SHVN, MNIST, and CIFAR.
+
+The authors then train the improved model on several images datasets, evaluate it on different tasks: semi-supervised learning, and generative capabilities, and achieve state-of-the-art results.
+
+This paper investigates several techniques to stabilize GAN training and encourage convergence. Although lack of theoretical justification, the proposed heuristic techniques give better-looking samples. In addition to human judgement, the paper proposes a new metric called Inception score by applying pre-trained deep classification network on the generated samples. By introducing free labels with the generated samples as new category, the paper proposes the experiment using GAN under semi-supervised learning setting, which achieve SOTA semi-supervised performance on several benchmark datasets (MNIST, CIFAR-10, and SVHN).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/SalimansGZCRC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1738').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/SalimansGZCRC16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1738" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Daleju&amp;text=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;Body=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Daleju&amp;title=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest some small changes to the GAN training scheme that lead to visually improved results.
+  * They suggest a new scoring method to compare the results of different GAN models with each other.
+
+### How
+  * Feature Matching
+    * Usually G would be trained to mislead D as often as possible, i.e. to maximize D&#x27;s output.
+    * Now they train G to minimize the feature distance between real and fake images. I.e. they do:
+      1. Pick a layer $l$ from D.
+      2. Forward real images through D and extract the features from layer $l$.
+      3. Forward fake images through D and extract the features from layer $l$.
+      4. Compute the squared euclidean distance between the layers and backpropagate.
+  * Minibatch discrimination
+    * They allow D to look at multiple images in the same minibatch.
+    * That is, they feed the features (of each image) extracted by an intermediate layer of D through a linear operation, resulting in a matrix per image.
+    * They then compute the L1-distances between these matrices.
+    * They then let D make its judgement (fake/real image) based on the features extracted from the image and these distances.
+    * They add this mechanism so that the diversity of images generated by G increases (which should also prevent collapses).
+  * Historical averaging
+    * They add a penalty term that punishes weights which are rather far away from their historical average values.
+    * I.e. the cost is `distance(current parameters, average of parameters over the last t batches)`.
+    * They argue that this can help the network to find equilibria that normal gradient descent would not find.
+  * One-sided label smoothing
+    * Usually one would use the labels 0 (image is fake) and 1 (image is real).
+    * Using smoother labels (0.1 and 0.9) seems to make networks more resistent to adversarial examples.
+    * So they smooth the labels of real images (apparently to 0.9?).
+    * Smoothing the labels of fake images would lead to (mathematical) problems in some cases, so they keep these at 0.
+  * Virtual Batch Normalization (VBN)
+    * Usually BN normalizes each example with respect to the other examples in the same batch.
+    * They instead normalize each example with respect to the examples in a reference batch, which was picked once at the start of the training.
+    * VBN is intended to reduce the dependence of each example on the other examples in the batch.
+    * VBN is computationally expensive, because it requires forwarding of two minibatches.
+    * They use VBN for their G.
+  * Inception Scoring
+    * They introduce a new scoring method for GAN results.
+    * Their method is based on feeding the generated images through another network, here they use Inception.
+    * For an image `x` and predicted classes `y` (softmax-output of Inception):
+      * They argue that they want `p(y|x)` to have low entropy, i.e. the model should be rather certain of seeing a class (or few classes) in the image.
+      * They argue that they want `p(y)` to have high entropy, i.e. the predicted classes (and therefore image contents) should have high diversity. (This seems like something that is quite a bit dependend on the used dataset?)
+      * They combine both measurements to the final score of `exp(KL(p(y|x) || p(y))) = exp( &lt;sum over images&gt; p(y|xi) * (log(p(y|xi)) - log(p(y))) )`.
+        * `p(y)` can be approximated as the mean of the softmax-outputs over many examples.
+      * Relevant python code that they use (where `part` seems to be of shape `(batch size, number of classes)`, i.e. the softmax outputs): `kl = part * (np.log(part) - np.log(np.expand_dims(np.mean(part, 0), 0))); kl = np.mean(np.sum(kl, 1)); scores.append(np.exp(kl));`
+    * They average this score over 50,000 generated images.
+  * Semi-supervised Learning
+    * For a dataset with K classes they extend D by K outputs (leading to K+1 outputs total).
+    * They then optimize two loss functions jointly:
+      * Unsupervised loss: The classic GAN loss, i.e. D has to predict the fake/real output correctly. (The other outputs seem to not influence this loss.)
+      * Supervised loss: D must correctly predict the image&#x27;s class label, if it happens to be a real image and if it was annotated with a class.
+    * They note that training G with feature matching produces the best results for semi-supervised classification.
+    * They note that training G with minibatch discrimination produces significantly worse results for semi-supervised classification. (But visually the samples look better.)
+    * They note that using semi-supervised learning overall results in higher image quality than not using it. They speculate that this has to do with the class labels containing information about image statistics that are important to humans.
+
+### Results
+  * MNIST
+    * They use weight normalization and white noise in D.
+    * Samples of high visual quality when using minibatch discrimination with semi-supervised learning.
+    * Very good results in semi-supervised learning when using feature matching.
+    * Using feature matching decreases visual quality of generated images, but improves results of semi-supervised learning.
+  * CIFAR-10
+    * D: 9-layer CNN with dropout, weight normalization.
+    * G: 4-layer CNN with batch normalization (so no VBN?).
+    * Visually very good generated samples when using minibatch discrimination with semi-supervised learning. (Probably new record quality.)
+      * Note: No comparison with nearest neighbours from the dataset.
+    * When using feature matching the results are visually not as good.
+    * Again, very good results in semi-supervised learning when using feature matching.
+  * SVHN
+    * Same setup as in CIFAR-10 and similar results.
+  * ImageNet
+    * They tried to generate 128x128 images and compared to DCGAN.
+    * They improved from &quot;total garbage&quot; to &quot;garbage&quot; (they now hit some textures, but structure is still wildly off).
+
+
+![CIFAR-10 Examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Improved_Techniques_for_Training_GANs__cifar.jpg?raw=true &quot;CIFAR-10 Examples&quot;)
+
+*Generated CIFAR-10-like images (with minibatch discrimination and semi-supervised learning).*</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

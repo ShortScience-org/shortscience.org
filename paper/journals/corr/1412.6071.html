@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fractional Max-Pooling - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Fractional Max-Pooling - ShortScience.org">
+<meta property="og:description" content="## Introduction
+
+* [Link to Paper]( )
+* Spatial pooling layers are building blocks for Convolutional...">
+<meta name="description" content="## Introduction
+
+* [Link to Paper]( )
+* Spatial pooling layers are building blocks for Convolutional...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1412.6071">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1412.6071" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Benjamin Graham"}, "headline": "Fractional Max-Pooling", "description": "Summary of Fractional Max-Pooling", "datePublished": "2016-10-20 22:27:23", "dateModified": "2016-10-20 23:09:36", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1412.6071", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1412.6071v4"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Fractional%20Max-Pooling%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Fractional Max-Pooling</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Benjamin%20Graham">Benjamin Graham</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2014">arXiv e-Print archive - 2014</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2014/12/18<br><b>Abstract:</b>   Convolutional networks almost always incorporate some form of spatial
+pooling, and very often it is alpha times alpha max-pooling with alpha=2.
+Max-pooling act on the hidden layers of the network, reducing their size by an
+integer multiplicative factor alpha. The amazing by-product of discarding 75%
+of your data is that you build into the network a degree of invariance with
+respect to translations and elastic distortions. However, if you simply
+alternate convolutional layers with max-pooling layers, performance is limited
+due to the rapid reduction in spatial size, and the disjoint nature of the
+pooling regions. We have formulated a fractional version of max-pooling where
+alpha is allowed to take non-integer values. Our version of max-pooling is
+stochastic as there are lots of different ways of constructing suitable pooling
+regions. We find that our form of fractional max-pooling reduces overfitting on
+a variety of datasets: for instance, we improve on the state-of-the art for
+CIFAR-100 without even using dropout.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677').hide());void($('#showless-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677').show());void($('#more-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677').show());void($('#showless-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677').hide());void($('#more-am91cm5hbHMvY29yci8xNDEyLjYwNzE-677').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1412.6071">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1412.6071&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-678').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1412.6071%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-678" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1412.6071&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Dshagunsodhani&amp;text=Summary%20of%20Fractional%20Max-Pooling&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Fractional%20Max-Pooling&amp;Body=Summary%20of%20Fractional%20Max-Pooling%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Dshagunsodhani&amp;title=Summary%20of%20Fractional%20Max-Pooling" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1412.6071&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## Introduction
+
+* [Link to Paper](http://arxiv.org/pdf/1412.6071v4.pdf)
+* Spatial pooling layers are building blocks for Convolutional Neural Networks (CNNs).
+* Input to pooling operation is a $N_{in}$ x $N_{in}$ matrix and output is a smaller matrix $N_{out}$ x $N_{out}$.
+* Pooling operation divides $N_{in}$ x $N_{in}$ square into $N^2_{out}$ pooling regions $P_{i, j}$.
+* $P_{i, j}$ ⊂ $\{1, 2, . . . , N_{in}\}$ $\forall$ $(i, j) \in \{1, . . . , N_{out} \}^2$
+
+## MP2
+
+* Refers to 2x2 max-pooling layer.
+* Popular choice for max-pooling operation.
+
+### Advantages of MP2
+* Fast.
+* Quickly reduces the size of the hidden layer.
+* Encodes a degree of invariance with respect to translations and elastic distortions.
+
+### Issues with MP2
+* Disjoint nature of pooling regions.
+* Since size decreases rapidly, stacks of back-to-back CNNs are needed to build deep networks.
+
+## FMP
+
+* Reduces the spatial size of the image by a factor of *α*, where *α ∈ (1, 2)*.
+* Introduces randomness in terms of choice of pooling region.
+* Pooling regions can be chosen in a *random* or *pseudorandom* manner.
+* Pooling regions can be *disjoint* or *overlapping*.
+
+## Generating Pooling Regions
+
+* Let $a_i$ and $b_i$ be 2 increasing sequences of integers, starting at 1 and ending at $N_{in}$.
+* Increments are either 1 or 2.
+* For *disjoint regions, $P = [a_{i−1}, a_{i − 1}] × [b_{j−1}, b_{j − 1}]$
+* For *overlapping regions, $P = [a_{i−1}, a_i] × [b_{j−1}, b_j 1]$
+* Pooling regions can be generated *randomly* by choosing the increment randomly at each step.
+* To generate pooling regions in a *peusdorandom* manner, choose $a_i$ = ceil($\alpha | (i+u))$, where $\alpha \in (1, 2)$ with some $u \in (0, 1)$.
+* Each FMP layer uses a different pair of sequence.
+* An FMP network can be thought of as an ensemble of similar networks, with each different pooling-region configuration defining a different member of the ensemble.
+
+## Observations  
+
+* *Random* FMP is good on its own but may underfit when combined with dropout or training data augmentation.  
+* *Pseudorandom* approach generates more stable pooling regions.   
+* *Overlapping* FMP performs better than *disjoint* FMP.    
+
+## Weakness
+
+* No justification is provided for the observations mentioned above.
+* It needs to be seen how performance is affected if the pooling layer in architectures like GoogLeNet.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1412.6071&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-679').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1412.6071%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-679" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1412.6071&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Daleju&amp;text=Summary%20of%20Fractional%20Max-Pooling&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Fractional%20Max-Pooling&amp;Body=Summary%20of%20Fractional%20Max-Pooling%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1412.6071%26a%3Daleju&amp;title=Summary%20of%20Fractional%20Max-Pooling" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1412.6071&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * Traditionally neural nets use max pooling with 2x2 grids (2MP).
+  * 2MP reduces the image dimensions by a factor of 2.
+  * An alternative would be to use pooling schemes that reduce by factors other than two, e.g. `1 &lt; factor &lt; 2`.
+  * Pooling by a factor of `sqrt(2)` would allow twice as many pooling layers as 2MP, resulting in &quot;softer&quot; image size reduction throughout the network.
+  * Fractional Max Pooling (FMP) is such a method to perform max pooling by factors other than 2.
+
+### How
+  * In 2MP you move a 2x2 grid always by 2 pixels.
+  * Imagine that these step sizes follow a sequence, i.e. for 2MP: `2222222...`
+  * If you mix in just a single `1` you get a pooling factor of `&lt;2`.
+  * By chosing the right amount of `1s` vs. `2s` you can pool by any factor between 1 and 2.
+  * The sequences of `1s` and `2s` can be generated in fully *random* order or in *pseudorandom* order, where pseudorandom basically means &quot;predictable sub patterns&quot; (e.g. 211211211211211...).
+  * FMP can happen *disjoint* or *overlapping*. Disjoint means 2x2 grids, overlapping means 3x3.
+
+### Results
+  * FMP seems to perform generally better than 2MP.
+  * Better results on various tests, including CIFAR-10 and CIFAR-100 (often quite significant improvement).
+  * Best configuration seems to be *random* sequences with *overlapping* regions.
+  * Results are especially better if each test is repeated multiple times per image (as the random sequence generation creates randomness, similar to dropout). First 5-10 repetitions seem to be most valuable, but even 100+ give some improvement.
+  * An FMP-factor of `sqrt(2)` was usually used.
+
+
+![Examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Fractional_Max_Pooling__examples.jpg?raw=true &quot;Examples&quot;)
+
+*Random FMP with a factor of sqrt(2) applied five times to the same input image (results upscaled back to original size).*
+
+-------------------------
+
+### Rough chapter-wise notes
+
+* (1) Convolutional neural networks
+  * Advantages of 2x2 max pooling (2MP): fast; a bit invariant to translations and distortions; quick reduction of image sizes
+  * Disadvantages: &quot;disjoint nature of pooling regions&quot; can limit generalization (i.e. that they don&#x27;t overlap?); reduction of image sizes can be too quick
+  * Alternatives to 2MP: 3x3 pooling with stride 2, stochastic 2x2 pooling
+  * All suggested alternatives to 2MP also reduce sizes by a factor of 2
+  * Author wants to have reduction by sqrt(2) as that would enable to use twice as many pooling layers
+  * Fractional Max Pooling = Pooling that reduces image sizes by a factor of `1 &lt; alpha &lt; 2`
+  * FMP introduces randomness into pooling (by the choice of pooling regions)
+  * Settings of FMP:
+    * Pooling Factor `alpha` in range [1, 2] (1 = no change in image sizes, 2 = image sizes get halfed)
+    * Choice of Pooling-Regions: Random or pseudorandom. Random is stronger (?). Random+Dropout can result in underfitting.
+    * Disjoint or overlapping pooling regions. Results for overlapping are better.
+
+* (2) Fractional max-pooling
+  * For traditional 2MP, every grid&#x27;s top left coordinate is at `(2i-1, 2j-1)` and it&#x27;s bottom right coordinate at `(2i, 2j)` (i=col, j=row).
+  * It will reduce the original size N to 1/2N, i.e. `2N_in = N_out`.
+  * Paper analyzes `1 &lt; alpha &lt; 2`, but `alpha &gt; 2` is also possible.
+  * Grid top left positions can be described by sequences of integers, e.g. (only column): 1, 3, 5, ...
+  * Disjoint 2x2 pooling might be 1, 3, 5, ... while overlapping would have the same sequence with a larger 3x3 grid.
+  * The increment of the sequences can be random or pseudorandom for alphas &lt; 2.
+  * For 2x2 FMP you can represent any alpha with a &quot;good&quot; sequence of increments that all have values `1` or `2`, e.g. 2111121122111121...
+  * In the case of random FMP, the optimal fraction of 1s and 2s is calculated. Then a random permutation of a sequence of 1s and 2s is generated.
+  * In the case of pseudorandom FMP, the 1s and 2s follow a pattern that leads to the correct alpha, e.g. 112112121121211212...
+  * Random FMP creates varying distortions of the input image. Pseudorandom FMP is a faithful downscaling.
+ 
+* (3) Implementation
+  * In their tests they use a convnet starting with 10 convolutions, then 20, then 30, ...
+  * They add FMP with an alpha of sqrt(2) after every conv layer.
+  * They calculate the desired output size, then go backwards through their network to the input. They multiply the size of the image by sqrt(2) with every FMP layer and add a flat 1 for every conv layer. The result is the required image size. They pad the images to that size.
+  * They use dropout, with increasing strength from 0% to 50% towards the output.
+  * They use LeakyReLUs.
+  * Every time they apply an FMP layer, they generate a new sequence of 1s and 2s. That indirectly makes the network an ensemble of similar networks.
+  * The output of the network can be averaged over several forward passes (for the same image). The result then becomes more accurate (especially up to &gt;=6 forward passes).
+
+* (4) Results
+  * Tested on MNIST and CIFAR-100
+  * Architectures (somehow different from (3)?):
+    * MNIST: 36x36 img -&gt; 6 times (32 conv (3x3?) -&gt; FMP alpha=sqrt(2)) -&gt; ? -&gt; ? -&gt; output
+    * CIFAR-100: 94x94 img -&gt; 12 times (64 conv (3x3?) -&gt; FMP alpha=2^(1/3)) -&gt; ? -&gt; ? -&gt; output
+  * Overlapping pooling regions seemed to perform better than disjoint regions.
+  * Random FMP seemed to perform better than pseudorandom FMP.
+  * Other tests:
+    * &quot;The Online Handwritten Assamese Characters Dataset&quot;: FMP performed better than 2MP (though their network architecture seemed to have significantly more parameters
+    * &quot;CASIA-OLHWDB1.1 database&quot;: FMP performed better than 2MP (again, seemed to have more parameters)
+    * CIFAR-10: FMP performed better than current best network (especially with many tests per image)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

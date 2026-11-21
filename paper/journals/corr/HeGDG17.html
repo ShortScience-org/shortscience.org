@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mask R-CNN - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Mask R-CNN - ShortScience.org">
+<meta property="og:description" content="Mask RCNN takes off from where Faster RCNN left, with some augmentations aimed at bettering instance...">
+<meta name="description" content="Mask RCNN takes off from where Faster RCNN left, with some augmentations aimed at bettering instance...">
+<meta property="og:image" content="https://i.imgur.com/snUq73Q.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "He, Kaiming and Gkioxari, Georgia and Doll\u00e1r, Piotr and Girshick, Ross B."}, "headline": "Mask R-CNN", "description": "Summary of Mask R-CNN", "datePublished": "2017-04-12 13:04:17", "dateModified": "2017-04-12 13:04:57", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/snUq73Q.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1703.06870"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Mask%20R-CNN%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Mask R-CNN</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=He%2C%20Kaiming">He, Kaiming</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gkioxari%2C%20Georgia">Gkioxari, Georgia</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Doll%C3%A1r%2C%20Piotr">Dollár, Piotr</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Girshick%2C%20Ross%20B.">Girshick, Ross B.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/HeGDG17">Summaries/Notes <span class="badge">5</span></a></li></ul><br>
+<div id="qureai" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=qureai" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=qureai&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Qure.ai&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: qureai&lt;br&gt;Posted: 2017-04-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/HeGDG17&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">10</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1633').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/HeGDG17%26a%3Dqureai" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1633" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=qureai" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai&amp;text=Summary%20of%20Mask%20R-CNN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Mask%20R-CNN&amp;Body=Summary%20of%20Mask%20R-CNN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai&amp;title=Summary%20of%20Mask%20R-CNN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=qureai" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=qureai" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Qure.ai 2017-04-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Mask RCNN takes off from where Faster RCNN left, with some augmentations aimed at bettering instance segmentation (which was out of scope for FRCNN). Instance segmentation was achieved remarkably well in *DeepMask* , *SharpMask* and later *Feature Pyramid Networks* (FPN).
+
+Faster RCNN was not designed for pixel-to-pixel alignment between network inputs and outputs. This is most evident in how RoIPool , the de facto core operation for attending to instances, performs coarse spatial quantization for feature extraction. Mask RCNN fixes that by introducing RoIAlign in place of RoIPool.
+
+#### Methodology
+
+Mask RCNN retains most of the architecture of Faster RCNN. It adds the a third branch for segmentation. The third branch takes the output from RoIAlign layer and predicts binary class masks for each class.
+
+##### Major Changes and intutions
+
+**Mask prediction**
+
+Mask prediction segmentation predicts a binary mask for each RoI using fully convolution - and the stark difference being usage of *sigmoid* activation for predicting final mask instead of *softmax*, implies masks don&#x27;t compete with each other. This *decouples* segmentation from classification. The class prediction branch is used for class prediction and for calculating loss, the mask of predicted loss is used calculating Lmask.
+
+Also, they show that a single class agnostic mask prediction works almost as effective as separate mask for each class, thereby supporting their method of decoupling classification from segmentation
+
+**RoIAlign**
+
+RoIPool first quantizes a floating-number RoI to the discrete granularity of the feature map, this quantized RoI is then subdivided into spatial bins which are themselves quantized, and finally feature values covered by each bin are aggregated (usually by max pooling). Instead of  quantization of the RoI boundaries
+or bin bilinear interpolation is used to compute the exact values of the input features at four regularly sampled locations in each RoI bin, and aggregate the result (using max or average).
+
+**Backbone architecture**
+
+Faster RCNN uses a VGG like structure for extracting features from image, weights of which were shared among RPN and region detection layers. Herein, authors experiment with 2 backbone architectures - ResNet based VGG like in FRCNN and ResNet based [FPN](http://www.shortscience.org/paper?bibtexKey=journals/corr/LinDGHHB16) based. FPN uses convolution feature maps from previous layers and recombining them to produce pyramid of feature maps to be used for prediction instead of single-scale feature layer (final output of conv layer before connecting to fc layers was used in Faster RCNN) 
+
+**Training Objective**
+
+The training objective looks like this 
+![](https://i.imgur.com/snUq73Q.png)
+
+Lmask is the addition from Faster RCNN. The method to calculate was mentioned above
+
+#### Observation
+
+Mask RCNN performs significantly better than COCO instance segmentation winners *without any bells and whiskers*. Detailed results are available in the paper
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/HeGDG17&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1634').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/HeGDG17%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1634" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Daleju&amp;text=Summary%20of%20Mask%20R-CNN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Mask%20R-CNN&amp;Body=Summary%20of%20Mask%20R-CNN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Daleju&amp;title=Summary%20of%20Mask%20R-CNN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a variation of Faster R-CNN.
+  * Their network detects bounding boxes (e.g. of people, cars) in images *and also* segments the objects within these bounding boxes (i.e. classifies for each pixel whether it is part of the object or background).
+  * The model runs roughly at the same speed as Faster R-CNN.
+
+### How
+  * The architecture and training is mostly the same as in Faster R-CNN:
+    * Input is an image.
+    * The *backbone* network transforms the input image into feature maps. It consists of convolutions, e.g. initialized with ResNet&#x27;s weights.
+    * The *RPN* (Region Proposal Network) takes the feature maps and classifies for each location whether there is a bounding box at that point (with some other stuff to regress height/width and offsets).
+      This leads to a large number of bounding box candidates (region proposals) per image.
+    * *RoIAlign*: Each region proposal&#x27;s &quot;area&quot; is extracted from the feature maps and converted into a fixed-size `7x7xF` feature map (with F input filters). (See below.)
+    * The *head* uses the region proposal&#x27;s features to perform
+      * Classification: &quot;is the bounding box of a person/car/.../background&quot;
+      * Regression: &quot;bounding box should have width/height/offset so and so&quot;
+      * Segmentation: &quot;pixels so and so are part of this object&#x27;s mask&quot;
+    * Rough visualization of the architecture:
+      * ![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Mask_R-CNN/architecture.jpg?raw=true &quot;Architecture&quot;)
+  * RoIAlign
+    * This is very similar to RoIPooling in Faster R-CNN.
+    * For each RoI, RoIPooling first &quot;finds&quot; the features in the feature maps that lie within the RoI&#x27;s rectangle. Then it max-pools them to create a fixed size vector.
+    * Problem: The coordinates where an RoI starts and ends may be non-integers. E.g. the top left corner might have coordinates `(x=2.5, y=4.7)`.
+      RoIPooling simply rounds these values to the nearest integers (e.g. `(x=2, y=5)`).
+      But that can create pooled RoIs that are significantly off, as the feature maps with which RoIPooling works have high (total) stride (e.g. 32 pixels in standard ResNets).
+      So being just one cell off can easily lead to being 32 pixels off on the input image.
+    * For classification, being some pixels off is usually not that bad. For masks however it can significantly worsen the results, as these have to be pixel-accurate.
+    * In RoIAlign this is compensated by not rounding the coordinates and instead using bilinear interpolation to interpolate between the feature map&#x27;s cells.
+    * Each RoI is pooled by RoIAlign to a fixed sized feature map of size `(H, W, F)`, with H and W usually being 7 or 14. (It can also generate different sizes, e.g. `7x7xF` for classification and more accurate `14x14xF` for masks.)
+    * If H and W are `7`, this leads to `49` cells within each plane of the pooled feature maps.
+    * Each cell again is a rectangle -- similar to the RoIs -- and pooled with bilinear interpolation.
+      More exactly, each cell is split up into four sub-cells (top left, top right, bottom right, bottom left).
+      Each of these sub-cells is pooled via bilinear interpolation, leading to four values per cell.
+      The final cell value is then computed using either an average or a maximum over the four sub-values.
+  * Segmentation
+    * They add an additional branch to the *head* that gets pooled RoI as inputs and processes them seperately from the classification and regression (no connections between the branches).
+    * That branch does segmentation. It is fully convolutional, similar to many segmentation networks.
+    * The result is one mask per class.
+    * There is no softmax per pixel over the classes, as classification is done by a different branch.
+  * Base networks
+    * Their *backbone* networks are either ResNet or ResNeXt (in the 50 or 102 layer variations).
+    * Their *head* is either the fourth/fifth module from ResNet/ResNeXt (called *C4* (fourth) or *C5* (fifth)) or they use the second half from the FPN network (called *FPN*).
+    * They denote their networks via `backbone-head`, i.e. ResNet-101-FPN means that their backbone is ResNet-101 and their head is FPN.
+    * Visualization of the different heads:
+      * ![Architecture heads](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Mask_R-CNN/head.jpg?raw=true &quot;Architecture heads&quot;)
+  * Training
+    * Training happens in basically the same way as Faster R-CNN.
+    * They just add an additional loss term to the total loss (`L = L_classification + L_regression + L_mask`). `L_mask` is based on binary cross-entropy.
+    * For each predicted RoI, the correct mask is the intersection between that RoI&#x27;s area and the correct mask.
+    * They only train masks for RoIs that are positive (overlap with ground truth bounding boxes).
+    * They train for 120k iterations at learning rate 0.02 and 40k at 0.002 with weight decay 0.0002 and momentum 0.9.
+  * Test
+    * For the *C4*-head they sample up to 300 region proposals from the RPN (those with highest confidence values). For the FPN head they sample up to 1000, as FPN is faster.
+    * They sample masks only for the 100 proposals with highest confidence values.
+    * Each mask is turned into a binary mask using a threshold of 0.5.
+
+### Results
+  * Instance Segmentation
+    * They train and test on COCO.
+    * They can outperform the best competitor by a decent margin (AP 37.1 vs 33.6 for FCIS+++ with OHEM).
+    * Their model especially performs much better when there is overlap between bounding boxes.
+    * Ranking of their models: ResNeXt-101-FPN &gt; ResNet-101-FPN &gt; ResNet-50-FPN &gt; ResNet-101-C4 &gt; ResNet-50-C4.
+    * Using sigmoid instead of softmax (over classes) for the mask prediction significantly improves results by 5.5 to 7.1 points AP (depending on measurement method).
+    * Predicting only one mask per RoI (class-agnostic) instead of C masks (where C is the number of classes) only has a small negative effect on AP (about 0.6 points).
+    * Using RoIAlign instead of RoIPooling has significant positive effects on the AP of around 5 to 10 points (if a network with C5 head is chosen, which has a high stride of 32). Effects are smaller for small strides and FPN head.
+    * Using fully convolutional networks for the mask branch performs better than fully connected layers (1-3 points AP).
+    * Examples results on COCO vs FCIS (note the better handling of overlap):
+      * ![Examples COCO](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Mask_R-CNN/examples_overlap.jpg?raw=true &quot;Examples COCO&quot;)
+  * Bounding-Box-Detection
+    * Training additionally on masks seems to improve AP for bounding boxes by around 1 point (benefit from multi-task learning).
+  * Timing
+    * Around 200ms for ResNet-101-FPN. (M40 GPU)
+    * Around 400ms for ResNet-101-C4.
+  * Human Pose Estimation
+    * The mask branch can be used to predict keypoint (landmark) locations on human bodies (i.e. locations of hands, feet etc.).
+    * This is done by using one mask per keypoint, initializing it to `0` and setting the keypoint location to `1`.
+    * By doing this, Mask R-CNN can predict keypoints roughly as good as the current leading models (on COCO), while running at 5fps.
+  * Cityscapes
+    * They test their model on the cityscapes dataset.
+    * They beat previous models with significant margins. This is largely due to their better handling of overlapping instances.
+    * They get their best scores using a model that was pre-trained on COCO.
+    * Examples results on cityscapes:
+      * ![Examples Cityscapes](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Mask_R-CNN/examples_cityscapes.jpg?raw=true &quot;Examples Cityscapes&quot;)
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="nandini" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nandini" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nandini&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f73671907279977ad1c5df1798190c91?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;nandini&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nandini&lt;br&gt;Posted: 2017-11-07&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/HeGDG17&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/f73671907279977ad1c5df1798190c91?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1635').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/HeGDG17%26a%3Dnandini" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1635" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=nandini" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dnandini&amp;text=Summary%20of%20Mask%20R-CNN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dnandini" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Mask%20R-CNN&amp;Body=Summary%20of%20Mask%20R-CNN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dnandini"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dnandini" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dnandini&amp;title=Summary%20of%20Mask%20R-CNN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=nandini" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nandini" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by nandini 2017-11-07</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">####  Mask R-CNN framework for instance segmentation
+### Goal:
+* classify individual objects
+*  localize each using a bounding box, 
+* semantic segmentation
+https://i.imgur.com/XfBRa5O.png
+*  classify each pixel into a fixed set of categories without differentiating object instances.
+* extends Faster R-CNN  by adding a branch for predicting segmentation masks on each Region of Interest (RoI), in parallel with the existing branch for classification and bounding box regression.
+*  FCN applied to each RoI, predicting a segmentation mask in a pixel-to-pixel manner
+1. RoIAlign:
+ * Used to fix the misalignment that faithfully preserves exact spatial locations
+ * improves mask accuracy by relative 10% to 50%, fast speed
+2. Decouple mask and class prediction:
+ * predict a binary mask for each class independently, without competition among classes
+
+ History:
+* RCNN: The Region-based CNN (R-CNN) approach to bounding-box object detection
+* Fast RCNN:  Speeding up and Simplifying R-CNN
+ *  RoI (Region of Interest) Pooling
+ *  jointly train the CNN, classifier, and bounding box regressor in a single model
+*  Faster R-CNN - Speeding Up Region Proposal
+ * reuse the same CNN results for region proposals instead of running a separate selective search algorithm it can be done by Region Proposal Network
+ * only one CNN needs to be trained 
+
+ Related Work
+*  Instance Segmentation: “fully convolutional instance segmentation” (FCIS)
+* Faster R-CNN: * Region Proposal Network (RPN), proposes candidate object bounding boxes
+* Fast R-CNN [12], extracts features using RoIPool from each candidate box and performs classification and bounding-box regression
+*  Mask R-CNN: Mask R-CNN adopts the same two-stage of Faster RCNN And has third stage i.e binary mask for each RoI
+* Mask Representation: pixel to pixel representation of image done by RoIAlign layer (7X7)
+#### Network Architecture
+*  convolutional backbone architecture used for feature extraction over an entire image (ResNet-50-C4, FPN)
+*  network head for bounding-box recognition (classification and regression) and mask prediction
+https://i.imgur.com/pUvKdmx.png
+#### Training:
+* Images resized:800 pixel                                     
+* mini-batch : 2 images per GPU
+* N : 64
+* train: on 8 GPUs for 160k iterations
+* learning : 0.02
+*  train images: 80K
+* val images: 35K
+* minival:5K
+https://i.imgur.com/6ZLpewi.png
+https://i.imgur.com/5o3um0Y.png</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="martinthoma" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2017-04-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/HeGDG17&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1636').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/HeGDG17%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1636" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dmartinthoma&amp;text=Summary%20of%20Mask%20R-CNN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Mask%20R-CNN&amp;Body=Summary%20of%20Mask%20R-CNN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dmartinthoma&amp;title=Summary%20of%20Mask%20R-CNN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2017-04-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## See also
+* [R-CNN](http://www.shortscience.org/paper?bibtexKey=conf/iccv/Girshick15#joecohen)
+* [Fast R-CNN](http://www.shortscience.org/paper?bibtexKey=conf/iccv/Girshick15#joecohen)
+* [Faster R-CNN](http://www.shortscience.org/paper?bibtexKey=conf/nips/RenHGS15#martinthoma)
+* [Mask R-CNN](http://www.shortscience.org/paper?bibtexKey=journals/corr/HeGDG17)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="leopaillier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=leopaillier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=leopaillier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Léo Paillier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: leopaillier&lt;br&gt;Posted: 2017-12-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/HeGDG17&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1637').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/HeGDG17%26a%3Dleopaillier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1637" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=leopaillier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dleopaillier&amp;text=Summary%20of%20Mask%20R-CNN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Mask%20R-CNN&amp;Body=Summary%20of%20Mask%20R-CNN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dleopaillier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dleopaillier&amp;title=Summary%20of%20Mask%20R-CNN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=leopaillier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=leopaillier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Léo Paillier 2017-12-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">_Objective:_ Image segmentation and pose estimation with an extension of Faster R-CNN.
+
+_Dataset:_ [COCO](http://mscoco.org/) and [Cityscapes](https://www.cityscapes-dataset.com/).
+
+
+## Inner workings:
+
+The core operator of Faster R-CNN is the _RoIPool_ which performs coarse spatial quantization for feature extraction but introduce misalignment for pixel-pixel comparison which is what segmentation is. The paper introduce a new layer _RoIAlign_ that faithfully preserves exact spatial location.
+
+One important point is that mask and class prediction are decoupled, the segmentation is proposed for each class without competing and the class predictor finally elects the winner.
+
+## Architecture:
+
+Based on Faster R-CNN but with an added mask subnetwork that computes a segmentation mask for each class.
+
+Different feature extractors and proposers are tried, see two examples below:  
+[![screen shot 2017-05-22 at 7 25 04 pm](https://cloud.githubusercontent.com/assets/17261080/26320765/659bfd6e-3f24-11e7-9184-393e83e9108d.png)](https://cloud.githubusercontent.com/assets/17261080/26320765/659bfd6e-3f24-11e7-9184-393e83e9108d.png)
+
+## Results:
+
+Runs at about 200ms per frame on a GPU for segmentation (2 days training on a single 8-GPU) and 5 fps for pose estimation.  
+Very impressive segmentation and pose estimation:
+
+[![screen shot 2017-05-22 at 7 26 57 pm 1](https://cloud.githubusercontent.com/assets/17261080/26320824/a9a0909c-3f24-11e7-8e06-b2f132aad2d7.png)](https://cloud.githubusercontent.com/assets/17261080/26320824/a9a0909c-3f24-11e7-8e06-b2f132aad2d7.png)
+
+[![screen shot 2017-05-22 at 7 29 26 pm](https://cloud.githubusercontent.com/assets/17261080/26320929/08b71c4a-3f25-11e7-8eb5-959ceb7b6112.png)](https://cloud.githubusercontent.com/assets/17261080/26320929/08b71c4a-3f25-11e7-8eb5-959ceb7b6112.png)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

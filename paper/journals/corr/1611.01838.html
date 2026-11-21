@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entropy-SGD: Biasing Gradient Descent Into Wide Valleys - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Entropy-SGD: Biasing Gradient Descent Into Wide Valleys - ShortScience.org">
+<meta property="og:description" content="__Edit__: The paper has a newer version at  , where I also copied this review over with some changes...">
+<meta name="description" content="__Edit__: The paper has a newer version at  , where I also copied this review over with some changes...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.01838">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1611.01838" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Pratik Chaudhari and Anna Choromanska and Stefano Soatto and Yann LeCun"}, "headline": "Entropy-SGD: Biasing Gradient Descent Into Wide Valleys", "description": "Summary of Entropy-SGD: Biasing Gradient Descent Into Wide Valleys", "datePublished": "2016-12-29 01:54:18", "dateModified": "2017-01-01 01:05:43", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1611.01838", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1611.01838v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Entropy-SGD%3A%20Biasing%20Gradient%20Descent%20Into%20Wide%20Valleys%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Entropy-SGD: Biasing Gradient Descent Into Wide Valleys</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Pratik%20Chaudhari">Pratik Chaudhari</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Anna%20Choromanska">Anna Choromanska</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Stefano%20Soatto">Stefano Soatto</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yann%20LeCun">Yann LeCun</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjExLjAxODM4-975">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/11/06<br><b>Abstract:</b>   This paper proposes a new optimization algorithm called Entropy-SGD for
+training deep neural networks that is motivated by the local geometry of the
+energy landscape at solutions found by gradient descent. Local extrema with low
+generalization error have a large proportion of almost-zero eigenvalues in the
+Hessian with very few positive or negative eigenvalues. We leverage upon this
+observation to construct a local entropy based objective that favors
+well-generalizable solutions lying in the flat regions of the energy landscape,
+while avoiding poorly-generalizable solutions located in the sharp valleys. Our
+algorithm resembles two nested loops of SGD, where we use Langevin dynamics to
+compute the gradient of local entropy at each update of the weights. We prove
+that incorporating local entropy into the objective function results in a
+smoother energy landscape and use uniform stability to show improved
+generalization bounds over SGD. Our experiments on competitive baselines
+demonstrate that Entropy-SGD leads to improved generalization and has the
+potential to accelerate training.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjExLjAxODM4-975"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjAxODM4-975').hide());void($('#showless-am91cm5hbHMvY29yci8xNjExLjAxODM4-975').show());void($('#more-am91cm5hbHMvY29yci8xNjExLjAxODM4-975').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjExLjAxODM4-975" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjAxODM4-975').show());void($('#showless-am91cm5hbHMvY29yci8xNjExLjAxODM4-975').hide());void($('#more-am91cm5hbHMvY29yci8xNjExLjAxODM4-975').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1611.01838">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="csaba" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=csaba" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=csaba&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/549b8af2c5129839795a2e06d65bb588?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Csaba Szepesvari&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: csaba&lt;br&gt;Posted: 2016-12-29&lt;br&gt;Edited: 2017-01-01&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1611.01838&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/549b8af2c5129839795a2e06d65bb588?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-976').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1611.01838%26a%3Dcsaba" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-976" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.01838&amp;a=csaba" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.01838%26a%3Dcsaba&amp;text=Summary%20of%20Entropy-SGD%3A%20Biasing%20Gradient%20Descent%20Into%20Wide%20Valleys&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.01838%26a%3Dcsaba" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Entropy-SGD%3A%20Biasing%20Gradient%20Descent%20Into%20Wide%20Valleys&amp;Body=Summary%20of%20Entropy-SGD%3A%20Biasing%20Gradient%20Descent%20Into%20Wide%20Valleys%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.01838%26a%3Dcsaba"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.01838%26a%3Dcsaba" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.01838%26a%3Dcsaba&amp;title=Summary%20of%20Entropy-SGD%3A%20Biasing%20Gradient%20Descent%20Into%20Wide%20Valleys" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.01838&amp;a=csaba" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=csaba" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Csaba Szepesvari 2016-12-29</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">__Edit__: The paper has a newer version at https://openreview.net/pdf?id=B1YfAfcgl, where I also copied this review over with some changes.
+
+__Note__: An earlier version of the review (almost identical to the present one) for an earlier version of the paper (available on arXiV) can be found here: http://www.shortscience.org/paper?bibtexKey=journals/corr/1611.01838#csaba
+The only change concerns relation to previous work.
+
+__Problem__: The problem considered is to derive an improved version of SGD for training neural networks (or minimize empirical loss) by modifying the loss optimized to that the solution found is more likely to end up in the vicinity of a minimum where the loss changes slowly (&quot;flat minima&quot; as in the paper of Hochreiter and Schmidhuber from 1997). 
+
+__Motivation__: It is hypothetised that flat minima &quot;generalize&quot; better. 
+
+__Algorithmic approach__: Let $f$ be the (empirical) loss to be minimized. Modify this to $$\overline{f}(x) = \rho f(x) - \log \int \exp(-\frac{\gamma}{2}\||z\||^2-f(x+z))\,dz$$ with some $\rho,\gamma&gt;0$ tunable parameters. For $\||z\||^2\gg \frac{1}{\gamma}$, the term $\exp(-\frac{\gamma}{2}\||z\||^2)$ becomes very small, so effectively the second term is close to a constant times the integral of $f$ over a ball centered at $x$ and having a radius of $\propto \gamma^{-1/2}$. This is a smoothened version of $f$, hence one expects that by making this term more important then the first term, a procedure minimizing $\bar f$ will be more likely to end up at a flat minima of $f$. Since the gradient is somewhat complicated, an MCMC algorithm is proposed (&quot;stochastic gradient Langevin dynamics&quot; from Welling and Teh, 2011).
+
+__Results__: There is a theoretical result that quantifies the increased smoothness of $\overline{f}$, which is connected to stability and ultimately to generalization through citing a result of Hardt et al. (2015). Empirical results show better validation error on two datasets: MNIST and CIFAR-10 (the respective networks are LeNet and All-CNN-C). The improvement is in terms of reaching the same validation error as with an &quot;original SGD&quot; but with fewer &quot;epochs&quot;.
+
+__Soundness, significance__: The proof of the __theoretical result__ relies on an arbitrary assumption that there exists some $c&gt;0$ such that no eigenvalue of the hessian of $f$ lies in the set $[-2\gamma-c,c]$ (the reason for the assumption is because otherwise a uniform improvement cannot be shown). For $\rho=0$ the improvement of the smoothness (first and second order) is a factor of $1/(1+c/\gamma)$. The proof uses Laplace&#x27;s method and is more a sketch than a rigorous proof (error terms are dropped; it would be good to make this clear in the statement of the result).
+
+In the experiments the modified procedure did not consistently reach a smaller validation error. The authors did not present running times, hence it is unclear whether the procedure&#x27;s increased computation cost is offset by the faster convergence. 
+
+__Evaluation__: It is puzzling why a simpler smoothing, e.g., $$\overline{f}(x) = \int f(x+z) g(z) dz$$ (with $g$ being the density of a centered probability distribution) is not considered. The authors note that something &quot;like this&quot; may be infeasible in &quot;deep neural networks&quot; (the note is somewhat vague). However, under mild conditions, $\frac{\partial}{\partial x} \overline{f}(x) = \int \frac{\partial}{\partial x} f(x+z) g(z) dz$, hence, for $Z\sim g(\cdot)$, $\frac{\partial}{\partial x} f(x+Z)$ is an unbiased estimate of $\frac{\partial}{\partial x} \overline{f}(x)$, whose calculation is as cheap as that of vanilla SGD. Also, how much the smoothness of $f$ changes when using this approach is quite well understood.
+
+__Related work__: Hochreiter and Schmidhuber argued a long time ago for the benefits of &quot;flat minima&quot; in an  identically titled Neural computation paper that appeared in 1997. This reviewer may not agree with the arguments in this paper, but the paper is highly relevant and should be cited. It is also strange that the specific modification that appears in this paper was proposed by others (Baldassi et al.), whom this paper also cites, but without giving these authors credit for introducing local entropy as a smoothing technique. </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DenseCap: Fully Convolutional Localization Networks for Dense Captioning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="DenseCap: Fully Convolutional Localization Networks for Dense Captioning - ShortScience.org">
+<meta property="og:description" content="This paper introduces the task of dense captioning and proposes
+a network architecture that processe...">
+<meta name="description" content="This paper introduces the task of dense captioning and proposes
+a network architecture that processe...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.07571">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1511.07571" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Justin Johnson and Andrej Karpathy and Li Fei-Fei"}, "headline": "DenseCap: Fully Convolutional Localization Networks for Dense Captioning", "description": "Summary of DenseCap: Fully Convolutional Localization Networks for Dense Captioning", "datePublished": "2017-08-31 16:46:11", "dateModified": "2017-08-31 16:46:11", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1511.07571", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1511.07571v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">DenseCap: Fully Convolutional Localization Networks for Dense Captioning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Justin%20Johnson">Justin Johnson</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Andrej%20Karpathy">Andrej Karpathy</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Li%20Fei-Fei">Li Fei-Fei</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/11/24<br><b>Abstract:</b>   We introduce the dense captioning task, which requires a computer vision
+system to both localize and describe salient regions in images in natural
+language. The dense captioning task generalizes object detection when the
+descriptions consist of a single word, and Image Captioning when one predicted
+region covers the full image. To address the localization and description task
+jointly we propose a Fully Convolutional Localization Network (FCLN)
+architecture that processes an image with a single, efficient forward pass,
+requires no external regions proposals, and can be trained end-to-end with a
+single round of optimization. The architecture is composed of a Convolutional
+Network, a novel dense localization layer, and Recurrent Neural Network
+language model that generates the label sequences. We evaluate our network on
+the Visual Genome dataset, which comprises 94,000 images and 4,100,000
+region-grounded captions. We observe both speed and accuracy improvements over
+baselines based on current state of the art approaches in both generation and
+retrieval settings.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748').hide());void($('#showless-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748').show());void($('#more-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748').show());void($('#showless-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748').hide());void($('#more-am91cm5hbHMvY29yci8xNTExLjA3NTcx-748').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1511.07571">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="abhshkdz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1511.07571&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-749').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1511.07571%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-749" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.07571&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Dabhshkdz&amp;text=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning&amp;Body=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Dabhshkdz&amp;title=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.07571&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper introduces the task of dense captioning and proposes
+a network architecture that processes an image and produce region descriptions
+in a single pass and can be trained end-to-end. Main contributions:
+
+- Dense captioning
+    - Generalization of object detection (caption consists of single word)
+    and image captioning (region consists of whole image).
+
+- Fully convolution localization network
+    - Fully differentiable, can be trained jointly with the rest of the network
+    - Consists of a region proposal network, box regression (similar to Faster R-CNN)
+    and bilinear interpolation (similar to Spatial Transformer Networks) for
+    sampling.
+
+- Network details
+    - Convolutional layer features are extracted for image
+    - For each element in the feature map, k anchor boxes of different aspect ratios
+    are selected in the input image space.
+    - For each of these, the localization layer predicts offsets and confidence.
+    - The region proposals are projected on the convolutional feature map and a sampling
+    grid is computed from output feature map to input (bilinear sampling).
+    - The computed feature map is passed through an MLP to compute representations
+    corresponding to each region.
+    - These are passed (in a batch) as the first word to an LSTM (Show and Tell) which
+    is trained to predict each word of the caption.
+
+## Strengths
+
+- Fully differentiable &#x27;spatial attention&#x27; mechanism (bilinear interpolation)
+in place of RoI pooling as in the case of Faster R-CNN.
+    - RoI pooling is not differentiable with respect to the input proposal coordinates.
+
+- Fast, and impressive qualitative results.
+
+## Weaknesses / Notes
+
+The model is very well engineered together from different works (Faster R-CNN +
+Spatial Transformer Networks + Show &amp; Tell).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1511.07571&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-750').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1511.07571%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-750" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.07571&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Daleju&amp;text=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning&amp;Body=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.07571%26a%3Daleju&amp;title=Summary%20of%20DenseCap%3A%20Fully%20Convolutional%20Localization%20Networks%20for%20Dense%20Captioning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.07571&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They define four subtasks of image understanding:
+    * *Classification*: Assign a single label to a whole image.
+    * *Captioning*: Assign a sequence of words (description) to a whole image*
+    * *Detection*: Find objects/regions in an image and assign a single label to each one.
+    * *Dense Captioning*: Find objects/regions in an image and assign a sequence of words (description) to each one.
+  * DenseCap accomplishes the fourth task, i.e. it is a model that finds objects/regions in images and describes them with natural language.
+
+### How
+  * Their model consists of four subcomponents, which run for each image in sequence:
+    * (1) **Convolutional Network**:
+      * Basically just VGG-16.
+    * (2) **Localization Layer**:
+      * This layer uses a convolutional network that has mostly the same architecture as in the &quot;Faster R-CNN&quot; paper.
+      * That ConvNet is applied to a grid of anchor points on the image.
+      * For each anchor point, it extracts the features generated by the VGG-Net (model 1) around that point.
+      * It then generates the attributes of `k` (default: 12) boxes using a shallow convolutional net. These attributes are (roughly): Height, width, center x, center y, confidence score.
+      * It then extracts the features of these boxes from the VGG-Net output (model 1) and uses bilinear sampling to project them onto a fixed size (height, width) for the next model. The result are the final region proposals.
+      * By default every image pixel is an anchor point, which results in a large number of regions. Hence, subsampling is used during training and testing.
+    * (3) **Recognition Network**:
+      * Takes a region (flattened to 1d vector) and projects it onto a vector of length 4096.
+      * It uses fully connected layers to do that (ReLU, dropout).
+      * Additionally, the network takes the 4096 vector and outputs new values for the region&#x27;s position and confidence (for late fine tuning).
+      * The 4096 vectors of all regions are combined to a matrix that is fed into the next component (RNN).
+      * The intended sense of the this component seems to be to convert the &quot;visual&quot; features of each region to a more abstract, high-dimensional representation/description.
+    * (4) **RNN Language Model**:
+      * The take each 4096 vector and apply a fully connected layer + ReLU to it.
+      * Then they feed it into an LSTM, followed by a START token.
+      * The LSTM then generates word (as one hot vectors), which are fed back into the model for the next time step.
+      * This is continued until the LSTM generates an END token.
+  * Their full loss function has five components:
+    * Binary logistic loss for the confidence values generated by the localization layer.
+    * Binary logistic loss for the confidence values generated by the recognition layer.
+    * Smooth L1 loss for the region dimensions generated by the localization layer.
+    * Smooth L1 loss for the region dimensiosn generated by the recognition layer.
+    * Cross-entropy at every time-step of the language model.
+  * The whole model can be trained end-to-end.
+
+* Results
+  * They mostly use the Visual Genome dataset.
+  * Their model finds lots of good regions in images.
+  * Their model generates good captions for each region. (Only short captions with simple language however.)
+  * The model seems to love colors. Like 30-50% of all captions contain a color. (Probably caused by the dataset?)
+  * They compare to EdgeBoxes (other method to find regions in images). Their model seems to perform better.
+  * Their model requires about 240ms per image (test time).
+  * The generated regions and captions enable one to search for specific objects in images using text queries.
+
+
+![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/DenseCap__architecture.png?raw=true &quot;Architecture.&quot;)
+
+*Architecture of the whole model. It starts with the VGG-Net (&quot;CNN&quot;), followed by the localization layer, which generates region proposals. Then the recognition network converts the regions to abstract high-dimensional representations. Then the language model (&quot;RNN&quot;) generates the caption.*
+
+
+![Elephant image with dense captioning.](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/DenseCap__elephant.png?raw=true &quot;Elephant image with dense captioning.&quot;)
+
+![Airplane image with dense captioning.](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/DenseCap__airplane.png?raw=true &quot;Airplane image with dense captioning.&quot;)
+
+
+--------------------
+
+### Rough chapter-wise notes
+
+* (1) Introduction
+  * They define four subtasks of visual scene understanding:
+    * Classification: Assign a single label to a whole image
+    * Captioning: Assign a sequence of words (description) to a whole image
+    * Detection: Find objects in an image and assign a single label to each one
+    * Dense Captioning: Find objects in an image and assign a sequence of words (description) to each one
+  * They developed a model for dense captioning.
+  * It has two three important components:
+    * A convoltional network for scene understanding
+    * A localization layer for region level predictions. It predicts regions of interest and then uses bilinear sampling to extract the activations of these regions.
+    * A recurrent network as the language model
+  * They evaluate the model on the large-scale Visual Genome dataset (94k images, 4.1M region captions).
+
+* (3) Model
+  * Model architecture
+    * Convolutional Network
+      * They use VGG-16, but remove the last pooling layer.
+      * For an image of size W, H the output is 512xW/16xH/16.
+      * That output is the input into the localization layer.
+    * Fully Convolutional Localization Layer
+      * Input to this layer: Activations from the convolutional network.
+      * Output of this layer: Regions of interest, as fixed-sized representations.
+        * For B Regions:
+          * Coordinates of the bounding boxes (matrix of shape Bx4)
+          * Confidence scores (vector of length B)
+          * Features (matrix of shape BxCxXxY)
+      * Method: Faster R-CNN (pooling replaced by bilinear interpolation)
+      * This layer is fully differentiable.
+      * The localization layer predicts boxes at anchor points.
+      * At each anchor point it proposes `k` boxes using a small convolutional network. It assigns a confidence score and coordinates (center x, center y, height, width) to each proposal.
+      * For an image with size 720x540 and k=12 the model would have to predict 17,280 boxes, hence subsampling is used.
+      * During training they use minibatches with 256/2 positive and 256/2 negative region examples. A box counts as a positive example for a specific image if it has high overlap (intersection) with an annotated box for that image.
+      * During test time they use greedy non-maximum suppression (NMS) (?) to subsample the 300 most confident boxes.
+      * The region proposals have varying box sizes, but the output of the localization layer (which will be fed into the RNN) is ought to have fixed sizes.
+      * So they project each proposed region onto a fixed sized region. They use bilinear sampling for that projection, which is differentiable.
+    * Recognition network
+      * Each region is flattened to a one-dimensional vector.
+      * That vector is fed through 2 fully connected layers (unknown size, ReLU, dropout), ending with a 4096 neuron layer.
+      * The confidence score and box coordinates are also adjusted by the network during that process (fine tuning).
+    * RNN Language Model
+      * Each region is translated to a sentence.
+      * The region is fed into an LSTM (after a linear layer + ReLU), followed by a special START token.
+      * The LSTM outputs multiple words as one-hot-vectors, where each vector has the length `V+1` (i.e. vocabulary size + END token).
+      * Loss function is average crossentropy between output words and target words.
+      * During test time, words are sampled until an END tag is generated.
+  * Loss function
+    * Their full loss function has five components:
+      * Binary logistic loss for the confidence values generated by the localization layer.
+      * Binary logistic loss for the confidence values generated by the recognition layer.
+      * Smooth L1 loss for the region dimensions generated by the localization layer.
+      * Smooth L1 loss for the region dimensiosn generated by the recognition layer.
+      * Cross-entropy at every time-step of the language model.
+    * The language model term has a weight of 1.0, all other components have a weight of 0.1.
+  * Training an optimization
+    * Initialization: CNN pretrained on ImageNet, all other weights from `N(0, 0.01)`.
+    * SGD for the CNN (lr=?, momentum=0.9)
+    * Adam everywhere else (lr=1e-6, beta1=0.9, beta2=0.99)
+    * CNN is trained after epoch 1. CNN&#x27;s first four layers are not trained.
+    * Batch size is 1.
+    * Image size is 720 on the longest side.
+    * They use Torch.
+    * 3 days of training time.
+
+* (4) Experiments
+  * They use the Visual Genome Dataset (94k images, 4.1M regions with captions)
+  * Their total vocabulary size is 10,497 words. (Rare words in captions were replaced with `&lt;UNK&gt;`.)
+  * They throw away annotations with too many words as well as images with too few/too many regions.
+  * They merge heavily overlapping regions to single regions with multiple captions.
+  * Dense Captioning
+    * Dense captioning task: The model receives one image and produces a set of regions, each having a caption and a confidence score.
+    * Evaluation metrics
+      * Evaluation of the output is non-trivial.
+      * They compare predicted regions with regions from the annotation that have high overlap (above a threshold).
+      * They then compare the predicted caption with the captions having similar METEOR score (above a threshold).
+      * Instead of setting one threshold for each comparison they use multiple thresholds. Then they calculate the Mean Average Precision using the various pairs of thresholds.
+    * Baseline models
+      * Sources of region proposals during test time:
+        * GT: Ground truth boxes (i.e. found by humans).
+        * EB: EdgeBox (completely separate and pretrained system).
+        * RPN: Their localization and recognition networks trained separately on VG regions dataset (i.e. trained without the RNN language model).
+      * Models:
+        * Region RNN model: Apparently the recognition layer and the RNN language model, trained on predefined regions. (Where do these regions come from? VG training dataset?)
+        * Full Image RNN model: Apparently the recognition layer and the RNN language model, trained on full images from MSCOCO instead of small regions.
+        * FCLN on EB: Apparently the recognition layer and the RNN language model, trained on regions generated by EdgeBox (EB) (on VG dataset?).
+        * FCLN: Apparently their full model (trained on VG dataset?).
+    * Discrepancy between region and image level statistics
+      * When evaluating the models only on METEOR (language &quot;quality&quot;), the *Region RNN model* consistently outperforms the *Full Image RNN model*.
+      * That&#x27;s probably because the *Full Image RNN model* was trained on captions of whole images, while the *Region RNN model* was trained on captions of small regions, which tend to be a bit different from full image captions.
+    * RPN outperforms external region proposals
+      * Generating region proposals via RPN basically always beats EB.
+    * Our model outperforms individual region description
+      * Their full jointly trained model (FCLN) achieves the best results.
+      * The full jointly trained model performs significantly better than `RPN + Region RNN model` (i.e. separately trained region proposal and region captioning networks).
+    * Qualitative results
+      * Finds plenty of good regions and generates reasonable captions for them.
+      * Sometimes finds the same region twice.
+    * Runtime evaluation
+      * 240ms on 720x600 image with 300 region proposals.
+      * 166ms on 720x600 image with 100 region proposals.
+      * Recognition of region proposals takes up most time.
+      * Generating region proposals takes up the 2nd most time.
+      * Generating captions for regions (RNN) takes almost no time.
+  * Image Retrieval using Regions and Captions
+    * They try to search for regions based on search queries.
+    * They search by letting their FCLN network or EB generate 100 region proposals per network. Then they calculate per region the probability of generating the search query as the caption. They use that probability to rank the results.
+    * They pick images from the VG dataset, then pick captions within those images as search query. Then they evaluate the ranking of those images for the respective search query.
+    * The results show that the model can learn to rank objects, object parts, people and actions as expected/desired.
+    * The method described can also be used to detect an arbitrary number of distinct classes in images (as opposed to the usual 10 to 1000 classes), because the classes are contained in the generated captions.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

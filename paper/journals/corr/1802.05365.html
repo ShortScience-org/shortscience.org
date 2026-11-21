@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep contextualized word representations - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Deep contextualized word representations - ShortScience.org">
+<meta property="og:description" content="This paper introduces a deep universal word embedding based on using a bidirectional LM (in this cas...">
+<meta name="description" content="This paper introduces a deep universal word embedding based on using a bidirectional LM (in this cas...">
+<meta property="og:image" content="https://i.imgur.com/dKnyvAa.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05365">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05365" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Matthew E. Peters and Mark Neumann and Mohit Iyyer and Matt Gardner and Christopher Clark and Kenton Lee and Luke Zettlemoyer"}, "headline": "Deep contextualized word representations", "description": "Summary of Deep contextualized word representations", "datePublished": "2018-06-26 20:56:47", "dateModified": "2018-06-26 20:56:47", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/dKnyvAa.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1802.05365", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CL">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1802.05365v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Deep%20contextualized%20word%20representations%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Deep contextualized word representations</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Matthew%20E.%20Peters">Matthew E. Peters</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Mark%20Neumann">Mark Neumann</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Mohit%20Iyyer">Mohit Iyyer</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Matt%20Gardner">Matt Gardner</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Christopher%20Clark">Christopher Clark</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kenton%20Lee">Kenton Lee</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Luke%20Zettlemoyer">Luke Zettlemoyer</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CL">cs.CL</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/02/15<br><b>Abstract:</b>   We introduce a new type of deep contextualized word representation that
+models both (1) complex characteristics of word use (e.g., syntax and
+semantics), and (2) how these uses vary across linguistic contexts (i.e., to
+model polysemy). Our word vectors are learned functions of the internal states
+of a deep bidirectional language model (biLM), which is pre-trained on a large
+text corpus. We show that these representations can be easily added to existing
+models and significantly improve the state of the art across six challenging
+NLP problems, including question answering, textual entailment and sentiment
+analysis. We also present an analysis showing that exposing the deep internals
+of the pre-trained network is crucial, allowing downstream models to mix
+different types of semi-supervision signals.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287').hide());void($('#showless-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287').show());void($('#more-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287').show());void($('#showless-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287').hide());void($('#more-am91cm5hbHMvY29yci8xODAyLjA1MzY1-1287').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1802.05365">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="mnoukhov" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=mnoukhov" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mnoukhov&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/eae803a7d7c16e4a2d46830d328e16f1?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;mnoukhov&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mnoukhov&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1802.05365&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/eae803a7d7c16e4a2d46830d328e16f1?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1288').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1802.05365%26a%3Dmnoukhov" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1288" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05365&amp;a=mnoukhov" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Dmnoukhov&amp;text=Summary%20of%20Deep%20contextualized%20word%20representations&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Dmnoukhov" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20contextualized%20word%20representations&amp;Body=Summary%20of%20Deep%20contextualized%20word%20representations%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Dmnoukhov"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Dmnoukhov" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Dmnoukhov&amp;title=Summary%20of%20Deep%20contextualized%20word%20representations" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05365&amp;a=mnoukhov" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=mnoukhov" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by mnoukhov 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper introduces a deep universal word embedding based on using a bidirectional LM (in this case, biLSTM). First words are embedded with a CNN-based, character-level, context-free, token embedding into $x_k^{LM}$ and then each sentence is parsed using a biLSTM, maximizing the log-likelihood of a word given it&#x27;s forward and backward context (much like a normal language model). 
+
+The innovation is in taking the output of each layer of the LSTM ($h_{k,j}^{LM}$ being the output at layer $j$) 
+$$
+\begin{align}
+R_k &amp;= \{x_k^{LM}, \overrightarrow{h}_{k,j}^{LM}, \overleftarrow{h}_{k,j}^{LM} | j = 1 \ldots L \} \\
+&amp;= \{h_{k,j}^{LM} | j = 0 \ldots L \}
+\end{align}
+$$
+and allowing the user to learn a their own task-specific weighted sum of these hidden states as the embedding:
+$$
+ELMo_k^{task} = \gamma^{task} \sum_{j=0}^L s_j^{task} h_{k,j}^{LM}
+$$
+
+The authors show that this weighted sum is better than taking only the top LSTM output (as in their previous work or in CoVe) because it allows capturing syntactic information in the lower layer of the LSTM and semantic information in the higher level. Table below shows that the second layer is more useful for the semantic task of word sense disambiguation, and the first layer is more useful for the syntactic task of POS tagging.
+
+https://i.imgur.com/dKnyvAa.png
+
+On other benchmarks, they show it is also better than taking the average of the layers (which could be done by setting $\gamma = 1$)
+https://i.imgur.com/f78gmKu.png
+
+To add the embeddings to your supervised model,  ELMo is concatenated with your context-free embeddings, $\[ x_k; ELMo_k^{task} \]$. It can also be concatenated with the output of your RNN model $\[ h_k; ELMo_k^{task} \]$ which can show improvements on the same benchmarks
+
+https://i.imgur.com/eBqLe8G.png
+
+Finally, they show that adding ELMo to a competitive but simple baseline gets SOTA (at the time) on very many NLP benchmarks
+
+https://i.imgur.com/PFUlgh3.png
+
+It&#x27;s all open-source and there&#x27;s a tutorial [here](https://github.com/allenai/allennlp/blob/master/tutorials/how_to/elmo.md)
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="decodyng" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1802.05365&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1289').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1802.05365%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1289" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05365&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Ddecodyng&amp;text=Summary%20of%20Deep%20contextualized%20word%20representations&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20contextualized%20word%20representations&amp;Body=Summary%20of%20Deep%20contextualized%20word%20representations%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05365%26a%3Ddecodyng&amp;title=Summary%20of%20Deep%20contextualized%20word%20representations" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05365&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper builds on the paper &quot;Learned in Translation: Contextualized Word Vectors&quot; , which learned contextualized word representations by using the sequence of encodings generated by a Bidirectional LSTM as the representation of the sequence of input words. This paper says “if we&#x27;re learning a deep LSTM, ie one with more than one layer, why should we use only the last layer that it produces as the representation of the word?”. This paper instead suggests that it could be valuable for transfer learning if each task can learn a weighting of layer encodings that is most valuable for that task. In a prime example of “your model is a special case of my model,” they note that this framework can easily learn the approach of only using the final encoding layer by just only giving that layer a non-zero weight. As intuition for why this might be a valuable thing to do: different layers tend to capture different levels of meaning, with lower layers more likely to capture part of speech information, and higher layers more likely to capture more rich semantic context. 
+
+https://i.imgur.com/s8Qn6YY.png
+
+One difficulty in comparing this paper directly to the “take the top layer encoding from a LSTM” paper is that they were trained on different problems: the top layer paper learned using a machine translation objective, where, by contrast, this one learns by using a much simpler language model. Here, a simple language model means a RNN that is trained to predict the next word, given the hidden state built up over all prior words. Because we want to pull in word context from both directions, this is’t just a LSTM but a bidirectional LSTM, which - surprise surprise - tries to pick the word *before* a word in a sentence by using all of the words that come after it. This has the advantage of not requiring parallel data, the way machine translation does, but also makes it difficult to make direct comparisons to prior work that isolate the effect of multi-layer combination, as separate from the switch between machine translation and direct language modeling. 
+
+Although this is likely also a benefit you see with just top-layer contextual vectors, it is interesting to examine the attached table, and look at how effectively the model is able to learn different representations of the word “play” depending on the context in which it appears; in each case, the nearest neighbor of a context of “play” is a sentence in which the word is used in the same context. 
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

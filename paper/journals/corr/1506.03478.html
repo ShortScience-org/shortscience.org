@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generative Image Modeling Using Spatial LSTMs - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Generative Image Modeling Using Spatial LSTMs - ShortScience.org">
+<meta property="og:description" content="#### Introduction
+This [paper]( ) introduces *recurrent image density estimator* (RIDE), a generativ...">
+<meta name="description" content="#### Introduction
+This [paper]( ) introduces *recurrent image density estimator* (RIDE), a generativ...">
+<meta property="og:image" content="http://i.imgur.com/W8ugGvl.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1506.03478">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1506.03478" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Lucas Theis and Matthias Bethge"}, "headline": "Generative Image Modeling Using Spatial LSTMs", "description": "Summary of Generative Image Modeling Using Spatial LSTMs", "datePublished": "2016-10-22 05:05:22", "dateModified": "2016-10-22 05:12:59", "image": {"@type": "ImageObject", "url": "http://i.imgur.com/W8ugGvl.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1506.03478", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.CV,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1506.03478v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Generative%20Image%20Modeling%20Using%20Spatial%20LSTMs%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Generative Image Modeling Using Spatial LSTMs</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Lucas%20Theis">Lucas Theis</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Matthias%20Bethge">Matthias Bethge</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/06/10<br><b>Abstract:</b>   Modeling the distribution of natural images is challenging, partly because of
+strong statistical dependencies which can extend over hundreds of pixels.
+Recurrent neural networks have been successful in capturing long-range
+dependencies in a number of problems but only recently have found their way
+into generative image models. We here introduce a recurrent image model based
+on multi-dimensional long short-term memory units which are particularly suited
+for image modeling due to their spatial structure. Our model scales to images
+of arbitrary size and its likelihood is computationally tractable. We find that
+it outperforms the state of the art in quantitative comparisons on several
+image datasets and produces promising results when used for texture synthesis
+and inpainting.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708').hide());void($('#showless-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708').show());void($('#more-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708').show());void($('#showless-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708').hide());void($('#more-am91cm5hbHMvY29yci8xNTA2LjAzNDc4-708').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1506.03478">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="liewjunhao" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=liewjunhao" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=liewjunhao&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/0ec3c55d445264d43c0430f9edf88bf8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Liew Jun Hao&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: liewjunhao&lt;br&gt;Posted: 2016-10-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1506.03478&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/0ec3c55d445264d43c0430f9edf88bf8?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-709').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1506.03478%26a%3Dliewjunhao" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-709" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1506.03478&amp;a=liewjunhao" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1506.03478%26a%3Dliewjunhao&amp;text=Summary%20of%20Generative%20Image%20Modeling%20Using%20Spatial%20LSTMs&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1506.03478%26a%3Dliewjunhao" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generative%20Image%20Modeling%20Using%20Spatial%20LSTMs&amp;Body=Summary%20of%20Generative%20Image%20Modeling%20Using%20Spatial%20LSTMs%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1506.03478%26a%3Dliewjunhao"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1506.03478%26a%3Dliewjunhao" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1506.03478%26a%3Dliewjunhao&amp;title=Summary%20of%20Generative%20Image%20Modeling%20Using%20Spatial%20LSTMs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1506.03478&amp;a=liewjunhao" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=liewjunhao" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Liew Jun Hao 2016-10-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Introduction
+This [paper](https://github.com/lucastheis/ride) introduces *recurrent image density estimator* (RIDE), a generative model by combining a *multidimensional* recurrent neural network with mixtures of experts to model the distribution of natural image. In this work, the authors used  *spatial* LSTMs (SLSTM) to capture the semantics in the form of hidden states where these hidden vectors are then fed into a factorized *factorized mixtures of conditional Gaussian scale mixtures* (MCGSMs) to predict the state of the corresponding pixels.
+
+##### __1. Spatial long short-term memory (SLSTM)__
+This is a straightforward extension of the multidimensional RNN in order to capture long range interaction. Let $\mathbf{x}$ be a grayscale image patch and $x_{ij}$ be the intensity of pixel at location ${ij}$. At each location $ij$, each LSTM unit perform the following operations:
+
+$\mathbf{c}_{ij} = \mathbf{g}_{ij} \odot \mathbf{i}_{ij} + \mathbf{c}_{i,j-1} \odot \mathbf{f}^c_{ij} + \mathbf{c}_{i-1,j} \odot \mathbf{f}^r_{ij} $ 
+
+$\mathbf{h}_{ij} = \tanh(\mathbf{c}_{ij} \odot \mathbf{o}_{ij})$
+
+$\begin{pmatrix} 
+\mathbf{g}_{ij} \\ \mathbf{o}_{ij} \\ \mathbf{i}_{ij} \\ \mathbf{g}_{ij}\\ \mathbf{f}_{ij}^r\\ \mathbf{f}_{ij}^c
+\end{pmatrix} = \begin{pmatrix} \tanh \\ \sigma \\ \sigma \\ \sigma \\ \sigma\\ \sigma  \end{pmatrix} T_{\mathbf{A,b}}  \begin{pmatrix} \mathbf{x}_{&lt;ij} \\ \mathbf{h}_{i,j-1} \\ \mathbf{h}_{i-1,j} \end{pmatrix} $
+
+where $\mathbf{c}_{ij}$ and $\mathbf{h}_{ij}$ are memory units and hidden units respectively. Note that, there are 2 different forget gates $\mathbf{f}^c_{ij}$ and $\mathbf{f}^r_{ij}$ for the 2 preceding memory states $\mathbf{c}_{i,j-1}$ and $\mathbf{c}_{i-1,j}$. Also note that $\mathbf{x}_{&lt;ij}$ here denotes a set of *causal neighborhood* by applying Markov assumption.
+
+![ride_1](http://i.imgur.com/W8ugGvl.png)
+As shown in Fig. C, although the prediction of a pixel depends only on its neighborhood (green) through feedforward connections, there is an indirect connection to a much larger region (red) via recurrent connections.
+
+##### __2. Factorized mixtures of conditional Gaussian scale mixtures__
+A generative model can usually be expressed as $p(\mathbf{x};\mathbf{\theta}) = \prod_{i,j} p(x_{ij}|\mathbf{x}_{&lt;ij}; \mathbf{\theta})$ using chain rule. One way to improve the representational power of a model is to introduce different sets of parameters for each pixel, i.e. $p(\mathbf{x}; \{ \mathbf{\theta} \}) = \prod_{i,j} p(x_{ij}|\mathbf{x}_{&lt;ij}; \mathbf{\theta}_{ij})$. However, untying shared parameters will lead to drastic increase of parameters. Therefore, the author applied 2 simple common used assumptions:
+1. __Markov  assumption__: $\mathbf{x}_{&lt;ij}$ is limited to small neighborhood around $x_{ij}$ (causal neighborhood)
+2. __Stationary and shift invariance__: the same set of $\mathbf{\theta}_{ij}$ is used for every location ${ij}$ which corresponds to recurrent structure in RNN.
+
+Therefore, the hidden vector from SLSTMs can be fed into the MCGSM to predict the state of corresponding label, i.e. $p(x_{ij} | \textbf{x}_{&lt;ij}) = p(x_{ij} | \textbf{h}_{ij})$.
+
+The conditional distribution distribution in MCGSM is represented as a mixture of experts:
+
+$p(x_{ij} | \mathbf{x}_{&lt;ij}; \mathbf{\theta}_{ij}) = \sum_{c,s} p(c, s | \mathbf{x}_{&lt;ij}, \mathbf{\theta}_{ij}) p (x_{ij} | \mathbf{x}_{&lt;ij}, c, s, \mathbf{\theta}_{ij})$.
+
+where the first and second term correspond to gate and experts respectively. To further reduce the number of parameters, the authors proposed using a *factorized* MCGSM in order to use larger neighborhoods and more mixture components. (*__Remarks__: I am not too sure about the exact training of MCGSM, but as far as I understand, the MCGSM is firstly trained end-to-end with SLSTM using SGD with momentum and then finetuned using L-BFGS after each epoch by fixing the parameters of SLSTM.*)
+
+* For training:
+
+```
+for n in range(num_epochs):
+	for b in range(0, inputs.shape[0] - batch_size + 1, batch_size):
+		# compute gradients
+		f, df = f_df(params, b)
+
+		loss.append(f / log(2.) / self.num_channels)
+
+		# update SLSTM parameters
+		for l in train_layers:
+			for key in params[&#x27;slstm&#x27;][l]:
+				diff[&#x27;slstm&#x27;][l][key] = momentum * diff[&#x27;slstm&#x27;][l][key] - df[&#x27;slstm&#x27;][l][key]
+				params[&#x27;slstm&#x27;][l][key] = params[&#x27;slstm&#x27;][l][key] + learning_rate * diff[&#x27;slstm&#x27;][l][key]
+
+		# update MCGSM parameters
+		diff[&#x27;mcgsm&#x27;] = momentum * diff[&#x27;mcgsm&#x27;] - df[&#x27;mcgsm&#x27;]
+		params[&#x27;mcgsm&#x27;] = params[&#x27;mcgsm&#x27;] + learning_rate * diff[&#x27;mcgsm&#x27;]
+```
+
+* Finetuning (part of the code)
+
+```
+for l in range(self.num_layers):
+	self.slstm[l] = SLSTM(
+		num_rows=hiddens.shape[1],
+		num_cols=hiddens.shape[2],
+		num_channels=hiddens.shape[3],
+		num_hiddens=self.num_hiddens,
+		batch_size=min([hiddens.shape[0], self.MAX_BATCH_SIZE]),
+		nonlinearity=self.nonlinearity,
+		extended=self.extended,
+		slstm=self.slstm[l],
+		verbosity=self.verbosity)
+
+	hiddens = self.slstm[l].forward(hiddens)
+
+# finetune with early stopping based on validation performance
+return self.mcgsm.train(
+	hiddens_train, outputs_train,
+	hiddens_valid, outputs_valid,
+	parameters={
+		&#x27;verbosity&#x27;: self.verbosity,
+		&#x27;train_means&#x27;: train_means,
+		&#x27;max_iter&#x27;: max_iter})
+```</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

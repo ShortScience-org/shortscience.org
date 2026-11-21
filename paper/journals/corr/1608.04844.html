@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boosting Docking-based Virtual Screening with Deep Learning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Boosting Docking-based Virtual Screening with Deep Learning - ShortScience.org">
+<meta property="og:description" content="My objective in reading this paper was to gain another perspective on, and thus a more well-grounded...">
+<meta name="description" content="My objective in reading this paper was to gain another perspective on, and thus a more well-grounded...">
+<meta property="og:image" content="https://i.imgur.com/w9wKS10.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1608.04844">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1608.04844" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Janaina Cruz Pereira and Ernesto Raul Caffarena and Cicero dos Santos"}, "headline": "Boosting Docking-based Virtual Screening with Deep Learning", "description": "Summary of Boosting Docking-based Virtual Screening with Deep Learning", "datePublished": "2020-04-04 05:03:25", "dateModified": "2020-04-04 05:03:25", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/w9wKS10.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1608.04844", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, q-bio.QM">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1608.04844v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Boosting%20Docking-based%20Virtual%20Screening%20with%20Deep%20Learning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Boosting Docking-based Virtual Screening with Deep Learning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Janaina%20Cruz%20Pereira">Janaina Cruz Pereira</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ernesto%20Raul%20Caffarena">Ernesto Raul Caffarena</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Cicero%20dos%20Santos">Cicero dos Santos</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=q-bio.QM">q-bio.QM</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/08/17<br><b>Abstract:</b>   In this work, we propose a deep learning approach to improve docking-based
+virtual screening. The introduced deep neural network, DeepVS, uses the output
+of a docking program and learns how to extract relevant features from basic
+data such as atom and residues types obtained from protein-ligand complexes.
+Our approach introduces the use of atom and amino acid embeddings and
+implements an effective way of creating distributed vector representations of
+protein-ligand complexes by modeling the compound as a set of atom contexts
+that is further processed by a convolutional layer. One of the main advantages
+of the proposed method is that it does not require feature engineering. We
+evaluate DeepVS on the Directory of Useful Decoys (DUD), using the output of
+two docking programs: AutodockVina1.1.2 and Dock6.6. Using a strict evaluation
+with leave-one-out cross-validation, DeepVS outperforms the docking programs in
+both AUC ROC and enrichment factor. Moreover, using the output of
+AutodockVina1.1.2, DeepVS achieves an AUC ROC of 0.81, which, to the best of
+our knowledge, is the best AUC reported so far for virtual screening using the
+40 receptors from DUD.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916').show());void($('#more-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916').show());void($('#showless-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916').hide());void($('#more-am91cm5hbHMvY29yci8xNjA4LjA0ODQ0-916').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1608.04844">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2020-04-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1608.04844&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-917').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1608.04844%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-917" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1608.04844&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.04844%26a%3Ddecodyng&amp;text=Summary%20of%20Boosting%20Docking-based%20Virtual%20Screening%20with%20Deep%20Learning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.04844%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Boosting%20Docking-based%20Virtual%20Screening%20with%20Deep%20Learning&amp;Body=Summary%20of%20Boosting%20Docking-based%20Virtual%20Screening%20with%20Deep%20Learning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.04844%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.04844%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.04844%26a%3Ddecodyng&amp;title=Summary%20of%20Boosting%20Docking-based%20Virtual%20Screening%20with%20Deep%20Learning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1608.04844&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2020-04-04</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">My objective in reading this paper was to gain another perspective on, and thus a more well-grounded view of, machine learning scoring functions for docking-based prediction of ligand/protein binding affinity. As quick background context, these models are useful because many therapeutic compounds act by binding to a target protein, and it can be valuable to prioritize doing wet lab testing on compounds that are predicted to have a stronger binding affinity. Docking systems work by predicting the pose in which a compound (or ligand) would bind to a protein, and then scoring prospective poses based on how likely such a pose would be to have high binding affinity. It&#x27;s important to note that there are two predictive components in such a pipeline, and thus two sources of potential error: the searching over possible binding poses, done by physics-based systems, and scoring of the affinity of a given pose, assuming that were actually the correct one. Therefore, in the second kind of modeling, which this paper focuses on, you take in features *of a particular binding pose*, which includes information like which atoms of the compound are nearby to which atoms of the protein. 
+
+The actual neural network structure used here was admittedly a bit underwhelming (though, to be fair, many of the ideas it seems to be gesturing at wouldn&#x27;t be properly formalized until Graph Convolutional Networks came around). I&#x27;ll describe the network mechanically first, and then offer some commentary on the design choices. 
+https://i.imgur.com/w9wKS10.png
+
+1. For each atom (a) in the compound, a set of neighborhood features are defined. The neighborhood is based on two hyperparameters, one for &quot;how many atoms from the protein should be included,&quot; and one for &quot;how many atoms from the compound should be included&quot;. In both cases, you start by adding the closest atom from either the compound or protein, and as hyperparameter values of each increase, you add in farther-away atoms. The neighborhood features here are (i) What are the types of the atoms? (ii) What are the partial charges of the atoms? (iii) How far are the atoms from the reference atom? (iiii) What amino acid within the protein do the protein atoms come? 
+2. All of these features are turned into embeddings. Yes, all of them, even the ones (distance and charge) that are continuous values. Coming from a machine learning perspective, this is... pretty weird as a design choice. The authors straight-up discretize the distance values, and then use those as discrete values for the purpose of looking up embeddings. (So, you&#x27;d have one embedding vector for distance (0.25-0.5, and a different one for 0.0-0.25, say). 
+3. The embeddings are concatenated together into a single &quot;atom neighborhood vector&quot; based on a predetermined ordering of the neighbor atoms and their property vectors. We now have one atom neighborhood vector for each atom in the compound. 
+4. The authors then do what they call a convolution over the atom neighborhood vectors. But it doesn&#x27;t act like a normal convolution in the sense of mixing information from nearby regions of atom space. It just is basically a fully connected layer that&#x27;s applied to atom neighborhood vector separately, but with shared weights, so the same layer is applied to each neighborhood vector. They then do a feature-wise max pool across the layer-transformed version of neighborhood vectors, getting you one vector for the full compound 
+5. This single vector is then put into a softmax, which predicts whether this ligand (in in this particular pose) will have strong binding with the protein 
+
+Some thoughts on what&#x27;s going on here. First, I really don&#x27;t have a good explanation for why they&#x27;d have needed to embed a discretized version of the continuous variables, and since they don&#x27;t do an ablation test of that design choice, it&#x27;s hard to know if it mattered. Second, it&#x27;s interesting to see, in their &quot;convolution&quot; (which I think is more accurately described as a Siamese Network, since it&#x27;s only convolution-like insofar as there are shared weights), the beginning intuitions of what would become Graph Convolutions. The authors knew that they needed methods to aggregate information from arbitrary numbers of atoms, and also that they need should learn representations that have visibility onto neighborhoods of atoms, rather than single ones, but they do so in an entirely hand-engineered way: manually specifying a fixed neighborhood and pulling in information from all those neighbors equally, in a big concatenated vector. By contrast, when Graph Convolutions come along, they act by defining a &quot;message-passing&quot; function for features to aggregate across graph edges (here: molecular bonds or binaries on being &quot;near enough&quot; to another atom), which similarly allows information to be combined across neighborhoods. And, then, the &#x27;convolution&#x27; is basically just a simple aggregation: necessary because there&#x27;s no canonical ordering of elements within a graph, so you need an order-agnostic aggregation like a sum or max pool. 
+
+The authors find that their method is able to improve on the hand-designed scoring functions within the docking programs. However, they also find (similar to another paper I read recently) that their model is able to do quite well without even considering structural relationships of the binding pose with the protein, which suggests the dataset (DUD - a dataset of 40 proteins with ~4K correctly binding ligands, and ~35K ligands paired with proteins they don&#x27;t bind to) and problem given to the model is too easy.  It&#x27;s also hard to tell how I should consider AUCs within this problem - it&#x27;s one thing to be better than an existing method, but how much value do you get from a given unit of AUC improvement, when it comes to actually meaningfully reducing wetlab time used on testing compounds?  
+
+I don&#x27;t know that there&#x27;s much to take away from this paper in terms of useful techniques, but it is interesting to see the evolution of ideas that would later be more cleanly formalized in other works.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

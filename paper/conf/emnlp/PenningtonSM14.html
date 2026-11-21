@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glove: Global Vectors for Word Representation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Glove: Global Vectors for Word Representation - ShortScience.org">
+<meta property="og:description" content="#### Introduction
+
+* Introduces a new global log-bilinear regression model which combines the benefi...">
+<meta name="description" content="#### Introduction
+
+* Introduces a new global log-bilinear regression model which combines the benefi...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/emnlp/PenningtonSM14">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/emnlp/PenningtonSM14" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Pennington, Jeffrey and Socher, Richard and Manning, Christopher D."}, "headline": "Glove: Global Vectors for Word Representation", "description": "Summary of Glove: Global Vectors for Word Representation", "datePublished": "2016-10-26 19:45:33", "dateModified": "2016-10-26 19:45:33", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/emnlp/PenningtonSM14", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://aclweb.org/anthology/D/D14/D14-1162.pdf"><span class="glyphicon glyphicon-link"></span> aclweb.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Glove%3A%20Global%20Vectors%20for%20Word%20Representation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Glove: Global Vectors for Word Representation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Pennington%2C%20Jeffrey">Pennington, Jeffrey</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Socher%2C%20Richard">Socher, Richard</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Manning%2C%20Christopher%20D.">Manning, Christopher D.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/emnlp&amp;year=2014">Empirical Methods on Natural Language Processing (EMNLP) - 2014</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/emnlp/PenningtonSM14">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/emnlp/PenningtonSM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-238').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/emnlp/PenningtonSM14%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-238" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/emnlp/PenningtonSM14&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dshagunsodhani&amp;text=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation&amp;Body=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dshagunsodhani&amp;title=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/emnlp/PenningtonSM14&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Introduction
+
+* Introduces a new global log-bilinear regression model which combines the benefits of both global matrix factorization and local context window methods.
+
+
+#### Global Matrix Factorization Methods
+
+* Decompose large matrices into low-rank approximations.
+* eg - Latent Semantic Analysis (LSA)
+
+##### Limitations
+
+* Poor performance on word analogy task
+* Frequent words contribute disproportionately high to the similarity measure.
+
+#### Shallow, Local Context-Based Window Methods
+
+* Learn word representations using adjacent words.
+* eg - Continous bag-of-words (CBOW) model and skip-gram model.
+
+##### Limitations
+
+* Since they do not operate directly on the global co-occurrence counts, they can not utilise the statistics of the corpus effectively.
+
+
+#### GloVe Model
+
+* To capture the relationship between words $i$ and $j$, word vector models should use ratios of co-occurene probabilites (with other words $k$) instead of using raw probabilites themselves.
+* In most general form:
+     * $F(w_{i}, w_{j}, w_{k}^{~} ) = P_{ik}/P_{jk}$
+* We want $F$ to encode information in the vector space (which have a linear structure), so we can restrict to the difference of $w_{i}$ and $w_{j}$
+    * $F(w_{i} - w_{j}, w_{k}^{~} ) = P_{ik}/P_{jk}$
+* Since right hand side is a scalar and left hand side is a vector, we take dot product of the arguments.
+    * $F( (w_{i} - w_{j})^{T}, w_{k}^{~} ) = P_{ik}/P_{jk}$
+* *F* should be invariant to order of the word pair $i$ and $j$.
+    * $F(w_{i}^{T}w_{k}^{~}) = P_{ik}$
+* Doing further simplifications and optimisations (refer paper), we get cost function, 
+    * $J = \sum_{\text{over all i, j pairs in the vocabulary}}[w_{i}^{T}w_{k}^{~} + b_{i} + b_{k}^{~} - log(X_{ik})]^{2}$
+    * $f$ is a weighing function.
+    * $f(x) = min((x/x_{max})^{\alpha}, 1)$
+    * Typical values, $x_{\max} = 100$ and $\alpha = 3/4$
+    * *b* are the bias terms.
+
+##### Complexity
+
+* Depends on a number of non-zero elements in the input matrix.
+* Upper bound by the square of vocabulary size
+* Since for shallow window-based approaches, complexity depends on $|C|$ (size of the corpus), tighter bounds are needed.
+* By modelling number of co-occurrences of words as power law function of frequency rank, the complexity can be shown to be proportional to $|C|^{0.8}$
+
+#### Evaluation
+
+##### Tasks
+
+* Word Analogies
+    * a is to b as c is to ___?
+    * Both semantic and syntactic pairs
+    * Find closest d to $w_{b} - w_{c} + w_{a}$ (using cosine similarity)
+
+* Word Similarity
+* Named Entity Recognition
+
+##### Datasets
+
+* Wikipedia Dumps - 2010 and 2014
+* Gigaword5
+* Combination of Gigaword5 and Wikipedia2014
+* CommonCrawl
+* 400,000 most frequent words considered from the corpus.
+
+##### Hyperparameters
+
+* Size of context window.
+* Whether to distinguish left context from right context.
+* $f$ - Word pairs that are $d$ words apart contribute $1/d$ to the total count.
+* $xmax = 100$
+* $\alpha = 3/4$
+* AdaGrad update
+
+##### Models Compared With
+
+* Singular Value Decomposition
+* Continous Bag-Of-Words
+* Skip-Gram
+
+##### Results
+
+* Glove outperforms all other models significantly.
+* Diminishing returns for vectors larger than 200 dimensions.
+* Small and asymmetric context windows (context window only to the left) works better for syntactic tasks.
+* Long and symmetric context windows (context window to both the sides) works better for semantic tasks.
+* Syntactic task benefited from larger corpus though semantic task performed better with Wikipedia instead of Gigaword5 probably due to the comprehensiveness of Wikipedia and slightly outdated nature of Gigaword5.
+* Word2vec’s performance decreases if the number of negative samples increases beyond about 10.
+* For the same corpus, vocabulary, and window size GloVe consistently achieves better results, faster.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="gkcalat" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=gkcalat" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=gkcalat&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/737bbdb10ca3ac08adf13156b6b76675?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Ablaikhan Akhazhanov&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: gkcalat&lt;br&gt;Posted: 2019-05-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/emnlp/PenningtonSM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/737bbdb10ca3ac08adf13156b6b76675?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-239').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/emnlp/PenningtonSM14%26a%3Dgkcalat" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-239" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/emnlp/PenningtonSM14&amp;a=gkcalat" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dgkcalat&amp;text=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dgkcalat" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation&amp;Body=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dgkcalat"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dgkcalat" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Femnlp%2FPenningtonSM14%26a%3Dgkcalat&amp;title=Summary%20of%20Glove%3A%20Global%20Vectors%20for%20Word%20Representation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/emnlp/PenningtonSM14&amp;a=gkcalat" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=gkcalat" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Ablaikhan Akhazhanov 2019-05-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Stanford’s paper on Global Vectors for Word Representation proposes one of few extremely popular word embedding methods in NLP. GloVe takes advantage of both global corpus statistics and local context window methods by constructing the word-context co-occurrence matrix and reducing its dimensionality by preserving as much of the variance as possible. It builds a feature space with additive compositionality while preserving statistically meaningful word occurrence information extracted from the data corpus.
+
+Authors start with building the counts matrix X, where X_ij is the number of times word w_j appears in the context w_i. The corresponding probabilities can be calculated as P_ij = X_ij/X_i. The GloVe model tries to fit a function F(w_i, w_j, w.hat_k) = P_ik/Pjk, which represents ratio of probabilities of the word w.hat_k appearing in the context of words w_i and w_j respectively. The model is expected to produce large output for w.hat_k relevant to w_i and not w_j and vice versa. When w.hat_k is equivalently relevant or irrelevant to w_i and w_j, the output is close to unity. For practical reasons, the authors simplified the model with a linear equation w_i.T*w.hat_k + b_i + b_j = log(1+X_ik), where the biases b_i, b_j represent log(1+X_i) and log(1+X_j) respectively. As an optimization objective, GloVe uses weighted squared error J = Sum_ij(f(X_ij)*(w_i.T*w.hat_k + b_i + b_j - log(1+X_ik))^2), where the weighting function mitigates the effect of noisy rare word occurrences (X_ij ~ 0). The choice of the weighting function f(x) is somewhat arbitrary and driven by empirical observations. The best performing f(x) = min{1, (x/x_max)^0.75}, with x_max = 100. Authors refer to 0.75 power of the skip-gram model, which appears to be used in negative sampling distribution in skip-gram model, which also functions as a weighting coefficient. The resulting log-bilinear regression model is then optimized with AdaGrad and the combination of the resulting matrices W + W.hat is used as the word embeddings.
+
+Authors evaluate GloVe performance on a variety of NLP tasks and compare against Skip-Gram, CBOW, SVD and HPCA. Although GloVe demonstrated advantageous metrics in both performance and training time (co-occurrence matrix is built in parallel), the model is not very different from Word2Vec. Another questionable argument of the GloVe authors is that the log squared error function is superior to the cross entropy loss in Skip-Gram and ivLBL models, because of higher robustness in the long tails distributions. However, it is not apparently correct, as Skip-Gram uses stochastic optimization, which inherently mitigates the long tails vulnerability. In fact, GloVe shows similar performance to Word2Vec in numerous NLP problems, yet the later historically gained a larger popularity.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

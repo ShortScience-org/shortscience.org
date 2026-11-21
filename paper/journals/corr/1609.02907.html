@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semi-Supervised Classification with Graph Convolutional Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Semi-Supervised Classification with Graph Convolutional Networks - ShortScience.org">
+<meta property="og:description" content="The propagation rule used in this paper is the following:
+
+$$
+H^l = \sigma \left(\tilde{D}^{-\frac{1...">
+<meta name="description" content="The propagation rule used in this paper is the following:
+
+$$
+H^l = \sigma \left(\tilde{D}^{-\frac{1...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.02907">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1609.02907" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Thomas N. Kipf and Max Welling"}, "headline": "Semi-Supervised Classification with Graph Convolutional Networks", "description": "Summary of Semi-Supervised Classification with Graph Convolutional Networks", "datePublished": "2017-10-31 11:03:14", "dateModified": "2017-10-31 11:03:14", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1609.02907", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1609.02907v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Semi-Supervised%20Classification%20with%20Graph%20Convolutional%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Semi-Supervised Classification with Graph Convolutional Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Thomas%20N.%20Kipf">Thomas N. Kipf</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Max%20Welling">Max Welling</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/09/09<br><b>Abstract:</b>   We present a scalable approach for semi-supervised learning on
+graph-structured data that is based on an efficient variant of convolutional
+neural networks which operate directly on graphs. We motivate the choice of our
+convolutional architecture via a localized first-order approximation of
+spectral graph convolutions. Our model scales linearly in the number of graph
+edges and learns hidden layer representations that encode both local graph
+structure and features of nodes. In a number of experiments on citation
+networks and on a knowledge graph dataset we demonstrate that our approach
+outperforms related methods by a significant margin.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928').show());void($('#more-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928').show());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928').hide());void($('#more-am91cm5hbHMvY29yci8xNjA5LjAyOTA3-928').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1609.02907">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="gngdb" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=gngdb" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=gngdb&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Gavin Gray&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: gngdb&lt;br&gt;Posted: 2017-10-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1609.02907&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-929').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1609.02907%26a%3Dgngdb" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-929" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.02907&amp;a=gngdb" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.02907%26a%3Dgngdb&amp;text=Summary%20of%20Semi-Supervised%20Classification%20with%20Graph%20Convolutional%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.02907%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Semi-Supervised%20Classification%20with%20Graph%20Convolutional%20Networks&amp;Body=Summary%20of%20Semi-Supervised%20Classification%20with%20Graph%20Convolutional%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.02907%26a%3Dgngdb"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.02907%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.02907%26a%3Dgngdb&amp;title=Summary%20of%20Semi-Supervised%20Classification%20with%20Graph%20Convolutional%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.02907&amp;a=gngdb" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=gngdb" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Gavin Gray 2017-10-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The propagation rule used in this paper is the following:
+
+$$
+H^l = \sigma \left(\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} H^{l-1} W^l \right)
+$$
+
+Where $\tilde{A}$ is the [adjacency matrix][adj] of the undirected graph (with self connections, so has a diagonal of 1s and is symmetric) and $H^l$ are the hidden activations at layer $l$. The $D$ matrices are performing row normalisation, $\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}}$ is [equivalent to][pygcn] (with $\tilde{A}$ as `mx`):
+
+```
+rowsum = np.array(mx.sum(1))            # sum along rows
+r_inv = np.power(rowsum, -1).flatten()  # 1./rowsum elementwise
+r_mat_inv = sp.diags(r_inv)             # cast to sparse diagonal matrix
+mx = r_mat_inv.dot(mx)                  # sparse matrix multiply
+```
+
+The symmetric way to express this is part of the [symmetric normalized Laplacian][laplace]. This work, and the [other][hammond] [work][defferrard] on graph convolutional networks, is motivated by convolving a parametric filter over $x$. Convolution becomes easy if we can perform a *graph Fourier transform* (don&#x27;t worry I don&#x27;t understand this either), but that requires us having access to eigenvectors of the normalized graph Laplacian (which is expensive).
+
+[Hammond&#x27;s early paper][hammond] suggested getting around this problem by using Chebyshev polynomials for the approximation. This paper takes the approximation even further, using only *first order* Chebyshev polynomial, on the assumption that this will be fine because the modeling capacity can be picked up by the deep neural network.
+
+That&#x27;s how the propagation rule above is derived, but we don&#x27;t really need to remember the details. In practice $\tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} = \hat{A}$ is calculated prior and using a graph convolutional network involves multiplying your activations by this sparse matrix at every hidden layer. If you&#x27;re thinking in terms of a batch with $N$ examples and $D$ features, this multiplication happens *over the examples*, mixing datapoints together (according to the graph structure). If you want to think of this in an orthodox deep learning way, it&#x27;s the following:
+
+```
+activations = F.linear(H_lm1, W_l)         # (N,D)
+activations = activations.permute(1,0)     # (D,N)
+activations = F.linear(activations, hat_A) # (D,N)
+activations = activations.permute(1,0)     # (N,D)
+H_l = F.relu(activations)
+```
+
+**Won&#x27;t this be really slow though, $\hat{A}$ is $(N,N)$!** Yes, if you implemented it that way it would be very slow. But, many deep learning frameworks support sparse matrix operations ([although maybe not the backward pass][sparse]). Using that, a graph convolutional layer can be implemented [quite easily][pygcnlayer].
+
+**Wait a second, these are batches, not minibatches?** Yup, minibatches are future work.
+
+**What are the experimental results, though?** There are experiments showing this works well for semi-supervised experiments on graphs, as advertised. Also, the many approximations to get the propagation rule at the top are justified by experiment.
+
+**This summary is bad.** Fine, smarter people have written their own posts: [the author&#x27;s][kipf], [Ferenc&#x27;s][ferenc].
+
+[adj]: https://en.wikipedia.org/wiki/Adjacency_matrix
+[pygcn]: https://github.com/tkipf/pygcn/blob/master/pygcn/utils.py#L56-L63
+[laplace]: https://en.wikipedia.org/wiki/Laplacian_matrix#Symmetric_normalized_Laplacian
+[hammond]: https://arxiv.org/abs/0912.3848
+[defferrard]: https://arxiv.org/abs/1606.09375
+[sparse]: https://discuss.pytorch.org/t/does-pytorch-support-autograd-on-sparse-matrix/6156/7
+[pygcnlayer]: https://github.com/tkipf/pygcn/blob/master/pygcn/layers.py#L35-L68
+[kipf]: https://tkipf.github.io/graph-convolutional-networks/
+[ferenc]: http://www.inference.vc/how-powerful-are-graph-convolutions-review-of-kipf-welling-2016-2/</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

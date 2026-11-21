@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables - ShortScience.org">
+<meta property="og:description" content="This paper presents a way to differentiate through discrete random variables by replacing them with...">
+<meta name="description" content="This paper presents a way to differentiate through discrete random variables by replacing them with...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.00712">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1611.00712" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Chris J. Maddison and Andriy Mnih and Yee Whye Teh"}, "headline": "The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables", "description": "Summary of The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables", "datePublished": "2016-12-13 10:51:03", "dateModified": "2016-12-13 14:17:13", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1611.00712", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1611.00712v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22The%20Concrete%20Distribution%3A%20A%20Continuous%20Relaxation%20of%20Discrete%20Random%20Variables%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Chris%20J.%20Maddison">Chris J. Maddison</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Andriy%20Mnih">Andriy Mnih</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yee%20Whye%20Teh">Yee Whye Teh</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/11/02<br><b>Abstract:</b>   The reparameterization trick enables the optimization of large scale
+stochastic computation graphs via gradient descent. The essence of the trick is
+to refactor each stochastic node into a differentiable function of its
+parameters and a random variable with fixed distribution. After refactoring,
+the gradients of the loss propagated by the chain rule through the graph are
+low variance unbiased estimators of the gradients of the expected loss. While
+many continuous random variables have such reparameterizations, discrete random
+variables lack continuous reparameterizations due to the discontinuous nature
+of discrete states. In this work we introduce concrete random variables --
+continuous relaxations of discrete random variables. The concrete distribution
+is a new family of distributions with closed form densities and a simple
+reparameterization. Whenever a discrete stochastic node of a computation graph
+can be refactored into a one-hot bit representation that is treated
+continuously, concrete stochastic nodes can be used with automatic
+differentiation to produce low-variance biased gradients of objectives
+(including objectives that depend on the log-likelihood of latent stochastic
+nodes) on the corresponding discrete graph. We demonstrate their effectiveness
+on density estimation and structured prediction tasks using neural networks.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967').hide());void($('#showless-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967').show());void($('#more-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967').show());void($('#showless-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967').hide());void($('#more-am91cm5hbHMvY29yci8xNjExLjAwNzEy-967').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1611.00712">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="gngdb" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=gngdb" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=gngdb&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Gavin Gray&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: gngdb&lt;br&gt;Posted: 2016-12-13&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1611.00712&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-968').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1611.00712%26a%3Dgngdb" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-968" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.00712&amp;a=gngdb" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.00712%26a%3Dgngdb&amp;text=Summary%20of%20The%20Concrete%20Distribution%3A%20A%20Continuous%20Relaxation%20of%20Discrete%20Random%20Variables&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.00712%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20The%20Concrete%20Distribution%3A%20A%20Continuous%20Relaxation%20of%20Discrete%20Random%20Variables&amp;Body=Summary%20of%20The%20Concrete%20Distribution%3A%20A%20Continuous%20Relaxation%20of%20Discrete%20Random%20Variables%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.00712%26a%3Dgngdb"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.00712%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.00712%26a%3Dgngdb&amp;title=Summary%20of%20The%20Concrete%20Distribution%3A%20A%20Continuous%20Relaxation%20of%20Discrete%20Random%20Variables" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.00712&amp;a=gngdb" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=gngdb" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Gavin Gray 2016-12-13</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents a way to differentiate through discrete random variables by replacing them with continuous random variables. Say you have a discrete [categorical variable][cat] and you&#x27;re sampling it with the [Gumbel trick][gumbel] like this ($G_k$ is a Gumbel distributed variable and $\boldsymbol{\alpha}/\sum_k \alpha_k$ are our categorical probabilities):
+
+$$
+z = \text{one_hot} \left( \underset{k}{\text{arg max}} [ G_k + \log \alpha_k ] \right)
+$$
+
+This paper replaces the one hot and argmax with a softmax, and they add a $\lambda$ variable to control the &quot;temperature&quot;. As $\lambda$ tends to zero it will equal the above equation.
+
+$$
+z = \text{softmax} \left( \frac{  G_k + \log \alpha_k }{\lambda} \right)
+$$
+
+I made [some notes][nb] on how this process works, if you&#x27;d like more intuition.
+
+Comparison to [Gumbel-softmax][gs]
+--------------------------------------------
+
+These papers are proposed precisely the same distribution with notation changes ([noted there][gs]). Both papers also reference each other and the differences. Although, they mention differences in the variatonal objectives to the Gumbel-softmax. This paper also compares to [VIMCO][], which is probably a harder benchmark to compare against (multi-sample versus single sample).
+
+The results in both papers compare to SOTA score function based estimators and both report high scoring results (often the best). There are some details about implementations to consider though, such as scheduling and exactly how to define the variational objective.
+
+[cat]: https://en.wikipedia.org/wiki/Categorical_distribution
+[gumbel]: https://hips.seas.harvard.edu/blog/2013/04/06/the-gumbel-max-trick-for-discrete-distributions/
+[gs]: http://www.shortscience.org/paper?bibtexKey=journals/corr/JangGP16
+[nb]: https://gist.github.com/gngdb/ef1999ce3a8e0c5cc2ed35f488e19748
+[vimco]: https://arxiv.org/abs/1602.06725</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neural GPUs Learn Algorithms - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Neural GPUs Learn Algorithms - ShortScience.org">
+<meta property="og:description" content="# Neural GPUs Learn Algorithms
+
+Authors: Łukasz Kaiser, Ilya Sutskever.  
+
+This originally appeared...">
+<meta name="description" content="# Neural GPUs Learn Algorithms
+
+Authors: Łukasz Kaiser, Ilya Sutskever.  
+
+This originally appeared...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/KaiserS15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/KaiserS15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Kaiser, Lukasz and Sutskever, Ilya"}, "headline": "Neural GPUs Learn Algorithms", "description": "Summary of Neural GPUs Learn Algorithms", "datePublished": "2016-04-19 21:45:01", "dateModified": "2016-04-20 06:04:38", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/KaiserS15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1511.08228"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Neural%20GPUs%20Learn%20Algorithms%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Neural GPUs Learn Algorithms</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Kaiser%2C%20Lukasz">Kaiser, Lukasz</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sutskever%2C%20Ilya">Sutskever, Ilya</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/KaiserS15">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="hoqqanen" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hoqqanen" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hoqqanen&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/db8d4b6328341bcf024aa67f4b4e2d81?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;hoqqanen&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hoqqanen&lt;br&gt;Posted: 2016-04-19&lt;br&gt;Edited: 2016-04-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/KaiserS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/db8d4b6328341bcf024aa67f4b4e2d81?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1662').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/KaiserS15%26a%3Dhoqqanen" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1662" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/KaiserS15&amp;a=hoqqanen" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKaiserS15%26a%3Dhoqqanen&amp;text=Summary%20of%20Neural%20GPUs%20Learn%20Algorithms&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKaiserS15%26a%3Dhoqqanen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Neural%20GPUs%20Learn%20Algorithms&amp;Body=Summary%20of%20Neural%20GPUs%20Learn%20Algorithms%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKaiserS15%26a%3Dhoqqanen"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKaiserS15%26a%3Dhoqqanen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKaiserS15%26a%3Dhoqqanen&amp;title=Summary%20of%20Neural%20GPUs%20Learn%20Algorithms" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/KaiserS15&amp;a=hoqqanen" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hoqqanen" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by hoqqanen 2016-04-19</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"># Neural GPUs Learn Algorithms
+
+Authors: Łukasz Kaiser, Ilya Sutskever. http://arxiv.org/abs/1511.08228
+
+This originally appeared here: https://github.com/ProofByConstruction/better-explanations/blob/master/summaries/1511.08228.md
+
+## Short Version
+
+Using convolutions on embedded symbols in a recurrent-looking setting allows training of what is essentially a cellular automaton which can perform various algorithms and generalize to sequences of very long lengths.
+
+## Problem Setting
+
+We want to teach neural nets to learn algorithms (e.g. copy, reverse, binary addition or multiplication, etc.). Other approaches to this include sequence to sequence modeling (usually via some form of [LSTM](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)). Related work of seq-seq approaches includes [Neural Turing Machines](http://arxiv.org/abs/1410.5401), [Stack RNNs](http://arxiv.org/abs/1503.01007), [Pointer Networks](http://arxiv.org/abs/1506.03134), and [Grid LSTM](http://arxiv.org/abs/1507.01526). Related but different, see [Neural Programmer-Interpreters](http://arxiv.org/abs/1511.06279).
+
+These types of problems are particularly difficult for neural approaches because as sequence length grows, so too does the necessary computation. Furthermore generalization can be difficult, since it&#x27;s possible for networks to effectively learn length-dependent rules that break down on longer sequences. This mostly comes from the fact that it&#x27;s difficult to encode a symbolic, rule-based algorithmic approach in a neural net (hence all of the different approaches above and the active research in this area).
+
+The Neural GPU is somewhat different in its approach compared to other sequence-sequence models in that it don&#x27;t exactly take in or generate a sequence, but reads in an entire sequence as a static object and generates a fixed size image length equal to that of the input (with special padding characters to indicate gaps). These inputs and outputs are sized dependent on the problem (longer sequences get bigger representations). In this way, the Neural GPU looks much more like a traditional feedforward convolutional net with variable input/output size (and variable computational depth, but we&#x27;ll get to that later).
+
+## Architecture
+
+The three stages are
+ - an embedder which takes a sequence of symbols to an input &quot;image&quot;
+ - a stack of convolutional [GRUs](http://arxiv.org/abs/1412.3555) (Gated Recurrent Units) which at each step progressively process their input
+ - a decoder which effectively does the reverse of the embedder (takes output representation to symbols)
+
+### Encoder
+
+The input is a sequence of length n over set of symbols (e.g. {0, 1, +, PAD (=P)}, input is (in reverse-binary) 1010+0111, output, constrained to be the same size, should be 11001PPPP) of size I. We first map the symbols to vectors of length m (which will be the number of channels of our mental image) by looking up each symbol in an embedding matrix of size I*m. Call these embeddings {e_i}. We then create an initial &quot;mental image&quot; which is a rectangular volume with width w (set to be 4), height n (the length of the input sequence) and depth m (the embedding size). In the first column we insert the e_i&#x27;s depthwise, and set all other cells in the volume to be 0.
+
+Note that the size (height) of the input volume is dependent on sequence length. This could be a problem in other architectures, but since everything is done by convolution (as we&#x27;ll see shortly) this architecture is able to exploit an adaptive-size input rather than reading in sequences (as I imagine convolutional text models might)
+
+### CGRU
+
+The processing done by the network is over n (the length of the input sequence) time steps using L layers (L=2) of [GRUs](http://arxiv.org/abs/1412.3555), however this is a bit misleading because we only feed input in once (encoded as state), and if we unroll the computation for the fixed length of n time steps, it looks like a purely feedforward net. We might ask why use the GRU architecture at all (instead of only weight sharing across layers) and my guess is that the update and reset gates help in training over long unrollings (ie without them we might experience vanishing gradients -- though it might be worth trying relu activated convolutional layers with shared weights across layers).
+
+Additionally, we structure the operation occurring in the GRU by forcing it to be a convolution (instead of e.g. fully connected). Intuitively what this CGRU (Convolutional GRU) is doing is processing the &quot;mental image&quot; (which remains the same shape over all time steps) in the same way at each point in time, thus bearing resemblance to cellular automata.
+
+### Decoder
+
+We consider the output much like the input and read out only the first column (of height n, the output sequence length, and depth m, the embedding size). We use a decoder matrix O, of shape m*I which takes the m-dimensionally represented characters and maps to I logit probabilities.
+
+$$l_k = O s_{fin}[0, k, :] = O c_k = [l_k^1, l_k^2, \dots, l_k^I]$$
+
+  The output at each slot in the output sequence is then whichever character is most probable. For each character, its loss is the probability of the target character (where the probability is softmax over the logits). The loss is then the sum of the logs (~product) of these over all characters
+
+$$L = - \sum_{k \in [1, n]} \log p(c_k^{target}) = - \sum_{k \in 1, n} \log \frac{e^{l_k^{target}}}{\sum_j e^{l_k^j}}$$
+
+## Training
+
+ There are a bunch of tricks employed in training these.
+  - Dropout (between 6%-13.5%), noise added to gradients (gaussian with mean 0, variance ~ 1/sqrt(step number)), gradient clipping
+  - Grid search for hyperparameter tuning
+  - Curriculum design - the distribution over lengths of presented examples during training shifts towards more difficult problems as mastery of easier ones increases (note that this curriculum is designed by hand)
+  - &quot;Parameter sharing relaxation&quot;: each GRU is allowed to have different weights at each time step for 6 steps, then cycles that same set of weights (step 7 uses weights at step 1). This allows for more variation in the weights so that the network can achieve a better fit. To get a single weight matrix there&#x27;s a penalty that progressively increases which is proportional to the differences of weights from the mean.
+
+## Other Notes
+
+  - The number of steps the network is run for is equal to the length of the input sequence (for algorithms which require more computational steps, this architecture is therefore insufficient for perfect calculation). I&#x27;m not sure if this is a trick, or just a decision for architectural simplicity. Regardless, it removes the need to learn a stopping mechanism.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

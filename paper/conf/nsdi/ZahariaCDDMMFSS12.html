@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing - ShortScience.org">
+<meta property="og:description" content="The paper describes the architecture of RDDs (Resilient Distributed Datasets), what problems they ca...">
+<meta name="description" content="The paper describes the architecture of RDDs (Resilient Distributed Datasets), what problems they ca...">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*9I0CaywrdzUpg7RKbGlMow.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nsdi/ZahariaCDDMMFSS12">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nsdi/ZahariaCDDMMFSS12" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Zaharia, Matei and Chowdhury, Mosharaf and Das, Tathagata and Dave, Ankur and Ma, Justin and McCauly, Murphy and Franklin, Michael J. and Shenker, Scott and Stoica, Ion"}, "headline": "Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing", "description": "Summary of Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing", "datePublished": "2016-10-20 23:58:28", "dateModified": "2016-10-20 23:58:28", "image": {"@type": "ImageObject", "url": "https://cdn-images-1.medium.com/max/800/1*9I0CaywrdzUpg7RKbGlMow.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nsdi/ZahariaCDDMMFSS12", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/zaharia"><span class="glyphicon glyphicon-link"></span> www.usenix.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Resilient%20Distributed%20Datasets%3A%20A%20Fault-Tolerant%20Abstraction%20for%20In-Memory%20Cluster%20Computing%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Zaharia%2C%20Matei">Zaharia, Matei</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chowdhury%2C%20Mosharaf">Chowdhury, Mosharaf</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Das%2C%20Tathagata">Das, Tathagata</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dave%2C%20Ankur">Dave, Ankur</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ma%2C%20Justin">Ma, Justin</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=McCauly%2C%20Murphy">McCauly, Murphy</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Franklin%2C%20Michael%20J.">Franklin, Michael J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shenker%2C%20Scott">Shenker, Scott</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Stoica%2C%20Ion">Stoica, Ion</a></span>
+<br>
+USENIX Association NSDI - 2012 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nsdi/ZahariaCDDMMFSS12">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nsdi/ZahariaCDDMMFSS12&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-559').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nsdi/ZahariaCDDMMFSS12%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-559" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nsdi/ZahariaCDDMMFSS12&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FZahariaCDDMMFSS12%26a%3Dshagunsodhani&amp;text=Summary%20of%20Resilient%20Distributed%20Datasets%3A%20A%20Fault-Tolerant%20Abstraction%20for%20In-Memory%20Cluster%20Computing&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FZahariaCDDMMFSS12%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Resilient%20Distributed%20Datasets%3A%20A%20Fault-Tolerant%20Abstraction%20for%20In-Memory%20Cluster%20Computing&amp;Body=Summary%20of%20Resilient%20Distributed%20Datasets%3A%20A%20Fault-Tolerant%20Abstraction%20for%20In-Memory%20Cluster%20Computing%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FZahariaCDDMMFSS12%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FZahariaCDDMMFSS12%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FZahariaCDDMMFSS12%26a%3Dshagunsodhani&amp;title=Summary%20of%20Resilient%20Distributed%20Datasets%3A%20A%20Fault-Tolerant%20Abstraction%20for%20In-Memory%20Cluster%20Computing" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nsdi/ZahariaCDDMMFSS12&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper describes the architecture of RDDs (Resilient Distributed Datasets), what problems they can be used to solve, how they perform on different benchmarks and how they are different from existing solutions.
+
+Many generalized cluster computing frameworks, like MapReduce and Dryad, lack in two areas:
+
+1. Iterative algorithms where intermediate results are used across multiple computations.
+2. Interactive data analysis where users run ad-hoc queries on the data.
+
+One way around these problems is to use specialized frameworks like Pregel. But this leads to loss of generality. This is the problem that RDD intends to solve — by providing a general purpose, fault tolerant, distributed memory abstraction.
+
+#### RDD Overview
+RDDs are immutable partitioned collections that are created through deterministic operations on data in stable storage or other RDDs. They keep enough information about how they are derived from other sources (this information is called lineage). This lineage ensures that RDDs can be easily reconstructed in case of failures without having to perform explicit checkpointing. In fact, a program can not reference an RDD that it can not reconstruct after a failure. RDDs are lazy and ephemeral. They are constructed on demand and discarded after use. This allows for pipelining of many operations. For example:
+
+    rawData = spark.textfile(filepath) // read data from file
+    dataAfterApplyingFirstFilter = rawData.filter(condition1)
+    dataAfterApplyingSecondFilter = dataAfterApplyingFirstFilter.filter(condition2)
+    dataAfterApplyingSecondFilter.save()
+
+The execution will take place on line 4, and the two filter conditions can be merged into a single condition to avoid multiple passes over the data.
+
+
+#### RDD Model
+RDDs provide an interface based on fine-grained reads and coarse-grained updates. This means transformations (functions) are applied to all data items. These transformations can be logged to build lineage graph so as to provide fault tolerance. But this update nature makes RDDs unsuitable for applications like incremental web crawler that needs asynchronous fine-grained updates to a shared state. In such cases, DSM (Distributed Shared Memory) would be a better choice as it provides fine-grained reads and writes. Although RDDs offer many advantages over DSM. First, unlike DSM, RDDs do not need to incur checkpointing overhead. Second, RDDs, being immutable, can mitigate stragglers (slow nodes), by running backup tasks just like MapReduce. Third, since only bulk writes are supported, run time can schedule tasks based on data locality to enhance performance. Lastly, even if RDDs choose to take checkpoints (in cases where the lineage graph grows very big), consistency is not a concern because of the immutable nature of RDDs.
+
+RDDs have been implemented in Spark to provide a language integrated API. Details about this implementation have been discussed here separately.
+
+#### Representing RDDs
+The paper proposes a graph-based representation of RDDs where an RDD is expressed through a common interface that exposes five functions:
+
+1. partition — represents atomic pieces of the dataset.
+2. dependencies — list of dependencies that an RDD has on its parent RDDs or data sources
+3. iterator —a function that computes an RDD based on its parents
+4. partitioner — whether data is range/hash partitioned.
+5. preferredLocation — nodes where a partition can be accessed faster due to data locality.
+
+The most interesting aspect of this representation is how dependencies are expressed. Dependencies belong to one of the two classes:
+
+1. Narrow Dependencies — where each partition of the parent node is used by at most one child partition. For example, map and filter operations.
+2. Wide Dependencies — where multiple child partitions use a single parent partition.
+
+Narrow dependencies support pipelined execution on one cluster node while wide dependencies require data from all parent partitions to be available and to be shuffled across nodes. Recovery is easier with narrow dependencies while in the case of wide dependencies, failure of a single partition may require a complete re-execution. The figure shows some examples of narrow and wide dependencies. Note that join operation defines a narrow dependency when parents are hash-partitioned and wide dependency in other cases.
+
+https://cdn-images-1.medium.com/max/800/1*9I0CaywrdzUpg7RKbGlMow.png
+
+Figure 1: Example of narrow and wide dependencies.
+
+#### Job Scheduler
+Whenever an “action” is executed, the scheduler builds a DAG (Directed Acyclic Graph) of stages based on the lineage graph. Each stage would contain pipelined transformations with narrow dependencies. The boundaries between different stages are the shuffle operation which are required by wide dependencies. Some of these stages may be precomputed (due to the persistence of previous computations). For remaining tasks, the scheduler uses delay scheduling to assign tasks to machines based on data locality. For wide dependencies, intermediate records are materialized on nodes holding the parent partition.
+
+### Evaluation
+Spark outperforms Hadoop and HadoopBinMem for following reasons:
+
+1. Minimum overhead of Hadoop Stack as Hadoop incurs around 25 seconds of overhead to complete the minimal requirements of job setup, starting tasks, and cleaning up.
+2. Overhead of HDFS while serving data as HDFS performs multiple memory copies and a checksum to serve each block.
+3. Deserialization cost to convert binary data to in-memory Java objects.
+
+Note that HadoopBinMem converts input data to low-overhead binary format and stores it in an in-memory HDFS instance.
+Case studies also show that Spark performs well for interactive data analysis and other user applications. One limitation of the experiments is that in all the cases comparing the 3 systems, the cluster had sufficient RAM to keep all the data in-memory. It would have been interesting to compare the performance of the three systems in the case where the cluster does not have sufficient RAM to keep the entire data in main memory.
+
+#### Comparison with existing systems
+RDDs and Spark learn from and improve the existing systems in many ways.
+1. Data flow models like MapReduce share data through stable storage but have to incur the cost of data replication, I/O and serialization.
+2. DryadLINQ and FlumeJava provide language integrated APIs and pipeline data across operators in the same query. But unlike Spark, they can not share data across multiple queries.
+3. Piccolo and DSM do not provide a high-level programming interface like RDDs. Moreover, they use checkpointing and roll back which are more expensive than lineage based approach.
+4. Nectar, Ceil and FlumeJava do not provide in-memory caching.
+5. MapReduce and Dryad use lineage based recovery within a computation, but this information is lost after a job ends. In contrast, RDDs persists lineage information across computations.
+
+RDDs can be used to express many existing models like MapReduce, DryadLINQ, Pregel, Batched Stream Processing, etc. This seems surprising given that RDDs offer only a limited interface due to their immutable nature and coarse-grained transformations. But these limitations have a negligible impact on many parallel applications. For example, many parallel programs prefer to apply the same operation to many records to keep the program simple. Similarly, multiple RDDs can be created to represent different versions of the same data.
+
+The paper also offers an interesting insight on the question of why previous frameworks could not offer the same level of generality. It says previous frameworks did not observe that “the common cause of these problems was a lack of data sharing abstractions”.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

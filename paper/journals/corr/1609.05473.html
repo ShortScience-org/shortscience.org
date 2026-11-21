@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient - ShortScience.org">
+<meta property="og:description" content="Everyone has been thinking about how to apply GANs to discrete sequence data for the past year or so...">
+<meta name="description" content="Everyone has been thinking about how to apply GANs to discrete sequence data for the past year or so...">
+<meta property="og:image" content="https://www.dropbox.com/s/5fqh6my63sgv5y4/Bildschirmfoto%202016-09-27%20um%2021.34.44.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Lantao Yu and Weinan Zhang and Jun Wang and Yong Yu"}, "headline": "SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient", "description": "Summary of SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient", "datePublished": "2016-09-28 04:58:29", "dateModified": "2016-09-28 17:45:06", "image": {"@type": "ImageObject", "url": "https://www.dropbox.com/s/5fqh6my63sgv5y4/Bildschirmfoto%202016-09-27%20um%2021.34.44.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1609.05473v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Lantao%20Yu">Lantao Yu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Weinan%20Zhang">Weinan Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jun%20Wang">Jun Wang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yong%20Yu">Yong Yu</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/09/18<br><b>Abstract:</b>   As a new way of training generative models, Generative Adversarial Nets (GAN)
+that uses a discriminative model to guide the training of the generative model
+has enjoyed considerable success in generating real-valued data. However, it
+has limitations when the goal is for generating sequences of discrete tokens. A
+major reason lies in that the discrete outputs from the generative model make
+it difficult to pass the gradient update from the discriminative model to the
+generative model. Also, the discriminative model can only assess a complete
+sequence, while for a partially generated sequence, it is non-trivial to
+balance its current score and the future one once the entire sequence has been
+generated. In this paper, we propose a sequence generation framework, called
+SeqGAN, to solve the problems. Modeling the data generator as a stochastic
+policy in reinforcement learning (RL), SeqGAN bypasses the generator
+differentiation problem by directly performing gradient policy update. The RL
+reward signal comes from the GAN discriminator judged on a complete sequence,
+and is passed back to the intermediate state-action steps using Monte Carlo
+search. Extensive experiments on synthetic data and real-world tasks
+demonstrate significant improvements over strong baselines.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932').show());void($('#more-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932').show());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932').hide());void($('#more-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-932').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1609.05473">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="jgauthier" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=jgauthier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=jgauthier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Jon Gauthier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: jgauthier&lt;br&gt;Posted: 2016-09-28&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1609.05473&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-933').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1609.05473%26a%3Djgauthier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-933" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=jgauthier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier&amp;text=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;Body=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier&amp;title=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=jgauthier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=jgauthier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Jon Gauthier 2016-09-28</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Everyone has been thinking about how to apply GANs to discrete sequence data for the past year or so. This paper presents the model that I would guess most people thought of as the first-thing-to-try:
+
+1. Build a recurrent generator model which samples from its softmax outputs at each timestep.
+2. Pass sampled sequences to a recurrent discriminator model which distinguishes between sampled sequences and real-data sequences.
+3. Train the discriminator under the standard GAN loss.
+4. Train the generator with a REINFORCE (policy gradient) objective, where each trajectory is assigned a single episodic reward: the score assigned to the generated sequence by the discriminator.
+
+Sounds hacky, right? We&#x27;re learning a generator with a high-variance model-free reinforcement learning algorithm, in a very seriously non-stationary environment. (Here the &quot;environment&quot; is a discriminator being jointly learned with the generator.)
+
+There&#x27;s just one trick in this paper on top of that setup: for non-terminal states, the reward is defined as the *expectation* of the discriminator score after stochastically generating from that state forward. To restate using standard (somewhat sloppy) RL syntax, in different terms than the paper: (under stochastic sequential policy $\pi$, with current state $s_t$, trajectory $\tau_{1:T}$ and discriminator $D(\tau)$)
+
+$$r_t = \mathbb E_{\tau_{t+1:T} \sim \pi(s_t)} \left[ D(\tau_{1:T}) \right]$$
+
+The rewards are estimated via Monte Carlo — i.e., just take the mean of $N$ rollouts from each intermediate state. They claim this helps to reduce variance. That makes intuitive sense, but I don&#x27;t see any results in the paper demonstrating the effect of varying $N$.
+
+---
+
+Yep, so it turns out that this sort of works.. with a big caveat:
+
+## The big caveat
+
+Graph from appendix:
+
+![](https://www.dropbox.com/s/5fqh6my63sgv5y4/Bildschirmfoto%202016-09-27%20um%2021.34.44.png?raw=1)
+
+SeqGANs don&#x27;t work without supervised pretraining. Makes sense — with a cold start, the generator just samples a bunch of nonsense and the discriminator overfits. Both the generator and discriminator are pretrained on supervised data in this paper (see Algorithm 1).
+
+I think it must be possible to overcome this with the proper training tricks and enough sweat. But it&#x27;s probably more worth our time to address the fundamental problem here of developing better RL for structured prediction tasks.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="jgauthiercomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=joecohen" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=joecohen&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Joseph Paul Cohen&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: joecohen&lt;br&gt;Posted: 2016-09-28">
+<img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">That link for the image doesn&#x27;t work for me (permissions on dropbox?). You can embed images just by writing a url that ends in a .png or .jpg. Or you can wrap the url in the ![](url) markdown syntax to render them. Like this: ![](https://i.imgur.com/hDvHRwT.png)</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=jgauthier" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=jgauthier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Jon Gauthier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: jgauthier&lt;br&gt;Posted: 2016-09-28">
+<img src="https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Fixed! Thanks.</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=rahul5475" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=rahul5475&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/19a9c0bb14fb6d9bc16cb40058992c19?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;rahul5475&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: rahul5475&lt;br&gt;Posted: 2017-05-22">
+<img src="https://www.gravatar.com/avatar/19a9c0bb14fb6d9bc16cb40058992c19?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Hi! I am not able to get what is the oracle model?</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=mostafab" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mostafab&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3a8035dba3ca0b9023781757c785a25b?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;mostafab&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mostafab&lt;br&gt;Posted: 2017-07-16">
+<img src="https://www.gravatar.com/avatar/3a8035dba3ca0b9023781757c785a25b?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">your 2. the discriminator is a CNN, not a RNN. Do you think a CNN could also be used as a generator?
+</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+<div id="dennybritz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2017-01-01&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1609.05473&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-934').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1609.05473%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-934" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddennybritz&amp;text=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;Body=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddennybritz&amp;title=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2017-01-01</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors train an Generative Adversarial Network where the generator is an RNN producing discrete tokens. The discriminator is used to provide a reward for each generated sequence (episode) and to train the generator network via via Policy Gradients. The discriminator network is a CNN in the experiments. The authors evaluate their model on a synthetic language modeling task and 3 real world tasks: Chinese poem generation, speech generation and music generation. Seq-GAN outperforms competing approaches (MLE, Schedule Sampling, PG-BLEU) on the synthetic task and outperforms MLE on the real world task based on a BLEU evaluation metric.
+
+#### Key Points
+
+- Code: https://github.com/LantaoYu/SeqGAN
+- RL Problem setup: State is already generated partial sequence. Action space is the space of possible tokens to output at the current step. Each episode is a fully generated sequence of fixed length T.
+- Exposure Bias in the Maximum Likelihood approach: During decoding the model generates the next token based on a series previously generated tokens that it may never have seen during training leading to compounding errors.
+- A discriminator can provide a reward when no task-specific reward (e.g. BLEU score) is available or when it is expensive to obtain such a reward (e.g. human eval).
+- The reward is provided by the discriminator at the end of each episode, i.e. when the full sequence is generated. To provide feedback at intermediate steps the rest of the sequence is sampled via Monte Carlo search.
+- Generator and discriminator are trained alternatively and strategy is defined by hyperparameters g-steps (# of Steps to train generator), d-steps (number of steps to train discriminator with newly generated data) and k (number of epochs to train discriminator with same set of generated data).
+- Synthetic task: Randomly initialized LSTM as oracle for a language modeling task. 10,000 sequences of length 20.
+- Hyperparameters g-steps, d-steps and k have a huge impact on training stability and final model performance. Bad settings lead to a model that is barely better than the MLE baseline.
+
+#### My notes:
+
+- Great paper overall. I also really like the synethtic task idea, I think it&#x27;s a neat way to compare models.
+- For the real-world tasks I would&#x27;ve liked to see a comparison to PG-BLEU as they do in the synthetic task. The authors evaluate on BLEU score so I wonder how much difference a direct optimization of the evaluation metric makes.
+- It seems like SeqGAN outperforms MLE significantly only on the poem generation task, not the other tasks. What about the other baselines on the other tasks? What is it about the poem generation that makes SeqGAN perform so well?
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="decodyng" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-09&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1609.05473&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-935').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1609.05473%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-935" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddecodyng&amp;text=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;Body=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Ddecodyng&amp;title=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-09</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">GANs for images have made impressive progress in recent years, reaching ever-higher levels of subjective realism. It’s also interesting to think about domains where the GAN architecture is less of a good fit. An example of one such domain is natural language. 
+
+As opposed to images, which are made of continuous pixel values, sentences are fundamentally sequences of discrete values: that is, words. In a GAN, when the discriminator makes its assessment of the realness of the image, the gradient for that assessment can be backpropagated through to the pixel level. The discriminator can say “move that pixel just a bit, and this other pixel just a bit, and then I’ll find the image more realistic”. However, there is no smoothly flowing continuous space of words, and, even if you use continuous embeddings of words, it’s still the case that if you tried to apply a small change to a embedding vector, you almost certainly wouldn’t end up with another word, you’d just be somewhere in the middle of nowhere in word space. In short: the discrete nature of language sequences doesn’t allow for gradient flow to propagate backwards through to the generator. 
+
+The authors of this paper propose a solution: instead of trying to treat their GAN as one big differentiable system, they framed the problem of “generate a sequence that will seem realistic to the discriminator” as a reinforcement learning problem? After all, this property - of your reward just being generated *somewhere* in the environment, not something analytic, not something you can backprop through -  is one of the key constraints of reinforcement learning. Here, the more real the discriminator finds your sequence, the higher the reward. One approach to RL, and the one this paper uses, is that of a policy network, where your parametrized network produces a distribution over actions. You can’t update your model to deterministically increase reward, but you can shift around probability in your policy such that your expected reward of following that policy is higher. 
+
+This key kernel of an idea - GANs for language, but using a policy network framework to get around not having backprop-able loss/reward- gets you most of the way to understanding what these authors did, but it’s still useful to mechanically walk through specifics. 
+
+https://i.imgur.com/CIFuGCG.png
+
+At each step, the “state” is the existing words in the sequence, and the agent’s “action” the choosing of its next word
+- The Discriminator can only be applied to completed sequences, since it&#x27;s difficult to determine whether an incoherent half-sentence is realistic language. So, when the agent is trying to calculate the reward of an action at a state, it uses Monte Carlo Tree Search: randomly “rolling out” many possible futures by randomly sampling from the policy, and then taking the average Discriminator judgment of all those futures resulting from each action as being its expected reward
+- The Generator is a LSTM that produces a softmax over words, which can be interpreted as a policy if it’s sampled from randomly 
+- One of the nice benefits of this approach is that it can work well for cases where we don&#x27;t have a hand-crafted quality assessment metric, the way we have BLEU score for translation </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="decodyngcomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=mcaccia" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mcaccia&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/226f57ea23b9dd861e71b7ba7821adce?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Massimo Caccia&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mcaccia&lt;br&gt;Posted: 2018-11-09">
+<img src="https://www.gravatar.com/avatar/226f57ea23b9dd861e71b7ba7821adce?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">shameless plug: don&#x27;t use SeqGAN, just reduce the softmax temperature of an MLE trained model https://arxiv.org/abs/1811.02549 . Better and easier!</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

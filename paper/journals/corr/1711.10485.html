@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks - ShortScience.org">
+<meta property="og:description" content="This paper feels a bit like watching a 90’s show, and everyone’s in denim and miniskirts, except it’...">
+<meta name="description" content="This paper feels a bit like watching a 90’s show, and everyone’s in denim and miniskirts, except it’...">
+<meta property="og:image" content="https://i.imgur.com/JLuuhJF.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.10485">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1711.10485" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Tao Xu and Pengchuan Zhang and Qiuyuan Huang and Han Zhang and Zhe Gan and Xiaolei Huang and Xiaodong He"}, "headline": "AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks", "description": "Summary of AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks", "datePublished": "2018-11-28 04:55:26", "dateModified": "2018-11-28 04:55:26", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/JLuuhJF.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1711.10485", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1711.10485v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22AttnGAN%3A%20Fine-Grained%20Text%20to%20Image%20Generation%20with%20Attentional%20Generative%20Adversarial%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">AttnGAN: Fine-Grained Text to Image Generation with Attentional Generative Adversarial Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Tao%20Xu">Tao Xu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Pengchuan%20Zhang">Pengchuan Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Qiuyuan%20Huang">Qiuyuan Huang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Han%20Zhang">Han Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zhe%20Gan">Zhe Gan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xiaolei%20Huang">Xiaolei Huang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xiaodong%20He">Xiaodong He</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/11/28<br><b>Abstract:</b>   In this paper, we propose an Attentional Generative Adversarial Network
+(AttnGAN) that allows attention-driven, multi-stage refinement for fine-grained
+text-to-image generation. With a novel attentional generative network, the
+AttnGAN can synthesize fine-grained details at different subregions of the
+image by paying attentions to the relevant words in the natural language
+description. In addition, a deep attentional multimodal similarity model is
+proposed to compute a fine-grained image-text matching loss for training the
+generator. The proposed AttnGAN significantly outperforms the previous state of
+the art, boosting the best reported inception score by 14.14% on the CUB
+dataset and 170.25% on the more challenging COCO dataset. A detailed analysis
+is also performed by visualizing the attention layers of the AttnGAN. It for
+the first time shows that the layered attentional GAN is able to automatically
+select the condition at the word level for generating different parts of the
+image.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223').hide());void($('#showless-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223').show());void($('#more-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223').show());void($('#showless-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223').hide());void($('#more-am91cm5hbHMvY29yci8xNzExLjEwNDg1-1223').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1711.10485">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-28&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1711.10485&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1224').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1711.10485%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1224" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.10485&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.10485%26a%3Ddecodyng&amp;text=Summary%20of%20AttnGAN%3A%20Fine-Grained%20Text%20to%20Image%20Generation%20with%20Attentional%20Generative%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.10485%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20AttnGAN%3A%20Fine-Grained%20Text%20to%20Image%20Generation%20with%20Attentional%20Generative%20Adversarial%20Networks&amp;Body=Summary%20of%20AttnGAN%3A%20Fine-Grained%20Text%20to%20Image%20Generation%20with%20Attentional%20Generative%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.10485%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.10485%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.10485%26a%3Ddecodyng&amp;title=Summary%20of%20AttnGAN%3A%20Fine-Grained%20Text%20to%20Image%20Generation%20with%20Attentional%20Generative%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.10485&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-28</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper feels a bit like watching a 90’s show, and everyone’s in denim and miniskirts, except it’s a 2017 ML paper, and everything uses attention. (I’ll say it again, ML years are like dog years, but more so). That said, that’s not a critique of the paper: finding clever ways to cobble together techniques for your application can be an important and valuable contribution. This paper addresses the problem of text to image generation: how to take a description of an image and generate an image that matches it, and it makes two main contributions: 1) a GAN structure that seems to merge insights from Attention and Progressive GANs in order to select areas of the sentence to inform details in specific image regions, and 2) a novel discriminator structure to evaluate whether a sentence matches an image. 
+
+https://i.imgur.com/JLuuhJF.png
+
+Focusing on the first of these first: their generation system works by an iterative process, that gradually builds up image resolution, and also pulls specific information from the sentence to inform details in each region. The first layer of the network generates a first “hidden state” based on a compressed representation of the sentence as a whole (the final hidden state of a LSTM text encoder, I believe), as well as random noise (typical input to a GAN). Subsequent “hidden states” are calculated by calculating attention weightings between each region of the image, and each word in the sentence, and pulling together a per-region context vector based on that attention map. (As far as I understand it, “region” here refers to the fact that when you’re at lower spatial scales of what is essentially a progressive generation process, 64x64 rather than 256x256, for example, each “pixel” actually represents a larger region of the image). I’m using quotes around “hidden state” in the above paragraph because I think it’s actually pretty confusing terminology, since it suggests a recurrent structure, but this model isn’t actually recurrent: there’s a specific set of weights for resolution block 0, and 1, and 2. This whole approach, of calculating a specific attention-weighted context vector over input words based on where you are in the generation process is very conceptually similar to the original domain of attention, where the attention query would be driven by the hidden state of the LSTM generating the translated version of some input sentence, except, here, instead of translating between languages, you’re translating across mediums. 
+
+The loss for this model is a combination of per-layer loss, and a final, special, full-resolution loss. At each level of resolution, there exists a separate discriminator, which seems to be able to take in both 1) only an image, and judge whether it thinks that image looks realistic on it’s own, and 2) an image and a global sentence vector, and judge whether the image matches the sentence. It’s not fully clear from the paper, but it seems like this is based on just feeding in the sentence vector as additional input? 
+https://i.imgur.com/B6qPFax.png
+For each non-final layer’s discriminator, the loss is a combination of both of these unconditional and conditional losses. 
+
+The final contribution of this paper is something they call the DAMSM loss: the Deep Attention Multimodal Similarity Model. This is a fairly complex model structure, whose ultimate goal is to assess how closely a final generated image matches a sentence. The whole structure of this loss is based on projecting region-level image features (from an intermediate, 17x17 layer of a pretrained Inception Net) and word features into the same space, and then calculating dot product similarities between them, which are then used to build “visual context vectors” for each word (for each word, created a weighted sum of visual vectors, based on how similar each is to the word). Then, we take each word’s context vector, and see how close it is to the original word vector. If we, again, imagine image and word vectors as being in a conceptually shared space, then this is basically saying “if I take a weighted average of all the things that are the most similar to me, how ultimately similar is that weighted average to me”. This allows there to be a “concept representation” match found when, for example, a particular word’s concept, like “beak”, is only present in one region, but present there very strongly: the context vector will be strongly weighted towards that region, and will end up being very close, in cosine similarity terms, to the word itself. By contrast, if none of the regions are a particularly good match for the word’s concept, this value will be low. DAMSM then aggregates up to an overall “relevance” score between a sentence and image, that’s simply a sum over a word’s “concept representation”, for each word in a sentence. It then calculates conditional probabilities in two directions: what’s the probability of the sentence, given the image (relevance score of (Sent, Imag), divided by that image’s summed relevance with all possible sentences in the batch), and, also, what’s the probability of the image, given the sentence (relevance score of the pair, divided by the sentence’s summed relevance with all possible images in the batch). 
+
+In addition to this word-level concept modeling, DAMSM also has full sentence-level versions, where it simply calculates the relevance of each (sentence, image) pair by taking the cosine similarity between the global sentence and global image features (the final hidden state of an encoder RNN, and the final aggregated InceptionNet features, respectively). All these losses are aggregated together, to get one that uses both global information, and information as to whether specific words in a sentence are represented well in an image. 
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAO: Facebook&#x27;s Distributed Data Store for the Social Graph - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="TAO: Facebook&#x27;s Distributed Data Store for the Social Graph - ShortScience.org">
+<meta property="og:description" content="# TAO
+
+* Geographically distributed, read-optimized, graph data store.
+* Favors availability and eff...">
+<meta name="description" content="# TAO
+
+* Geographically distributed, read-optimized, graph data store.
+* Favors availability and eff...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/usenix/BronsonACCDDFGKLMPPSV13">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/usenix/BronsonACCDDFGKLMPPSV13" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Bronson, Nathan and Amsden, Zach and Cabrera, George and Chakka, Prasad and Dimov, Peter and Ding, Hui and Ferris, Jack and Giardullo, Anthony and Kulkarni, Sachin and Li, Harry C. and Marchukov, Mark and Petrov, Dmitri and Puzar, Lovro and Song, Yee Jiun and Venkataramani, Venkateshwaran"}, "headline": "TAO: Facebook's Distributed Data Store for the Social Graph", "description": "Summary of TAO: Facebook's Distributed Data Store for the Social Graph", "datePublished": "2016-10-21 00:38:26", "dateModified": "2016-10-21 00:38:26", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/usenix/BronsonACCDDFGKLMPPSV13", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/bronson"><span class="glyphicon glyphicon-link"></span> www.usenix.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22TAO%3A%20Facebook%27s%20Distributed%20Data%20Store%20for%20the%20Social%20Graph%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">TAO: Facebook&#x27;s Distributed Data Store for the Social Graph</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Bronson%2C%20Nathan">Bronson, Nathan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Amsden%2C%20Zach">Amsden, Zach</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Cabrera%2C%20George">Cabrera, George</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chakka%2C%20Prasad">Chakka, Prasad</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dimov%2C%20Peter">Dimov, Peter</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ding%2C%20Hui">Ding, Hui</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ferris%2C%20Jack">Ferris, Jack</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Giardullo%2C%20Anthony">Giardullo, Anthony</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kulkarni%2C%20Sachin">Kulkarni, Sachin</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Li%2C%20Harry%20C.">Li, Harry C.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Marchukov%2C%20Mark">Marchukov, Mark</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Petrov%2C%20Dmitri">Petrov, Dmitri</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Puzar%2C%20Lovro">Puzar, Lovro</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Song%2C%20Yee%20Jiun">Song, Yee Jiun</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Venkataramani%2C%20Venkateshwaran">Venkataramani, Venkateshwaran</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/usenix&amp;year=2013">USENIX Annual Technical Conference - 2013</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/usenix/BronsonACCDDFGKLMPPSV13">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-21&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/usenix/BronsonACCDDFGKLMPPSV13&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-583').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/usenix/BronsonACCDDFGKLMPPSV13%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-583" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/usenix/BronsonACCDDFGKLMPPSV13&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fusenix%2FBronsonACCDDFGKLMPPSV13%26a%3Dshagunsodhani&amp;text=Summary%20of%20TAO%3A%20Facebook%27s%20Distributed%20Data%20Store%20for%20the%20Social%20Graph&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fusenix%2FBronsonACCDDFGKLMPPSV13%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20TAO%3A%20Facebook%27s%20Distributed%20Data%20Store%20for%20the%20Social%20Graph&amp;Body=Summary%20of%20TAO%3A%20Facebook%27s%20Distributed%20Data%20Store%20for%20the%20Social%20Graph%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fusenix%2FBronsonACCDDFGKLMPPSV13%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fusenix%2FBronsonACCDDFGKLMPPSV13%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fusenix%2FBronsonACCDDFGKLMPPSV13%26a%3Dshagunsodhani&amp;title=Summary%20of%20TAO%3A%20Facebook%27s%20Distributed%20Data%20Store%20for%20the%20Social%20Graph" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/usenix/BronsonACCDDFGKLMPPSV13&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-21</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"># TAO
+
+* Geographically distributed, read-optimized, graph data store.
+* Favors availability and efficiency over consistency.
+* Developed by and used within Facebook (social graph).
+* Link to [paper](https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf).
+
+## Before TAO
+
+* Facebook&#x27;s servers directly accessed MySQL to read/write the social graph.
+* Memcache used as a look-aside cache.
+* Had several issue:
+  * **Inefficient edge list** - A key-value store is not a good design for storing a list of edges.
+  * **Distributed Control Logic** - In look-aside cache architecture, the control logic runs on the clients which increase the number of failure modes.
+  * **Expensive Read-After-Write Consistency** - Facebook used asynchronous master-slave replication for MySQL which introduced a time lag before latest data would reflect in the local replicas.
+
+## TAO Data Model
+
+* **Objects**
+    * Typed nodes (type is denoted by `otype`)
+    * Identified by 64-bit integers.
+    * Contains data in the form of key-value pairs.
+    * Models users and repeatable actions (eg `comments`).
+
+* **Associations** 
+   * Typed directed edges between objects (type is denoted by `atype`)
+   * Identified by source object `id1`, `atype` and destination object `id2`.
+   * Contains data in the form of key-value pairs.
+   * Contains a 32-bit time field.
+   * Models actions that happen at most once or records state transition (eg `like`)
+   * Often `inverse association` is also meaningful (eg `like` and `liked by`).
+
+## Query API
+
+* Support to create, retrieve, update and delete objects and associations.
+* Support to get all associations (`assoc_get`) or their count(`assoc_count`)
+ based on starting node, time, index and limit parameters.
+ 
+ 
+ ## TAO Architecture
+ 
+ ### Storage Layer
+ * Objects and associations stored in MySQL.
+ * TAO API mapped to SQL queries.
+ * Data divided into logical shards.
+ * Objects bound to the shard for their lifetime(`shard_id` is embedded in `id`).
+ * Associations stored on the shard of its `id` (for faster association query).
+ 
+ 
+ ### Caching Layer
+ * Consists of multiple cache servers (together form a `tier`).
+ * In memory, LRU cache stores objects, association lists, and association counts.
+ * Write operation on association list with inverse involves writing 2 shards (for `id1` and `id2`).
+ * The client sends the query to cache layer which issues inverse write query to shard2 and once that is completed, a write query is made to shard1.
+ * Write failure leads to hanging associations which are repaired by an asynchronous job.
+
+### Leaders and Followers
+* A single, large tier is prone to hot spots and square growth in terms of all-to-all connections.
+* Cache split into 2 levels - one **leader tier** and multiple **follower tiers**.
+* Clients communicate only with the followers.
+* In the case of read miss/write, followers forward the request to the leader which connects to the storage layer.
+* Eventual consistency maintained by serving cache maintenance messages from leaders to followers.
+* Object update in leaders leads results in `invalidation message` to followers.
+* Leader sends `refill message` to notify about association write.
+* Leaders also serialize concurrent writes and mediates thundering herds.
+
+
+## Scaling Geographically
+
+* Since workload is read intensive, read misses are serviced locally at the expense of data freshness.
+* In the multi-region configuration, there are master-slave regions for each shard and each region has its own followers, leader, and database.
+* Database in the local region is a replica of the database in the master region.
+* In the case of read miss, the leader always queries the region database (irrespective of it being the master database or slave database).
+* In the case of write, the leader in the local region would forward the request to database in the master region.
+
+## Optimisations
+
+### Caching Server
+* RAM is partitioned into `arena` to extend the lifetime of important data types.
+* For small, fixed-size items (eg association count), a direct 8-way associative cache is maintained to avoid the use of pointers.
+* Each `atype` is mapped to 16-bit value to reduce memory footprint.
+
+### Cache Sharding and Hot Spots
+* Load is balanced among followers through `shard cloning`(reads to a shard are served by multiple followers in a tier).
+* Response to query include the object&#x27;s access rate and version number. If the access rate is too high, the object is cached by the client itself. Next time when the query comes, the data is omitted in the reply if it has not changed since the previous version.
+
+### High Degree Objects
+* In the case of `assoc_count`, the edge direction is chosen on the basis of which node (source or destination) has a lower degree (to optimize reading the association list).
+* For `assoc_get` query, only those associations are searched where time &gt; object&#x27;s creation time.
+
+## Failure Detection and Handling
+
+* Aggressive network timeouts to detect (potential) failed nodes.
+
+### Database Failure
+
+* In the case of master failure, one of the slaves take over automatically.
+* In case of slave failure, cache miss are redirected to TAO leader in the region hosting the database master.
+
+### Leader Failure
+
+* When a leader cache server fails, followers route read miss directly to the database and write to a replacement leader (chosen randomly from the leader tier).
+
+### Refill and Invalidation Failures
+
+* Refill and invalidation are sent asynchronously.
+* If the follower is not available, it is stored in leader&#x27;s disk.
+* These messages will be lost in case of leader failure.
+* To maintain consistency, all the shards mapping to a failed leader are invalidated.
+
+### Follower Failure
+
+* Each TAO client is configured with a primary and backup follower tier.
+* In normal mode, the request is made to primary tier and in the case of its failure, requests go to backup tier.
+* Read after write consistency may be violated if failing over between different tiers (read reaches the failover target before writer&#x27;s `refill` or `invalidate`).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

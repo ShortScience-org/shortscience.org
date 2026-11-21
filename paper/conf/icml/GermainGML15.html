@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MADE: Masked Autoencoder for Distribution Estimation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="MADE: Masked Autoencoder for Distribution Estimation - ShortScience.org">
+<meta property="og:description" content="This is my second favourite paper from ICML last week, and I think the title really does not do it j...">
+<meta name="description" content="This is my second favourite paper from ICML last week, and I think the title really does not do it j...">
+<meta property="og:image" content="http://www.inference.vc/content/images/2015/07/Screen-Shot-2015-07-13-at-10-48-54.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/icml/GermainGML15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/icml/GermainGML15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Germain, Mathieu and Gregor, Karol and Murray, Iain and Larochelle, Hugo"}, "headline": "MADE: Masked Autoencoder for Distribution Estimation", "description": "Summary of MADE: Masked Autoencoder for Distribution Estimation", "datePublished": "2016-07-15 03:13:36", "dateModified": "2016-07-15 03:18:18", "image": {"@type": "ImageObject", "url": "http://www.inference.vc/content/images/2015/07/Screen-Shot-2015-07-13-at-10-48-54.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/icml/GermainGML15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://jmlr.org/proceedings/papers/v37/germain15.html"><span class="glyphicon glyphicon-link"></span> jmlr.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22MADE%3A%20Masked%20Autoencoder%20for%20Distribution%20Estimation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">MADE: Masked Autoencoder for Distribution Estimation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Germain%2C%20Mathieu">Germain, Mathieu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gregor%2C%20Karol">Gregor, Karol</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Murray%2C%20Iain">Murray, Iain</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Larochelle%2C%20Hugo">Larochelle, Hugo</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/icml&amp;year=2015">International Conference on Machine Learning - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/icml/GermainGML15">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="inference" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=inference" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=inference&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;inFERENCe&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: inference&lt;br&gt;Posted: 2016-07-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/GermainGML15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-298').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/GermainGML15%26a%3Dinference" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-298" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/GermainGML15&amp;a=inference" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGermainGML15%26a%3Dinference&amp;text=Summary%20of%20MADE%3A%20Masked%20Autoencoder%20for%20Distribution%20Estimation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGermainGML15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20MADE%3A%20Masked%20Autoencoder%20for%20Distribution%20Estimation&amp;Body=Summary%20of%20MADE%3A%20Masked%20Autoencoder%20for%20Distribution%20Estimation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGermainGML15%26a%3Dinference"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGermainGML15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGermainGML15%26a%3Dinference&amp;title=Summary%20of%20MADE%3A%20Masked%20Autoencoder%20for%20Distribution%20Estimation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/GermainGML15&amp;a=inference" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=inference" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by inFERENCe 2016-07-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This is my second favourite paper from ICML last week, and I think the title really does not do it justice. It is a great idea about training rich, tractable autoregressive generative models of data, and doing so by using standard techniques from autoencoder training with dropout.
+
+Caveat (again): this is not my work, and this blog post does not really add anything new to the paper, only my perspective on it.
+
+#### Unsupervised learning primer (again)
+
+Unsupervised learning is about modelling the probability distribution $p(\mathbf{x})$ of some data, from which we observe independent samples $\mathbf{x}_i$. Often, the vector $\mathbf{x}$ is high dimensional, such as in images, where different components of $\mathbf{x}$ encode pixel intensities.
+
+Typically, a probability model is specified as $q(\mathbf{x};\theta) = \frac{f(\mathbf{x};\theta)}{Z_\theta}$, where $f(\mathbf{x};\theta)$ is some positive function parametrised by $\theta$. The denominator $Z_\theta$ is called the normalisation constant which makes sure that $q$ is a valid probability model: it has to sum up to one over all possible configurations of $\mathbf{x}$. The central problem in unsupervised learning is that for the most interesting models in high dimensional spaces, calculating $Z_\theta$ is intractable, so crucial quantities such as the model likelihood cannot be calculated and the model cannot be fitted. The community is therefore in search for
+
+- interesting models that have tractable normalisation constants
+- fancy methods to deal with intractable models (pseudo-likelihood, adversarial networks, contrastive divergence)
+
+This paper is about the former.
+
+#### Core ingredient: autoregressive models
+
+This paper sidesteps the high dimensional normalisation problem by restricting the class of probability distributions to autoregressive models, which can be written as follows:
+
+$$q(\mathbf{x};\theta) = \prod_{d=1}^{D} q(x_{d}\vert x_{1:d-1};\theta).$$
+
+Here $x_d$ denotes the $d^{th}$ component of the input vector $\mathbf{x}$. In a model like this, we only need to compute the normalisation of each $q(x_{d}\vert x_{1:d-1};\theta)$ term, and we can be sure that the resulting model is a valid model over the whole vector $\mathbf{x}$. But as normalising these one-dimensional probability distributions is a lot easier, we have a whole range of interesting tractable distributions at our disposal.
+
+#### Training multiple models simultaneously
+
+Autoregressive models are used a lot in time series modelling and language modelling: hidden Markov models or recurrent neural networks are examples. There, autoregressive models are a very natural way to model data because the data comes ordered (in time).
+
+What&#x27;s weird about using autoregressive models in this context is that it is sensitive to ordering of dimensions, even though that ordering might not mean anything. If $\mathbf{x}$ encodes an image, you can think about multiple orders in which pixel values can be serialised: sweeping left-to-right, top-to-bottom, inside-out etc. For images, neither of these orderings is particularly natural, yet all of these different ordering specifies a different model above.
+
+But it turns out, you don&#x27;t have to choose one ordering, you can choose all of them at the same time. The neat trick in the masking autoencoder paper is to train multiple autoregressive models all at the same time, all of them sharing (a subset of) parameters $\theta$, but defined over different ordering of coordinates. This can be achieved by thinking of deep autoregressive models as a special cases of an autoencoder, only with a few edges missing.
+
+![](http://www.inference.vc/content/images/2015/07/Screen-Shot-2015-07-13-at-10-48-54.png)
+
+Consider a fixed ordering of input dimensions. Now take a fully connected autoencoder, which defines a probability distribution $q(\hat{\mathbf{x}}\vert\mathbf{x};\theta)$. You can write this as
+
+$$q(\hat{\mathbf{x}}\vert\mathbf{x};\theta) = \prod_{d=1}^{D} q(\hat{x}_{d}\vert x_{1:D};\theta)$$
+
+Note the similarity to the autoregressive equation above, the only difference being that each coordinate now depends on every other coordinate ($x_{1:D}$), rather than only coordinates that precede it in the ordering ($x_{1:d-1}$). To turn this equation into autoregressive equation above, we simply have to remove dependencies of each output coordinate $\hat{x}_{d}$ on any input coordinate $\hat{x}_{e}$, where $e&gt;=d$. This can be done by removing edges along all paths from the input coordinate $\hat{x}_{e}$ to output coordinate $\hat{x}_{d}$. You can achieve this cutting of edges by multiplying the weight matrices $\mathbf{W}^{l}$of the autoencoder neural network elementwise by binary masking matrices $\mathbf{M}^{\mathbf{W}^{l}}$. Hence the name masked autoencoder.
+
+The procedure above considered a fixed ordering of coordinates. You can repeat this process for any arbitrary ordering, for which you obtain different masking matrices but otherwise the same procedure. If you train this autoencoder network with randomly sampled masking matrices, you essentially train a family of autoregressive models, each sharing some parameters via the underlying autoencoder network.
+
+Because masking is similar to the popular dropout training, implementing it is relatively straightforward and requires minimal change to existing autoencoder code. However, now you have a generative model - in fact, a large set of generative models - which has a lot of nice properties for you to enjoy.
+
+The slight concern
+
+Of course, this would be all too good to be true: a powerful deep generative model that is easy to evaluate and all. I think the problem with this is the following: If you train just one of these autoregressive models, that&#x27;s tractable, exact and fine. But you really want to combine all (or many) of these becuause individually they are weak.
+
+What is the interpretation of training with randomly drawn masking matrices? You can think of it as stochastic gradient descent on the following objective:
+
+$$\mathbb{E}_{\mathbf{x}\sim p}\mathbb{E}_{\pi \sim U} \log q(\mathbf{x},\pi,\theta)$$
+
+Here, I used $\pi$ to denote a permutation of the coordinates, and $\mathbb{E}_{\pi \sim U}$ to take an expectation over a uniform distribution over permutations. The distribution $q(\mathbf{x},\pi,\theta)$ is the autoregressive model defined by $\theta$ and the masking matrices corresponding to permutation $\pi$. $\mathbb{E}_{\mathbf{x}\sim p}$ denotes averaging over the empirical data distribution.
+
+Combining as a mixture model
+
+One way to combine autoregressive models is to take a mixture model. In the paper, the authors actually use an ensemble to make predictions, which is analogous to an equal mixture model where the mixture weights are uniform and fixed. The likelihood for this model would be the following:
+
+$$\mathbb{E}_{\mathbf{x}\sim p} \log \mathbb{E}_{\pi \sim U} q(\mathbf{x},\pi,\theta)$$
+
+Notice that the averaging over permutations now takes place inside the logarithm. By Jensen&#x27;s inequality, we can say that randomly sampling masking matrices during training amounts to optimising a stochastically estimated lower bound to the likelihood of an equal mixture. This raises the question whether actually learning the weights in such a model would be hard using something like an EM algorithm with a sparsity-enforcing regulariser/prior over mixture weights.
+
+Combining as a product of experts model
+
+Combining these autoregressive models as a mixture is not ideal. In mixture modeling the sharpness of the mixture distribution is bounded by the sharpness of component distributions. Your combined prediction can never be more confident than the your most confident model. In this case, I expect the AR models to be pretty poor models individually, and therefore not to be very sharp, particularly along the first few coordinates in the corresponding ordering.
+
+A better way to combine probabilistic models is via product of experts. You can actually interpret training by random masking matrices as a form of product of experts, but with the global normalisation ignored. I&#x27;m not sure if it would be possible/tractable to do anything better than this.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

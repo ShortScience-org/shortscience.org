@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adversarial Reprogramming of Neural Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Adversarial Reprogramming of Neural Networks - ShortScience.org">
+<meta property="og:description" content="In the literature of adversarial examples, there’s this (to me) constant question: is it the case th...">
+<meta name="description" content="In the literature of adversarial examples, there’s this (to me) constant question: is it the case th...">
+<meta property="og:image" content="https://i.imgur.com/K02cwK0.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.11146">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1806.11146" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Gamaleldin F. Elsayed and Ian Goodfellow and Jascha Sohl-Dickstein"}, "headline": "Adversarial Reprogramming of Neural Networks", "description": "Summary of Adversarial Reprogramming of Neural Networks", "datePublished": "2018-11-24 05:14:11", "dateModified": "2018-11-24 05:14:44", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/K02cwK0.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1806.11146", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.CR,  cs.CV,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1806.11146v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Adversarial%20Reprogramming%20of%20Neural%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Adversarial Reprogramming of Neural Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Gamaleldin%20F.%20Elsayed">Gamaleldin F. Elsayed</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ian%20Goodfellow">Ian Goodfellow</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jascha%20Sohl-Dickstein">Jascha Sohl-Dickstein</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CR"> cs.CR</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/06/28<br><b>Abstract:</b>   Deep neural networks are susceptible to adversarial attacks. In computer
+vision, well-crafted perturbations to images can cause neural networks to make
+mistakes such as identifying a panda as a gibbon or confusing a cat with a
+computer. Previous adversarial examples have been designed to degrade
+performance of models or cause machine learning models to produce specific
+outputs chosen ahead of time by the attacker. We introduce adversarial attacks
+that instead reprogram the target model to perform a task chosen by the
+attacker---without the attacker needing to specify or compute the desired
+output for each test-time input. This attack is accomplished by optimizing for
+a single adversarial perturbation, of unrestricted magnitude, that can be added
+to all test-time inputs to a machine learning model in order to cause the model
+to perform a task chosen by the adversary when processing these inputs---even
+if the model was not trained to do this task. These perturbations can be thus
+considered a program for the new task. We demonstrate adversarial reprogramming
+on six ImageNet classification models, repurposing these models to perform a
+counting task, as well as two classification tasks: classification of MNIST and
+CIFAR-10 examples presented within the input to the ImageNet model.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366').hide());void($('#showless-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366').show());void($('#more-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366').show());void($('#showless-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366').hide());void($('#more-am91cm5hbHMvY29yci8xODA2LjExMTQ2-1366').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1806.11146">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-24&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1806.11146&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1367').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1806.11146%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1367" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.11146&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.11146%26a%3Ddecodyng&amp;text=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.11146%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks&amp;Body=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.11146%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.11146%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.11146%26a%3Ddecodyng&amp;title=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.11146&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-24</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">In the literature of adversarial examples, there’s this (to me) constant question: is it the case that adversarial examples are causing the model to objectively make a mistake, or just displaying behavior that is deeply weird, and unintuitive relative to our sense of what these models “should” be doing. A lot of the former question seems to come down to arguing over about what’s technically “out of distribution”, which has an occasional angels-dancing-on-a-pin quality, but it’s pretty unambiguously clear that the behavior displayed in this paper is weird, and beyond what I naively expected a network to be able to be manipulated to do.  
+
+The goal these authors set for themselves is what they call “reprogramming” of a network; they want the ability to essentially hijack the network’s computational engine to perform a different task, predicting a different set of labels, on a different set of inputs than the ones the model was trained on. For example, one task they perform is feeding in MNIST images at the center of a bunch of (what appear to be random, but are actually carefully optimized) pixels, and getting a network that can predict MNIST labels out the other end. Obviously, it’s not literally possible to change the number of outputs that a network produces once it’s trained, so the authors would arbitrarily map ImageNet outputs to MNIST categories (like, “when this model predicts Husky, that actually means the digit 7”)  and then judge how well this mapped output performs as a MNIST classifier. I enjoyed the authors’ wry commentary here about the arbitrariness of the mapping, remarking that “a ‘White Shark’ has nothing to do with counting 3 squares in an image, and an ‘Ostrich’ does not at all resemble 10 squares”. 
+
+https://i.imgur.com/K02cwK0.png
+
+This paper assumes a white box attack model, which implies visibility of all of the parameters, and ability to directly calculate gradients through the model. So, given this setup of a input surrounded by modifiable pixel weights, and a desire to assign your “MNIST Labels” correctly, this becomes a straightforward optimization problem: modify the values of your input weights so as to maximize your MNIST accuracy. An important point to note here is that the same input mask of pixel values is applied for every new-task image, and so these values are optimized over a full training set of inserted images, the way that normal weights would be. One interesting observation the authors make is that, counter to the typical setup of adversarial examples, this attack would not work with a fully linear model, since you actually need your “weights” to interact with your “input”, which is different each time, but these are both just different areas of your true input. This need to have different regions of input determine how other areas of input are processed isn’t possible in a linear model where each input has a distinct impact on the output, regardless of other input values. By contrast, when you just need to optimize a single perturbation to get the network to jack up the prediction for one class, that can be accomplished by just applying a strong enough bias everywhere in the input, all pointing in the same direction, which can be added together linearly and still get the job done. 
+
+The authors are able to perform MNIST and the task of “count the squares in this small input” to relatively high levels of accuracy. They perform reasonably on CIFAR (as well as a fully connected network, but not as well as a convnet). They found that performance was higher when using a pre-trained ImageNet, relative to just random weights. There’s some suggestion made that this implies there’s a kind of transfer learning going on, but honestly, this is weird enough that it’s hard to say. 
+https://i.imgur.com/bj2MUnk.png
+
+They were able to get this reprogramming work on different model structures, but, fascinatingly, saw distinctive patterns to the &quot;weight pixels&quot; they needed to add to each model structure, with ResNet easily differentiable from Inception. 
+
+One minor quibble I have with the framing of this paper - which I overall found impressive, creative, and well-written - is that I feel like it’s stretching the original frame of “adversarial example” a bit too far, to the point of possible provoking confusion. It’s not obvious that the network is making a mistake, per se, when it classifies this very out-of-distribution input as something silly. I suppose, in an ideal world, we may want our models to return to something like a uniform-over-outputs state of low confidence when predicting out of distribution, but that’s a bit different than seeing a gibbon in a picture of a panda. I don’t dispute the authors claim that the behavior they’re demonstrating is a vulnerability in terms of its ability to let outside actors “hijack” networks compute, but I worry we might be overloading the “adversarial example” to cover too many types of network failure modes. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="davidstutz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=davidstutz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=davidstutz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;David Stutz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: davidstutz&lt;br&gt;Posted: 2019-02-10&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-1806-11146&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1368').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-1806-11146%26a%3Ddavidstutz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1368" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1806-11146&amp;a=davidstutz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1806-11146%26a%3Ddavidstutz&amp;text=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1806-11146%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks&amp;Body=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1806-11146%26a%3Ddavidstutz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1806-11146%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1806-11146%26a%3Ddavidstutz&amp;title=Summary%20of%20Adversarial%20Reprogramming%20of%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1806-11146&amp;a=davidstutz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=davidstutz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by David Stutz 2019-02-10</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Elsayed et al. use universal adversarial examples to reprogram neural networks in order to perform different tasks. In particular, e.g., on ImageNet, an adversarial example
+
+$\delta = \tanh(W \cdot M)$
+
+is computed where $M$ is a mask image (see Figure 1, in the paper the mask image essentially embeds a smaller image into an ImageNet-sized image) and $W$ is the adversarial perturbation itself (note that the notaiton was changed slightly for simplification). The hyperbolic tangent constraints the adversarial example, also called adversarial program, to the valid range of $[-1,1]$ as used in most ImageNet networks. The adversarial program is comuted by minimizing
+
+$\min_W (-\log P(h(\tilde{y}) | \tilde{x}) + \lambda \|W\|_2^2$.
+
+Here, $h$ is a function mapping the labels of the target taks (e.g., MNIST classification) to the $1000$ labels of the ImageNet classification task (e.g., using the first ten labels, or assigning multiple ImageNet labels to one MNIST label). Essentially, this means minimizing the cross entropy loss of the new task (with new labels) to solve for the adversarial program. Examples of adversarial programs for different tasks and architectures are shown in Figure 1.
+
+https://i.imgur.com/hPLQn9m.png
+Figure 1: Adversarial programs for different ImageNet architectures (columns) and tasks (rows). Counting refers to a simple task of counting white squares (see paper).
+
+Interestingly, these adversarial programs are able to achieve quite high accuracy on tasks such as MNIST and CIFAR10. Additionally, the authors found that this is only possible for trained networks, not for networks with random weights (although, this might also have other reasons).
+
+Also find this summary at [davidstutz.de](https://davidstutz.de/category/reading/).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

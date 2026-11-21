@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation - ShortScience.org">
+<meta property="og:description" content="# Object detection system overview.
+
+ 
+ 
+1.	takes an input image,
+2.	extracts around 2000 bottom-up...">
+<meta name="description" content="# Object detection system overview.
+
+ 
+ 
+1.	takes an input image,
+2.	extracts around 2000 bottom-up...">
+<meta property="og:image" content="https://i.imgur.com/vd2YUy3.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Girshick, Ross B. and Donahue, Jeff and Darrell, Trevor and Malik, Jitendra"}, "headline": "Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation", "description": "Summary of Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation", "datePublished": "2017-10-30 09:34:15", "dateModified": "2017-10-30 09:34:15", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/vd2YUy3.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://dx.doi.org/10.1109/CVPR.2014.81"><span class="glyphicon glyphicon-link"></span> dx.doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Girshick%2C%20Ross%20B.">Girshick, Ross B.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Donahue%2C%20Jeff">Donahue, Jeff</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Darrell%2C%20Trevor">Darrell, Trevor</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Malik%2C%20Jitendra">Malik, Jitendra</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/cvpr&amp;year=2014">Conference and Computer Vision and Pattern Recognition - 2014</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/cvpr/GirshickDDM14">Summaries/Notes <span class="badge">6</span></a></li></ul><br>
+<div id="nandini" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nandini" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nandini&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f73671907279977ad1c5df1798190c91?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;nandini&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nandini&lt;br&gt;Posted: 2017-10-30&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/GirshickDDM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/f73671907279977ad1c5df1798190c91?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-186').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/GirshickDDM14%26a%3Dnandini" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-186" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=nandini" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dnandini&amp;text=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dnandini" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;Body=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dnandini"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dnandini" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dnandini&amp;title=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=nandini" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nandini" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by nandini 2017-10-30</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"># Object detection system overview.
+
+https://i.imgur.com/vd2YUy3.png
+ 
+1.	takes an input image,
+2.	extracts around 2000 bottom-up region proposals, 
+3.	computes features for each proposal using a large convolutional neural network (CNN), and then
+4.	classifies each region using class-specific linear SVMs.
+* R-CNN achieves a mean average precision (mAP) of 53.7% on PASCAL VOC 2010.
+* On the 200-class ILSVRC2013 detection dataset, R-CNN’s mAP is 31.4%, a large improvement over OverFeat , which had the previous best result at 24.3%.
+
+## There is a 2 challenges faced in object detection 
+1.	localization problem
+2.	labeling the data
+
+1 localization problem :
+*  One approach frames localization as a regression problem.  they report a mAP of 30.5% on VOC 2007 compared to the 58.5% achieved by our method.
+* An alternative is to build a sliding-window detector.  considered adopting a sliding-window approach increases the number of convolutional layers to 5, have very large receptive fields (195 x 195 pixels) and strides (32x32 pixels) in the input image, which makes precise localization within the sliding-window paradigm.
+
+2 labeling the data:
+* The conventional solution to this problem is to use unsupervised pre-training, followed by supervise fine-tuning 
+* supervised pre-training on a large auxiliary dataset (ILSVRC), followed by domain specific fine-tuning on a small dataset (PASCAL),
+* fine-tuning for detection improves mAP performance by 8 percentage points. 
+* Stochastic gradient descent via back propagation was used to  effective for training convolutional neural networks (CNNs)
+ 
+##  Object detection with R-CNN
+This  system consists of three modules
+* The first generates category-independent region proposals. These proposals define the set of candidate detections available to our detector.
+*  The second module is a large convolutional neural network that extracts a fixed-length feature vector from each region.
+* The third module is a set of class specific linear SVMs.
+
+Module design
+
+1 Region proposals 
+* which detect mitotic cells by applying a CNN to regularly-spaced square crops.
+* use selective search method in fast mode (Capture All Scales, Diversification, Fast to Compute).
+* the time spent computing region proposals and features (13s/image on a GPU or 53s/image on a CPU)
+
+2 Feature extraction.
+* extract a 4096-dimensional feature vector from each region proposal using the Caffe  implementation of the CNN 
+* Features are computed by forward propagating a mean-subtracted 227x227 RGB image through five convolutional layers and two fully connected layers.
+* warp all pixels in a tight bounding box around it to the required size
+* The feature matrix is typically 2000x4096 
+
+3 Test time detection
+* At test time, run selective search on the test image to extract around 2000 region proposals (we use selective search’s “fast mode” in all experiments).
+*  warp each proposal and forward propagate it through the CNN in order to compute features. Then, for each class, we score each extracted feature vector using the SVM trained for that class.
+* Given all scored regions in an image, we apply a greedy non-maximum suppression (for each class independently) that rejects a region if it has an intersection-over union (IoU) overlap with a higher scoring selected region larger than a learned threshold.
+## Training
+
+1 Supervised pre-training:
+ * pre-trained the CNN on a large auxiliary dataset (ILSVRC2012 classification)  using image-level annotations only (bounding box labels are not available for this data)
+
+2  Domain-specific fine-tuning.
+* use the stochastic gradient descent (SGD) training of the CNN parameters using only warped region proposals with  learning rate of 0.001.
+
+3  Object category classifiers.
+*   use intersection-over union (IoU) overlap threshold method  to label a region with The overlap threshold of 0.3.
+* Once features are extracted and training labels are applied, we optimize one linear SVM per class.
+* adopt the standard hard negative mining method to fit large training data in memory.
+
+### Results on PASCAL VOC 201012
+
+1  VOC 2010
+* compared against four strong baselines including SegDPM, DPM, UVA, Regionlets. 
+* Achieve a large improvement in mAP, from 35.1% to 53.7% mAP,  while also being much faster
+ https://i.imgur.com/0dGX9b7.png
+2 ILSVRC2013 detection.
+* ran R-CNN on the 200-class ILSVRC2013 detection dataset
+* R-CNN achieves a mAP of 31.4%
+https://i.imgur.com/GFbULx3.png
+#### Performance layer-by-layer, without fine-tuning
+1 pool5 layer 
+* which is the max pooled output of the network’s fifth and final convolutional layer.
+*The pool5 feature map is 6 x6 x 256 = 9216 dimensional
+* each pool5 unit has a receptive field of 195x195 pixels in the original 227x227 pixel input
+
+2 Layer fc6
+* fully connected to pool5
+*  it multiplies a 4096x9216 weight matrix by the pool5 feature map (reshaped as a 9216-dimensional vector) and then adds a vector of biases
+
+3 Layer fc7
+* It is implemented by multiplying the features computed by fc6 by a 4096 x 4096 weight matrix, and similarly adding a vector of biases and applying half-wave rectification
+#### Performance layer-by-layer, with fine-tuning
+* CNN’s parameters  fine-tuned on PASCAL.
+* fine-tuning increases mAP by 8.0 % points to 54.2%
+
+### Network architectures
+* 16-layer deep network, consisting of 13 layers of 3 _ 3 convolution kernels, with five max pooling layers interspersed, and topped with three fully-connected layers. We refer to this network as “O-Net” for OxfordNet and the baseline as “T-Net” for TorontoNet.
+* RCNN with O-Net substantially outperforms R-CNN with TNet, increasing mAP from 58.5% to 66.0%
+* drawback in terms of compute time, with in terms of compute time, with than T-Net.
+
+1 The ILSVRC2013 detection dataset
+* dataset is split into three sets: train (395,918), val (20,121), and test (40,152) 
+
+#### CNN features for segmentation.
+* full R-CNN: The first strategy (full) ignores the re region’s shape and computes CNN features directly on the warped window. Two regions might have very similar bounding boxes while having very little overlap. 
+* fg R-CNN: the second strategy (fg) computes CNN features only on a region’s foreground mask. We replace the background with the mean input so that background regions are zero after mean subtraction.
+* full+fg R-CNN: The third strategy (full+fg) simply concatenates the full and fg features
+ https://i.imgur.com/n1bhmKo.png
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="nandinicomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=shivaram" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shivaram&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/6ab07050a20c8985c3f4e492bfbcb003?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;shivaram&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shivaram&lt;br&gt;Posted: 2017-10-30">
+<img src="https://www.gravatar.com/avatar/6ab07050a20c8985c3f4e492bfbcb003?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Nice description</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+<div id="joecohen" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=joecohen" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=joecohen&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Joseph Paul Cohen&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: joecohen&lt;br&gt;Posted: 2016-04-05&lt;br&gt;Edited: 2016-04-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/GirshickDDM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-187').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/GirshickDDM14%26a%3Djoecohen" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-187" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=joecohen" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Djoecohen&amp;text=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Djoecohen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;Body=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Djoecohen"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Djoecohen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Djoecohen&amp;title=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=joecohen" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=joecohen" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Joseph Paul Cohen 2016-04-05</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The R-CNN method is a way to localize objects in an image. It is restricted to finding one of each object in an image. 
+
+1. Regions are generated based on any method including brute force sliding window.
+2. Each region is classified using AlexNet.
+3. The classifications for each label are searched to find the location which expresses that label the most.
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="martinthoma" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-05-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/GirshickDDM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-188').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/GirshickDDM14%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-188" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dmartinthoma&amp;text=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;Body=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dmartinthoma&amp;title=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-05-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The [R-CNN](http://arxiv.org/abs/1311.2524) paper presents a method based on convolutional neural networks (CNNs) for object detection. It does so by region proposals (hence the &quot;R&quot;). The key insight was to train CNNs on classification tasks and use the learned features for the region proposals. The do *not* use a sliding window approach such as Overfeat. They create around 2000 category-independent region proposals. For each proposal, they crop the part of that image. Then they resize the cropped part to fit into the CNN and classify it.
+
+
+Notable follow-ups are:
+
+* [Fast R-CNN](http://www.shortscience.org/paper?bibtexKey=conf/iccv/Girshick15)
+* [Faster R-CNNs](http://www.shortscience.org/paper?bibtexKey=conf/nips/RenHGS15)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/GirshickDDM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-189').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/GirshickDDM14%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-189" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dabhshkdz&amp;text=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;Body=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Dabhshkdz&amp;title=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents R-CNN, an approach to do object detection using CNNs pre-trained for image classification. Object proposals are extracted from the image using Selective Search, dilated by few pixels, warped to CNN input size and fed into the CNN to extract features (they experiment with pool5, fc6, fc7). These extracted feature vectors are scored using SVMs, one per class. Bounding box regression, where they predict parameters to move the proposal closer to ground-truth, further boosts localization.
+
+The authors use AlexNet, pre-trained on ImageNet and finetuned for detection. Object proposals with IOU overlap greater than 0.5 are treated as positive examples, and others as negative, and a 21-way classification (20 object categories + background) is set up to finetune the CNN. After finetuning, SVMs are trained per class, taking only the ground-truth boxes as positives, and IOU &lt;= 0.3 as negatives.
+
+R-CNN achieves major performance improvements on PASCAL VOC 2007/2010 and ILSVRC2013 detection datasets. Finally, this method is extended to do semantic segmentation and achieves competitive results.
+
+## Strengths
+
+- The method is simple and effective.
+- Extensive ablation studies show why R-CNN works.
+    - FC7 is the best feature to use (against pool5, fc6).
+    - Fine-tuning provides a large boost in performance.
+    - VGG performs better than AlexNet.
+    - Bounding box regression further improves localization.
+
+## Weaknesses / Notes
+
+- Each region proposal is treated independently, which adds up to compute time.
+- There are lots of different parts; the network can&#x27;t be trained end-to-end.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/GirshickDDM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-190').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/GirshickDDM14%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-190" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Daleju&amp;text=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;Body=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Daleju&amp;title=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * Previously, methods to detect bounding boxes in images were often based on the combination of manual feature extraction with SVMs.
+  * They replace the manual feature extraction with a CNN, leading to significantly higher accuracy.
+  * They use supervised pre-training on auxiliary datasets to deal with the small amount of labeled data (instead of the sometimes used unsupervised pre-training).
+  * They call their method R-CNN (&quot;Regions with CNN features&quot;).
+
+### How
+  * Their system has three modules: 1) Region proposal generation, 2) CNN-based feature extraction per region proposal, 3) classification.
+    * ![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Rich_feature_hierarchies_for_accurate_object_detection_and_semantic_segmentation__architecture.jpg?raw=true &quot;Architecture&quot;)
+  * Region proposals generation
+    * A region proposal is a bounding box candidate that *might* contain an object.
+    * By default they generate 2000 region proposals per image.
+    * They suggest &quot;simple&quot; (i.e. not learned) algorithms for this step (e.g. objectneess, selective search, CPMC).
+    * They use selective search (makes it comparable to previous systems).
+  * CNN features
+    * Uses a CNN to extract features, applied to each region proposal (replaces the previously used manual feature extraction).
+    * So each region proposal ist turned into a fixed length vector.
+    * They use AlexNet by Krizhevsky et al. as their base CNN (takes 227x227 RGB images, converts them into 4096-dimensional vectors).
+    * They add `p=16` pixels to each side of every region proposal, extract the pixels and then simply resize them to 227x227 (ignoring aspect ratio, so images might end up distorted).
+    * They generate one 4096d vector per image, which is less than what some previous manual feature extraction methods used. That enables faster classification, less memory usage and thus more possible classes.
+  * Classification
+    * A classifier that receives the extracted feature vectors (one per region proposal) and classifies them into a predefined set of available classes (e.g. &quot;person&quot;, &quot;car&quot;, &quot;bike&quot;, &quot;background / no object&quot;).
+    * They use one SVM per available class.
+    * The regions that were not classified as background might overlap (multiple bounding boxes on the same object).
+      * They use greedy non-maximum suppresion to fix that problem (for each class individually).
+      * That method simply rejects regions if they overlap strongly with another region that has higher score.
+      * Overlap is determined via Intersection of Union (IoU).
+  * Training method
+    * Pre-Training of CNN
+      * They use AlexNet pretrained on Imagenet (1000 classes).
+      * They replace the last fully connected layer with a randomly initialized one that leads to `C+1` classes (`C` object classes, `+1` for background).
+    * Fine-Tuning of CNN
+      * The use SGD with learning rate `0.001`.
+      * Batch size is 128 (32 positive windows, 96 background windows).
+      * A region proposal is considered positive, if its IoU with any ground-truth bounding box is `&gt;=0.5`.
+    * SVM
+      * They train one SVM per class via hard negative mining.
+      * For positive examples they use here an IoU threshold of `&gt;=0.3`, which performed better than 0.5.
+
+### Results
+  * Pascal VOC 2010
+    * They: 53.7% mAP
+    * Closest competitor (SegDPM): 40.4% mAP
+    * Closest competitor that uses the same region proposal method (UVA): 35.1% mAP
+    * ![Scores on Pascal VOC 2010](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Rich_feature_hierarchies_for_accurate_object_detection_and_semantic_segmentation__scores.jpg?raw=true &quot;Scores on Pascal VOC 2010&quot;)
+  * ILSVRC2013 detection
+    * They: 31.4% mAP
+    * Closest competitor (OverFeat): 24.3% mAP
+  * The feed a large number of region proposals through the network and log for each filter in the last conv-layer which images activated it the most:
+    * ![Activations](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Rich_feature_hierarchies_for_accurate_object_detection_and_semantic_segmentation__activations.jpg?raw=true &quot;Activations&quot;)
+  * Usefulness of layers:
+    * They remove later layers of the network and retrain in order to find out which layers are the most useful ones.
+    * Their result is that both fully connected layers of AlexNet seemed to be very domain-specific and profit most from fine-tuning.
+  * Using VGG16:
+    * Using VGG16 instead of AlexNet increased mAP from 58.5% to 66.0% on Pascal VOC 2007.
+    * Computation time was 7 times higher.
+  * They train a linear regression model that improves the bounding box dimensions based on the extracted features of the last pooling layer. That improved their mAP by 3-4 percentage points.
+  * The region proposals generated by selective search have a recall of 98% on Pascal VOC and 91.6% on ILSVRC2013 (measured by IoU of `&gt;=0.5`).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="evansu" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=evansu" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=evansu&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/4e8cdffe77e640a6014c7c3d8a4cf3b8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Evan Su&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: evansu&lt;br&gt;Posted: 2016-04-03&lt;br&gt;Edited: 2016-04-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/GirshickDDM14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/4e8cdffe77e640a6014c7c3d8a4cf3b8?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">0</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-191').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/GirshickDDM14%26a%3Devansu" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-191" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=evansu" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Devansu&amp;text=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Devansu" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation&amp;Body=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Devansu"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Devansu" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FGirshickDDM14%26a%3Devansu&amp;title=Summary%20of%20Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/GirshickDDM14&amp;a=evansu" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=evansu" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Evan Su 2016-04-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents a object detection algorithm that improves mAP on PASCAL VOC dataset by over 20% to previous state-of-the-art. Unlike image classification which take an image or the center part of an image as input, object detection task requires an algorithm to detect bounding boxes of objects in an image. To use the high capacity CNN features in object detection, the proposed algorithm first generates region proposals. CNN features are extracted from those region proposals and are feed to a set of class-specific linear SVMs which tell whether objects are detected in those regions.
+Technical details
+
+The figure below show the object detection system in this paper.
+![](http://3.bp.blogspot.com/-O6e43qcpcYA/VWapFWyXt5I/AAAAAAAAA8c/rcjlQJAQ35s/s320/system.png)
+
+Because the PASCAL VOC dataset is not large enough for training high capacity CNN features, this paper use supervised pre-training on a large auxiliary dataset (ILSVRC 2012). The CNN is then fine-tuned with a portion of the PASCAL VOC dataset.
+
+Results
+
+The following table shows the detection mAP on VOC 2007 test.
+
+![](http://1.bp.blogspot.com/-AmEd1cI6iWs/VWaqnD1YYwI/AAAAAAAAA8o/07pfZpdvwck/s400/table%2B2.png)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

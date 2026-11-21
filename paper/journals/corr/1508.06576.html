@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Neural Algorithm of Artistic Style - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Neural Algorithm of Artistic Style - ShortScience.org">
+<meta property="og:description" content="* The paper describes a method to separate content and style from each other in an image.
+  * The...">
+<meta name="description" content="* The paper describes a method to separate content and style from each other in an image.
+  * The...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/A_Neural_Algorithm_for_Artistic_Style__examples.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1508.06576">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1508.06576" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Leon A. Gatys and Alexander S. Ecker and Matthias Bethge"}, "headline": "A Neural Algorithm of Artistic Style", "description": "Summary of A Neural Algorithm of Artistic Style", "datePublished": "2017-10-17 22:07:12", "dateModified": "2017-10-27 10:23:38", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/A_Neural_Algorithm_for_Artistic_Style__examples.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1508.06576", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.NE,  q-bio.NC">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1508.06576v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22A%20Neural%20Algorithm%20of%20Artistic%20Style%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">A Neural Algorithm of Artistic Style</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Leon%20A.%20Gatys">Leon A. Gatys</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alexander%20S.%20Ecker">Alexander S. Ecker</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Matthias%20Bethge">Matthias Bethge</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20q-bio.NC"> q-bio.NC</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/08/26<br><b>Abstract:</b>   In fine art, especially painting, humans have mastered the skill to create
+unique visual experiences through composing a complex interplay between the
+content and style of an image. Thus far the algorithmic basis of this process
+is unknown and there exists no artificial system with similar capabilities.
+However, in other key areas of visual perception such as object and face
+recognition near-human performance was recently demonstrated by a class of
+biologically inspired vision models called Deep Neural Networks. Here we
+introduce an artificial system based on a Deep Neural Network that creates
+artistic images of high perceptual quality. The system uses neural
+representations to separate and recombine content and style of arbitrary
+images, providing a neural algorithm for the creation of artistic images.
+Moreover, in light of the striking similarities between performance-optimised
+artificial neural networks and biological vision, our work offers a path
+forward to an algorithmic understanding of how humans create and perceive
+artistic imagery.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712').hide());void($('#showless-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712').show());void($('#more-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712').show());void($('#showless-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712').hide());void($('#more-am91cm5hbHMvY29yci8xNTA4LjA2NTc2-712').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1508.06576">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1508.06576&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">8</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-713').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1508.06576%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-713" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1508.06576&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1508.06576%26a%3Daleju&amp;text=Summary%20of%20A%20Neural%20Algorithm%20of%20Artistic%20Style&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1508.06576%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20A%20Neural%20Algorithm%20of%20Artistic%20Style&amp;Body=Summary%20of%20A%20Neural%20Algorithm%20of%20Artistic%20Style%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1508.06576%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1508.06576%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1508.06576%26a%3Daleju&amp;title=Summary%20of%20A%20Neural%20Algorithm%20of%20Artistic%20Style" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1508.06576&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">
+  * The paper describes a method to separate content and style from each other in an image.
+  * The style can then be transfered to a new image.
+  * Examples:
+    * Let a photograph look like a painting of van Gogh.
+    * Improve a dark beach photo by taking the style from a sunny beach photo.
+
+### How
+  * They use the pretrained 19-layer VGG net as their base network.
+  * They assume that two images are provided: One with the *content*, one with the desired *style*.
+  * They feed the content image through the VGG net and extract the activations of the last convolutional layer. These activations are called the *content representation*.
+  * They feed the style image through the VGG net and extract the activations of all convolutional layers. They transform each layer to a *Gram Matrix* representation. These Gram Matrices are called the *style representation*.
+  * How to calculate a *Gram Matrix*:
+    * Take the activations of a layer. That layer will contain some convolution filters (e.g. 128), each one having its own activations.
+    * Convert each filter&#x27;s activations to a (1-dimensional) vector.
+    * Pick all pairs of filters. Calculate the scalar product of both filter&#x27;s vectors.
+    * Add the scalar product result as an entry to a matrix of size `#filters x #filters` (e.g. 128x128).
+    * Repeat that for every pair to get the Gram Matrix.
+    * The Gram Matrix roughly represents the *texture* of the image.
+  * Now you have the content representation (activations of a layer) and the style representation (Gram Matrices).
+  * Create a new image of the size of the content image. Fill it with random white noise.
+  * Feed that image through VGG to get its content representation and style representation. (This step will be repeated many times during the image creation.)
+  * Make changes to the new image using gradient descent to optimize a loss function.
+    * The loss function has two components:
+      * The mean squared error between the new image&#x27;s content representation and the previously extracted content representation.
+      * The mean squared error between the new image&#x27;s style representation and the previously extracted style representation.
+    * Add up both components to get the total loss.
+    * Give both components a weight to alter for more/less style matching (at the expense of content matching).
+
+
+![Examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/A_Neural_Algorithm_for_Artistic_Style__examples.jpg?raw=true &quot;Examples&quot;)
+
+*One example input image with different styles added to it.*
+
+-------------------------
+
+### Rough chapter-wise notes
+
+* Page 1
+  * A painted image can be decomposed in its content and its artistic style.
+  * Here they use a neural network to separate content and style from each other (and to apply that style to an existing image).
+
+* Page 2
+  * Representations get more abstract as you go deeper in networks, hence they should more resemble the actual content (as opposed to the artistic style).
+  * They call the feature responses in higher layers *content representation*.
+  * To capture style information, they use a method that was originally designed to capture texture information.
+  * They somehow build a feature space on top of the existing one, that is somehow dependent on correlations of features. That leads to a &quot;stationary&quot; (?) and multi-scale representation of the style.
+
+* Page 3
+  * They use VGG as their base CNN.
+
+* Page 4
+  * Based on the extracted style features, they can generate a new image, which has equal activations in these style features.
+  * The new image should match the style (texture, color, localized structures) of the artistic image.
+  * The style features become more and more abtstract with higher layers. They call that multi-scale the *style representation*.
+  * The key contribution of the paper is a method to separate style and content representation from each other.
+  * These representations can then be used to change the style of an existing image (by changing it so that its content representation stays the same, but its style representation matches the artwork).
+
+* Page 6
+  * The generated images look most appealing if all features from the style representation are used. (The lower layers tend to reflect small features, the higher layers tend to reflect larger features.)
+  * Content and style can&#x27;t be separated perfectly.
+  * Their loss function has two terms, one for content matching and one for style matching.
+  * The terms can be increased/decreased to match content or style more.
+
+* Page 8
+  * Previous techniques work only on limited or simple domains or used non-parametric approaches (see non-photorealistic rendering).
+  * Previously neural networks have been used to classify the time period of paintings (based on their style).
+  * They argue that separating content from style might be useful and many other domains (other than transfering style of paintings to images).
+
+* Page 9
+  * The style representation is gathered by measuring correlations between activations of neurons.
+  * They argue that this is somehow similar to what &quot;complex cells&quot; in the primary visual system (V1) do.
+  * They note that deep convnets seem to automatically learn to separate content from style, probably because it is helpful for style-invariant classification.
+
+* Page 9, Methods
+  * They use the 19 layer VGG net as their basis.
+  * They use only its convolutional layers, not the linear ones.
+  * They use average pooling instead of max pooling, as that produced slightly better results.
+
+* Page 10, Methods
+  * The information about the image that is contained in layers can be visualized. To do that, extract the features of a layer as the labels, then start with a white noise image and change it via gradient descent until the generated features have minimal distance (MSE) to the extracted features.
+  * The build a style representation by calculating Gram Matrices for each layer.
+
+* Page 11, Methods
+  * The Gram Matrix is generated in the following way:
+    * Convert each filter of a convolutional layer to a 1-dimensional vector.
+    * For a pair of filters i, j calculate the value in the Gram Matrix by calculating the scalar product of the two vectors of the filters.
+    * Do that for every pair of filters, generating a matrix of size #filters x #filters. That is the Gram Matrix.
+  * Again, a white noise image can be changed with gradient descent to match the style of a given image (i.e. minimize MSE between two Gram Matrices).
+  * That can be extended to match the style of several layers by measuring the MSE of the Gram Matrices of each layer and giving each layer a weighting.
+
+* Page 12, Methods
+  * To transfer the style of a painting to an existing image, proceed as follows:
+    * Start with a white noise image.
+    * Optimize that image with gradient descent so that it minimizes both the content loss (relative to the image) and the style loss (relative to the painting).
+    * Each distance (content, style) can be weighted to have more or less influence on the loss function.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

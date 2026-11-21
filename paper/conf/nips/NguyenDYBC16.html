@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthesizing the preferred inputs for neurons in neural networks via deep generator networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Synthesizing the preferred inputs for neurons in neural networks via deep generator networks - ShortScience.org">
+<meta property="og:description" content="This paper performs activation maximization (AM) using Deep Generator Network (DGN), which served a...">
+<meta name="description" content="This paper performs activation maximization (AM) using Deep Generator Network (DGN), which served a...">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/7057863/21002626/b094d7ae-bd61-11e6-8c95-fd4931648426.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/NguyenDYBC16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/NguyenDYBC16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Nguyen, Anh and Dosovitskiy, Alexey and Yosinski, Jason and Brox, Thomas and Clune, Jeff"}, "headline": "Synthesizing the preferred inputs for neurons in neural networks via deep generator networks", "description": "Summary of Synthesizing the preferred inputs for neurons in neural networks via deep generator networks", "datePublished": "2017-10-08 14:07:02", "dateModified": "2017-10-08 14:07:02", "image": {"@type": "ImageObject", "url": "https://cloud.githubusercontent.com/assets/7057863/21002626/b094d7ae-bd61-11e6-8c95-fd4931648426.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/NguyenDYBC16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/6519-synthesizing-the-preferred-inputs-for-neurons-in-neural-networks-via-deep-generator-networks"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Synthesizing the preferred inputs for neurons in neural networks via deep generator networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Nguyen%2C%20Anh">Nguyen, Anh</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dosovitskiy%2C%20Alexey">Dosovitskiy, Alexey</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yosinski%2C%20Jason">Yosinski, Jason</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Brox%2C%20Thomas">Brox, Thomas</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Clune%2C%20Jeff">Clune, Jeff</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2016">Neural Information Processing Systems Conference - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/NguyenDYBC16">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="yenchenlin" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=yenchenlin" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=yenchenlin&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a919d629ed5d5149d4dd303cd516d639?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;yenchenlin&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: yenchenlin&lt;br&gt;Posted: 2017-10-08&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/NguyenDYBC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a919d629ed5d5149d4dd303cd516d639?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-463').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/NguyenDYBC16%26a%3Dyenchenlin" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-463" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/NguyenDYBC16&amp;a=yenchenlin" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Dyenchenlin&amp;text=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Dyenchenlin" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks&amp;Body=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Dyenchenlin"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Dyenchenlin" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Dyenchenlin&amp;title=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/NguyenDYBC16&amp;a=yenchenlin" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=yenchenlin" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by yenchenlin 2017-10-08</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">
+This paper performs activation maximization (AM) using Deep Generator Network (DGN), which served as a learned natural iamge prior, to synthesize realistic images as inputs and feed it into the DNN we want to understand.
+By visualizing synthesized images that highly activate particular neurons in the DNN, we can interpret what each of neurons in the DNN learned to detect.
+
+### Key Points
+
+- DGN (natural image prior) generates more coherent images when optimizing fully-connected layer codes instead of low-level codes. However, previous studies showed that low-level features results in better reconstructions beacuse it contains more image details. The difference is that here DGN-AM is trying to synthesize an entire layer code from scratch. Features in low-level only has a small, local receptive field so that the optimization process has to independently tune image without knowing the global structure. Also, the code space at a convolutional layer is much more high-dimensional, making it harder to optimize.
+
+- The learned prior trained on ImageNet can also generalize to Places.
+- It doesn&#x27;t generalize well if architecture of the encoder trained with DGN is different with the DNN we wish to inspect.
+- The learned prior also generalizes to visualize hidden neurons, producing more realistic textures/colors.
+- When visualizing hidden neurons, DGN-AM trained on ImageNet also generalize to Places and produce similar results as [1].
+- The synthesized images are showed to teach us what neurons in DNN we wish to inspect prefer instead of what prior prefer.
+
+### Model
+
+![](https://cloud.githubusercontent.com/assets/7057863/21002626/b094d7ae-bd61-11e6-8c95-fd4931648426.png)
+
+### Thought
+Solid paper with diverse visualizations and thorough analysis.
+
+### Reference
+[1] Object Detectors Emerge In Deep Scene CNNs, B.Zhou et. al.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/NguyenDYBC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-464').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/NguyenDYBC16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-464" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/NguyenDYBC16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Daleju&amp;text=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks&amp;Body=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNguyenDYBC16%26a%3Daleju&amp;title=Summary%20of%20Synthesizing%20the%20preferred%20inputs%20for%20neurons%20in%20neural%20networks%20via%20deep%20generator%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/NguyenDYBC16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a new method to generate images which maximize the activation of a specific neuron in a (trained) target network (abbreviated with &quot;**DNN**&quot;).
+    * E.g. if your DNN contains a neuron that is active whenever there is a car in an image, the method should generate images containing cars.
+    * Such methods can be used to investigate what exactly a network has learned.
+  * There are plenty of methods like this one. They usually differ from each other by using different *natural image priors*.
+    * A natural image prior is a restriction on the generated images.
+    * Such a prior pushes the generated images towards realistic looking ones.
+    * Without such a prior it is easy to generate images that lead to high activations of specific neurons, but don&#x27;t look realistic at all (e.g. they might look psychodelic or like white noise).
+      * That&#x27;s because the space of possible images is extremely high-dimensional and can therefore hardly be covered reliably by a single network. Note also that training datasets usually only show a very limited subset of all possible images.
+    * Their work introduces a new natural image prior.
+
+### How
+  * Usually, if one wants to generate images that lead to high activations, the basic/naive method is to:
+    1. Start with a noise image,
+    2. Feed that image through DNN,
+    3. Compute an error that is high if the activation of the specified neuron is low (analogous for high activation),
+    4. Backpropagate the error through DNN,
+    5. Change the noise image according to the gradient,
+    6. Repeat.
+  * So, the noise image is basically treated like weights in the network.
+  * Their alternative method is based on a Generator network **G**.
+    * That G is trained according to the method described in [Generating Images with Perceptual Similarity Metrics based on Deep Networks].
+    * Very rough outline of that method:
+      * First, a pretrained network **E** is given (they picked CaffeNet, which is a variation of AlexNet).
+      * G then has to learn to inverse E, i.e. G receives per image the features extracted by a specific layer in E (e.g. the last fully connected layer before the output) and has to generate (recreate) the image from these features.
+  * Their modified steps are:
+    1. *(New step)* Start with a noise vector,
+    2. *(New step)* Feed that vector through G resulting in an image,
+    3. *(Same)* Feed that image through DNN,
+    4. *(Same)* Compute an error that is low if the activation of the specified neuron is high (analogous for low activations),
+    5. *(Same)* Backpropagate the error through DNN,
+    6. *(Modified)* Change the noise *vector* according to the gradient,
+    7. *(Same)* Repeat.
+  * Visualization of their architecture:
+    * ![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Synthesizing_the_preferred_inputs_for_neurons_in_neural_networks_via_deep_generator_networks__architecture.jpg?raw=true &quot;Architecture&quot;)
+  * Additionally they do:
+    * Apply an L2 norm to the noise vector, which adds pressure to each component to take low values. They say that this improved the results.
+    * Clip each component of the noise vector to a range `[0, a]`, which improved the results significantly.
+      * The range starts at `0`, because the network (E) inverted by their Generator (G) is based on ReLUs.
+      * `a` is derived from test images fed through E and set to 3 standard diviations of the mean activation of that component (recall that the &quot;noise&quot; vector mirrors a specific layer in E).
+      * They argue that this clipping is similar to a prior on the noise vector components. That prior reflects likely values of the layer in E that is used for the noise vector.
+
+### Results
+  * Examples of generated images:
+    * ![Examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Synthesizing_the_preferred_inputs_for_neurons_in_neural_networks_via_deep_generator_networks__examples.jpg?raw=true &quot;Examples&quot;)
+  * Early vs. late layers
+    * For G they have to pick a specific layer from E that G has to invert. They found that using &quot;later&quot; layers (e.g. the fully connected layers at the end) produced images with more reasonable overall structure than using &quot;early&quot; layers (e.g. first convolutional layers). Early layers led to repeating structures.
+  * Datasets and architectures
+    * Both G and DNN have to be trained on datasets.
+    * They found that these networks can actually be trained on different datasets, the results will still look good.
+    * However, they found that the architectures of DNN and E should be similar to create the best looking images (though this might also be down to depth of the tested networks).
+  * Verification that the prior can generate any image
+    * They tested whether the generated images really show what the DNN-neurons prefer and not what the Generator/prior prefers.
+    * To do that, they retrained DNNs on images that were both directly from the dataset as well as images that were somehow modified.
+    * Those modifications were:
+      * Treated RGB images as if they were BGR (creating images with weird colors).
+      * Copy-pasted areas in the images around (creating mosaics).
+      * Blurred the images (with gaussian blur).
+    * The DNNs were then trained to classify the &quot;normal&quot; images into 1000 classes and the modified images into 1000 other classes (2000 total).
+    * So at the end there were (in the same DNN) neurons reacting strongly to specific classes of unmodified images and other neurons that reacted strongly to specific classes of modified images.
+    * When generating images to maximize activations of specific neurons, the Generator was able to create both modified and unmodified images. Though it seemed to have some trouble with blurring.
+    * That shows that the generated images probably indeed show what the DNN has learned and not just what G has learned.
+  * Uncanonical images
+    * The method can sometimes generate uncanonical images (e.g. instead of a full dog just blobs of texture).
+    * They found that this seems to be mostly the case when the dataset images have uncanonical pose, i.e. are very diverse/multi-modal.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

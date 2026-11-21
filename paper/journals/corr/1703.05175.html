@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prototypical Networks for Few-shot Learning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Prototypical Networks for Few-shot Learning - ShortScience.org">
+<meta property="og:description" content="This paper describes an architecture designed for generating class predictions based on a set of fea...">
+<meta name="description" content="This paper describes an architecture designed for generating class predictions based on a set of fea...">
+<meta property="og:image" content="https://i.imgur.com/Q45w0QT.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.05175">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1703.05175" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jake Snell and Kevin Swersky and Richard S. Zemel"}, "headline": "Prototypical Networks for Few-shot Learning", "description": "Summary of Prototypical Networks for Few-shot Learning", "datePublished": "2018-06-26 05:00:56", "dateModified": "2018-06-26 05:00:56", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/Q45w0QT.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1703.05175", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1703.05175v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Prototypical%20Networks%20for%20Few-shot%20Learning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Prototypical Networks for Few-shot Learning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jake%20Snell">Jake Snell</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kevin%20Swersky">Kevin Swersky</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Richard%20S.%20Zemel">Richard S. Zemel</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/03/15<br><b>Abstract:</b>   We propose prototypical networks for the problem of few-shot classification,
+where a classifier must generalize to new classes not seen in the training set,
+given only a small number of examples of each new class. Prototypical networks
+learn a metric space in which classification can be performed by computing
+distances to prototype representations of each class. Compared to recent
+approaches for few-shot learning, they reflect a simpler inductive bias that is
+beneficial in this limited-data regime, and achieve excellent results. We
+provide an analysis showing that some simple design decisions can yield
+substantial improvements over recent approaches involving complicated
+architectural choices and meta-learning. We further extend prototypical
+networks to zero-shot learning and achieve state-of-the-art results on the
+CU-Birds dataset.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074').hide());void($('#showless-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074').show());void($('#more-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074').show());void($('#showless-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074').hide());void($('#more-am91cm5hbHMvY29yci8xNzAzLjA1MTc1-1074').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1703.05175">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1703.05175&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1075').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1703.05175%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1075" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.05175&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.05175%26a%3Ddecodyng&amp;text=Summary%20of%20Prototypical%20Networks%20for%20Few-shot%20Learning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.05175%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Prototypical%20Networks%20for%20Few-shot%20Learning&amp;Body=Summary%20of%20Prototypical%20Networks%20for%20Few-shot%20Learning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.05175%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.05175%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.05175%26a%3Ddecodyng&amp;title=Summary%20of%20Prototypical%20Networks%20for%20Few-shot%20Learning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.05175&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper describes an architecture designed for generating class predictions based on a set of features in situations where you may only have a few examples per class, or, even where you see entirely new classes at test time. Some prior work has approached this problem in ridiculously complex fashion, up to and including training a network to predict the gradient outputs of a meta-network that it thinks would best optimize loss, given a new class. The method of Prototypical Networks prides itself on being much simpler, and more intuitive, so I hope I’ll be able to convey that in this explanation.  In order to think about this problem properly, it makes sense to take a few steps back, and think about some fundamental assumptions that underly machine learning. 
+https://i.imgur.com/Q45w0QT.png
+
+One very basic one is that you need some notion of similarity between observations in your training set, and potential new observations in your test set, in order to properly generalize.  To put it very simplistically, if a test example is very similar to examples of class A that we saw in training, we might predict it to be of class A at testing. But what does it *mean* for two observations to be similar to one another? If you’re using a method like K Nearest Neighbors, you calculate a point’s class identity based on the closest training-set observations to it in Euclidean space, and you assume that nearness in that space corresponds to likelihood of two data points having come the same class. This is useful for the use case of having new classes show up after training, since, well, there isn’t really a training period: the strategy for KNN is just carrying your whole training set around, and, whenever a new test point comes along, calculating it’s closest neighbors among those training-set points. If you see a new class in the wild, all you need to do is add the examples of that class to your group of training set points, and then after a few examples, if your assumptions hold, you’ll be able to predict that class by (hopefully) finding those two or three points as neighbors. But what if some dimensions of your feature space matter much more than others for differentiating between classes? In a simplistic example, you could have twenty features, but, unbeknownst to you, only one is actually useful for separating out your classes, and the other 19 are random. If you use the naive KNN assumption, you wouldn’t expect to perform well here, because you will have distances in these 19 meaningless directions spreading out your points, due to randomness, more than the meaningful dimension spread them out due to belonging to different classes. And what if you want to be able to learn non-linear relationships between your features, which the composability of multi-layer neural networks lends itself well to? In cases like those, the features you were handed may be a woefully suboptimal metric space in which to calculate a kind of similarity that corresponds to differences in class identity, so you’ll just have to strike out for the territories and create a metric space for yourself. 
+
+That is, at a very high level, what this paper seeks to do: learn a transformation between input features and some vector space, such that distances in that vector space correspond as well as possible to probabilities of belonging to a given output class. You may notice me using “vector space” and “embedding” similarity; they are the same idea: the result of that learned transformation, which represents your input observations as dense vectors in some p-dimensional space, where p is a chosen hyperparameter. 
+
+What are the concrete learning steps this architecture goes through?
+ 
+1. During each training episode, sample a subset of classes, and then divide those classes into training examples, and query examples 
+2. Using a set of weights that are being learned by the network, map the input features of each training example into a vector space. 
+3. Once all training examples are mapped into the space, calculate a “mean vector” for class A by averaging all of the embeddings of training examples that belong to class A. This is the “prototype” for class A, and once we have it, we can forget the values of the embedded examples that were averaged to create it. This is a nice update on the KNN approach, since the number of parameters we need to carry around to evaluate is only (num-dimensions) * (num-classes), rather than (num-dimensions) * (num-training-examples). 
+4. Then, for each query example, map it into the embedding space, and use a distance metric in that space to create a softmax over possible classes. (You can just think of a softmax as a network’s predicted probability, it’s a set of floats that add up to 1). 
+5. Then, you can calculate the (cross-entropy) error between the true output and that softmax prediction vector in the same way as you would for any classification network 
+6. Add up the prediction loss for all the query examples, and then backpropogate through the network to update your weights 
+
+The overall effect of this process is to incentivize your network to learn, not necessarily a good prediction function, but a good metric space. The idea is that, if the metric space is good enough, and the classes are conceptually similar to each other (i.e. car vs chair, as opposed to car vs the-meaning-of-life), a space that does well at causing similar observed classes to be close to one another will do the same for classes not seen during training. 
+
+I admit to not being sufficiently familiar with the datasets used for testing to have a sense for how well this method compares to more fully supervised classification schemes; if anyone does, definitely let me know! But the paper claims to get state of the art results compared to other approaches in this domain of few-shot learning (matching networks, and the aforementioned meta-learning). 
+
+One interesting note is that the authors found that squared Euclidean distance, when applied within the embedded space, worked meaningfully better than cosine distance (which is a more standard way of measuring distances between vectors, since it measures only angle, rather than magnitude). They suspect that this is because Euclidean distance, but not cosine distance belongs to a category of divergence/distance metrics (called Bregman Divergences) that have a special set of properties such that the point closest on aggregate to all points in a cluster is the average of all those points. If you want to dive way deep into the minutia on this point, I found this blog post quite good: http://mark.reid.name/blog/meet-the-bregman-divergences.html
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="decodyngcomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=ishgirwan" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ishgirwan&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/8a7497c7c91ac9b0067a1d3a457a7a18?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Ish Girwan&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ishgirwan&lt;br&gt;Posted: 2018-12-25">
+<img src="https://www.gravatar.com/avatar/8a7497c7c91ac9b0067a1d3a457a7a18?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Thanks for the nice summary. It has really helped me in having a better understanding of the training process. Thanks.</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

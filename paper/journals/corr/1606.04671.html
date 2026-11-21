@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progressive Neural Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Progressive Neural Networks - ShortScience.org">
+<meta property="og:description" content="TLDR; The authors propose Progressive Neural Networks (ProgNN), a new way to do transfer learning wi...">
+<meta name="description" content="TLDR; The authors propose Progressive Neural Networks (ProgNN), a new way to do transfer learning wi...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.04671">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1606.04671" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Andrei A. Rusu and Neil C. Rabinowitz and Guillaume Desjardins and Hubert Soyer and James Kirkpatrick and Koray Kavukcuoglu and Razvan Pascanu and Raia Hadsell"}, "headline": "Progressive Neural Networks", "description": "Summary of Progressive Neural Networks", "datePublished": "2017-01-01 20:15:55", "dateModified": "2017-01-01 20:15:55", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1606.04671", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.04671v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Progressive%20Neural%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Progressive Neural Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Andrei%20A.%20Rusu">Andrei A. Rusu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Neil%20C.%20Rabinowitz">Neil C. Rabinowitz</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Guillaume%20Desjardins">Guillaume Desjardins</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hubert%20Soyer">Hubert Soyer</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=James%20Kirkpatrick">James Kirkpatrick</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Koray%20Kavukcuoglu">Koray Kavukcuoglu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Razvan%20Pascanu">Razvan Pascanu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Raia%20Hadsell">Raia Hadsell</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/06/15<br><b>Abstract:</b>   Learning to solve complex sequences of tasks--while both leveraging transfer
+and avoiding catastrophic forgetting--remains a key obstacle to achieving
+human-level intelligence. The progressive networks approach represents a step
+forward in this direction: they are immune to forgetting and can leverage prior
+knowledge via lateral connections to previously learned features. We evaluate
+this architecture extensively on a wide variety of reinforcement learning tasks
+(Atari and 3D maze games), and show that it outperforms common baselines based
+on pretraining and finetuning. Using a novel sensitivity measure, we
+demonstrate that transfer occurs at both low-level sensory and high-level
+control layers of the learned policy.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858').show());void($('#more-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858').show());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858').hide());void($('#more-am91cm5hbHMvY29yci8xNjA2LjA0Njcx-858').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1606.04671">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="dennybritz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2017-01-01&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.04671&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-859').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.04671%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-859" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.04671&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddennybritz&amp;text=Summary%20of%20Progressive%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Progressive%20Neural%20Networks&amp;Body=Summary%20of%20Progressive%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddennybritz&amp;title=Summary%20of%20Progressive%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.04671&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2017-01-01</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors propose Progressive Neural Networks (ProgNN), a new way to do transfer learning without forgetting prior knowledge (as is done in finetuning). ProgNNs train a neural neural on task 1, freeze the parameters, and then train a new network on task 2 while introducing lateral connections and adapter functions from network 1 to network 2. This process can be repeated with further columns (networks). The authors evaluate ProgNNs on 3 RL tasks and find that they outperform finetuning-based approaches.
+
+#### Key Points
+
+- Finetuning is a destructive process that forgets previous knowledge. We don&#x27;t want that.
+- Layer h_k in network 3 gets additional lateral connections from layers h_(k-1) in network 2 and network 1. Parameters of those connections are learned, but network 2 and network 1 are frozen during training of network 3.
+- Downside: # of Parameters grows quadratically with the number of tasks. Paper discussed some approaches to address the problem, but not sure how well these work in practice.
+- Metric: AUC (Average score per episode during training) as opposed to final score. Transfer score = Relative performance compared with single net baseline. 
+- Authors use Average Perturbation Sensitivity (APS) and Average Fisher Sensitivity (AFS) to analyze which features/layers from previous networks are actually used in the newly trained network.
+- Experiment 1: Variations of Pong game. Baseline that finetunes only final layer fails to learn. ProgNN beats other  baselines and APS shows re-use of knowledge.
+- Experiment 2: Different Atari games. ProgNets result in positive Transfer 8/12 times, negative transfer 2/12 times. Negative transfer may be a result of optimization problems. Finetuning final layers fails again. ProgNN beats other approaches.
+- Experiment 3: Labyrinth, 3D Maze. Pretty much same result as other experiments.
+
+
+#### Notes
+
+- It seems like the assumption is that layer k always wants to transfer knowledge from layer (k-1). But why is that true? Network are trained on different tasks, so the layer representations, or even numbers of layers, may be completely different. And Once you introduce lateral connections from all layers to all other layers the approach no longer scales.
+- Old tasks cannot learn from new tasks. Unlike humans.
+- Gating or residuals for lateral connection could make sense to allow to network to &quot;easily&quot; re-use previously learned knowledge.
+- Why use AUC metric? I also would&#x27;ve liked to see the final score. Maybe there&#x27;s a good reason for this, but the paper doesn&#x27;t explain.
+- Scary that finetuning the final layer only fails in most experiments. That&#x27;s a very commonly used approach in non-RL domains.
+- Someone should try this on non-RL tasks.
+- What happens to training time and optimization difficult as you add more columns? Seems prohibitively expensive.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="davidstutz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=davidstutz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=davidstutz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;David Stutz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: davidstutz&lt;br&gt;Posted: 2019-06-30&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.04671&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-860').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.04671%26a%3Ddavidstutz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-860" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.04671&amp;a=davidstutz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddavidstutz&amp;text=Summary%20of%20Progressive%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Progressive%20Neural%20Networks&amp;Body=Summary%20of%20Progressive%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddavidstutz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.04671%26a%3Ddavidstutz&amp;title=Summary%20of%20Progressive%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.04671&amp;a=davidstutz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=davidstutz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by David Stutz 2019-06-30</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Rusu et al. Propose progressive networks, sets of networks allowing transfer learning over multiple tasks without forgetting. The key idea of progressive networks is very simple. Instead of fine-tuning a model (for transfer learning), the pre-trained model is taken and its weights fixed. Another network is then trained from scratch while receiving features from the pre-trained network as additional input.
+
+Specifically, the authors consider a sequence of tasks. For the first task, a deep neural network (e.g. multi-layer perceptron) is trained. Assuming $L$ layers with hidden activations $h_i^{(1)}$ for $i \leq L$,  each layer computes
+
+$h_i^{(1)} = f(W_i^{(1)} h_{i-1}^{(1)})$
+
+where $f$ is an activation function and for $i = 1$, the network input is used. After training until convergence, a second network is trained – now on a different task. The parameters of the first network is fixed, but the second network can use the features of the first one:
+
+$h_i^{(2)} = f(W_i^{(2)} h_{i-1}^{(2)} + U_i^{(2:1)}h_{i-1}^{(1)})$.
+
+This idea can be generalized to the $k$-the network, which can use the activations from all the previous networks:
+
+$h_i^{(k)} = f(W_i^{(k)} h_{i-1}^{(k)} + \sum_{j &lt; k} U_i^{(k:j)} h_{i-1}^{(j)})$.
+
+For three networks, this is illustrated in Figure 1.
+
+https://i.imgur.com/ndyymxY.png
+Figure 1: An illustration of the feature transfer between networks.
+
+In practice, however, this approach results in an explosion of parameters and computation. Therefore, the authors apply a dimensionality reduction to the $h_{i – 1}^{(j)}$ for $j &lt; k$. Additionally, an individual scaling factor is used to account for different ranges used in the different networks (also depending on the input data). Then, the above equation can be rewritten as
+
+$h_i^{(k)} = f(W_i^{(k)} h_{i-1}^{(k)} + \sum_{j &lt; k} U_i^{(k)} f(V_i^{(k)} \alpha_i^{(:k)} h_{i-1}^{(:k)})$.
+
+(Note that notation has been adapted slightly, as I found the original notation misleading.) Here, $h_{i – 1}^{(:k)}$ denotes the concatenated features from all networks $j &lt; k$. Similarly, for each network, one $\alpha_i^{(j)}$ is learned to scale the features (note that the notation above would imply a element-wise multiplication of the $\alpha_i^{(j)}$&#x27;s repeated in a vector, or equivalently a matrix-vector product). $V_i^{(k)}$ then describes a dimensionality reduction; overall, a one-layer perceptron is used to “transfer” features from networks $j &lt; k$ to the current network. The same approach can also be applied to convolutional layers (e.g. a $1 \times 1$ convolution can be used for dimensionality reduction).
+
+In experiments, the authors show that progressive networks allow efficient transfer learning (efficient in terms of faster training). Additionally, they study which features are actually transferred.
+
+Also find this summary at [davidstutz.de](https://davidstutz.de/category/reading/).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

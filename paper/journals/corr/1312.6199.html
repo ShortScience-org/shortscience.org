@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intriguing properties of neural networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Intriguing properties of neural networks - ShortScience.org">
+<meta property="og:description" content="### Keywords
+Adversarial example ,  Perturbations 
+
+------
+
+### Summary
+
+##### Introduction 
+
+* Expl...">
+<meta name="description" content="### Keywords
+Adversarial example ,  Perturbations 
+
+------
+
+### Summary
+
+##### Introduction 
+
+* Expl...">
+<meta property="og:image" content="https://i.imgur.com/SeyXJeV.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Christian Szegedy and Wojciech Zaremba and Ilya Sutskever and Joan Bruna and Dumitru Erhan and Ian Goodfellow and Rob Fergus"}, "headline": "Intriguing properties of neural networks", "description": "Summary of Intriguing properties of neural networks", "datePublished": "2018-11-29 21:33:40", "dateModified": "2018-11-30 10:41:26", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/SeyXJeV.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.LG,  cs.NE">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1312.6199v4"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Intriguing%20properties%20of%20neural%20networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Intriguing properties of neural networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Christian%20Szegedy">Christian Szegedy</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Wojciech%20Zaremba">Wojciech Zaremba</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ilya%20Sutskever">Ilya Sutskever</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Joan%20Bruna">Joan Bruna</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dumitru%20Erhan">Dumitru Erhan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ian%20Goodfellow">Ian Goodfellow</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Rob%20Fergus">Rob Fergus</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2013">arXiv e-Print archive - 2013</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2013/12/21<br><b>Abstract:</b>   Deep neural networks are highly expressive models that have recently achieved
+state of the art performance on speech and visual recognition tasks. While
+their expressiveness is the reason they succeed, it also causes them to learn
+uninterpretable solutions that could have counter-intuitive properties. In this
+paper we report two such properties.
+  First, we find that there is no distinction between individual high level
+units and random linear combinations of high level units, according to various
+methods of unit analysis. It suggests that it is the space, rather than the
+individual units, that contains of the semantic information in the high layers
+of neural networks.
+  Second, we find that deep neural networks learn input-output mappings that
+are fairly discontinuous to a significant extend. We can cause the network to
+misclassify an image by applying a certain imperceptible perturbation, which is
+found by maximizing the network&#x27;s prediction error. In addition, the specific
+nature of these perturbations is not a random artifact of learning: the same
+perturbation can cause a different network, that was trained on a different
+subset of the dataset, to misclassify the same input.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652').hide());void($('#showless-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652').show());void($('#more-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652').show());void($('#showless-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652').hide());void($('#more-am91cm5hbHMvY29yci8xMzEyLjYxOTk-652').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1312.6199">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="anirudhnj" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=anirudhnj" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=anirudhnj&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/0e5f4497045593462664815d7117d9cf?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;ANIRUDH NJ&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: anirudhnj&lt;br&gt;Posted: 2018-11-29&lt;br&gt;Edited: 2018-11-30&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1312.6199&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/0e5f4497045593462664815d7117d9cf?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-653').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1312.6199%26a%3Danirudhnj" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-653" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199&amp;a=anirudhnj" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Danirudhnj&amp;text=Summary%20of%20Intriguing%20properties%20of%20neural%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Danirudhnj" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Intriguing%20properties%20of%20neural%20networks&amp;Body=Summary%20of%20Intriguing%20properties%20of%20neural%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Danirudhnj"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Danirudhnj" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Danirudhnj&amp;title=Summary%20of%20Intriguing%20properties%20of%20neural%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199&amp;a=anirudhnj" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=anirudhnj" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by ANIRUDH NJ 2018-11-29</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">### Keywords
+Adversarial example ,  Perturbations 
+
+------
+
+### Summary
+
+##### Introduction 
+
+* Explain two properties of  neural network that cause it to misclassify images and cause  difficulty to get solid understanding of network.
+1. Theoretical understanding  of the individual high level unit of a network and a combination of these units or layers.
+2. Understanding the continuity of input - output mapping space and the stability of the output wrt. the input.
+
+* Performing a few experiments on different networks and architectures
+1. MNIST dataset - Autoencoder , Fully Connected net
+2. ImageNet - “AlexNet”
+3. 10M youtube images - “QuocNet”  
+
+##### Understanding individual units of the Network 
+
+* Previous work used individual images to maximize the activation value of each feature unit.
+Similar experiment was done by the authors on the MNIST data set.
+
+* The interpretation of the results are as following ;
+1. Random direction vector (V)  gives rise to similarly interpretable semantic properties.
+2. Each feature unit is able to generate invariance on a particular subset of input   distribution.
+https://i.imgur.com/SeyXJeV.png
+
+##### Blind spots in the neural network
+
+* Output layers are highly non-linear and are able to give a nonlinear generalization over the input space.
+* It is possible for the output layers to give non-significant probabilities to regions of the input space that contain no training examples in their vicinity. Ie. It is possible to obtain probability of the different viewpoints of the object without training.
+* Deep learning kernel methods can&#x27;t be assumed to have smooth decision boundaries. 
+* Using optimization techniques, small changes to the image can lead to very large deviations in the output
+* __“Adversarial examples”__ represent pockets or holes in the input-space which are difficult to find simply moving around the input images.
+
+
+##### Experimental Results
+* Adversarial examples that are indistinguishable from the actual image can be created for all networks.
+1. Cross model generalization : Adversarial images created for one network can affect the other networks also.
+2. Cross training generalization 
+
+https://i.imgur.com/drcGvpz.png
+
+##### Conclusion 
+* Neural network have a counter intuitive properties wrt. the working of the individual units and discontinuities.
+* Occurance of the adversarial examples and its properties. 
+
+-----
+### Notes 
+
+* Feeding adversarial examples during the model training can improve the generalization of the model.
+* The adversarial examples on the higher layers are more effective than those of input and lower layers.
+* Adversarial examples affect models trained with different hyper parameters.
+* According to the the test conducted , autoencoders are more resilient to the adversarial examples.
+* Deep learning networks which are trained from purely supervised training are unstable to a few particular types of perturbations. Small addition of perturbations to the input leads to large perturbations at the output of the last layers.
+
+### Open research questions
+
+[1] Comparing the effects of adversarial examples on lower layers to that of the higher layers.     
+[2] Dependence of the adversarial attacks on training data set of the model.     
+[3] Why the adversarial examples generalize across different hyperparameters or training sets.     
+[4] How often do adversarial example occur?      
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1312.6199&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-654').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1312.6199%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-654" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Dabhshkdz&amp;text=Summary%20of%20Intriguing%20properties%20of%20neural%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Intriguing%20properties%20of%20neural%20networks&amp;Body=Summary%20of%20Intriguing%20properties%20of%20neural%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Dabhshkdz&amp;title=Summary%20of%20Intriguing%20properties%20of%20neural%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper introduces two key properties of deep neural networks:
+
+- Semantic meaning of individual units.
+    - Earlier works analyzed learnt semantics by finding images that maximally activate individual units.
+    - Authors observe that there is no difference between individual units and random linear combinations of units.
+    - It is the entire space of activations that contains the bulk of semantic information.
+
+- Stability of neural networks to small perturbations in input space.
+    - Networks that generalize well are expected to be robust to small perturbations in the input, i.e. imperceptible noise in the input shouldn&#x27;t change the predicted class.
+    - Authors find that networks can be made to misclassify an image by applying a certain imperceptible perturbation, which is found by maximizing the network&#x27;s prediction error.
+    - These &#x27;adversarial examples&#x27; generalize well to different architectures trained on different data subsets.
+
+## Strengths
+
+- The authors propose a way to make networks more robust to small perturbations by training them with adversarial examples in an adaptive manner, i.e. keep changing the pool of adversarial examples during training. In this regard, they draw a connection with hard-negative mining, and a network trained with adversarial examples performs better than others.
+
+- Formal description of how to generate adversarial examples and mathematical analysis of a network&#x27;s stability to perturbations are useful studies.
+
+## Weaknesses / Notes
+
+- Two images that are visually indistinguishable to humans but classified differently by the network is indeed an intriguing observation.
+
+- The paper feels a little half-baked in parts, and some ideas could&#x27;ve been presented more clearly.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="davidstutz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=davidstutz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=davidstutz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;David Stutz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: davidstutz&lt;br&gt;Posted: 2018-05-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1312.6199&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-655').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1312.6199%26a%3Ddavidstutz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-655" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199&amp;a=davidstutz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Ddavidstutz&amp;text=Summary%20of%20Intriguing%20properties%20of%20neural%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Intriguing%20properties%20of%20neural%20networks&amp;Body=Summary%20of%20Intriguing%20properties%20of%20neural%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Ddavidstutz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.6199%26a%3Ddavidstutz&amp;title=Summary%20of%20Intriguing%20properties%20of%20neural%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.6199&amp;a=davidstutz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=davidstutz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by David Stutz 2018-05-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Szegedy et al. were (to the best of my knowledge) the first to describe the phenomen of adversarial examples as researched today. Specifically, they described the main objective in order to obtain adversarial examples as
+
+$\arg\min_r \|r\|_2$ s.t. $f(x+r)=l$ and $x+r$ being a valid image
+
+where $f$ is the neural network and $l$ the target class (i.e. targeted adversarial example). In the paper, they originally headlined the section by “blind spots in neural networks”. While they give some explanation and provide experiments, also introducing the notion of transferability of adversarial examples and an idea of adversarial examples used as regularization during training, many questions are left open. The given conclusion, that these adversarial examples are highly unlikely and that these examples lie dense within regular training examples are controversial in the literature.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

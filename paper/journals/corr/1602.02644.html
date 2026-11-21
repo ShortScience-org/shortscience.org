@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generating Images with Perceptual Similarity Metrics based on Deep Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Generating Images with Perceptual Similarity Metrics based on Deep Networks - ShortScience.org">
+<meta property="og:description" content="* The authors define in this paper a special loss function (DeePSiM), mostly for autoencoders.
+  *...">
+<meta name="description" content="* The authors define in this paper a special loss function (DeePSiM), mostly for autoencoders.
+  *...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generating_Images_with_Perceptual_Similarity_Metrics_based_on_Deep_Networks__generated_images.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.02644">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1602.02644" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Alexey Dosovitskiy and Thomas Brox"}, "headline": "Generating Images with Perceptual Similarity Metrics based on Deep Networks", "description": "Summary of Generating Images with Perceptual Similarity Metrics based on Deep Networks", "datePublished": "2017-10-17 22:01:12", "dateModified": "2017-10-27 10:25:04", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generating_Images_with_Perceptual_Similarity_Metrics_based_on_Deep_Networks__generated_images.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1602.02644", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.CV,  cs.NE">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1602.02644v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Generating Images with Perceptual Similarity Metrics based on Deep Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Alexey%20Dosovitskiy">Alexey Dosovitskiy</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Thomas%20Brox">Thomas Brox</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/02/08<br><b>Abstract:</b>   Image-generating machine learning models are typically trained with loss
+functions based on distance in the image space. This often leads to
+over-smoothed results. We propose a class of loss functions, which we call deep
+perceptual similarity metrics (DeePSiM), that mitigate this problem. Instead of
+computing distances in the image space, we compute distances between image
+features extracted by deep neural networks. This metric better reflects
+perceptually similarity of images and thus leads to better results. We show
+three applications: autoencoder training, a modification of a variational
+autoencoder, and inversion of deep convolutional networks. In all cases, the
+generated images look sharp and resemble natural images.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766').hide());void($('#showless-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766').show());void($('#more-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766').show());void($('#showless-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766').hide());void($('#more-am91cm5hbHMvY29yci8xNjAyLjAyNjQ0-766').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1602.02644">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1602.02644&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-767').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1602.02644%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-767" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.02644&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Daleju&amp;text=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks&amp;Body=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Daleju&amp;title=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.02644&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * The authors define in this paper a special loss function (DeePSiM), mostly for autoencoders.
+  * Usually one would use a MSE of euclidean distance as the loss function for an autoencoder. But that loss function basically always leads to blurry reconstructed images.
+  * They add two new ingredients to the loss function, which results in significantly sharper looking images.
+
+### How
+  * Their loss function has three components:
+    * Euclidean distance in image space (i.e. pixel distance between reconstructed image and original image, as usually used in autoencoders)
+    * Euclidean distance in feature space. Another pretrained neural net (e.g. VGG, AlexNet, ...) is used to extract features from the original and the reconstructed image. Then the euclidean distance between both vectors is measured.
+    * Adversarial loss, as usually used in GANs (generative adversarial networks). The autoencoder is here treated as the GAN-Generator. Then a second network, the GAN-Discriminator is introduced. They are trained in the typical GAN-fashion. The loss component for DeePSiM is the loss of the Discriminator. I.e. when reconstructing an image, the autoencoder would learn to reconstruct it in a way that lets the Discriminator believe that the image is real.
+  * Using the loss in feature space alone would not be enough as that tends to lead to overpronounced high frequency components in the image (i.e. too strong edges, corners, other artefacts).
+  * To decrease these high frequency components, a &quot;natural image prior&quot; is usually used. Other papers define some function by hand. This paper uses the adversarial loss for that (i.e. learns a good prior).
+  * Instead of training a full autoencoder (encoder + decoder) it is also possible to only train a decoder and feed features - e.g. extracted via AlexNet - into the decoder.
+
+### Results
+  * Using the DeePSiM loss with a normal autoencoder results in sharp reconstructed images.
+  * Using the DeePSiM loss with a VAE to generate ILSVRC-2012 images results in sharp images, which are locally sound, but globally don&#x27;t make sense. Simple euclidean distance loss results in blurry images.
+  * Using the DeePSiM loss when feeding only image space features (extracted via AlexNet) into the decoder leads to high quality reconstructions. Features from early layers will lead to more exact reconstructions.
+  * One can again feed extracted features into the network, but then take the reconstructed image, extract features of that image and feed them back into the network. When using DeePSiM, even after several iterations of that process the images still remain semantically similar, while their exact appearance changes (e.g. a dog&#x27;s fur color might change, counts of visible objects change).
+
+![Generated images](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generating_Images_with_Perceptual_Similarity_Metrics_based_on_Deep_Networks__generated_images.png?raw=true &quot;Generated images&quot;)
+
+*Images generated with a VAE using DeePSiM loss.*
+
+
+![Reconstructed images](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generating_Images_with_Perceptual_Similarity_Metrics_based_on_Deep_Networks__reconstructed.png?raw=true &quot;Reconstructed images&quot;)
+
+*Images reconstructed from features fed into the network. Different AlexNet layers (conv5 - fc8) were used to generate the features. Earlier layers allow more exact reconstruction.*
+
+
+![Iterated reconstruction](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generating_Images_with_Perceptual_Similarity_Metrics_based_on_Deep_Networks__reconstructed_multi.png?raw=true &quot;Iterated reconstruction&quot;)
+
+*First, images are reconstructed from features (AlexNet, layers conv5 - fc8 as columns). Then, features of the reconstructed images are fed back into the network. That is repeated up to 8 times (rows). Images stay semantically similar, but their appearance changes.*
+
+--------------------
+
+### Rough chapter-wise notes
+
+* (1) Introduction
+  * Using a MSE of euclidean distances for image generation (e.g. autoencoders) often results in blurry images.
+  * They suggest a better loss function that cares about the existence of features, but not as much about their exact translation, rotation or other local statistics.
+  * Their loss function is based on distances in suitable feature spaces.
+  * They use ConvNets to generate those feature spaces, as these networks are sensitive towards important changes (e.g. edges) and insensitive towards unimportant changes (e.g. translation).
+  * However, naively using the ConvNet features does not yield good results, because the networks tend to project very different images onto the same feature vectors (i.e. they are contractive). That leads to artefacts in the generated images.
+  * Instead, they combine the feature based loss with GANs (adversarial loss). The adversarial loss decreases the negative effects of the feature loss (&quot;natural image prior&quot;).
+
+* (3) Model
+  * A typical choice for the loss function in image generation tasks (e.g. when using an autoencoders) would be squared euclidean/L2 loss or L1 loss.
+  * They suggest a new class of losses called &quot;DeePSiM&quot;.
+  * We have a Generator `G`, a Discriminator `D`, a feature space creator `C` (takes an image, outputs a feature space for that image), one (or more) input images `x` and one (or more) target images `y`. Input and target image can be identical.
+  * The total DeePSiM loss is a weighted sum of three components:
+    * Feature loss: Squared euclidean distance between the feature spaces of (1) input after fed through G and (2) the target image, i.e. `||C(G(x))-C(y)||^2_2`.
+    * Adversarial loss: A discriminator is introduced to estimate the &quot;fakeness&quot; of images generated by the generator. The losses for D and G are the standard GAN losses.
+    * Pixel space loss: Classic squared euclidean distance (as commonly used in autoencoders). They found that this loss stabilized their adversarial training.
+  * The feature loss alone would create high frequency artefacts in the generated image, which is why a second loss (&quot;natural image prior&quot;) is needed. The adversarial loss fulfills that role.
+  * Architectures
+    * Generator (G):
+      * They define different ones based on the task.
+      * They all use up-convolutions, which they implement by stacking two layers: (1) a linear upsampling layer, then (2) a normal convolutional layer.
+      * They use leaky ReLUs (alpha=0.3).
+    * Comparators (C):
+      * They use variations of AlexNet and Exemplar-CNN.
+      * They extract the features from different layers, depending on the experiment.
+    * Discriminator (D):
+      * 5 convolutions (with some striding; 7x7 then 5x5, afterwards 3x3), into average pooling, then dropout, then 2x linear, then 2-way softmax.
+  * Training details
+    * They use Adam with learning rate 0.0002 and normal momentums (0.9 and 0.999).
+    * They temporarily stop the discriminator training when it gets too good.
+    * Batch size was 64.
+    * 500k to 1000k batches per training.
+
+* (4) Experiments
+  * Autoencoder
+    * Simple autoencoder with an 8x8x8 code layer between encoder and decoder (so actually more values than in the input image?!).
+    * Encoder has a few convolutions, decoder a few up-convolutions (linear upsampling + convolution).
+    * They train on STL-10 (96x96) and take random 64x64 crops.
+    * Using for C AlexNet tends to break small structural details, using Exempler-CNN breaks color details.
+    * The autoencoder with their loss tends to produce less blurry images than the common L2 and L1 based losses.
+    * Training an SVM on the 8x8x8 hidden layer performs significantly with their loss than L2/L1. That indicates potential for unsupervised learning.
+  * Variational Autoencoder
+    * They replace part of the standard VAE loss with their DeePSiM loss (keeping the KL divergence term).
+    * Everything else is just like in a standard VAE.
+    * Samples generated by a VAE with normal loss function look very blurry. Samples generated with their loss function look crisp and have locally sound statistics, but still (globally) don&#x27;t really make any sense.
+  * Inverting AlexNet
+    * Assume the following variables:
+      * I: An image
+      * ConvNet: A convolutional network
+      * F: The features extracted by a ConvNet, i.e. ConvNet(I) (feaures in all layers, not just the last one)
+    * Then you can invert the representation of a network in two ways:
+      * (1) An inversion that takes an F and returns roughly the I that resulted in F (it&#x27;s *not* key here that ConvNet(reconstructed I) returns the same F again).
+      * (2) An inversion that takes an F and projects it to *some* I so that ConvNet(I) returns roughly the same F again.
+    * Similar to the autoencoder cases, they define a decoder, but not encoder.
+    * They feed into the decoder a feature representation of an image. The features are extracted using AlexNet (they try the features from different layers).
+    * The decoder has to reconstruct the original image (i.e. inversion scenario 1). They use their DeePSiM loss during the training.
+    * The images can be reonstructed quite well from the last convolutional layer in AlexNet. Chosing the later fully connected layers results in more errors (specifially in the case of the very last layer).
+    * They also try their luck with the inversion scenario (2), but didn&#x27;t succeed (as their loss function does not care about diversity).
+    * They iteratively encode and decode the same image multiple times (probably means: image -&gt; features via AlexNet -&gt; decode -&gt; reconstructed image -&gt; features via AlexNet -&gt; decode -&gt; ...). They observe, that the image does not get &quot;destroyed&quot;, but rather changes semantically, e.g. three apples might turn to one after several steps.
+    * They interpolate between images. The interpolations are smooth.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="yenchenlin" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=yenchenlin" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=yenchenlin&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a919d629ed5d5149d4dd303cd516d639?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;yenchenlin&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: yenchenlin&lt;br&gt;Posted: 2017-10-08&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1602.02644&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a919d629ed5d5149d4dd303cd516d639?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-768').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1602.02644%26a%3Dyenchenlin" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-768" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.02644&amp;a=yenchenlin" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Dyenchenlin&amp;text=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Dyenchenlin" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks&amp;Body=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Dyenchenlin"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Dyenchenlin" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.02644%26a%3Dyenchenlin&amp;title=Summary%20of%20Generating%20Images%20with%20Perceptual%20Similarity%20Metrics%20based%20on%20Deep%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.02644&amp;a=yenchenlin" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=yenchenlin" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by yenchenlin 2017-10-08</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper proposed a class of loss functions applicable to image generation that are based on distance in feature spaces:
+
+$$\mathcal{L} = \lambda_{feat}\mathcal{L}_{feat} + \lambda_{adv}\mathcal{L}_{adv} + \lambda_{img}\mathcal{L}_{img}$$
+
+### Key Points
+- Using only l2 loss in image space yields over-smoothed results since it leads to averaging all likely locations of details.
+- L_feat measures the distance in suitable feature space and therefore preserves distribution of fine details instead of exact locations.
+- Using only L_feat yields bad results since feature representations are contractive. Many non-natural images also mapped to the same feature vector.
+- By introducing a natural image prior - GAN, we can make sure that samples lie on the natural image manifold.
+
+### Model
+
+https://i.imgur.com/qNzMwQ6.png
+
+### Exp
+- Training Autoencoder
+- Generate images using VAE
+- Invert feature
+
+### Thought
+I think the experiment section is a little complicated to comprehend. However, the proposed loss seems really promising and can be applied to many tasks related to image generation.
+
+### Questions
+- Section 4.2 &amp; 4.3 are hard to follow for me, need to pay more attention in the future</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

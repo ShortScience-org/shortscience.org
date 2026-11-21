@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning End-to-end Video Classification with Rank-Pooling - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learning End-to-end Video Classification with Rank-Pooling - ShortScience.org">
+<meta property="og:description" content="This paper describes how rank pooling, a very recent approach for pooling representations organized...">
+<meta name="description" content="This paper describes how rank pooling, a very recent approach for pooling representations organized...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/icml/FernandoG16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/icml/FernandoG16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Fernando, Basura and Gould, Stephen"}, "headline": "Learning End-to-end Video Classification with Rank-Pooling", "description": "Summary of Learning End-to-end Video Classification with Rank-Pooling", "datePublished": "2016-07-31 15:25:58", "dateModified": "2016-07-31 15:25:58", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/icml/FernandoG16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://jmlr.org/proceedings/papers/v48/fernando16.html"><span class="glyphicon glyphicon-link"></span> jmlr.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Learning%20End-to-end%20Video%20Classification%20with%20Rank-Pooling%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Learning End-to-end Video Classification with Rank-Pooling</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Fernando%2C%20Basura">Fernando, Basura</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gould%2C%20Stephen">Gould, Stephen</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/icml&amp;year=2016">International Conference on Machine Learning - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/icml/FernandoG16">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-07-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/FernandoG16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">8</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-292').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/FernandoG16%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-292" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/FernandoG16&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FFernandoG16%26a%3Dhlarochelle&amp;text=Summary%20of%20Learning%20End-to-end%20Video%20Classification%20with%20Rank-Pooling&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FFernandoG16%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Learning%20End-to-end%20Video%20Classification%20with%20Rank-Pooling&amp;Body=Summary%20of%20Learning%20End-to-end%20Video%20Classification%20with%20Rank-Pooling%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FFernandoG16%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FFernandoG16%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FFernandoG16%26a%3Dhlarochelle&amp;title=Summary%20of%20Learning%20End-to-end%20Video%20Classification%20with%20Rank-Pooling" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/FernandoG16&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-07-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper describes how rank pooling, a very recent approach for pooling representations organized in a sequence $\\{{\bf v}_t\\}_{t=1}^T$, can be used in an end-to-end trained neural network architecture.
+
+Rank pooling is an alternative to average and max pooling for sequences, but with the distinctive advantage of maintaining some order information from the sequence. Rank pooling first solves a regularized (linear) support vector regression (SVR) problem where the inputs are the vector representations ${\bf v}_t$ in the sequence and the target is the corresponding index $t$ of that representation in the sequence (see Equation 5). The output of rank pooling is then simply the linear regression parameters $\bf{u}$ learned for that sequence. Because of the way ${\bf u}$ is trained, we can see that ${\bf u}$ will capture order information, as successful training would imply that ${\bf u}^\top {\bf v}_t &lt; {\bf u}^\top {\bf v}_{t&#x27;} $ if $t &lt; t&#x27;$. See [this paper](https://www.robots.ox.ac.uk/~vgg/rg/papers/videoDarwin.pdf) for more on rank pooling.
+
+While previous work has focused on using rank pooling on hand-designed and fixed representations, this paper proposes to use ConvNet features (pre-trained on ImageNet) for the representation and backpropagate through rank pooling to fine-tune the ConvNet features. Since the output of rank pooling corresponds to an argmin operation, passing gradients through this operation is not as straightforward as for average or max pooling. However, it turns out that if the objective being minimized (in our case regularized SVR) is twice differentiable, gradients with respect to its argmin can be computed (see Lemmas 1 and 2). The authors derive the gradient for rank pooling (Equation 21). Finally, since its gradient requires inverting a matrix (corresponding to a hessian), the authors propose to either use an efficient procedure for computing it by exploiting properties of sums of rank-one matrices (see Lemma 3) or to simply use an approximation based on using a diagonal hessian.
+
+In experiments on two small scale video activity recognition datasets (UCF-Sports and Hollywood2), the authors show that fine-tuning the ConvNet features significantly improves the performance of rank pooling and makes it superior to max and average pooling.
+
+**My two cents**
+
+This paper was eye opening for me, first because I did not realize that one could backpropagate through an operation corresponding to an argmin that doesn&#x27;t have a closed form solution (though apparently this paper isn&#x27;t the first to make that observation). Moreover, I did not know about rank pooling, which itself is a really thought provoking approach to pooling representations in a way that preserves some organizational information about the original representations.
+
+I wonder how sensitive the results are to the value of the regularization constant of the SVR problem. The authors mention some theoretical guaranties on the stability of the solution found by SVR in general, but intuitively I would expect that the regularization constant would play a large role in the stability.
+
+I&#x27;ll be looking forward to any future attempts to increase the speed of rank pooling (or any similar method). Indeed, as the authors mention, it is currently too slow to be used on the larger video datasets that are currently available. 
+
+Code for computing rank pooling (though not for computing its gradients) seems to be available [here](https://bitbucket.org/bfernando/videodarwin).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="hlarochellecomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=joecohen" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=joecohen&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Joseph Paul Cohen&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: joecohen&lt;br&gt;Posted: 2016-07-31">
+<img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Rank pooling sounds amazing! I&#x27;ve been reading this trying to think about how to state what a derivative of the argmin with respect to a parameter represents. The mean example gives good intuition. It is like adding a hyperparameter search in the middle of the network!</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=vinyard" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=vinyard&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/db14efbf3075f0e7ba7572923c07bb82?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;vinyard&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: vinyard&lt;br&gt;Posted: 2016-08-01">
+<img src="https://www.gravatar.com/avatar/db14efbf3075f0e7ba7572923c07bb82?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">See also recent CVPR paper with same authors on the bill: http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Bilen_Dynamic_Image_Networks_CVPR_2016_paper.pdf</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

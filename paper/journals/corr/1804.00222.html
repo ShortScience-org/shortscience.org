@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta-Learning Update Rules for Unsupervised Representation Learning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Meta-Learning Update Rules for Unsupervised Representation Learning - ShortScience.org">
+<meta property="og:description" content="Unsupervised representation learning is a funny thing: our aspiration in learning representations fr...">
+<meta name="description" content="Unsupervised representation learning is a funny thing: our aspiration in learning representations fr...">
+<meta property="og:image" content="https://i.imgur.com/EEkpW9g.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1804.00222">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1804.00222" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Luke Metz and Niru Maheswaranathan and Brian Cheung and Jascha Sohl-Dickstein"}, "headline": "Meta-Learning Update Rules for Unsupervised Representation Learning", "description": "Summary of Meta-Learning Update Rules for Unsupervised Representation Learning", "datePublished": "2019-05-25 23:33:32", "dateModified": "2019-05-25 23:33:32", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/EEkpW9g.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1804.00222", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.NE,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1804.00222v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Meta-Learning%20Update%20Rules%20for%20Unsupervised%20Representation%20Learning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Meta-Learning Update Rules for Unsupervised Representation Learning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Luke%20Metz">Luke Metz</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Niru%20Maheswaranathan">Niru Maheswaranathan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Brian%20Cheung">Brian Cheung</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jascha%20Sohl-Dickstein">Jascha Sohl-Dickstein</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/03/31<br><b>Abstract:</b>   A major goal of unsupervised learning is to discover data representations
+that are useful for subsequent tasks, without access to supervised labels
+during training. Typically, this involves minimizing a surrogate objective,
+such as the negative log likelihood of a generative model, with the hope that
+representations useful for subsequent tasks will arise as a side effect. In
+this work, we propose instead to directly target later desired tasks by
+meta-learning an unsupervised learning rule which leads to representations
+useful for those tasks. Specifically, we target semi-supervised classification
+performance, and we meta-learn an algorithm -- an unsupervised weight update
+rule -- that produces representations useful for this task. Additionally, we
+constrain our unsupervised update rule to a be a biologically-motivated,
+neuron-local function, which enables it to generalize to different neural
+network architectures, datasets, and data modalities. We show that the
+meta-learned update rule produces useful features and sometimes outperforms
+existing unsupervised learning techniques. We further show that the
+meta-learned unsupervised update rule generalizes to train networks with
+different widths, depths, and nonlinearities. It also generalizes to train on
+data with randomly permuted input dimensions and even generalizes from image
+datasets to a text task.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320').hide());void($('#showless-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320').show());void($('#more-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320').show());void($('#showless-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320').hide());void($('#more-am91cm5hbHMvY29yci8xODA0LjAwMjIy-1320').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1804.00222">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-05-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1804.00222&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1321').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1804.00222%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1321" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1804.00222&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1804.00222%26a%3Ddecodyng&amp;text=Summary%20of%20Meta-Learning%20Update%20Rules%20for%20Unsupervised%20Representation%20Learning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1804.00222%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Meta-Learning%20Update%20Rules%20for%20Unsupervised%20Representation%20Learning&amp;Body=Summary%20of%20Meta-Learning%20Update%20Rules%20for%20Unsupervised%20Representation%20Learning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1804.00222%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1804.00222%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1804.00222%26a%3Ddecodyng&amp;title=Summary%20of%20Meta-Learning%20Update%20Rules%20for%20Unsupervised%20Representation%20Learning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1804.00222&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-05-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Unsupervised representation learning is a funny thing: our aspiration in learning representations from data is typically that they’ll be useful for future tasks, but, since we (by definition) don’t have access to labels, our approach has historically been to define heuristics, such as representing the data distribution in a low-dimensional space, and hope that those heuristics translate to useful learned representations. And, to a fair extent, they have. However, this paper’s goal is to attach this problem more directly, by explicitly meta-learning an unsupervised update rule so that performs well in future tasks. They do this by: 
+
+https://i.imgur.com/EEkpW9g.png
+
+1) Defining a parametrized weight update function, to slot into the role that Stochastic Gradient Descent on a label-defined loss function would play in a supervised network. This function calculates a “hidden state”, is defined for each neuron in each layer, and takes in the pre and post-nonlinearity activations for that batch, the hidden state of the next layer, and a set of learned per-layer “backwards weights”. The weight update for that neuron is then calculated using the current hidden state, the last batch&#x27;s hidden state, and the current value of the weight. In the traditional way of people in this field who want to define some generic function, they instantiate these functions as a MLP. 
+
+2) Using that update rule on the data from a new task, taking the representing resulting from applying the update rule, and using it in a linear regression with a small number of samples. The generalization performance from this k-shot regression, taken in expectation over multiple tasks, acts as our meta training objective. By back-propagating from this objective, to the weight values of the representation, and from there to the parameters of the optimization step, they incentivize their updater to learn representations that are useful across some distribution of tasks. 
+
+
+A slightly weird thing about this paper is that they train on image datasets, but shuffle the pixels and use a fully connected network rather than a conv net. I presume this has to do with the complexities of defining a weight update rule for a convolution, but it does make it harder to meaningfully compare with other image-based unsupervised systems, which are typically done using convolution. An interesting thing they note is that, early in meta-training on images, their update rules generalize fairly well to text data. However, later in training the update rules seem to have specialized to images, and generalize more poorly to images. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

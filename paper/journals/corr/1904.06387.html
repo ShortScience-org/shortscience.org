@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extrapolating Beyond Suboptimal Demonstrations via Inverse Reinforcement Learning from Observations - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Extrapolating Beyond Suboptimal Demonstrations via Inverse Reinforcement Learning from Observations - ShortScience.org">
+<meta property="og:description" content="## General Framework
+Only access to a finite set of **ranked demonstrations**. The demonstrations on...">
+<meta name="description" content="## General Framework
+Only access to a finite set of **ranked demonstrations**. The demonstrations on...">
+<meta property="og:image" content="https://i.imgur.com/cuL8ZFJ.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1904.06387">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1904.06387" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Daniel S. Brown and Wonjoon Goo and Prabhat Nagarajan and Scott Niekum"}, "headline": "Extrapolating Beyond Suboptimal Demonstrations via Inverse Reinforcement Learning from Observations", "description": "Summary of Extrapolating Beyond Suboptimal Demonstrations via Inverse Reinforcement Learning from Observations", "datePublished": "2020-07-20 16:56:01", "dateModified": "2020-07-27 02:18:47", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/cuL8ZFJ.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1904.06387", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1904.06387v5"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Extrapolating%20Beyond%20Suboptimal%20Demonstrations%20via%20Inverse%20Reinforcement%20Learning%20from%20Observations%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Extrapolating Beyond Suboptimal Demonstrations via Inverse Reinforcement Learning from Observations</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Daniel%20S.%20Brown">Daniel S. Brown</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Wonjoon%20Goo">Wonjoon Goo</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Prabhat%20Nagarajan">Prabhat Nagarajan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Scott%20Niekum">Scott Niekum</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2019/04/12<br><b>Abstract:</b>   A critical flaw of existing inverse reinforcement learning (IRL) methods is
+their inability to significantly outperform the demonstrator. This is because
+IRL typically seeks a reward function that makes the demonstrator appear
+near-optimal, rather than inferring the underlying intentions of the
+demonstrator that may have been poorly executed in practice. In this paper, we
+introduce a novel reward-learning-from-observation algorithm, Trajectory-ranked
+Reward EXtrapolation (T-REX), that extrapolates beyond a set of (approximately)
+ranked demonstrations in order to infer high-quality reward functions from a
+set of potentially poor demonstrations. When combined with deep reinforcement
+learning, T-REX outperforms state-of-the-art imitation learning and IRL methods
+on multiple Atari and MuJoCo benchmark tasks and achieves performance that is
+often more than twice the performance of the best demonstration. We also
+demonstrate that T-REX is robust to ranking noise and can accurately
+extrapolate intention by simply watching a learner noisily improve at a task
+over time.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473').hide());void($('#showless-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473').show());void($('#more-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473').show());void($('#showless-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473').hide());void($('#more-am91cm5hbHMvY29yci8xOTA0LjA2Mzg3-1473').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1904.06387">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="muntermulehitch" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=muntermulehitch" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=muntermulehitch&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3d52639a2aab77c0a65364e3b47eddf7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Paul Barde&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: muntermulehitch&lt;br&gt;Posted: 2020-07-20&lt;br&gt;Edited: 2020-07-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1904.06387&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3d52639a2aab77c0a65364e3b47eddf7?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1474').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1904.06387%26a%3Dmuntermulehitch" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1474" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1904.06387&amp;a=muntermulehitch" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1904.06387%26a%3Dmuntermulehitch&amp;text=Summary%20of%20Extrapolating%20Beyond%20Suboptimal%20Demonstrations%20via%20Inverse%20Reinforcement%20Learning%20from%20Observations&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1904.06387%26a%3Dmuntermulehitch" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Extrapolating%20Beyond%20Suboptimal%20Demonstrations%20via%20Inverse%20Reinforcement%20Learning%20from%20Observations&amp;Body=Summary%20of%20Extrapolating%20Beyond%20Suboptimal%20Demonstrations%20via%20Inverse%20Reinforcement%20Learning%20from%20Observations%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1904.06387%26a%3Dmuntermulehitch"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1904.06387%26a%3Dmuntermulehitch" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1904.06387%26a%3Dmuntermulehitch&amp;title=Summary%20of%20Extrapolating%20Beyond%20Suboptimal%20Demonstrations%20via%20Inverse%20Reinforcement%20Learning%20from%20Observations" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1904.06387&amp;a=muntermulehitch" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=muntermulehitch" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Paul Barde 2020-07-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## General Framework
+Only access to a finite set of **ranked demonstrations**. The demonstrations only contains **observations** and **do not need to be optimal** but must be (approximately) ranked from worst to best. 
+The **reward learning part is off-line** but not the policy learning part (requires interactions with the environment).
+
+In a nutshell: learns a reward models that looks at observations. The reward model is trained to predict if a demonstration&#x27;s ranking is greater than another one&#x27;s. Then, once the reward model is learned, one simply uses RL to learn a policy. This latter outperform the demonstrations&#x27; performance.
+
+## Motivations
+Current IRL methods cannot outperform the demonstrations because they seek a reward function that makes the demonstrator optimal and thus do not infer the underlying intentions of the demonstrator that may have been poorly executed. 
+In practice, high quality demonstrations may be difficult to provide and it is often easier to provide demonstrations with a ranking of their relative performance (desirableness).
+
+## Trajectory-ranked Reward EXtrapolation (T-REX)
+![](https://i.imgur.com/cuL8ZFJ.png =400x)
+
+Uses ranked demonstrations to extrapolate a user&#x27;s underlying intent beyond the best demonstrations by learning a reward that assigns greater return to higher-ranked trajectories. While standard IRL seeks a reward that **justifies** the demonstrations, T-REX tries learns a reward that **explains** the ranking over demonstrations. 
+
+![](https://i.imgur.com/4IQ13TC.png =500x)
+
+
+Having rankings over demonstrations may remove the reward ambiguity problem (always 0 reward cannot explain the ranking) as well as provide some &quot;data-augmentation&quot; since from a few ranked demonstrations you can define many pair-wise comparisons. Additionally, suboptimal demonstrations may provide more diverse data by exploring a larger area of the state space (but may miss the parts relevant to solving the task...)
+
+## Tricks and Tips
+Authors used ground truth reward to rank trajectories, but they also show that approximate ranking does not hurt the performance much. 
+
+To avoid overfitting they used an ensemble of 5 Neural Networks to predict the reward.
+
+For episodic tasks, they compare subtrajectories that correspond to similar timestep (better trajectory is a bit later in the episode than the one it is compared against so that reward increases as the episode progresses). 
+
+At RL training time, the learned reward goes through a sigmoid to avoid large changes in the reward scale across time-steps.
+
+## Results
+
+![](https://i.imgur.com/7ysYZKd.png)
+
+![](https://i.imgur.com/CHO9aVT.png)
+
+![](https://i.imgur.com/OzVD9sf.png =600x)
+
+Results are quite positive and performance can be good even when the learned reward is not really correlated with the ground truth (cf. HalfCheetah). 
+
+They also show that T-REX is robust to different ranking-noises: random-swapping of pair-wise ranking,  ranking by humans that only have access to a description of the task and not the ground truth reward. **They also automatically rank the demonstrations using the number of learning steps of a learning expert: therefore T-REX could be used as an intrinsic reward alongside the ground-truth to accelerate training.** 
+
+![](https://i.imgur.com/IfOeLY6.png =500x)
+
+**Limitations**
+They do not show than T-REX can match an optimal expert, maybe ranking demonstrations hurt when all the demos are close to optimality? </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

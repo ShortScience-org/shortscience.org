@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta-learners&#x27; learning dynamics are unlike learners&#x27; - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Meta-learners&#x27; learning dynamics are unlike learners&#x27; - ShortScience.org">
+<meta property="og:description" content="Meta learning, or, the idea of training models on some distribution of tasks, with the hope that the...">
+<meta name="description" content="Meta learning, or, the idea of training models on some distribution of tasks, with the hope that the...">
+<meta property="og:image" content="https://i.imgur.com/ceycq46.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.01320">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1905.01320" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Neil C. Rabinowitz"}, "headline": "Meta-learners' learning dynamics are unlike learners'", "description": "Summary of Meta-learners' learning dynamics are unlike learners'", "datePublished": "2019-05-19 05:01:50", "dateModified": "2019-05-19 05:01:50", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/ceycq46.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1905.01320", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1905.01320v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Meta-learners%27%20learning%20dynamics%20are%20unlike%20learners%27%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Meta-learners&#x27; learning dynamics are unlike learners&#x27;</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Neil%20C.%20Rabinowitz">Neil C. Rabinowitz</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2019/05/03<br><b>Abstract:</b>   Meta-learning is a tool that allows us to build sample-efficient learning
+systems. Here we show that, once meta-trained, LSTM Meta-Learners aren&#x27;t just
+faster learners than their sample-inefficient deep learning (DL) and
+reinforcement learning (RL) brethren, but that they actually pursue
+fundamentally different learning trajectories. We study their learning dynamics
+on three sets of structured tasks for which the corresponding learning dynamics
+of DL and RL systems have been previously described: linear regression (Saxe et
+al., 2013), nonlinear regression (Rahaman et al., 2018; Xu et al., 2018), and
+contextual bandits (Schaul et al., 2019). In each case, while
+sample-inefficient DL and RL Learners uncover the task structure in a staggered
+manner, meta-trained LSTM Meta-Learners uncover almost all task structure
+concurrently, congruent with the patterns expected from Bayes-optimal inference
+algorithms. This has implications for research areas wherever the learning
+behaviour itself is of interest, such as safety, curriculum design, and
+human-in-the-loop machine learning.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475').hide());void($('#showless-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475').show());void($('#more-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475').show());void($('#showless-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475').hide());void($('#more-am91cm5hbHMvY29yci8xOTA1LjAxMzIw-1475').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1905.01320">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-05-19&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1905.01320&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1476').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1905.01320%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1476" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.01320&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.01320%26a%3Ddecodyng&amp;text=Summary%20of%20Meta-learners%27%20learning%20dynamics%20are%20unlike%20learners%27&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.01320%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Meta-learners%27%20learning%20dynamics%20are%20unlike%20learners%27&amp;Body=Summary%20of%20Meta-learners%27%20learning%20dynamics%20are%20unlike%20learners%27%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.01320%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.01320%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.01320%26a%3Ddecodyng&amp;title=Summary%20of%20Meta-learners%27%20learning%20dynamics%20are%20unlike%20learners%27" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.01320&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-05-19</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Meta learning, or, the idea of training models on some distribution of tasks, with the hope that they can then learn more quickly on new tasks because they have “learned how to learn” similar tasks, has become a more central and popular research field in recent years. Although there is a veritable zoo of different techniques (to an amusingly literal degree; there’s an emergent fad of naming new methods after animals), the general idea is: have your inner loop consist of training a model on some task drawn from a distribution over tasks (be that maze learning with different wall configurations, letter identification from different languages, etc), and have the outer loop that updates some structural part of your model be based on improving generalization error on each task within the distribution. It’s been demonstrated that meta-learned systems can in fact learn more quickly (at least when their tasks are “in distribution” relative to the distribution they were trained on, which is an important point to be cognizant of), but this paper is less interested with how much better or faster they’re learning, and more interested in whether there are qualitative differences in the way normal learning systems and meta-trained learning systems go about learning a new task. 
+
+The author (oddly for DeepMind, which typically goes in for super long author lists, there’s only the one on this paper) goes about this by studying simple learning tasks where it’s easier for us to introspect into what each model is learning over time. 
+
+https://i.imgur.com/ceycq46.png
+
+In the first test, he looks at linear regression in a simple setting: where for each individual “task” data is generated according a known true weight matrix (sampled from a prior over weight matrices), with some noise added in. Given this weight matrix, he takes the singular value decomposition (think: PCA), and so ends up with a factorized representation of the weights, where higher eigenvalues on the factors, or “modes”, represent that those factors represent larger-scale patterns that explain more variance, and lower eigenvalues are smaller scale refinements on top of that. He can apply this same procedure to the weights the network has learned at any given point in training, and compare, to see how close the network is to having correctly captured each of these different modes. When normal learners (starting from a raw initialization) approach the task, they start by matching the large scale (higher eigenvalue) factors of variation, and then over the course of training improve performance on the higher-precision factors. By contrast, meta learners, in addition to learning faster, also learn large scale and small scale modes at the same rate.  Similar analysis was performed and similar results found for nonlinear regression, where instead of PCA-style components, the function generating data were decomposed into different Fourier frequencies, and the normal learner learned the broad, low-frequency patterns first, where the meta learner learned them all at the same rate. 
+
+The paper finds intuition for this by showing that the behavior of the meta learners matches quite well against how a Bayes-optimal learner would update on new data points, in the world where that learner had a prior over the data-generating weights that matched the true generating process. So, under this framing, the process of meta learning is roughly equivalent to your model learning a prior correspondant with the task distribution it was trained on. This is, at a high level, what I think we all sort of thought was happening with meta learning, but it’s pretty neat to see it laid out in a small enough problem where we can actually validate against an analytic model. 
+
+A bit of a meta (heh) point: I wish this paper had more explanation of why the author chose to use the specific eigenvalue-focused metrics of progression on task learning that he did. They seem reasonable, but I’d have been curious to see an explication of what is captured by these, and what might be captured by alternative metrics of task progress. 
+
+(A side note: the paper also contained a reinforcement learning experiment, but I both understood that one less well and also feel like it wasn’t really that analogous to the other tests) 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

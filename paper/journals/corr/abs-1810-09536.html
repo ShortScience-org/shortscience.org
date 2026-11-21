@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks - ShortScience.org">
+<meta property="og:description" content="This paper came on my radar after winning Best Paper recently at ICLR, and all in all I found it a c...">
+<meta name="description" content="This paper came on my radar after winning Best Paper recently at ICLR, and all in all I found it a c...">
+<meta property="og:image" content="https://i.imgur.com/GAJP7ji.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1810-09536">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1810-09536" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Shen, Yikang and Tan, Shawn and Sordoni, Alessandro and Courville, Aaron C."}, "headline": "Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks", "description": "Summary of Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks", "datePublished": "2019-05-15 05:56:21", "dateModified": "2019-05-15 05:56:21", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/GAJP7ji.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/abs-1810-09536", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1810.09536"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Ordered%20Neurons%3A%20Integrating%20Tree%20Structures%20into%20Recurrent%20Neural%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Shen%2C%20Yikang">Shen, Yikang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tan%2C%20Shawn">Tan, Shawn</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sordoni%2C%20Alessandro">Sordoni, Alessandro</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Courville%2C%20Aaron%20C.">Courville, Aaron C.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/abs-1810-09536">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-05-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-1810-09536&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1861').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-1810-09536%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1861" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1810-09536&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1810-09536%26a%3Ddecodyng&amp;text=Summary%20of%20Ordered%20Neurons%3A%20Integrating%20Tree%20Structures%20into%20Recurrent%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1810-09536%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Ordered%20Neurons%3A%20Integrating%20Tree%20Structures%20into%20Recurrent%20Neural%20Networks&amp;Body=Summary%20of%20Ordered%20Neurons%3A%20Integrating%20Tree%20Structures%20into%20Recurrent%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1810-09536%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1810-09536%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1810-09536%26a%3Ddecodyng&amp;title=Summary%20of%20Ordered%20Neurons%3A%20Integrating%20Tree%20Structures%20into%20Recurrent%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1810-09536&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-05-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper came on my radar after winning Best Paper recently at ICLR, and all in all I found it a clever way of engineering a somewhat complicated inductive bias into a differentiable structure. The empirical results weren’t compelling enough to suggest that this structural shift made a regime-change difference in performing, but it does seem to have some consistently stronger ability to do syntactic evaluation across large gaps in sentences. 
+
+The core premise of this paper is that, while language is to some extent sequence-like, it is in a more fundamental sense tree-like: a recursive structure of modified words, phrases, and clauses, aggregating up to a fully complete sentence. In practical terms, this cashes out to parse trees, labels akin to the sentence diagrams that you or I perhaps did once upon a time in grade school. 
+
+https://i.imgur.com/GAJP7ji.png
+
+Given this, if you want to effectively model language, it might be useful to have a neural network structure explicitly designed to track where you are in the tree. To do this, the authors of this paper use a clever activation function scheme based on the intuition that you can think of jumping between levels of the tree as adding information to the stack of local context, and then removing that information from the stack when you’ve reached the end of some local phrase. In the framework of a LSTM, which has explicit gating mechanisms for both “forgetting” (removing information from cell memory) and input (adding information to the representation within cell memory) this can be understood as forcing a certain structure of input and forgetting, where you have to sequentially “close out” or add nodes as you move up or down the tree. 
+
+
+To represent this mathematically, the authors use a new activation function they developed, termed cumulative max or cumax. In the same way that the softmax is a differentiable (i.e. “soft”) version of an argmax, the cumulative max is a softened version of a vector that has zeros up to some switch point k, and ones thereafter. If you had such a vector as your forget mask, then “closing out” a layer in your tree would be equivalent to shifting the index where you switch from 0 to 1 up by one, so that a layer that previously had a “remember” value of 1.0 now is removing its content from the stack.  However, since we need to differentiate, this notional 0/1 vector is instead represented as a cumulative sum of a softmax, which can be thought of as the continuous-valued probability that you’ve reached that switch-point by any given point in the vector. Outside of the abstractions of what we’re imagining this cumax function to represent, in a practical sense, it does strictly enforce that you monotonically remember or input more as you move along the vector. This has the practical fact that the network will be biased towards remembering information at one end of the representation vector for longer, meaning it could be a useful inductive bias around storing information that has a more long-term usefulness to it. One advantage that this system has over a previous system that, for example, had each layer of the LSTM operate on a different forgetting-decay timescale, is that this is a soft approximation, so, up to the number of neurons in the representation, the model can dynamically approximate whatever number of tree nodes it likes, rather than being explicitly correspondent with the number of layers. 
+
+Beyond being a mathematically clever idea, the question of whether it improves performance is a little mixed. It does consistently worse at tasks that require keeping track of short term dependency information, but seems to do better at more long-term tasks, although not in a perfectly consistent or overly dramatic way. My overall read is that this is a neat idea, and I’m interested to see if it gets built on, as well as interested to see later papers that do some introspective work to validate whether the model is actually using this inductive bias in the tree-like way that we’re hoping and imagining it will. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

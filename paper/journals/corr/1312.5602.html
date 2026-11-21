@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playing Atari with Deep Reinforcement Learning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Playing Atari with Deep Reinforcement Learning - ShortScience.org">
+<meta property="og:description" content="* They use an implementation of Q-learning (i.e. reinforcement learning) with CNNs to automaticall...">
+<meta name="description" content="* They use an implementation of Q-learning (i.e. reinforcement learning) with CNNs to automaticall...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Playing_Atari_with_Deep_Reinforcement_Learning__algorithm.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.5602">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1312.5602" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Volodymyr Mnih and Koray Kavukcuoglu and David Silver and Alex Graves and Ioannis Antonoglou and Daan Wierstra and Martin Riedmiller"}, "headline": "Playing Atari with Deep Reinforcement Learning", "description": "Summary of Playing Atari with Deep Reinforcement Learning", "datePublished": "2017-10-17 23:21:45", "dateModified": "2017-10-26 10:18:59", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Playing_Atari_with_Deep_Reinforcement_Learning__algorithm.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1312.5602", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1312.5602v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Playing%20Atari%20with%20Deep%20Reinforcement%20Learning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Playing Atari with Deep Reinforcement Learning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Volodymyr%20Mnih">Volodymyr Mnih</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Koray%20Kavukcuoglu">Koray Kavukcuoglu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=David%20Silver">David Silver</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alex%20Graves">Alex Graves</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ioannis%20Antonoglou">Ioannis Antonoglou</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Daan%20Wierstra">Daan Wierstra</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Martin%20Riedmiller">Martin Riedmiller</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2013">arXiv e-Print archive - 2013</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2013/12/19<br><b>Abstract:</b>   We present the first deep learning model to successfully learn control
+policies directly from high-dimensional sensory input using reinforcement
+learning. The model is a convolutional neural network, trained with a variant
+of Q-learning, whose input is raw pixels and whose output is a value function
+estimating future rewards. We apply our method to seven Atari 2600 games from
+the Arcade Learning Environment, with no adjustment of the architecture or
+learning algorithm. We find that it outperforms all previous approaches on six
+of the games and surpasses a human expert on three of them.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646').hide());void($('#showless-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646').show());void($('#more-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646').show());void($('#showless-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646').hide());void($('#more-am91cm5hbHMvY29yci8xMzEyLjU2MDI-646').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1312.5602">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1312.5602&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-647').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1312.5602%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-647" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.5602&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.5602%26a%3Daleju&amp;text=Summary%20of%20Playing%20Atari%20with%20Deep%20Reinforcement%20Learning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.5602%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Playing%20Atari%20with%20Deep%20Reinforcement%20Learning&amp;Body=Summary%20of%20Playing%20Atari%20with%20Deep%20Reinforcement%20Learning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.5602%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.5602%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1312.5602%26a%3Daleju&amp;title=Summary%20of%20Playing%20Atari%20with%20Deep%20Reinforcement%20Learning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1312.5602&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They use an implementation of Q-learning (i.e. reinforcement learning) with CNNs to automatically play Atari games.
+  * The algorithm receives the raw pixels as its input and has to choose buttons to press as its output. No hand-engineered features are used. So the model &quot;sees&quot; the game and &quot;uses&quot; the controller, just like a human player would.
+  * The model achieves good results on various games, beating all previous techniques and sometimes even surpassing human players.
+
+### How
+  * Deep Q Learning
+    * *This is yet another explanation of deep Q learning, see also [this blog post](http://www.nervanasys.com/demystifying-deep-reinforcement-learning/) for longer explanation.*
+    * While playing, sequences of the form (`state1`, `action1`, `reward`, `state2`) are generated.
+      * `state1` is the current game state. The agent only sees the pixels of that state. (Example: Screen shows enemy.)
+      * `action1` is an action that the agent chooses. (Example: Shoot!)
+      * `reward` is the direct reward received for picking `action1` in `state1`. (Example: +1 for a kill.)
+      * `state2` is the next game state, after the action was chosen in `state1`. (Example: Screen shows dead enemy.)
+    * One can pick actions at random for some time to generate lots of such tuples. That leads to a replay memory.
+    * Direct reward
+      * After playing randomly for some time, one can train a model to predict the direct reward given a screen (we don&#x27;t want to use the whole state, just the pixels) and an action, i.e. `Q(screen, action) -&gt; direct reward`.
+      * That function would need a forward pass for each possible action that we could take. So for e.g. 8 buttons that would be 8 forward passes. To make things more efficient, we can let the model directly predict the direct reward for each available action, e.g. for 3 buttons `Q(screen) -&gt; (direct reward of action1, direct reward of action2, direct reward of action3)`.
+      * We can then sample examples from our replay memory. The input per example is the screen. The output is the reward as a tuple. E.g. if we picked button 1 of 3 in one example and received a reward of +1 then our output/label for that example would be `(1, 0, 0)`.
+      * We can then train the model by playing completely randomly for some time, then sample some batches and train using a mean squared error. Then play a bit less randomly, i.e. start to use the action which the network thinks would generate the highest reward. Then train again, and so on.
+    * Indirect reward
+      * Doing the previous steps, the model will learn to anticipate the *direct* reward correctly. However, we also want it to predict indirect rewards. Otherwise, the model e.g. would never learn to shoot rockets at enemies, because the reward from killing an enemy would come many frames later.
+      * To learn the indirect reward, one simply adds the reward value of highest reward action according to `Q(state2)` to the direct reward.
+      * I.e. if we have a tuple (`state1`, `action1`, `reward`, `state2`), we would not add (`state1`, `action1`, `reward`) to the replay memory, but instead (`state1`, `action1`, `reward + highestReward(Q(screen2))`). (Where `highestReward()` returns the reward of the action with the highest reward according to Q().)
+      * By training to predict `reward + highestReward(Q(screen2))` the network learns to anticipate the direct reward *and* the indirect reward. It takes a leap of faith to accept that this will ever converge to a good solution, but it does.
+      * We then add `gamma` to the equation: `reward + gamma*highestReward(Q(screen2))`. `gamma` may be set to 0.9. It is a discount factor that devalues future states, e.g. because the world is not deterministic and therefore we can&#x27;t exactly predict what&#x27;s going to happen. Note that Q will automatically learn to stack it, e.g. `state3` will be discounted to `gamma^2` at `state1`.
+  * This paper
+    * They use the mentioned Deep Q Learning to train their model Q.
+    * They use a k-th frame technique, i.e. they let the model decide upon an action at (here) every 4th frame.
+    * Q is implemented via a neural net. It receives 84x84x4 grayscale pixels that show the game and projects that onto the rewards of 4 to 18 actions.
+    * The input is HxWx4 because they actually feed the last 4 frames into the network, instead of just 1 frame. So the network knows more about what things are moving how.
+    * The network architecture is:
+      * 84x84x4 (input)
+      * 16 convs, 8x8, stride 4, ReLU
+      * 32 convs, 4x4, stride 2, ReLU
+      * 256 fully connected neurons, ReLU
+      * &lt;N_actions&gt; fully connected neurons, linear
+    * They use a replay memory of 1 million frames.
+
+### Results
+  * They ran experiments on the Atari games Beam Rider, Breakout, Enduro, Pong, Qbert, Seaquest and Space Invaders.
+  * Same architecture and hyperparameters for all games.
+  * Rewards were based on score changes in the games, i.e. they used +1 (score increases) and -1 (score decreased).
+  * Optimizer: RMSProp, Batch Size: 32.
+  * Trained for 10 million examples/frames per game.
+  * They had no problems with instability and their average Q value per game increased smoothly.
+  * Their method beats all other state of the art methods.
+  * They managed to beat a human player in games that required not so much &quot;long&quot; term strategies (the less frames the better).
+  * Video: starts at 46:05. 
+ https://youtu.be/dV80NAlEins?t=46m05s 
+
+
+![Algorithm](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Playing_Atari_with_Deep_Reinforcement_Learning__algorithm.png?raw=true &quot;Algorithm&quot;)
+
+*The original full algorithm, as shown in the paper.*
+
+--------------------
+
+### Rough chapter-wise notes
+
+* (1) Introduction
+  * Problems when using neural nets in reinforcement learning (RL):
+    * Reward signal is often sparse, noise and delayed.
+    * Often assumption that data samples are independent, while they are correlated in RL.
+    * Data distribution can change when the algorithm learns new behaviours.
+  * They use Q-learning with a CNN and stochastic gradient descent.
+  * They use an experience replay mechanism (i.e. memory) from which they can sample previous transitions (for training).
+  * They apply their method to Atari 2600 games in the Arcade Learning Environment (ALE).
+  * They use only the visible pixels as input to the network, i.e. no manual feature extraction.
+
+* (2) Background
+  * blablabla, standard deep q learning explanation
+
+* (3) Related Work
+  * TD-Backgammon: &quot;Solved&quot; backgammon. Worked similarly to Q-learning and used a multi-layer perceptron.
+  * Attempts to copy TD-Backgammon to other games failed.
+  * Research was focused on linear function approximators as there were problems with non-linear ones diverging.
+  * Recently again interest in using neural nets for reinforcement learning. Some attempts to fix divergence problems with gradient temporal-difference methods.
+  * NFQ is a very similar method (to the one in this paper), but worked on the whole batch instead of minibatches, making it slow. It also first applied dimensionality reduction via autoencoders on the images instead of training on them end-to-end.
+  * HyperNEAT was applied to Atari games and evolved a neural net for each game. The networks learned to exploit design flaws.
+
+* (4) Deep Reinforcement Learning
+  * They want to connect a reinforcement learning algorithm with a deep neural network, e.g. to get rid of handcrafted features.
+  * The network is supposes to run on the raw RGB images.
+  * They use experience replay, i.e. store tuples of (pixels, chosen action, received reward) in a memory and use that during training.
+  * They use Q-learning.
+  * They use an epsilon-greedy policy.
+  * Advantages from using experience replay instead of learning &quot;live&quot; during game playing:
+    * Experiences can be reused many times (more efficient).
+    * Samples are less correlated.
+    * Learned parameters from one batch don&#x27;t determine as much the distributions of the examples in the next batch.
+  * They save the last N experiences and sample uniformly from them during training.
+  * (4.1) Preprocessing and Model Architecture
+    * Raw Atari images are 210x160 pixels with 128 possible colors.
+    * They downsample them to 110x84 pixels and then crop the 84x84 playing area out of them.
+    * They also convert the images to grayscale.
+    * They use the last 4 frames as input and stack them.
+    * So their network input has shape 84x84x4.
+    * They use one output neuron per possible action. So they can compute the Q-value (expected reward) of each action with one forward pass.
+    * Architecture: 84x84x4 (input) =&gt; 16 8x8 convs, stride 4, ReLU =&gt; 32 4x4 convs stride 2 ReLU =&gt; fc 256, ReLU =&gt; fc N actions, linear
+    * 4 to 18 actions/outputs (depends on the game).
+    * Aside from the outputs, the architecture is the same for all games.
+
+* (5) Experiments
+  * Games that they played: Beam Rider, Breakout, Enduro, Pong, Qbert, Seaquest, Space Invaders
+  * They use the same architecture und hyperparameters for all games.
+  * They give a reward of +1 whenever the in-game score increases and -1 whenever it decreases.
+  * They use RMSProp.
+  * Mini batch size was 32.
+  * They train for 10 million frames/examples.
+  * They initialize epsilon (in their epsilon greedy strategy) to 1.0 and decrease it linearly to 0.1 at one million frames.
+  * They let the agent decide upon an action at every 4th in-game frame (3rd in space invaders).
+  * (5.1) Training and stability
+    * They plot the average reward und Q-value per N games to evaluate the agent&#x27;s training progress,
+    * The average reward increases in a noisy way.
+    * The average Q value increases smoothly.
+    * They did not experience any divergence issues during their training.
+  * (5.2) Visualizating the Value Function
+    * The agent learns to predict the value function accurately, even for rather long sequences (here: ~25 frames).
+  * (5.3) Main Evaluation
+    * They compare to three other methods that use hand-engineered features and/or use the pixel data combined with significant prior knownledge.
+    * They mostly outperform the other methods.
+    * They managed to beat a human player in three games. The ones where the human won seemed to require strategies that stretched over longer time frames.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

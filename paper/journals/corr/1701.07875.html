@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wasserstein GAN - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Wasserstein GAN - ShortScience.org">
+<meta property="og:description" content="This very new paper, is currently receiving quite a bit of attention by the [community]( ).
+
+The pap...">
+<meta name="description" content="This very new paper, is currently receiving quite a bit of attention by the [community]( ).
+
+The pap...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Martin Arjovsky and Soumith Chintala and L\u00e9on Bottou"}, "headline": "Wasserstein GAN", "description": "Summary of Wasserstein GAN", "datePublished": "2017-02-02 15:58:17", "dateModified": "2017-02-02 16:49:48", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1701.07875v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Wasserstein%20GAN%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Wasserstein GAN</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Martin%20Arjovsky">Martin Arjovsky</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Soumith%20Chintala">Soumith Chintala</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=L%C3%A9on%20Bottou">Léon Bottou</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/01/26<br><b>Abstract:</b>   We introduce a new algorithm named WGAN, an alternative to traditional GAN
+training. In this new model, we show that we can improve the stability of
+learning, get rid of problems like mode collapse, and provide meaningful
+learning curves useful for debugging and hyperparameter searches. Furthermore,
+we show that the corresponding optimization problem is sound, and provide
+extensive theoretical work highlighting the deep connections to other distances
+between distributions.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042').hide());void($('#showless-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042').show());void($('#more-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042').show());void($('#showless-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042').hide());void($('#more-am91cm5hbHMvY29yci8xNzAxLjA3ODc1-1042').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1701.07875">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="marvinteichmann" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=marvinteichmann" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=marvinteichmann&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/c7d187e6e2c5da17bf3d27b6719a22fb?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;MarvMind&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: marvinteichmann&lt;br&gt;Posted: 2017-02-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1701.07875&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/c7d187e6e2c5da17bf3d27b6719a22fb?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">10</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1043').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1701.07875%26a%3Dmarvinteichmann" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1043" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875&amp;a=marvinteichmann" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dmarvinteichmann&amp;text=Summary%20of%20Wasserstein%20GAN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dmarvinteichmann" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Wasserstein%20GAN&amp;Body=Summary%20of%20Wasserstein%20GAN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dmarvinteichmann"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dmarvinteichmann" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dmarvinteichmann&amp;title=Summary%20of%20Wasserstein%20GAN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875&amp;a=marvinteichmann" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=marvinteichmann" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by MarvMind 2017-02-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This very new paper, is currently receiving quite a bit of attention by the [community](https://www.reddit.com/r/MachineLearning/comments/5qxoaz/r_170107875_wasserstein_gan/).
+
+The paper describes a new training approach, which solves the two major practical problems with current GAN training:
+
+1) The training process comes with a meaningful loss. This can be used as a (soft) performance metric and will help debugging, tune parameters and so on.
+
+2) The training process does not suffer from all the instability problems. In particular the paper reduces mode collapse significantly.
+
+On top of that, the paper comes with quite a bit mathematical theory, explaining why there approach works and other approachs have failed. This paper is a must read for anyone interested in GANs.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="leopaillier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=leopaillier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=leopaillier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Léo Paillier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: leopaillier&lt;br&gt;Posted: 2017-12-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1701.07875&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1044').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1701.07875%26a%3Dleopaillier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1044" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875&amp;a=leopaillier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dleopaillier&amp;text=Summary%20of%20Wasserstein%20GAN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Wasserstein%20GAN&amp;Body=Summary%20of%20Wasserstein%20GAN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dleopaillier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Dleopaillier&amp;title=Summary%20of%20Wasserstein%20GAN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875&amp;a=leopaillier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=leopaillier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Léo Paillier 2017-12-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">_Objective:_ Robust unsupervised learning of a probability distribution using a new module called the `critic` and the `Earth-mover distance`.
+
+ _Dataset:_ [LSUN-Bedrooms](http://lsun.cs.princeton.edu/2016/)
+
+## Inner working:
+
+Basically train a `critic` until convergence to retrieve the Wasserstein-1 distance, see pseudo-algorithm below:
+
+[![screen shot 2017-05-03 at 5 05 09 pm](https://cloud.githubusercontent.com/assets/17261080/25667162/003c9330-3023-11e7-9081-c181011f4e6f.png)](https://cloud.githubusercontent.com/assets/17261080/25667162/003c9330-3023-11e7-9081-c181011f4e6f.png)
+
+## Results:
+
+*   Easier training: no need for batch normalization and no need to fine-tune generator/discriminator balance.
+*   Less sensitivity to network architecture.
+*   Very good proxy that correlates very well with sample quality.
+*   Non-vanishing gradients.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1701.07875&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1045').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1701.07875%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1045" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Daleju&amp;text=Summary%20of%20Wasserstein%20GAN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Wasserstein%20GAN&amp;Body=Summary%20of%20Wasserstein%20GAN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1701.07875%26a%3Daleju&amp;title=Summary%20of%20Wasserstein%20GAN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1701.07875&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a slightly altered algorithm for GANs.
+  * The new algorithm is more stable than previous ones.
+
+### How
+  * Each GAN contains a Generator that generates (fake-)examples and a Discriminator that discriminates between fake and real examples.
+  * Both fake and real examples can be interpreted as coming from a probability distribution.
+  * The basis of each GAN algorithm is to somehow measure the difference between these probability distributions
+    and change the network parameters of G so that the fake-distribution becomes more and more similar to the real distribution.
+  * There are multiple distance measures to do that:
+    * Total Variation (TV)
+    * KL-Divergence (KL)
+    * Jensen-Shannon divergence (JS)
+      * This one is based on the KL-Divergence and is the basis of the original GAN, as well as LAPGAN and DCGAN.
+    * Earth-Mover distance (EM), aka Wasserstein-1
+      * Intuitively, one can imagine both probability distributions as hilly surfaces. EM then reflects, how much mass has to be moved to convert the fake distribution to the real one.
+  * Ideally, a distance measure has everywhere nice values and gradients
+    (e.g. no +/- infinity values; no binary 0 or 1 gradients; gradients that get continously smaller when the generator produces good outputs).
+  * In that regard, EM beats JS and JS beats TV and KL (roughly speaking). So they use EM.
+  * EM
+    * EM is defined as
+      * ![EM](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/WGAN__EM.jpg?raw=true &quot;EM&quot;)
+      * (inf = infinum, more or less a minimum)
+    * which is intractable, but following the Kantorovich-Rubinstein duality it can also be calculated via
+      * ![EM tractable](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/WGAN__EM_tractable.jpg?raw=true &quot;EM tractable&quot;)
+      * (sup = supremum, more or less a maximum)
+    * However, the second formula is here only valid if the network is a K-Lipschitz function (under every set of parameters).
+    * This can be guaranteed by simply clipping the discriminator&#x27;s weights to the range `[-0.01, 0.01]`.
+    * Then in practice the following version of the tractable EM is used, where `w` are the parameters of the discriminator:
+      * ![EM tractable in practice](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/WGAN__EM_tractable_practice.jpg?raw=true &quot;EM tractable in practice&quot;)
+  * The full algorithm is mostly the same as for DCGAN:
+    * ![Algorithm](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/WGAN__algorithm.jpg?raw=true &quot;Algorithm&quot;)
+    * Line 2 leads to training the discriminator multiple times per batch (i.e. more often than the generator).
+      * This is similar to the `max w in W` in the third formula (above).
+      * This was already part of the original GAN algorithm, but is here more actively used.
+      * Because of the EM distance, even a &quot;perfect&quot; discriminator still gives good gradient (in contrast to e.g. JS, where the discriminator should not be too far ahead). So the discriminator can be safely trained more often than the generator.
+    * Line 5 and 10 are derived from EM. Note that there is no more Sigmoid at the end of the discriminator!
+    * Line 7 is derived from the K-Lipschitz requirement (clipping of weights).
+    * High learning rates or using momentum-based optimizers (e.g. Adam) made the training unstable, which is why they use a small learning rate with RMSprop.
+
+### Results
+  * Improved stability. The method converges to decent images with models which failed completely when using JS-divergence (like in DCGAN).
+    * For example, WGAN worked with generators that did not have batch normalization or only consisted of fully connected layers.
+  * Apparently no more mode collapse. (Mode collapse in GANs = the generator starts to generate often/always the practically same image, independent of the noise input.)
+  * There is a relationship between loss and image quality. Lower loss (at the generator) indicates higher image quality. Such a relationship did not exist for JS divergence.
+  * Example images:
+    * ![Example images](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/WGAN__examples.jpg?raw=true &quot;Example images&quot;)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

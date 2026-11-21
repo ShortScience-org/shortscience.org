@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hierarchical Deep Reinforcement Learning: Integrating Temporal Abstraction and Intrinsic Motivation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Hierarchical Deep Reinforcement Learning: Integrating Temporal Abstraction and Intrinsic Motivation - ShortScience.org">
+<meta property="og:description" content="* They present a hierarchical method for reinforcement learning.
+  * The method combines &quot;long&quot;-t...">
+<meta name="description" content="* They present a hierarchical method for reinforcement learning.
+  * The method combines &quot;long&quot;-t...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1604.06057">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1604.06057" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Tejas D. Kulkarni and Karthik R. Narasimhan and Ardavan Saeedi and Joshua B. Tenenbaum"}, "headline": "Hierarchical Deep Reinforcement Learning: Integrating Temporal Abstraction and Intrinsic Motivation", "description": "Summary of Hierarchical Deep Reinforcement Learning: Integrating Temporal Abstraction and Intrinsic Motivation", "datePublished": "2017-10-19 14:45:27", "dateModified": "2017-10-26 10:16:58", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1604.06057", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI,  cs.CV,  cs.NE,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1604.06057v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Hierarchical%20Deep%20Reinforcement%20Learning%3A%20Integrating%20Temporal%20Abstraction%20and%20Intrinsic%20Motivation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Hierarchical Deep Reinforcement Learning: Integrating Temporal Abstraction and Intrinsic Motivation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Tejas%20D.%20Kulkarni">Tejas D. Kulkarni</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Karthik%20R.%20Narasimhan">Karthik R. Narasimhan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ardavan%20Saeedi">Ardavan Saeedi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Joshua%20B.%20Tenenbaum">Joshua B. Tenenbaum</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/04/20<br><b>Abstract:</b>   Learning goal-directed behavior in environments with sparse feedback is a
+major challenge for reinforcement learning algorithms. The primary difficulty
+arises due to insufficient exploration, resulting in an agent being unable to
+learn robust value functions. Intrinsically motivated agents can explore new
+behavior for its own sake rather than to directly solve problems. Such
+intrinsic behaviors could eventually help the agent solve tasks posed by the
+environment. We present hierarchical-DQN (h-DQN), a framework to integrate
+hierarchical value functions, operating at different temporal scales, with
+intrinsically motivated deep reinforcement learning. A top-level value function
+learns a policy over intrinsic goals, and a lower-level function learns a
+policy over atomic actions to satisfy the given goals. h-DQN allows for
+flexible goal specifications, such as functions over entities and relations.
+This provides an efficient space for exploration in complicated environments.
+We demonstrate the strength of our approach on two problems with very sparse,
+delayed feedback: (1) a complex discrete stochastic decision process, and (2)
+the classic ATARI game `Montezuma&#x27;s Revenge&#x27;.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797').show());void($('#more-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797').show());void($('#showless-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797').hide());void($('#more-am91cm5hbHMvY29yci8xNjA0LjA2MDU3-797').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1604.06057">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-19&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1604.06057&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-798').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1604.06057%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-798" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1604.06057&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.06057%26a%3Daleju&amp;text=Summary%20of%20Hierarchical%20Deep%20Reinforcement%20Learning%3A%20Integrating%20Temporal%20Abstraction%20and%20Intrinsic%20Motivation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.06057%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Hierarchical%20Deep%20Reinforcement%20Learning%3A%20Integrating%20Temporal%20Abstraction%20and%20Intrinsic%20Motivation&amp;Body=Summary%20of%20Hierarchical%20Deep%20Reinforcement%20Learning%3A%20Integrating%20Temporal%20Abstraction%20and%20Intrinsic%20Motivation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.06057%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.06057%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.06057%26a%3Daleju&amp;title=Summary%20of%20Hierarchical%20Deep%20Reinforcement%20Learning%3A%20Integrating%20Temporal%20Abstraction%20and%20Intrinsic%20Motivation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1604.06057&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-19</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">
+  * They present a hierarchical method for reinforcement learning.
+  * The method combines &quot;long&quot;-term goals with short-term action choices.
+
+### How
+  * They have two components:
+    * Meta-Controller:
+      * Responsible for the &quot;long&quot;-term goals.
+      * Is trained to pick goals (based on the current state) that maximize (extrinsic) rewards, just like you would usually optimize to maximize rewards by picking good actions.
+      * The Meta-Controller only picks goals when the Controller terminates or achieved the goal.
+    * Controller:
+      * Receives the current state and the current goal.
+      * Has to pick a reward maximizing action based on those, just as the agent would usually do (only the goal is added here).
+      * The reward is intrinsic. It comes from the Critic. The Critic gives reward whenever the current goal is reached.
+  * For Montezuma&#x27;s Revenge:
+    * A goal is to reach a specific object.
+    * The goal is encoded via a bitmask (as big as the game screen). The mask contains 1s wherever the object is.
+    * They hand-extract the location of a few specific objects.
+    * So basically:
+      * The Meta-Controller picks the next object to reach via a Q-value function.
+      * It receives extrinsic reward when objects have been reached in a specific sequence.
+      * The Controller picks actions that lead to reaching the object based on a Q-value function. It iterates action-choosing until it terminates or reached the goal-object.
+      * The Critic awards intrinsic reward to the Controller whenever the goal-object was reached.
+    * They use CNNs for the Meta-Controller and the Controller, similar in architecture to the Atari-DQN paper (shallow CNNs).
+    * They use two replay memories, one for the Meta-Controller (size 40k) and one for the Controller (size 1M).
+    * Both follow an epsilon-greedy policy (for picking goals/actions). Epsilon starts at 1.0 and is annealed down to 0.1.
+    * They use a discount factor / gamma of 0.9.
+    * They train with SGD. 
+
+### Results
+  * Learns to play Montezuma&#x27;s Revenge.
+  * Learns to act well in a more abstract MDP with delayed rewards and where simple Q-learning failed.
+
+--------------------
+
+# Rough chapter-wise notes
+
+
+* (1) Introduction
+  * Basic problem: Learn goal directed behaviour from sparse feedbacks.
+  * Challenges:
+    * Explore state space efficiently
+    * Create multiple levels of spatio-temporal abstractions
+  * Their method: Combines deep reinforcement learning with hierarchical value functions.
+  * Their agent is motivated to solve specific intrinsic goals.
+  * Goals are defined in the space of entities and relations, which constraints the search space.
+  * They define their value function as V(s, g) where s is the state and g is a goal.
+  * First, their agent learns to solve intrinsically generated goals. Then it learns to chain these goals together.
+  * Their model has two hiearchy levels:
+    * Meta-Controller: Selects the current goal based on the current state.
+    * Controller: Takes state s and goal g, then selects a good action based on s and g. The controller operates until g is achieved, then the meta-controller picks the next goal.
+  * Meta-Controller gets extrinsic rewards, controller gets intrinsic rewards.
+  * They use SGD to optimize the whole system (with respect to reward maximization).
+
+* (3) Model
+  * Basic setting: Action a out of all actions A, state s out of S, transition function T(s,a)-&gt;s&#x27;, reward by state F(s)-&gt;R.
+  * epsilon-greedy is good for local exploration, but it&#x27;s not good at exploring very different areas of the state space.
+  * They use intrinsically motivated goals to better explore the state space.
+  * Sequences of goals are arranged to maximize the received extrinsic reward.
+  * The agent learns one policy per goal.
+  * Meta-Controller: Receives current state, chooses goal.
+  * Controller: Receives current state and current goal, chooses action. Keeps choosing actions until goal is achieved or a terminal state is reached. Has the optimization target of maximizing cumulative reward.
+  * Critic: Checks if current goal is achieved and if so provides intrinsic reward.
+  * They use deep Q learning to train their model.
+  * There are two Q-value functions. One for the controller and one for the meta-controller.
+  * Both formulas are extended by the last chosen goal g.
+  * The Q-value function of the meta-controller does not depend on the chosen action.
+  * The Q-value function of the controller receives only intrinsic direct reward, not extrinsic direct reward.
+  * Both Q-value functions are reprsented with DQNs.
+  * Both are optimized to minimize MSE losses.
+  * They use separate replay memories for the controller and meta-controller.
+  * A memory is added for the meta-controller whenever the controller terminates.
+  * Each new goal is picked by the meta-controller epsilon-greedy (based on the current state).
+  * The controller picks actions epsilon-greedy (based on the current state and goal).
+  * Both epsilons are annealed down.
+
+* (4) Experiments
+  * (4.1) Discrete MDP with delayed rewards
+    * Basic MDP setting, following roughly: Several states (s1 to s6) organized in a chain. The agent can move left or right. It gets high reward if it moves to state s6 and then back to s1, otherwise it gets small reward per reached state.
+    * They use their hierarchical method, but without neural nets.
+    * Baseline is Q-learning without a hierarchy/intrinsic rewards.
+    * Their method performs significantly better than the baseline.
+  * (4.2) ATARI game with delayed rewards
+    * They play Montezuma&#x27;s Revenge with their method, because that game has very delayed rewards.
+    * They use CNNs for the controller and meta-controller (architecture similar to the Atari-DQN paper).
+    * The critic reacts to (entity1, relation, entity2) relationships. The entities are just objects visible in the game. The relation is (apparently ?) always &quot;reached&quot;, i.e. whether object1 arrived at object2.
+    * They extract the objects manually, i.e. assume the existance of a perfect unsupervised object detector.
+    * They encode the goals apparently not as vectors, but instead just use a bitmask (game screen heightand width), which has 1s at the pixels that show the object.
+    * Replay memory sizes: 1M for controller, 50k for meta-controller.
+    * gamma=0.99
+    * They first only train the controller (i.e. meta-controller completely random) and only then train both jointly.
+    * Their method successfully learns to perform actions which lead to rewards with long delays.
+    * It starts with easier goals and then learns harder goals.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

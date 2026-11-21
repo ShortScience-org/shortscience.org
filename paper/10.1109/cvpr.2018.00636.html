@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering - ShortScience.org">
+<meta property="og:description" content="This paper solves two tasks: Image Captioning and VQA.
+The main idea is to use Faster R-CNN to embed...">
+<meta name="description" content="This paper solves two tasks: Image Captioning and VQA.
+The main idea is to use Faster R-CNN to embed...">
+<meta property="og:image" content="https://i.imgur.com/2FnPXi0.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2018.00636">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2018.00636" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Peter Anderson and Xiaodong He and Chris Buehler and Damien Teney and Mark Johnson and Stephen Gould and Lei Zhang"}, "headline": "Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering", "description": "Summary of Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering", "datePublished": "2017-11-23 19:09:02", "dateModified": "2017-11-23 19:09:31", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/2FnPXi0.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2018.00636", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, ">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://doi.org/10.1109/cvpr.2018.00636"><span class="glyphicon glyphicon-link"></span> doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Bottom-Up and Top-Down Attention for Image Captioning and Visual Question Answering</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Peter%20Anderson">Peter Anderson</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xiaodong%20He">Xiaodong He</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chris%20Buehler">Chris Buehler</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Damien%20Teney">Damien Teney</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Mark%20Johnson">Mark Johnson</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Stephen%20Gould">Stephen Gould</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lei%20Zhang">Lei Zhang</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/cvpr&amp;year=2018">Conference and Computer Vision and Pattern Recognition - 2018</a> <small>via Local CrossRef</small>
+<br>
+Keywords: 
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=10.1109/cvpr.2018.00636">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="elbaro" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=elbaro" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=elbaro&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/932f47b58b2f6716cded521e3ee87ff2?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;elbaro&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: elbaro&lt;br&gt;Posted: 2017-11-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1707.07998&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/932f47b58b2f6716cded521e3ee87ff2?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-44').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1707.07998%26a%3Delbaro" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-44" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1707.07998&amp;a=elbaro" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1707.07998%26a%3Delbaro&amp;text=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1707.07998%26a%3Delbaro" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering&amp;Body=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1707.07998%26a%3Delbaro"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1707.07998%26a%3Delbaro" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1707.07998%26a%3Delbaro&amp;title=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1707.07998&amp;a=elbaro" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=elbaro" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by elbaro 2017-11-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper solves two tasks: Image Captioning and VQA.
+The main idea is to use Faster R-CNN to embed images (kx2048 from k bounding boxes) instead of ResNet (14x14x2048) and apply attention over k vectors.
+
+For **VQA**, this is basically (Faster R-CNN + ShowAttendAskAnswer). SAAA(ShowAskAttendAnswer) calculates a 2D attention map from the concatenation of a text vector (2048-dim from LSTM) and image tensor (2048x14x14 from ResNet). This image feature can be thought as a collection of 2048-dim feature vectors. This paper uses Faster R-CNN to get k bounding boxes. Each bounding box is a 2048-dim vector so we have kx2048, which is fed to SAAA.
+
+
+**SAAA**:
+https://i.imgur.com/2FnPXi0.png
+
+**This paper (VQA)**:
+https://i.imgur.com/xib77Iy.png
+
+For **Image Captioning**, it uses 2-layer LSTM. The first layer gets the average of k 2048-dim vectors. The output is used to calculate the attention weights over k vectors. The second layer gets the weight-averaged 2048-dim vector and the output of the first layer.
+
+https://i.imgur.com/GeXaC30.png</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="jeremypinto" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=jeremypinto" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=jeremypinto&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/16ac076194d325ed819bd224025217f5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;jerpint&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: jeremypinto&lt;br&gt;Posted: 2019-07-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;10.1109/cvpr.2018.00636&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/16ac076194d325ed819bd224025217f5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-45').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3D10.1109/cvpr.2018.00636%26a%3Djeremypinto" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-45" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2018.00636&amp;a=jeremypinto" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2018.00636%26a%3Djeremypinto&amp;text=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2018.00636%26a%3Djeremypinto" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering&amp;Body=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2018.00636%26a%3Djeremypinto"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2018.00636%26a%3Djeremypinto" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2018.00636%26a%3Djeremypinto&amp;title=Summary%20of%20Bottom-Up%20and%20Top-Down%20Attention%20for%20Image%20Captioning%20and%20Visual%20Question%20Answering" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2018.00636&amp;a=jeremypinto" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=jeremypinto" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by jerpint 2019-07-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"># Summary
+
+This paper presents state-of-the-art methods for both caption generation of images and visual question answering (VQA). The authors build on previous methods by adding what they call a &quot;bottom-up&quot; approach to previous &quot;top-down&quot; attention mechanisms. They show that using their approach they obtain SOTA on both Image captioning (MSCOCO) and the Visual Question and Answering (2017 VQA challenge). They propose a specific network configurations for each. Their biggest contribution is using Faster-R-CNN to retrieve the &quot;important&quot; parts of an image to focus on in both models.
+
+## Top Down
+
+Up until this paper, the traditional approach was to use a &quot;top-down&quot; approach, in which the last feature map layer of a CNN is used to obtain a latent representation of the given input image. These features, along with the context of the caption being generated, were used to generate attention weights that were used to predict the next sequence in the context of caption generation. The network would learn to focus its attention on regions of the feature map that matters most. This is the approach used in previous SOTA methods like [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044).
+
+## Bottom-up
+
+The authors argue that the feature map of a CNN is too generic and can be thought of operating on a uniform, grid-like feature map. In other words, there is no particular reason to think that the feature map of generated by a CNN would give optimal regions to attend to. Also, carefully choosing the dimensions of the feature map can be very arbitrary.
+
+In order to fix this, the authors propose combining object detection methods in a *bottom-up* approach. To do so, the authors propose using Faster-R-CNN to identify regions of interest in an image. Given an input image, Faster-R-CNN will identify bounding boxes of the image that likely correspond to objects of a given category and simultaneously compute a feature vector of that bounding box. Figure 1 shows the difference between the Bottom-up and Top-Down approach.
+
+![image](https://user-images.githubusercontent.com/18450628/61817263-2683cd00-ae1c-11e9-971a-d3b531dbbd98.png)
+
+## Combining the two
+
+In this paper, the authors suggest using the bottom-up approach to compute the salient regions of the image the network should focus on using Faster-R-CNN. FRCNN is carefully pretrained on both imagenet and the Visual Genome dataset. It is then frozen and only used to generate bounding boxes of regions with high confidence of being of interest. The top-down approach is then used on the features obtained from the bottom-up approach. In order to &quot;enhance&quot; the FRCNN performance, they initialize their FRCNN with a ResNet-101 pre-trained on imagenet. They train their FRCNN on the Visual Genome dataset, adding attributes to the loss function that are available from the Visual Genome dataset, attributes such as color (black, white, gold etc.),  state (open, close, dark, bright, etc.). A sample of FRCNN outputs are shown in figure 2. It is important to stress that only the feature representations and not the actual outputs (i.e. not the labels) are used in their model.
+
+![image](https://user-images.githubusercontent.com/18450628/61817487-aca01380-ae1c-11e9-90fa-134033b95bb0.png)
+
+## Caption Generation
+
+Figure 3 provides a high-level overview of the model being used for caption generation for images. The image is first passed through FRCNN which produces a set of image features *V*. In their specific implementation, *V* consists of *k* vectors of size 1x2048. Their model consists of two LSTM blocks, one for attention and the other for language generation.
+
+![image](https://user-images.githubusercontent.com/18450628/61818488-effb8180-ae1e-11e9-8ae4-14355115429a.png)
+
+The first block of their model is a Top-Down Attention LSTM layer. It takes as input the mean-pooled features *V* , i.e. 1/k*sum(v_i), concatenated with the previous timestep&#x27;s hidden representation of the language LSTM as well as the word embedding of the previously generated word. The word embedding is learned and not pretrained. 
+
+The output of the first LSTM is used to compute the attention for each vector using an MLP and softmax:
+
+![image](https://user-images.githubusercontent.com/18450628/61819982-21298100-ae22-11e9-80a9-99640896413d.png)
+
+The attention weighted image feature is then used as an input to the language LSTM model, concatenated with the output from the top-down Attention LSTM and a softmax is used to predict the next word in the sequence. The loss function seeks to minimize the cross-entropy of the generated sentence. 
+
+## VQA Model
+
+The VQA task differs to the image generation in that a text-based question accompanies an input image and the network must produce an answer. The VQA model proposed is different to that of the caption generation model previously described, however they both use the same bottom-up approach to generate the feature vectors of the image based on the FRCNN architecture. A high-level overview of the architecture for the VQA model is presented in Figure 4.
+
+![image](https://user-images.githubusercontent.com/18450628/61821988-8da67f00-ae26-11e9-8456-3c9e5ec60787.png)
+
+Each word from the question is converted to a learned word embedding which is used as input to a GRU. The number of words for each question is limited to 14 for computational efficiency. The output from the GRU is concatenated with each of the *k* image features, and attention weights are computed for each *k*th feature using an MLP and softmax, similar to what is done in the attention for caption generation. The weighted sum of the feature vectors is then passed through an linear layer such that its shape is compatible with the gru output, and the Hadamard product (element-wise product) is computed over the GRU output and attention-weighted image feature representation. Finally, a tanh non-linear activation is used. This results in a &quot;gated tanh&quot;, which have been shown empirically to outperform both ReLU and tanh. Finally, a softmax probability distribution is generated at the output which selects a candidate answer among all possible candidate answers.
+
+## Results and experiments
+
+### Resnet Baseline
+
+To demonstrate that their contribution of bottom-up mechanism actually improves on results, the authors use a ResNet trained on imagenet as a baseline for generating the image feature vectors (they resize the final CNN layers using bilinear interpolation when needed). They consistently obtain better results when using the bottom-up approach over the ResNet approach in both caption generation and VQA.
+
+## MSCOCO
+
+The authors demonstrate that they outperform all results on all metrics on the MSCOCO test server.
+
+![image](https://user-images.githubusercontent.com/18450628/61824157-4f5f8e80-ae2b-11e9-8d90-657db453e26e.png)
+
+They also show how using the bottom-up approach over ResNet consistently scores them higher on detecting instances of objects, attributes, relations, etc:
+
+![image](https://user-images.githubusercontent.com/18450628/61824238-7fa72d00-ae2b-11e9-81b3-b5a7f80153f3.png)
+
+The authors, like their predecessors, insist on demonstrating their network&#x27;s frisbee ability:
+
+![image](https://user-images.githubusercontent.com/18450628/61824344-bed57e00-ae2b-11e9-87cd-597568587e1d.png)
+
+## VQA Results
+
+They also demonstrate that the addition of bottom-up attention improves results over a ResNet baseline. 
+
+![image](https://user-images.githubusercontent.com/18450628/61824500-28ee2300-ae2c-11e9-9016-2120a91917e4.png)
+
+They also show that their model outperformed all other submissions on the VQA submission. They mention using an ensemble of 30 models for their submission. 
+
+![image](https://user-images.githubusercontent.com/18450628/61824634-83877f00-ae2c-11e9-8d84-9589e0ea2be2.png)
+
+
+A sample image of what is attended in an image given a proper answer is shown in figure 6.
+
+![image](https://user-images.githubusercontent.com/18450628/61824608-736f9f80-ae2c-11e9-9d4e-8cb6bd0a1a92.png)
+
+
+# Comments
+
+The authors introduce a new way to select portions of the image on which to focus attention. The idea is very original and came at a time when object detection was making significant progress (i.e. FRCNN).
+
+A few comments:
+
+* This method might not generalize well to other types of data. It requires pre-training on larger datasets (visual genome, imagenet, etc.) which consist of categories that overlap with both the MSCOCO and VQA datasets (i.e. cars, people, etc.). It would be interesting to see an end-to-end model that does not rely on pre-training on other similar datasets.
+
+* No insight is given to the computational complexity nor to the inference time or training time. I imagine that FRCNN is resource intensive, and having to do a forward pass of FRCNN for every pass of the network must be a computational bottleneck. Not to mention that they ensembled 30 of them!</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

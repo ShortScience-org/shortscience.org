@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measuring the Effects of Data Parallelism on Neural Network Training - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Measuring the Effects of Data Parallelism on Neural Network Training - ShortScience.org">
+<meta property="og:description" content="This paper tries to do an exhaustive empirical evaluation of the question of how effectively you can...">
+<meta name="description" content="This paper tries to do an exhaustive empirical evaluation of the question of how effectively you can...">
+<meta property="og:image" content="https://i.imgur.com/uwCfBJR.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=shallue2018measuring">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=shallue2018measuring" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Shallue, Christopher J. and Lee, Jaehoon and Antognini, Joseph and Sohl-Dickstein, Jascha and Frostig, Roy and Dahl, George E."}, "headline": "Measuring the Effects of Data Parallelism on Neural Network Training", "description": "Summary of Measuring the Effects of Data Parallelism on Neural Network Training", "datePublished": "2019-05-29 06:32:51", "dateModified": "2019-05-29 06:32:51", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/uwCfBJR.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=shallue2018measuring", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, parallel,  distributed">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1811.03600"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Measuring%20the%20Effects%20of%20Data%20Parallelism%20on%20Neural%20Network%20Training%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Measuring the Effects of Data Parallelism on Neural Network Training</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Shallue%2C%20Christopher%20J.">Shallue, Christopher J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lee%2C%20Jaehoon">Lee, Jaehoon</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Antognini%2C%20Joseph">Antognini, Joseph</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sohl-Dickstein%2C%20Jascha">Sohl-Dickstein, Jascha</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Frostig%2C%20Roy">Frostig, Roy</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dahl%2C%20George%20E.">Dahl, George E.</a></span>
+<br>
+ - 2018 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=parallel">parallel</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20distributed"> distributed</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=shallue2018measuring">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-05-29&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;shallue2018measuring&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2042').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dshallue2018measuring%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2042" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=shallue2018measuring&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dshallue2018measuring%26a%3Ddecodyng&amp;text=Summary%20of%20Measuring%20the%20Effects%20of%20Data%20Parallelism%20on%20Neural%20Network%20Training&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dshallue2018measuring%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Measuring%20the%20Effects%20of%20Data%20Parallelism%20on%20Neural%20Network%20Training&amp;Body=Summary%20of%20Measuring%20the%20Effects%20of%20Data%20Parallelism%20on%20Neural%20Network%20Training%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dshallue2018measuring%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dshallue2018measuring%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dshallue2018measuring%26a%3Ddecodyng&amp;title=Summary%20of%20Measuring%20the%20Effects%20of%20Data%20Parallelism%20on%20Neural%20Network%20Training" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=shallue2018measuring&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-05-29</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper tries to do an exhaustive empirical evaluation of the question of how effectively you can reduce the number of training steps needed to train your model, by increasing the batch size. This is an interesting question because it’s becoming increasingly the case that computational costs scale very slowly with additional datapoints added to a batch, and so your per-example cost will be lower, the larger a batch you do your gradient calculation in. 
+
+In the most ideal world, we might imagine that there’s a perfect trade-off relationship between batch size and training steps. As a simplistic example, if it were the case that your model only needed to see each observation in the dataset once in order to obtain some threshold of accuracy, and there was an unbounded ability to trade off batch size against training steps, then one might imagine that you could just take one large step based on the whole dataset (in which case you’d then be doing not Stochastic Gradient Descent, but just Batch Gradient Descent). However, there’s reason to suspect that this won’t be possible; for one thing, it seems like having multiple noisier steps is better for optimization than taking one single step of training. 
+
+https://i.imgur.com/uwCfBJR.png
+
+This paper set out to do a large-scale evaluation of what this behavior looks like over a range of datasets. They did so by setting a target test error rate, and then measuring how many training steps were necessary to reach that error rate, for a given batch size. For fairness, they trained hyperparameters separately for each batch size. They found that, matching some theoretical predictions, at small to medium batch sizes, your increase in batch size pays off 1:1 in fewer needed training steps. As batch size increases more, the tradeoff curve diverges from 1:1, and eventually goes flat, meaning that, even if you increase your batch size more, you can no longer go any lower in terms of training steps. This seems to me connected to the idea that having a noisy, multi-step search process is useful for the non-convex environments that neural net optimizers are working in. 
+
+https://i.imgur.com/ycigYVX.png
+
+A few other notes from the paper:
+- Different model architectures can extend 1:1 scaling to higher batch sizes, and thus plateau at a lower number of training steps
+- Momentum also has the effect of plateauing at a lower number of needed training steps
+- It’s been previously suggested that you need to scale optimal learning rate linearly or according to the square root of the batch size, in order to maintain best performance. The authors find that there are different learning rates across batch size, but that they aren’t well-approximated by a linear or square-root relationship
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

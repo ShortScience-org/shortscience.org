@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Only Look Once: Unified, Real-Time Object Detection - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="You Only Look Once: Unified, Real-Time Object Detection - ShortScience.org">
+<meta property="og:description" content="This paper models object detection as a regression problem for bounding
+boxes and object class proba...">
+<meta name="description" content="This paper models object detection as a regression problem for bounding
+boxes and object class proba...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/cvpr/RedmonDGF16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/cvpr/RedmonDGF16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Redmon, Joseph and Divvala, Santosh Kumar and Girshick, Ross B. and Farhadi, Ali"}, "headline": "You Only Look Once: Unified, Real-Time Object Detection", "description": "Summary of You Only Look Once: Unified, Real-Time Object Detection", "datePublished": "2017-08-31 16:43:41", "dateModified": "2017-08-31 16:43:41", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/cvpr/RedmonDGF16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://doi.ieeecomputersociety.org/10.1109/CVPR.2016.91"><span class="glyphicon glyphicon-link"></span> doi.ieeecomputersociety.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">You Only Look Once: Unified, Real-Time Object Detection</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Redmon%2C%20Joseph">Redmon, Joseph</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Divvala%2C%20Santosh%20Kumar">Divvala, Santosh Kumar</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Girshick%2C%20Ross%20B.">Girshick, Ross B.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Farhadi%2C%20Ali">Farhadi, Ali</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/cvpr&amp;year=2016">Conference and Computer Vision and Pattern Recognition - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/cvpr/RedmonDGF16">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="abhshkdz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/RedmonDGF16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-198').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/RedmonDGF16%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-198" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/RedmonDGF16&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Dabhshkdz&amp;text=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection&amp;Body=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Dabhshkdz&amp;title=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/RedmonDGF16&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper models object detection as a regression problem for bounding
+boxes and object class probabilities with a single pass through the CNN. The
+main contribution is the idea of dividing the image into a 7x7 grid, and having
+each cell predict a distribution over class labels as well as a bounding box
+for the object whose center falls into it. It&#x27;s much faster than R-CNN and
+Fast R-CNN, as the additional step of extracting region proposals has been
+removed.
+
+## Strengths
+
+- Works real-time. Base model runs at 45fps and a faster version goes up to
+150fps, and they claim that it&#x27;s more than twice as fast as other works on
+real-time detection.
+
+- End-to-end model; Localization and classification errors can be jointly
+optimized.
+
+- YOLO makes more localization errors and fewer background mistakes than
+Fast R-CNN, so using YOLO to eliminate false background detections from
+Fast R-CNN results in ~3% mAP gain (without much computational time as R-CNN
+is much slower).
+
+## Weaknesses / Notes
+
+- Results fall short of state-of-the-art: 57.9% v/s 70.4% mAP (Faster R-CNN).
+
+- Performs worse at detecting small objects, as at most one object per grid
+cell can be detected.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/RedmonDGF16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-199').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/RedmonDGF16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-199" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/RedmonDGF16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Daleju&amp;text=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection&amp;Body=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FRedmonDGF16%26a%3Daleju&amp;title=Summary%20of%20You%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/RedmonDGF16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a model (&quot;YOLO&quot;) to detect bounding boxes in images.
+  * In comparison to Faster R-CNN, this model is faster but less accurate.
+
+### How
+  * Architecture
+    * Input are images with a resolution of 448x448.
+    * Output are `S*S*(B*5 + C)` values (per image).
+      * `S` is the grid size (default value: 7). Each image is split up into `S*S` cells.
+      * `B` is the number of &quot;tested&quot; bounding box shapes at each cell (default value: 2).
+        So at each cell, the network might try one large and one small bounding box.
+        The network predicts additionally for each such tested bounding box `5` values.
+        These cover the exact position (x, y) and scale (height, width) of the bounding box as well as a confidence value.
+        They allow the network to fine tune the bounding box shape and reject it, e.g. if there is no object in the grid cell.
+        The confidence value is zero if there is no object in the grid cell and otherwise matches the IoU between predicted and true bounding box.
+      * `C` is the number of classes in the dataset (e.g. 20 in Pascal VOC). For each grid cell, the model decides once to which of the `C` objects the cell belongs.
+    * Rough overview of their outputs:
+      * ![Method](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/YOLO__method.jpg?raw=true &quot;Method&quot;)
+    * In contrast to Faster R-CNN, their model does *not* use a separate region proposal network (RPN).
+    * Per bounding box they actually predict the *square root* of height and width instead of the raw values.
+      That is supposed to result in similar errors/losses for small and big bounding boxes.
+    * They use a total of 24 convolutional layers and 2 fully connected layers.
+      * Some of these convolutional layers are 1x1-convs that halve the number of channels (followed by 3x3s that double them again).
+      * Overview of the architecture:
+        * ![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/YOLO__architecture.jpg?raw=true &quot;Architecture&quot;)
+    * They use Leaky ReLUs (alpha=0.1) throughout the network. The last layer uses linear activations (apparently even for the class prediction...!?).
+    * Similarly to Faster R-CNN, they use a non maximum suppression that drops predicted bounding boxes if they are too similar to other predictions.
+  * Training
+    * They pretrain their network on ImageNet, then finetune on Pascal VOC.
+    * Loss
+      * They use sum-squared losses (apparently even for the classification, i.e. the `C` values).
+      * They dont propagate classification loss (for `C`) for grid cells that don&#x27;t contain an object.
+      * For each grid grid cell they &quot;test&quot; `B` example shapes of bounding boxes (see above).
+        Among these `B` shapes, they only propagate the bounding box losses (regarding x, y, width, height, confidence) for the shape that has highest IoU with a ground truth bounding box.
+      * Most grid cells don&#x27;t contain a bounding box. Their confidence values will all be zero, potentialle dominating the total loss.
+        To prevent that, the weighting of the confidence values in the loss function is reduced relative to the regression components (x, y, height, width).
+
+### Results
+  * The coarse grid and B=2 setting lead to some problems. Namely, small objects are missed and bounding boxes can end up being dropped if they are too close to other bounding boxes.
+  * The model also has problems with unusual bounding box shapes.
+  * Overall their accuracy is about 10 percentage points lower than Faster R-CNN with VGG16 (63.4% vs 73.2%, measured in mAP on Pascal VOC 2007).
+  * They achieve 45fps (22ms/image), compared to 7fps (142ms/image) with Faster R-CNN + VGG16.
+  * Overview of results on Pascal VOC 2012:
+    * ![Results on VOC2012](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/YOLO__results.jpg?raw=true &quot;Results on VOC2012&quot;)
+  * They also suggest a faster variation of their model which reached 145fps (7ms/image) at a further drop of 10 percentage points mAP (to 52.7%).
+  * A significant part of their error seems to come from badly placed or sized bounding boxes (e.g. too wide or too much to the right).
+  * They mistake background less often for objects than Fast R-CNN. They test combining both models with each other and can improve Fast R-CNN&#x27;s accuracy by about 2.5 percentage points mAP.
+  * They test their model on paintings/artwork (Picasso and People-Art datasets) and notice that it generalizes fairly well to that domain.
+  * Example results (notice the paintings at the top):
+    * ![Examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/YOLO__examples.jpg?raw=true &quot;Examples&quot;)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

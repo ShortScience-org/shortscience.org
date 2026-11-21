@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salient Region Detection via High-Dimensional Color Transform - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Salient Region Detection via High-Dimensional Color Transform - ShortScience.org">
+<meta property="og:description" content="**Introduction**
+* Salient region is an area where a striking combination of features in images is p...">
+<meta name="description" content="**Introduction**
+* Salient region is an area where a striking combination of features in images is p...">
+<meta property="og:image" content="https://i.imgur.com/4eF1UZd.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2014.118">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2014.118" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jiwhan Kim and Dongyoon Han and Yu-Wing Tai and Junmo Kim"}, "headline": "Salient Region Detection via High-Dimensional Color Transform", "description": "Summary of Salient Region Detection via High-Dimensional Color Transform", "datePublished": "2019-11-22 08:27:47", "dateModified": "2019-11-22 08:27:47", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/4eF1UZd.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2014.118", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, ">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://doi.org/10.1109/cvpr.2014.118"><span class="glyphicon glyphicon-link"></span> doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Salient%20Region%20Detection%20via%20High-Dimensional%20Color%20Transform%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Salient Region Detection via High-Dimensional Color Transform</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jiwhan%20Kim">Jiwhan Kim</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dongyoon%20Han">Dongyoon Han</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yu-Wing%20Tai">Yu-Wing Tai</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Junmo%20Kim">Junmo Kim</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/cvpr&amp;year=2014">Conference and Computer Vision and Pattern Recognition - 2014</a> <small>via Local CrossRef</small>
+<br>
+Keywords: 
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=10.1109/cvpr.2014.118">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="desiananurchalifah" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=desiananurchalifah" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=desiananurchalifah&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/48cdd50c286d91e2537290e5a3cb1feb?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Desiana Nurchalifah&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: desiananurchalifah&lt;br&gt;Posted: 2019-11-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;10.1109/cvpr.2014.118&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/48cdd50c286d91e2537290e5a3cb1feb?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-42').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3D10.1109/cvpr.2014.118%26a%3Ddesiananurchalifah" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-42" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2014.118&amp;a=desiananurchalifah" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2014.118%26a%3Ddesiananurchalifah&amp;text=Summary%20of%20Salient%20Region%20Detection%20via%20High-Dimensional%20Color%20Transform&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2014.118%26a%3Ddesiananurchalifah" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Salient%20Region%20Detection%20via%20High-Dimensional%20Color%20Transform&amp;Body=Summary%20of%20Salient%20Region%20Detection%20via%20High-Dimensional%20Color%20Transform%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2014.118%26a%3Ddesiananurchalifah"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2014.118%26a%3Ddesiananurchalifah" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.1109%2Fcvpr.2014.118%26a%3Ddesiananurchalifah&amp;title=Summary%20of%20Salient%20Region%20Detection%20via%20High-Dimensional%20Color%20Transform" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=10.1109/cvpr.2014.118&amp;a=desiananurchalifah" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=desiananurchalifah" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Desiana Nurchalifah 2019-11-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">**Introduction**
+* Salient region is an area where a striking combination of features in images is perceived at the first observation.
+* These features combined to make a region that has a significant distinction with other areas in the image.
+* This paper presents a map of saliency using linear combination of high-dimensional color representation space.
+
+**Related work**
+* Present work in saliency detection is divided into two groups which are taking into account low-level features, and statistical learning methods. Both approach has variety of results with no clear significance which performs better in saliency detection.
+* In the first group of taking into account of low-level features, there are approaches on saliency region detection based on color contrast, Markovian approach, and multi-scale saliency based on superpixels that have drawbacks on the pres.ence of high-contrast edges, unpreserved boundary, and segmentation parameters.
+* Using learning-based methods present are region detection saliency based on the regional descriptor, using graph-based, and sample patches.
+
+**Approach**
+* Paper provides a method of mapping low dimensional color of RGB, CIELab, HSV spaces into high dimensional color.
+* Method identify the presence of superpixel saliency features using the SLIC method with 500 number of superpixels.
+* Feature vector is defined by the location of superpixels and then combined with color which proceeds to color space representation computation.
+* Histogram features are later combined with 8 bins in each of the histogram and distance is computed using the Chi-squared method.
+* Global and local contrast are used using Euclidean distance with variance parameters of 0.25.
+* Histogram of gradients method with 31 dimensions is used to extract shape and texture features in the superpixels. As backgrounds tend to have more blur features in the pixel, separation of backgrounds is done using Singular Value Feature which algorithm is following the concept of Eigen images with weight acquired by using Singular Value Decomposition.
+* 75 dimension of feature vectors are then obtained for saliency detection. These feature maps are combined from all the superpixel operations mentioned. Features included are location features, color features, color histogram features, color contrast features, shape and texture features.
+* Regression algorithm is then applied to feature vectors. As large databases including 2000 images in a dataset are tested, the best present approach for the algorithm is a random forest. An unlimited number of nodes are applied with 200 trees.
+* To construct the transformation into high-dimensional color, a Trimap is built by dividing the starting saliency map to three different regions that are 2x2, 3x3, and 4x4. Then seven level of adaptive thresholding is applied to each subregion which then produces 21-level of the locally thresholded map.
+* Global threshold construct the trimap by the division of local levels, when the levels are more and equal to 18 levels, the map is defined by 1 and when the levels are less and equal than 6 levels, map is defined by 0.
+
+https://i.imgur.com/4eF1UZd.png
+
+* High dimensional color is used as it combines all the benefits of color representation properties. Nonlinear color representation in RGB and its gradients, CIELab color representation, and saturation and hue in HSV are combined. This produces 11 color channels.
+* Linear RGB values are not combined as it counteracts with YUV/YIQ color space.
+* Then gamma correction in the range of 0.5 to 2 with 0.5 intervals is applied, generating 44 high dimensional color vector.
+* Background that had been separated from the foreground in trimap is then examined to approximate color coefficients&#x27; linear combination using the minimum of least square problem of two matrices. The first matrix is a vector with binary value with 0 represents background and 1 represents foreground. The second matrix is color samples multiplied by a coefficient vector.
+* The map of the saliency region is then built by the summation of color samples applied to the coefficient vector estimation. The whole method is iterated three times to construct a stable saliency map.
+* The map is then refined by spatial information by adding more weights to pixels that contain foreground region. It is defined by exponential to the power of a parameter 0.5 applied to the minimum Euclidean distance for both foreground and background. It is concluded in the image below:
+
+https://i.imgur.com/k9heDiw.png
+
+* Algorithm is evaluated using three datasets that contain 5000 images in the MSRA dataset, 1000 images in the ECCSD dataset, and 643 multiple objects in the Interactive co-segmentation dataset.
+* Eight saliency region detection are compared using precision and recall measurements. The algorithms compared are LC, HC, LR, SF, HS, GMR, and DRFI.
+* F-measurement to evaluate performance is computed by application of precision-recall, and a quadratic parameter added by one that is divided by the summation of precision, recall, and the quadratic parameter. The quadratic parameter has a value of 0.3.
+* Algorithm performance placed at the second-best compared to all other methods.
+
+**Notes on The Paper**
+* Paper provides an algorithm that performs well for detecting saliency based on colors by generating features that are high dimensional from low-level features.
+* In high dimensional color space, salient regions are able to be separated from the background (Rahman, I et al. 2016).
+* If the algorithm is further developed using classifier, it is then able to integrate richer features as a higher dimension is present (Borji, A et al. 2017).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding - ShortScience.org">
+<meta property="og:description" content="The last two years have seen a number of improvements in the field of language model pretraining, an...">
+<meta name="description" content="The last two years have seen a number of improvements in the field of language model pretraining, an...">
+<meta property="og:image" content="https://i.imgur.com/2329e3L.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.04805">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1810.04805" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jacob Devlin and Ming-Wei Chang and Kenton Lee and Kristina Toutanova"}, "headline": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", "description": "Summary of BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", "datePublished": "2018-11-02 06:43:01", "dateModified": "2018-11-02 06:43:01", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/2329e3L.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1810.04805", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CL">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1810.04805v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22BERT%3A%20Pre-training%20of%20Deep%20Bidirectional%20Transformers%20for%20Language%20Understanding%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jacob%20Devlin">Jacob Devlin</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ming-Wei%20Chang">Ming-Wei Chang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kenton%20Lee">Kenton Lee</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kristina%20Toutanova">Kristina Toutanova</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CL">cs.CL</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/10/11<br><b>Abstract:</b>   We introduce a new language representation model called BERT, which stands
+for Bidirectional Encoder Representations from Transformers. Unlike recent
+language representation models, BERT is designed to pre-train deep
+bidirectional representations by jointly conditioning on both left and right
+context in all layers. As a result, the pre-trained BERT representations can be
+fine-tuned with just one additional output layer to create state-of-the-art
+models for a wide range of tasks, such as question answering and language
+inference, without substantial task-specific architecture modifications.
+  BERT is conceptually simple and empirically powerful. It obtains new
+state-of-the-art results on eleven natural language processing tasks, including
+pushing the GLUE benchmark to 80.4% (7.6% absolute improvement), MultiNLI
+accuracy to 86.7 (5.6% absolute improvement) and the SQuAD v1.1 question
+answering Test F1 to 93.2 (1.5% absolute improvement), outperforming human
+performance by 2.0%.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422').hide());void($('#showless-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422').show());void($('#more-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422').show());void($('#showless-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422').hide());void($('#more-am91cm5hbHMvY29yci8xODEwLjA0ODA1-1422').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1810.04805">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1810.04805&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">10</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1423').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1810.04805%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1423" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.04805&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.04805%26a%3Ddecodyng&amp;text=Summary%20of%20BERT%3A%20Pre-training%20of%20Deep%20Bidirectional%20Transformers%20for%20Language%20Understanding&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.04805%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20BERT%3A%20Pre-training%20of%20Deep%20Bidirectional%20Transformers%20for%20Language%20Understanding&amp;Body=Summary%20of%20BERT%3A%20Pre-training%20of%20Deep%20Bidirectional%20Transformers%20for%20Language%20Understanding%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.04805%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.04805%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.04805%26a%3Ddecodyng&amp;title=Summary%20of%20BERT%3A%20Pre-training%20of%20Deep%20Bidirectional%20Transformers%20for%20Language%20Understanding" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.04805&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The last two years have seen a number of improvements in the field of language model pretraining, and BERT - Bidirectional Encoder Representations from Transformers - is the most recent entry into this canon. The general problem posed by language model pretraining is: can we leverage huge amounts of raw text, which aren’t labeled for any specific classification task, to help us train better models for supervised language tasks (like translation, question answering, logical entailment, etc)? Mechanically, this works by either 1) training word embeddings and then using those embeddings as input feature representations for supervised models, or 2) treating the problem as a transfer learning problem, and fine-tune to a supervised task - similar to how you’d fine-tune a model trained on ImageNet by carrying over parameters, and then training on your new task. Even though the text we’re learning on is strictly speaking unsupervised (lacking a supervised label), we need to design a task on which we calculate gradients in order to train our representations. For unsupervised language modeling, that task is typically structured as predicting a word in a sequence given prior words in that sequence. Intuitively, in order for a model to do a good job at predicting the word that comes next in a sentence, it needs to have learned patterns about language, both on grammatical and semantic levels. A notable change recently has been the shift from learning unconditional word vectors (where the word’s representation is the same globally) to contextualized ones, where the representation of the word is dependent on the sentence context it’s found in. All the baselines discussed here are of this second type. 
+
+The two main baselines that the BERT model compares itself to are OpenAI’s GPT, and Peters et al’s ELMo. The GPT model uses a self-attention-based Transformer architecture, going through each word in the sequence, and predicting the next word by calculating an attention-weighted representation of all prior words. (For those who aren’t familiar, attention works by multiplying a “query” vector with every word in a variable-length sequence, and then putting the outputs of those multiplications into a softmax operator, which inherently gets you a weighting scheme that adds to one). ELMo uses models that gather context in both directions, but in a fairly simple way: it learns one deep LSTM that goes from left to right,  predicting word k using words 0-k-1, and a second LSTM that goes from right to left, predicting word k using words k+1 onward. These two predictions are combined (literally: just summed together) to get a representation for the word at position k. 
+
+https://i.imgur.com/2329e3L.png
+
+BERT differs from prior work in this area in several small ways, but one primary one: instead of representing a word using only information from words before it, or a simple sum of prior information and subsequent information, it uses the full context from before and after the word in each of its multiple layers. It also uses an attention-based Transformer structure, but instead of incorporating just prior context, it pulls in information from the full sentence. To allow for a model that actually uses both directions of context at a time in its unsupervised prediction task, the authors of BERT slightly changed the nature of that task: it replaces the word being predicted with the “mask” token, so that even with multiple layers of context aggregation on both sides, the model doesn’t have any way of knowing what the token is. By contrast, if it weren’t masked, after the first layer of context aggregation, the representations of other words in the sequence would incorporate information about the predicted word k, making it trivial, if another layer were applied on top of that first one, for the model to directly have access to the value it’s trying to predict. This problem can either be solved by using multiple layers, each of which can only see prior context (like GPT), by learning fully separate L-R and R-L models, and combining them at the final layer (like ELMo) or by masking tokens, and predicting the value of the masked tokens using the full remainder of the context. 
+
+This task design crucially allows for a multi-layered bidirectional architecture, and consequently a much richer representation of context in each word’s pre-trained representation. BERT demonstrates dramatic improvements over prior work when fine tuned on a small amount of supervised data, suggesting that this change added substantial value.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

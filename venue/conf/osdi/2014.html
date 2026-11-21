@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summaries from USENIX Operating Systems Design and Implementation Conference - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Summaries from USENIX Operating Systems Design and Implementation Conference - ShortScience.org">
+<meta property="og:description" content="Summaries of the research papers published in USENIX Operating Systems Design and Implementation Conference">
+<meta name="description" content="Summaries of the research papers published in USENIX Operating Systems Design and Implementation Conference">
+<meta property="og:image" content="https://i.imgur.com/5zYgpiD.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/venue?key=conf/osdi&amp;year=2014">
+<meta property="og:url" content="https://shortscience.org/venue?key=conf/osdi&amp;year=2014" />
+
+
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<br><div class="container" style="max-width:700px; margin:0 auto;">
+<div class="alert" style="background-color:rgb(250,250,250);">
+<h3 style='margin:0px;padding-left:10px;'><a href="https://www.usenix.org/conferences"><img style="width:60px;" src="https://i.imgur.com/5zYgpiD.png" alt=""/></a> <a href="https://www.usenix.org/conferences">USENIX Operating Systems Design and Implementation Conference</a></h3>
+<br>
+<div style="text-align: left;max-height:300px;overflow:auto;">OSDI brings together professionals from academic and industrial backgrounds in what has become a premier forum for discussing the design, implementation, and implications of systems software. The OSDI Symposium emphasizes innovative research as well as quantified or insightful experiences in systems design and implementation.</div>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/venue?key=conf/osdi&amp;year=2014">2014 <span class="badge">2</span></a></li></ul>
+<br>
+<div id="vignettes">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/li_mu"><span class="glyphicon glyphicon-link"></span> www.usenix.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Scaling%20Distributed%20Machine%20Learning%20with%20the%20Parameter%20Server%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=conf/osdi/LiAPSAJLSS14"><big><span class="papertitle">Scaling Distributed Machine Learning with the Parameter Server</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Li%2C%20Mu">Li, Mu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Andersen%2C%20David%20G.">Andersen, David G.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Park%2C%20Jun%20Woo">Park, Jun Woo</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Smola%2C%20Alexander%20J.">Smola, Alexander J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ahmed%2C%20Amr">Ahmed, Amr</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Josifovski%2C%20Vanja">Josifovski, Vanja</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Long%2C%20James">Long, James</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shekita%2C%20Eugene%20J.">Shekita, Eugene J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Su%2C%20Bor-Yiing">Su, Bor-Yiing</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/osdi&amp;year=2014">USENIX Operating Systems Design and Implementation Conference - 2014</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<div id="mwhittaker" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=mwhittaker" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mwhittaker&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Michael Whittaker&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mwhittaker&lt;br&gt;Posted: 2017-10-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/osdi/LiAPSAJLSS14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6273').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/osdi/LiAPSAJLSS14%26a%3Dmwhittaker" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6273" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/osdi/LiAPSAJLSS14&amp;a=mwhittaker" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FLiAPSAJLSS14%26a%3Dmwhittaker&amp;text=Summary%20of%20Scaling%20Distributed%20Machine%20Learning%20with%20the%20Parameter%20Server&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FLiAPSAJLSS14%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Scaling%20Distributed%20Machine%20Learning%20with%20the%20Parameter%20Server&amp;Body=Summary%20of%20Scaling%20Distributed%20Machine%20Learning%20with%20the%20Parameter%20Server%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FLiAPSAJLSS14%26a%3Dmwhittaker"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FLiAPSAJLSS14%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FLiAPSAJLSS14%26a%3Dmwhittaker&amp;title=Summary%20of%20Scaling%20Distributed%20Machine%20Learning%20with%20the%20Parameter%20Server" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/osdi/LiAPSAJLSS14&amp;a=mwhittaker" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=mwhittaker" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Michael Whittaker 2017-10-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">A parameter server is more or less a distributed key-value store optimized for training machine learning models. For example, imagine we&#x27;re learning a weight vector $w = (w_1, w_2, w_3)$ using logistic regression. We can distribute $w$ across two shards of the parameter server where one shard stores $(1, w_1)$ and the other stores $(2, w_2)$ and $(3, w_3)$. Worker nodes can then read parts of the weight vector, perform some computation, and write back parts of the weight vector.
+
+This paper presents an optimized parameter server with the following features:
+
+1. Efficient communication.
+2. Flexible consistency models.
+3. Elastic scalability.
+4. Fault tolerance and durability.
+5. Ease of use.
+
+#### Machine Learning
+
+Many machine learning algorithms try to find a weight vector $w \in \mathbb{R}^d$ that minimizes a regularized cost function of the following form:
+
+$$ F(w) = \Omega(w) + \sum_{i=1}^n l(x_i, y_i, w) $$
+
+When $n$ and $d$ get really big, it becomes intractable to run these algorithms on a single machine. Instead, we have to parallelize the algorithm across multiple machines.
+
+As an example, consider how to perform distributed batch gradient descent across $m$ workers. We initialize $w$ and store it in a parameter server. Concurrently, each worker begins by reading $\frac{1}{m}$ of the training data. Then, every worker reads $w$ from the parameter server and computes a gradient with respect to its local training data (actually, it only needs to read the relevant parts of $w$). Then, it pushes its gradient to the parameter server. Once the server receives gradients from every worker, it aggregates them together and updates $w$. Finally, workers pull the updated $w$ and loop.
+
+#### Architecture
+
+A parameter server consists of a bunch of servers that store weights and a bunch of workers that perform computations with the weights (e.g. compute gradients). Servers are organized into a server group managed by a server manager. Workers are organized into multiple worker groups, and each worker group is managed by a task scheduler. The server manager manages which data is assigned to which server. The task scheduler assigns tasks to workers and monitors progress.
+
+Parameters are stores as key-value pairs. For example, a weight vector $w \in \mathbb{R}^d$ can be stored as a set of pairs $(i, w_i)$ for $1 \leq 1 \leq d$. To store sparse vectors more efficiently, only non-zero entries of $w$ must be explicitly stored. If a pair $(i, w_i)$ is missing, the parameter server assumes $w_i = 0$.
+
+Most machine learning algorithms do not update individual entries of a weight vector at a time. Instead, they typically update part of a matrix or part of a vector. To take advantage of this workload pattern, the parameter server allows workers to read and write ranges of values instead of single values at a time. This reduces network overhead.
+
+In addition to pushing and pulling entries of  $w$, workers can also register user-defined functions to run at a server. For example, a server can compute the gradient of a regularization term.
+
+By default, the parameter server runs tasks asynchronously. That is, if a worker issues a pull or push request, it does not block. However, the parameter server also allows workers to explicitly mark dependencies between different requests which forces them to serialize.
+
+Some algorithms are robust to weir inconsistencies. These algorithms can often run faster with weaker consistency. The parameter server provides three levels of consistency:
+
+1. Sequential consistency in which every request is totally serialized.
+2. Eventual consistency in which requests are run whenever they please.
+3. Bounded delay in which a request is delayed until all tasks that began τ time ago have completed.
+
+Users can also specify that a certain consistency model only apply to a certain subset of key-value pairs as specified by a filter.
+
+#### Implementation
+
+Data is partitioned across servers using consistent hashing, and the server manager records the assignment of key ranges to machines. When a new server joins:
+
+1. The server manager assigns a new key range to the server.
+2. The server fetches its data from other servers.
+3. The server manager broadcasts the update to the other servers who relinquish data they no longer own.
+
+The parameter server uses chain replication to replicate data. Each node forms a chain with the $k$ previous nodes in the hashing ring. Workers send updates to the master which is chain replicated to the next $k$ servers.
+
+Logically, the parameter server tags each key-value pair with a vector clock (though honestly, I&#x27;m not exactly sure I understand why). Physically, each range of key-value pairs is associated with a vector clock. This range-based vector clock avoids storing redundant vector clock information.
+
+Messages sent from workers to servers are compressed with Snappy. Moreover, servers cache parts of messages, and workers can send a hash instead of a whole message if they the think a server has it cached.
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/muralidhar"><span class="glyphicon glyphicon-link"></span> www.usenix.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22f4%3A%20Facebook%27s%20Warm%20BLOB%20Storage%20System%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=conf/osdi/SubramanianLRHLLPSVTK14"><big><span class="papertitle">f4: Facebook&#x27;s Warm BLOB Storage System</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Subramanian%2C%20Muralidhar">Subramanian, Muralidhar</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lloyd%2C%20Wyatt">Lloyd, Wyatt</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Roy%2C%20Sabyasachi">Roy, Sabyasachi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hill%2C%20Cory">Hill, Cory</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lin%2C%20Ernest">Lin, Ernest</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Liu%2C%20Weiwen">Liu, Weiwen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Pan%2C%20Satadru">Pan, Satadru</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shankar%2C%20Shiva">Shankar, Shiva</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Viswanathan%2C%20Sivakumar">Viswanathan, Sivakumar</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tang%2C%20Linpeng">Tang, Linpeng</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kumar%2C%20Sanjeev">Kumar, Sanjeev</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/osdi&amp;year=2014">USENIX Operating Systems Design and Implementation Conference - 2014</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<div id="shagunsodhani" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/osdi/SubramanianLRHLLPSVTK14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6274').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/osdi/SubramanianLRHLLPSVTK14%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6274" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/osdi/SubramanianLRHLLPSVTK14&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FSubramanianLRHLLPSVTK14%26a%3Dshagunsodhani&amp;text=Summary%20of%20f4%3A%20Facebook%27s%20Warm%20BLOB%20Storage%20System&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FSubramanianLRHLLPSVTK14%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20f4%3A%20Facebook%27s%20Warm%20BLOB%20Storage%20System&amp;Body=Summary%20of%20f4%3A%20Facebook%27s%20Warm%20BLOB%20Storage%20System%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FSubramanianLRHLLPSVTK14%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FSubramanianLRHLLPSVTK14%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fosdi%2FSubramanianLRHLLPSVTK14%26a%3Dshagunsodhani&amp;title=Summary%20of%20f4%3A%20Facebook%27s%20Warm%20BLOB%20Storage%20System" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/osdi/SubramanianLRHLLPSVTK14&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### What are BLOBs
+
+Binary Large OBjects (BLOBs) refer to immutable binary data. A BLOB is created once, read many times, never modified, and sometimes deleted. In Facebook’s context, this would include photos, videos, documents, traces, heap dumps, and source code. Facebook was originally using Haystack as its BLOB storage system. But it is designed for IO bound workloads and not storage efficiency.
+
+To take a more specific example, when we post a new picture, a BLOB is created. Its data is written to the BLOB storage system and a handle corresponding to this data is stored in a Graph Store for quick retrieval later on. Now when someone clicks on that picture, a read request is fired and the handle is fetched from the graph store. Using this handle, the data (in this case the picture) can be retrieved. A CDN is in place to cache frequently accessed BLOBs.
+
+#### BLOB Storage Design
+BLOBs are aggregated into logical volumes. These volumes are initially unlocked and support reads, writes, and deletes. Once a volume is full, it gets locked and no more creates are allowed. Each volume consists of three files: a data file to hold BLOBs and their metadata, an index file which is a snapshot of the in-memory index of the storage machine, and a journal file to track which BLOBs have been deleted. For fault tolerance and performance, each logical volume maps into multiple physical volumes with each volume living entirely on one Haystack host. Haystack has fault tolerance to disk, host, rack, and data center failure, at an effective replication-factor of 3.6.
+
+All seems good so far but the problem is with the large and ever increasing storage footprint of the BLOBs. Facebook made an interesting observation in this regard — there is a large and increasing number of BLOBs with low request rates. So for these BLOBs, triple replication is an overkill. If only there was a separate BLOB storage system for these BLOBs. This is where f4 comes into the picture.
+
+#### Warm vs Hot
+
+Facebook benchmarked their existing implementation with a 2 week trace and observed that a kind of temperature zone exists where some BLOBs have a very high request rate (these are called the hot BLOBs) and some have a low request rate (these are called the warm BLOBs). f4 is proposed as an implementation for warm BLOB storage while Haystack would be used for hot BLOBs. Another observation was that age and temperature of BLOB are correlated. New BLOBs are queried and deleted at a much higher rate. Lastly, they observed that warm content is large and growing which furthers the need for f4.
+
+#### Design goals
+f4 was designed to reduce the effective-replication-factor without compromising on reliability and performance.
+
+#### Overview
+f4 is comprised of a number of cells, each cell residing completely in one data center. A cell is responsible for reliably storing a set of locked volumes and uses Reed-Solomon coding to store these volumes with a lower storage overhead. The downside is an increased rebuild and recovery time under failure and lower maximum read throughput.
+
+Since f4 cells support only read and delete operations, only data and index files are needed and both are read-only. For tracking deletes, all BLOBs are encrypted with keys stored in an external database. Deleting the key for a BLOB in f4 logically deletes it. The index files use triple replication within a cell and the data file is encoded and stored via a Reed-Solomon (n,k) code. The file is logically partitioned into contiguous sequences of n blocks, each of size b. For each such sequence of n blocks, k parity blocks are generated, making the size of the stripe n + k blocks. For a given block in a stripe, the other blocks in the stripe are called its companion blocks. BLOBs can be read directly from their data block. If a block is unavailable it can be recovered by decoding any n of its companion and parity blocks.
+The block-size for encoding is kept quite large (around 1 Gb) as it decreases the number of BLOBs that span multiple blocks, thereby reducing I/O operations to read and it reduces the amount of per-block metadata that f4 needs to maintain. But a very large size would mean a larger overhead for rebuilding the blocks.
+
+#### Components
+1. Name Node: This node maintains the mapping between data blocks and parity blocks and the storage nodes that hold the actual blocks.
+2. Storage Nodes: These nodes expose two APIs - an Index API that provides existence and location information for volumes, and a File API that provides access to data.
+3. Backoff Nodes: These nodes are storage-less, CPU-heavy nodes that handle the online reconstruction of request BLOBs (not the entire block).
+4. Rebuilder Nodes: They are similar to Backoff nodes, but they handle the offline reconstruction of entire blocks.
+5. Coordinator Nodes: These nodes are storage-less, CPU-heavy nodes that handle maintenance task, such as scheduling block rebuilding and ensuring an optimal data layout.
+
+A separate geo-replicated XOR coding scheme is also used to tolerate data center or geographic region failure. In this, each volume/stripe/block is paired with a buddy volume/stripe/block in a different geographic region. Then an XOR of the buddy blocks (called as XOR Block) is stored in a third region. The effective replication factor turns out to be 2.1
+
+#### Are the results good?
+Results are amazing! With a corpus of 65PB, f4 will save Facebook over 39 PB and 87 PB of storage at effective-replication-factor of 2.8 and 2.1 respectively. All this comes with low latency and fault tolerance.
+
+#### Lessons learnt
+The existence of temperature zones is not unique to Facebook. Such zones would be present in all kind of data at a large-enough scale with the line seperating these zones depending on the request and delete rates. Since older data is likely to have a different query rate than newer data, efficient migration from hot to warm storage before putting to cold storage needs to be explored more. This also suggests that one single data management system can not handle data of all ages as the constraints on the data start to change. In Facebook’s context, any data written to Haystack was constrained by at-most-one-writer requirement while data on f4 was free of this constraint. So 2 different data models, each optimized for its own use case could be used. Till now we have seen data management systems based on nature of data (relational or NoSQL), or based on nature of queries (read vs write-oriented). But this case study opens the door for a new kind of system which migrates data from one data model to another based on temperature zones. This is what Facebook ended up creating for this particular scenario.
+
+This case study also reinforces the superiority of modular architecture. Facebook has a clear need of separate data storage mechanism but what made it possible was its modular architecture which allowed for easy migration of data from Haystack to f4. Apparently Facebook’s overall architecture is designed to enable warm storage. For example, the caching stack would cache the results related to the most popular content which is expected to be newer content. Haystack can handle most of the reads and deletes thereby reducing the load on f4 and so on.
+
+I would be looking out for similar case studies from other data giants as well. Probably they are tackling this problem from an entirely different perspective. Whatever their approaches may be, it would be interesting to compare them with f4.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

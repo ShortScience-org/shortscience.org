@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One-shot Learning with Memory-Augmented Neural Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="One-shot Learning with Memory-Augmented Neural Networks - ShortScience.org">
+<meta property="og:description" content="This paper proposes a variant of Neural Turing Machine (NTM) for meta-learning or &quot;learning to learn...">
+<meta name="description" content="This paper proposes a variant of Neural Turing Machine (NTM) for meta-learning or &quot;learning to learn...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06065">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06065" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Adam Santoro and Sergey Bartunov and Matthew Botvinick and Daan Wierstra and Timothy Lillicrap"}, "headline": "One-shot Learning with Memory-Augmented Neural Networks", "description": "Summary of One-shot Learning with Memory-Augmented Neural Networks", "datePublished": "2016-05-31 12:37:48", "dateModified": "2016-05-31 12:37:48", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1605.06065", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1605.06065v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22One-shot%20Learning%20with%20Memory-Augmented%20Neural%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">One-shot Learning with Memory-Augmented Neural Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Adam%20Santoro">Adam Santoro</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sergey%20Bartunov">Sergey Bartunov</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Matthew%20Botvinick">Matthew Botvinick</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Daan%20Wierstra">Daan Wierstra</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Timothy%20Lillicrap">Timothy Lillicrap</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/05/19<br><b>Abstract:</b>   Despite recent breakthroughs in the applications of deep neural networks, one
+setting that presents a persistent challenge is that of &quot;one-shot learning.&quot;
+Traditional gradient-based networks require a lot of data to learn, often
+through extensive iterative training. When new data is encountered, the models
+must inefficiently relearn their parameters to adequately incorporate the new
+information without catastrophic interference. Architectures with augmented
+memory capacities, such as Neural Turing Machines (NTMs), offer the ability to
+quickly encode and retrieve new information, and hence can potentially obviate
+the downsides of conventional models. Here, we demonstrate the ability of a
+memory-augmented neural network to rapidly assimilate new data, and leverage
+this data to make accurate predictions after only a few samples. We also
+introduce a new method for accessing an external memory that focuses on memory
+content, unlike previous methods that additionally use memory location-based
+focusing mechanisms.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807').show());void($('#more-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807').show());void($('#showless-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807').hide());void($('#more-am91cm5hbHMvY29yci8xNjA1LjA2MDY1-807').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1605.06065">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-05-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1605.06065&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">17</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-808').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1605.06065%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-808" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06065&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06065%26a%3Dhlarochelle&amp;text=Summary%20of%20One-shot%20Learning%20with%20Memory-Augmented%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06065%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20One-shot%20Learning%20with%20Memory-Augmented%20Neural%20Networks&amp;Body=Summary%20of%20One-shot%20Learning%20with%20Memory-Augmented%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06065%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06065%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06065%26a%3Dhlarochelle&amp;title=Summary%20of%20One-shot%20Learning%20with%20Memory-Augmented%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06065&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-05-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper proposes a variant of Neural Turing Machine (NTM) for meta-learning or &quot;learning to learn&quot;, in the specific context of few-shot learning (i.e. learning from few examples). Specifically, the proposed model is trained to ingest as input a training set of examples and improve its output predictions as examples are processed, in a purely feed-forward way. This is a form of meta-learning because the model is trained so that its forward pass effectively executes a form of &quot;learning&quot; from the examples it is fed as input.
+
+During training, the model is fed multiples sequences (referred to as episodes) of labeled examples $({\bf x}_1, {\rm null}), ({\bf x}_2, y_1), \dots, ({\bf x}_T, y_{T-1})$, where $T$ is the size of the episode. For instance, if the model is trained to learn how to do 5-class classification from 10 examples per class, $T$ would be $5 \times 10 = 50$. Mainly, the paper presents experiments on the Omniglot dataset, which has 1623 classes. In these experiments, classes are separated into 1200 &quot;training classes&quot; and 423 &quot;test classes&quot;, and each episode is generated by randomly selecting 5 classes (each assigned some arbitrary vector representation, e.g. a  one-hot vector that is consistent within the episode, but not across episodes) and constructing a randomly ordered sequence of 50 examples from within the chosen 5 classes. Moreover, the correct label $y_t$ of a given input ${\bf x}_t$ is always provided only at the next time step, but the model is trained to be good at its prediction of the label of ${\bf x}_t$ at the current time step. This is akin to the scenario of online learning on a stream of examples, where the label of an example is revealed only once the model has made a prediction.
+
+The proposed NTM is different from the original NTM of Alex Graves, mostly in how it writes into its memory. The authors propose to focus writing to either the least recently used memory location or the most recently used memory location. Moreover, the least recently used memory location is reset to zero before every write (an operation that seems to be ignored when backpropagating gradients).
+
+Intuitively, the proposed NTM should learn a strategy by which, given a new input, it looks into its memory for information from other examples earlier in the episode (perhaps similarly to what a nearest neighbor classifier would do) to predict the class of the new input.
+
+The paper presents experiments in learning to do multiclass classification on the Omniglot dataset and regression based on functions synthetically generated by a GP. The highlights are that:
+
+1. The proposed model performs much better than an LSTM and better than an NTM with the original write mechanism of Alex Graves (for classification).
+2. The proposed model even performs better than a 1st nearest neighbor classifier.
+3. The proposed model is even shown to outperform human performance, for the 5-class scenario.
+4. The proposed model has decent performance on the regression task, compared to GP predictions using the groundtruth kernel.
+
+**My two cents**
+
+This is probably one of my favorite ICML 2016 papers. I really think meta-learning is a problem that deserves more attention, and this paper presents both an interesting proposal for how to do it and an interesting empirical investigation of it. 
+
+Much like previous work [\[1\]][1] [\[2\]][2], learning is based on automatically generating a meta-learning training set. This is clever I think, since a very large number of such &quot;meta-learning&quot; examples (the episodes) can be constructed, thus transforming what is normally a &quot;small data problem&quot; (few shot learning) into a &quot;big data problem&quot;, for which deep learning is more effective.
+
+I&#x27;m particularly impressed by how the proposed model outperforms a 1-nearest neighbor classifier. That said, the proposed NTM actually performs 4 reads at each time step, which suggests that a fairer comparison might be with a 4-nearest neighbor classifier. I do wonder how this baseline would compare.
+
+I&#x27;m also impressed with the observation that the proposed model surpassed humans.
+
+The paper also proposes to use 5-letter words to describe classes, instead of one-hot vectors. The motivation is that this should make it easier for the model to scale to much more than 5 classes. However, I don&#x27;t entirely follow the logic as to why one-hot vectors are problematic. In fact, I would think that arbitrarily assigning 5-letter words to classes would instead imply some similarity between classes that share letters that is arbitrary and doesn&#x27;t reflect true class similarity. 
+
+Also, while I find it encouraging that the performance for regression of the proposed model is decent, I&#x27;m curious about how it would compare with a GP approach that incrementally learns the kernel&#x27;s hyper-parameter (instead of using the groundtruth values, which makes this baseline unrealistically strong).
+
+Finally, I&#x27;m still not 100% sure how exactly the NTM is able to implement the type of feed-forward inference I&#x27;d expect to be required. I would expect it to learn a memory representation of examples that combines information from the input vector ${\bf x}_t$ *and* its label $y_t$. However, since the label of an input is presented at the following time step in an episode, it is not intuitive to me then how the read/write mechanisms are able to deal with this misalignment. My only guess is that since the controller is an LSTM, then it can somehow remember ${\bf x}_t$ until it gets $y_t$ and appropriately include the combined information into the memory. This could be supported by the fact that using a non-recurrent feed-forward controller is much worse than using an LSTM controller. But I&#x27;m not 100% sure of this either.
+
+All the above being said, this is still a really great paper, which I hope will help stimulate more research on meta-learning. Hopefully code for this paper can eventually be released, which would help in popularizing the topic.
+
+[1]: http://snowedin.net/tmp/Hochreiter2001.pdf
+[2]: http://www.thespermwhale.com/jaseweston/ram/papers/paper_16.pdf
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

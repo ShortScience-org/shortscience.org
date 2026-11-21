@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How (not) to Train your Generative Model: Scheduled Sampling, Likelihood, Adversary? - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How (not) to Train your Generative Model: Scheduled Sampling, Likelihood, Adversary? - ShortScience.org">
+<meta property="og:description" content="### Evaluating Generative Models
+
+A key topic I&#x27;m very interested in is the choices of objective fun...">
+<meta name="description" content="### Evaluating Generative Models
+
+A key topic I&#x27;m very interested in is the choices of objective fun...">
+<meta property="og:image" content="http://www.inference.vc/content/images/2015/11/Screen-Shot-2015-11-16-at-16-19-10.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/Huszar15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/Huszar15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Huszar, Ferenc"}, "headline": "How (not) to Train your Generative Model: Scheduled Sampling, Likelihood, Adversary?", "description": "Summary of How (not) to Train your Generative Model: Scheduled Sampling, Likelihood, Adversary?", "datePublished": "2016-07-15 03:06:46", "dateModified": "2016-07-15 03:18:41", "image": {"@type": "ImageObject", "url": "http://www.inference.vc/content/images/2015/11/Screen-Shot-2015-11-16-at-16-19-10.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/Huszar15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1511.05101"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22How%20%28not%29%20to%20Train%20your%20Generative%20Model%3A%20Scheduled%20Sampling%2C%20Likelihood%2C%20Adversary%3F%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">How (not) to Train your Generative Model: Scheduled Sampling, Likelihood, Adversary?</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Huszar%2C%20Ferenc">Huszar, Ferenc</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/Huszar15">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="inference" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=inference" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=inference&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;inFERENCe&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: inference&lt;br&gt;Posted: 2016-07-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/Huszar15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1650').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/Huszar15%26a%3Dinference" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1650" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/Huszar15&amp;a=inference" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHuszar15%26a%3Dinference&amp;text=Summary%20of%20How%20%28not%29%20to%20Train%20your%20Generative%20Model%3A%20Scheduled%20Sampling%2C%20Likelihood%2C%20Adversary%3F&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHuszar15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20How%20%28not%29%20to%20Train%20your%20Generative%20Model%3A%20Scheduled%20Sampling%2C%20Likelihood%2C%20Adversary%3F&amp;Body=Summary%20of%20How%20%28not%29%20to%20Train%20your%20Generative%20Model%3A%20Scheduled%20Sampling%2C%20Likelihood%2C%20Adversary%3F%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHuszar15%26a%3Dinference"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHuszar15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHuszar15%26a%3Dinference&amp;title=Summary%20of%20How%20%28not%29%20to%20Train%20your%20Generative%20Model%3A%20Scheduled%20Sampling%2C%20Likelihood%2C%20Adversary%3F" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/Huszar15&amp;a=inference" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=inference" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by inFERENCe 2016-07-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">### Evaluating Generative Models
+
+A key topic I&#x27;m very interested in is the choices of objective functions used in unsupervised learning and generative models. The key organising principle should be this: the objective function we use for training a probabilistic model should match the way we ultimately want to use the model. Yet, in unsupervised learning this is often overlooked and I think we lack clarity around what the models are used for and how they should be trained and evaluated. This paper tries to clarify this a bit in the context of generative models. I also want to mention that another ICLR submission this year also deals with this fundamental question: I highly recommend taking a look.
+
+Here, I&#x27;m going to consider a narrow definition of generative models: models we actually want to use to generate samples from which are then shown to a human user/observer. This includes use-cases such as image captioning, texture generation, machine translation, speech synthesis and dialogue systems, but excludes things like unsupervised pre-training for supervised learning, semisupervised learning, data compression, denoising and many others. Very often people don&#x27;t make this distinction clear when talking about generative models which is one of the reasons why there is still no clarity about what different objective functions do.
+
+I argue that when the goal is to train a model that can generate natural-looking samples, maximum likelihood is not a desirable training objective. Maximum likelihood is consistent so it can learn any distribution if it is given infinite data and a perfect model class. However, under model misspecification and finite data (that is, in pretty much every practically interesting scenario), it has a tendency to produce models that overgeneralise.
+
+#### KL divergence as a perceptual loss
+
+Generative modelling is about finding a probabilistic model $Q$ that in some sense approximates the natural distribution of data $P$. When researchers (or users of their product) evaluate generative models for perceptual quality, they draw samples from it, then - for lack of a better word - eyeball the samples. In visual information processing this is often referred to as no-reference perceptual quality assessment \citep[see e.,g.\ ][]{wang2002noreference}. In the paper, I propose that the KL divergence $KL[Q\| P]$ can be used as an idealised objective function to describe this scenario. This related to maximum likelihood which minimises $KL[P\|Q]$, but different in fundamental ways which I will explain later.
+
+Here is why I think $KL[Q\|P]$ should be used: First, we can make the assumption that the perceived quality of each sample is related to the \emph{surprisal} $-\log Q_{human}(x)$ under the human observers&#x27; subjective prior of stimuli $Q_{human}(x)$. For those of you not familiar with computational cognitive science, this will seem ad-hoc, but it&#x27;s a relatively common assumption to make when modelling reaction times in experiments for example. We further assume that the human observer maintains a very accurate model of natural stimuli, thus, $Q_{human}(x) \approx P(x)$. This is a fancy way of saying things like the observer being a native speaker therefore understanding all the nuances in language. These two assumptions suggest that in order to optimise our chances in this Turing test-like scenario, we need to minimise the following cross-entropy or perplexity term:
+
+\begin{equation} - \mathbb{E}_{x\sim Q} \log P(x) \end{equation}
+
+This perplexity is the exact opposite average negative log likelihood $- \mathbb{E}_{x\sim P} \log Q(x)$, with the role of $P$ and $Q$ changed. However, the perplexity alone would be maximised by a model $Q$ that deterministically picks the most likely stimulus. To enforce diversity one can simultaneously try to maximise the Shannon entropy of $Q$. This leaves us with the following KL divergence to optimise:
+
+\begin{equation} KL[Q\| P] = - \mathbb{E}{x\sim Q} \log P(x) + \mathbb{E}{x\sim Q} \log Q(x) \end{equation}
+
+So if we want to train models that produce nice samples, my recommendation is to try to use $KL[Q\|P]$ as an objective function or something that behaves like it. How does maximum likelihood compare?
+
+#### Differences between maximum likelihood and $KL[Q\|P]$
+
+Maximum likelihood is roughly the same as minimising $KL[P\|Q]$. The differences between minimising $KL[P\|Q]$ and $K[Q\|P]$ are well understood and it frequently comes up in the context of Bayesian approximate inference as well. Both divergences ensure consistency, minimising either converges to the true $P$ in the limit of infinite data and a perfect model class. However, they differ fundamentally in the way they deal with finite data and model misspecification (in almost every practical scenario):
+
+$KL[P\|Q]$ tends to favour approximations $Q$ that overgeneralise $P$. If P is multimodal, the optimal $Q$ will tend to cover all the modes of $P$, even at the cost of introducing probability mass where $P$ has $0$ mass. Practically this means that the model will occasionally sample unplausible samples that don&#x27;t look anything like samples from $P$.
+$KL[Q\|P]$ tends to favour under-generalisation. The optimal $Q$ will typically describe the single largest mode of $P$ well, at the cost of ignoring other modes if they are hard to model without covering low-probability areas as well. Practically this means that $KL[Q\|P]$ will try to avoid introducing unplausible samples, sometimes at the cost of missing the majority of plausible samples under $P$.
+In other words: $KL[P\|Q]$ is liberal, $KL[Q\|P]$ is conservative. In yet other words: $KL[P\|Q]$ is an optimist, $KL[Q\|P]$ is a pessimist.
+
+The problem of course is that $KL[Q\|P]$ is super hard to optimise beased on a finite sample from $P$. Even harder than maximum likelihood. Not only that, the KL divergence is also not very well behaved, and is not well-defined unless $P$ is positive everywhere where $Q$ is positive. So there is little hope we can turn $KL[Q\|P]$ into a practical training algorithm.
+
+#### Generalised Adversarial Training
+
+Generative Adversarial Networks(GANs) train a generative model jointly with an adversarial discriminative model that tries to differentiate between artificial and real data. The idea is, a generative model is good if it can fool the best discriminative model into thinking the generated samples are real. GANs have produced some of the nicest looking samples you&#x27;ll find on the Internet and got people very excited about generative models again: human faces, album covers, etc.
+
+How do they come into this picture? It&#x27;s because they can be understood as approximately minimising the Jensen-Shannon divergence:
+
+\begin{equation} JSD[P\|Q] = JSD[P\|Q] = \frac{1}{2}KL\left[P\middle\|\frac{P+Q}{2}\right] + \frac{1}{2}KL\left[Q\middle\|\frac{P+Q}{2}\right]. 
+\end{equation}
+
+Looking at the equation above you can immediately see how it&#x27;s related to this topic. JS divergence is a bit like a symmetrised version of KL divergence. It&#x27;s not $KL[P\|Q]$, not $KL[Q\|P]$, but a bit of both. So one can expect that minimising JS divergence would exhibit a behaviour that is kind of halfway between the two extremes explained above. And that means that they would generate better samples than methods trained via maximum likelihood and similar objectives.
+
+What&#x27;s more, one can generalise JS divergence to a whole family of divergences, parametrised by a probability $0&lt;\pi&lt;1$ as follows:
+
+\begin{equation} JS_{\pi}[P\|Q] = \pi \cdot KL[P\|\pi P+(1-\pi)Q] + (1-\pi)KL[Q\|\pi P+(1-\pi)Q]. 
+\end{equation}
+
+What I show in the paper is that by varrying $\pi$ between the two extremes, one can effectively interpolate between the behaviour of maximum likelihood ($\pi\rightarrow 0$) and minimising $KL[Q\|P]$ ($\pi\rightarrow 1$). See the paper for details. This interpolation between behaviours is explained in this main figure below:
+
+![](http://www.inference.vc/content/images/2015/11/Screen-Shot-2015-11-16-at-16-19-10.png)
+
+For any given value of $\pi$, we can optimise $JS_{\pi}$ approximately using an algorithm that is a slightly changed version of the original GAN algorithm. This is because the generalised JS divergence still has an elegant information theoretic interpretation. Consider a communications channel on which we can transmit a single data point of some kind. We toss a coin and with probability $\pi$, we send a sample from $P$, and with probability $1-\pi$ we send a sample from $Q$ instead. The receiver doesn&#x27;t know the outcome of the coinflip, she only observes the sample. The $JS_{\pi}$ is the mutual information between the observed sample and the coinflip. It is also an upper bound on how well any algorithm can do in guessing the coinflip from the observed sample.
+
+To implement an adversarial training algorithm for $JS_{\pi}$ one simply needs to change the ratio of samples the discriminative network sees from $Q$ vs $P$ (or apply appropriate weights during training). In the original method the discriminator network is faced with a balanced classification problem, i.e. $\pi=\frac{1}{2}$. It is hard to believe, but this irrelevant-looking modification changes the behaviour of the GAN algorithm dramatically, and can in theory allow the GAN algorithm to approximate both maximum likelihood or $KL[Q\|P]$.
+
+This analysis explains why GANs have been so successful in generating very nice looking images, and relatively few weird-looking ones. It is also worth pointing out that the GAN method is still in its infantcy and has many issues and limitations. The main issue is that it is based on sampling from $Q$ which doesn&#x27;t work well in high dimensions. Hopefully some of these limitations can be overcome and then we should have a pretty powerful framework for training good generative models.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

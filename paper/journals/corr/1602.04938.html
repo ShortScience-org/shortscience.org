@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&quot;Why Should I Trust You?&quot;: Explaining the Predictions of Any Classifier - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="&quot;Why Should I Trust You?&quot;: Explaining the Predictions of Any Classifier - ShortScience.org">
+<meta property="og:description" content="This paper describes how to find local interpretable model-agnostic explanations (LIME) why a black-...">
+<meta name="description" content="This paper describes how to find local interpretable model-agnostic explanations (LIME) why a black-...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.04938">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1602.04938" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Marco Tulio Ribeiro and Sameer Singh and Carlos Guestrin"}, "headline": "\"Why Should I Trust You?\": Explaining the Predictions of Any Classifier", "description": "Summary of \"Why Should I Trust You?\": Explaining the Predictions of Any Classifier", "datePublished": "2016-12-02 12:50:57", "dateModified": "2017-01-08 09:02:03", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1602.04938", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1602.04938v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">&quot;Why Should I Trust You?&quot;: Explaining the Predictions of Any Classifier</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Marco%20Tulio%20Ribeiro">Marco Tulio Ribeiro</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sameer%20Singh">Sameer Singh</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Carlos%20Guestrin">Carlos Guestrin</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/02/16<br><b>Abstract:</b>   Despite widespread adoption, machine learning models remain mostly black
+boxes. Understanding the reasons behind predictions is, however, quite
+important in assessing trust, which is fundamental if one plans to take action
+based on a prediction, or when choosing whether to deploy a new model. Such
+understanding also provides insights into the model, which can be used to
+transform an untrustworthy model or prediction into a trustworthy one. In this
+work, we propose LIME, a novel explanation technique that explains the
+predictions of any classifier in an interpretable and faithful manner, by
+learning an interpretable model locally around the prediction. We also propose
+a method to explain models by presenting representative individual predictions
+and their explanations in a non-redundant way, framing the task as a submodular
+optimization problem. We demonstrate the flexibility of these methods by
+explaining different models for text (e.g. random forests) and image
+classification (e.g. neural networks). We show the utility of explanations via
+novel experiments, both simulated and with human subjects, on various scenarios
+that require trust: deciding if one should trust a prediction, choosing between
+models, improving an untrustworthy classifier, and identifying why a classifier
+should not be trusted.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769').hide());void($('#showless-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769').show());void($('#more-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769').show());void($('#showless-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769').hide());void($('#more-am91cm5hbHMvY29yci8xNjAyLjA0OTM4-769').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1602.04938">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="martinthoma" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-12-02&lt;br&gt;Edited: 2017-01-08&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1602.04938&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-770').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1602.04938%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-770" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.04938&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dmartinthoma&amp;text=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier&amp;Body=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dmartinthoma&amp;title=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.04938&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-12-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper describes how to find local interpretable model-agnostic explanations (LIME) why a black-box model $m_B$ came to a classification decision for one sample $x$. The key idea is to evaluate many more samples around $x$ (local) and fit an interpretable model $m_I$ to it. The way of sampling and the kind of interpretable model depends on the problem domain.
+
+For computer vision / image classification, the image $x$ is divided into superpixels. Single super-pixels are made black, the new image $x&#x27;$ is evaluated $p&#x27; = m_B(x&#x27;)$. This is done multiple times. 
+
+The paper is also explained in [this YouTube video](https://www.youtube.com/watch?v=KP7-JtFMLo4) by Marco Tulio Ribeiro.
+
+A very similar idea is already in the [Zeiler &amp; Fergus paper](http://www.shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13#martinthoma).
+
+## Follow-up Paper
+
+* June 2016: [Model-Agnostic Interpretability of Machine Learning](https://arxiv.org/abs/1606.05386)
+* November 2016:
+  * [Nothing Else Matters: Model-Agnostic Explanations By Identifying Prediction Invariance](https://arxiv.org/abs/1611.05817)
+  * [An unexpected unity among methods for interpreting
+model predictions](https://arxiv.org/abs/1611.07478)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="apoorvashetty" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=apoorvashetty" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=apoorvashetty&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/2733d9d1134c9e989cf65d4811651fdd?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Apoorva Shetty&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: apoorvashetty&lt;br&gt;Posted: 2019-09-10&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1602.04938&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/2733d9d1134c9e989cf65d4811651fdd?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-771').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1602.04938%26a%3Dapoorvashetty" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-771" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.04938&amp;a=apoorvashetty" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dapoorvashetty&amp;text=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dapoorvashetty" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier&amp;Body=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dapoorvashetty"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dapoorvashetty" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1602.04938%26a%3Dapoorvashetty&amp;title=Summary%20of%20%22Why%20Should%20I%20Trust%20You%3F%22%3A%20Explaining%20the%20Predictions%20of%20Any%20Classifier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1602.04938&amp;a=apoorvashetty" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=apoorvashetty" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Apoorva Shetty 2019-09-10</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Although Machine learning models have been accepted widely as the next step towards simplifying complex problems, the inner workings of a machine learning model are still unclear and these details can lead to an increase in trust of the model prediction, and the model itself. 
+
+**Idea: ** A good explanation system that can justify the prediction of a classifier and can lead to diagnosing the reasoning behind a model can exponentially raise one’s trust in the predictive model.
+
+**Solution: ** This paper proposes a local explanation model called LIME, that approximates a linear local explanation with respect to a data point. The paper outlines desired characteristics for explainers and expounds on how LIME matches to these characteristics, the characteristics being 1) Interpretable 2) Local Fidelity 3) Model-Agnostic and 4) Provides a global perspective. This paper also explores the concept of Fidelity-Interpretability Trade-off; The more complex a model is the less interpretable a completely faithful explanation would be, thus a balance needs to be struck between interpretability and fidelity for complex models. The paper outlines in detail how the proposed LIME explanation model works, for different types of predictive classifiers. LIME works by generating random data points around a test data point and approximating a linear explanation for these randomized points. Thus, LIME works on a rather large assumption that every complex model is linear on a microscopic level. This assumption although large seems justified for most models, although this could lead to certain global issues when analyzing a complex model on the whole.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

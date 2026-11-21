@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS-RCNN: Contextual Multi-Scale Region-based CNN for Unconstrained Face Detection - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="CMS-RCNN: Contextual Multi-Scale Region-based CNN for Unconstrained Face Detection - ShortScience.org">
+<meta property="og:description" content="* They describe a model to locate faces in images.
+  * Their model uses information from suspected...">
+<meta name="description" content="* They describe a model to locate faces in images.
+  * Their model uses information from suspected...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/CMS-RCNN__fddb.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/ZhuZLS16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/ZhuZLS16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Zhu, Chenchen and Zheng, Yutong and Luu, Khoa and Savvides, Marios"}, "headline": "CMS-RCNN: Contextual Multi-Scale Region-based CNN for Unconstrained Face Detection", "description": "Summary of CMS-RCNN: Contextual Multi-Scale Region-based CNN for Unconstrained Face Detection", "datePublished": "2017-10-25 10:28:56", "dateModified": "2017-10-25 10:28:56", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/CMS-RCNN__fddb.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/ZhuZLS16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.05413"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22CMS-RCNN%3A%20Contextual%20Multi-Scale%20Region-based%20CNN%20for%20Unconstrained%20Face%20Detection%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">CMS-RCNN: Contextual Multi-Scale Region-based CNN for Unconstrained Face Detection</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Zhu%2C%20Chenchen">Zhu, Chenchen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zheng%2C%20Yutong">Zheng, Yutong</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Luu%2C%20Khoa">Luu, Khoa</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Savvides%2C%20Marios">Savvides, Marios</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/ZhuZLS16">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/ZhuZLS16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1812').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/ZhuZLS16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1812" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/ZhuZLS16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZhuZLS16%26a%3Daleju&amp;text=Summary%20of%20CMS-RCNN%3A%20Contextual%20Multi-Scale%20Region-based%20CNN%20for%20Unconstrained%20Face%20Detection&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZhuZLS16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20CMS-RCNN%3A%20Contextual%20Multi-Scale%20Region-based%20CNN%20for%20Unconstrained%20Face%20Detection&amp;Body=Summary%20of%20CMS-RCNN%3A%20Contextual%20Multi-Scale%20Region-based%20CNN%20for%20Unconstrained%20Face%20Detection%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZhuZLS16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZhuZLS16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZhuZLS16%26a%3Daleju&amp;title=Summary%20of%20CMS-RCNN%3A%20Contextual%20Multi-Scale%20Region-based%20CNN%20for%20Unconstrained%20Face%20Detection" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/ZhuZLS16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They describe a model to locate faces in images.
+  * Their model uses information from suspected face regions *and* from the corresponding suspected body regions to classify whether a region contains a face.
+  * The intuition is, that seeing the region around the face (specifically where the body should be) can help in estimating whether a suspected face is really a face (e.g. it might also be part of a painting, statue or doll).
+
+### How
+  * Their whole model is called &quot;CMS-RCNN&quot; (Contextual Multi-Scale Region-CNN).
+  * It is based on the &quot;Faster R-CNN&quot; architecture.
+  * It uses the VGG network.
+  * Subparts of their model are: MS-RPN, CMS-CNN.
+  * MS-RPN finds candidate face regions. CMS-CNN refines their bounding boxes and classifies them (face / not face).
+  * **MS-RPN** (Multi-Scale Region Proposal Network)
+    * &quot;Looks&quot; at the feature maps of the network (VGG) at multiple scales (i.e. before/after pooling layers) and suggests regions for possible faces.
+    * Steps:
+      * Feed an image through the VGG network.
+      * Extract the feature maps of the three last convolutions that are before a pooling layer.
+      * Pool these feature maps so that they have the same heights and widths.
+      * Apply L2 normalization to each feature map so that they all have the same scale.
+      * Apply a 1x1 convolution to merge them to one feature map.
+      * Regress face bounding boxes from that feature map according to the Faster R-CNN technique.
+  * **CMS-CNN** (Contextual Multi-Scale CNN):
+    * &quot;Looks&quot; at feature maps of face candidates found by MS-RPN and classifies whether these regions contains faces.
+    * It also uses the same multi-scale technique (i.e. take feature maps from convs before pooling layers).
+    * It uses some area around these face regions as additional information (suspected regions of bodies).
+    * Steps:
+      * Receive face candidate regions from MS-RPN.
+      * Do per candidate region:
+        * Calculate the suspected coordinates of the body (only based on the x/y-position and size of the face region, i.e. not learned).
+        * Extract the feature maps of the *face* region (at multiple scales) and apply RoI-Pooling to it (i.e. convert to a fixed height and width).
+        * Extract the feature maps of the *body* region (at multiple scales) and apply RoI-Pooling to it (i.e. convert to a fixed height and width).
+        * L2-normalize each feature map.
+        * Concatenate the (RoI-pooled and normalized) feature maps of the face (at multiple scales) with each other (creates one tensor).
+        * Concatenate the (RoI-pooled and normalized) feature maps of the body (at multiple scales) with each other (creates another tensor).
+        * Apply a 1x1 convolution to the face tensor.
+        * Apply a 1x1 convolution to the body tensor.
+        * Apply two fully connected layers to the face tensor, creating a vector.
+        * Apply two fully connected layers to the body tensor, creating a vector.
+        * Concatenate both vectors.
+        * Based on that vector, make a classification of whether it is really a face.
+        * Based on that vector, make a regression of the face&#x27;s final bounding box coordinates and dimensions.
+  * Note: They use in both networks the multi-scale approach in order to be able to find small or tiny faces. Otherwise, after pooling these small faces would be hard or impossible to detect.
+
+### Results
+  * Adding context to the classification (i.e. the body regions) empirically improves the results.
+  * Their model achieves the highest recall rate on FDDB compared to other models. However, it has lower recall if only very few false positives are accepted.
+  * FDDB ROC curves (theirs is bold red):
+    * ![FDDB results](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/CMS-RCNN__fddb.jpg?raw=true &quot;FDDB results&quot;)
+  * Example results on FDDB:
+    * ![FDDB examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/CMS-RCNN__examples.jpg?raw=true &quot;FDDB examples&quot;)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

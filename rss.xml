@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:shortscience="https://shortscience.org">
+<channel>
+<title>ShortScience.org Latest Summaries</title>
+<description>ShortScience.org Latest Summaries</description>
+<link>https://shortscience.org</link>
+<lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
+<item>
+<shortscience:arxivid>2110.11309</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2110.11309</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Fast Model Editing at Scale</title>
+<author>Joseph Paul Cohen</author>
+<description>The goal of this work is to edit the model’s weights given new edit pairs ($x_e, y_e$) at test time. They achieve this by learning a &quot;model editor network&quot; that takes a fine tuning gradient computed from ($x_e, y_e$) and transforms this into a weight update. 
+
+$$ f(\nabla W_l) \rightarrow \tilde\nabla W_l$$ 
+
+The editor network is parameterized by the layer that it is predicting using a FiLM style scale and shift.
+
+The editor network is trained on a small set of examples ($D^{tr}_{edit}$). The p...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2110.11309#joecohen</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2110.11309#joecohen</guid>
+<pubDate>Thu, 08 Feb 2024 00:02:46 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.15055</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2006.15055</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Object-Centric Learning with Slot Attention</title>
+<author>ngthanhtinqn</author>
+<description>The Slot Attention module maps from a set of N input feature vectors to a set of K
+output vectors that we refer to as slots. Each vector in this output set can, for example, describe
+an object or an entity in the input.
+
+</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2006.15055#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2006.15055#ngthanhtinqn</guid>
+<pubDate>Fri, 24 Mar 2023 17:52:29 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2101.07042</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2101.07042</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>CLASTER: Clustering with Reinforcement Learning for Zero-Shot Action Recognition</title>
+<author>ngthanhtinqn</author>
+<description>This paper aims to do zero-shot action recognition which uses cluster-based representation.
+Concretely, it uses REINFORCE algorithm which is a Reinforcement Learning algorithm to optimize the centroids and the reward signal is the classification scores.
+</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2101.07042#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2101.07042#ngthanhtinqn</guid>
+<pubDate>Fri, 24 Mar 2023 17:49:18 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2302.14045</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2302.14045</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Language Is Not All You Need: Aligning Perception with Language Models</title>
+<author>ngthanhtinqn</author>
+<description>This paper is about Multimodal Large Language Model (MLLM). In this paper, they proposed an MLLM model called KOSMOS-1 that can do instruction following, VQA, IQ-testing, visual dialog, etc.
+
+
+
+
+
+The input of this model is image-caption pairs and interleaved data of images and texts.
+
+
+The input data will be fed into an embedding module to encode the data into vectors, then the vectors will be fed into a Transformer Decoder. Then the decoder will predict the next token based on the previous cont...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2302.14045#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2302.14045#ngthanhtinqn</guid>
+<pubDate>Wed, 01 Mar 2023 17:00:44 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1807.00517</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1807.00517</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Women also Snowboard: Overcoming Bias in Captioning Models (Extended Abstract)</title>
+<author>ngthanhtinqn</author>
+<description>This paper is to reduce gender bias in the captioning model. Concretely, traditional captioning models tend to rely on contextual cues, so they usually predict incorrect captions for an image that contains people.
+
+To reduce gender bias, they introduced a new $Equalizer$ model that contains two losses:
+
+(1) Appearance Confusion Loss: When it is hard to tell if there is a man or a woman in the image, the model should provide a fair probability of predicting a man or a woman.
+
+To define that loss,...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1807.00517#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1807.00517#ngthanhtinqn</guid>
+<pubDate>Tue, 28 Feb 2023 05:36:09 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2203.16639</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2203.16639</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>FALCON: Fast Visual Concept Learning by Integrating Images, Linguistic descriptions, and Conceptual Relations</title>
+<author>ngthanhtinqn</author>
+<description>This paper proposed a method to locate an object based on an image and a sentence describing objects in the image. Then, predicting a new visual concept embedding based on two graphs (1) a graph that describes the relationship between objects in a supplemental sentence describing several objects, and (2) a graph that describes the relationship between the detected object in the image and example images related to objects in the supplementary sentence. This embedding can be used for many downstre...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2203.16639#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2203.16639#ngthanhtinqn</guid>
+<pubDate>Sun, 26 Feb 2023 20:17:14 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2211.11158</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2211.11158</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Language in a Bottle: Language Model Guided Concept Bottlenecks for Interpretable Image Classification</title>
+<author>ngthanhtinqn</author>
+<description>what is the paper doing?
+This paper proposed a way to explain the model decision by human-readable concepts. For example, if the model thinks the following image is a black-throated sparrow, then a human can understand this decision via input descriptors.
+
+
+
+The descriptors were obtained from GPT-3, they got 500 descriptors for each class and then remove the class name in each descriptor. Then, for each class, they chose $k$ concepts to make sure that every class has an equal amount of concepts....</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2211.11158#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2211.11158#ngthanhtinqn</guid>
+<pubDate>Fri, 24 Feb 2023 04:50:05 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2203.11876</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2203.11876</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Open-Vocabulary DETR with Conditional Matching</title>
+<author>ngthanhtinqn</author>
+<description>The paper proposed a new object detection method to detect novel classes by using Conditional Matching. This detector can be conditioned on either image or text, which means a user can use an image or text to let the model detect the corresponding bounding boxes in the picture.
+
+This model has 2 changes compared to other open-vocabulary detectors:
+
+1) Other detectors rely on Region Proposal Network (RPN) which can not cover all the objects in a picture, so it will worsen the performance of detec...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2203.11876#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2203.11876#ngthanhtinqn</guid>
+<pubDate>Wed, 22 Feb 2023 17:10:43 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2203.17271</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2203.17271</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Do Vision-Language Pretrained Models Learn Composable Primitive Concepts?</title>
+<author>ngthanhtinqn</author>
+<description>This paper proposed a way to do classification using primitive concepts such as color, shape, texture, etc.
+
+The framework is simple, they have two sub-models:
+
+(1) the first one is a trained VL model such as CLIP,  ViLT, and ALBEF. The input of this step is the primitive concepts or let&#x27;s say, attribute concepts and an image, then the output will be the scores for each concept.
+
+(2) the second one is a linear model that uses the concepts and their scores to do classification. This model is trai...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2203.17271#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2203.17271#ngthanhtinqn</guid>
+<pubDate>Tue, 21 Feb 2023 21:25:57 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2301.12597</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2301.12597</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models</title>
+<author>ngthanhtinqn</author>
+<description>This paper has a way to leverage pre-trained Vision Language encoders to do VL tasks such as VQA, and Image Captioning.
+
+To have a good VL model, the modality gap must be reduced. In this paper, they proposed a Q-Former which is a Transformer module that is trained first with a frozen image encoder, then trained with this frozen image encoder and a frozen text encoder (from a Large Language Model).
+
+
+
+The reason why the Q-Former needs to train in two stages is:
+
+(1) Trained with frozen image enc...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2301.12597#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2301.12597#ngthanhtinqn</guid>
+<pubDate>Tue, 21 Feb 2023 06:35:40 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>conf/nips/ChoiGMH19</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Why Can&#x27;t I Dance in the Mall? Learning to Mitigate Scene Bias in Action Recognition</title>
+<author>ngthanhtinqn</author>
+<description>This paper is to mitigate the scene bias in the action recognition task.
+
+Scene bias is defined as the model only focusing on scene or object information without paying attention to the actual activity.
+
+To mitigate this issue, the author proposed 2 additional types of loss:
+(1) scene adversarial loss that helps the network to learn features that are suitable for action but invariant to scene type. Hence, reduce the scene bias.
+(2) human mask confusion loss that prevents a model from predicting ...</description>
+<link>https://shortscience.org/paper?bibtexKey=conf/nips/ChoiGMH19#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=conf/nips/ChoiGMH19#ngthanhtinqn</guid>
+<pubDate>Sun, 19 Feb 2023 21:34:33 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2210.04150</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2210.04150</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Open-Vocabulary Semantic Segmentation with Mask-adapted CLIP</title>
+<author>ngthanhtinqn</author>
+<description>Open-vocabulary semantic segmentation is a method to generate semantic segment regions based on text descriptions. Due to the text descriptions, this model can detect unseen objects that have not been seen in the training phase.
+
+Some works create two-stage methods to first create class-agnostic segments and then use CLIP to assign each segment to a phrase. 
+
+To compute the prediction for an image, they ensemble two types of prediction scores.
+
+(1) If we want to classify a mask into $K$ classes,...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2210.04150#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2210.04150#ngthanhtinqn</guid>
+<pubDate>Fri, 17 Feb 2023 22:26:50 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1802.05766</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1802-05766</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Learning to Count Objects in Natural Images for Visual Question Answering</title>
+<author>ngthanhtinqn</author>
+<description>Visual Question Answering can not do the counting objects problem properly. So in this paper, they figured out the reason is due to the Soft Attention module, and they also proposed a module that can produce reliable counting from object proposals.
+
+There are two challenges in VQA Counting tasks:
+(1) There is no ground truth label for the objects to be counted. 
+(2) The additional module should not affect performance on non-counting problems.
+
+Why Soft Attention is not good for the counting task...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-05766#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-05766#ngthanhtinqn</guid>
+<pubDate>Fri, 17 Feb 2023 07:14:51 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2206.09959</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2206.09959</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Global Context Vision Transformers</title>
+<author>ngthanhtinqn</author>
+<description>Transformer is proposed to capture long-range information with the self-attention mechanism, but it comes with quadratic computation cost and lacks multi-resolution information. Then, Swin Transformer introduces local-window-self-attention to reduce the cost to linear w.r.t image size, shifted-window-attention to capture cross-window information and finally exploits multi-resolution information with hierarchical architecture. But shifted-window-attention struggles to capture long-range informati...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2206.09959#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2206.09959#ngthanhtinqn</guid>
+<pubDate>Thu, 16 Feb 2023 07:39:34 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2301.13081</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2301.13081</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>STAIR: Learning Sparse Text and Image Representation in Grounded Tokens</title>
+<author>ngthanhtinqn</author>
+<description>This paper aims to learn a sparse semantic representation of texts and images instead of a dense representation trained by CLIP or ALIGN. 
+
+The sparse embeddings are achieved by:
+
+(1) For an input (image or text), extract it to a feature (using Transformer) $h$ where $h_{j}$ corresponds to the $jth$ word in the input.
+
+(2) Each $j$ word embedding will be transformed to $p(h_{j})$ in vocabulary space $V$ by using a mapping function (in this paper, this is BERT Masked Language Model MLM). So each ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2301.13081#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2301.13081#ngthanhtinqn</guid>
+<pubDate>Tue, 14 Feb 2023 15:58:28 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2201.05078</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2201.05078</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>CLIP-Event: Connecting Text and Images with Event Structures</title>
+<author>ngthanhtinqn</author>
+<description>This work enforced vision-language pretraining models to comprehend events and associated argument (participant) roles.
+
+
+To achieve this, they created a framework including 3 steps:
+
+(1) Event structural knowledge extraction including (a) text extraction: using SOTA text information extraction system to extract events (ex: agent, entity, instrument), (b) image extraction: using Faster RCNN trained on Open Images to detect objects. (c) Primary event detection: the primary event is the event that...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2201.05078#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2201.05078#ngthanhtinqn</guid>
+<pubDate>Wed, 08 Feb 2023 21:03:05 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>conf/eccv/ChenLYK0G0020</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>UNITER: UNiversal Image-TExt Representation Learning</title>
+<author>ngthanhtinqn</author>
+<description>This paper is to design a generalized multimodal architecture that can solve all Vision language tasks.
+Concretely, they will pre-train their model on 4 main tasks (MLM, ITM, WRA, MRM) and will evaluate various downstream tasks (VQA, VCR, NLVR).
+
+
+
+As shown in Fig 1, UNITER first encodes image regions (visual features and bounding box features) and textual words (tokens and positions) into a common embedding space with Image Embedder and Text Embedder.
+Then, a Transformer module is applied to l...</description>
+<link>https://shortscience.org/paper?bibtexKey=conf/eccv/ChenLYK0G0020#ngthanhtinqn</link>
+<guid>https://shortscience.org/paper?bibtexKey=conf/eccv/ChenLYK0G0020#ngthanhtinqn</guid>
+<pubDate>Mon, 06 Feb 2023 14:50:23 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2105.05837</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2105.05837</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>When Does Contrastive Visual Representation Learning Work?</title>
+<author>CodyWild</author>
+<description>This is a mildly silly paper to summarize, since there isn&#x27;t really a new mechanism to understand, but rather a number of straightforward (and interesting!) empirical results that are also quite well-explained in the paper itself. That said, for the sake of a tiny bit more brevity than the paper itself provides, I&#x27;ll try to pull out some of the conclusions I found the most interesting here. 
+
+The general goal of this paper is to better understand the contours of when self-supervised representati...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2105.05837#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2105.05837#decodyng</guid>
+<pubDate>Wed, 24 Nov 2021 06:03:37 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1911.05507</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1911-05507</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Compressive Transformers for Long-Range Sequence Modelling</title>
+<author>CodyWild</author>
+<description>This paper is an interesting extension of earlier work, in the TransformerXL paper, that sought to give Transformers access to a &quot;memory&quot; beyond the scope of the subsequence where full self-attention was being performed. This was done by caching the activations from prior subsequences, and making them available to the subsequence currently being calculated in a &quot;read-only&quot; way, with gradients not propagated backwards. This had the effect of (1) reducing the maximum memory size compared to simply...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1911-05507#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1911-05507#decodyng</guid>
+<pubDate>Mon, 22 Nov 2021 06:34:58 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2101.03961</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2101.03961</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity</title>
+<author>CodyWild</author>
+<description>The idea of the Switch Transformer is to have more parameters available for a network to use, but to only use a small subset of those parameters for each example that&#x27;s run through the network. This is achieved through a routing scheme, whereby a weighting layer is applied to each token and produces a set of logits/softmax weights over the set of possible experts. The token is then sent to the expert that was given the highest weight. The network is implemented such that different experts can ac...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2101.03961#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2101.03961#decodyng</guid>
+<pubDate>Fri, 19 Nov 2021 07:12:52 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1807.11626</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1807-11626</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>MnasNet: Platform-Aware Neural Architecture Search for Mobile</title>
+<author>CodyWild</author>
+<description>When machine learning models need to run on personal devices, that implies a very particular set of constraints: models need to be fairly small and low-latency when run on a limited-compute device, without much loss in accuracy. A number of human-designed architectures have been engineered to try to solve for these constraints (depthwise convolutions, inverted residual bottlenecks), but this paper&#x27;s goal is to use Neural Architecture Search (NAS) to explicitly optimize the architecture against l...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1807-11626#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1807-11626#decodyng</guid>
+<pubDate>Wed, 17 Nov 2021 02:23:03 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2010.13321</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2010-13321</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>View-Invariant, Occlusion-Robust Probabilistic Embedding for Human Pose</title>
+<author>CodyWild</author>
+<description>The goal of this paper is to learn a model that embeds 2D keypoints(the locations of specific key body parts in 2D space) representing a particular pose into a vector embedding where nearby points in embedding space are also nearby in 3D space. This sort of model is useful because the same 3D pose can generate a wide variety of 2D pose projections, and it can be useful to learn which apparently-distinct representations actually map to the same 3D pose. 
+
+To do this, the basic approach used by th...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-13321#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-13321#decodyng</guid>
+<pubDate>Tue, 16 Nov 2021 02:15:03 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1602.05629</shortscience:arxivid>
+<shortscience:bibtexkey>MahMoo16Communication</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Communication-Efficient Learning of Deep Networks from Decentralized Data</title>
+<author>CodyWild</author>
+<description>Federated learning is the problem of training a model that incorporates updates from the data of many individuals, without having direct access to that data, or having to store it. This is potentially desirable both for reasons of privacy (not wanting to have access to private data in a centralized way), and for potential benefits to transport cost when data needed to train models exists on a user&#x27;s device, and would require a lot of bandwidth to transfer to a centralized server.  
+
+Historically...</description>
+<link>https://shortscience.org/paper?bibtexKey=MahMoo16Communication#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=MahMoo16Communication#decodyng</guid>
+<pubDate>Mon, 15 Nov 2021 07:19:12 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2110.15349</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2110.15349</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Learning to Ground Multi-Agent Communication with Autoencoders</title>
+<author>CodyWild</author>
+<description>In certain classes of multi-agent cooperation games, it&#x27;s useful for agents to be able to coordinate on future actions, which is an obvious use case for having a communication channel between the two players. However, prior work in multi-agent RL has shown that it&#x27;s surprisingly hard to train agents that (1) consistently learn to use a communication channel in a way that is informative rather than random, and (2) if they do use communication, can come to a common grounding on the meaning of symb...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2110.15349#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2110.15349#decodyng</guid>
+<pubDate>Sat, 13 Nov 2021 06:50:28 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2104.11178</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2104.11178</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text</title>
+<author>CodyWild</author>
+<description>This strikes me as a really straightforward, clever, and exciting paper that uses the supervision intrinsic in the visual, audio, and text streams of a video to train a shared multimodal model. 
+
+The basic premise is: 
+
+- Tokenize all three modalities into a sequence of embedding tokens. For video, split into patches, and linearly project the voxels of these patches to get a per-token representation. For audio, a similar strategy but with waveform patches. For text, the normal per-token embeddin...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2104.11178#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2104.11178#decodyng</guid>
+<pubDate>Fri, 12 Nov 2021 06:26:48 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1801.04381</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1801.04381</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Inverted Residuals and Linear Bottlenecks: Mobile Networks for Classification, Detection and Segmentation</title>
+<author>CodyWild</author>
+<description>This work expands on prior techniques for designing models that can both be stored using fewer parameters, and also execute using fewer operations and less memory, both of which are key desiderata for having trained machine learning models be usable on phones and other personal devices. 
+
+The main contribution of the original MobileNets paper was to introduce the idea of using &quot;factored&quot; decompositions of Depthwise and Pointwise convolutions, which separate the procedures of &quot;pull information fr...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1801.04381#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1801.04381#decodyng</guid>
+<pubDate>Thu, 11 Nov 2021 06:30:30 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2003.10555</shortscience:arxivid>
+<shortscience:bibtexkey>DBLP:journals/corr/abs-2003-10555</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>{ELECTRA:} Pre-training Text Encoders as Discriminators Rather Than Generators</title>
+<author>CodyWild</author>
+<description>I&#x27;m a little embarrassed that I&#x27;m only just now reading what seems like a fairly important paper from a year and a half ago, but, in my defense, March 2020 was not the best time for keeping up with the literature in a disciplined way. 
+
+Anyhow, musings aside: this paper proposes an alternative training procedure for large language models, which the authors claim result in models that reach strong performance more efficiently than previous BERT, XLNet, or RoBERTa baselines. As some background con...</description>
+<link>https://shortscience.org/paper?bibtexKey=DBLP:journals/corr/abs-2003-10555#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=DBLP:journals/corr/abs-2003-10555#decodyng</guid>
+<pubDate>Tue, 09 Nov 2021 03:53:27 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2103.03206</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2103.03206</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Perceiver: General Perception with Iterative Attention</title>
+<author>CodyWild</author>
+<description>This new architecture out of Deepmind applies combines information extraction and bottlenecks to a traditional Transformer base to get a model that can theoretically apply self-attention to meaningfully larger input sizes than earlier architectures allowed. 
+
+Currently, self-attention models are quite powerful and capable, but because attention is quadratic-in-sequence-length in both time, and, often more saliently, memory, it&#x27;s infeasible to use on long sequences without some modification. This...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2103.03206#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2103.03206#decodyng</guid>
+<pubDate>Sun, 07 Nov 2021 03:18:35 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.03236</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2006-03236</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Funnel-Transformer: Filtering out Sequential Redundancy for Efficient Language Processing</title>
+<author>CodyWild</author>
+<description>This was an amusingly-timed paper for me to read, because just yesterday I was listening to a different paper summary where the presenter offhandedly mentioned the idea of compressing the sequence length in Transformers through subsequent layers (the way a ConvNet does pooling to a smaller spatial dimension in the course of learning), and it made me wonder why I hadn&#x27;t heard much about that as an approach. And, lo, I came on this paper in my list the next day, which does exactly that. 
+
+As a ref...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-03236#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-03236#decodyng</guid>
+<pubDate>Fri, 05 Nov 2021 05:30:06 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2011.12948</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2011.12948</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Nerfies: Deformable Neural Radiance Fields</title>
+<author>CodyWild</author>
+<description>This summary builds substantially on my summary of NERFs, so if you haven&#x27;t yet read that, I recommend doing so first! 
+
+The idea of a NERF is learn a neural network that represents a 3D scene, and from which you can, once the model is trained, sample an image of that scene from any desired angle. This involves structuring your neural network as a function that predicts the RGB color and density/opacity for a given point in 3D space (x, y, z), from a given viewing angle (theta, phi). With such a...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2011.12948#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2011.12948#decodyng</guid>
+<pubDate>Thu, 04 Nov 2021 03:08:28 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2003.08934</shortscience:arxivid>
+<shortscience:bibtexkey>mildenhall2020representing</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</title>
+<author>CodyWild</author>
+<description>This summary builds extensively on my prior summary of SIRENs, so if you haven&#x27;t read that summary or the underlying paper yet, I&#x27;d recommend doing that first! 
+
+At a high level, the idea of SIRENs is to use a neural network to learn a compressed, continuous representation of an image, where the neural network encodes a mapping from (x, y) to the pixel value at that location, and the image can be reconstructed (or, potentially, expanded in size) by sampling from that function across the full ran...</description>
+<link>https://shortscience.org/paper?bibtexKey=mildenhall2020representing#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=mildenhall2020representing#decodyng</guid>
+<pubDate>Wed, 03 Nov 2021 01:19:18 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.09661</shortscience:arxivid>
+<shortscience:bibtexkey>sitzmann2020implicit</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Implicit Neural Representations with Periodic Activation Functions</title>
+<author>CodyWild</author>
+<description>[First off, full credit that this summary is essentially a distilled-for-my-own-understanding compression of Yannic Kilcher&#x27;s excellent video on the topic] 
+
+I&#x27;m interested in learning more about Neural Radiance Fields (or NERFs), a recent technique for learning a representation of a scene that lets you generate multiple views from it, and a paper referenced as a useful prerequisite for that technique was SIRENs, or Sinuisodial Representation Networks. In my view, the most complex part of unders...</description>
+<link>https://shortscience.org/paper?bibtexKey=sitzmann2020implicit#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=sitzmann2020implicit#decodyng</guid>
+<pubDate>Tue, 02 Nov 2021 06:55:52 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2110.15149</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2110.15149</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Diversity-Driven Combination for Grammatical Error Correction</title>
+<author>Leshem Choshen</author>
+<description>Model combination\ensembling:
+Average ensembling is practical - but naive.
+Combine considering each network&#x27;s strengths, much better!
+Moreover, let&#x27;s make the networks diverse so they will have different strengths.
+
+Wenjuan Han &amp; Hwee Tou Ng (no twitters?)
+#enough2skim #NLProc
+
+The basic idea is quite simple:
+Given some models, why would we want the average? We want to rely on each one(or group) when it is more likely to be the correct one.
+This was actually introduced in our previous work (as a...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2110.15149#borgr</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2110.15149#borgr</guid>
+<pubDate>Mon, 01 Nov 2021 06:33:12 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2108.10763</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2108.10763</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>ComSum: Commit Messages Summarization and Meaning Preservation</title>
+<author>Leshem Choshen</author>
+<description>Huge 𝙘𝙤𝙢𝙢𝙞𝙩 𝙨𝙪𝙢𝙢𝙖𝙧𝙞𝙯𝙖𝙩𝙞𝙤𝙣 dataset
+The dataset cleans tons of open source projects to have only ones with high quality committing habits 
+
+(e.g. large active projects with commits that are of significant length etc.)
+We present some ways to evaluate that the meaning was kept while summarizing, so you can go beyond ROUGE
+We provide a strict split that keeps some (thousand+-) repositories totally out of the training, so you can check in domain and out of domain or just be sure results are clean.
+
+I...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2108.10763#borgr</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2108.10763#borgr</guid>
+<pubDate>Sun, 24 Oct 2021 09:32:17 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2102.09475</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2102.09475</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Gifsplanation via Latent Shift: A Simple Autoencoder Approach to Counterfactual Generation for Chest X-rays</title>
+<author>Joseph Paul Cohen</author>
+<description>**Background:** The goal of this work is to indicate image features which are relevant to the prediction of a neural network and convey that information to the user by displaying a counterfactual image animation.
+
+**The Latent Shift Method:** This method works on any pretrained encoder/decoder and classifier which is differentiable. No special considerations are needed during model training. With this approach they want the exact opposite of an adversarial attack but it is using the same idea. T...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2102.09475#joecohen</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2102.09475#joecohen</guid>
+<pubDate>Fri, 02 Jul 2021 17:19:32 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>journals/prl/BailoRJPBK18</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Efficient adaptive non-maximal suppression algorithms for homogeneous spatial keypoint distribution</title>
+<author>Oleksandr Bailo</author>
+<description>Keypoint detection is an important step in various tasks such as SLAM, panorama stitching, camera calibration, and more. Efficient keypoint detectors, FAST (Features from Accelerated and Segments Test) for example, would detect keypoints where a relatively high brightness change is observed in relation to surrounding pixels. Most probably, the keypoints would be located on edges, as shown below:
+
+Let&#x27;s consider another image shown below. Here, while the detector is capable of detecting many keyp...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/prl/BailoRJPBK18#ukrdailo</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/prl/BailoRJPBK18#ukrdailo</guid>
+<pubDate>Sun, 07 Feb 2021 10:58:53 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>10.1038/s41586-019-1923-7</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Improved protein structure prediction using potentials from deep learning</title>
+<author>CodyWild</author>
+<description>In January of this year (2020), DeepMind released a model called AlphaFold, which uses convolutional networks atop sequence-based and evolutionary features to predict protein folding structure. In particular, their model was designed to predict a distribution for how far away each pair of amino acids will be from one another in the final folded structure. Given such a trained model, you can score a candidate structure according to how likely it is under the model, and - if your process for gener...</description>
+<link>https://shortscience.org/paper?bibtexKey=10.1038/s41586-019-1923-7#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=10.1038/s41586-019-1923-7#decodyng</guid>
+<pubDate>Tue, 01 Dec 2020 02:28:52 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2007.12223</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2007-12223</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>The Lottery Ticket Hypothesis for Pre-trained BERT Networks</title>
+<author>CodyWild</author>
+<description>This is an interesting paper, investigating (with a team that includes the original authors of the Lottery Ticket paper) whether the initializations that result from BERT pretraining have Lottery Ticket-esque properties with respect to their role as initializations for downstream transfer tasks. 
+
+As background context, the Lottery Ticket Hypothesis came out of an observation that trained networks could be pruned to remove low-magnitude weights (according to a particular iterative pruning strate...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-12223#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-12223#decodyng</guid>
+<pubDate>Mon, 30 Nov 2020 01:54:47 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1905.10295</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1905-10295</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Learning to learn via Self-Critique</title>
+<author>Mikhail Meskhi</author>
+<description>### Key points
+
+- Instead of just focusing on supervised learning, a self-critique and adapt network provides a unsupervised learning approach in improving the overall generalization. It does this via transductive learning by learning a label-free loss function from the validation set to improve the base model.
+- The SCA framework helps a learning algorithm be more robust by learning more relevant features and improve during the training phase.
+
+### Ideas
+
+1. Combine deep learning models with SC...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1905-10295#michaelmmeskhi</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1905-10295#michaelmmeskhi</guid>
+<pubDate>Sat, 28 Nov 2020 21:58:53 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.07589</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2006-07589</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Adversarial Self-Supervised Contrastive Learning</title>
+<author>CodyWild</author>
+<description>This a nice, compact paper testing a straightforward idea: can we use the contrastive loss structure so widespread in unsupervised learning as a framework for generating and training against adversarial examples? In the context of the adversarial examples literature, adversarial training - or, training against examples that were adversarially generated so as to minimize the loss of the model you&#x27;re training - is the primary strategy used to train robust models (robust here in the sense of not be...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-07589#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-07589#decodyng</guid>
+<pubDate>Sat, 28 Nov 2020 21:00:26 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2007.00224</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2007.00224</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Debiased Contrastive Learning</title>
+<author>CodyWild</author>
+<description>The premise of contrastive loss is that we want to push together the representations of objects that are similar, and push dissimilar representations farther apart. However, in an unlabeled setting, we don&#x27;t generally have class labels to tell which images (or objects in general) are supposed to be similar or dissimilar along the axes that matter to us, so we use the shortcut of defining some transformation on a given anchor frame that gets us a frame we&#x27;re confident is related enough to that an...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2007.00224#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2007.00224#decodyng</guid>
+<pubDate>Fri, 27 Nov 2020 21:00:39 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2007.02835</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2007-02835</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>GROVER: Self-supervised Message Passing Transformer on Large-scale Molecular Data</title>
+<author>CodyWild</author>
+<description>Large-scale transformers on unsupervised text data have been wildly successful in recent years; arguably, the most successful single idea in the last ~3 years of machine learning. Given that, it&#x27;s understandable that different domains within ML want to take their shot at seeing whether the same formula will work for them as well. This paper applies the principles of (1) transformers and (2) large-scale unlabeled data to the problem of learning informative embeddings of molecular graphs. 
+
+Labeli...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-02835#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-02835#decodyng</guid>
+<pubDate>Thu, 26 Nov 2020 20:44:45 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2004.02860</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2004-02860</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Weakly-Supervised Reinforcement Learning for Controllable Behavior</title>
+<author>CodyWild</author>
+<description>I tried my best, but I&#x27;m really confused by the central methodology of this paper. Here are the things I do understand: 
+
+1. The goal of the method is to learn disentangled representations, and, specifically, to learn representations that correspond to factors of variation in the environment that are selected by humans. That means, we ask humans whether a given image is higher or lower on a particular relevant axis, and aggregate those rankings into a vector, where a particular index of the vect...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2004-02860#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2004-02860#decodyng</guid>
+<pubDate>Thu, 26 Nov 2020 04:48:23 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2002.11328</shortscience:arxivid>
+<shortscience:bibtexkey>yang2020rethinking</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Rethinking Bias-Variance Trade-off for Generalization of Neural Networks</title>
+<author>CodyWild</author>
+<description>This is a really cool paper that posits a relatively simple explanation for the strange phenomena known as double descent - both the fact of seeing it in the first place, and the difficulty in robustly causing it to appear. In the classical wisdom of statistics, increasing model complexity too far will lead to increase in variance, and thus an increase in test error (or &quot;test risk&quot; or &quot;empirical risk&quot;), leading to a U-shaped test error curve as a function of model complexity. Double descent is t...</description>
+<link>https://shortscience.org/paper?bibtexKey=yang2020rethinking#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=yang2020rethinking#decodyng</guid>
+<pubDate>Tue, 24 Nov 2020 05:26:23 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.15134</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2006.15134</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Critic Regularized Regression</title>
+<author>CodyWild</author>
+<description>Offline reinforcement learning is potentially high-value thing for the machine learning community learn to do well, because there are many applications where it&#x27;d be useful to generate a learnt policy for responding to a dynamic environment, but where it&#x27;d be too unsafe or expensive to learn in an on-policy or online way, where we continually evaluate our actions in the environment to test their value. In such settings, we&#x27;d like to be able to take a batch of existing data - collected from a hum...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2006.15134#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2006.15134#decodyng</guid>
+<pubDate>Mon, 23 Nov 2020 05:52:49 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.06936</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2006-06936</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Does Unsupervised Architecture Representation Learning Help Neural Architecture Search?</title>
+<author>CodyWild</author>
+<description>This paper is ultimately relatively straightforward, for all that it&#x27;s embedded in the somewhat new-to-me literature around graph-based Neural Architecture Search - the problem of iterating through options to find a graph representing an optimized architecture. The authors want to understand whether in this problem, as in many others in deep learning, we can benefit from building our supervised models off of representations learned during an unsupervised pretraining step. In this case, the unsup...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-06936#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-06936#decodyng</guid>
+<pubDate>Sun, 22 Nov 2020 02:10:17 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.12433</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2006.12433</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>What shapes feature representations? Exploring datasets, architectures, and training</title>
+<author>CodyWild</author>
+<description>This is a nice little empirical paper that does some investigation into which features get learned during the course of neural network training. To look at this, it uses a notion of &quot;decodability&quot;, defined as the accuracy to which you can train a linear model to predict a given conceptual feature on top of the activations/learned features at a particular layer. This idea captures the amount of information about a conceptual feature that can be extracted from a given set of activations. 
+
+They wo...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2006.12433#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2006.12433#decodyng</guid>
+<pubDate>Sat, 21 Nov 2020 04:57:58 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2007.01293</shortscience:arxivid>
+<shortscience:bibtexkey>ren2020unlabeled</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Not All Unlabeled Data are Equal: Learning to Weight Data in Semi-supervised Learning</title>
+<author>CodyWild</author>
+<description>This paper argues that, in semi-supervised learning, it&#x27;s suboptimal to use the same weight for all examples (as happens implicitly, when the unsupervised component of the loss for each example is just added together directly. Instead, it tries to learn weights for each specific data example, through a meta-learning-esque process. 
+
+The form of semi-supervised learning being discussed here is label-based consistency loss, where a labeled image is augmented and run through the current version of ...</description>
+<link>https://shortscience.org/paper?bibtexKey=ren2020unlabeled#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=ren2020unlabeled#decodyng</guid>
+<pubDate>Fri, 20 Nov 2020 04:05:54 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2007.14062</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2007-14062</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Big Bird: Transformers for Longer Sequences</title>
+<author>CodyWild</author>
+<description>Transformers - powered by self-attention mechanisms - have been a paradigm shift in NLP, and are now the standard choice for training large language models. However, while transformers do have many benefits in terms of computational constraints - most saliently, that attention between tokens can be computed in parallel, rather than needing to be evaluated sequentially like in a RNN - a major downside is their memory (and, secondarily, computational) requirements. The baseline form of self-attent...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-14062#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-14062#decodyng</guid>
+<pubDate>Thu, 19 Nov 2020 02:32:44 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.07710</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2006-07710</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>The Pitfalls of Simplicity Bias in Neural Networks</title>
+<author>CodyWild</author>
+<description>This is an interesting paper that makes a fairly radical claim, and I haven&#x27;t fully decided whether what they find is an interesting-but-rare corner case, or a more fundamental weakness in the design of neural nets. The claim is: neural nets prefer learning simple features, even if there exist complex features that are equally or more predictive, and even if that means learning a classifier with a smaller margin - where margin means &quot;the distance between the decision boundary and the nearest-by ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-07710#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-07710#decodyng</guid>
+<pubDate>Sun, 15 Nov 2020 22:46:11 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2010.11924</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2010-11924</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>In Search of Robust Measures of Generalization</title>
+<author>CodyWild</author>
+<description>Generalization is, if not the central, then at least one of the central mysteries of deep learning. We are somehow able to able to train high-capacity, overparametrized models, that empirically have the capacity to fit to random data - meaning that they have the capacity to memorize the labeled data we give them - and which yet still manage to train functions that generalize to test data. People have tried to come up with generalization bounds - that is, bounds on the expected test error of a mo...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-11924#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-11924#decodyng</guid>
+<pubDate>Sat, 14 Nov 2020 22:31:16 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.06882</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2006-06882</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Rethinking Pre-training and Self-training</title>
+<author>CodyWild</author>
+<description> Occasionally, I come across results in machine learning that I&#x27;m glad exist, even if I don&#x27;t fully understand them, precisely because they remind me how little we know about the complicated information architectures we&#x27;re building, and what kinds of signal they can productively use. This is one such result. 
+
+The paper tests a method called self-training, and compares it against the more common standard of pre-training. Pre-training works by first training your model on a different dataset, in ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-06882#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-06882#decodyng</guid>
+<pubDate>Sat, 14 Nov 2020 05:00:22 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2010.02302</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2010-02302</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Latent World Models For Intrinsically Motivated Exploration</title>
+<author>CodyWild</author>
+<description>The thing I think is happening here: 
+
+It proposes a self-supervised learning scheme (which...seems fairly basic, but okay) to generate encodings. It then trains a Latent World Model, which takes in the current state encoding, the action, and the belief state (I think just the prior RNN state?) and predicts a next state. The intrinsic reward is the difference between this and the actual encoding of the next step. (This is dependent on a particular action and resulting next obs, it seems). I don&#x27;...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-02302#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-02302#decodyng</guid>
+<pubDate>Thu, 12 Nov 2020 05:26:18 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1911.09071</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1911-09071</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Exploring the Origins and Prevalence of Texture Bias in Convolutional Neural Networks</title>
+<author>CodyWild</author>
+<description>When humans classify images, we tend to use high-level information about the shape and position of the object. However, when convolutional neural networks classify images,, they tend to use low-level, or textural, information more than high-level shape information. This paper tries to understand what factors lead to higher shape bias or texture bias. 
+
+To investigate this, the authors look at three datasets with disagreeing shape and texture labels. The first is GST, or Geirhos Style Transfer. I...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1911-09071#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1911-09071#decodyng</guid>
+<pubDate>Wed, 11 Nov 2020 07:08:22 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2008.11687</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2008-11687</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>What is being transferred in transfer learning?</title>
+<author>CodyWild</author>
+<description>This is an interesting - and refreshing - paper, in that, instead of trying to go all-in on a particular theoretical point, the authors instead run a battery of empirical investigations, all centered around the question of how to explain what happens to make transfer learning work. The experiments don&#x27;t all line up to support a single point, but they do illustrate different interesting facets of the transfer process. 
+
+- An initial experiment tries to understand how much of the performance of fi...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2008-11687#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2008-11687#decodyng</guid>
+<pubDate>Tue, 10 Nov 2020 06:58:27 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2010.12050</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2010-12050</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Contrastive Learning with Adversarial Examples</title>
+<author>CodyWild</author>
+<description>Contrastive learning works by performing augmentations on a batch of images, and training a network to match the representations of the two augmented parts of a pair together, and push the representations of images not in a pair farther apart. Historically, these algorithms have benefitted from using stronger augmentations, which has the effect of making the two positive elements in a pair more visually distinct from one another. This paper tries to build on that success, and, beyond just using ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-12050#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2010-12050#decodyng</guid>
+<pubDate>Mon, 09 Nov 2020 02:03:47 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2004.11362</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2004.11362</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Supervised Contrastive Learning</title>
+<author>CodyWild</author>
+<description>This was a really cool-to-me paper that asked whether contrastive losses, of the kind that have found widespread success in semi-supervised domains, can add value in a supervised setting as well. In a semi-supervised context, contrastive loss works by pushing together the representations of an &quot;anchor&quot; data example with an augmented version of itself (which is taken as a positive or target, because the image is understood to not be substantively changed by being augmented), and pushing the repre...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2004.11362#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2004.11362#decodyng</guid>
+<pubDate>Sat, 07 Nov 2020 23:30:17 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.10455</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2006-10455</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>What Do Neural Networks Learn When Trained With Random Labels?</title>
+<author>CodyWild</author>
+<description>This is another paper that was a bit of a personal-growth test for me to try to parse, since it&#x27;s definitely heavier on analytical theory than I&#x27;m used to, but I think I&#x27;ve been able to get something from it, even though I&#x27;ll be the first to say I didn&#x27;t understand it entirely. 
+
+The question of this paper is: why does it seem to be the case that training a neural network on a data distribution - but with your supervised labels randomly sampled - seems to afford some level of advantage when fine...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-10455#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-10455#decodyng</guid>
+<pubDate>Sat, 07 Nov 2020 00:15:03 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2007.13916</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2007-13916</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Demystifying Contrastive Self-Supervised Learning: Invariances, Augmentations and Dataset Biases</title>
+<author>CodyWild</author>
+<description>In the past year or so, contrastive learning has experienced widespread success, and has risen to be a dominant problem framing within self-supervised learning. The basic idea of contrastive learning is that, instead of needing human-generated labels to generate a supervised task, you instead assume that there exists some automated operation you can perform to a data element to generate another data element that, while different, should be considered still fundamentally the same, or at least mor...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-13916#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-13916#decodyng</guid>
+<pubDate>Fri, 06 Nov 2020 04:39:42 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2002.00632</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2002-00632</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Effective Diversity in Population-Based Reinforcement Learning</title>
+<author>CodyWild</author>
+<description>A central problem in the domain of reinforcement learning is how to incentivize exploration and diversity of experience, since RL agents can typically only learn from states they go to, and it can often be the case that states with high reward don&#x27;t have an obvious trail of high-reward states leading to them, meaning that algorithms that are naively optimizing for reward will be relatively unlikely to discover them. One potential way to promote exploration is to train an ensemble of agents, and ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2002-00632#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2002-00632#decodyng</guid>
+<pubDate>Wed, 04 Nov 2020 00:44:40 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2007.08794</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2007.08794</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Discovering Reinforcement Learning Algorithms</title>
+<author>CodyWild</author>
+<description>This work attempts to use meta-learning to learn an update rule for a reinforcement learning agent. In this context, &quot;learning an update rule&quot; means learning the parameters of an LSTM module that takes in information about the agent&#x27;s recent reward and current model and outputs two values - a scalar and a vector - that are used to update the agent&#x27;s model. I&#x27;m not going to go too deep into meta-learning here, but, at a high level, meta learning methods optimize parameters governing an agent&#x27;s le...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2007.08794#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2007.08794#decodyng</guid>
+<pubDate>Tue, 03 Nov 2020 05:29:13 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2006.04635</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2006-04635</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Learning to Play No-Press Diplomacy with Best Response Policy Iteration</title>
+<author>CodyWild</author>
+<description>This paper focuses on an effort by a Deepmind team to train an agent that can play the game Diplomacy - a complex, multiplayer game where players play as countries controlling units, trying to take over the map of Europe. Some relevant factors of this game, for the purposes of this paper, are: 
+
+1) All players move at the same time, which means you need to model your opponent&#x27;s current move, and play a move that succeeds in expectation over that predicted move distribution. This also means that,...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-04635#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-04635#decodyng</guid>
+<pubDate>Mon, 02 Nov 2020 06:15:17 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>10.1101/2020.02.07.938852</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Tumor Phylogeny Topology Inference via Deep Learning</title>
+<author>Gavin Gray</author>
+<description>A very simple (but impractical) discrete model of subclonal evolution would include the following events:
+
+* Division of a cell to create two cells:
+    * **Mutation** at a location in the genome of the new cells
+* Cell death at a new timestep
+* Cell survival at a new timestep
+
+Because measurements of mutations are usually taken at one time point, this is taken to be at the end of a time series of these events, where a tiny of subset of cells are observed and a **genotype matrix** $A$ is produce...</description>
+<link>https://shortscience.org/paper?bibtexKey=10.1101/2020.02.07.938852#gngdb</link>
+<guid>https://shortscience.org/paper?bibtexKey=10.1101/2020.02.07.938852#gngdb</guid>
+<pubDate>Wed, 16 Sep 2020 15:59:52 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1805.08296</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1805.08296</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Data-Efficient Hierarchical Reinforcement Learning</title>
+<author>Felipe Martins</author>
+<description># Keypoints
+- Proposes the HIerarchical Reinforcement learning with Off-policy correction (**HIRO**) algorithm.
+ - Does not require careful task-specific design.
+ - Generic goal representation to make it broadly applicable, without any manual design of goal spaces, primitives, or controllable dimensions.
+- Use of off-policy experience using a novel off-policy correction.
+- A two-level hierarchy architecture
+ - A higher-level controller outputs a goal for the lower-level controller every **c** ti...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1805.08296#felipemartins</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1805.08296#felipemartins</guid>
+<pubDate>Tue, 01 Sep 2020 00:38:54 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>10.1109/isbi45749.2020.9098686</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Bayesian Skip-Autoencoders for Unsupervised Hyperintense Anomaly Detection in High Resolution Brain Mri</title>
+<author>Friedrich-Maximilian Weberling</author>
+<description>The reconstruction of high-fidelity resolution brain MR images is especially challenging because of the highly complex brain structure. Most promising approaches for this task are autoencoders and generative models such as Variational Autoencoders (VAE) or Generative Adversarial Networks (GAN). In Unsupervised Anomaly Detection (UAD), these architectures are only trained with images of healthy brain anatomy and not with images containing anomalies such as lesions. Therefore, processing an anomal...</description>
+<link>https://shortscience.org/paper?bibtexKey=10.1109/isbi45749.2020.9098686#fweberling1995</link>
+<guid>https://shortscience.org/paper?bibtexKey=10.1109/isbi45749.2020.9098686#fweberling1995</guid>
+<pubDate>Mon, 31 Aug 2020 09:18:08 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1809.01999</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1809.01999</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Recurrent World Models Facilitate Policy Evolution</title>
+<author>Paul Barde</author>
+<description>## General Framework 
+The take-home message is that the challenge of Reinforcement Learning for environments with high-dimensional and partial observations is learning a good representation of the environment. This means learning a sensory features extractor V to deal with the highly dimensional observation (pixels for example). But also learning a temporal representation M of the environment dynamics to deal with the partial observability. If provided with such representations, learning a contr...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1809.01999#muntermulehitch</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1809.01999#muntermulehitch</guid>
+<pubDate>Mon, 27 Jul 2020 13:05:14 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1907.03976</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1907.03976</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Better-than-Demonstrator Imitation Learning via Automatically-Ranked Demonstrations</title>
+<author>Paul Barde</author>
+<description>## General Framework
+Extends T-REX (see [summary]()) so that preferences (rankings) over demonstrations are generated automatically (back to the common IL/IRL setting where we only have access to a set of unlabeled demonstrations). Also derives some theoretical requirements and guarantees for better-than-demonstrator performance. 
+
+## Motivations
+* Preferences over demonstrations may be difficult to obtain in practice. 
+* There is no theoretical understanding of the requirements that lead to out...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1907.03976#muntermulehitch</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1907.03976#muntermulehitch</guid>
+<pubDate>Mon, 27 Jul 2020 02:22:27 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1904.06387</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1904.06387</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Extrapolating Beyond Suboptimal Demonstrations via Inverse Reinforcement Learning from Observations</title>
+<author>Paul Barde</author>
+<description>## General Framework
+Only access to a finite set of **ranked demonstrations**. The demonstrations only contains **observations** and **do not need to be optimal** but must be (approximately) ranked from worst to best. 
+The **reward learning part is off-line** but not the policy learning part (requires interactions with the environment).
+
+In a nutshell: learns a reward models that looks at observations. The reward model is trained to predict if a demonstration&#x27;s ranking is greater than another on...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1904.06387#muntermulehitch</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1904.06387#muntermulehitch</guid>
+<pubDate>Mon, 27 Jul 2020 02:18:47 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>10.15607/rss.2016.xii.029</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Planning for Autonomous Cars that Leverage Effects on Human Actions</title>
+<author>Paul Barde</author>
+<description>## General Framework
+*wording: car = the autonomous car, driver = the other car it is interacting with* 
+
+Builds a model of an **autonomous car&#x27;s influence over the behavior of an interacting driver** (human or simulated) that the autonomous car can leverage to plan more efficiently. The driver is modeled by the policy that maximizes his defined objective. In brief, a **linear reward function is learned off-line with IRL on human demonstrations** and the modeled policy takes the actions that max...</description>
+<link>https://shortscience.org/paper?bibtexKey=10.15607/rss.2016.xii.029#muntermulehitch</link>
+<guid>https://shortscience.org/paper?bibtexKey=10.15607/rss.2016.xii.029#muntermulehitch</guid>
+<pubDate>Mon, 27 Jul 2020 02:14:17 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1406.5979</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1406.5979</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Reinforcement and Imitation Learning via Interactive No-Regret Learning</title>
+<author>Paul Barde</author>
+<description>## General Framework
+Really **similar to DAgger** (see [summary]()) but considers **cost-sensitive classification** (&quot;some mistakes are worst than others&quot;: you should be more careful in imitating that particular action of the expert if failing in doing so incurs a large cost-to-go). By doing so they improve from DAgger&#x27;s bound of $\epsilon_{class}uT$ where $u$ is the difference in cost-to-go (between the expert and one error followed by expert policy) to  $\epsilon_{class}T$ where $\epsilon_{cla...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1406.5979#muntermulehitch</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1406.5979#muntermulehitch</guid>
+<pubDate>Mon, 27 Jul 2020 02:08:30 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1011.0686</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1011.0686</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning</title>
+<author>Paul Barde</author>
+<description>## General Framework
+The imitation learning problem is here cast into a classification problem: label the state with the corresponding expert action. With this, you can see structured prediction (predict next label knowing your previous prediction) as a degenerated IL problem. They make the **reduction assumption** that you can make the probability of mistake $\epsilon$ as small as desired on the **training distribution** (expert or mixture). They also assume that the difference in the cost-to-g...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1011.0686#muntermulehitch</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1011.0686#muntermulehitch</guid>
+<pubDate>Mon, 27 Jul 2020 01:53:35 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1611.03530</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1611.03530</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Understanding deep learning requires rethinking generalization</title>
+<author>ANIRUDH NJ</author>
+<description>## Summary     
+The broad goal of this paper is to understand how a neural network learns the underlying distribution of the input data and the properties of the network that describes its generalization power.
+
+Previous literature tries to use statistical measures like Rademacher complexity, uniform stability and VC dimension to explain the generalization error of the model. These methods explain generalization in terms of the number of parameters in the model along with the applied regularizat...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1611.03530#anirudhnj</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1611.03530#anirudhnj</guid>
+<pubDate>Fri, 26 Jun 2020 15:33:03 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>journals/af/Maymin11</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Markets are efficient if and only if P = NP</title>
+<author>quaxton</author>
+<description>Is the market efficient? This is perhaps the most prevalent question in all of finance. While this paper does not aim to answer that question, it does frame it in an information-theoretic context. Mainly, Maymin shows that at least the weak form of the efficient market hypothesis (EMH) holds if and only if P = NP. 
+
+First, he defines what efficient market means: 
+&quot;The weakest form of the EMH states that future prices cannot be predicted by analyzing prices from the past. Therefore, technical ana...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/af/Maymin11#jyang772</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/af/Maymin11#jyang772</guid>
+<pubDate>Thu, 04 Jun 2020 02:53:53 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>conf/iclr/RendaFC20</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Comparing Rewinding and Fine-tuning in Neural Network Pruning</title>
+<author>CodyWild</author>
+<description>This is an interestingly pragmatic paper that makes a super simple observation. Often, we may want a usable network with fewer parameters, to make our network more easily usable on small devices. It&#x27;s been observed (by these same authors, in fact), that pruned networks can achieve comparable weights to their fully trained counterparts if you rewind and retrain from early in the training process, to compensate for the loss of the (not ultimately important) pruned weights. This observation has bee...</description>
+<link>https://shortscience.org/paper?bibtexKey=conf/iclr/RendaFC20#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=conf/iclr/RendaFC20#decodyng</guid>
+<pubDate>Fri, 15 May 2020 03:18:21 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2004.13649</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2004.13649</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Image Augmentation Is All You Need: Regularizing Deep Reinforcement Learning from Pixels</title>
+<author>CodyWild</author>
+<description>One of the most notable flaws of modern model-free reinforcement learning is its sample inefficiency; where humans can learn a new task with relatively few examples, model that learn policies or value functions directly from raw data need huge amounts of data to train properly. Because the model isn&#x27;t given any semantic features, it has to learn a meaningful representation from raw pixels using only the (often sparse, often noisy) signal of reward. Some past approaches have tried learning repres...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2004.13649#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2004.13649#decodyng</guid>
+<pubDate>Sun, 10 May 2020 05:46:18 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1903.11981</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1903-11981</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Regularizing Trajectory Optimization with Denoising Autoencoders</title>
+<author>Robert Müller</author>
+<description>The typical model based reinforcement learning (RL) loop consists of collecting data, training a model of the environment, using the model to do model predictive control (MPC). If however the model is wrong, for example for state-action pairs that have been barely visited, the dynamics model might be very wrong and the MPC fails as the imagined model and the reality align to longer. Boney et a. propose to tackle this with a denoising autoencoder for trajectory regularization according to the fam...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1903-11981#robertmueller</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1903-11981#robertmueller</guid>
+<pubDate>Thu, 07 May 2020 08:08:00 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1912.05500</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1912-05500</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>What Can Learned Intrinsic Rewards Capture?</title>
+<author>CodyWild</author>
+<description>This paper out of DeepMind is an interesting synthesis of ideas out of the research areas of meta learning and intrinsic rewards. The hope for intrinsic reward structures in reinforcement learning - things like uncertainty reduction or curiosity -  is that they can incentivize behavior like information-gathering and exploration, which aren&#x27;t incentivized by the explicit reward in the short run, but which can lead to higher total reward in the long run. So far, intrinsic rewards have mostly been ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1912-05500#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1912-05500#decodyng</guid>
+<pubDate>Tue, 05 May 2020 06:22:03 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>conf/icml/FinnAL17</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</title>
+<author>Andrea Walter Ruggerini</author>
+<description>## TL;DR
+
+The paper presents a model-agnostic strategy to perform few-shot learning taking advantage of prior knowledge acquired during in multitask learning. Such prior knowledge derives from priors acquired about generalized model parameters (e.g. weights or hyperparameters) during the Model Agnostic Meta-Learning (MAML) algorithm. The strategy can be applied to any algorithm trained with gradient descent (not only neural networks) being more general and perhaps effective than transfer learnin...</description>
+<link>https://shortscience.org/paper?bibtexKey=conf/icml/FinnAL17#andreaw</link>
+<guid>https://shortscience.org/paper?bibtexKey=conf/icml/FinnAL17#andreaw</guid>
+<pubDate>Sun, 03 May 2020 14:29:05 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2001.04451</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/2001.04451</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Reformer: The Efficient Transformer</title>
+<author>CodyWild</author>
+<description>The Transformer architecture - which uses a structure entirely based on key-value attention mechanisms to process sequences such as text - has taken over the worlds of language modeling and NLP in the past three years. However, Transformers at the scale used for large language models have huge computational and memory requirements. 
+
+This is largely driven by the fact that information at every step in the sequence (or, in the so-far-generated sequence during generation) is used to inform the rep...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/2001.04451#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/2001.04451#decodyng</guid>
+<pubDate>Sun, 03 May 2020 05:14:23 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1909.11655</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1909-11655</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Augmenting Genetic Algorithms with Deep Neural Networks for Exploring the Chemical Space</title>
+<author>CodyWild</author>
+<description>I found this paper a bit difficult to fully understand. Its premise, as far as I can follow, is that we may want to use genetic algorithms (GA), where we make modifications to elements in a population, and keep elements around at a rate proportional to some set of their desirable properties. In particular we might want to use this approach for constructing molecules that have properties (or predicted properties) we want. However, a downside of GA is that its easy to end up in local minima, where...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1909-11655#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1909-11655#decodyng</guid>
+<pubDate>Fri, 01 May 2020 05:38:46 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>conf/nips/KumarFSTL19</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Stabilizing Off-Policy Q-Learning via Bootstrapping Error Reduction</title>
+<author>Robert Müller</author>
+<description>Kumar et al. propose an algorithm to learn in batch reinforcement learning (RL), a setting where an agent learns purely form a fixed batch of data, $B$, without any interactions with the environments. The data in the batch is collected according to a batch policy $\pi_b$. Whereas most previous methods (like BCQ) constrain the learned policy to stay close to the behavior policy, Kumar et al. propose bootstrapping error accumulation reduction (BEAR), which constrains the newly learned policy to pl...</description>
+<link>https://shortscience.org/paper?bibtexKey=conf/nips/KumarFSTL19#robertmueller</link>
+<guid>https://shortscience.org/paper?bibtexKey=conf/nips/KumarFSTL19#robertmueller</guid>
+<pubDate>Thu, 30 Apr 2020 13:31:29 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>10.1101/2020.03.03.972133</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>AI-aided design of novel targeted covalent inhibitors against SARS-CoV-2</title>
+<author>CodyWild</author>
+<description>This preprint is a bit rambling, and I don&#x27;t know that I fully followed what it was doing, but here&#x27;s my best guess: 
+
+
+
+- We think it&#x27;s probably the case that SARS-COV2 (COVID19) uses a protease (enzyme involved in its reproduction) that isn&#x27;t available and co-optable in the human body, and is also quite similar to the comparable protease protein in the original SARS virus. Therefore, it is hoped that we might be able to take inhibitors that bind to SARS, and modify them in small ways to make t...</description>
+<link>https://shortscience.org/paper?bibtexKey=10.1101/2020.03.03.972133#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=10.1101/2020.03.03.972133#decodyng</guid>
+<pubDate>Thu, 30 Apr 2020 04:36:33 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>2003.03123</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-2003-03123</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Directional Message Passing for Molecular Graphs</title>
+<author>CodyWild</author>
+<description>This paper, presented this week at ICLR 2020, builds on existing applications of message-passing Graph Neural Networks (GNN) for molecular modeling (specifically: for predicting quantum properties of molecules), and extends them by introducing a way to represent angles between atoms, rather than just distances between them, as current methods are limited to. 
+
+The basic version of GNNs on molecule data works by creating features attached to atoms at each level (starting at level 0 with the eleme...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2003-03123#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-2003-03123#decodyng</guid>
+<pubDate>Wed, 29 Apr 2020 03:42:52 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1911.11361</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1911-11361</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Behavior Regularized Offline Reinforcement Learning</title>
+<author>Robert Müller</author>
+<description>Wu et al. provide a framework (behavior regularized actor critic (BRAC)) which they use to empirically study the impact of different design choices in batch reinforcement learning (RL). Specific instantiations of the framework include BCQ, KL-Control and BEAR. 
+
+Pure off-policy rl describes the problem of learning a policy purely from a batch $B$ of one step transitions collected with a behavior policy $\pi_b$. The setting allows for no further interactions with the environment. This learning re...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1911-11361#robertmueller</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1911-11361#robertmueller</guid>
+<pubDate>Mon, 27 Apr 2020 13:02:23 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1908.06760</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1908-06760</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Self-Attention Based Molecule Representation for Predicting Drug-Target Interaction</title>
+<author>CodyWild</author>
+<description>In the last three years, Transformers, or models based entirely on attention for aggregating information from across multiple places in a sequence, have taken over the world of NLP. In this paper, the authors propose using a Transformer to learn a molecular representation, and then building a model to predict drug/target interaction on top of that learned representation. A drug/target interaction model takes in two inputs - a protein involved in a disease pathway, and a (typically small) molecul...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-06760#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-06760#decodyng</guid>
+<pubDate>Sun, 26 Apr 2020 06:39:30 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>journals/iacr/BellareRRS09</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Format-Preserving Encryption</title>
+<author>quaxton</author>
+<description>Format-preserving encryption is a deterministic encryption scheme that encrypts plaintext of some specified format into ciphertext of the same format. This has a lot of practical use cases such as storing SSN or credit card information, without having to change the underlying schematics of the database or application that stores the data. The protected data is in-differentiable from unprotected data, and still enables some analytics over it, such as with masking (ie, displaying last four digits ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/iacr/BellareRRS09#jyang772</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/iacr/BellareRRS09#jyang772</guid>
+<pubDate>Thu, 23 Apr 2020 22:05:16 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>conf/ac/Rasmussen03</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Gaussian Processes in Machine Learning</title>
+<author>Friedrich-Maximilian Weberling</author>
+<description>In this tutorial paper, Carl E. Rasmussen gives an introduction to Gaussian Process Regression focusing on the definition, the hyperparameter learning and future research directions.
+
+A Gaussian Process is completely defined by its mean function $m(\pmb{x})$ and its covariance function (kernel) $k(\pmb{x},\pmb{x}&#x27;)$. The mean function $m(\pmb{x})$ corresponds to the mean vector $\pmb{\mu}$ of a Gaussian distribution whereas the covariance function $k(\pmb{x}, \pmb{x}&#x27;)$ corresponds to the covari...</description>
+<link>https://shortscience.org/paper?bibtexKey=conf/ac/Rasmussen03#fweberling1995</link>
+<guid>https://shortscience.org/paper?bibtexKey=conf/ac/Rasmussen03#fweberling1995</guid>
+<pubDate>Tue, 21 Apr 2020 20:05:41 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1903.08254</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1903-08254</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Efficient Off-Policy Meta-Reinforcement Learning via Probabilistic Context Variables</title>
+<author>Robert Müller</author>
+<description>Rakelly et al. propose a method to do off-policy meta reinforcement learning (rl). The method achieves a 20-100x improvement on sample efficiency compared to on-policy meta rl like MAML+TRPO. 
+
+The key difficulty for offline meta rl arises from the meta-learning assumption, that meta-training and meta-test time match. However during test time the policy has to explore and sees as such on-policy data which is in contrast to the off-policy data that should be used at meta-training. The key contrib...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1903-08254#robertmueller</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1903-08254#robertmueller</guid>
+<pubDate>Tue, 21 Apr 2020 08:39:21 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>10.1093/bioinformatics/bty573</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Predicting protein–protein interactions through sequence-based deep learning</title>
+<author>CodyWild</author>
+<description>Most of the interesting mechanics within living things are mediated by interactions between proteins, making it important and useful to have good predictive models of whether proteins will interact with one another, for validating possible interaction graph structures. 
+
+Prior methods for this problem - which takes as its input sequence representations of two proteins, and outputs a probability of interaction - have pursued different ideas for how to combine information from the two proteins. On...</description>
+<link>https://shortscience.org/paper?bibtexKey=10.1093/bioinformatics/bty573#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=10.1093/bioinformatics/bty573#decodyng</guid>
+<pubDate>Tue, 21 Apr 2020 06:36:31 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1906.05374</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1906.05374</shortscience:bibtexkey>
+<shortscience:votes>3</shortscience:votes>
+<title>Meta-Learning via Learned Loss</title>
+<author>Robert Müller</author>
+<description>Bechtle et al. propose meta learning via learned loss ($ML^3$) and derive and empirically evaluate the framework on classification, regression, model-based and model-free reinforcement learning tasks. 
+
+The problem is formalized as learning parameters $\Phi$ of a meta loss function $M_\phi$ that computes loss values $L_{learned} = M_{\Phi}(y, f_{\theta}(x))$. Following the outer-inner loop meta algorithm design the learned loss $L_{learned}$ is used to update the parameters of the learner in the...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1906.05374#robertmueller</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1906.05374#robertmueller</guid>
+<pubDate>Mon, 20 Apr 2020 16:28:20 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1802.04364</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1802-04364</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Junction Tree Variational Autoencoder for Molecular Graph Generation</title>
+<author>CodyWild</author>
+<description>Prior to this paper, most methods that used machine learning to generate molecular blueprints did so using SMILES representations - a string format with characters representing different atoms and bond types. This preference came about because ML had existing methods for generating strings that could be built on for generating SMILES (a particular syntax of string). However, an arguably more accurate and fundamental way of representing molecules is as graphs (with atoms as nodes and bonds as edg...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-04364#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-04364#decodyng</guid>
+<pubDate>Mon, 20 Apr 2020 04:48:28 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1705.10843</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/GuimaraesSFA17</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Objective-Reinforced Generative Adversarial Networks (ORGAN) for Sequence Generation Models</title>
+<author>CodyWild</author>
+<description>This paper&#x27;s proposed method, the cleverly named ORGAN, combines techniques from GANs and reinforcement learning to generate candidate molecular sequences that incentivize desirable properties while still remaining plausibly on-distribution. 
+
+Prior papers I&#x27;ve read on molecular generation have by and large used approaches based in maximum likelihood estimation (MLE) - where you construct some distribution over molecular representations, and maximize the probability of your true data under that ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/GuimaraesSFA17#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/GuimaraesSFA17#decodyng</guid>
+<pubDate>Sat, 18 Apr 2020 04:57:12 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>journals/jcheminf/OlivecronaBEC17</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Molecular de-novo design through deep reinforcement learning</title>
+<author>CodyWild</author>
+<description>Over the past few days, I&#x27;ve been reading about different generative neural networks being tried out for molecular generation. So far this has mostly focused on latent variable space models like autoencoders, but today I shifted attention to a different approach rooted in reinforcement learning. The goal of most of these methods is 1) to build a generative model that can sample plausible molecular structures, but more saliently 2) specifically generate molecules optimized to exhibit some propert...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/jcheminf/OlivecronaBEC17#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/jcheminf/OlivecronaBEC17#decodyng</guid>
+<pubDate>Fri, 17 Apr 2020 06:00:27 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1908.09791</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/abs-1908-09791</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Once for All: Train One Network and Specialize it for Efficient Deployment</title>
+<author>ameroyer</author>
+<description>**Summary**: The goal of this work is to propose a &quot;Once-for-all” (OFA) network: a large network which is trained such that its subnetworks (subsets of the network with smaller width, convolutional kernel sizes, shallower units) are also trained towards the target task. This allows to adapt the architecture to a given budget at inference time while preserving performance.
+
+**Elastic Parameters.**
+The goal is to train a large architecture  that contains several well-trained subnetworks with diffe...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-09791#ameroyer</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-09791#ameroyer</guid>
+<pubDate>Thu, 16 Apr 2020 17:48:55 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1610.02415</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/Gomez-Bombarelli16</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Automatic chemical design using a data-driven continuous representation of molecules</title>
+<author>CodyWild</author>
+<description>I&#x27;ll admit that I found this paper a bit of a letdown to read, relative to  expectations rooted in its high citation count, and my general excitement and interest to see how deep learning could be brought to bear on molecular design. But before a critique, let&#x27;s first walk through the mechanics of how the authors&#x27; approach works. 
+
+The method proposed is basically a very straightforward Variational Auto Encoder, or VAE. It takes in a textual SMILES string representation of a molecular structure,...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/Gomez-Bombarelli16#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/Gomez-Bombarelli16#decodyng</guid>
+<pubDate>Wed, 15 Apr 2020 03:11:44 +0000</pubDate>
+</item>
+<item>
+
+<shortscience:bibtexkey>journals/iacr/BrakerskiV11</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Efficient Fully Homomorphic Encryption from (Standard) LWE</title>
+<author>quaxton</author>
+<description>Brakerski and Vaikuntanathan introduce a fully homomorphic encryption scheme (FHE) based solely on the decisional learning with errors (LWE) security assumptions. Moving away from the relatively obscure mathematics of ideal lattices. They introduce relinearization and modulus switching techniques for dimensionality reduction and for removing the “squashing” step of Craig Gentry’s FHE scheme. BV11 and other similar schemes are commonly referred to as “Second generation FHE” schemes. 
+
+Reliearniza...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/iacr/BrakerskiV11#jyang772</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/iacr/BrakerskiV11#jyang772</guid>
+<pubDate>Mon, 13 Apr 2020 02:16:23 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1704.01212</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/GilmerSRVD17</shortscience:bibtexkey>
+<shortscience:votes>4</shortscience:votes>
+<title>Neural Message Passing for Quantum Chemistry</title>
+<author>CodyWild</author>
+<description>In the years before this paper came out in 2017, a number of different graph convolution architectures - which use weight-sharing and order-invariant operations to create representations at nodes in a graph that are contextualized by information in the rest of the graph - had been suggested for learning representations of molecules. The authors of this paper out of Google sought to pull all of these proposed models into a single conceptual framework, for the sake of better comparing and testing ...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/GilmerSRVD17#decodyng</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/GilmerSRVD17#decodyng</guid>
+<pubDate>Fri, 10 Apr 2020 06:05:16 +0000</pubDate>
+</item>
+<item>
+<shortscience:arxivid>1708.09259</shortscience:arxivid>
+<shortscience:bibtexkey>journals/corr/1708.09259</shortscience:bibtexkey>
+<shortscience:votes>2</shortscience:votes>
+<title>Efficient Convolutional Network Learning using Parametric Log based Dual-Tree Wavelet ScatterNet</title>
+<author>hanoch kremer</author>
+<description>ScatterNets incorporates geometric knowledge of images to produce discriminative and invariant (translation and rotation) features i.e. edge information. The same outcome as CNN&#x27;s first layers hold. So why not replace that first layer/s with an equivalent, fixed, structure and let the optimizer find the best weights for the CNN with its leading-edge removed.
+The main motivations of the idea of replacing the first convolutional, ReLU and pooling layers of the CNN with a two-layer parametric log-b...</description>
+<link>https://shortscience.org/paper?bibtexKey=journals/corr/1708.09259#hanochkremer</link>
+<guid>https://shortscience.org/paper?bibtexKey=journals/corr/1708.09259#hanochkremer</guid>
+<pubDate>Thu, 09 Apr 2020 12:05:38 +0000</pubDate>
+</item>
+</channel>
+</rss>

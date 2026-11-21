@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model-Based Active Exploration - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Model-Based Active Exploration - ShortScience.org">
+<meta property="og:description" content="This paper continues in the tradition of curiosity-based models, which try to reward models for expl...">
+<meta name="description" content="This paper continues in the tradition of curiosity-based models, which try to reward models for expl...">
+<meta property="og:image" content="https://i.imgur.com/YIuomuP.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.12162">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1810.12162" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Pranav Shyam and Wojciech Ja\u015bkowski and Faustino Gomez"}, "headline": "Model-Based Active Exploration", "description": "Summary of Model-Based Active Exploration", "datePublished": "2018-11-17 07:30:01", "dateModified": "2018-11-17 07:30:01", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/YIuomuP.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1810.12162", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI,  cs.IT,  cs.NE,  math.IT,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1810.12162v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Model-Based%20Active%20Exploration%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Model-Based Active Exploration</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Pranav%20Shyam">Pranav Shyam</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Wojciech%20Ja%C5%9Bkowski">Wojciech Jaśkowski</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Faustino%20Gomez">Faustino Gomez</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.IT"> cs.IT</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20math.IT"> math.IT</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/10/29<br><b>Abstract:</b>   Efficient exploration is an unsolved problem in Reinforcement Learning. We
+introduce Model-Based Active eXploration (MAX), an algorithm that actively
+explores the environment. It minimizes data required to comprehensively model
+the environment by planning to observe novel events, instead of merely reacting
+to novelty encountered by chance. Non-stationarity induced by traditional
+exploration bonus techniques is avoided by constructing fresh exploration
+policies only at time of action. In semi-random toy environments where directed
+exploration is critical to make progress, our algorithm is at least an order of
+magnitude more efficient than strong baselines.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434').hide());void($('#showless-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434').show());void($('#more-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434').show());void($('#showless-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434').hide());void($('#more-am91cm5hbHMvY29yci8xODEwLjEyMTYy-1434').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1810.12162">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-17&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1810.12162&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1435').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1810.12162%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1435" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.12162&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.12162%26a%3Ddecodyng&amp;text=Summary%20of%20Model-Based%20Active%20Exploration&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.12162%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Model-Based%20Active%20Exploration&amp;Body=Summary%20of%20Model-Based%20Active%20Exploration%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.12162%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.12162%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.12162%26a%3Ddecodyng&amp;title=Summary%20of%20Model-Based%20Active%20Exploration" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.12162&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper continues in the tradition of curiosity-based models, which try to reward models for exploring novel parts of their environment, in the hopes this can intrinsically motivate learning. However, this paper argues that it’s insufficient to just treat novelty as an occasional bonus on top of a normal reward function, and that instead you should figure out a process that’s more specifically designed to increase novelty. Specifically: you should design a policy whose goal is to experience transitions and world-states that are high novelty. 
+
+In this setup, like in other curiosity-based papers, “high novelty” is defined in terms of a state being unpredictable given a prior state, history, and action. However, where other papers saw novelty reward as something only applied when the agent arrived at somewhere novel, here, the authors build a model (technically, an ensemble of models) to predict the state at various future points. The ensemble is important here because it’s (quasi) bootstrapped, and thus gives us a measure of uncertainty. States where the predictions of the ensemble diverge represent places of uncertainty, and thus of high value to explore. I don’t 100% follow the analytic specification of this idea (even though the heuristic/algorithmic description makes sense). The authors frame the Utility function of a state and action as being equivalent to the Jenson Shannon Divergence (~distance between probability distributions) shown below. 
+
+https://i.imgur.com/YIuomuP.png
+
+
+Here, P(S | S, a, T) is the probability of a state given prior state and action under a given model of the environment (Transition Model), and P(gamma) is the distribution over the space of possible transition models one might learn. A “model” here is one network out of the ensemble of networks that makes up our bootstrapped (trained on different sets) distribution over models. Conceptually, I think this calculation is measuring “how different is each sampled model/state distribution from all the other models in the distribution over possible models”. If the models within the distribution diverge from one another, that indicates a location of higher uncertainty. 
+
+What’s important about this is that, by building a full transition model, the authors can calculate the expected novelty or “utility” of future transitions it might take, because it can make a best guess based on this transition model (which, while called a “prior”, is really something trained on all data up to this current iteration). My understanding is that these kinds of models function similarly to a Q(s,a) or V(s) in a pure-reward case: they estimate the “utility reward” of different states and actions, and then the policy is updated to increase that expected reward. 
+
+I’ve recently read papers on ICM, and I was a little disappointed that this paper didn’t appear to benchmark against that, but against Bootstrapped DQN and Exploration Bonus DQN, which I know less well and can less speak to the conceptual differences from this approach. Another difficulty in actually getting a good sense of results was that the task being tested on is fairly specific, and different from RL results coming out of the world of e.g. Atari and Deep Mind Labs. All of that said, this is a cautiously interesting idea, if the results generate to beat more baselines on more environments. 
+
+
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="decodyngcomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=pranav" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=pranav&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/26a54f459f57303f6249b207af4f47a7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;pranav&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: pranav&lt;br&gt;Posted: 2018-11-19">
+<img src="https://www.gravatar.com/avatar/26a54f459f57303f6249b207af4f47a7?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Hi, I am one of the authors of the paper. This is a very nice summary!
+
+To clarify one point: ICM is a special case of the Exploration Bonus DQN baseline we used. Unlike ICM, we measure the state visitation frequency directly with an oracle instead of relying on prediction errors as a proxy (details in appendix). Hence, the numbers for ICM will be very similar to Exploration Bonus DQN baseline and the performance we report can be considered as an upper bound of ICM’s potential performance.
+
+We agree that the value of the proposed method is dependant on its scalability and we are currently working on it :)</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=decodyng" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-19">
+<img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Great, thanks for the clarification! In general, this wasn&#x27;t any particular judgment that ICM is a better or more correct baseline, it&#x27;s just that I wasn&#x27;t familiar with Exploration Bonus DQN, and so couldn&#x27;t comment on it.</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

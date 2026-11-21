@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neural Discrete Representation Learning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Neural Discrete Representation Learning - ShortScience.org">
+<meta property="og:description" content="There are mathematicians, still today, who look at deep learning, and get real salty over the lack o...">
+<meta name="description" content="There are mathematicians, still today, who look at deep learning, and get real salty over the lack o...">
+<meta property="og:image" content="https://i.imgur.com/P8LQRYJ.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.00937">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1711.00937" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Aaron van den Oord and Oriol Vinyals and Koray Kavukcuoglu"}, "headline": "Neural Discrete Representation Learning", "description": "Summary of Neural Discrete Representation Learning", "datePublished": "2018-06-26 04:25:50", "dateModified": "2018-06-26 04:25:50", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/P8LQRYJ.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1711.00937", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1711.00937v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Neural%20Discrete%20Representation%20Learning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Neural Discrete Representation Learning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Aaron%20van%20den%20Oord">Aaron van den Oord</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Oriol%20Vinyals">Oriol Vinyals</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Koray%20Kavukcuoglu">Koray Kavukcuoglu</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/11/02<br><b>Abstract:</b>   Learning useful representations without supervision remains a key challenge
+in machine learning. In this paper, we propose a simple yet powerful generative
+model that learns such discrete representations. Our model, the Vector
+Quantised-Variational AutoEncoder (VQ-VAE), differs from VAEs in two key ways:
+the encoder network outputs discrete, rather than continuous, codes; and the
+prior is learnt rather than static. In order to learn a discrete latent
+representation, we incorporate ideas from vector quantisation (VQ). Using the
+VQ method allows the model to circumvent issues of &quot;posterior collapse&quot; --
+where the latents are ignored when they are paired with a powerful
+autoregressive decoder -- typically observed in the VAE framework. Pairing
+these representations with an autoregressive prior, the model can generate high
+quality images, videos, and speech as well as doing high quality speaker
+conversion and unsupervised learning of phonemes, providing further evidence of
+the utility of the learnt representations.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200').hide());void($('#showless-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200').show());void($('#more-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200').show());void($('#showless-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200').hide());void($('#more-am91cm5hbHMvY29yci8xNzExLjAwOTM3-1200').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1711.00937">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1711.00937&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1201').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1711.00937%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1201" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.00937&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.00937%26a%3Ddecodyng&amp;text=Summary%20of%20Neural%20Discrete%20Representation%20Learning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.00937%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Neural%20Discrete%20Representation%20Learning&amp;Body=Summary%20of%20Neural%20Discrete%20Representation%20Learning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.00937%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.00937%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.00937%26a%3Ddecodyng&amp;title=Summary%20of%20Neural%20Discrete%20Representation%20Learning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.00937&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">There are mathematicians, still today, who look at deep learning, and get real salty over the lack of convex optimization. That is to say: convex functions are ones where you have an actual guarantees that gradient descent will converge,  and mathematicians of olden times (i.e. 2006) spent reams of paper arguing that this or that function had convex properties, and thus could be guaranteed to converge, under this or that set of arcane conditions. And then, Deep Learning came along, with its huge, nonlinear, very much nonconvex objective functions, that it was nonetheless trying to optimize via gradient descent. From the perspective of an optimization theorist, this had the whiff of heresy, but exceptionally effective heresy. And, so, the field of DL has half-exploded, half-stumbled along, showcasing a portfolio of very impressive achievements, but with theory very much a secondary priority relative to performance. 
+
+Something else that gradient descent isn’t supposed to be able to do is learn models that include discrete (i.e. non-continuous) operators. Without continuous gradients, the functions don’t have an obvious way to “push” in a certain direction, to modulate the loss at the end of the network. Discrete nodes mean that the value just jumps from being in one state, to being in the other, with no intermediate values. This has historically posed a problem for algorithms fueled by gradient descent.
+
+
+The authors of this paper came up with a solution that is 60% cleverness, and 40% just guessing that “even if we ignore the theory, things will probably work well enough”. But, first, their overall goal: to create a Variational Auto Encoder where the latent states, the compressed internal representation that is typically an array of continuous values, is instead an array of categorical values. The goal of this was 1) to have a representation type that was a better match for the discrete nature of data types like speech (which has distinct phonemes we might like to discretely capture), and, 2) to have a more compressed latent space that would (of necessity) focus on more global information, and leave local pixel-level information to be learned by the expressive PixelCNN decoder. The way they do this is remarkably simple. First, they learn a typical VAE encoder, mapping from the input pixels to a continuous z space. (An interesting sidenote here is that this paper uses spatially organized z; instead of using one single z vector to represent the whole image, they may have 32x32 spatial locations, each of which has its own z vector,  to represent at 128x128 image). Then, for each of the spatial regions, they take the continuous vector produced by the network, and compare it to a fixed set of “embedding” vectors, of the same shape. That spatial location is then lumped into the category of the embedding that it’s closest to, meaning that you end up with a compressed layer of 32x32 (in this case) spatial regions, each of which is represented by a categorical number between 0 and max-num-categories. Then, the network passes forward the embedding that this input vector was just “snapped” to being, Then, the decoder uses the full spatial location set of embeddings to do its decoding.
+ 
+https://i.imgur.com/P8LQRYJ.png
+
+The clever thing here comes when you ask how to train the encoder to produce a different embedding, when there was this discrete “jump” that happened. The authors choose to just avoid the problem, more or less. They do that by just taking the gradient signals that come back from the end of the network to the embedding, and just pass those directly to the vector that was used to nearest-neighbors-lookup the embedding. Basically, they pretend that they passed the vector through the rest of the network, rather than the embedding. The embeddings are then trained in a K Means Clustering kind of way; with the embeddings being iteratively updated to be closer to the points that were assigned to their embedding in each round of training. This is the “Vector Quantization” part of VQ-VAE
+
+Overall, this seems to perform quite well: with the low capacity of the latente space meaning that it is incentivized to handle more global structure, while leaving low level pixel details to the decoder. It is also much easier to fit after-the-fact distributions over; once we’ve trained a VQ-VAE, we can easily learn a global model that represents the location by location dependencies between the categories (i.e. a 1 in this corner means at 5 in this other corner is more probable). This gives us the ability to have an analytically specified distribution, in latent space, that actually represents the structure of how these “concept level categories” relate to each other. By contrast, with most continuous latent spaces, it’s intractable to learn an explicit density function after the fact, and thus if we want to be able to sample we need to specify and enforce a prior distribution over z ahead of time. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

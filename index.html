@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShortScience.org - Making Science Accessible!</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ShortScience.org - Making Science Accessible!">
+<meta property="og:description" content="ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.">
+<meta name="description" content="ShortScience.org is a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.">
+<meta property="og:image" content="https://shortscience.org/res/albert2.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/">
+<meta property="og:url" content="https://shortscience.org/" />
+
+
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container" style="max-width:750px; margin:0 auto;"><div class="row">
+<div class="alert" style="background-color: rgb(184, 77, 100); color:white;font-size: 1.2em;">
+<table style="width:100%"><tr>
+<td style="width:70px"><img src="/res/cabin.png" style="width:60px;padding:5px;" alt=""/></td>
+<td><span style="vertical-align: middle;color:white;">Welcome to the ShortScience.org archive!</span></td>
+<td style="width:130px">
+<a target="_blank" href="/rss.xml"><img src="/res/img/rss-icon-s.png" style="width:50px" alt="RSS Feed"/></a>
+<a target="_blank" href="https://twitter.com/shortscienceorg"><img src="/res/img/sharebuttons/simple/twitter.png" style="width:50px;border-radius:10px;padding:4px" alt="Twitter"/></a>
+</td>
+</tr></table>
+<hr>
+<ul>
+<li>ShortScience.org was a platform for post-publication discussion aiming to improve accessibility and reproducibility of research ideas.
+<li>The archive has 1582 public summaries, mostly in machine learning, written by the community and organized by paper, <a style="color:white;text-decoration:underline" href="/venue">conference and year</a>, and <a style="color:white;text-decoration:underline" href="/users">author</a>.
+<li>Reading summaries of papers is useful to obtain the perspective and insight of another reader, why they liked or disliked it, and their attempt to demystify complicated sections.
+<li>All summaries and comments can be <a style="color:white;text-decoration:underline" href="/shortscience.json" download>downloaded as JSON</a>.
+</ul>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/">Popular</a></li><li role="presentation" ><a href="/?tab=recent">Most Recent</a></li><li role="presentation" ><a href="/?tab=best">Highest Rated</a></li></ul>
+<br>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1605.08803v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Density%20estimation%20using%20Real%20NVP%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/1605.08803"><big><span class="papertitle">Density estimation using Real NVP</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Laurent%20Dinh">Laurent Dinh</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jascha%20Sohl-Dickstein">Jascha Sohl-Dickstein</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Samy%20Bengio">Samy Bengio</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/05/27<br><b>Abstract:</b>   Unsupervised learning of probabilistic models is a central yet challenging
+problem in machine learning. Specifically, designing models with tractable
+learning, sampling, inference and evaluation is crucial in solving this task.
+We extend the space of such models using real-valued non-volume preserving
+(real NVP) transformations, a set of powerful invertible and learnable
+transformations, resulting in an unsupervised learning algorithm with exact
+log-likelihood computation, exact sampling, exact inference of latent
+variables, and an interpretable latent space. We demonstrate its ability to
+model natural images on four datasets through sampling, log-likelihood
+evaluation and latent variable manipulations.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374').show());void($('#more-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374').show());void($('#showless-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374').hide());void($('#more-am91cm5hbHMvY29yci8xNjA1LjA4ODAz-6374').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-07-17&lt;br&gt;Edited: 2016-07-18&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1605.08803&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">11</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6375').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1605.08803%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6375" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.08803&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.08803%26a%3Dhlarochelle&amp;text=Summary%20of%20Density%20estimation%20using%20Real%20NVP&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.08803%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Density%20estimation%20using%20Real%20NVP&amp;Body=Summary%20of%20Density%20estimation%20using%20Real%20NVP%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.08803%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.08803%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.08803%26a%3Dhlarochelle&amp;title=Summary%20of%20Density%20estimation%20using%20Real%20NVP" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.08803&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-07-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents a novel neural network approach (though see [here](https://www.facebook.com/hugo.larochelle.35/posts/172841743130126?pnref=story) for a discussion on prior work) to density estimation, with a focus on image modeling. At its core, it exploits the following property on the densities of random variables. Let $x$ and $z$ be two random variables of equal dimensionality such that $x = g(z)$, where $g$ is some bijective and deterministic function (we&#x27;ll note its inverse as $f = g^{-1}$). Then the change of variable formula gives us this relationship between the densities of $x$ and $z$:
+
+$p_X(x) = p_Z(z) \left|{\rm det}\left(\frac{\partial g(z)}{\partial z}\right)\right|^{-1}$
+
+Moreover, since the determinant of the Jacobian matrix of the inverse $f$ of a function $g$ is simply the inverse of the Jacobian of the function $g$, we can also write:
+
+$p_X(x) = p_Z(f(x)) \left|{\rm det}\left(\frac{\partial f(x)}{\partial x}\right)\right|$
+
+where we&#x27;ve replaced $z$ by its deterministically inferred value $f(x)$ from $x$.
+
+So, the core of the proposed model is in proposing a design for bijective functions $g$ (actually, they design its inverse $f$, from which $g$ can be derived by inversion), that have the properties of being easily invertible and having an easy-to-compute determinant of Jacobian. Specifically, the authors propose to construct $f$ from various modules that all preserve these properties and allows to construct highly non-linear $f$ functions. Then, assuming a simple choice for the density $p_Z$ (they use a multidimensional Gaussian), it becomes possible to both compute $p_X(x)$ tractably and to sample from that density, by first samples $z\sim p_Z$ and then computing $x=g(z)$.
+
+The building blocks for constructing $f$ are the following:
+
+**Coupling layers**: This is perhaps the most important piece. It simply computes as its output $b\odot x + (1-b) \odot (x \odot \exp(l(b\odot x)) + m(b\odot x))$, where $b$ is a binary mask (with half of its values set to 0 and the others to 1) over the input of the layer $x$, while $l$ and $m$ are arbitrarily complex neural networks with input and output layers of equal dimensionality. 
+
+In brief, for dimensions for which $b_i = 1$ it simply copies the input value into the output. As for the other dimensions (for which $b_i = 0$) it linearly transforms them as $x_i * \exp(l(b\odot x)_i) + m(b\odot x)_i$. Crucially, the bias ($m(b\odot x)_i$) and coefficient ($\exp(l(b\odot x)_i)$) of the linear transformation are non-linear transformations (i.e. the output of neural networks) that only have access to the masked input (i.e. the non-transformed dimensions). While this layer might seem odd, it has the important property that it is invertible and the determinant of its Jacobian is simply $\exp(\sum_i (1-b_i) l(b\odot x)_i)$. See Section 3.3 for more details on that.
+
+**Alternating masks**: One important property of coupling layers is that they can be stacked (i.e. composed), and the resulting composition is still a bijection and is invertible (since each layer is individually a bijection) and has a tractable determinant for its Jacobian (since the Jacobian of the composition of functions is simply the multiplication of each function&#x27;s Jacobian matrix, and the determinant of the product of square matrices is the product of the determinant of each matrix). This is also true, even if the mask $b$ of each layer is different. Thus, the authors propose using masks that alternate across layer, by masking a different subset of (half of) the dimensions. For images, they propose using masks with a checkerboard pattern (see Figure 3). Intuitively, alternating masks are better because then after at least 2 layers, all dimensions have been transformed at least once.
+
+**Squeezing operations**: Squeezing operations corresponds to a reorganization of a 2D spatial layout of dimensions into 4 sets of features maps with spatial resolutions reduced by half (see Figure 3). This allows to expose multiple scales of resolutions to the model. Moreover, after a squeezing operation, instead of using a checkerboard pattern for masking, the authors propose to use a per channel masking pattern, so that &quot;the resulting partitioning is not redundant with the previous checkerboard masking&quot;. See Figure 3 for an illustration.
+
+Overall, the models used in the experiments usually stack a few of the following &quot;chunks&quot; of layers: 1) a few coupling layers with alternating checkboard masks, 2) followed by squeezing, 3) followed by a few coupling layers with alternating channel-wise masks. Since the output of each layers-chunk must technically be of the same size as the input image, this could become expensive in terms of computations and space when using a lot of layers. Thus, the authors propose to explicitly pass on (copy) to the very last layer ($z$) half of the dimensions after each layers-chunk, adding another chunk of layers only on the other half. This is illustrated in Figure 4b.
+
+Experiments on CIFAR-10, and 32x32 and 64x64 versions of ImageNet show that the proposed model (coined the real-valued non-volume preserving or Real NVP) has competitive performance (in bits per dimension), though slightly worse than the Pixel RNN.
+
+**My Two Cents**
+
+The proposed approach is quite unique and thought provoking. Most interestingly, it is the only powerful generative model I know that combines A) a tractable likelihood, B) an efficient / one-pass sampling procedure and C) the explicit learning of a latent representation. While achieving this required a model definition that is somewhat unintuitive, it is nonetheless mathematically really beautiful!
+
+I wonder to what extent Real NVP is penalized in its results by the fact that it models pixels as real-valued observations. First, it implies that its estimate of bits/dimensions is an upper bound on what it could be if the uniform sub-pixel noise was integrated out (see Equations 3-4-5 of [this paper](http://arxiv.org/pdf/1511.01844v3.pdf)). Moreover, the authors had to apply a non-linear transformation (${\rm logit}(\alpha + (1-\alpha)\odot x)$) to the pixels, to spread the $[0,255]$ interval further over the reals. Since the Pixel RNN models pixels as discrete observations directly, the Real NVP might be at a disadvantage.
+
+I&#x27;m also curious to know how easy it would be to do conditional inference with the Real NVP. One could imagine doing approximate MAP conditional inference, by clamping the observed dimensions and doing gradient descent on the log-likelihood with respect to the value of remaining dimensions. This could be interesting for image completion, or for structured output prediction with real-valued outputs in general. I also wonder how expensive that would be.
+
+In all cases, I&#x27;m looking forward to saying interesting applications and variations of this model in the future!</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.03498"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Improved%20Techniques%20for%20Training%20GANs%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/SalimansGZCRC16"><big><span class="papertitle">Improved Techniques for Training GANs</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Salimans%2C%20Tim">Salimans, Tim</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Goodfellow%2C%20Ian%20J.">Goodfellow, Ian J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zaremba%2C%20Wojciech">Zaremba, Wojciech</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Cheung%2C%20Vicki">Cheung, Vicki</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Radford%2C%20Alec">Radford, Alec</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chen%2C%20Xi">Chen, Xi</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<div id="udibr" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=udibr" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=udibr&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Udibr&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: udibr&lt;br&gt;Posted: 2016-07-11&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/SalimansGZCRC16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6376').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/SalimansGZCRC16%26a%3Dudibr" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6376" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=udibr" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr&amp;text=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs&amp;Body=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FSalimansGZCRC16%26a%3Dudibr&amp;title=Summary%20of%20Improved%20Techniques%20for%20Training%20GANs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/SalimansGZCRC16&amp;a=udibr" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=udibr" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Udibr 2016-07-11</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">[code](https://github.com/openai/improved-gan),
+[demo](http://infinite-chamber-35121.herokuapp.com/cifar-minibatch/1/?),
+[related](http://www.inference.vc/understanding-minibatch-discrimination-in-gans/)
+
+### Feature matching
+problem: overtraining on the current discriminator
+
+solution:
+￼$||E_{x \sim p_{\text{data}}}f(x) - E_{z \sim p_{z}(z)}f(G(z))||_{2}^{2}$
+
+were f(x) activations intermediate layer in discriminator
+### Minibatch discrimination
+problem: generator to collapse to a single point
+
+solution: for each sample i, concatenate to $f(x_i)$ features $b$ measuring its distance to other samples j (i and j are both real or generated samples in same batch):
+$\sum_j \exp(-||M_{i, b} - M_{j, b}||_{L_1})$
+￼
+this generates visually appealing samples very quickly
+### Historical averaging
+problem: SGD fails by going into extended orbits
+
+solution: parameters revert to the mean
+$|| \theta - \frac{1}{t} \sum_{i=1}^t \theta[i] ||^2$
+￼
+### One-sided label smoothing
+problem: discriminator vulnerability to adversarial examples
+
+solution: discriminator target for positive samples is 0.9 instead of 1
+
+### Virtual batch normalization
+problem: using BN cause output of examples in batch to be dependent
+
+solution: use reference batch chosen once at start of training and each sample is normalized using itself and the reference. It&#x27;s
+expensive so used only on generation
+
+### Assessment of image quality
+problem: MTurk not reliable
+
+solution: use inception model p(y|x) to compute 
+￼$\exp(\mathbb{E}_x \text{KL}(p(y | x) || p(y)))$
+on 50K generated images x
+
+### Semi-supervised learning
+use the discriminator to also classify on K labels when known and
+use all real samples (labels and unlabeled) in the discrimination task
+￼$D(x) = \frac{Z(x)}{Z(x) + 1}, \text{ where } Z(x) = \sum_{k=1}^{K} \exp[l_k(x)]$.
+In this case use feature matching but not minibatch discrimination.
+It also improves the quality of generated images.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<a href="/paper?bibtexKey=journals/corr/SalimansGZCRC16#udibrcomments"><div class="pull-right"><span class="badge">3 Comments</span> <img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /> <img src="https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /> <img src="https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></div></a>
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1505.05770v6"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Variational%20Inference%20with%20Normalizing%20Flows%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/1505.05770"><big><span class="papertitle">Variational Inference with Normalizing Flows</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Danilo%20Jimenez%20Rezende">Danilo Jimenez Rezende</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shakir%20Mohamed">Shakir Mohamed</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.CO"> stat.CO</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ME"> stat.ME</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/05/21<br><b>Abstract:</b>   The choice of approximate posterior distribution is one of the core problems
+in variational inference. Most applications of variational inference employ
+simple families of posterior approximations in order to allow for efficient
+inference, focusing on mean-field or other simple structured approximations.
+This restriction has a significant impact on the quality of inferences made
+using variational methods. We introduce a new approach for specifying flexible,
+arbitrarily complex and scalable approximate posterior distributions. Our
+approximations are distributions constructed through a normalizing flow,
+whereby a simple initial density is transformed into a more complex one by
+applying a sequence of invertible transformations until a desired level of
+complexity is attained. We use this view of normalizing flows to develop
+categories of finite and infinitesimal flows and provide a unified view of
+approaches for constructing rich posterior approximations. We demonstrate that
+the theoretical advantages of having posteriors that better match the true
+posterior, combined with the scalability of amortized variational approaches,
+provides a clear improvement in performance and applicability of variational
+inference.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377').hide());void($('#showless-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377').show());void($('#more-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377').show());void($('#showless-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377').hide());void($('#more-am91cm5hbHMvY29yci8xNTA1LjA1Nzcw-6377').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<div id="decodyng" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-07-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1505.05770&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6378').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1505.05770%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6378" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1505.05770&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1505.05770%26a%3Ddecodyng&amp;text=Summary%20of%20Variational%20Inference%20with%20Normalizing%20Flows&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1505.05770%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Variational%20Inference%20with%20Normalizing%20Flows&amp;Body=Summary%20of%20Variational%20Inference%20with%20Normalizing%20Flows%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1505.05770%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1505.05770%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1505.05770%26a%3Ddecodyng&amp;title=Summary%20of%20Variational%20Inference%20with%20Normalizing%20Flows" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1505.05770&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-07-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper argues for the use of normalizing flows - a way of building up new probability distributions by applying multiple sets of invertible transformations to existing distributions - as a way of building more flexible variational inference models. 
+
+The central premise of a variational autoencoder is that of learning an approximation to the posterior distribution of latent variables - p(z|x) - and parameterizing that distribution according to values produced by a neural network. In typical practice, this has meant that VAEs are limited in terms of the complexity of latent variable distributions they can encode, since using an analytically specified distribution tends to limit you to simpler distributional shapes - Gaussians, uniform, and the like. Normalizing flows are here proposed as a way to allow for the model to learn more complex forms of posterior distribution. 
+
+Normalizing flows work off of a fairly simple intuition: if you take samples from a distribution p(x), and then apply a function f(x) to each x in that sample, you can calculate the expected value of your new distribution f(x) by calculating the expectation of f(x) under the old distribution p(x). That is to say: 
+https://i.imgur.com/NStm7zN.png
+This mathematical transformation has a pretty delightful name - The Law of the Unconscious Statistician - that came from the fact that so many statisticians just treated this identity as a definitional fact, rather than something actually in need of proving (I very much fall into this bucket as well). The implication of this is that if you apply many transformations in sequence to the draws from some simple distribution, you can work with that distribution without explicitly knowing its analytical formulation, just by being able to evaluate - and, importantly - invert the function. The ability to invert the function is key, because of the way you calculate the derivative: by taking the inverse of the determinant of the derivative of your function f(z) with respect to z. (Note here that q(z) is the original distribution you sampled under, and q’(z) is the implicit density you’re trying to estimate, after your function has been applied). 
+
+https://i.imgur.com/8LmA0rc.png
+
+Combining these ideas together: a variational flow autoencoder works by having an encoder network define the parameters of a simple distribution (Gaussian or Uniform), and then running the samples from that distribution through a series of k transformation layers. This final transformed density over z is then given to the decoder to work with. Some important limitations are in place here, the most salient of which is that in order to calculate derivatives, you have to be able to calculate the determinant of the derivative of a given transformation. Due to this constraint, the paper only tests a few transformations where this is easy to calculate analytically - the planar transformation and radial transformation. If you think about transformations of density functions as fundamentally stretching or compressing regions of density, the planar transformation works by stretching along an axis perpendicular to some parametrically defined plane, and the radial transformation works by stretching outward in a radial way around some parametrically defined point. Even though these transformations are individually fairly simple, when combined, they can give you a lot more flexibility in distributional space than a simple Gaussian or Uniform could. 
+
+https://i.imgur.com/Xf8HgHl.png
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1806.07857v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22RUDDER%3A%20Return%20Decomposition%20for%20Delayed%20Rewards%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/1806.07857"><big><span class="papertitle">RUDDER: Return Decomposition for Delayed Rewards</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jose%20A.%20Arjona-Medina">Jose A. Arjona-Medina</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Michael%20Gillhofer">Michael Gillhofer</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Michael%20Widrich">Michael Widrich</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Thomas%20Unterthiner">Thomas Unterthiner</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sepp%20Hochreiter">Sepp Hochreiter</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20math.OC"> math.OC</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/06/20<br><b>Abstract:</b>   We propose a novel reinforcement learning approach for finite Markov decision
+processes (MDPs) with delayed rewards. In this work, biases of temporal
+difference (TD) estimates are proved to be corrected only exponentially slowly
+in the number of delay steps. Furthermore, variances of Monte Carlo (MC)
+estimates are proved to increase the variance of other estimates, the number of
+which can exponentially grow in the number of delay steps. We introduce RUDDER,
+a return decomposition method, which creates a new MDP with same optimal
+policies as the original MDP but with redistributed rewards that have largely
+reduced delays. If the return decomposition is optimal, then the new MDP does
+not have delayed rewards and TD estimates are unbiased. In this case, the
+rewards track Q-values so that the future expected reward is always zero. We
+experimentally confirm our theoretical results on bias and variance of TD and
+MC estimates. On artificial tasks with different lengths of reward delays, we
+show that RUDDER is exponentially faster than TD, MC, and MC Tree Search
+(MCTS). RUDDER outperforms rainbow, A3C, DDQN, Distributional DQN, Dueling
+DDQN, Noisy DQN, and Prioritized DDQN on the delayed reward Atari game Venture
+in only a fraction of the learning time. RUDDER considerably improves the
+state-of-the-art on the delayed reward Atari game Bowling in much less learning
+time. Source code is available at https://github.com/ml-jku/baselines-rudder,
+with demonstration videos at https://goo.gl/EQerZV.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379').hide());void($('#showless-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379').show());void($('#more-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379').show());void($('#showless-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379').hide());void($('#more-am91cm5hbHMvY29yci8xODA2LjA3ODU3-6379').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<div id="wassname" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=wassname" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=wassname&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/02ef81b36fa5a430c97b9419603a264d?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;wassname&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: wassname&lt;br&gt;Posted: 2018-06-23&lt;br&gt;Edited: 2018-10-28&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1806.07857&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/02ef81b36fa5a430c97b9419603a264d?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6380').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1806.07857%26a%3Dwassname" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6380" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.07857&amp;a=wassname" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.07857%26a%3Dwassname&amp;text=Summary%20of%20RUDDER%3A%20Return%20Decomposition%20for%20Delayed%20Rewards&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.07857%26a%3Dwassname" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20RUDDER%3A%20Return%20Decomposition%20for%20Delayed%20Rewards&amp;Body=Summary%20of%20RUDDER%3A%20Return%20Decomposition%20for%20Delayed%20Rewards%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.07857%26a%3Dwassname"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.07857%26a%3Dwassname" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.07857%26a%3Dwassname&amp;title=Summary%20of%20RUDDER%3A%20Return%20Decomposition%20for%20Delayed%20Rewards" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.07857&amp;a=wassname" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=wassname" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by wassname 2018-06-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">[Summary by author /u/SirJAM_armedi](https://www.reddit.com/r/MachineLearning/comments/8sq0jy/rudder_reinforcement_learning_algorithm_that_is/e11swv8/).
+
+Math aside, the &quot;big idea&quot; of RUDDER is the following: We use an LSTM to predict the return of an episode. To do this, the LSTM will have to recognize what actually causes the reward (e.g. &quot;shooting the gun in the right direction causes the reward, even if we get the reward only once the bullet hits the enemy after travelling along the screen&quot;). We then use a salience method (e.g. LRP or integrated gradients) to get that information out of the LSTM, and redistribute the reward accordingly (i.e., we then give reward already once the gun is shot in the right direction). Once the reward is redistributed this way, solving/learning the actual Reinforcement Learning problem is much, much easier and as we prove in the paper, the optimal policy does not change with this redistribution.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1609.05473v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/1609.05473"><big><span class="papertitle">SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Lantao%20Yu">Lantao Yu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Weinan%20Zhang">Weinan Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jun%20Wang">Jun Wang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yong%20Yu">Yong Yu</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/09/18<br><b>Abstract:</b>   As a new way of training generative models, Generative Adversarial Nets (GAN)
+that uses a discriminative model to guide the training of the generative model
+has enjoyed considerable success in generating real-valued data. However, it
+has limitations when the goal is for generating sequences of discrete tokens. A
+major reason lies in that the discrete outputs from the generative model make
+it difficult to pass the gradient update from the discriminative model to the
+generative model. Also, the discriminative model can only assess a complete
+sequence, while for a partially generated sequence, it is non-trivial to
+balance its current score and the future one once the entire sequence has been
+generated. In this paper, we propose a sequence generation framework, called
+SeqGAN, to solve the problems. Modeling the data generator as a stochastic
+policy in reinforcement learning (RL), SeqGAN bypasses the generator
+differentiation problem by directly performing gradient policy update. The RL
+reward signal comes from the GAN discriminator judged on a complete sequence,
+and is passed back to the intermediate state-action steps using Monte Carlo
+search. Extensive experiments on synthetic data and real-world tasks
+demonstrate significant improvements over strong baselines.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381').show());void($('#more-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381').show());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381').hide());void($('#more-am91cm5hbHMvY29yci8xNjA5LjA1NDcz-6381').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<div id="jgauthier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=jgauthier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=jgauthier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Jon Gauthier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: jgauthier&lt;br&gt;Posted: 2016-09-28&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1609.05473&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6382').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1609.05473%26a%3Djgauthier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6382" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=jgauthier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier&amp;text=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient&amp;Body=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.05473%26a%3Djgauthier&amp;title=Summary%20of%20SeqGAN%3A%20Sequence%20Generative%20Adversarial%20Nets%20with%20Policy%20Gradient" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.05473&amp;a=jgauthier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=jgauthier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Jon Gauthier 2016-09-28</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Everyone has been thinking about how to apply GANs to discrete sequence data for the past year or so. This paper presents the model that I would guess most people thought of as the first-thing-to-try:
+
+1. Build a recurrent generator model which samples from its softmax outputs at each timestep.
+2. Pass sampled sequences to a recurrent discriminator model which distinguishes between sampled sequences and real-data sequences.
+3. Train the discriminator under the standard GAN loss.
+4. Train the generator with a REINFORCE (policy gradient) objective, where each trajectory is assigned a single episodic reward: the score assigned to the generated sequence by the discriminator.
+
+Sounds hacky, right? We&#x27;re learning a generator with a high-variance model-free reinforcement learning algorithm, in a very seriously non-stationary environment. (Here the &quot;environment&quot; is a discriminator being jointly learned with the generator.)
+
+There&#x27;s just one trick in this paper on top of that setup: for non-terminal states, the reward is defined as the *expectation* of the discriminator score after stochastically generating from that state forward. To restate using standard (somewhat sloppy) RL syntax, in different terms than the paper: (under stochastic sequential policy $\pi$, with current state $s_t$, trajectory $\tau_{1:T}$ and discriminator $D(\tau)$)
+
+$$r_t = \mathbb E_{\tau_{t+1:T} \sim \pi(s_t)} \left[ D(\tau_{1:T}) \right]$$
+
+The rewards are estimated via Monte Carlo — i.e., just take the mean of $N$ rollouts from each intermediate state. They claim this helps to reduce variance. That makes intuitive sense, but I don&#x27;t see any results in the paper demonstrating the effect of varying $N$.
+
+---
+
+Yep, so it turns out that this sort of works.. with a big caveat:
+
+## The big caveat
+
+Graph from appendix:
+
+![](https://www.dropbox.com/s/5fqh6my63sgv5y4/Bildschirmfoto%202016-09-27%20um%2021.34.44.png?raw=1)
+
+SeqGANs don&#x27;t work without supervised pretraining. Makes sense — with a cold start, the generator just samples a bunch of nonsense and the discriminator overfits. Both the generator and discriminator are pretrained on supervised data in this paper (see Algorithm 1).
+
+I think it must be possible to overcome this with the proper training tricks and enough sweat. But it&#x27;s probably more worth our time to address the fundamental problem here of developing better RL for structured prediction tasks.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<a href="/paper?bibtexKey=journals/corr/1609.05473#jgauthiercomments"><div class="pull-right"><span class="badge">4 Comments</span> <img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /> <img src="https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /> <img src="https://www.gravatar.com/avatar/19a9c0bb14fb6d9bc16cb40058992c19?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /> <img src="https://www.gravatar.com/avatar/3a8035dba3ca0b9023781757c785a25b?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></div></a>
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1412.6980"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Adam%3A%20A%20Method%20for%20Stochastic%20Optimization%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/KingmaB14"><big><span class="papertitle">Adam: A Method for Stochastic Optimization</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Kingma%2C%20Diederik%20P.">Kingma, Diederik P.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ba%2C%20Jimmy">Ba, Jimmy</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2014">arXiv e-Print archive - 2014</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-24&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/KingmaB14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6383').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/KingmaB14%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6383" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/KingmaB14&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKingmaB14%26a%3Daleju&amp;text=Summary%20of%20Adam%3A%20A%20Method%20for%20Stochastic%20Optimization&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKingmaB14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Adam%3A%20A%20Method%20for%20Stochastic%20Optimization&amp;Body=Summary%20of%20Adam%3A%20A%20Method%20for%20Stochastic%20Optimization%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKingmaB14%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKingmaB14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FKingmaB14%26a%3Daleju&amp;title=Summary%20of%20Adam%3A%20A%20Method%20for%20Stochastic%20Optimization" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/KingmaB14&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-24</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a new stochastic optimization method, similar to the existing SGD, Adagrad or RMSProp.
+    * Stochastic optimization methods have to find parameters that minimize/maximize a stochastic function.
+    * A function is stochastic (non-deterministic), if the same set of parameters can generate different results. E.g. the loss of different mini-batches can differ, even when the parameters remain unchanged. Even for the same mini-batch the results can change due to e.g. dropout.
+  * Their method tends to converge faster to optimal parameters than the existing competitors.
+  * Their method can deal with non-stationary distributions (similar to e.g. SGD, Adadelta, RMSProp).
+  * Their method can deal with very sparse or noisy gradients (similar to e.g. Adagrad).
+
+### How
+  * Basic principle
+    * Standard SGD just updates the parameters based on `parameters = parameters - learningRate * gradient`.
+    * Adam operates similar to that, but adds more &quot;cleverness&quot; to the rule.
+    * It assumes that the gradient values have means and variances and tries to estimate these values.
+      * Recall here that the function to optimize is stochastic, so there is some randomness in the gradients.
+      * The mean is also called &quot;the first moment&quot;.
+      * The variance is also called &quot;the second (raw) moment&quot;.
+    * Then an update rule very similar to SGD would be `parameters = parameters - learningRate * means`.
+    * They instead use the update rule `parameters = parameters - learningRate * means/sqrt(variances)`.
+      * They call `means/sqrt(variances)` a &#x27;Signal to Noise Ratio&#x27;.
+      * Basically, if the variance of a specific parameter&#x27;s gradient is high, it is pretty unclear how it should be changend. So we choose a small step size in the update rule via `learningRate * mean/sqrt(highValue)`.
+      * If the variance is low, it is easier to predict how far to &quot;move&quot;, so we choose a larger step size via `learningRate * mean/sqrt(lowValue)`.
+  * Exponential moving averages
+    * In order to approximate the mean and variance values you could simply save the last `T` gradients and then average the values.
+    * That however is a pretty bad idea, because it can lead to high memory demands (e.g. for millions of parameters in CNNs).
+    * A simple average also has the disadvantage, that it would completely ignore all gradients before `T` and weight all of the last `T` gradients identically. In reality, you might want to give more weight to the last couple of gradients.
+    * Instead, they use an exponential moving average, which fixes both problems and simply updates the average at every timestep via the formula `avg = alpha * avg + (1 - alpha) * avg`.
+    * Let the gradient at timestep (batch) `t` be `g`, then we can approximate the mean and variance values using:
+      * `mean = beta1 * mean + (1 - beta1) * g`
+      * `variance = beta2 * variance + (1 - beta2) * g^2`.
+      * `beta1` and `beta2` are hyperparameters of the algorithm. Good values for them seem to be `beta1=0.9` and `beta2=0.999`.
+      * At the start of the algorithm, `mean` and `variance` are initialized to zero-vectors.
+  * Bias correction
+    * Initializing the `mean` and `variance` vectors to zero is an easy and logical step, but has the disadvantage that bias is introduced.
+    * E.g. at the first timestep, the mean of the gradient would be `mean = beta1 * 0 + (1 - beta1) * g`, with `beta1=0.9` then: `mean = 0.9 * g`. So `0.9g`, not `g`. Both the mean and the variance are biased (towards 0).
+    * This seems pretty harmless, but it can be shown that it lowers the convergence speed of the algorithm by quite a bit.
+    * So to fix this pretty they perform bias-corrections of the mean and the variance:
+      * `correctedMean = mean / (1-beta1^t)` (where `t` is the timestep).
+      * `correctedVariance = variance / (1-beta2^t)`.
+      * Both formulas are applied at every timestep after the exponential moving averages (they do not influence the next timestep).
+
+![Algorithm](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Adam__algorithm.png?raw=true &quot;Algorithm&quot;)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1512.03385"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Deep%20Residual%20Learning%20for%20Image%20Recognition%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/HeZRS15"><big><span class="papertitle">Deep Residual Learning for Image Recognition</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=He%2C%20Kaiming">He, Kaiming</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zhang%2C%20Xiangyu">Zhang, Xiangyu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ren%2C%20Shaoqing">Ren, Shaoqing</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sun%2C%20Jian">Sun, Jian</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<div id="martinthoma" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-04-20&lt;br&gt;Edited: 2017-03-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/HeZRS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">9</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6384').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/HeZRS15%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6384" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeZRS15&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeZRS15%26a%3Dmartinthoma&amp;text=Summary%20of%20Deep%20Residual%20Learning%20for%20Image%20Recognition&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeZRS15%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Residual%20Learning%20for%20Image%20Recognition&amp;Body=Summary%20of%20Deep%20Residual%20Learning%20for%20Image%20Recognition%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeZRS15%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeZRS15%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeZRS15%26a%3Dmartinthoma&amp;title=Summary%20of%20Deep%20Residual%20Learning%20for%20Image%20Recognition" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeZRS15&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-04-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Deeper networks should never have a higher **training** error than smaller ones. In the worst case, the layers should &quot;simply&quot; learn identities. It seems as this is not so easy with conventional networks, as they get much worse with more layers. So the idea is to add identity functions which skip some layers. The network only has to learn the **residuals**. 
+
+Advantages:
+
+* Learning the identity becomes learning 0 which is simpler
+* Loss in information flow in the forward pass is not a problem anymore
+    * No vanishing / exploding gradient
+* Identities don&#x27;t have parameters to be learned
+
+## Evaluation
+
+The learning rate starts at 0.1 and is divided by 10 when the error plateaus. Weight decay of 0.0001 ($10^{-4}$), momentum of 0.9. They use mini-batches of size 128.
+
+* ImageNet ILSVRC 2015: 3.57% (ensemble)
+* CIFAR-10: 6.43%
+* MS COCO: 59.0% mAp@0.5 (ensemble)
+* PASCAL VOC 2007: 85.6% mAp@0.5
+* PASCAL VOC 2012: 83.8% mAp@0.5
+
+## See also
+
+* [DenseNets](http://www.shortscience.org/paper?bibtexKey=journals/corr/1608.06993)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1703.06870"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Mask%20R-CNN%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/HeGDG17"><big><span class="papertitle">Mask R-CNN</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=He%2C%20Kaiming">He, Kaiming</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gkioxari%2C%20Georgia">Gkioxari, Georgia</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Doll%C3%A1r%2C%20Piotr">Dollár, Piotr</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Girshick%2C%20Ross%20B.">Girshick, Ross B.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<div id="qureai" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=qureai" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=qureai&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Qure.ai&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: qureai&lt;br&gt;Posted: 2017-04-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/HeGDG17&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">10</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6385').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/HeGDG17%26a%3Dqureai" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6385" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=qureai" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai&amp;text=Summary%20of%20Mask%20R-CNN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Mask%20R-CNN&amp;Body=Summary%20of%20Mask%20R-CNN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FHeGDG17%26a%3Dqureai&amp;title=Summary%20of%20Mask%20R-CNN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/HeGDG17&amp;a=qureai" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=qureai" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Qure.ai 2017-04-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Mask RCNN takes off from where Faster RCNN left, with some augmentations aimed at bettering instance segmentation (which was out of scope for FRCNN). Instance segmentation was achieved remarkably well in *DeepMask* , *SharpMask* and later *Feature Pyramid Networks* (FPN).
+
+Faster RCNN was not designed for pixel-to-pixel alignment between network inputs and outputs. This is most evident in how RoIPool , the de facto core operation for attending to instances, performs coarse spatial quantization for feature extraction. Mask RCNN fixes that by introducing RoIAlign in place of RoIPool.
+
+#### Methodology
+
+Mask RCNN retains most of the architecture of Faster RCNN. It adds the a third branch for segmentation. The third branch takes the output from RoIAlign layer and predicts binary class masks for each class.
+
+##### Major Changes and intutions
+
+**Mask prediction**
+
+Mask prediction segmentation predicts a binary mask for each RoI using fully convolution - and the stark difference being usage of *sigmoid* activation for predicting final mask instead of *softmax*, implies masks don&#x27;t compete with each other. This *decouples* segmentation from classification. The class prediction branch is used for class prediction and for calculating loss, the mask of predicted loss is used calculating Lmask.
+
+Also, they show that a single class agnostic mask prediction works almost as effective as separate mask for each class, thereby supporting their method of decoupling classification from segmentation
+
+**RoIAlign**
+
+RoIPool first quantizes a floating-number RoI to the discrete granularity of the feature map, this quantized RoI is then subdivided into spatial bins which are themselves quantized, and finally feature values covered by each bin are aggregated (usually by max pooling). Instead of  quantization of the RoI boundaries
+or bin bilinear interpolation is used to compute the exact values of the input features at four regularly sampled locations in each RoI bin, and aggregate the result (using max or average).
+
+**Backbone architecture**
+
+Faster RCNN uses a VGG like structure for extracting features from image, weights of which were shared among RPN and region detection layers. Herein, authors experiment with 2 backbone architectures - ResNet based VGG like in FRCNN and ResNet based [FPN](http://www.shortscience.org/paper?bibtexKey=journals/corr/LinDGHHB16) based. FPN uses convolution feature maps from previous layers and recombining them to produce pyramid of feature maps to be used for prediction instead of single-scale feature layer (final output of conv layer before connecting to fc layers was used in Faster RCNN) 
+
+**Training Objective**
+
+The training objective looks like this 
+![](https://i.imgur.com/snUq73Q.png)
+
+Lmask is the addition from Faster RCNN. The method to calculate was mentioned above
+
+#### Observation
+
+Mask RCNN performs significantly better than COCO instance segmentation winners *without any bells and whiskers*. Detailed results are available in the paper
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://dx.doi.org/10.1109/ICCV.2015.169"><span class="glyphicon glyphicon-link"></span> dx.doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Fast%20R-CNN%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=conf/iccv/Girshick15"><big><span class="papertitle">Fast R-CNN</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Girshick%2C%20Ross%20B.">Girshick, Ross B.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/iccv&amp;year=2015">International Conference on Computer Vision - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<div id="joecohen" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=joecohen" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=joecohen&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Joseph Paul Cohen&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: joecohen&lt;br&gt;Posted: 2016-04-09&lt;br&gt;Edited: 2016-04-13&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/iccv/Girshick15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6386').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/iccv/Girshick15%26a%3Djoecohen" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6386" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/iccv/Girshick15&amp;a=joecohen" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficcv%2FGirshick15%26a%3Djoecohen&amp;text=Summary%20of%20Fast%20R-CNN&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficcv%2FGirshick15%26a%3Djoecohen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Fast%20R-CNN&amp;Body=Summary%20of%20Fast%20R-CNN%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficcv%2FGirshick15%26a%3Djoecohen"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficcv%2FGirshick15%26a%3Djoecohen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficcv%2FGirshick15%26a%3Djoecohen&amp;title=Summary%20of%20Fast%20R-CNN" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/iccv/Girshick15&amp;a=joecohen" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=joecohen" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Joseph Paul Cohen 2016-04-09</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This method is based on improving the speed of R-CNN \cite{conf/cvpr/GirshickDDM14}
+
+1. Where R-CNN would have two different objective functions, Fast R-CNN combines localization and classification losses into a &quot;multi-task loss&quot; in order to speed up training.
+2. It also uses a pooling method based on \cite{journals/pami/HeZR015} called the RoI pooling layer that scales the input so the images don&#x27;t have to be scaled before being set an an input image to the CNN. &quot;RoI max pooling works by dividing the $h \times w$ RoI window into an $H \times W$ grid of sub-windows of approximate size $h/H \times w/W$ and then max-pooling the values in each sub-window into the corresponding output grid cell.&quot;
+3. Backprop is performed for the RoI pooling layer by taking the argmax of the incoming gradients that overlap the incoming values.
+
+This method is further improved by the paper &quot;Faster R-CNN&quot; \cite{conf/nips/RenHGS15}</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1611.03530v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Understanding%20deep%20learning%20requires%20rethinking%20generalization%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<a href="/paper?bibtexKey=journals/corr/1611.03530"><big><span class="papertitle">Understanding deep learning requires rethinking generalization</span></big></a>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Chiyuan%20Zhang">Chiyuan Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Samy%20Bengio">Samy Bengio</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Moritz%20Hardt">Moritz Hardt</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Benjamin%20Recht">Benjamin Recht</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Oriol%20Vinyals">Oriol Vinyals</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/11/10<br><b>Abstract:</b>   Despite their massive size, successful deep artificial neural networks can
+exhibit a remarkably small difference between training and test performance.
+Conventional wisdom attributes small generalization error either to properties
+of the model family, or to the regularization techniques used during training.
+  Through extensive systematic experiments, we show how these traditional
+approaches fail to explain why large neural networks generalize well in
+practice. Specifically, our experiments establish that state-of-the-art
+convolutional networks for image classification trained with stochastic
+gradient methods easily fit a random labeling of the training data. This
+phenomenon is qualitatively unaffected by explicit regularization, and occurs
+even if we replace the true images by completely unstructured random noise. We
+corroborate these experimental findings with a theoretical construction showing
+that simple depth two neural networks already have perfect finite sample
+expressivity as soon as the number of parameters exceeds the number of data
+points as it usually does in practice.
+  We interpret our experimental findings by comparison with traditional models.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387').hide());void($('#showless-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387').show());void($('#more-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387').show());void($('#showless-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387').hide());void($('#more-am91cm5hbHMvY29yci8xNjExLjAzNTMw-6387').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<div id="martinthoma" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2017-01-07&lt;br&gt;Edited: 2017-02-18&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1611.03530&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-6388').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1611.03530%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-6388" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.03530&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.03530%26a%3Dmartinthoma&amp;text=Summary%20of%20Understanding%20deep%20learning%20requires%20rethinking%20generalization&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.03530%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Understanding%20deep%20learning%20requires%20rethinking%20generalization&amp;Body=Summary%20of%20Understanding%20deep%20learning%20requires%20rethinking%20generalization%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.03530%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.03530%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.03530%26a%3Dmartinthoma&amp;title=Summary%20of%20Understanding%20deep%20learning%20requires%20rethinking%20generalization" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.03530&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2017-01-07</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper deals with the question what / how exactly CNNs learn, considering the fact that they usually have more trainable parameters than data points on which they are trained.
+
+When the authors write &quot;deep neural networks&quot;, they are talking about Inception V3, AlexNet and MLPs.
+
+## Key contributions
+
+* Deep neural networks easily fit random labels (achieving a training error of 0 and a test error which is just randomly guessing labels as expected). $\Rightarrow$Those architectures can simply brute-force memorize the training data.
+* Deep neural networks fit random images (e.g. Gaussian noise) with 0 training error. The authors conclude that VC-dimension / Rademacher complexity, and uniform stability are bad explanations for generalization capabilities of neural networks
+* The authors give a construction for a 2-layer network with $p = 2n+d$ parameters - where $n$ is the number of samples and $d$ is the dimension of each sample - which can easily fit any labeling. (Finite sample expressivity). See section 4.
+
+
+## What I learned
+
+* Any measure $m$ of the generalization capability of classifiers $H$ should take the percentage of corrupted labels ($p_c \in [0, 1]$, where $p_c =0$ is a perfect labeling and $p_c=1$ is totally random) into account: If $p_c = 1$, then $m()$ should be 0, too, as it is impossible to learn something meaningful with totally random labels.
+* We seem to have built models which work well on image data in general, but not &quot;natural&quot; / meaningful images as we thought.
+
+
+## Funny
+
+&gt; deep neural nets remain mysterious for many reasons
+
+&gt; Note that this is not exactly simple as the kernel matrix requires 30GB to store in memory. Nonetheless, this system can be solved in under 3 minutes in on a commodity workstation with 24 cores and 256 GB of RAM with a conventional LAPACK call.
+
+
+## See also
+
+* [Deep Nets Don&#x27;t Learn Via Memorization](https://openreview.net/pdf?id=rJv6ZgHYg)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

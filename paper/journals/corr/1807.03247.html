@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Intriguing Failing of Convolutional Neural Networks and the CoordConv Solution - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="An Intriguing Failing of Convolutional Neural Networks and the CoordConv Solution - ShortScience.org">
+<meta property="og:description" content="This is a paper where I keep being torn between the response of “this is so simple it’s brilliant; w...">
+<meta name="description" content="This is a paper where I keep being torn between the response of “this is so simple it’s brilliant; w...">
+<meta property="og:image" content="https://i.imgur.com/x6phN4p.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.03247">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1807.03247" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Rosanne Liu and Joel Lehman and Piero Molino and Felipe Petroski Such and Eric Frank and Alex Sergeev and Jason Yosinski"}, "headline": "An Intriguing Failing of Convolutional Neural Networks and the CoordConv Solution", "description": "Summary of An Intriguing Failing of Convolutional Neural Networks and the CoordConv Solution", "datePublished": "2018-11-27 06:55:14", "dateModified": "2018-11-27 06:55:14", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/x6phN4p.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1807.03247", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1807.03247v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22An%20Intriguing%20Failing%20of%20Convolutional%20Neural%20Networks%20and%20the%20CoordConv%20Solution%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">An Intriguing Failing of Convolutional Neural Networks and the CoordConv Solution</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Rosanne%20Liu">Rosanne Liu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Joel%20Lehman">Joel Lehman</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Piero%20Molino">Piero Molino</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Felipe%20Petroski%20Such">Felipe Petroski Such</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Eric%20Frank">Eric Frank</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alex%20Sergeev">Alex Sergeev</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jason%20Yosinski">Jason Yosinski</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/07/09<br><b>Abstract:</b>   Few ideas have enjoyed as large an impact on deep learning as convolution.
+For any problem involving pixels or spatial representations, common intuition
+holds that convolutional neural networks may be appropriate. In this paper we
+show a striking counterexample to this intuition via the seemingly trivial
+coordinate transform problem, which simply requires learning a mapping between
+coordinates in (x,y) Cartesian space and one-hot pixel space. Although
+convolutional networks would seem appropriate for this task, we show that they
+fail spectacularly. We demonstrate and carefully analyze the failure first on a
+toy problem, at which point a simple fix becomes obvious. We call this solution
+CoordConv, which works by giving convolution access to its own input
+coordinates through the use of extra coordinate channels. Without sacrificing
+the computational and parametric efficiency of ordinary convolution, CoordConv
+allows networks to learn either perfect translation invariance or varying
+degrees of translation dependence, as required by the task. CoordConv solves
+the coordinate transform problem with perfect generalization and 150 times
+faster with 10--100 times fewer parameters than convolution. This stark
+contrast raises the question: to what extent has this inability of convolution
+persisted insidiously inside other tasks, subtly hampering performance from
+within? A complete answer to this question will require further investigation,
+but we show preliminary evidence that swapping convolution for CoordConv can
+improve models on a diverse set of tasks. Using CoordConv in a GAN produced
+less mode collapse as the transform between high-level spatial latents and
+pixels becomes easier to learn. A Faster R-CNN detection model trained on MNIST
+detection showed 24% better IOU when using CoordConv, and in the RL domain
+agents playing Atari games benefit significantly from the use of CoordConv
+layers.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377').hide());void($('#showless-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377').show());void($('#more-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377').show());void($('#showless-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377').hide());void($('#more-am91cm5hbHMvY29yci8xODA3LjAzMjQ3-1377').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1807.03247">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1807.03247&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1378').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1807.03247%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1378" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.03247&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.03247%26a%3Ddecodyng&amp;text=Summary%20of%20An%20Intriguing%20Failing%20of%20Convolutional%20Neural%20Networks%20and%20the%20CoordConv%20Solution&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.03247%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20An%20Intriguing%20Failing%20of%20Convolutional%20Neural%20Networks%20and%20the%20CoordConv%20Solution&amp;Body=Summary%20of%20An%20Intriguing%20Failing%20of%20Convolutional%20Neural%20Networks%20and%20the%20CoordConv%20Solution%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.03247%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.03247%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.03247%26a%3Ddecodyng&amp;title=Summary%20of%20An%20Intriguing%20Failing%20of%20Convolutional%20Neural%20Networks%20and%20the%20CoordConv%20Solution" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.03247&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-27</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This is a paper where I keep being torn between the response of “this is so simple it’s brilliant; why haven’t people done it before,” and “this is so simple it’s almost tautological, and the results I’m seeing aren’t actually that surprising”. The basic observation this paper makes is one made frequently before, most recently to my memory by Geoff Hinton in his Capsule Net paper: sometimes the translation invariance of convolutional networks can be a bad thing, and lead to worse performance. In a lot of ways, translation invariance is one of the benefits of using a convolutional architecture in the first place: instead of having to learn separate feature detectors for “a frog in this corner” and “a frog in that corner,” we can instead use the same feature detector, and just move it over different areas of the image. However, this paper argues, this makes convolutional networks perform worse than might naively be expected at tasks that require them to remember or act in accordance with coordinates of elements within an image. 
+
+For example, they find that normal convolutional networks take nearly an hour and 200K worth of parameters to learn to “predict” the one-hot encoding of a pixel, when given the (x,y) coordinates of that pixel as input, and only get up to about 80% accuracy. Similarly, trying to take an input image with only one pixel active, and predict the (x,y) coordinates as output, is something the network is able to do successfully, but only when the test points are sampled from the same spatial region as the training points: if the test points are from a held-out quadrant, the model can’t extrapolate to the (x, y) coordinates there, and totally falls apart. 
+
+https://i.imgur.com/x6phN4p.png
+
+The solution proposed by the authors is a really simple one: at one or more layers within the network, in addition to the feature channels sent up from the prior layer, add two addition channels: one with a with deterministic values going from -1 (left) to 1 (right), and the other going top to bottom. This essentially adds two fixed “features” to each pixel, which jointly carry information about where it is in space. Just by adding this small change, we give the network the ability to use spatial information or not, as it sees fit. If these features don’t prove useful, their weights will stay around their initialization values of expectation-zero, and the behavior should be much like a normal convolutional net. However, if it proves useful, convolution filters at the next layer can take position information into account. It’s easy to see how this would be useful for this paper’s toy problems: you can just create a feature detector for “if this pixel is active, pass forward information about it’s spatial position,” and predict the (x, y) coordinates out easily. You can also imagine this capability helping with more typical image classification problems, by having feature filters that carry with them not only content information, but information about where a pattern was found spatially.  
+
+The authors do indeed find comparable performance or small benefits to ImageNet, MNIST, and Atari RL, when applying their layers in lieu of normal convolutional layer. On GANs in particular, they find less mode collapse, though I don’t yet 100% follow the intuition of why this would be the case. 
+https://i.imgur.com/wu7wQZr.png</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

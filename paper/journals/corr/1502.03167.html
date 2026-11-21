@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift - ShortScience.org">
+<meta property="og:description" content="The main contribution of this paper is introducing a new transformation that the authors call Batch...">
+<meta name="description" content="The main contribution of this paper is introducing a new transformation that the authors call Batch...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Sergey Ioffe and Christian Szegedy"}, "headline": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift", "description": "Summary of Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift", "datePublished": "2016-04-17 16:05:07", "dateModified": "2016-04-17 16:05:07", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1502.03167v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Sergey%20Ioffe">Sergey Ioffe</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Christian%20Szegedy">Christian Szegedy</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/02/11<br><b>Abstract:</b>   Training Deep Neural Networks is complicated by the fact that the
+distribution of each layer&#x27;s inputs changes during training, as the parameters
+of the previous layers change. This slows down the training by requiring lower
+learning rates and careful parameter initialization, and makes it notoriously
+hard to train models with saturating nonlinearities. We refer to this
+phenomenon as internal covariate shift, and address the problem by normalizing
+layer inputs. Our method draws its strength from making normalization a part of
+the model architecture and performing the normalization for each training
+mini-batch. Batch Normalization allows us to use much higher learning rates and
+be less careful about initialization. It also acts as a regularizer, in some
+cases eliminating the need for Dropout. Applied to a state-of-the-art image
+classification model, Batch Normalization achieves the same accuracy with 14
+times fewer training steps, and beats the original model by a significant
+margin. Using an ensemble of batch-normalized networks, we improve upon the
+best published result on ImageNet classification: reaching 4.9% top-5
+validation error (and 4.8% test error), exceeding the accuracy of human raters.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690').hide());void($('#showless-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690').show());void($('#more-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690').show());void($('#showless-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690').hide());void($('#more-am91cm5hbHMvY29yci8xNTAyLjAzMTY3-690').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1502.03167">Summaries/Notes <span class="badge">8</span></a></li></ul><br>
+<div id="josesotelo" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=josesotelo" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=josesotelo&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/57b051f758ad475eb4fb844433e11f9d?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;José Manuel Rodríguez Sotelo&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: josesotelo&lt;br&gt;Posted: 2016-04-17&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/IoffeS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/57b051f758ad475eb4fb844433e11f9d?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-691').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/IoffeS15%26a%3Djosesotelo" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-691" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=josesotelo" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djosesotelo&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djosesotelo" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djosesotelo"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djosesotelo" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djosesotelo&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=josesotelo" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=josesotelo" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by José Manuel Rodríguez Sotelo 2016-04-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The main contribution of this paper is introducing a new transformation that the authors call Batch Normalization (BN). The need for BN comes from the fact that during the training of deep neural networks (DNNs) the distribution of each layer’s input change. This phenomenon is called internal covariate shift (ICS).
+
+#### What is BN?
+Normalize each (scalar) feature independently with respect to the mean and variance of the mini batch. Scale and shift the normalized values with two new parameters (per activation) that will be learned. The BN consists of making normalization part of the model architecture.
+
+#### What do we gain?
+According to the author, the use of BN provides a great speed up in the training of DNNs. In particular, the gains are greater when it is combined with higher learning rates. In addition, BN works as a regularizer for the model which allows to use less dropout or less L2 normalization. Furthermore, since the distribution of the inputs is normalized, it also allows to use sigmoids as activation functions without the saturation problem.
+
+#### What follows?
+This seems to be specially promising for training recurrent neural networks (RNNs). The vanishing and exploding gradient problems \cite{journals/tnn/BengioSF94} have their origin in the iteration of transformation that scale up or down the activations in certain directions (eigenvectors). It seems that this regularization would be specially useful in this context since this would allow the gradient to flow more easily. When we unroll the RNNs, we usually have ultra deep networks.
+
+#### Like
+* Simple idea that seems to improve training.
+* Makes training faster.
+* Simple to implement. Probably.
+* You can be less careful with initialization.
+
+#### Dislike
+* Does not work with stochastic gradient descent (minibatch size = 1).
+* This could reduce the parallelism of the algorithm since now all the examples in a mini batch are tied.
+* Results on ensemble of networks for ImageNet makes it harder to evaluate the relevance of BN by itself. (Although they do mention the performance of a single model).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="shagunsodhani" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-21&lt;br&gt;Edited: 2016-11-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/IoffeS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-692').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/IoffeS15%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-692" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Dshagunsodhani&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Dshagunsodhani&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-21</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The [Batch Normalization paper](http://arxiv.org/pdf/1502.03167.pdf) describes a method to address the various issues related to training of Deep Neural Networks. It makes normalization a part of the architecture itself and reports significant improvements in terms of the number of iterations required to train the network.
+
+## Issues With Training Deep Neural Networks
+
+### Internal Covariate shift
+
+Covariate shift refers to the change in the input distribution to a learning system. In the case of deep networks, the input to each layer is affected by parameters in all the input layers. So even small changes to the network get amplified down the network. This leads to change in the input distribution to internal layers of the deep network and is known as internal covariate shift. 
+
+It is well established that networks converge faster if the inputs have been whitened (ie zero mean, unit variances) and are uncorrelated and internal covariate shift leads to just the opposite.
+
+### Vanishing Gradient 
+
+Saturating nonlinearities (like tanh or sigmoid) can not be used for deep networks as they tend to get stuck in the saturation region as the network grows deeper. Some ways around this are to use:
+ * Nonlinearities like ReLU which do not saturate
+ * Smaller learning rates
+ * Careful initializations 
+
+## Normalization
+
+Let us say that the layer we want to normalize has *d* dimensions **x** $= (x_1, ... x_d)$. Then, we can normalize the $k^th$ dimension as follows:
+
+![Scaled and shifted normalized value](https://db.tt/YORi6lov)
+
+We also need to scale and shift the normalized values otherwise just normalizing a layer would limit the layer in terms of what it can represent. For example, if we normalize the inputs to a sigmoid function, then the output would be bound to the linear region only.
+
+So the normalized input $x^k$ is transformed to:
+
+![Scaled and shifted normalized value](https://db.tt/6vImAQoc)
+
+where $γ$ and $β$ are parameters to be learned.
+
+Moreover, just like we use mini-batch in Stochastic Gradient Descent (SGD), we can use mini-batch with normalization to estimate the mean and variance for each activation.
+
+The transformation from $x$ to $y$ as described above is called **Batch Normalizing Tranform**. This BN transform is differentiable and ensures that as the model is training, the layers can learn on the input distributions that exhibit less internal covariate shift and can hence accelerate the training.
+
+At training time, a subset of activations in specified and BN transform is applied to all of them.
+
+During test time, the normalization is done using the population statistics instead of mini-batch statistics to ensure that the output deterministically depends on the input. 
+
+
+## Batch Normalized Convolutional Networks
+
+Let us say that $x = g(Wu+b)$ is the operation performed by the layer where $W$ and $b$ are the parameters to be learned, $g$ is a nonlinearity and $u$ is the input from the previous layer.
+
+The BN transform is added just before the nonlinearity, by normalizing $x = Wu+b$. An alternative would have been to normalize $u$ itself but constraining just the first and the second moment would not eliminate the covariate shift from $u$.
+
+When normalizing $Wu+b$, we can ignore the $b$ term as it would be canceled during the normalization step (*b*&#x27;s role is subsumed by β) and we have
+
+$z = g( BN(Wu) )$
+
+For convolutional layers, normalization should follow the convolution property as well - ie different elements of the same feature map, at different locations, are normalized in the same way. So all the activations in a mini-batch are jointly normalized over all the locations and parameters (*γ* and *β*) are learnt per feature map instead of per activation.
+
+## Advantages Of Batch Normalization
+
+1. Reduces internal covariant shift.
+2. Reduces the dependence of gradients on the scale of the parameters or their initial values.
+3. Regularizes the model and reduces the need for dropout, photometric distortions, local response normalization and other regularization techniques.
+4. Allows use of saturating nonlinearities and higher learning rates.
+
+Batch Normalization was applied to models trained for MNIST and Inception Network for ImageNet. All the above-mentioned advantages were validated in the experiments. Interestingly, Batch Normalization with sigmoid achieved an accuracy of 69.8% (overall best, using any nonlinearity, was 74.8%) while Inception model (sigmoid nonlinearity), without Batch Normalisation, worked only as good as a random guess.
+
+## Future Work
+
+While BN Transform does enhance the overall deep network training task, its precise effect on gradient propagation is still not well understood. A future extension of Batch Normalisation would be in the domain of Recurrent Neural Networks where internal covariate shift and vanishing gradients are more severe. It remains to be explored if it can also help with domain adaption by easily generalizing to new data distributions.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="shagunsodhanicomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=martinthoma" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-11-21">
+<img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Do you have a source for how the normalization works for CNNs? Do you know of any follow-up work which did what you mentioned in &quot;Future work&quot;?
+
+(And there is a typo: &quot;archwitecture&quot;)</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=shagunsodhani" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-11-22">
+<img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">To see effect of batch normalization on CNN, you may refer this benchmark [https://github.com/ducha-aiki/caffenet-benchmark/blob/master/batchnorm.md]
+
+Thanks for pointing out the typo :)</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1502.03167&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-693').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1502.03167%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-693" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Daleju&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Daleju&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">### What is BN:
+  * Batch Normalization (BN) is a normalization method/layer for neural networks.
+  * Usually inputs to neural networks are normalized to either the range of [0, 1] or [-1, 1] or to mean=0 and variance=1. The latter is called *Whitening*.
+  * BN essentially performs Whitening to the intermediate layers of the networks.
+
+### How its calculated:
+  * The basic formula is $x^* = (x - E[x]) / \sqrt{\text{var}(x)}$, where $x^*$ is the new value of a single component, $E[x]$ is its mean within a batch and `var(x)` is its variance within a batch.
+  * BN extends that formula further to $x^{**} = gamma * x^* +$ beta, where $x^{**}$ is the final normalized value. `gamma` and `beta` are learned per layer. They make sure that BN can learn the identity function, which is needed in a few cases.
+  * For convolutions, every layer/filter/kernel is normalized on its own (linear layer: each neuron/node/component). That means that every generated value (&quot;pixel&quot;) is treated as an example. If we have a batch size of N and the image generated by the convolution has width=P and height=Q, we would calculate the mean (E) over `N*P*Q` examples (same for the variance).
+
+### Theoretical effects:
+  * BN reduces *Covariate Shift*. That is the change in distribution of activation of a component. By using BN, each neuron&#x27;s activation becomes (more or less) a gaussian distribution, i.e. its usually not active, sometimes a bit active, rare very active.
+  * Covariate Shift is undesirable, because the later layers have to keep adapting to the change of the type of distribution (instead of just to new distribution parameters, e.g. new mean and variance values for gaussian distributions).
+  * BN reduces effects of exploding and vanishing gradients, because every becomes roughly normal distributed. Without BN, low activations of one layer can lead to lower activations in the next layer, and then even lower ones in the next layer and so on.
+
+### Practical effects:
+  * BN reduces training times. (Because of less Covariate Shift, less exploding/vanishing gradients.)
+  * BN reduces demand for regularization, e.g. dropout or L2 norm. (Because the means and variances are calculated over batches and therefore every normalized value depends on the current batch. I.e. the network can no longer just memorize values and their correct answers.)
+  * BN allows higher learning rates. (Because of less danger of exploding/vanishing gradients.)
+  * BN enables training with saturating nonlinearities in deep networks, e.g. sigmoid. (Because the normalization prevents them from getting stuck in saturating ranges, e.g. very high/low values for sigmoid.)
+
+
+![MNIST and neuron activations](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Batch_Normalization__performance_and_activations.png?raw=true &quot;MNIST and neuron activations&quot;)
+
+*BN applied to MNIST (a), and activations of a randomly selected neuron over time (b, c), where the middle line is the median activation, the top line is the 15th percentile and the bottom line is the 85th percentile.*
+
+-------------------------
+
+### Rough chapter-wise notes
+
+* (2) Towards Reducing Covariate Shift
+  * Batch Normalization (*BN*) is a special normalization method for neural networks.
+  * In neural networks, the inputs to each layer depend on the outputs of all previous layers.
+  * The distributions of these outputs can change during the training. Such a change is called a *covariate shift*.
+  * If the distributions stayed the same, it would simplify the training. Then only the parameters would have to be readjusted continuously (e.g. mean and variance for normal distributions).
+  * If using sigmoid activations, it can happen that one unit saturates (very high/low values). That is undesired as it leads to vanishing gradients for all units below in the network.
+  * BN fixes the means and variances of layer inputs to specific values (zero mean, unit variance).
+  * That accomplishes:
+    * No more covariate shift.
+    * Fixes problems with vanishing gradients due to saturation.
+  * Effects:
+    * Networks learn faster. (As they don&#x27;t have to adjust to covariate shift any more.)
+    * Optimizes gradient flow in the network. (As the gradient becomes less dependent on the scale of the parameters and their initial values.)
+    * Higher learning rates are possible. (Optimized gradient flow reduces risk of divergence.)
+    * Saturating nonlinearities can be safely used. (Optimized gradient flow prevents the network from getting stuck in saturated modes.)
+    * BN reduces the need for dropout. (As it has a regularizing effect.)
+  * How BN works:
+    * BN normalizes layer inputs to zero mean and unit variance. That is called *whitening*.
+    * Naive method: Train on a batch. Update model parameters. Then normalize. Doesn&#x27;t work: Leads to exploding biases while distribution parameters (mean, variance) don&#x27;t change.
+    * A proper method has to include the current example *and* all previous examples in the normalization step.
+    * This leads to calculating in covariance matrix and its inverse square root. That&#x27;s expensive. The authors found a faster way.
+
+* (3) Normalization via Mini-Batch Statistics
+  * Each feature (component) is normalized individually. (Due to cost, differentiability.)
+  * Normalization according to: `componentNormalizedValue = (componentOldValue - E[component]) / sqrt(Var(component))`
+  * Normalizing each component can reduce the expressitivity of nonlinearities. Hence the formula is changed so that it can also learn the identiy function.
+  * Full formula: `newValue = gamma * componentNormalizedValue + beta` (gamma and beta learned per component)
+  * E and Var are estimated for each mini batch.
+  * BN is fully differentiable. Formulas for gradients/backpropagation are at the end of chapter 3 (page 4, left).
+
+* (3.1) Training and Inference with Batch-Normalized Networks
+  * During test time, E and Var of each component can be estimated using all examples or alternatively with moving averages estimated during training.
+  * During test time, the BN formulas can be simplified to a single linear transformation.
+
+* (3.2) Batch-Normalized Convolutional Networks
+  * Authors recommend to place BN layers after linear/fully-connected layers and before the ninlinearities.
+  * They argue that the linear layers have a better distribution that is more likely to be similar to a gaussian.
+  * Placing BN after the nonlinearity would also not eliminate covariate shift (for some reason).
+  * Learning a separate bias isn&#x27;t necessary as BN&#x27;s formula already contains a bias-like term (beta).
+  * For convolutions they apply BN equally to all features on a feature map. That creates effective batch sizes of m\*pq, where m is the number of examples in the batch and p q are the feature map dimensions (height, width). BN for linear layers has a batch size of m.
+  * gamma and beta are then learned per feature map, not per single pixel. (Linear layers: Per neuron.)
+
+* (3.3) Batch Normalization enables higher learning rates
+  * BN normalizes activations.
+  * Result: Changes to early layers don&#x27;t amplify towards the end.
+  * BN makes it less likely to get stuck in the saturating parts of nonlinearities.
+  * BN makes training more resilient to parameter scales.
+  * Usually, large learning rates cannot be used as they tend to scale up parameters. Then any change to a parameter amplifies through the network and can lead to gradient explosions.
+  * With BN gradients actually go down as parameters increase. Therefore, higher learning rates can be used.
+  * (something about singular values and the Jacobian)
+
+* (3.4) Batch Normalization regularizes the model
+  * Usually: Examples are seen on their own by the network.
+  * With BN: Examples are seen in conjunction with other examples (mean, variance).
+  * Result: Network can&#x27;t easily memorize the examples any more.
+  * Effect: BN has a regularizing effect. Dropout can be removed or decreased in strength.
+
+* (4) Experiments
+* (4.1) Activations over time
+** They tested BN on MNIST with a 100x100x10 network. (One network with BN before each nonlinearity, another network without BN for comparison.)
+** Batch Size was 60.
+** The network with BN learned faster. Activations of neurons (their means and variances over several examples) seemed to be more consistent during training.
+** Generalization of the BN network seemed to be better.
+
+* (4.2) ImageNet classification
+** They applied BN to the Inception network.
+** Batch Size was 32.
+** During training they used (compared to original Inception training) a higher learning rate with more decay, no dropout, less L2, no local response normalization and less distortion/augmentation.
+** They shuffle the data during training (i.e. each batch contains different examples).
+** Depending on the learning rate, they either achieve the same accuracy (as in the non-BN network) in 14 times fewer steps (5x learning rate) or a higher accuracy in 5 times fewer steps (30x learning rate).
+** BN enables training of Inception networks with sigmoid units (still a bit lower accuracy than ReLU).
+** An ensemble of 6 Inception networks with BN achieved better accuracy than the previously best network for ImageNet.
+
+* (5) Conclusion
+** BN is similar to a normalization layer suggested by Gülcehre and Bengio. However, they applied it to the outputs of nonlinearities.
+** They also didn&#x27;t have the beta and gamma parameters (i.e. their normalization could not learn the identity function).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="dennybritz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2016-08-19&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/IoffeS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-694').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/IoffeS15%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-694" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Ddennybritz&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Ddennybritz&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2016-08-19</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors introduce Batch Normalization, a technique to normalize unit activations to zero mean and unit variance within the network. The authors show that in Feedforward and Convolutional Networks, Batch Normalization leads to faster training and better accuracies. BN also acts as a regularizer, reducing the need for Dropout, etc. Using an ensemble of batch normalized networks the authors achieve state of the art on ILSVRC.
+
+
+#### Key Points
+
+- Network training is complicated because the input distributions to higher level change as the parameter in lower layers are changing: Internal Covariate Shift. Solution: Normalize within the network.
+- BN: Normalize input to nonlinearity to have zero mean and unit variance. Then add two additional parameters (scaling and bias) per unit to preserve expressability of the network. Statistics are calculated per minibatch.
+- Network parameters increase, but not by much: 2 parameter per unit that has batch normalization applied to it.
+- Works well for fully connected and convolutional layers. Authors didn&#x27;t try RNNs.
+- Change to make when adding BN: Increase learning rate, remove/decrease dropout and l2 regularization, accelerate learning rate decay, shuffle training examples more thoroughly.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="dennybritzcomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=martinthoma" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-11-21">
+<img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Could you please explain why adding the parameters $\beta$ and $\gamma$ does not change the variance?</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=martinthoma" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-11-21">
+<img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">What do you mean by &quot;shuffle training examples more thoroughly&quot;?</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+<div id="martinthoma" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-11-20&lt;br&gt;Edited: 2016-11-21&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1502.03167&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-695').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1502.03167%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-695" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dmartinthoma&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dmartinthoma&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-11-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">One problem of training deep networks is that the features of lower-layer networks change while the upper-layer networks have already been adjusted to the previous lower-layer features. The phenomenon of changing inputs while optimizing is called *internal covariate shift*.
+
+Batch normalization is done at training time for each mini batch.
+
+## Ideas
+
+* Training converges faster, if input is whitened (zero means, unit variances, decorrelated).
+* Normalization parameters have to be computed within the gradient calculation step to prevent the model from blowing up
+
+## What Batch Normalization is
+
+For a layer with $d$-dimensional input $x = (x^{(1)}, \dots, x^{(d)})$, we will normalize
+each dimension 
+$$\hat{x}^{(k)} = \frac{x^{(k)} - \mathbb{E}[x^{(k)}]}{\sqrt{Var[x^{(k)}]}}$$
+where the expectation and the variance are computed over the training data set. This does *not* decorrelate the features, though.
+
+Additionally, for each activation $x^{(k)}$ two paramters $\gamma^{(k)}, \beta^{(k)}$ are introduced which scale and shift the feature:
+
+$$y^{(k)} = \gamma^{(k)} \cdot \hat{x}^{(k)} + \beta^{(k)}$$
+
+Those two parameters (per feature) are learnable!
+
+## Effect of Batch normalization
+
+* Higher learning rates can be used
+* Initialization is less important
+* Acts as a regularizer, eliminating the need for dropout in some cases
+* Faster training
+
+## Datasets
+
+* reaching 4.9% top-5 validation error (and 4.8% test error) on ImageNet classification
+
+## Used by
+
+* [Going Deeper with Convolutions](http://www.shortscience.org/paper?bibtexKey=journals/corr/SzegedyLJSRAEVR14)
+* [Deep Residual Learning for Image Recognition](http://www.shortscience.org/paper?bibtexKey=journals/corr/HeZRS15#martinthoma)
+
+## See also
+
+* [other summaries](http://www.shortscience.org/paper?bibtexKey=conf/icml/IoffeS15)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="cubs" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=cubs" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=cubs&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Cubs Reading Group&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: cubs&lt;br&gt;Posted: 2017-10-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1502.03167&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-696').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1502.03167%26a%3Dcubs" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-696" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=cubs" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dcubs&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dcubs"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dcubs&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=cubs" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=cubs" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Cubs Reading Group 2017-10-04</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Problem addressed: 
+Strategy for training deep neural networks
+
+#### Summary: 
+The input distribution (to every layer) undergoes constant changes while training a deep network. The authors call this internal covariate shift in the input distribution. The authors claim this leads to slow learning of optimal model parameters. In order to overcome this, they introduce the idea of normalizing the input of every layer a part of the optimization strategy. Specifically, they reparameterize the input to each layer so that it is whitened and thus has non-changing distribution at every iteration.
+ 
+They apply 2 approximation in their strategy: 
+
+1. this normalization is done for every mini-batch of training data, 
+
+2. the input dimensions are assumed to be uncorrelated. 
+
+Finally, the output of last layer is mean subtracted and variance normalized (these can be back-propagated while training). Additionally, the authors also introduce 2 learnable scalar parameters $(r,b)$ per dimension such that the final input to a layer is $y=rg(BN(x))+b$ where g is the activation function.
+ 
+ The advantage of BN apart from the intuition mentioned above is that it allows higher learning rate and network behavior remains unaffected by the scale of the parameters W and bias. The authors also empirically show that BN acts as a regularizer since optimization without dropout yields at par performance.
+
+#### Novelty:
+Previous work only focused on whitening in 1st layer input. This work extends this idea to all layers and suggests a practical approach for applying this idea to real world data.
+
+#### Datasets:
+Imagenet
+
+#### Resources:
+presentation video available on cedar server
+
+#### Presenter:
+Devansh Arpit</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="leopaillier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=leopaillier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=leopaillier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Léo Paillier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: leopaillier&lt;br&gt;Posted: 2017-12-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1502.03167&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-697').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1502.03167%26a%3Dleopaillier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-697" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=leopaillier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dleopaillier&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dleopaillier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1502.03167%26a%3Dleopaillier&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1502.03167&amp;a=leopaillier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=leopaillier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Léo Paillier 2017-12-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Network training is very sensitive to learning rate and initialization factors. Each layer output distribution is different than its input distribution (called covariate shift) which implies that layers have to permanently adapt to new input distribution. In this paper the author introduce batch normalization, a new layer to reduce covariate shift.
+
+_Dataset:_ [MNIST](http://yann.lecun.com/exdb/mnist/), [ImageNet](www.image-net.org/).
+
+#### Inner workings:
+
+Batch normalization fixes the means and variances of layer inputs for a training batch by computing the following normalization on each batch.  
+[![screen shot 2017-04-13 at 10 21 39 am](https://cloud.githubusercontent.com/assets/17261080/24996464/4027fbba-2033-11e7-966a-2db3c0f1389d.png)](https://cloud.githubusercontent.com/assets/17261080/24996464/4027fbba-2033-11e7-966a-2db3c0f1389d.png)  
+The parameters Gamma and Beta are then learned with a gradient descent.  
+During inference the statistics are computed using unbiased estimators of the whole dataset (and not just the batch).
+
+#### Results:
+
+Batch normalization provides several advantages:
+
+1.  Use of a higher learning rate without risk of divergence by stabilizing the gradient scale.
+2.  Regularizes the model.
+3.  Reduces the need for dropout.
+4.  Avoid the network to get stuck when using saturating nonlinearities.
+
+#### What to do?
+
+1.  Add batch norm layer before activation layers.
+2.  Increase the learning rate.
+3.  Remove dropout.
+4.  Reduce L2 weight regularization.
+5.  Accelerate learning rate decay.
+6.  Reduce picture distorsion for data augmentation.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="joecohen" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=joecohen" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=joecohen&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Joseph Paul Cohen&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: joecohen&lt;br&gt;Posted: 2016-04-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/IoffeS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a810b57939e75247f570c9094e7bd16e?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-698').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/IoffeS15%26a%3Djoecohen" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-698" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=joecohen" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djoecohen&amp;text=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djoecohen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift&amp;Body=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djoecohen"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djoecohen" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FIoffeS15%26a%3Djoecohen&amp;title=Summary%20of%20Batch%20Normalization%3A%20Accelerating%20Deep%20Network%20Training%20by%20Reducing%20Internal%20Covariate%20Shift" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/IoffeS15&amp;a=joecohen" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=joecohen" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Joseph Paul Cohen 2016-04-04</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">A *Batch Normalization* applied immediately after fully connected layers and adjusts the values of the feedforward output so that they are centered to a zero mean and have unit variance.
+
+It has been used by famous Convolutional Neural Networks such as GoogLeNet \cite{journals/corr/SzegedyLJSRAEVR14} and ResNet \cite{journals/corr/HeZRS15}</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

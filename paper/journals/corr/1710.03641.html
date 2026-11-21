@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments - ShortScience.org">
+<meta property="og:description" content="DeepMind’s recently released paper (one of a boatload coming out in the wake of ICLR, which just fin...">
+<meta name="description" content="DeepMind’s recently released paper (one of a boatload coming out in the wake of ICLR, which just fin...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1710.03641">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1710.03641" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Maruan Al-Shedivat and Trapit Bansal and Yuri Burda and Ilya Sutskever and Igor Mordatch and Pieter Abbeel"}, "headline": "Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments", "description": "Summary of Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments", "datePublished": "2018-06-26 04:38:18", "dateModified": "2018-06-26 04:38:18", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1710.03641", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1710.03641v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Continuous%20Adaptation%20via%20Meta-Learning%20in%20Nonstationary%20and%20Competitive%20Environments%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Maruan%20Al-Shedivat">Maruan Al-Shedivat</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Trapit%20Bansal">Trapit Bansal</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yuri%20Burda">Yuri Burda</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ilya%20Sutskever">Ilya Sutskever</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Igor%20Mordatch">Igor Mordatch</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Pieter%20Abbeel">Pieter Abbeel</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/10/10<br><b>Abstract:</b>   Ability to continuously learn and adapt from limited experience in
+nonstationary environments is an important milestone on the path towards
+general intelligence. In this paper, we cast the problem of continuous
+adaptation into the learning-to-learn framework. We develop a simple
+gradient-based meta-learning algorithm suitable for adaptation in dynamically
+changing and adversarial scenarios. Additionally, we design a new multi-agent
+competitive environment, RoboSumo, and define iterated adaptation games for
+testing various aspects of continuous adaptation strategies. We demonstrate
+that meta-learning enables significantly more efficient adaptation than
+reactive baselines in the few-shot regime. Our experiments with a population of
+agents that learn and compete suggest that meta-learners are the fittest.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176').hide());void($('#showless-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176').show());void($('#more-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176').show());void($('#showless-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176').hide());void($('#more-am91cm5hbHMvY29yci8xNzEwLjAzNjQx-1176').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1710.03641">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1710.03641&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1177').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1710.03641%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1177" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1710.03641&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1710.03641%26a%3Ddecodyng&amp;text=Summary%20of%20Continuous%20Adaptation%20via%20Meta-Learning%20in%20Nonstationary%20and%20Competitive%20Environments&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1710.03641%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Continuous%20Adaptation%20via%20Meta-Learning%20in%20Nonstationary%20and%20Competitive%20Environments&amp;Body=Summary%20of%20Continuous%20Adaptation%20via%20Meta-Learning%20in%20Nonstationary%20and%20Competitive%20Environments%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1710.03641%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1710.03641%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1710.03641%26a%3Ddecodyng&amp;title=Summary%20of%20Continuous%20Adaptation%20via%20Meta-Learning%20in%20Nonstationary%20and%20Competitive%20Environments" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1710.03641&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">DeepMind’s recently released paper (one of a boatload coming out in the wake of ICLR, which just finished in Vancouver) addresses the problem of building an algorithm that can perform well on tasks that don’t just stay fixed in their definition, but instead evolve and change, without giving the agent a chance to re-train in the middle. An example of this, is one used at various points in the paper: of an agent trying to run East, that finds two of its legs (a different two each time) slowly less functional. The theoretical framework they use to approach this problem is that of meta learning. Meta Learning is typically formulated as: how can I learn to do well on a new task, given only a small number of examples of that task? That’s why it’s called “meta”: it’s an extra, higher-level optimization loop applied around the process of learning. Typical learning learns parameters of some task, meta learning learns longer-scale parameters that make the short-scale, typical learning work better. Here, the task that evolves and changes over time (i.e. a nonstationary task) is seen as a close variant of the the multi-task problem. And, so, the hope is that a model that can quickly adapt to arbitrary new tasks can also be used to learn the ability to adapt to a gradually changing task environment. 
+
+The meta learning algorithm that got most directly adapted for this paper is MAML: Model Agnostic Meta Learning. This algorithm works by, for a large number of tasks, initializing the model at some parameter set theta, evaluating the loss for a few examples on that task, and moving the gradients from the initialization theta, to a task-specific parameter set phi. Then, it  calculating the “test set” performance of the one-step phi parameters, on the task. But then - the crucial thing here - the meta learning model updates its initialization parameters, theta. So, the meta learning model is learning a set of parameters that provides a good jumping off point for any given task within the distribution of tasks the model is trained on. In order to do this well, the theta parameters need to both 1) learn any general information, shared across all tasks, and 2) position the parameters such that an initial update step moves the model in the profitable direction. 
+
+They adapted this idea, of training a model that could quickly update to multiple tasks, to the environment of a slowly/continuously changing environment, where certain parameters of the task the agent is facing. In this formulation, our set of tasks is no longer random draws from the distribution of possible tasks, but a smooth, Markov-walk gradient over tasks. The main change that the authors made to the original MAML algorithm was to say that each general task would start at theta, but then, as that task gradually evolved, it would perform multiple updates: theta to phi1, phi1 to phi2, and so on. The original theta parameters would then be updated according to a similar principle as the MAML parameters: so as to make the loss, summed over the full non-stationary task (notionally composed of many little sub-tasks) is as low as possible. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

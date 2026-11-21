@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fully-Convolutional Siamese Networks for Object Tracking - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Fully-Convolutional Siamese Networks for Object Tracking - ShortScience.org">
+<meta property="og:description" content="Summary:
+This paper suggests an approach to find correlation score between different sub-window of a...">
+<meta name="description" content="Summary:
+This paper suggests an approach to find correlation score between different sub-window of a...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.09549">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1606.09549" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Luca Bertinetto and Jack Valmadre and Jo\u00e3o F. Henriques and Andrea Vedaldi and Philip H. S. Torr"}, "headline": "Fully-Convolutional Siamese Networks for Object Tracking", "description": "Summary of Fully-Convolutional Siamese Networks for Object Tracking", "datePublished": "2016-09-25 03:12:57", "dateModified": "2016-09-25 03:13:38", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1606.09549", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.09549v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Fully-Convolutional%20Siamese%20Networks%20for%20Object%20Tracking%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Fully-Convolutional Siamese Networks for Object Tracking</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Luca%20Bertinetto">Luca Bertinetto</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jack%20Valmadre">Jack Valmadre</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jo%C3%A3o%20F.%20Henriques">João F. Henriques</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Andrea%20Vedaldi">Andrea Vedaldi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Philip%20H.%20S.%20Torr">Philip H. S. Torr</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/06/30<br><b>Abstract:</b>   The problem of arbitrary object tracking has traditionally been tackled by
+learning a model of the object&#x27;s appearance exclusively online, using as sole
+training data the video itself. Despite the success of these methods, their
+online-only approach inherently limits the richness of the model they can
+learn. Recently, several attempts have been made to exploit the expressive
+power of deep convolutional networks. However, when the object to track is not
+known beforehand, it is necessary to perform Stochastic Gradient Descent online
+to adapt the weights of the network, severely compromising the speed of the
+system. In this paper we equip a basic tracking algorithm with a novel
+fully-convolutional Siamese network trained end-to-end on the ILSVRC15 video
+object detection dataset. Our tracker operates at frame-rates beyond real-time
+and, despite its extreme simplicity, achieves state-of-the-art performance in
+the VOT2015 benchmark.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870').show());void($('#more-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870').show());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870').hide());void($('#more-am91cm5hbHMvY29yci8xNjA2LjA5NTQ5-870').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1606.09549">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="kundan2510" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=kundan2510" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=kundan2510&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/551d317c05c62773a7e43944b990664c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;kundan2510&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: kundan2510&lt;br&gt;Posted: 2016-09-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.09549&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/551d317c05c62773a7e43944b990664c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-871').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.09549%26a%3Dkundan2510" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-871" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.09549&amp;a=kundan2510" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.09549%26a%3Dkundan2510&amp;text=Summary%20of%20Fully-Convolutional%20Siamese%20Networks%20for%20Object%20Tracking&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.09549%26a%3Dkundan2510" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Fully-Convolutional%20Siamese%20Networks%20for%20Object%20Tracking&amp;Body=Summary%20of%20Fully-Convolutional%20Siamese%20Networks%20for%20Object%20Tracking%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.09549%26a%3Dkundan2510"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.09549%26a%3Dkundan2510" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.09549%26a%3Dkundan2510&amp;title=Summary%20of%20Fully-Convolutional%20Siamese%20Networks%20for%20Object%20Tracking" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.09549&amp;a=kundan2510" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=kundan2510" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by kundan2510 2016-09-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Summary:
+This paper suggests an approach to find correlation score between different sub-window of a search image with a query image. Using a fully convolutional siamese network architecture that they describe helps in getting this correlation for different sub windows for search images in one forward pass of the network. For every video, they compute the features for the object being tracked once and use it for entire duration of video for computing correlation.
+
+My take:
+This is in the same spirit as GOTURN tracker. Although having fully convolutional helps in having translation invariance, it is not directly an advantage over predicting bounding boxes directly as adopted in GOTURN paper. Also, results are not directly comparable as this has been trained on a different data-set.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

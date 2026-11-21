@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Towards a Neural Statistician - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Towards a Neural Statistician - ShortScience.org">
+<meta property="og:description" content="This paper can be thought as proposing a variational autoencoder applied to a form of meta-learning,...">
+<meta name="description" content="This paper can be thought as proposing a variational autoencoder applied to a form of meta-learning,...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.02185">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1606.02185" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Harrison Edwards and Amos Storkey"}, "headline": "Towards a Neural Statistician", "description": "Summary of Towards a Neural Statistician", "datePublished": "2016-06-09 12:37:12", "dateModified": "2016-06-09 12:37:12", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1606.02185", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.02185v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Towards%20a%20Neural%20Statistician%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Towards a Neural Statistician</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Harrison%20Edwards">Harrison Edwards</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Amos%20Storkey">Amos Storkey</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/06/07<br><b>Abstract:</b>   An efficient learner is one who reuses what they already know to tackle a new
+problem. For a machine learner, this means understanding the similarities
+amongst datasets. In order to do this, one must take seriously the idea of
+working with datasets, rather than datapoints, as the key objects to model.
+Towards this goal, we demonstrate an extension of a variational autoencoder
+that can learn a method for computing representations, or statistics, of
+datasets in an unsupervised fashion. The network is trained to produce
+statistics that encapsulate a generative model for each dataset. Hence the
+network enables efficient learning from new datasets for both unsupervised and
+supervised tasks. We show that we are able to learn statistics that can be used
+for: clustering datasets, transferring generative models to new datasets,
+selecting representative samples of datasets and classifying previously unseen
+classes.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837').show());void($('#more-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837').show());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837').hide());void($('#more-am91cm5hbHMvY29yci8xNjA2LjAyMTg1-837').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1606.02185">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-06-09&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.02185&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">13</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-838').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.02185%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-838" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.02185&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.02185%26a%3Dhlarochelle&amp;text=Summary%20of%20Towards%20a%20Neural%20Statistician&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.02185%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Towards%20a%20Neural%20Statistician&amp;Body=Summary%20of%20Towards%20a%20Neural%20Statistician%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.02185%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.02185%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.02185%26a%3Dhlarochelle&amp;title=Summary%20of%20Towards%20a%20Neural%20Statistician" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.02185&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-06-09</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper can be thought as proposing a variational autoencoder applied to a form of meta-learning, i.e. where the input is not a single input but a dataset of inputs. For this, in addition to having to learn an approximate inference network over the latent variable $z_i$ for each input $x_i$ in an input dataset $D$, approximate inference is also learned over a latent variable $c$ that is global to the dataset $D$. By using Gaussian distributions for $z_i$ and $c$, the reparametrization trick can be used to train the variational autoencoder.
+
+The generative model factorizes as
+
+$p(D=(x_1,\dots,x_N), (z_1,\dots,z_N), c) = p(c) \prod_i p(z_i|c) p(x_i|z_i,c)$
+
+and learning is based on the following variational posterior decomposition:
+
+$q((z_1,\dots,z_N), c|D=(x_1,\dots,x_N)) = q(c|D) \prod_i q(z_i|x_i,c)$.
+
+Moreover, latent variable $z_i$ is decomposed into multiple ($L$) layers $z_i = (z_{i,1}, \dots, z_{i,L})$. Each layer in the generative model is directly connected to the input. The layers are generated from $z_{i,L}$ to $z_{i,1}$, each layer being conditioned on the previous (see Figure 1 *Right* for the graphical model), with the approximate posterior following a similar decomposition.
+
+The architecture for the approximate inference network $q(c|D)$ first maps all inputs $x_i\in D$ into a vector representation, then performs mean pooling of these representations to obtain a single vector, followed by a few more layers to produce the parameters of the Gaussian distribution over $c$. 
+
+Training is performed by stochastic gradient descent, over minibatches of datasets (i.e. multiple sets $D$).
+
+The model has multiple applications, explored in the experiments. One is of summarizing a dataset $D$ into a smaller subset $S\in D$. This is done by initializing $S\leftarrow D$ and greedily removing elements of $S$, each time minimizing the KL divergence between $q(c|D)$ and $q(c|S)$ (see the experiments on a synthetic Spatial MNIST problem of section 5.3).
+
+Another application is few-shot classification, where very few examples of a number of classes are given, and a new test example $x&#x27;$ must be assigned to one of these classes. Classification is performed by treating the small set of examples of each class $k$ as its own dataset $D_k$. Then, test example $x$ is classified into class $k$ for which the KL divergence between $q(c|x&#x27;)$ and $q(c|D_k)$ is smallest. Positive results are reported when training on OMNIGLOT classes and testing on either the MNIST classes or unseen OMNIGLOT datasets, when compared to a 1-nearest neighbor classifier based on the raw input or on a representation learned by a regular autoencoder.
+
+Finally, another application is that of generating new samples from an input dataset of examples. The approximate posterior is used to compute $q(c|D)$. Then, $c$ is assigned to its posterior mean, from which a value for the hidden layers $z$ and finally a sample $x$ can be generated. It is shown that this procedure produces convincing samples that are visually similar from those in the input set $D$.
+
+**My two cents**
+
+Another really nice example of deep learning applied to a form of meta-learning, i.e. learning a model that is trained to take *new* datasets as input and generalize even if confronted to datasets coming from an unseen data distribution. I&#x27;m particularly impressed by the many tasks explored successfully with the same approach: few-shot classification and generative sampling, as well as a form of summarization (though this last probably isn&#x27;t really meta-learning). Overall, the approach is quite elegant and appealing.
+
+The very simple, synthetic experiments of section 5.1 and 5.2 are also interesting. Section 5.2 presents the notion of a *prior-interpolation layer*, which is well motivated but seems to be used only in that section. I wonder how important it is, outside of the specific case of section 5.2.
+
+Overall, very excited by this work, which further explores the theme of meta-learning in an interesting way.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power-Law Distributions in Empirical Data - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Power-Law Distributions in Empirical Data - ShortScience.org">
+<meta property="og:description" content="## Introduction
+
+A variable x is said to obey a power-law if it is drawn from a probability distribu...">
+<meta name="description" content="## Introduction
+
+A variable x is said to obey a power-law if it is drawn from a probability distribu...">
+<meta property="og:image" content="https://github.com/shagunsodhani/powerlaw/raw/master/paper/assets/MLEContinous.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=clauset2009powerlaw">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=clauset2009powerlaw" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Clauset, Aaron and Shalizi, Cosma Rohilla and Newman, M. E. J."}, "headline": "Power-Law Distributions in Empirical Data", "description": "Summary of Power-Law Distributions in Empirical Data", "datePublished": "2016-10-21 00:20:52", "dateModified": "2016-10-21 00:21:21", "image": {"@type": "ImageObject", "url": "https://github.com/shagunsodhani/powerlaw/raw/master/paper/assets/MLEContinous.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=clauset2009powerlaw", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, powerLaw,  fit,  clauset,  empirical">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://dx.doi.org/10.1137/070710111"><span class="glyphicon glyphicon-link"></span> dx.doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Power-Law%20Distributions%20in%20Empirical%20Data%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Power-Law Distributions in Empirical Data</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Clauset%2C%20Aaron">Clauset, Aaron</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shalizi%2C%20Cosma%20Rohilla">Shalizi, Cosma Rohilla</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Newman%2C%20M.%20E.%20J.">Newman, M. E. J.</a></span>
+<br>
+SIAM Review - 2009 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=powerLaw">powerLaw</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20fit"> fit</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20clauset"> clauset</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20empirical"> empirical</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=clauset2009powerlaw">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-21&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;clauset2009powerlaw&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-128').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dclauset2009powerlaw%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-128" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=clauset2009powerlaw&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dclauset2009powerlaw%26a%3Dshagunsodhani&amp;text=Summary%20of%20Power-Law%20Distributions%20in%20Empirical%20Data&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dclauset2009powerlaw%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Power-Law%20Distributions%20in%20Empirical%20Data&amp;Body=Summary%20of%20Power-Law%20Distributions%20in%20Empirical%20Data%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dclauset2009powerlaw%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dclauset2009powerlaw%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dclauset2009powerlaw%26a%3Dshagunsodhani&amp;title=Summary%20of%20Power-Law%20Distributions%20in%20Empirical%20Data" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=clauset2009powerlaw&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-21</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## Introduction
+
+A variable x is said to obey a power-law if it is drawn from a probability distribution function (pdf) of the form $p(x) = Cx^{-\alpha}$ where $C$ is called the **normalization constant** and $\alpha$ is called **scaling parameter** or exponent. Often, the power-law applies only for values greater than some minimum $x$, called $x_\text{min}$. The paper describes various statistical techniques to test if a given distribution follows a power-law or not.
+
+Power-law distributions come in both continuous and discrete flavor with the discrete case being more involved than the continuous one. So, the discrete power-law behavior is often approximated by continuous power-law behavior for the sake of convenience. One reliable approximation is to assume that discrete values of $x$ are generated from a continuous power-law and then rounded to nearest integer to get the discrete values.
+
+Sometimes, complementary cumulative distribution function (or CDF) is also considered where $P(X) = p(x ≥ X)$
+
+## Fitting power-laws to empirical data
+
+Power-law distribution makes a straight line on  the log-log plot. This slope can be calculated using the method of least square linear regression. But simple line fitting does not guarantee that data follows a power-law distribution. Moreover, the assumption of independent, Gaussian noise, which is a pre-requisite for linear regression, does not hold for this case.
+
+### Estimating scaling parameter
+
+Assuming that we know the value of $x_\text{min}$, the value of $\alpha$ can be obtained by the *method of maximum likelihood*. Maximum likelihood estimator (MLE) for continuous case is given as:
+
+https://github.com/shagunsodhani/powerlaw/raw/master/paper/assets/MLEContinous.png
+
+and that for the discrete case is given as:
+
+https://github.com/shagunsodhani/powerlaw/raw/master/paper/assets/MLEDiscrete.png
+
+The equation for the discrete case is only an approximation as there is no exact MLE for discrete case.
+
+MLE method outperforms several linear regression based approaches like line fitting on the log-log plot, line fitting after performing logarithmic binning (done to reduce fluctuations in the tail of the distribution), line fitting to CDF with constant size bins and line fitting to CDF without any bins. But for any finite sample size $n$ and any choice of $x_\text{min}$, there is bias present which decays as $O(1/n)$ and can be ignored for $n ≥ 50$
+
+
+### Estimating $x_\text{min}$
+
+If we choose a value of $x_\text{min}$ less than the original value, then we will get a biased value of $\alpha$ as we will be fitting power-law to non power-law region as well. If we choose a value larger than the original value, we will be losing legitimate data points (leading to statistical errors). But it is more acceptable to make a higher estimate of $x_\text{min}$ than the original value.
+
+One approach is to plot the PDF or CDF on the log-log plot and mark the point beyond which the distribution becomes roughly straight or to plot $\alpha$ as a function of $x_\text{min}$ and mark the point beyond which the value appears relatively stable. But these approaches are not objective as roughly straight and relatively stable are not quantified.
+
+The approach proposed by Clauset et al. [Clauset, A., M. Young, and K. S. Gleditsch, 2007, Journal of Conflict Resolution 51, 58] is as follows:
+
+Choose a value of $x_\text{min}$ such that the probability distribution of the measured data and best-fit power-law model are as similar as possible. Similarity between distributions can be measured using Kolmogorov-Smirnov (KS) statistic which is defined as:
+
+https://github.com/shagunsodhani/powerlaw/raw/master/paper/assets/KSStatistics.png
+
+where $S(x)$ is CDF of given data with values greater than or equal to $x_\text{min}$ and *P(x)* is the CDF of power-law model that best fits the data in the region $x ≥ x_\text{min}$. This method works well for both continuous and discrete data and is recommended for the general case. Other measures, like weighted KS or Kuiper statistics, can also be used in place of KS statistic.
+
+## Testing the power-law hypothesis
+
+MLE and other approaches do not tell us whether power-law is a possible fit to the given data - all they do is find the best fit values of $x_\text{min}$ and $\alpha$ assuming the data comes from a power-law distribution. A basic approach would be to calculate the value of $x_\text{min}$ and $\alpha$ and use them to hypothesize a power-law distribution from which the data is drawn. We then check the validity of this hypothesis using the goodness-of-fit tests.
+
+### Goodness-of-fit tests
+
+A large number of synthetic data sets are generated from the hypothesized power-law distribution. Then each of these distributions is fitted to their own power-law model individually and the KS statistics is calculated for each distribution. The *p-* value is defined to be the fraction of synthetic datasets where the distance (KS statistic value) is greater than the distance for given dataset. A large value of *p* (close to 1) means that the fluctuations between given data and the hypothesized model could be because of statistical fluctuations alone while a small value of *p* (close to 0) means that the model is not a possible fit to the distribution.
+
+### Dataset generation
+
+The generated dataset needs to be such that it has a distribution similar to the given data below $x_\min$ and follows the fitted power-law above $x_\text{min}$. Suppose the given data has *n&lt;sub&gt;tail&lt;/sub&gt;* observations (where $x ≥ x_\text{min}$) and *n* observations in total. With a probability of $x_\text{min}/n$, a random number $x_i$ is generated from the hypothesized power-law distribution. With a probability of $1- n_{tail}/n$, a number is picked randomly from the given dataset with $x &lt; x_\text{min}$. This way, the generated dataset of n elements is expected to follow powerlaw above $x ≥ x_\text{min}$ and same distribution as given data below $x_\text{min}$.
+
+If we want the *p-* values to be accurate to within about *ε* of the true value, then we should generate at least *1/4 ε&lt;sup&gt;-2&lt;/sup&gt;* synthetic data sets. 
+
+The power law is ruled out if *p ≤ 0.1*. A large *p-* value does not mean that the power-law is the correct distribution for the data. There can be other distributions that can fit the data equally well or even better. Moreover, for small values of n, it is possible that the given distribution will follow a power law closely, and hence that the p-value will be large, even when the power law is the wrong model for the data.
+
+
+## Alternate distributions
+
+*p-* value test can only be used to reject the power-law hypothesis and not accept it. So even if *p-value &gt; 0.1*, we can only say that power-law hypothesis is not rejected. It could be the case that some other distribution fits the data equally well or even better. To eliminate this possibility, we calculate a *p-* value for a fit to the alternate distribution and compare it with the *p-* value for the power-law. If the *p-* value for power-law is high and the *p-* value for the other distribution is low, we can say that data is more likely to be drawn from the power-law distribution (though we still can not be sure that it is **definitely** drawn from the power-law distribution).
+
+### Likelihood Ratio Test
+
+This test can be used to directly compare two distributions against one another to see which is a better fit for the given data. The idea is to compute the likelihood of the given data under the two competing distributions. The one with the higher likelihood is taken to be the better fit. Alternatively, the ratio of the two likelihoods, or the logarithm *R* of the ratio can be used. If *R* is close enough to zero, then it could go to either side of zero, depending on statistical fluctuations. So *R* value needs to be sufficiently far from zero. To check for this, Vuong&#x27;s method [Vuong, Q. H., 1989, Econometrica 57, 307] is used which gives a *p-* value that can tell if the conclusion from the value of *R* is statistically significant. If this *p-* value is small (*p &lt; 0.1*), the result is significant. Otherwise, the result is not taken to be reliable and the test does not favor either distribution. 
+
+Other than the likelihood ratio, several other tests like minimum description length (MDL) or cross-validation can also be performed.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demystifying Contrastive Self-Supervised Learning: Invariances, Augmentations and Dataset Biases - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Demystifying Contrastive Self-Supervised Learning: Invariances, Augmentations and Dataset Biases - ShortScience.org">
+<meta property="og:description" content="In the past year or so, contrastive learning has experienced widespread success, and has risen to be...">
+<meta name="description" content="In the past year or so, contrastive learning has experienced widespread success, and has risen to be...">
+<meta property="og:image" content="https://i.imgur.com/7Ghbv5A.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-13916">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-13916" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Purushwalkam, Senthil and Gupta, Abhinav"}, "headline": "Demystifying Contrastive Self-Supervised Learning: Invariances, Augmentations and Dataset Biases", "description": "Summary of Demystifying Contrastive Self-Supervised Learning: Invariances, Augmentations and Dataset Biases", "datePublished": "2020-11-06 04:39:42", "dateModified": "2020-11-06 04:39:42", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/7Ghbv5A.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-13916", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://arxiv.org/abs/2007.13916"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Demystifying%20Contrastive%20Self-Supervised%20Learning%3A%20Invariances%2C%20Augmentations%20and%20Dataset%20Biases%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Demystifying Contrastive Self-Supervised Learning: Invariances, Augmentations and Dataset Biases</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Purushwalkam%2C%20Senthil">Purushwalkam, Senthil</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gupta%2C%20Abhinav">Gupta, Abhinav</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2020">arXiv e-Print archive - 2020</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/abs-2007-13916">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2020-11-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-2007-13916&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1940').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-2007-13916%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1940" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-13916&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2007-13916%26a%3Ddecodyng&amp;text=Summary%20of%20Demystifying%20Contrastive%20Self-Supervised%20Learning%3A%20Invariances%2C%20Augmentations%20and%20Dataset%20Biases&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2007-13916%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Demystifying%20Contrastive%20Self-Supervised%20Learning%3A%20Invariances%2C%20Augmentations%20and%20Dataset%20Biases&amp;Body=Summary%20of%20Demystifying%20Contrastive%20Self-Supervised%20Learning%3A%20Invariances%2C%20Augmentations%20and%20Dataset%20Biases%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2007-13916%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2007-13916%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2007-13916%26a%3Ddecodyng&amp;title=Summary%20of%20Demystifying%20Contrastive%20Self-Supervised%20Learning%3A%20Invariances%2C%20Augmentations%20and%20Dataset%20Biases" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2007-13916&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2020-11-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">In the past year or so, contrastive learning has experienced widespread success, and has risen to be a dominant problem framing within self-supervised learning. The basic idea of contrastive learning is that, instead of needing human-generated labels to generate a supervised task, you instead assume that there exists some automated operation you can perform to a data element to generate another data element that, while different, should be considered still fundamentally the same, or at least more strongly related, and that you can contrast these related pairs against pairs constructed with the rest of the dataset, with which any given frame would not by default have this assumed relationship of sameness or quasi-similarity. 
+
+One fairly central way that &quot;different but still effectively similar&quot; has been historically defined - at least within the realm of image-based models - is through the use of data augmentations: image transformations such as cropping, color jitter, or Gaussian blur, which are used on an image to create the counterpart in its related pair. Fundamentally, what we&#x27;re doing when we define these particular augmentations is saying: these transformations don&#x27;t cause a meaningful change in what the image is, and so we want the representations we get with and without the transformations to be close to one another (or at least to contain enough information to predict one another). Another way you can say this is that we&#x27;re defining properties of the image that we want our representation to be invariant to. 
+
+The authors of this paper make the point that, when aggressive cropping is part of your toolkit of augmentations, the crops of the image can actually contain meaningfully different content than the uncropped image. If you remove a few pixels around the edges of an image, it still fundamentally contains the same things. However, if you zoom in dramatically, you may get crops that contain different objects. From an image classification standpoint, you would expect that coding in an invariance to cropping in our representations would, in some cases, also mean coding in an invariance to object type, which would presumably be detrimental to the task of classifying objects. To explain the extent of the success that aggressive-cropping methods have had so far, they argue that ImageNet has the particular property that its images are curated to be primarily and centrally containing a single object at a time, such that, even if you zoom in, you&#x27;re getting a part of the central object, rather than another object entirely. They argue that this dataset bias might explain why you haven&#x27;t seen as much of this object-invariance be a problem in earlier augmentation-based contrastive work. To try to test this, they train different contrastive (MoCo v2) models on the MSCOCO dataset, which consists of pictures of rooms, and thus no longer has the property of being centrally of one object. They tried one setting where they performed contrastive loss on the images as a whole, and another where the input to the augmentation pipeline were images from the same dataset, but pre-cropped to only contain one image at a time. This was meant, as far as I can tell, to isolate the effect of &quot;object-centric vs not&quot; while holding other dataset factors constant. They then test how well these different models do on an object-centric classification task (Pascal Cropped Boxes). They find that the contrastive model that trains cropped versions of the dataset gets about 3.5 points higher mean accuracy (71.9 vs 75.3) compared to the contrastive loss done on the multi-object versions of images. 
+
+They also explicitly try to measure different forms of invariance, through a scheme where they binarize the elements of the representation vector, and calculate what proportion of them fire on average with and without a given set of transformations. They find that the main form of invariances that contrastive learning does well at is invariance to occlusion (part of the image not being visible), where both contrastive methods give ~84 percent co-firing, and supervised pre-training only gets about 80.9. However, on other important measures of invariance - viewpoint, illumination direction, and instance (that is, specific instance within a class) - contrastive representations perform notably worse than supervised pretraining. 
+
+https://i.imgur.com/7Ghbv5A.png
+
+To try to solve these two problems, they propose a method that learns from video, and that uses temporally separated frames (which are then augmented) as pairs. They call this Frame Temporal Invariance, and argue, reasonably, that by pushing the representations of adjacent frames which track a (presumably consistent, or at least slowly-evolving) scene closer together, you should expect better invariance to viewpoint change and image deformation, since those things naturally happen when an object is moving through the world. They also suggest using an off-the-shelf object bounding box model to find particular objects, and track them throughout the video, and to use contrastive learning specifically on the bounding boxes that the algorithm thinks track a consistent object. 
+
+https://i.imgur.com/2GfCTog.png
+
+Overall, my take on this paper is that the analysis they do - of different kinds of invariances contrastive vs supervised loss does well on, and of the extent to which contrastive loss results might be biased by datasets - is quite interesting and a valuable contribution to our understanding of these very currently-hypey algorithms. However, I&#x27;m a bit less impressed by the novelty of their proposed solution. Temporal forms of contrastive learning have been around before - in reinforcement learning, and even in the original Contrastive Predictive Coding paper, where the related pairs were related by dint of temporal closeness. So, while using it in video is certainly a good idea, it doesn&#x27;t really feel strongly novel to me. I also feel a little confused by their choice of using an off-the-shelf object detection model as a pre-requisite for a self-supervised task, since my impression was that a central goal of self-supervision was building techniques that could scale to situations where it was infeasible to get large amounts of labels, and any method that relies on a pre-existing trained object bounding box model is pretty inherently limited in that regard.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

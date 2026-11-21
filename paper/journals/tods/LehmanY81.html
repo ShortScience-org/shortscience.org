@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Efficient Locking for Concurrent Operations on B-Trees - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Efficient Locking for Concurrent Operations on B-Trees - ShortScience.org">
+<meta property="og:description" content="This paper introduces the B-link tree: a variant of a B+ tree (the paper says B* tree, but they mean...">
+<meta name="description" content="This paper introduces the B-link tree: a variant of a B+ tree (the paper says B* tree, but they mean...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/tods/LehmanY81">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/tods/LehmanY81" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Lehman, Philip L. and Yao, S. Bing"}, "headline": "Efficient Locking for Concurrent Operations on B-Trees", "description": "Summary of Efficient Locking for Concurrent Operations on B-Trees", "datePublished": "2017-10-06 02:44:34", "dateModified": "2017-10-06 02:44:34", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/tods/LehmanY81", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://doi.acm.org/10.1145/319628.319663"><span class="glyphicon glyphicon-link"></span> doi.acm.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Efficient%20Locking%20for%20Concurrent%20Operations%20on%20B-Trees%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Efficient Locking for Concurrent Operations on B-Trees</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Lehman%2C%20Philip%20L.">Lehman, Philip L.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yao%2C%20S.%20Bing">Yao, S. Bing</a></span>
+<br>
+ACM Trans. Database Syst. - 1981 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/tods/LehmanY81">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="mwhittaker" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=mwhittaker" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mwhittaker&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Michael Whittaker&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mwhittaker&lt;br&gt;Posted: 2017-10-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/tods/LehmanY81&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2012').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/tods/LehmanY81%26a%3Dmwhittaker" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2012" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/tods/LehmanY81&amp;a=mwhittaker" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Ftods%2FLehmanY81%26a%3Dmwhittaker&amp;text=Summary%20of%20Efficient%20Locking%20for%20Concurrent%20Operations%20on%20B-Trees&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Ftods%2FLehmanY81%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Efficient%20Locking%20for%20Concurrent%20Operations%20on%20B-Trees&amp;Body=Summary%20of%20Efficient%20Locking%20for%20Concurrent%20Operations%20on%20B-Trees%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Ftods%2FLehmanY81%26a%3Dmwhittaker"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Ftods%2FLehmanY81%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Ftods%2FLehmanY81%26a%3Dmwhittaker&amp;title=Summary%20of%20Efficient%20Locking%20for%20Concurrent%20Operations%20on%20B-Trees" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/tods/LehmanY81&amp;a=mwhittaker" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=mwhittaker" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Michael Whittaker 2017-10-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper introduces the B-link tree: a variant of a B+ tree (the paper says B* tree, but they mean B+ tree) which allows for concurrent searches, insertions, and deletions. Operations on a B-link tree lock at most three nodes at any given time, and searches are completely lock free.
+
+#### Storage Model
+
+We assume that every node of a B+ tree or B-link tree is stored on disk. Threads read nodes from disk into memory, modify them in memory, and then write them back to disk. Threads can also lock a specific node which will block other threads trying to acquire a lock on the same node. However, we&#x27;ll also see that threads performing a search will not acquire locks at all and may read a node which is locked by another thread.
+
+#### Concurrent B+ Trees
+
+Let&#x27;s see what goes wrong when we concurrently search and insert into a B+ tree without any form of concurrency control. Consider a fragment of a B+ tree shown below with two nodes x and y. Imagine a thread is searching for the value 2 and reads the pointer to y from x.
+
+```
+            +-------+
+          x | 5 |   |
+            +-------+
+           /    |
+  +-------+    ...
+y | 1 | 2 |
+  +-------+
+```
+
+Then, another thread inserts the value 3 which reorganizes the tree like this:
+
+```
+            +-------+
+          x | 2 | 5 |
+            +-------+
+           /    |    \
+  +-------+ +-------+ ...
+y | 1 |   | | 2 | 3 |
+  +-------+ +-------+
+```
+
+Next, the searching thread reads from y but cannot find the value 2!
+
+Clearly, concurrently searching and inserting into a B+ tree requires some sort of locking. There are already a number of locking protocols:
+
+ - The simplest protocol requires searches and insertions to lock every node along their path from root to leaf. This protocol is correct, but limits concurrency.
+ - Smarter protocols have insertions place write intention locks along a path and upgrade those locks to exclusive locks when performing a write. Searches can read nodes with write intention locks on them but not with exclusive locks on them.
+ - Even smarter protocols lock a subsection of the tree and bubble this subsection upwards through the tree. B-link trees will do something similar but will guarantee that at most three nodes are locked at any given point in time.
+
+#### B-link Trees
+
+ - Typically, an internal node in a B+ tree with $n$ keys has $n + 1$ pointers. For example, if an internal node has keys $(5, 10, 15)$, then it has four pointers for values in the range $[-\infty, 5)$, $[5, 10)$, $[10, 15)$, and $[15, \infty)$. Internal nodes in a B-link tree with $n$ keys have $n$ pointers where the last key is known as the &lt;strong&gt;high key&lt;/strong&gt;. For example, if an internal node has keys $(5, 10, 15)$ then it has three pointers for values in the range $[-\infty, 5)$, $[5, 10)$, and $[10, 15)$.
+ - In a B+ tree, leaves are linked together, but internal nodes are not. In a B-link tree, all sibling nodes (internal nodes and leaves) are linked together left to right.
+
+#### Search Algorithm
+
+The search algorithm for a B-link tree is very similar to the search algorithm for a B+ tree. To search for a key $k$, we traverse the tree from root to leaf. At every internal node, we compare $k$ against the internal node&#x27;s keys to determine which child to visit next.
+
+However, unlike with a B+ tree, we might have to walk rightward along the B-link tree to find the correct child pointer. For example, imagine we are searching for the key $20$ at an internal node $(5, 10, 15)$. Because $20 \gt 15$, we have to walk rightward to the next internal node which might have keys $(22, 27, 35)$. We do something similar at leaves as well to find the correct value.
+
+Note that searching does not acquire any locks.
+
+#### Insertion Algorithm
+
+To insert a key $k$ into a B-link tree, we begin by traversing the tree from root to leaf in exactly the same way as we did for the search algorithm. We walk downwards and rightwards and do not acquire locks. One difference is that we maintain a stack of the rightmost visited node in each level of the tree. Later, we&#x27;ll use the stack to walk backwards up the tree.
+
+One we reach a leaf node, we acquire a lock on it and crab rightward until we reach the correct leaf node $a$. If $a$ is not full, then we insert $k$ and unlock $a$. If $a$ is full, then we split it into $a&#x27;$ (previously $a$) and $b&#x27;$ (freshly allocated). We flush $b&#x27;$ to disk and then flush $a&#x27;$ to disk. Next, we have to adjust the parent of $a&#x27;$ (formerly $a&#x27;$). We acquire a lock on the parent node and then crab rightward until we reach the correct parent node. At this point, we repeat our procedure upwards through the tree.
+
+At worst, we hold three locks at a time.
+
+#### Correctness Proof
+
+To prove that the B-link tree works as we intend, we have to prove three things:
+
+ - First, we have to prove that multiple threads operating on a B-link tree cannot deadlock. This is straightforward. If we totally order nodes bottom-to-top and left-to-right, then threads always acquire locks according to this total order.
+ - Second, we have to prove that whenever a node modifies a B-link tree, the B-link tree still appears like a valid tree to all nodes except the modifying thread. Again, this is straightforward. The insertion procedure only makes three writes to disk.
+   - Writing to a node that is not full clearly does not invalidate the tree.
+   - Writing a newly allocated $b&#x27;$ node does not affect the tree because there are not any pointers to it.
+   - Writing $a&#x27;$ atomically transitions the tree from one legal state to another.
+ - Finally, we have to ensure that concurrently executing operations do not interfere with one another. See paper for proof (it&#x27;s complicated).
+
+#### Deletion
+B-link trees punt on deletion. They simply let leaf nodes get underfull and periodically lock the whole tree and reorganize it if things get too sparse.
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

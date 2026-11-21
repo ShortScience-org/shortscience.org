@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Homeostasis Protocol: Avoiding Transaction Coordination Through Program Analysis - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Homeostasis Protocol: Avoiding Transaction Coordination Through Program Analysis - ShortScience.org">
+<meta property="og:description" content="Strong consistency is easy to reason about, but typically requires coordination which increases late...">
+<meta name="description" content="Strong consistency is easy to reason about, but typically requires coordination which increases late...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/sigmod/0002KBDHKFG15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/sigmod/0002KBDHKFG15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Roy, Sudip and Kot, Lucja and Bender, Gabriel and Ding, Bailu and Hojjat, Hossein and Koch, Christoph and Foster, Nate and Gehrke, Johannes"}, "headline": "The Homeostasis Protocol: Avoiding Transaction Coordination Through Program Analysis", "description": "Summary of The Homeostasis Protocol: Avoiding Transaction Coordination Through Program Analysis", "datePublished": "2017-10-06 03:23:48", "dateModified": "2017-10-06 03:23:48", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/sigmod/0002KBDHKFG15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://doi.acm.org/10.1145/2723372.2723720"><span class="glyphicon glyphicon-link"></span> doi.acm.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22The%20Homeostasis%20Protocol%3A%20Avoiding%20Transaction%20Coordination%20Through%20Program%20Analysis%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">The Homeostasis Protocol: Avoiding Transaction Coordination Through Program Analysis</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Roy%2C%20Sudip">Roy, Sudip</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kot%2C%20Lucja">Kot, Lucja</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Bender%2C%20Gabriel">Bender, Gabriel</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ding%2C%20Bailu">Ding, Bailu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hojjat%2C%20Hossein">Hojjat, Hossein</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Koch%2C%20Christoph">Koch, Christoph</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Foster%2C%20Nate">Foster, Nate</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gehrke%2C%20Johannes">Gehrke, Johannes</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/sigmod&amp;year=2015">International Conference on Management of Data (ACM SIGMOD) - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/sigmod/0002KBDHKFG15">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="mwhittaker" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=mwhittaker" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mwhittaker&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Michael Whittaker&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mwhittaker&lt;br&gt;Posted: 2017-10-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/sigmod/0002KBDHKFG15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-567').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/sigmod/0002KBDHKFG15%26a%3Dmwhittaker" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-567" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/sigmod/0002KBDHKFG15&amp;a=mwhittaker" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2F0002KBDHKFG15%26a%3Dmwhittaker&amp;text=Summary%20of%20The%20Homeostasis%20Protocol%3A%20Avoiding%20Transaction%20Coordination%20Through%20Program%20Analysis&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2F0002KBDHKFG15%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20The%20Homeostasis%20Protocol%3A%20Avoiding%20Transaction%20Coordination%20Through%20Program%20Analysis&amp;Body=Summary%20of%20The%20Homeostasis%20Protocol%3A%20Avoiding%20Transaction%20Coordination%20Through%20Program%20Analysis%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2F0002KBDHKFG15%26a%3Dmwhittaker"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2F0002KBDHKFG15%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2F0002KBDHKFG15%26a%3Dmwhittaker&amp;title=Summary%20of%20The%20Homeostasis%20Protocol%3A%20Avoiding%20Transaction%20Coordination%20Through%20Program%20Analysis" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/sigmod/0002KBDHKFG15&amp;a=mwhittaker" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=mwhittaker" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Michael Whittaker 2017-10-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Strong consistency is easy to reason about, but typically requires coordination which increases latency. Weaker consistency can improve performance but is difficult to reason about. This paper presents a program analysis and distributed protocol to run transactions with coordination-free strong consistency.
+
+Analysing Transactions. We model a database as a finite map from objects to integers. Transactions are ordered sequences of reads, writes, computations, and prints; this is formalized below. A transaction T executes on a database D to produce a new database D&#x27; state and a log G&#x27; of printed values. Formally, eval(D, T) = &lt;D&#x27;, G&#x27;&gt;.
+
+Symbolic tables categorize the behavior of a transaction based on the initial database sate. Formally, a symbolic table for transaction T is a binary relation Q of pairs &lt;P, T&#x27;&gt; where P is a formula in first order logic describing the contents of a database, and T&#x27; is a transaction such that T and T&#x27; are observationally equivalent when run on databases satisfying P. A symbolic table can also be built for a set of transactions.
+
+Formally, transactions are expressed in a language L which is essentially IMP with database reads, database writes, and prints. A somewhat simple recursive algorithm walks backwards through the program computing symbolic tables. Essentially, the algorithm traces all paths through the programs control flow.
+
+There is also a higher-level language L++ which can be compiled to L.
+
+Homeostasis Protocol. Assume data is partitioned (not replicated) across a cluster of K nodes. We model a distributed database as a pair &lt;D, Loc&gt; where D is a database and Loc is a function from objects to an index between 1 and K. Each transaction T runs on a site i; formally, l(T) = i. For simplicity, we assume that transactions only write to objects local to the site it is running on.
+
+Each transaction runs on some site. It reads fresh versions of values on the site and stale versions of values on other sites. Nodes establish treaties with one another such that operating with stale data does not affect the correctness of the transaction. This is best explained by way of example. Imagine the following transaction is running on a site where x is remote.
+
+```
+x&#x27; = r(x)
+if x&#x27; &gt; 0:
+    write(y = 1)
+else:
+    write(y = 2)
+```
+
+If we establish the treaty x &gt; 0, then it doesn&#x27;t matter what the actual value of x is. We now formalize this notion.
+
+Given a database D, a local-remote partition is a function p from objects to booleans. We can represent a database D with respect to a local-remote p as a pair (l, r) where l is a vector of values x such that p(x), and r is a vector of values x such that not p(x). In words, we can model a database as disjoint sets of local and remote values.
+
+We say &lt;(l, r), G&gt; = &lt;(l&#x27;, r&#x27;) G&#x27;&gt; if l = l&#x27; and r = r&#x27;. Given a database D, local-remote partition p, transaction T, and set of vectors L and R, we say (L, R) is a local-remote slice (LR-slice) for T if Eval((l, r), T) = Eval((l, r&#x27;), T) for all l in L and r, r&#x27; in R. In words, (L, R) is a local-remote slice for T if T&#x27;s output depends only on the values of local values.
+
+A global treaty Gamma is a subset of possible database states. A global treaty is valid for a set of transactions {T1, ..., Tn} if ({l | (l, r) in Gamma}, {r | (l, r) in Gamma}) is an LR-slice for all T.
+
+The homoeostasis protocol proceeds in rounds where each round has three phases:
+
+1.  Treaty generation The system generates a treaty for the current database state.
+2. Normal execution. Transactions can execute without coordination reading a snapshot of remote values. After each site executes a transaction, it checks that it does not bring the database to a state outside the treaty. If it doesn&#x27;t, the transaction is committed. If it does, we enter the next phase.
+3. Cleanup. All sites synchronize and communicate all values that have changed since the last round. All sites then run the transaction that caused the violation. Finally, we enter the next round.
+
+Generating Treaties. Two big questions remain: how do we generate treaties, and how do we enforce treaties?
+
+Given an initial database state D, we could always pick Gamma = {D}. This requires that we synchronize after every single database modification. We want to pick the treaties that let us run as long as possible before synchronizing. We can pick the predicate P in the symbolic table that D satisfies but this isn&#x27;t guaranteed to be a valid treaty. Instead we take the predicate P and divide it into a set of local treaties P1, ..., PK where the conjunction of all local treaties imply the global treaty. Moreover, each local treaty must be satisfied by the database. The conjunction of the local treaties is our global treaty and is guaranteed to be valid.
+
+Finding good local treaties is not easy. In fact, it can be undecidable pretty easily. We limit ourselves to linear arithmetic and leverage SMT solvers to do the heavy lifting for us. First, we decompose the global treaty into a conjunction of linear constraints. We then generate templates from the constraints and instantiate them using Z3.
+
+Homeostasis in Practice. Roy et al. present a homoeostasis prototype. An offline preprocessing component takes in L++ transactions and computes join symbolic tables, using tricks to keep the tables small. It them initializes global and local treaties. The online execution component executes the homeostasis protocol described above. It is implemented in Java over MySQL. The analysis uses ANTLR-4 and Z3.
+
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

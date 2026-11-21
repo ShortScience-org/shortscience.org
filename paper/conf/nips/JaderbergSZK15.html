@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spatial Transformer Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Spatial Transformer Networks - ShortScience.org">
+<meta property="og:description" content="TLDR; The authors introduce a new spatial transformation module that can be inserted into any Neural...">
+<meta name="description" content="TLDR; The authors introduce a new spatial transformation module that can be inserted into any Neural...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jaderberg, Max and Simonyan, Karen and Zisserman, Andrew and Kavukcuoglu, Koray"}, "headline": "Spatial Transformer Networks", "description": "Summary of Spatial Transformer Networks", "datePublished": "2016-05-12 19:02:51", "dateModified": "2016-05-12 19:02:51", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/5854-spatial-transformer-networks"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Spatial%20Transformer%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Spatial Transformer Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jaderberg%2C%20Max">Jaderberg, Max</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Simonyan%2C%20Karen">Simonyan, Karen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zisserman%2C%20Andrew">Zisserman, Andrew</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kavukcuoglu%2C%20Koray">Kavukcuoglu, Koray</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2015">Neural Information Processing Systems Conference - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/JaderbergSZK15">Summaries/Notes <span class="badge">4</span></a></li></ul><br>
+<div id="dennybritz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2016-05-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/JaderbergSZK15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-422').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/JaderbergSZK15%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-422" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Ddennybritz&amp;text=Summary%20of%20Spatial%20Transformer%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Spatial%20Transformer%20Networks&amp;Body=Summary%20of%20Spatial%20Transformer%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Ddennybritz&amp;title=Summary%20of%20Spatial%20Transformer%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2016-05-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors introduce a new spatial transformation module that can be inserted into any Neural Network. The module consists of a spatial transformation network that predicts transformation parameters, a grid generator that chooses a sampling grid from the input, and a sampler that produces the output. Possible learned transformations include things cropping, translation, rotation, scaling or attention. The module can be trained end-to-end using backpropagation. The authors evaluate evaluate the module on both CNNs and MLPs, achieving state on distorted MNIST data, street view numbers, and fine-grained bird classification.
+
+#### Key Points:
+
+- STMs can be inserted between any layers, typically after the input or extracted features. The transform is dynamic and happens based on the input data.
+- The module is fast and doesn&#x27;t adversely impact training speed.
+- The actual transformation parameters (output of localization network) can be fed into higher layers.
+- Attention can be seen as a special transformation that increases computational efficiency.
+- Can also be applied to RNNs, but more investigation is needed.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="nipsreviews" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nipsreviews" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nipsreviews&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;NIPS Conference Reviews&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nipsreviews&lt;br&gt;Posted: 2016-07-07&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/JaderbergSZK15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-423').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/JaderbergSZK15%26a%3Dnipsreviews" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-423" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=nipsreviews" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dnipsreviews&amp;text=Summary%20of%20Spatial%20Transformer%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Spatial%20Transformer%20Networks&amp;Body=Summary%20of%20Spatial%20Transformer%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dnipsreviews"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dnipsreviews&amp;title=Summary%20of%20Spatial%20Transformer%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=nipsreviews" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nipsreviews" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by NIPS Conference Reviews 2016-07-07</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents a novel layer that can be used in convolutional neural networks. A spatial transformer layer computes re-sampling points of the signal based on another neural network. The suggested transformations include scaling, cropping, rotations and non-rigid deformation whose paramerters are trained end-to-end with the rest of the model. The resulting re-sampling grid is then used to create a new representation of the underlying signal through bi-linear or nearest neighbor interpolation. This has interesting implications: the network can learn to co-locate objects in a set of images that all contain the same object, the transformation parameter localize the attention area explicitly, fine data resolution is restricted to areas important for the task. Furthermore, the model improves over previous state-of-the-art on a number of tasks.
+
+The layer has one mini neural network that regresses on the parameters of a parametric transformation, e.g. affine), then there is a module that applies the transformation to a regular grid and a third more or less &quot;reads off&quot; the values in the transformed positions and maps them to a regular grid, hence under-forming the image or previous layer. Gradients for back-propagation in a few cases are derived. The results are mostly of the classic deep learning variety, including mnist and svhn, but there is also the fine-grained birds dataset. The networks with spatial transformers seem to lead to improved results in all cases.
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/JaderbergSZK15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-424').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/JaderbergSZK15%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-424" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dabhshkdz&amp;text=Summary%20of%20Spatial%20Transformer%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Spatial%20Transformer%20Networks&amp;Body=Summary%20of%20Spatial%20Transformer%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dabhshkdz&amp;title=Summary%20of%20Spatial%20Transformer%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper introduces a neural networks module that can learn input-dependent
+spatial transformations and can be inserted into any neural network. It supports
+transformations like scaling, cropping, rotations, and non-rigid deformations.
+Main contributions:
+
+- The spatial transformer network consists of the following:
+    - Localization network that regresses to the transformation parameters
+    given the input.
+    - Grid generator that uses the transformation parameters to produce a
+    grid to sample from the input.
+    - Sampler that produces the output feature map sampled from the input
+    at the grid points.
+
+- Differentiable sampling mechanism
+    - The sampling is written in a way such that sub-gradients can be defined
+    with respect to grid coordinates.
+    - This enables gradients to be propagated through the grid generator and
+    localization network, and for the network to jointly learn the spatial
+    transformer along with rest of the network.
+
+- A network can have multiple STNs
+    - at different points in the network, to model incremental transformations
+    at different levels of abstraction.
+    - in parallel, to learn to focus on different regions of interest. For example,
+    on the bird classification task, they show that one STN learns to be a head detector,
+    while the other focuses on the central part of the body.
+
+## Strengths
+
+- Their attention (and by extension transformation) mechanism is differentiable
+as opposed to earlier works on non-differentiable attention mechanisms that used
+reinforcement learning (REINFORCE). It also supports a richer variety of
+transformations as opposed to earlier works on learning transformations, like DRAW.
+
+- State-of-the-art classification performance on distorted MNIST, SVHN, CUB-200-2011.
+
+## Weaknesses / Notes
+
+This is a really nice way to generalize spatial transformations in a differentiable
+manner so the model can be trained end-to-end. Classification performance, and more
+importantly, qualitative results of the kind of transformations learnt on larger datasets
+(like ImageNet) should be evaluated.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="cubs" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=cubs" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=cubs&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Cubs Reading Group&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: cubs&lt;br&gt;Posted: 2017-10-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/JaderbergSZK15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-425').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/JaderbergSZK15%26a%3Dcubs" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-425" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=cubs" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dcubs&amp;text=Summary%20of%20Spatial%20Transformer%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Spatial%20Transformer%20Networks&amp;Body=Summary%20of%20Spatial%20Transformer%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dcubs"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FJaderbergSZK15%26a%3Dcubs&amp;title=Summary%20of%20Spatial%20Transformer%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/JaderbergSZK15&amp;a=cubs" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=cubs" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Cubs Reading Group 2017-10-04</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Problem addressed: 
+A module to spatially transform feature maps conditioned on feature maps itself. Attempts to improve rotation, scale and shift invariance in neural nets.
+
+#### Summary: 
+This paper introduces Spatial Transformer Networks (STN) for rotation, shift and scale invariance. The module consists of three parts - Localization function, Grid point generation and Sampling. Each of these modules are differentiable and can be inserted at any point in a standard neural network architecture. The constraints are that the learnt spatial transform must be parametrized. Localization function learns these parameters by looking at the previous layer output (typically HxWxC for convolutional layers) and regressing to the parameters using FC layers or convolutional layers. The source grid generator parameters are learnt the same way. Given these two, the output of the STN is constructed by sampling (using any differentiable kernel) the source grid and using the transform parameters.
+
+#### Novelty:
+A new module is introduced to increase invariance to rotation, scale and shift
+
+#### Drawbacks:
+Since only some points in the source feature maps are selected due to grid generation it is unclear how the error is backpropagated to previous layers
+
+#### Datasets:
+Distorted MNIST, CUB-200-2011 Birds, SVHN
+
+#### Resources:
+http://arxiv.org/pdf/1506.02025v1.pdf
+
+#### Presenter:
+Bhargava U. Kota</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

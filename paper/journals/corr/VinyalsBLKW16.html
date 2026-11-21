@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matching Networks for One Shot Learning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Matching Networks for One Shot Learning - ShortScience.org">
+<meta property="og:description" content="Originally posted on my Github [paper-notes]( ) repo.
+
+# Matching Networks for One Shot Learning
+
+By...">
+<meta name="description" content="Originally posted on my Github [paper-notes]( ) repo.
+
+# Matching Networks for One Shot Learning
+
+By...">
+<meta property="og:image" content="https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-07%20at%2010.08.44%20PM.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/VinyalsBLKW16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/VinyalsBLKW16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Vinyals, Oriol and Blundell, Charles and Lillicrap, Timothy P. and Kavukcuoglu, Koray and Wierstra, Daan"}, "headline": "Matching Networks for One Shot Learning", "description": "Summary of Matching Networks for One Shot Learning", "datePublished": "2016-08-08 18:46:21", "dateModified": "2016-08-09 17:26:11", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-07%20at%2010.08.44%20PM.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/VinyalsBLKW16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.04080"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Matching%20Networks%20for%20One%20Shot%20Learning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Matching Networks for One Shot Learning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Vinyals%2C%20Oriol">Vinyals, Oriol</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Blundell%2C%20Charles">Blundell, Charles</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lillicrap%2C%20Timothy%20P.">Lillicrap, Timothy P.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kavukcuoglu%2C%20Koray">Kavukcuoglu, Koray</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Wierstra%2C%20Daan">Wierstra, Daan</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/VinyalsBLKW16">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="karpathy" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=karpathy" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=karpathy&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/e8afa6cbdc0819fda60001f4865f6252?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;karpathy&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: karpathy&lt;br&gt;Posted: 2016-08-08&lt;br&gt;Edited: 2016-08-09&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/VinyalsBLKW16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/e8afa6cbdc0819fda60001f4865f6252?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">13</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1771').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/VinyalsBLKW16%26a%3Dkarpathy" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1771" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/VinyalsBLKW16&amp;a=karpathy" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FVinyalsBLKW16%26a%3Dkarpathy&amp;text=Summary%20of%20Matching%20Networks%20for%20One%20Shot%20Learning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FVinyalsBLKW16%26a%3Dkarpathy" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Matching%20Networks%20for%20One%20Shot%20Learning&amp;Body=Summary%20of%20Matching%20Networks%20for%20One%20Shot%20Learning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FVinyalsBLKW16%26a%3Dkarpathy"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FVinyalsBLKW16%26a%3Dkarpathy" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FVinyalsBLKW16%26a%3Dkarpathy&amp;title=Summary%20of%20Matching%20Networks%20for%20One%20Shot%20Learning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/VinyalsBLKW16&amp;a=karpathy" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=karpathy" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by karpathy 2016-08-08</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Originally posted on my Github [paper-notes](https://github.com/karpathy/paper-notes/blob/master/matching_networks.md) repo.
+
+# Matching Networks for One Shot Learning
+
+By DeepMind crew: **Oriol Vinyals, Charles Blundell, Timothy Lillicrap, Koray Kavukcuoglu, Daan Wierstra**
+
+This is a paper on **one-shot** learning, where we&#x27;d like to learn a class based on very few (or indeed, 1) training examples. E.g. it suffices to show a child a single giraffe, not a few hundred thousands before it can recognize more giraffes.
+
+This paper falls into a category of *&quot;duh of course&quot;* kind of paper, something very interesting, powerful, but somehow obvious only in retrospect. I like it.
+
+Suppose you&#x27;re given a single example of some class and would like to label it in test images.
+
+- **Observation 1**: a standard approach might be to train an Exemplar SVM for this one (or few) examples vs. all the other training examples - i.e. a linear classifier. But this requires optimization.
+- **Observation 2:** known non-parameteric alternatives (e.g. k-Nearest Neighbor) don&#x27;t suffer from this problem. E.g. I could immediately use a Nearest Neighbor to classify the new class without having to do any optimization whatsoever. However, NN is gross because it depends on an (arbitrarily-chosen) metric, e.g. L2 distance. Ew.
+- **Core idea**: lets train a fully end-to-end nearest neighbor classifer!![Screen Shot 2016-08-07 at 10.08.44 PM](https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-07%20at%2010.08.44%20PM.png)
+
+## The training protocol
+
+As the authors amusingly point out in the conclusion (and this is the *duh of course* part), *&quot;one-shot learning is much easier if you train the network to do one-shot learning&quot;*. Therefore, we want the test-time protocol (given N novel classes with only k examples each (e.g. k = 1 or 5), predict new instances to one of N classes) to exactly match the training time protocol.
+
+To create each &quot;episode&quot; of training from a dataset of examples then:
+
+1. Sample a task T from the training data, e.g. select 5 labels, and up to 5 examples per label (i.e. 5-25 examples).
+2. To form one episode sample a label set L (e.g. {cats, dogs}) and then use L to sample the support set S and a batch B of examples to evaluate loss on.
+
+The idea on high level is clear but the writing here is a bit unclear on details, of exactly how the sampling is done.
+
+## The model
+
+I find the paper&#x27;s model description slightly wordy and unclear, but basically we&#x27;re building a **differentiable nearest neighbor++**. The output \hat{y} for a test example \hat{x} is computed very similar to what you might see in Nearest Neighbors:![Screen Shot 2016-08-07 at 11.14.26 PM](https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-07%20at%2011.14.26%20PM.png)
+where **a** acts as a kernel, computing the extent to which \hat{x} is similar to a training example x_i, and then the labels from the training examples (y_i) are weight-blended together accordingly. The paper doesn&#x27;t mention this but I assume for classification y_i would presumbly be one-hot vectors.
+
+Now, we&#x27;re going to embed both the training examples x_i and the test example \hat{x}, and we&#x27;ll interpret their inner products (or here a cosine similarity) as the &quot;match&quot;, and pass that through a softmax to get normalized mixing weights so they add up to 1. No surprises here, this is quite natural:
+
+![Screen Shot 2016-08-07 at 11.20.29 PM](https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-07%20at%2011.20.29%20PM.png)
+Here **c()** is cosine distance, which I presume is implemented by normalizing the two input vectors to have unit L2 norm and taking a dot product. I assume the authors tried skipping the normalization too and it did worse? Anyway, now all that&#x27;s left to define is the function **f** (i.e. how do we embed the test example into a vector) and the function **g** (i.e. how do we embed each training example into a vector?).
+
+**Embedding the training examples.** This (the function **g**) is a bidirectional LSTM over the examples:
+
+ ![Screen Shot 2016-08-07 at 11.57.10 PM](https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-07%20at%2011.57.10%20PM.png)
+
+i.e. encoding of i&#x27;th example x_i is a function of its &quot;raw&quot; embedding g&#x27;(x_i) and the embedding of its friends, communicated through the bidirectional network&#x27;s hidden states. i.e. each training example is a function of not just itself but all of its friends in the set. This is part of the ++ above, because in a normal nearest neighbor you wouldn&#x27;t change the representation of an example as a function of the other data points in the training set.
+
+It&#x27;s odd that the **order** is not mentioned, I assume it&#x27;s random? This is a bit gross because order matters to a bidirectional LSTM; you&#x27;d get different embeddings if you permute the examples. 
+
+**Embedding the test example.** This (the function **f**) is a an LSTM that processes for a fixed amount (K time steps) and at each point also *attends* over the examples in the training set. The encoding is the last hidden state of the LSTM. Again, this way we&#x27;re allowing the network to change its encoding of the test example as a function of the training examples. Nifty: ![Screen Shot 2016-08-08 at 12.11.15 AM](https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-08%20at%2012.11.15%20AM.png)
+
+That looks scary at first but it&#x27;s really just a vanilla LSTM with attention where the input at each time step is constant (f&#x27;(\hat{x}), an encoding of the test example all by itself) and the hidden state is a function of previous hidden state but also a concatenated readout vector **r**, which we obtain by attending over the encoded training examples (encoded with **g** from above).
+
+Oh and I assume there is a typo in equation (5), it should say r_k = … without the -1 on LHS. 
+
+
+
+## Experiments
+
+**Task**: N-way k-shot learning task. i.e. we&#x27;re given k (e.g. 1 or 5) labelled examples for N classes that we have not previously trained on and asked to classify new instances into he N classes.
+
+**Baselines:** an &quot;obvious&quot; strategy of using a pretrained ConvNet and doing nearest neighbor based on the codes. An option of finetuning the network on the new examples as well (requires training and careful and strong regularization!).
+
+**MANN** of Santoro et al. [21]: Also a DeepMind paper, a fun NTM-like Meta-Learning approach that is fed a sequence of examples and asked to predict their labels.
+
+**Siamese network** of Koch et al. [11]: A siamese network that takes two examples and predicts whether they are from the same class or not with logistic regression. A test example is labeled with a nearest neighbor: with the class it matches best according to the siamese net (requires iteration over all training examples one by one). Also, this approach is less end-to-end than the one here because it requires the ad-hoc nearest neighbor matching, while here the *exact* end task is optimized for. It&#x27;s beautiful.
+
+
+
+### Omniglot experiments 
+
+### ![Screen Shot 2016-08-08 at 10.21.45 AM](https://github.com/karpathy/paper-notes/raw/master/img/matching_networks/Screen%20Shot%202016-08-08%20at%2010.21.45%20AM.png)
+
+Omniglot of [Lake et al. [14]](http://www.cs.toronto.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf) is a MNIST-like scribbles dataset with 1623 characters with 20 examples each.
+
+Image encoder is a CNN with 4 modules of [3x3 CONV 64 filters, batchnorm, ReLU, 2x2 max pool]. The original image is claimed to be so resized from original 28x28 to 1x1x64, which doesn&#x27;t make sense because factor of 2 downsampling 4 times is reduction of 16, and 28/16 is a non-integer &gt;1. I&#x27;m assuming they use VALID convs?
+
+Results: ![Screen Shot 2016-08-08 at 10.27.46 AM](https://raw.githubusercontent.com/karpathy/paper-notes/master/img/matching_networks/Screen%20Shot%202016-08-08%20at%2010.27.46%20AM.png)
+
+Matching nets do best. Fully Conditional Embeddings (FCE) by which I mean they the &quot;Full Context Embeddings&quot; of Section 2.1.2 instead are not used here, mentioned to not work much better. Finetuning helps a bit on baselines but not with Matching nets (weird).
+
+The comparisons in this table are somewhat confusing:
+
+- I can&#x27;t find the MANN numbers of 82.8% and 94.9% in their paper [21]; not clear where they come from. E.g. for 5 classes and 5-shot they seem to report 88.4% not 94.9% as seen here. I must be missing something.
+- I also can&#x27;t find the numbers reported here in the Siamese Net [11] paper. As far as I can tell in their Table 2 they report one-shot accuracy, 20-way classification to be 92.0, while here it is listed as 88.1%?
+- The results of Lake et al. [14] who proposed Omniglot are also missing from the table. If I&#x27;m understanding this correctly they report 95.2% on 1-shot 20-way, while matching nets here show 93.8%, and humans are estimated at 95.5%. That is, the results here appear weaker than those of Lake et al., but one should keep in mind that the method here is significantly more generic and does not make any assumptions about the existence of strokes, etc., and it&#x27;s a simple, single fully-differentiable blob of neural stuff.
+
+(skipping ImageNet/LM experiments as there are few surprises)
+
+## Conclusions
+
+Good paper, effectively develops a differentiable nearest neighbor trained end-to-end. It&#x27;s something new, I like it!
+
+A few concerns: 
+
+- A bidirectional LSTMs (not order-invariant compute) is applied over sets of training examples to encode them. The authors don&#x27;t talk about the order actually used, which presumably is random, or mention this potentially unsatisfying feature. This can be solved by using a recurrent attentional mechanism instead, as the authors are certainly aware of and as has been discussed at length in [ORDER MATTERS: SEQUENCE TO SEQUENCE FOR SETS](https://arxiv.org/abs/1511.06391), where Oriol is also the first author. I wish there was a comment on this point in the paper somewhere.
+
+- The approach also gets quite a bit slower as the number of training examples grow, but once this number is large one would presumable switch over to a parameteric approach.
+
+- It&#x27;s also potentially concerning that during training the method uses a specific number of examples, e.g. 5-25, so this is the number of that must also be used at test time. What happens if we want the size of our training set to grow online? It appears that we need to retrain the network because the encoder LSTM for the training data is not &quot;used to&quot; seeing inputs of more examples? That is unless you fall back to iteratively subsampling the training data, doing multiple inference passes and averaging, or something like that. If we don&#x27;t use FCE it can still be that the attention mechanism LSTM can still not be &quot;used to&quot; attending over many more examples, but it&#x27;s not clear how much this matters. An interesting experiment would be to not use FCE and try to use 100 or 1000 training examples, while only training on up to 25 (with and fithout FCE). Discussion surrounding this point would be interesting.
+
+- Not clear what happened with the Omniglot experiments, with incorrect numbers for [11], [21], and the exclusion of Lake et al. [14] comparison.
+
+- A baseline that is missing would in my opinion also include training of an [Exemplar SVM](https://www.cs.cmu.edu/~tmalisie/projects/iccv11/), which is a much more powerful approach than encode-with-a-cnn-and-nearest-neighbor.
+
+  ​</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="karpathycomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=oriolvinyals" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=oriolvinyals&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;oriolvinyals&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: oriolvinyals&lt;br&gt;Posted: 2016-08-09">
+<img src="https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Thanks for the awesome review! I&#x27;ll break down the reply since commenting seems quite bad in shortscience: We&#x27;ll definitely improve the paper in v2.</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=oriolvinyals" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=oriolvinyals&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;oriolvinyals&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: oriolvinyals&lt;br&gt;Posted: 2016-08-09">
+<img src="https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">1. We reproduced Siamese as we used the train/test split from MANN. Reimplementing Lake&#x27;s original algorithm would have been quite involved, but Siamese nets were much closer and simpler to deal with.</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=oriolvinyals" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=oriolvinyals&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;oriolvinyals&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: oriolvinyals&lt;br&gt;Posted: 2016-08-09">
+<img src="https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">2. Note that our convnet uses 28x28 images whereas the original dataset uses 115x115 (IIRC). So there are likely more differences. We used the simpler setup and left large scale experiments for ImageNet, which we deem more adequate for vision.</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=oriolvinyals" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=oriolvinyals&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;oriolvinyals&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: oriolvinyals&lt;br&gt;Posted: 2016-08-09">
+<img src="https://www.gravatar.com/avatar/f2414e7ec4094fdf9652a9dd81ba2ae8?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">3. MANN numbers are taken from Table 1. Note that one shot learning is equivalent to 2nd instance (as the first instance is the &quot;training&quot; instance). We used 5th instance for 5 shot learning, but in reality it should be 4 shot learning : )</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

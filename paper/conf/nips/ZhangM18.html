@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generalizing Tree Probability Estimation via Bayesian Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Generalizing Tree Probability Estimation via Bayesian Networks - ShortScience.org">
+<meta property="og:description" content="A common problem in phylogenetics is:
+
+1. I have $p(\text{DNA sequences} | \text{tree})$ and $p(\tex...">
+<meta name="description" content="A common problem in phylogenetics is:
+
+1. I have $p(\text{DNA sequences} | \text{tree})$ and $p(\tex...">
+<meta property="og:image" content="https://i.imgur.com/khS3uSo.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/ZhangM18">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/ZhangM18" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Zhang, Cheng and IV, Frederick A. Matsen"}, "headline": "Generalizing Tree Probability Estimation via Bayesian Networks", "description": "Summary of Generalizing Tree Probability Estimation via Bayesian Networks", "datePublished": "2020-01-14 16:36:42", "dateModified": "2020-01-14 16:36:42", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/khS3uSo.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/ZhangM18", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/7418-generalizing-tree-probability-estimation-via-bayesian-networks"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Generalizing%20Tree%20Probability%20Estimation%20via%20Bayesian%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Generalizing Tree Probability Estimation via Bayesian Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Zhang%2C%20Cheng">Zhang, Cheng</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=IV%2C%20Frederick%20A.%20Matsen">IV, Frederick A. Matsen</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2018">Neural Information Processing Systems Conference - 2018</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/ZhangM18">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="gngdb" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=gngdb" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=gngdb&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Gavin Gray&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: gngdb&lt;br&gt;Posted: 2020-01-14&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/ZhangM18&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/5f5d25e31b894ccd07d946fe9dba3ad7?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-547').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/ZhangM18%26a%3Dgngdb" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-547" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/ZhangM18&amp;a=gngdb" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FZhangM18%26a%3Dgngdb&amp;text=Summary%20of%20Generalizing%20Tree%20Probability%20Estimation%20via%20Bayesian%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FZhangM18%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generalizing%20Tree%20Probability%20Estimation%20via%20Bayesian%20Networks&amp;Body=Summary%20of%20Generalizing%20Tree%20Probability%20Estimation%20via%20Bayesian%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FZhangM18%26a%3Dgngdb"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FZhangM18%26a%3Dgngdb" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FZhangM18%26a%3Dgngdb&amp;title=Summary%20of%20Generalizing%20Tree%20Probability%20Estimation%20via%20Bayesian%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/ZhangM18&amp;a=gngdb" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=gngdb" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Gavin Gray 2020-01-14</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">A common problem in phylogenetics is:
+
+1. I have $p(\text{DNA sequences} | \text{tree})$ and $p(\text{tree})$.
+2. I&#x27;ve used these to run an MCMC algorithm and generate many (approximate) samples from $p(\text{tree} | \text{DNA sequences})$.
+3. I want to evaluate $p(\text{tree} | \text{DNA sequences})$.
+
+The first solution you might think of is to add up how many times you saw each *tree topology* and divide by the total number of MCMC samples; referred to in this paper as *simple sample relative frequencies* (SRF). An obvious problem with this method is that if you didn&#x27;t happen to sample a tree topology you will assign it zero probability.
+
+This paper focuses on producing a better solution to this problem, by defining a distribution over trees that&#x27;s easy to fit and provides support over the entire space of tree topologies.
+
+What is a Subsplit Bayesian Network?
+==============================
+
+Phylogenies are leaf-labeled bifurcating trees, binary trees with labeled leaves. **Clades** are nonempty subsets of the leaf labels; labeled in the following figure as $C_1 \to C_7$:
+
+https://i.imgur.com/khS3uSo.png
+
+To build a phylogeny, I can just take the full set of leaves and recursively split them into clades as described in the above diagram. This means that the distribution over phylogenies is equivalent to the distribution over clades. To make this distribution tractable, it is typically assumed that clades are conditionally independent given parent clades; called the *Conditional Clade Distribution* (CCD) assumption, attributed here to [Larget][] and [Hohna][].
+
+So, a phylogeny may be described by its clades, this paper proposes that these clades may be described by their **subsplits**; the splitting process placing leaf nodes into one of two clades. Then, the authors note this process is a directed Bayesian network and that this Bayesian network must include all possible clade splits. It is therefore a complete binary tree with depth $N-1$ (where $N$ is the number of leaf nodes).
+
+Fitting This Parameterisation to MCMC Samples
+=====================================
+
+Under this parameterisation the likelihood of observing a given tree is:
+$$
+p(\text{tree}) = p(S_1 = s_{1,k}) \prod_{i&gt;1} p(S_i = s_{i,k} | S_{\pi_i} = s_{\pi_i, k}),
+$$
+assuming a collection of subsplits $T_k = \{ S_i = s_{i,k}, i \geq 1 \}$. In this definition $S_{\pi_i}$ is index set of parent nodes of $S_i$; ie a subsplit can depend on any of the parent nodes.
+
+The maximum likelihood probabilities for possible subsplits can be solved in closed form; algorithmically involving counting the occurrences of subsplits and dividing by the number of trees observed. If this seems exactly the same as SRF, that&#x27;s because it is; I [checked the published code to verify this][sbn_ds1].
+
+The authors then consider the case of unrooted trees, where the log likelihood of observed trees can&#x27;t be easily factorised. They then present a [simple averaging][sa] (not sure where this variational method is discussed in that paper, appears to be under a different name?) and an EM algorithm to fit SBN models over such distributions. They also discuss conditional probability sharing (parameterising conditional on parent-child relationships) immediately before this and it&#x27;s not clear if this is used in the distribution fit by SA or EM.
+
+Experiments show the distributions fit using the EM algorithm perform well according to KL divergence from a &quot;true&quot; distribution defined by fitting a distribution using SRF to a larger dataset. They also show less dispersion estimating the probability of sampled trees versus that estimated by this &quot;ground truth&quot;.
+
+[sa]: https://people.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf
+
+[sbn_ds1]: https://github.com/morrislab/sbn/blob/master/experiments/DS1.ipynb
+
+[larget]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3676676/
+[hohna]: https://academic.oup.com/sysbio/article/61/1/1/1676649</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

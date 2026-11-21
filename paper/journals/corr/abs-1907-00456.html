@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Way Off-Policy Batch Deep Reinforcement Learning of Implicit Human Preferences in Dialog - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Way Off-Policy Batch Deep Reinforcement Learning of Implicit Human Preferences in Dialog - ShortScience.org">
+<meta property="og:description" content="Given the tasks that RL is typically used to perform, it can be easy to equate the problem of reinfo...">
+<meta name="description" content="Given the tasks that RL is typically used to perform, it can be easy to equate the problem of reinfo...">
+<meta property="og:image" content="https://i.imgur.com/EmInxOJ.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1907-00456">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1907-00456" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jaques, Natasha and Ghandeharioun, Asma and Shen, Judy Hanwen and Ferguson, Craig and Lapedriza, \u00c0gata and Jones, Noah and Gu, Shixiang and Picard, Rosalind W."}, "headline": "Way Off-Policy Batch Deep Reinforcement Learning of Implicit Human Preferences in Dialog", "description": "Summary of Way Off-Policy Batch Deep Reinforcement Learning of Implicit Human Preferences in Dialog", "datePublished": "2019-11-22 02:36:02", "dateModified": "2019-11-22 02:36:02", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/EmInxOJ.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/abs-1907-00456", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1907.00456"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Way%20Off-Policy%20Batch%20Deep%20Reinforcement%20Learning%20of%20Implicit%20Human%20Preferences%20in%20Dialog%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Way Off-Policy Batch Deep Reinforcement Learning of Implicit Human Preferences in Dialog</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jaques%2C%20Natasha">Jaques, Natasha</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ghandeharioun%2C%20Asma">Ghandeharioun, Asma</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shen%2C%20Judy%20Hanwen">Shen, Judy Hanwen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ferguson%2C%20Craig">Ferguson, Craig</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lapedriza%2C%20%C3%80gata">Lapedriza, Àgata</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jones%2C%20Noah">Jones, Noah</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gu%2C%20Shixiang">Gu, Shixiang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Picard%2C%20Rosalind%20W.">Picard, Rosalind W.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/abs-1907-00456">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-11-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-1907-00456&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1911').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-1907-00456%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1911" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1907-00456&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1907-00456%26a%3Ddecodyng&amp;text=Summary%20of%20Way%20Off-Policy%20Batch%20Deep%20Reinforcement%20Learning%20of%20Implicit%20Human%20Preferences%20in%20Dialog&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1907-00456%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Way%20Off-Policy%20Batch%20Deep%20Reinforcement%20Learning%20of%20Implicit%20Human%20Preferences%20in%20Dialog&amp;Body=Summary%20of%20Way%20Off-Policy%20Batch%20Deep%20Reinforcement%20Learning%20of%20Implicit%20Human%20Preferences%20in%20Dialog%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1907-00456%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1907-00456%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1907-00456%26a%3Ddecodyng&amp;title=Summary%20of%20Way%20Off-Policy%20Batch%20Deep%20Reinforcement%20Learning%20of%20Implicit%20Human%20Preferences%20in%20Dialog" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1907-00456&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-11-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Given the tasks that RL is typically used to perform, it can be easy to equate the problem of reinforcement learning with &quot;learning dynamically, online, as you take actions in an environment&quot;. And while this does represent most RL problems in the literature, it is possible to learn a reinforcement learning system in an off-policy way (read: trained off of data that the policy itself didn&#x27;t collect), and there can be compelling reasons to prefer this approach. In this paper, which seeks to train a chatbot to learn from implicit human feedback in text interactions, the authors note prior bad experiences with Microsoft&#x27;s Tay bot, and highlight the value of being able to test and validate a learned model offline, rather than have it continue to learn in a deployment setting. This problem, of learning a RL model off of pre-collected data, is known as batch RL. In this setting, the batch is collected by simply using a pretrained language model to generate interactions with a human, and then extracting reward from these interactions to train a Q learning system once the data has been collected. 
+
+If naively applied, Q learning (a good approach for off-policy problems, since it directly estimates the value of states and actions rather than of a policy) can lead to some undesirable results in a batch setting. An interesting one, that hadn&#x27;t occurred to me, was the fact that Q learning translates its (state, action) reward model into a policy by taking the action associated with the highest reward. This is a generally sensible thing to do if you&#x27;ve been able to gather data on all or most of a state space, but it can also bias the model to taking actions that it has less data for, because high-variance estimates will tend make up a disproportionate amount of maximum values of any estimated distribution. One approach to this is to learn two separate Q functions, and take the minimum over them, and then take the max of that across actions (in this case: words in a sentence being generated). The idea here is that low-data, high-variance parts of state space might have one estimate be high, but might have the other be low, because high variance. However, it&#x27;s costly to train and run two separate models. Instead, the authors here propose the simpler solution of training a single model with dropout, and using multiple &quot;draws&quot; from that model to simulate a distribution over Q value estimates. This will have a similar effect of penalizing actions whose estimate varies across different dropout masks (which can be hand-wavily thought of as different models). 
+
+The authors also add a term to their RL training that penalizes divergence from the initial language model that they used to collect the data, and also that is the initialization point for the parameters of the model. This is done via KL-divergence control: the model is penalized for outputting a distribution over words that is different in distributional-metric terms from what the language model would have output. This makes it costlier for the model to diverge from the pretrained model, and should lead to it only happening in cases of convincing high reward.
+
+Out of these two approaches, it seems like the former is more convincing to me as a general-purpose method to use in batch RL settings. The latter is definitely something I would have expected to work well (and, indeed, KL-controlled models performed much better in empirical tests in the paper!), but more simply because language modeling is hard, and I would expect it to be good to constrain a model to be close to realistic outputs, since the sentiment-based reward signal won&#x27;t reward realism directly. This seems more like something generally useful for avoiding catastrophic forgetting when switching from an old task to a new one (language modeling to sentiment modeling), rather than a particularly batch-RL-centric innovation. 
+
+https://i.imgur.com/EmInxOJ.png
+
+ An interesting empirical observation of this paper is that models without language-model control end up drifting away from realism, and repeatedly exploit part of the reward function that, in addition to sentiment, gave points for asking questions. By contrast, the KL-controlled models appear to have avoided falling into this local minimum, and instead generated realistic language that was polite and empathetic. (Obviously this is still a simplified approximation of what makes a good chat bot, but it&#x27;s at least a higher degree of complexity in its response to reward). 
+
+Overall, I quite enjoyed this paper, both for its thoughtfulness and its clever application of engineering to use RL for a problem well outside of its more typical domain.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

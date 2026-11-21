@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /random
+Disallow: /search
+Disallow: /internalsearch
+Sitemap: https://shortscience.org/sitemap.xml

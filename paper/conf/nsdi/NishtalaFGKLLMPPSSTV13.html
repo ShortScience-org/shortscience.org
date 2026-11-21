@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scaling Memcache at Facebook - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Scaling Memcache at Facebook - ShortScience.org">
+<meta property="og:description" content="The paper captures the story of how Facebook created a high-performing, distributed key-value store...">
+<meta name="description" content="The paper captures the story of how Facebook created a high-performing, distributed key-value store...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nsdi/NishtalaFGKLLMPPSSTV13">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nsdi/NishtalaFGKLLMPPSSTV13" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Nishtala, Rajesh and Fugal, Hans and Grimm, Steven and Kwiatkowski, Marc and Lee, Herman and Li, Harry C. and McElroy, Ryan and Paleczny, Mike and Peek, Daniel and Saab, Paul and Stafford, David and Tung, Tony and Venkataramani, Venkateshwaran"}, "headline": "Scaling Memcache at Facebook", "description": "Summary of Scaling Memcache at Facebook", "datePublished": "2016-10-20 23:33:34", "dateModified": "2016-10-20 23:33:34", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nsdi/NishtalaFGKLLMPPSSTV13", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/nishtala"><span class="glyphicon glyphicon-link"></span> www.usenix.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Scaling%20Memcache%20at%20Facebook%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Scaling Memcache at Facebook</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Nishtala%2C%20Rajesh">Nishtala, Rajesh</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Fugal%2C%20Hans">Fugal, Hans</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Grimm%2C%20Steven">Grimm, Steven</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kwiatkowski%2C%20Marc">Kwiatkowski, Marc</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lee%2C%20Herman">Lee, Herman</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Li%2C%20Harry%20C.">Li, Harry C.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=McElroy%2C%20Ryan">McElroy, Ryan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Paleczny%2C%20Mike">Paleczny, Mike</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Peek%2C%20Daniel">Peek, Daniel</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Saab%2C%20Paul">Saab, Paul</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Stafford%2C%20David">Stafford, David</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tung%2C%20Tony">Tung, Tony</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Venkataramani%2C%20Venkateshwaran">Venkataramani, Venkateshwaran</a></span>
+<br>
+USENIX Association NSDI - 2013 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nsdi/NishtalaFGKLLMPPSSTV13">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nsdi/NishtalaFGKLLMPPSSTV13&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-558').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nsdi/NishtalaFGKLLMPPSSTV13%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-558" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nsdi/NishtalaFGKLLMPPSSTV13&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FNishtalaFGKLLMPPSSTV13%26a%3Dshagunsodhani&amp;text=Summary%20of%20Scaling%20Memcache%20at%20Facebook&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FNishtalaFGKLLMPPSSTV13%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Scaling%20Memcache%20at%20Facebook&amp;Body=Summary%20of%20Scaling%20Memcache%20at%20Facebook%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FNishtalaFGKLLMPPSSTV13%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FNishtalaFGKLLMPPSSTV13%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnsdi%2FNishtalaFGKLLMPPSSTV13%26a%3Dshagunsodhani&amp;title=Summary%20of%20Scaling%20Memcache%20at%20Facebook" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nsdi/NishtalaFGKLLMPPSSTV13&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"> The paper captures the story of how Facebook created a high-performing, distributed key-value store on top of Memcache (which was back then a simple, in-memory cache) and scaled it to support the world’s largest social network.
+
+In Facebook’s context, users consume much more content than they create. So the workload is read intensive and caching help to reduce the workload.MORE ON IT. Facebook uses Memcache Clusters where each Memcache instance is a demand-filled, look-aside cache. This means if a client requests data from Memcache and data is not available, the client would fetch the data from the database and would populate the cache for further requests. Memcache, not being a loading cache, does not have to worry about the logic of retrieving data from the database and can be easily plugged with multiple databases. In case of write requests, the client issues an update command to the database and a delete command is sent to Memcache. Deletion, being idempotent, is preferred over updation. While the overview seems pretty simple, there are more details in actual implementation. Facebook considers and optimizes for 3 deployments scales — a single cluster of servers, data replication between different clusters and spreading clusters across the world.
+
+#### A single cluster of servers
+These are characterized by a highly read intensive workload with requests having a wide fan out. Around 44% of requests contact more than 20 Memcache servers. For popular pages, this number spans well over 100 distinct servers. One reason for this is that each request returns a very small amount of data. In case of get requests, UDP performs better than TCP and get errors are treated as cache miss though insertion is not performed. This design choice seems practical as only .25% of requests fail due to late/ dropped or out of order packets. Though the response size is very small, the variation is quite large with mean = 954 bytes and median = 135 bytes. Set and delete operations are still performed over TCP (for reliability) though the connections are coalesced to improve efficiency.
+
+Within a cluster, data is distributed across hundreds of servers through consistent hashing. A very high request rate combined with large fanout leads to an all to all communication between Memcache servers and clients and even a single server can become a bottleneck for many requests. Clients construct a DAG representing the dependency between data so that more independent requests are fired concurrently. Facebook also provides a standalone proxy called mcrouter that acts as an interface to Memcache server interface and routes the requests/replies to/from other servers. Along with these, flow control mechanisms in the form of sliding window mechanism are provided to limit incast congestion.
+
+#### Lease
+Leases are used to address stale sets (when web server writes a stale value in the cache) and thundering herds (when a key undergoes heavy read and write operations). When a client experiences a cache-miss, Memcache gives it a lease (a 64-bit token bound to the requested key). This lease is verified by Memcache when client tries to set the value. If Memcache receives a delete request for the key, the lease is invalidated and the value can not be set. To mitigate thundering herds, Memcache returns a token only once every 10 seconds per key. If a read request comes within 10 seconds of a token issue, the client is notified to retry after a short time, by which the updated value is expected to be set in the cache. In situations where returning stale data is not much problem, the client does not have to wait and stale data (at most 10 second old) is returned.
+
+#### Memcache Pools
+Since different workloads can have different access patterns and requirements, Memcache clusters are partitioned into pools. The default pool is called wildcard and then there are separate pools for keys that can not reside in the wildcard pool. A small pool can be provisioned for keys for which cache miss is not expensive. Data is replicated within a pool when request rate is quite high and data can easily fit into a few machines. In Facebook’s context, replication seems to work better than sharding though it has the additional overhead of maintaining consistency.
+In case a few Memcache servers fail, a small set of machines, called gutters, take over. In case of more widespread failures, requests are diverted to alternate clusters.
+Regions
+
+Multiple front end clusters (web and Memcache clusters) along with a storage cluster (database) defines a region. The storage cluster has the authoritative copy of the data which is replicated across the frontend clusters. To handle data modifications, invalidation daemons called mcsqueal are deployed on each database which parse the queries, extract and group delete statements and broadcast them to all the front end cluster in the region. The batched delete operations are sent to mcrouter instances in each frontend cluster, which then unpack the individual deletes and route them to the concerned Memcache server. As an optimisation, a web server which modifies its data also sends invalidations to its own cluster to ensure read-after-write semantics for a single user request.
+
+#### Cold cluster Warmup
+When a new cluster is brought online, it takes time to get populated and initially the cache hit rate is very low. So a technique called Cold Cluster Warmup is employed where a new cold cluster is populated with data from a warm cluster instead of the database cluster. This way the cold cluster comes to full capacity within few hours. But additional care is needed to account for race conditions. One example could be: a client in cold cluster makes an update and before this update reaches the warm cluster, another request for the same key is made by the cold cluster then the item in the cold cache would be indefinitely inconsistent. To avoid this, Memcache rejects add operations for 2 seconds (called holdoff time)once a delete operation is taken place. So if a value is updated in a cold cluster and a subsequent request is made within 2 seconds, the add operation would be rejected indicating that the data has been updated. 2 seconds is chosen as most updates seems to propagate within this time.
+
+#### Across Region consistency
+Clusters comprising a storage cluster and several front end clusters are deployed in different regions. Only one of the regions contains the master database and rest act as replicas. This adds the challenge of synchronisation.
+
+Writes from a master region send invalidations only within the master region. Sending invalidations outside may lead to a race situation where deletes reach before data is replicated. Facebook uses mcsequal daemon helps to avoid that at the cost of serving stale data for some time.
+
+&#x27;Writes from a non-master region are handled differently. Suppose a user updates his data from a non-master region with a large replication lag. A cache refill from a replica database is allowed only after the replication stream has caught up. A remote marker mechanism is used to minimise the probability if reading stale data. The presence of a marker indicates that data in the replica is stale and the query is redirected to the master region. When a webserver updates a key k, it sets a remote marker rk in the region, performs the write to the master database having key k and deletes k in the local cluster. When it tries to read k next time, it will experience a cache miss, will check if rk exists and will redirect its query to the master cluster. Had rk not been set, the query would have gone to the local cluster itself. Here latency is introduced to make sure most updated data is read.
+
+#### Single Server Improvements
+Facebook introduced many improvements for Memcache servers running as single instances as well. This includes extending Memcache to support automatic expansion of the hash table without the look-up time drifting to $O(n)$, making the server multi-threaded using a global lock and giving each thread its own UDP port to reduce contention.
+
+Memcache uses an Adaptive Slab Allocator which organizes memory into slab classes — pre-allocated, uniformly sized chunks of memory. Items are stored in smallest possible slab class which can fit the data. Slab sizes start at 64 bytes and reach up to 1 Mb. Each slab class maintains a free-list of available chunks and requests more memory in 1MB in case the free-list is empty. If no more free memory can be allocated, eviction takes place in Least Recently Used (LR) fashion. The allocator periodically rebalances slab assignments to keep up with the workload. Memory is freed in less used slabs and given to more heavily used slabs.
+
+Most of the items are evicted lazily from the memory though some are evicted as soon as they are expired. Short lived items are placed into a circular buffer of linked lists (indexed by seconds until expiration) — called Transient Item Cache — based on the expiration time of the item. Every second, all of the items in the bucket at the head of the buffer are evicted and the head advances by one. By adding a short expiration time to heavily used set of keys whose items with short useful lifespans, the proportion of Memcache pool used by this key family was reduced from 6% to 0.3% without affecting the hit rate.
+
+#### Lessons Learnt
+Memcache’s design decisions are driven by data and not just intuition. Facebooks seems to have experimented with a lot of configurations before arriving on decisions like using UDP for read operations and choosing the value for parameters like holdoff time. This is how it should be — data-driven decisions. In the entire process of developing Memcache, Facebook focused on optimizations which affect a good number of users and usecases instead of optimizing for each possbile use case.
+
+Facebook separated caching layer from persistence layer which makes it easier to mould the 2 layers individually. By handling the cache insertion logic in the application itself, Facebook made it easier to plug Memcache with different data stores. By modeling the probability of reading the stale data as a parameter, they allowed the latency and hit rate on the persistence store to be configurable to some extent thus broadening the scope for Memcache. Facebook breaks down a single page load request into multiple requests, thereby allowing for different kind of stale data tolerance for each component. For example, the servers serving the profile picture can cache content longer than the servers serving messages. This helps to lower the response latency and reduce the load on the data layer.
+
+Facebook’s Memcache is one of the many solutions aimed to solve a rather common problem — a scalable, distributed key-value store. Amazon’s Dynamo solves is well for a write-intensive workload for small data sizes and Facebook solves it for a read intensive workload. Other contenders in the list are Cassandra, Voldemort, Redis, Twitter’s Memcache and more. The sheer number of possible, well known solutions suggests that there are many dimensions to the problem, some of which are yet unknown and that we still do not have a single solution that can be used for all use cases.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

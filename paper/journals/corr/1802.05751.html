@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Transformer - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Image Transformer - ShortScience.org">
+<meta property="og:description" content="Last year, a machine translation paper came out, with an unfortunately un-memorable name (the Transf...">
+<meta name="description" content="Last year, a machine translation paper came out, with an unfortunately un-memorable name (the Transf...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05751">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05751" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Niki Parmar and Ashish Vaswani and Jakob Uszkoreit and \u0141ukasz Kaiser and Noam Shazeer and Alexander Ku and Dustin Tran"}, "headline": "Image Transformer", "description": "Summary of Image Transformer", "datePublished": "2018-06-26 04:45:23", "dateModified": "2018-06-26 04:45:23", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1802.05751", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1802.05751v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Image%20Transformer%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Image Transformer</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Niki%20Parmar">Niki Parmar</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ashish%20Vaswani">Ashish Vaswani</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jakob%20Uszkoreit">Jakob Uszkoreit</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=%C5%81ukasz%20Kaiser">Łukasz Kaiser</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Noam%20Shazeer">Noam Shazeer</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alexander%20Ku">Alexander Ku</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dustin%20Tran">Dustin Tran</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/02/15<br><b>Abstract:</b>   Image generation has been successfully cast as an autoregressive sequence
+generation or transformation problem. Recent work has shown that self-attention
+is an effective way of modeling textual sequences. In this work, we generalize
+a recently proposed model architecture based on self-attention, the
+Transformer, to a sequence modeling formulation of image generation with a
+tractable likelihood. By restricting the self-attention mechanism to attend to
+local neighborhoods we significantly increase the size of images the model can
+process in practice, despite maintaining significantly larger receptive fields
+per layer than typical convolutional neural networks. While conceptually
+simple, our generative models significantly outperform the current state of the
+art in image generation on ImageNet, improving the best published negative
+log-likelihood on ImageNet from 3.83 to 3.77. We also present results on image
+super-resolution with a large magnification ratio, applying an encoder-decoder
+configuration of our architecture. In a human evaluation study, we find that
+images generated by our super-resolution model fool human observers three times
+more often than the previous state of the art.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290').hide());void($('#showless-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290').show());void($('#more-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290').show());void($('#showless-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290').hide());void($('#more-am91cm5hbHMvY29yci8xODAyLjA1NzUx-1290').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1802.05751">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1802.05751&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1291').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1802.05751%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1291" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05751&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05751%26a%3Ddecodyng&amp;text=Summary%20of%20Image%20Transformer&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05751%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Image%20Transformer&amp;Body=Summary%20of%20Image%20Transformer%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05751%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05751%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.05751%26a%3Ddecodyng&amp;title=Summary%20of%20Image%20Transformer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.05751&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Last year, a machine translation paper came out, with an unfortunately un-memorable name (the Transformer network) and a dramatic proposal for sequence modeling that eschewed both Recurrent NNN and Convolutional NN structures, and, instead, used self-attention as its mechanism for “remembering” or aggregating information from across an input. Earlier this month, the same authors released an extension of that earlier paper, called Image Transformer, that applies the same attention-only approach to image generation, and also achieved state of the art performance there. 
+
+The recent paper offers a framing of attention that I find valuable and compelling, and that I’ll try to explicate here. They describe attention as being a middle ground between the approaches of CNNs and RNNs, and one that, to use an over-abused cliche, gets the best of both worlds.  CNNs are explicitly local: each convolutional filter only gathers information from the cells that fall in specific locations along some predefined grid. And, because convolutional filters have a unique parameter for every relative location in the grid they’re applied to, increasing the size of any given filter’s receptive field would engender an exponential increase in parameters: to go from a 3x3 grid to a 4x4 one, you go from 9 parameters to 16.  Convolutional networks typically increase their receptive field through the mechanism of adding additional layers, but there is still this fundamental limitation that for a given number of layers, CNNs will be fairly constrained in their receptive field. 
+
+On the other side of the receptive field balance, we have RNNs. RNNs have an effectively unlimited receptive field, because they just apply one operation again and again: take in a new input, and decide to incorporate that information into the hidden state. This gives us the theoretical ability to access things from the distant past, because they’re stored somewhere in the hidden state. However, each element is only seen once and needs to be stored in the hidden state in a way that sort of “averages over” all of the ways it’s useful for various points in the decoding/translation process. (My mental image basically views RNN hidden state as packing for a long trip in a small suitcase: you have to be very clever about what you decide to pack, averaging over all the possible situations you might need to be prepared for. You can’t go back and pull different things into your suitcase as a function of the situation you face; you had to have chosen to add them at the time you encountered them). All in all, RNNs are tricky both because they have difficulty storing information efficiently over long time frames, and also because they can be monstrously slow to train, since you have to run through the full sequence to built up hidden state, and can’t chop it into localized bits the way you can with CNNs. 
+
+So, between CNN - with its locally-specific hidden state - and RNN - with its large receptive field but difficulty in information storage - the self-attention approach interposes itself. Attention works off of three main objects: a query, and a set of keys, each one is attached to a value. In general, all of these objects take the form of vectors. For a given query, you calculate its similarity with each key, and then normalize those into a distribution (a set of weights, all of which sum to 1) that is used as the weights in calculating a weighted average of the values. As a motivating example, think of a model that is “unrolling” or decoding a translated sentence. In order to translate a sentence properly, the model needs to “remember” not only the conceptual content of the sentence, but what it has already generated. So, at each given point in the unrolling, the model can “query” the past and get a weighted distribution over what’s relevant to it in its current context. In the original Transformer, and also in the new one, the models use “multi-headed attention”, which I think is best compared to convolution filters: in the same way that you learn different convolution filters, each with different parameters, to pick up on different features, you learn different “heads” of the attention apparatus for the same purpose. 
+
+To go back to our CNN - Attention - RNN schematic from earlier: Attention makes it a lot easier to query a large receptive field, since you don’t need an additional set of learned parameters for each location you expand to; you just use the same query weights and key weights you use for every other key and query. And, it allows you to contextually extract information from the past, depending on the needs you have right now. That said, it’s still the case that it becomes infeasible to make the length of the past you calculate your attention distribution over excessively long, but that cost is in terms of computation, not additional parameters, and thus is a question of training time, rather than essential model complexity, the way additional parameters is. 
+
+Jumping all the way back up the stack, to the actual most recent image paper, this question of how best to limit the receptive field is one of the more salient questions, since it still is the case that conducting attention over every prior pixel would be a very large number of calculations. The Image Transformer paper solves this in a slightly hacky way: by basically subdividing the image into chunks, and having each chunk operate over the same fixed memory region (rather than scrolling the memory region with each pixel shift) to take better advantage of the speed of batched big matrix multiplies. 
+
+Overall, this paper showed an advantage for the Image Transformer approach relevative to PixelCNN autoregressive generation models, and cited the ability for a larger receptive field during generation - without explosion in number of parameters - as the most salient reason why. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

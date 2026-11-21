@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reward Augmented Maximum Likelihood for Neural Structured Prediction - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Reward Augmented Maximum Likelihood for Neural Structured Prediction - ShortScience.org">
+<meta property="og:description" content="(See also a more thorough summary in [a LaTeX PDF][1].)
+
+This paper has some nice clear theory which...">
+<meta name="description" content="(See also a more thorough summary in [a LaTeX PDF][1].)
+
+This paper has some nice clear theory which...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.00150">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1609.00150" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Mohammad Norouzi and Samy Bengio and Zhifeng Chen and Navdeep Jaitly and Mike Schuster and Yonghui Wu and Dale Schuurmans"}, "headline": "Reward Augmented Maximum Likelihood for Neural Structured Prediction", "description": "Summary of Reward Augmented Maximum Likelihood for Neural Structured Prediction", "datePublished": "2016-09-08 03:23:10", "dateModified": "2016-09-08 15:22:43", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1609.00150", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1609.00150v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Reward Augmented Maximum Likelihood for Neural Structured Prediction</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Mohammad%20Norouzi">Mohammad Norouzi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Samy%20Bengio">Samy Bengio</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zhifeng%20Chen">Zhifeng Chen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Navdeep%20Jaitly">Navdeep Jaitly</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Mike%20Schuster">Mike Schuster</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yonghui%20Wu">Yonghui Wu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dale%20Schuurmans">Dale Schuurmans</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/09/01<br><b>Abstract:</b>   A key problem in structured output prediction is direct optimization of the
+task reward function that matters for test evaluation. This paper presents a
+simple and computationally efficient approach to incorporate task reward into a
+maximum likelihood framework. We establish a connection between the
+log-likelihood and regularized expected reward objectives, showing that at a
+zero temperature, they are approximately equivalent in the vicinity of the
+optimal solution. We show that optimal regularized expected reward is achieved
+when the conditional distribution of the outputs given the inputs is
+proportional to their exponentiated (temperature adjusted) rewards. Based on
+this observation, we optimize conditional log-probability of edited outputs
+that are sampled proportionally to their scaled exponentiated reward. We apply
+this framework to optimize edit distance in the output label space. Experiments
+on speech recognition and machine translation for neural sequence to sequence
+models show notable improvements over a maximum likelihood baseline by using
+edit distance augmented maximum likelihood.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922').show());void($('#more-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922').show());void($('#showless-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922').hide());void($('#more-am91cm5hbHMvY29yci8xNjA5LjAwMTUw-922').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1609.00150">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="jgauthier" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=jgauthier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=jgauthier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Jon Gauthier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: jgauthier&lt;br&gt;Posted: 2016-09-08&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1609.00150&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/e8668403f9cac4041a106e57e8037dff?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">8</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-923').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1609.00150%26a%3Djgauthier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-923" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.00150&amp;a=jgauthier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Djgauthier&amp;text=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Djgauthier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction&amp;Body=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Djgauthier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Djgauthier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Djgauthier&amp;title=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.00150&amp;a=jgauthier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=jgauthier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Jon Gauthier 2016-09-08</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">(See also a more thorough summary in [a LaTeX PDF][1].)
+
+This paper has some nice clear theory which bridges maximum likelihood (supervised) learning and standard reinforcement learning. It focuses on *structured prediction* tasks, where we want to learn to predict $p_\theta(y \mid x)$ where $y$ is some object with complex internal structure.
+
+We can agree on some deficiencies of maximum likelihood learning:
+
+- ML training fails to assign **partial credit**. Models are trained to maximize the likelihood of the ground-truth outputs in the dataset, and all other outputs are equally wrong. This is an increasingly important problem as the space of possible solutions grows.
+- ML training is potentially disconnected from **downstream task reward**. In machine translation, we usually want to optimize relatively complex metrics like BLEU or TER. Since these metrics are non-differentiable, we have to settle for optimizing proxy losses that we hope are related to the metric of interest.
+
+Reinforcement learning offers an attractive alternative in theory. RL algorithms are designed to optimize non-differentiable (even stochastic) reward functions, which sounds like just what we want. But RL algorithms have their own problems with this sort of structured output space:
+
+- Standard RL algorithms rely on samples from the model we are learning, $p_\theta(y \mid x)$. This becomes intractable when our output space is very complex (e.g. 80-token sequences where each word is drawn from a vocabulary of 80,000 words).
+- The reward spaces for problems of interest are extremely sparse. Our metrics will assign 0 reward to most of the 80^80K possible outputs in the translation problem in the paper.
+- Vanilla RL doesn&#x27;t take into account the ground-truth outputs available to us in structured prediction.
+
+This paper designs a solution which combines supervised learning with a reinforcement learning-inspired smoothing method. Concretely, the authors design an **exponentiated payoff distribution** $q(y \mid y^*; \tau)$ which assigns high mass to high-reward outputs $y$ and low mass elsewhere. This distribution is used to effectively smooth the loss function established by the ground-truth outputs in the supervised data. We end up optimizing the following objective:
+
+$$\mathcal L_\text{RML} = - \mathbb E_{x, y^* \sim \mathcal D}\left[ \sum_y q(y \mid y^*; \tau) \log p_\theta(y \mid x) \right]$$
+
+This optimization depends on samples from our dataset $\mathcal D$ and, more importantly, the stationary payoff distribution $q$. This contrasts strongly with standard RL training, where the objective depends on samples from the non-stationary model distribution $p_\theta$. To make that clear, we can rewrite the above with another expectation:
+
+$$\mathcal L_\text{RML} = - \mathbb E_{x, y^* \sim \mathcal D, y \sim q(y \mid y^*; \tau)}\left[ \log p_\theta(y \mid x) \right]$$
+
+### Model details
+
+If you&#x27;re interested in the low-level details, I wrote up the gist of the math in [this PDF][1].
+
+### Analysis
+
+#### Relationship to label smoothing
+
+This training approach is mathematically equivalent to label smoothing, applied here to structured output problems. In next-word prediction language modeling, a popular trick involves smoothing the target distributions by combining the ground-truth output with some simple base model, e.g. a unigram word frequency distribution. (This just means we take a weighted sum of the one-hot vector from our supervised data and a normalized frequency vector calculated on some corpus.) Mathematically, the cross entropy with label smoothing is
+
+$$\mathcal L_\text{ML-smooth} = - \mathbb E_{x, y^* \sim \mathcal D} \left[ \sum_y p_\text{smooth}(y; y^*) \log p_\theta(y \mid x) \right]$$
+
+(The equation above leaves out a constant entropy term.)
+
+The gradient of this objective looks exactly the same as the reward-augmented ML gradient from the paper:
+
+$$\nabla_\theta \mathcal L_\text{ML-smooth} = \mathbb E_{x, y^* \sim \mathcal D, y \sim p_\text{smooth}} \left[ \log p_\theta(y \mid x) \right]$$
+
+So reward-augmented likelihood is equivalent to label smoothing, where our smoothing distribution is log-proportional to our downstream reward function.
+
+#### Relationship to distillation
+
+Optimizing the reward-augmented maximum likelihood is equivalent to minimizing the KL divergence $$D_\text{KL}(q(y \mid y^*; \tau) \mid\mid p_\theta(y \mid x))$$
+
+This divergence reaches zero iff $q = p$. We can say, then, that the effect of optimizing on $\mathcal L_\text{RML}$ is to **distill** the reward function (which parameterizes $q$) into the model parameters $\theta$ (which parameterize $p_\theta$).
+
+It&#x27;s exciting to think about other sorts of more complex models that we might be able to distill in this framework. The unfortunate (?) restriction is that the &quot;source&quot; model of the distillation ($q$ in this paper) must admit to efficient sampling.
+
+#### Relationship to adversarial training
+
+We can also view reward-augmented maximum likelihood training as a data augmentation technique: it synthesizes new &quot;partially correct&quot; examples using the reward function as a guide. We then train on all of the original and synthesized data, again weighting the gradients based on the reward function.
+
+Adversarial training is a similar data augmentation technique which generates examples that force the model to be robust to changes in its input space (robust to changes of $x$). Both adversarial training and the RML objective encourage the model to be robust &quot;near&quot; the ground-truth supervised data. A high-level comparison:
+
+- Adversarial training can be seen as data augmentation in the input space; RML training performs data augmentation in the output space.
+- Adversarial training is a **model-based data augmentation**: the samples are generated from a process that depends on the current parameters during training. RML training performs **data-based augmentation**, which could in theory be done independent of the actual training process.
+
+---
+
+Thanks to Andrej Karpathy, Alec Radford, and Tim Salimans for interesting discussion which contributed to this summary.
+
+[1]: https://drive.google.com/file/d/0B3Rdm_P3VbRDVUQ4SVBRYW82dU0/view</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="nipsreviews" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nipsreviews" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nipsreviews&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;NIPS Conference Reviews&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nipsreviews&lt;br&gt;Posted: 2017-04-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/NorouziBCJSWS16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-924').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/NorouziBCJSWS16%26a%3Dnipsreviews" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-924" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/NorouziBCJSWS16&amp;a=nipsreviews" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNorouziBCJSWS16%26a%3Dnipsreviews&amp;text=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNorouziBCJSWS16%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction&amp;Body=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNorouziBCJSWS16%26a%3Dnipsreviews"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNorouziBCJSWS16%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FNorouziBCJSWS16%26a%3Dnipsreviews&amp;title=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/NorouziBCJSWS16&amp;a=nipsreviews" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nipsreviews" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by NIPS Conference Reviews 2017-04-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The proposed approach consists in corrupting the training targets with a noise derived from the task reward while doing maximum likelihood training. This simple but specific smoothing of the target distribution allows to significantly boost the performance of neural structured output prediction as showcased on TIMIT phone and translation tasks. The link between this approach and RL-based expected reward maximization is also made clear by the paper,
+
+Prior work has chosen either maximum likelihood learning, which is relatively tractable but assumes a log likelihood loss, or reinforcement learning, which can be performed for a task-specific loss function but requires sampling many predictions to estimate gradients. The proposed objective bridges the gap with &quot;reward-augmented maximum likelihood,&quot; which is similar to maximum likelihood but estimates the expected loss with samples that are drawn in proportion to their distance from the ground truth. Empirical results show good improvements with LSTM-based predictors on speech recognition and machine translation benchmarks relative to maximum likelihood training.
+
+
+This work is inspired by recent advancement in reinforcement learning and likelihood learning. The authors suggest to learn parameters so as to minimize the KL divergence between CRFs and a probability model that is proportional to the reward function (which the authors call payoff distribution, see Equation 4). The authors suggest an optimization algorithm for the KL-divergence minimization that depends on sampling from the payoff distribution.
+
+Current methods to learn a model for structured prediction include max margin optimisation and reinforcement learning. However, the max margin approach only optimises a bound on the true reward, and requires loss augmented inference to obtain gradients, which can be expensive. On the other hand, reinforcement learning does not make use of available supervision, and can therefore struggle when the reward is sparse, and furthermore the gradients can have high variance. The paper proposes a novel approach to learning for problems that involve structured prediction. They relate their approach to simple maximum likelihood (ML) learning and reinforcement learning (RL): ML optimises the KL divergence of a delta distribution relative to the model distribution, and RL optimises the KL divergence of the model distribution relative to the exponentiated reward distribution. They propose reward-augmented maximum likelihood learning, which optimises the KL divergence of the exponentiated reward distribution relative to the model distribution. Compared to RL, the arguments of the KL divergence are swapped. Compared to ML, the delta distribution is generalised to the exponentiated reward distribution. Training is cheap in RML learning. It is only necessary to sample from the output set according to the exponentiated reward distribution. All experiments are performed in speech recognition and machine translation, where the structure over the output set is defined by the edit distance. An improvement is demonstrated over simple ML.
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="fartash" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=fartash" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=fartash&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/fde0ea1c20f89b3a83dbefb24e728d61?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Fartash&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: fartash&lt;br&gt;Posted: 2016-12-28&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1609.00150&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/fde0ea1c20f89b3a83dbefb24e728d61?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-925').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1609.00150%26a%3Dfartash" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-925" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.00150&amp;a=fartash" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Dfartash&amp;text=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Dfartash" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction&amp;Body=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Dfartash"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Dfartash" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1609.00150%26a%3Dfartash&amp;title=Summary%20of%20Reward%20Augmented%20Maximum%20Likelihood%20for%20Neural%20Structured%20Prediction" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1609.00150&amp;a=fartash" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=fartash" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Fartash 2016-12-28</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Assume you have both label and reward (some flexibility in accepting the output) as is the case for hamming distance and negative edit distance.
+
+Assume the output space is discrete, it can be a quantized n-dim space.
+
+Assume that given an input and a set of labels, computing the probability of the labels is $O(L)$, meaning that most of the computation is independent of the label. (not sure about this! You certainly don&#x27;t want to sample from the network)
+
+Suppose that you want to maximize an approximate objective which is a tradeoff between optimizing the reward or the label and you control this tradeoff by one parameter $\tau$ which you fix beforehand. This actually only directly affects the reward.
+
+Then you can compute the loss, by sampling from each discrete value of reward and then sampling from those labels that have such reward.
+
+Therefore, you can quickly approximate the loss and the gradient through sampling. And the samples are independent of the output of the network, but rather fixed given $\tau$ and ground-truth. This is as opposed to sampling the network and sampling around the predicted label.
+
+#### 2.2 Sampling from the exponentiated payoff distribution
+
+Note that $q$ should be defined such that the entropy is fixed given $\tau$. The paper notes that given the ground-truth label, if the loss is hamming distance or negative edit distance, then samples can be put into buckets of same loss (loss is discrete). Then One possible family of distributions controlled by $\tau$ is given by a normalized count reweighted by $\exp\{e/\tau\}$ for each bucket. By varying $\tau$, you can go from uniform distribution ($\tau=\infty$) to delta ($\tau=0$). Eq. 11 shows the simplified count for each bucket to be used for normalization and further sampling. As noted above the equation, edge cases like repetitions is ignored in this count to make the computation easy.
+
+Given a fixed entropy $q$, then you can compute the RML loss by sampling from $q$ by first selecting an edit distance, and then sampling from the corresponding bucket.
+
+#### Footnotes
+I was not satisfied with the results. I didn&#x27;t quite follow section 3.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

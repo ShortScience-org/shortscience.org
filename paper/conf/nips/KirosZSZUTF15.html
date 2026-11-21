@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skip-Thought Vectors - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Skip-Thought Vectors - ShortScience.org">
+<meta property="og:description" content="TLDR; The authors apply the skip-thoguth word2vec model to the sentence level, training auto-encoder...">
+<meta name="description" content="TLDR; The authors apply the skip-thoguth word2vec model to the sentence level, training auto-encoder...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/KirosZSZUTF15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/KirosZSZUTF15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Kiros, Ryan and Zhu, Yukun and Salakhutdinov, Ruslan and Zemel, Richard S. and Urtasun, Raquel and Torralba, Antonio and Fidler, Sanja"}, "headline": "Skip-Thought Vectors", "description": "Summary of Skip-Thought Vectors", "datePublished": "2016-05-12 19:03:29", "dateModified": "2016-05-12 19:03:29", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/KirosZSZUTF15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/5950-skip-thought-vectors"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Skip-Thought%20Vectors%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Skip-Thought Vectors</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Kiros%2C%20Ryan">Kiros, Ryan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zhu%2C%20Yukun">Zhu, Yukun</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Salakhutdinov%2C%20Ruslan">Salakhutdinov, Ruslan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zemel%2C%20Richard%20S.">Zemel, Richard S.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Urtasun%2C%20Raquel">Urtasun, Raquel</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Torralba%2C%20Antonio">Torralba, Antonio</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Fidler%2C%20Sanja">Fidler, Sanja</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2015">Neural Information Processing Systems Conference - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/KirosZSZUTF15">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="dennybritz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2016-05-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/KirosZSZUTF15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-431').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/KirosZSZUTF15%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-431" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/KirosZSZUTF15&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Ddennybritz&amp;text=Summary%20of%20Skip-Thought%20Vectors&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Skip-Thought%20Vectors&amp;Body=Summary%20of%20Skip-Thought%20Vectors%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Ddennybritz&amp;title=Summary%20of%20Skip-Thought%20Vectors" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/KirosZSZUTF15&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2016-05-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors apply the skip-thoguth word2vec model to the sentence level, training auto-encoders that predict the previous and next sentences. The resulting general-purpose vector representations are called skip-thought vectors. The authors evaluate the performance of these vectors as features on semantic relatedness and classification tasks, achieving competitive results, but not beating fine-tuned models.
+
+#### Key Points
+
+- Code at https://github.com/ryankiros/skip-thoughts
+- Training is done on large book corpus (74M sentences, 1B tokens), takes 2 weeks. 
+- Two variations: Bidirectional encoder and unidirectional encoder with 1200 and 2400 units per encoder respectively. GRU cell, Adam optimizer, gradient clipping norm 10.
+- Vocabulary can be expanded by learning a mapping from a large word2vec voab to the smaller skip-thought vocab. Could also used sampling/hierarchical softmax during training for larger vocab, or train on characters.
+
+#### Questions/Notes
+
+- Authors clearly state that this is not the goal of the paper, though I&#x27;d be curious how more sophisticated (non-linear) classifiers perform with skip-thought vectors. Authors probably tried this but it didn&#x27;t do well ;)
+- The fact that the story generation doesn&#x27;t seem work well shows that the model has problems learning or understanding long-term dependencies. I wonder if this can be solved by deeper encoders or attention.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="shagunsodhani" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-12-03&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/KirosZSZUTF15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-432').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/KirosZSZUTF15%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-432" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/KirosZSZUTF15&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Dshagunsodhani&amp;text=Summary%20of%20Skip-Thought%20Vectors&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Skip-Thought%20Vectors&amp;Body=Summary%20of%20Skip-Thought%20Vectors%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FKirosZSZUTF15%26a%3Dshagunsodhani&amp;title=Summary%20of%20Skip-Thought%20Vectors" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/KirosZSZUTF15&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-12-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"># Skip-Thought Vectors
+
+## Introduction
+
+* The paper describes an unsupervised approach to train a generic, distributed sentence encoder.
+* It also describes a vocabulary expansion method to encode words not seen at training time.
+* [Link to the paper](https://arxiv.org/abs/1506.06726)
+
+## Skip-Thoughts
+
+* Train an encoder-decoder model where the encoder maps the input sentence to a sentence vector and the decoder generates the sentences surrounding the original sentence.
+* The model is called **skip-thoughts** and the encoded vectors are called **skip-thought vectors.**
+* Similar to the [skip-gram](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf) model in the sense that surrounding sentences are used to learn sentence vectors.
+
+### Architecture
+
+* Training data is in form of sentence tuples (previous sentence, current sentence, next sentence).
+* **Encoder**
+    * RNN Encoder with GRU.
+* **Decoder**
+    * RNN Decoder with conditional GRU.
+    * Conditioned on encoder output.
+    * Extra matrices introduced to bias the update gate, reset gate and hidden state, given the encoder output.
+    * **Vocabulary matrix (V)** - Weight matrix having one row (vector) for each word in the vocabulary.
+    * Separate decoders for the previous and next sentence which share only **V**.
+    * Given the decoder context **h** (at any time), encoder output, and list of words already generated for the output sentence, the probability of choosing *w* as the next word is proportional to *exp(**V(*word*)h**)*
+* **Objective**
+    * Sum of the log-probabilities for the forward and backwards sentences conditioned on the encoder output.
+
+## Vocabulary Expansion
+
+* Use a model like Word2Vec which can be trained to induce word representations and train it to obtain embeddings for all the words that are likely to be seen by the encoder.
+* Learn a matrix **W** such that *encoder(word) = cross-product(W, Word2Vec(word))* for all words that are common to both Word2Vec model and encoder model.
+* Use **W** to generate embeddings for words are not seen during encoder training.
+
+## Dataset
+
+* [BookCorpus dataset](https://arxiv.org/abs/1506.06724) having books across 16 genres.
+
+## Training
+
+* **uni-skip**
+    * Unidirectional auto-encoder with 2400 dimensions.
+* **bi-skip**
+    * Bidirectional model with forward (sentence given in correct order) and backward (sentence given in reverse order) encoders of 1200 dimensions each.
+* **combine-skip**
+    * concatenation of uni-skip and bi-skip vectors. 
+* Initialization
+    * Recurrent matricies - orthogonal initialization.
+    * Non-recurrent matricies - uniform distribution in [-0.1,0.1]. 
+* Mini-batches of size 128.
+* Gradient Clipping at norm = 10.
+* Adam optimizer.
+
+## Experiments
+
+* After learning skip-thoughts, freeze the model and use the encoder as feature extractor only.
+* Evaluated the vectors with linear models on following tasks:
+
+### Semantic Relatedness
+
+* Given a sentence pair, predict how closely related the two sentences are.
+* **skip-thoughts** method outperforms all systems from SemEval 2014 competition and is outperformed only by dependency tree-LSTMs.
+* Using features learned from image-sentence embedding model on COCO boosts performance and brings it at par with dependency tree-LSTMs.
+
+### Paraphrase detection
+
+* **skip-thoughts** outperforms recursive nets with dynamic pooling if no hand-crafted features are used.
+* **skip-thoughts** with basic pairwise statistics produce results comparable with the state-of-the-art systems that house complicated features and hand engineering.
+
+### Image-sentence Ranking
+
+* MS COCO dataset
+* Task
+    * Image annotation
+        * Given an image, rank the sentences on basis of how well they describe the image.
+    * Image search - Given a caption, find the image that is being described.
+* Though the system does not outperform baseline system in all cases, the results does indicate that skip-thought vectors can capture image descriptions without having to learn their representations from scratch.
+
+
+### Classification
+
+* **skip-thoughts** perform about as good as bag-of-words baselines but are outperformed by methods where sentence representation has been learnt for the task at hand.
+* Combining **skip-thoughts** with bi-gram Naive Bayes (NB) features improves the performance.
+
+## Future Work
+
+* Variants to be explored include:
+    * Fine tuning the encoder-decoder model during the downstream task instead of freezing the weights.
+    * Deep encoders and decoders.
+    * Larger context windows.
+    * Encoding and decoding paragraphs.
+    * Encoders, such as convnets.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

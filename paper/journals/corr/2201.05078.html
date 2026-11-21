@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLIP-Event: Connecting Text and Images with Event Structures - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="CLIP-Event: Connecting Text and Images with Event Structures - ShortScience.org">
+<meta property="og:description" content="This work enforced vision-language pretraining models to comprehend events and associated argument (...">
+<meta name="description" content="This work enforced vision-language pretraining models to comprehend events and associated argument (...">
+<meta property="og:image" content="https://i.imgur.com/TH7cOfZ.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/2201.05078">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/2201.05078" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Manling Li and Ruochen Xu and Shuohang Wang and Luowei Zhou and Xudong Lin and Chenguang Zhu and Michael Zeng and Heng Ji and Shih-Fu Chang"}, "headline": "CLIP-Event: Connecting Text and Images with Event Structures", "description": "Summary of CLIP-Event: Connecting Text and Images with Event Structures", "datePublished": "2023-02-08 21:03:05", "dateModified": "2023-02-08 21:03:05", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/TH7cOfZ.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/2201.05078", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.AI">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/2201.05078v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22CLIP-Event%3A%20Connecting%20Text%20and%20Images%20with%20Event%20Structures%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">CLIP-Event: Connecting Text and Images with Event Structures</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Manling%20Li">Manling Li</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ruochen%20Xu">Ruochen Xu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shuohang%20Wang">Shuohang Wang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Luowei%20Zhou">Luowei Zhou</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xudong%20Lin">Xudong Lin</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chenguang%20Zhu">Chenguang Zhu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Michael%20Zeng">Michael Zeng</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Heng%20Ji">Heng Ji</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shih-Fu%20Chang">Shih-Fu Chang</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2022">arXiv e-Print archive - 2022</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547">
+<hr style="border-color:gray;margin:5px;">
+<b>Abstract:</b>   Vision-language (V+L) pretraining models have achieved great success in
+supporting multimedia applications by understanding the alignments between
+images and text. While existing vision-language pretraining models primarily
+focus on understanding objects in images or entities in text, they often ignore
+the alignment at the level of events and their argument structures. In this
+work, we propose a contrastive learning framework to enforce vision-language
+pretraining models to comprehend events and associated argument (participant)
+roles. To achieve this, we take advantage of text information extraction
+technologies to obtain event structural knowledge, and utilize multiple prompt
+functions to contrast difficult negative descriptions by manipulating event
+structures. We also design an event graph alignment loss based on optimal
+transport to capture event argument structures. In addition, we collect a large
+event-rich dataset (106,875 images) for pretraining, which provides a more
+challenging image retrieval benchmark to assess the understanding of
+complicated lengthy sentences. Experiments show that our zero-shot CLIP-Event
+outperforms the state-of-the-art supervised model in argument extraction on
+Multimedia Event Extraction, achieving more than 5% absolute F-score gain in
+event extraction, as well as significant improvements on a variety of
+downstream tasks under zero-shot settings.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547').hide());void($('#showless-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547').show());void($('#more-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547').show());void($('#showless-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547').hide());void($('#more-am91cm5hbHMvY29yci8yMjAxLjA1MDc4-1547').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/2201.05078">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="ngthanhtinqn" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=ngthanhtinqn" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ngthanhtinqn&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/d676019ba2ccb6266791742c5a40a39e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;ngthanhtinqn&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ngthanhtinqn&lt;br&gt;Posted: 2023-02-08&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/2201.05078&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/d676019ba2ccb6266791742c5a40a39e?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1548').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/2201.05078%26a%3Dngthanhtinqn" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1548" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/2201.05078&amp;a=ngthanhtinqn" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2201.05078%26a%3Dngthanhtinqn&amp;text=Summary%20of%20CLIP-Event%3A%20Connecting%20Text%20and%20Images%20with%20Event%20Structures&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2201.05078%26a%3Dngthanhtinqn" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20CLIP-Event%3A%20Connecting%20Text%20and%20Images%20with%20Event%20Structures&amp;Body=Summary%20of%20CLIP-Event%3A%20Connecting%20Text%20and%20Images%20with%20Event%20Structures%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2201.05078%26a%3Dngthanhtinqn"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2201.05078%26a%3Dngthanhtinqn" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2201.05078%26a%3Dngthanhtinqn&amp;title=Summary%20of%20CLIP-Event%3A%20Connecting%20Text%20and%20Images%20with%20Event%20Structures" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/2201.05078&amp;a=ngthanhtinqn" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=ngthanhtinqn" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by ngthanhtinqn 2023-02-08</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This work enforced vision-language pretraining models to comprehend events and associated argument (participant) roles.
+https://i.imgur.com/TH7cOfZ.png
+
+To achieve this, they created a framework including 3 steps:
+https://i.imgur.com/8fpOA1r.png
+(1) Event structural knowledge extraction including (a) text extraction: using SOTA text information extraction system to extract events (ex: agent, entity, instrument), (b) image extraction: using Faster RCNN trained on Open Images to detect objects. (c) Primary event detection: the primary event is the event that is closer to the root of dependency parsing tree, and has larger number of arguments, higher event type frequency, and higher similarity between trigger word and the image using CLIP. 
+
+(2) Event structure driven negative sampling: the negatives and positives can help the text and vision encoders learn robust features (encoders can learn why they are wrong, and why they are correct). To do that, they have 3 types of negatives: (a) negative event sampling: compute the confusion matrix for the event types and select the top one as the predicted event type, then event types whose visual features are ambiguous with the primary event type will be the negative events. (b) Negative Argument Sampling: if there are multiple roles, they will perform a right-rotation of the argument role sequence to get the negative argument samples. If there are only one argument for the event, compute the confusion matrix of the text argument extraction system (c) Description Generation: To encode positive and negative event structures, they have multiple prompt functions such as, single template-based prompt, composed template-based prompt, continuos prompt, caption editing,  then use 5 manual event description examples as the input of the GPT-3, the output will be a fine-grained event description.
+https://i.imgur.com/fPo0UpH.png
+
+https://i.imgur.com/vIWv4lc.png
+
+(3) Event Graph Alignment via Optimal Transport
+Each event and its arguments can be organized as a graph. Encoding event graph structures enables the model to capture the interactions between events and arguments. For example, the injured man should be aligned with the ENTITY being transported, rather than the AGENT.
+https://i.imgur.com/NiWfNe4.png
+There are 3 types of alignments: (a) Image-level Alignment: computes consine similarity $s(t,i)$ and distance $d(t,i)$ between the text t and image i (2) Entity-level Alignment: computes the cosine similarity between text entity $t_{e}$ and image object $i_{o}$, where $t_{e}$ is the text mention of entity e, and $t_{e}$ is its embedding contextualized on the sentence, this contextualized embedding is encoded using Text Transformer, and apply average pooling over the tokens in the entity mention $t_{e}$. Similarly, $i_{o}$ is the bounding box of object o and $i_{o}$ is its embedding contextualized on the image, based on the average pooling over the vision transformer representations of the patches covered in the bounding box (3) Event-level Alignment: to obtain a global alignment score based on the structures of two graphs, we use the OT to get the minimal distance $d(G_{t}, G_{i})$ between text event graph $G_{t}$ and image event graph $G_{i}$.
+
+Finally, train the whole framework using Contrastive Learning.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

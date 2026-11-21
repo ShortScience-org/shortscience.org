@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark: Cluster Computing with Working Sets - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Spark: Cluster Computing with Working Sets - ShortScience.org">
+<meta property="og:description" content="The paper introduces a new framework called Spark which focuses on use cases where MapReudce fails....">
+<meta name="description" content="The paper introduces a new framework called Spark which focuses on use cases where MapReudce fails....">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*6I7aiD2bPrsw32U76Q5q2g.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/hotcloud/ZahariaCFSS10">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/hotcloud/ZahariaCFSS10" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Zaharia, Matei and Chowdhury, Mosharaf and Franklin, Michael J. and Shenker, Scott and Stoica, Ion"}, "headline": "Spark: Cluster Computing with Working Sets", "description": "Summary of Spark: Cluster Computing with Working Sets", "datePublished": "2016-10-20 23:41:31", "dateModified": "2016-10-20 23:41:59", "image": {"@type": "ImageObject", "url": "https://cdn-images-1.medium.com/max/800/1*6I7aiD2bPrsw32U76Q5q2g.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/hotcloud/ZahariaCFSS10", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://www.usenix.org/conference/hotcloud-10/spark-cluster-computing-working-sets"><span class="glyphicon glyphicon-link"></span> www.usenix.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Spark%3A%20Cluster%20Computing%20with%20Working%20Sets%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Spark: Cluster Computing with Working Sets</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Zaharia%2C%20Matei">Zaharia, Matei</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chowdhury%2C%20Mosharaf">Chowdhury, Mosharaf</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Franklin%2C%20Michael%20J.">Franklin, Michael J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shenker%2C%20Scott">Shenker, Scott</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Stoica%2C%20Ion">Stoica, Ion</a></span>
+<br>
+USENIX Association HotCloud - 2010 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/hotcloud/ZahariaCFSS10">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/hotcloud/ZahariaCFSS10&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-254').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/hotcloud/ZahariaCFSS10%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-254" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/hotcloud/ZahariaCFSS10&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fhotcloud%2FZahariaCFSS10%26a%3Dshagunsodhani&amp;text=Summary%20of%20Spark%3A%20Cluster%20Computing%20with%20Working%20Sets&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fhotcloud%2FZahariaCFSS10%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Spark%3A%20Cluster%20Computing%20with%20Working%20Sets&amp;Body=Summary%20of%20Spark%3A%20Cluster%20Computing%20with%20Working%20Sets%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fhotcloud%2FZahariaCFSS10%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fhotcloud%2FZahariaCFSS10%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fhotcloud%2FZahariaCFSS10%26a%3Dshagunsodhani&amp;title=Summary%20of%20Spark%3A%20Cluster%20Computing%20with%20Working%20Sets" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/hotcloud/ZahariaCFSS10&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper introduces a new framework called Spark which focuses on use cases where MapReudce fails. While a lot of applications fit the MapReduce’s acyclic data flow model, there are use cases requiring iterative jobs where MapReduce is not greatly efficient. Many machine learning algorithms fall into this category. Secondly with MapReduce, each query incurs a significant overhead because it is effectively a different job each time. So MapReduce is not the ideal solution for doing interactive analysis. This is the space which Spark intends to fill in. Spark is implemented in Scala and now supports API in Java, Python, and R
+
+#### Programming Model
+The model supports RDDs, parallel operations and 2 type of shared variables. A driver program implements the high-level control flow and launches different operations in parallel.
+
+Resilient Distributed Datasets (RDDs) are a read-only collection of objects, partitioned across a set of machines in a cluster. A handle to RDD contains enough information to compute the RDD from data in case of partition failure. RDDs can be constructed:
+
+1. From a file in a Hadoop supported file system.
+2. By “parallelizing” a Scala collection.
+3. By transforming an existing RDD using operations like flatMap, map, and filter.
+4. By changing persistence of an existing RDD.
+
+flatMap, map and filter are standard operations as supported by various functional programming languages. For example map will take as input a list of items and return a new list of items after applying a function to each item of the original list.
+
+RDDs are lazy and ephemeral. They are constructed on demand and discarded after use. The persistence can be changed to cache which means they are still lazy but are kept in memory (or disk if they can not fit memory) or to save where they are saved to disk only.
+
+Some supported parallel operations(at time of writing the paper) include:
+
+1. reduce: Combines dataset elements using an associative function to produce a result at the driver program.
+2. collect: Sends all elements of the dataset to the driver program.
+3. foreach: Passes each element through a user-provided function
+
+Since the paper was authored, Spark has come a long way and support much more transformations (sample, union, distinct, groupByKey, reduceByKey, sortByKey, join, cartesian, etc), parallel operations (shuffle, count, first, take, takeSample etc), and persistence options (memory only, memory and disk, disk only, memory only serialized, etc).
+
+Spark supports 2 kinds of shared variables:
+
+Broadcast variables — These are read-only variables that are distributed to worker nodes for once and can be used multiple times (for reading). A use case of this variable would be training data which can be sent to all the worker nodes once and can be used for learning different models instead of sending the same data with each model.
+
+Accumulators — These variables are also shared with workers, the different being that the driver program can only read them and workers can perform only associative operations on them. A use case could be when we want to count the total number of entries in a data set, each worker fills up its count accumulator and sends it to the driver which adds up all the received values.
+
+#### Implementation
+The core of Spark is the implementation of RDDs. Suppose we start by reading a file, then filtering the lines to get lines with the word “ERROR” in them, then we cache the results and then count the number of such lines using the standard map-reduce trick. RDDs will be formed corresponding to each of these steps and these RDDs will be stored as a link-list to capture the lineage of each RDD.
+
+https://cdn-images-1.medium.com/max/800/1*6I7aiD2bPrsw32U76Q5q2g.png
+
+Lineage chain for distributed dataset objects
+Each RDD contains a pointer to its parent and information about how it was transformed. This lineage information is sufficient to reconstruct any lost partition and checkpointing of any kind is not required. There is no overhead if no node fails and even if some nodes fails, only select RDDs need to be reconstructed.
+
+Internally an RDD object implements a simple interface consisting of three operations:
+
+1. getPartitions, which returns a list of partition IDs.
+2. getIterator(partition), which iterates over a partition.
+3. getPreferredLocations(partition), which is used for task scheduling to achieve data locality.
+
+Spark is similar to MapReduce — it sends computation to data instead of the other way round. This requires shipping closures to workers — closures to define and process a distributed dataset. This is easy given Scala uses Java serialization. However unlike MapReduce, operations are performed on RDDs that can persist across operations.
+
+Shared variables are implemented using classes with custom serialization formats. When a broadcast variable b is created with a value v, v is saved to a file in the shared file system. The serialized form of b is a path to this file. When b’s value is queried, Spark checks if v is in the local cache. If not, it is read from the file system. For accumulators, each accumulator is given a unique ID upon creation and its serialized form contains its ID and the “zero” value. On the workers, a separate copy of the accumulator is created for each thread and is reset to “zero” value. Once the task finishes, the updated value is sent to the driver program.
+
+#### Future Work
+The paper describes how an early stage implementation performs on Logistic Regression, Alternating Least Square, and interactive mode. The results seem to outperform MapReduce largely because of caching the results of previous computations. This makes Spark a good alternative for use cases where same data is read into memory again and again (iterative jobs fit the category.) Spark has come a long way since the paper was written. It now supports libraries for handling SQL-like queries (SparkSQL), streaming data (Spark streaming), graphs (GraphX) and machine learning (MLlib) along with more transformations and parallel operations. I came across Spark while working at Adobe Analytics and have been reading about it to learn more. The cool thing about Spark is that it supports interactive analysis and has APIs in Python, R and Java thus making it easy to adopt. While I have not done some much work around Spark, I am looking forward to making something on top of it.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

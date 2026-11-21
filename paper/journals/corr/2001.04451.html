@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reformer: The Efficient Transformer - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Reformer: The Efficient Transformer - ShortScience.org">
+<meta property="og:description" content="The Transformer architecture - which uses a structure entirely based on key-value attention mechanis...">
+<meta name="description" content="The Transformer architecture - which uses a structure entirely based on key-value attention mechanis...">
+<meta property="og:image" content="https://i.imgur.com/tQJkfGe.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/2001.04451">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/2001.04451" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Nikita Kitaev and \u0141ukasz Kaiser and Anselm Levskaya"}, "headline": "Reformer: The Efficient Transformer", "description": "Summary of Reformer: The Efficient Transformer", "datePublished": "2020-05-03 05:14:23", "dateModified": "2020-05-03 05:14:23", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/tQJkfGe.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/2001.04451", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.CL,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/2001.04451v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Reformer%3A%20The%20Efficient%20Transformer%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Reformer: The Efficient Transformer</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Nikita%20Kitaev">Nikita Kitaev</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=%C5%81ukasz%20Kaiser">Łukasz Kaiser</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Anselm%20Levskaya">Anselm Levskaya</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2020">arXiv e-Print archive - 2020</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CL"> cs.CL</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2020/01/13<br><b>Abstract:</b>   Large Transformer models routinely achieve state-of-the-art results on a
+number of tasks but training these models can be prohibitively costly,
+especially on long sequences. We introduce two techniques to improve the
+efficiency of Transformers. For one, we replace dot-product attention by one
+that uses locality-sensitive hashing, changing its complexity from O($L^2$) to
+O($L\log L$), where $L$ is the length of the sequence. Furthermore, we use
+reversible residual layers instead of the standard residuals, which allows
+storing activations only once in the training process instead of $N$ times,
+where $N$ is the number of layers. The resulting model, the Reformer, performs
+on par with Transformer models while being much more memory-efficient and much
+faster on long sequences.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503').hide());void($('#showless-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503').show());void($('#more-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503').show());void($('#showless-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503').hide());void($('#more-am91cm5hbHMvY29yci8yMDAxLjA0NDUx-1503').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/2001.04451">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2020-05-03&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/2001.04451&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1504').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/2001.04451%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1504" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/2001.04451&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2001.04451%26a%3Ddecodyng&amp;text=Summary%20of%20Reformer%3A%20The%20Efficient%20Transformer&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2001.04451%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Reformer%3A%20The%20Efficient%20Transformer&amp;Body=Summary%20of%20Reformer%3A%20The%20Efficient%20Transformer%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2001.04451%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2001.04451%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2001.04451%26a%3Ddecodyng&amp;title=Summary%20of%20Reformer%3A%20The%20Efficient%20Transformer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/2001.04451&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2020-05-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The Transformer architecture - which uses a structure entirely based on key-value attention mechanisms to process sequences such as text - has taken over the worlds of language modeling and NLP in the past three years. However, Transformers at the scale used for large language models have huge computational and memory requirements. 
+
+This is largely driven by the fact that information at every step in the sequence (or, in the so-far-generated sequence during generation) is used to inform the representation at every other step. Although the same *parameters* are used for each of these pairwise calculation between keys and queries at each step, this is still a pairwise, and thus N^2, calculation, which can get very costly when processing long sequences on the scale of tens of thousands of tokens. This cost comes from both computation and memory, with memory being the primary focus of this paper, because the max memory requirements of a network step dictate the hardware it can be run on, in a way that the pure amount of computation that needs to be performed doesn&#x27;t. A L^2 attention calculation, as naively implemented in a set of matrix multiplies, not only has to perform N^2 calculations, but has to be able to hold N^2 values in memory while performing the softmax and weighted sum that is the attention aggregation process. Memory requirements in Transformers are also driven by 
+- The high parameter counts of dense layers within the network, which have less parameter use per calculation than attention does, and 
+- The fact that needing to pass forward one representation per element in the list at each layer necessitates cumulatively keeping all the activations from each layer in the forward pass, so that you can use them to calculate derivatives in the backward pass. 
+
+This paper, and the &quot;Reformer&quot; architecture they suggest, is less a single idea, and more a suite of solutions targeted to make Transformers more efficient in use of both compute and memory. 
+
+1. The substitution of Locality Sensitive Hashing for normal key-query attention is a strategy for reducing the L^2 compute and memory requirements of the raw attention calculation. The essential idea of attention is &quot;calculate how well the query at position i is matched by the key at every other position, and then use those matching softmax weights to calculate a weighted sum of the representations at each other position&quot;. If you consider keys and queries to be in the same space, you can think of this as a similarity calculation between positions, where you want to most highly weight the most similar positions to you in the calculation of your own next-layer value. In this spirit, the authors argue that this weighted sum will be mostly influenced by the highest-similarity positions within the softmax, and so, instead of performing attention over the whole sequence, we can first sort positions into buckets based on similarity of their key/query vector for a given head, and perform attention weighting within those buckets. 
+
+https://i.imgur.com/tQJkfGe.png
+
+This has the advantage that the first step, of assigning a position&#x27;s key/query vector to a bucket, can be done for each position individually, rather than with respect to the value at another position. In this case, this bucketing is performed by a Locality Sensitive Hashing algorithm, which works by projecting each position&#x27;s vector into a lower-dimensional space, and then taking the index of that vector which has the max value. This is then used as a bucket ID for performing full attention within. This shifts the time complexity of attention from O(L^2) to O(LlogL), since for each position in the length, you only need to calculate explicit pairwise similarity for the log(L) other elements in its bucket 
+
+2. Reversible layers.  This addresses the problem of needing to keep activations from each layer around for computing the backward-pass derivatives. It takes an idea used in RevNets, which proposes a reversible alternative to the commonly used ResNet architecture. In a normal ResNet scenario, Y = X + F(X), where F(X) is the computation of a single layer or block, and Y are the resulting activations passed to the next layer. In this setup, you can&#x27;t go back from Y to get the value of X if you discard X for memory reasons, because the difference between the two is a function of X, which you don&#x27;t have. As an alternative, RevNets define a sort of odd crosswise residual structure, that starts by partitioning X into two components, X1 and X2, and the output Y into Y1 and Y2, and performing the calculation shown below. 
+
+https://i.imgur.com/EK2vBkK.png
+
+This allows you to work backward, getting X2 from Y1 and Y2 (both of which you have as outputs), and then get X1 from knowing the other three parts.
+
+https://i.imgur.com/uLTrdyf.png
+
+ This means that as soon as you have the activations at a given layer, you can discard earlier layer activations, which makes things a lot more memory efficient.  
+
+3. There&#x27;s also a proposal to do (what I *think* is) a pretty basic chunking of feed forward calculations across sequence length, and performing feedforward calculations on parts of the sequence rather than the whole thing. The latter would be faster with vectorized computing, for parallelization reasons, but the former is more memory efficient</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

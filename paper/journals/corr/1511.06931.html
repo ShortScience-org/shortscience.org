@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluating Prerequisite Qualities for Learning End-to-End Dialog Systems - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Evaluating Prerequisite Qualities for Learning End-to-End Dialog Systems - ShortScience.org">
+<meta property="og:description" content="#### Introduction
+
+* The paper presents a suite of benchmark tasks to evaluate end-to-end dialogue s...">
+<meta name="description" content="#### Introduction
+
+* The paper presents a suite of benchmark tasks to evaluate end-to-end dialogue s...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06931">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06931" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jesse Dodge and Andreea Gane and Xiang Zhang and Antoine Bordes and Sumit Chopra and Alexander Miller and Arthur Szlam and Jason Weston"}, "headline": "Evaluating Prerequisite Qualities for Learning End-to-End Dialog Systems", "description": "Summary of Evaluating Prerequisite Qualities for Learning End-to-End Dialog Systems", "datePublished": "2016-10-26 19:25:28", "dateModified": "2016-10-26 19:25:28", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1511.06931", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CL,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1511.06931v6"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Evaluating%20Prerequisite%20Qualities%20for%20Learning%20End-to-End%20Dialog%20Systems%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Evaluating Prerequisite Qualities for Learning End-to-End Dialog Systems</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jesse%20Dodge">Jesse Dodge</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Andreea%20Gane">Andreea Gane</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xiang%20Zhang">Xiang Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Antoine%20Bordes">Antoine Bordes</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sumit%20Chopra">Sumit Chopra</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alexander%20Miller">Alexander Miller</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Arthur%20Szlam">Arthur Szlam</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jason%20Weston">Jason Weston</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CL">cs.CL</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/11/21<br><b>Abstract:</b>   A long-term goal of machine learning is to build intelligent conversational
+agents. One recent popular approach is to train end-to-end models on a large
+amount of real dialog transcripts between humans (Sordoni et al., 2015; Vinyals
+&amp; Le, 2015; Shang et al., 2015). However, this approach leaves many questions
+unanswered as an understanding of the precise successes and shortcomings of
+each model is hard to assess. A contrasting recent proposal are the bAbI tasks
+(Weston et al., 2015b) which are synthetic data that measure the ability of
+learning machines at various reasoning tasks over toy language. Unfortunately,
+those tests are very small and hence may encourage methods that do not scale.
+In this work, we propose a suite of new tasks of a much larger scale that
+attempt to bridge the gap between the two regimes. Choosing the domain of
+movies, we provide tasks that test the ability of models to answer factual
+questions (utilizing OMDB), provide personalization (utilizing MovieLens),
+carry short conversations about the two, and finally to perform on natural
+dialogs from Reddit. We provide a dataset covering 75k movie entities and with
+3.5M training examples. We present results of various models on these tasks,
+and evaluate their performance.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740').hide());void($('#showless-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740').show());void($('#more-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740').show());void($('#showless-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740').hide());void($('#more-am91cm5hbHMvY29yci8xNTExLjA2OTMx-740').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1511.06931">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1511.06931&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-741').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1511.06931%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-741" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06931&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06931%26a%3Dshagunsodhani&amp;text=Summary%20of%20Evaluating%20Prerequisite%20Qualities%20for%20Learning%20End-to-End%20Dialog%20Systems&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06931%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Evaluating%20Prerequisite%20Qualities%20for%20Learning%20End-to-End%20Dialog%20Systems&amp;Body=Summary%20of%20Evaluating%20Prerequisite%20Qualities%20for%20Learning%20End-to-End%20Dialog%20Systems%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06931%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06931%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06931%26a%3Dshagunsodhani&amp;title=Summary%20of%20Evaluating%20Prerequisite%20Qualities%20for%20Learning%20End-to-End%20Dialog%20Systems" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06931&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Introduction
+
+* The paper presents a suite of benchmark tasks to evaluate end-to-end dialogue systems such that performing well on the tasks is a necessary (but not sufficient) condition for a fully functional dialogue agent.
+* [Link to the paper](https://research.facebook.com/publications/evaluating-prerequisite-qualities-for-learning-end-to-end-dialog-systems/)
+
+#### Dataset
+
+* Created using large-scale real-world sources - OMDB (Open Movie Database), MovieLens and Reddit.
+* Consists of ~75K movie entities and ~3.5M training examples.
+
+#### Tasks
+
+##### QA Task
+
+* Answering Factoid Questions without relation to the previous dialogue.
+* KB(Knowledge Base) created using OMDB and stored as triplets of the form (Entity, Relation, Entity).
+* Question (in Natural Language Form) generated by creating templates using [SimpleQuestions](https://arxiv.org/abs/1506.02075)
+* Instead of giving out just 1 response, the system ranks all the answers in order of their relevance.
+
+##### Recommendation Task
+
+* Providing personalised responses to the user via recommendation instead of providing universal facts as in case 1.
+* MovieLens dataset with a *user x item* matrix of ratings.
+* Statements (for any user) are generated by sampling highly ranked movies by the user and forming a statement about these movies using natural language templates.
+* Like the previous case, a list of ranked responses is generated.
+
+##### QA + Recommendation Task
+
+* Maintaining short dialogues involving both factoid and personalised content.
+* Dataset consists of short conversations of 3 exchanges (3 from each participant).
+
+##### Reddit Discussion Task
+
+* Identify most likely response is discussions on Reddit.
+* Data processed to flatten the potential conversation so that it appears to be a two participant conversation.
+
+##### Joint Task
+
+* Combines all the previous tasks into one single task to test all the skills at once.
+
+#### Models Tested
+
+* **Memory Networks** - Comprises of a memory component that includes both long term memory and short term context.
+
+* **Supervised Embedding Models** - Sum the word embeddings of the input and the target independently and compare them with a similarity metric.
+
+* **Recurrent Language Models** - RNN, LSTM, SeqToSeq
+
+* **Question Answering Systems** - Systems that answer natural language questions by converting them into search queries over a KB.
+
+* **SVD(Singular Value Decomposition)** - Standard benchmark for recommendation.
+
+* **Information Retrieval Models** - Given a message, find the most similar message in the training dataset and report its output or find a most similar response to input directly.
+
+#### Result
+
+##### QA Task
+
+* QA System &gt; Memory Networks &gt; Supervised Embeddings &gt; LSTM
+
+##### Recommendation Task
+
+* Supervised Embeddings &gt; Memory Networks &gt; LSTM &gt; SVD
+
+##### Task Involving Dialog History
+
+* QA + Recommendation Task and Reddit Discussion Task
+* Memory Networks &gt; Supervised Embeddings &gt; LSTM
+
+##### Joint Task
+
+* Supervised word embeddings perform very poorly even when using a large number of dimensions (2000 dimensions).
+* Memory Networks perform better than embedding models as they can utilise the local context and the long-term memory. But they do not perform as well on standalone QA tasks.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R-FCN: Object Detection via Region-based Fully Convolutional Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="R-FCN: Object Detection via Region-based Fully Convolutional Networks - ShortScience.org">
+<meta property="og:description" content="* They present a variation of Faster R-CNN, i.e. a model that predicts bounding boxes in images an...">
+<meta name="description" content="* They present a variation of Faster R-CNN, i.e. a model that predicts bounding boxes in images an...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/R-FCN__architecture.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/DaiLHS16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/DaiLHS16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Dai, Jifeng and Li, Yi and He, Kaiming and Sun, Jian"}, "headline": "R-FCN: Object Detection via Region-based Fully Convolutional Networks", "description": "Summary of R-FCN: Object Detection via Region-based Fully Convolutional Networks", "datePublished": "2017-10-25 10:45:09", "dateModified": "2017-10-25 10:45:09", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/R-FCN__architecture.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/DaiLHS16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/6465-r-fcn-object-detection-via-region-based-fully-convolutional-networks"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22R-FCN%3A%20Object%20Detection%20via%20Region-based%20Fully%20Convolutional%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">R-FCN: Object Detection via Region-based Fully Convolutional Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Dai%2C%20Jifeng">Dai, Jifeng</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Li%2C%20Yi">Li, Yi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=He%2C%20Kaiming">He, Kaiming</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sun%2C%20Jian">Sun, Jian</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2016">Neural Information Processing Systems Conference - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/DaiLHS16">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/DaiLHS16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-385').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/DaiLHS16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-385" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/DaiLHS16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDaiLHS16%26a%3Daleju&amp;text=Summary%20of%20R-FCN%3A%20Object%20Detection%20via%20Region-based%20Fully%20Convolutional%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDaiLHS16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20R-FCN%3A%20Object%20Detection%20via%20Region-based%20Fully%20Convolutional%20Networks&amp;Body=Summary%20of%20R-FCN%3A%20Object%20Detection%20via%20Region-based%20Fully%20Convolutional%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDaiLHS16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDaiLHS16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDaiLHS16%26a%3Daleju&amp;title=Summary%20of%20R-FCN%3A%20Object%20Detection%20via%20Region-based%20Fully%20Convolutional%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/DaiLHS16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They present a variation of Faster R-CNN, i.e. a model that predicts bounding boxes in images and classifies them.
+  * In contrast to Faster R-CNN, their model is fully convolutional.
+  * In contrast to Faster R-CNN, the computation per bounding box candidate (region proposal) is very low.
+
+### How
+  * The basic architecture is the same as in Faster R-CNN:
+    * A base network transforms an image to a feature map. Here they use ResNet-101 to do that.
+    * A region proposal network (RPN) uses the feature map to locate bounding box candidates (&quot;region proposals&quot;) in the image.
+    * A classifier uses the feature map and the bounding box candidates and classifies each one of them into `C+1` classes,
+      where `C` is the number of object classes to spot (e.g. &quot;person&quot;, &quot;chair&quot;, &quot;bottle&quot;, ...) and `1` is added for the background.
+      * During that process, small subregions of the feature maps (those that match the bounding box candidates) must be extracted and converted to fixed-sizes matrices.
+        The method to do that is called &quot;Region of Interest Pooling&quot; (RoI-Pooling) and is based on max pooling.
+        It is mostly the same as in Faster R-CNN.
+    * Visualization of the basic architecture:
+      * ![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/R-FCN__architecture.jpg?raw=true &quot;Architecture&quot;)
+  * Position-sensitive classification
+    * Fully convolutional bounding box detectors tend to not work well.
+    * The authors argue, that the problems come from the translation-invariance of convolutions, which is a desirable property in the case of classification but not when precise localization of objects is required.
+    * They tackle that problem by generating multiple heatmaps per object class, each one being slightly shifted (&quot;position-sensitive score maps&quot;).
+    * More precisely:
+      * The classifier generates per object class `c` a total of `k*k` heatmaps.
+      * In the simplest form `k` is equal to `1`. Then only one heatmap is generated, which signals whether a pixel is part of an object of class `c`.
+      * They use `k=3*3`. The first of those heatmaps signals, whether a pixel is part of the *top left* corner of a bounding box of class `c`. The second heatmap signals, whether a pixel is part of the *top center* of a bounding box of class `c` (and so on).
+      * The RoI-Pooling is applied to these heatmaps.
+      * For `k=3*3`, each bounding box candidate is converted to `3*3` values. The first one resembles the top left corner of the bounding box candidate. Its value is generated by taking the average of the values in that area in the first heatmap.
+      * Once the `3*3` values are generated, the final score of class `c` for that bounding box candidate is computed by averaging the values.
+      * That process is repeated for all classes and a softmax is used to determine the final class.
+      * The graphic below shows examples for that:
+        * ![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/R-FCN__examples.jpg?raw=true &quot;Examples&quot;)
+    * The above described RoI-Pooling uses only averages and hence is almost (computationally) free.
+      * They make use of that during the training by sampling many candidates and only backpropagating on those with high losses (online hard example mining, OHEM).
+  * À trous trick
+    * In order to increase accuracy for small bounding boxes they use the à trous trick.
+    * That means that they use a pretrained base network (here ResNet-101), then remove a pooling layer and set the à trous rate (aka dilation) of all convolutions after the removed pooling layer to `2`.
+      * The á trous rate describes the distance of sampling locations of a convolution. Usually that is `1` (sampled locations are right next to each other). If it is set to `2`, there is one value &quot;skipped&quot; between each pair of neighbouring sampling location.
+    * By doing that, the convolutions still behave as if the pooling layer existed (and therefore their weights can be reused). At the same time, they work at an increased resolution, making them more capable of classifying small objects. (Runtime increases though.)
+  * Training of R-FCN happens similarly to Faster R-CNN.
+
+### Results
+  * Similar accuracy as the most accurate Faster R-CNN configurations at a lower runtime of roughly 170ms per image.
+  * Switching to ResNet-50 decreases accuracy by about 2 percentage points mAP (at faster runtime). Switching to ResNet-152 seems to provide no measureable benefit.
+  * OHEM improves mAP by roughly 2 percentage points.
+  * À trous trick improves mAP by roughly 2 percentage points.
+  * Training on `k=1` (one heatmap per class) results in a failure, i.e. a model that fails to predict bounding boxes. `k=7` is slightly more accurate than `k=3`.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="alejucomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=li" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=li&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/706cc1a45dc4c57dfb150e9cb056eb8b?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;li&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: li&lt;br&gt;Posted: 2018-03-19">
+<img src="https://www.gravatar.com/avatar/706cc1a45dc4c57dfb150e9cb056eb8b?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Hi, can you explain how to obtain the score map? For example, is it a 1x1 convolutional layer, or a deconvolutional layer? Thanks!</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEGAN: Boundary Equilibrium Generative Adversarial Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BEGAN: Boundary Equilibrium Generative Adversarial Networks - ShortScience.org">
+<meta property="og:description" content="* [Detailed Summary]( )
+* [Tensorflow implementation]( )
+
+### Summary
+
+  * They suggest a GAN algori...">
+<meta name="description" content="* [Detailed Summary]( )
+* [Tensorflow implementation]( )
+
+### Summary
+
+  * They suggest a GAN algori...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/BEGAN__examples.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.10717">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1703.10717" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "David Berthelot and Thomas Schumm and Luke Metz"}, "headline": "BEGAN: Boundary Equilibrium Generative Adversarial Networks", "description": "Summary of BEGAN: Boundary Equilibrium Generative Adversarial Networks", "datePublished": "2017-10-25 10:53:29", "dateModified": "2017-10-25 10:53:39", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/BEGAN__examples.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1703.10717", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1703.10717v4"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">BEGAN: Boundary Equilibrium Generative Adversarial Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=David%20Berthelot">David Berthelot</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Thomas%20Schumm">Thomas Schumm</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Luke%20Metz">Luke Metz</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/03/31<br><b>Abstract:</b>   We propose a new equilibrium enforcing method paired with a loss derived from
+the Wasserstein distance for training auto-encoder based Generative Adversarial
+Networks. This method balances the generator and discriminator during training.
+Additionally, it provides a new approximate convergence measure, fast and
+stable training and high visual quality. We also derive a way of controlling
+the trade-off between image diversity and visual quality. We focus on the image
+generation task, setting a new milestone in visual quality, even at higher
+resolutions. This is achieved while using a relatively simple model
+architecture and a standard training procedure.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087').hide());void($('#showless-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087').show());void($('#more-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087').show());void($('#showless-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087').hide());void($('#more-am91cm5hbHMvY29yci8xNzAzLjEwNzE3-1087').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1703.10717">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1703.10717&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1088').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1703.10717%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1088" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.10717&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Daleju&amp;text=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks&amp;Body=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Daleju&amp;title=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.10717&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">* [Detailed Summary](https://blog.heuritech.com/2017/04/11/began-state-of-the-art-generation-of-faces-with-generative-adversarial-networks/)
+* [Tensorflow implementation](https://github.com/carpedm20/BEGAN-tensorflow)
+
+### Summary
+
+  * They suggest a GAN algorithm that is based on an autoencoder with Wasserstein distance.
+  * Their method generates highly realistic human faces.
+  * Their method has a convergence measure, which reflects the quality of the generates images.
+  * Their method has a diversity hyperparameter, which can be used to set the tradeoff between image diversity and image quality.
+
+### How
+  * Like other GANs, their method uses a generator G and a discriminator D.
+  * Generator
+    * The generator is fairly standard.
+    * It gets a noise vector `z` as input and uses upsampling+convolutions to generate images.
+    * It uses ELUs and no BN.
+  * Discriminator
+    * The discriminator is a full autoencoder (i.e. it converts input images to `8x8x3` tensors, then reconstructs them back to images).
+    * It has skip-connections from the `8x8x3` layer to each upsampling layer.
+    * It also uses ELUs and no BN.
+  * Their method now has the following steps:
+    1. Collect real images `x_real`.
+    2. Generate fake images `x_fake = G(z)`.
+    3. Reconstruct the real images `r_real = D(x_real)`.
+    4. Reconstruct the fake images `r_fake = D(x_fake)`.
+    5. Using an Lp-Norm (e.g. L1-Norm), compute the reconstruction loss of real images `d_real = Lp(x_real, r_real)`.
+    6. Using an Lp-Norm (e.g. L1-Norm), compute the reconstruction loss of fake images `d_fake = Lp(x_fake, r_fake)`.
+    7. The loss of D is now `L_D = d_real - d_fake`.
+    8. The loss of G is now `L_G = -L_D`.
+  * About the loss
+    * `r_real` and `r_fake` are really losses (e.g. L1-loss or L2-loss). In the paper they use `L(...)` for that. Here they are referenced as `d_*` in order to avoid confusion.
+    * The loss `L_D` is based on the Wasserstein distance, as in WGAN.
+    * `L_D` assumes, that the losses `d_real` and `d_fake` are normally distributed and tries to move their mean values. Ideally, the discriminator produces very different means for real/fake images, while the generator leads to very similar means.
+    * Their formulation of the Wasserstein distance does not require K-Lipschitz functions, which is why they don&#x27;t have the weight clipping from WGAN.
+  * Equilibrium
+    * The generator and discriminator are at equilibrium, if `E[r_fake] = E[r_real]`. (That&#x27;s undesirable, because it means that D can&#x27;t differentiate between fake and real images, i.e. G doesn&#x27;t get a proper gradient any more.)
+    * Let `g = E[r_fake] / E[r_real]`, then:
+      * Low `g` means that `E[r_fake]` is low and/or `E[r_real]` is high, which means that real images are not as well reconstructed as fake images. This means, that the discriminator will be more heavily trained towards reconstructing real images correctly (as that is the main source of error).
+      * High `g` conversely means that real images are well reconstructed (compared to fake ones) and that the discriminator will be trained more towards fake ones.
+      * `g` gives information about how much G and D should be trained each (so that none of the two overwhelms the other).
+    * They introduce a hyperparameter `gamma` (from interval `[0,1]`), which reflects the target value of the balance `g`.
+    * Using `gamma`, they change their losses `L_D` and `L_G` slightly:
+      * `L_D = d_real - k_t d_fake`
+      * `L_G = r_fake`
+      * `k_t+1 = k_t + lambda_k (gamma d_real - d_fake)`.
+    * `k_t` is a control term that controls how much D is supposed to focus on the fake images. It changes with every batch.
+    * `k_t` is clipped to `[0,1]` and initialized at `0` (max focus on reconstructing real images).
+    * `lambda_k` is like the learning rate of the control term, set to `0.001`.
+    * Note that `gamma d_real - d_fake = 0 &lt;=&gt; gamma d_real = d_fake &lt;=&gt; gamma = d_fake / d_real`.
+  * Convergence measure
+    * They measure the convergence of their model using `M`:
+    * `M = d_real + |gamma d_real - d_fake|`
+    * `M` goes down, if `d_real` goes down (D becomes better at autoencoding real images).
+    * `M` goes down, if the difference in reconstruction error between real and fake images goes down, i.e. if G becomes better at generating fake images.
+  * Other
+    * They use Adam with learning rate 0.0001. They decrease it by a factor of 2 whenever M stalls.
+    * Higher initial learning rate could lead to model collapse or visual artifacs.
+    * They generate images of max size 128x128.
+    * They don&#x27;t use more than 128 filters per conv layer.
+
+### Results
+  * NOTES:
+    * Below example images are NOT from generators trained on CelebA. They used a custom dataset of celebrity images. They don&#x27;t show any example images from the dataset. The generated images look like there is less background around the faces, making the task easier.
+    * Few example images. Unclear how much cherry picking was involved. Though the results from the tensorflow example (see like at top) make it look like the examples are representative (aside from speckle-artifacts).
+    * No LSUN Bedrooms examples. Human faces are comparatively easy to generate.
+  * Example images at 128x128:
+    * ![Examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/BEGAN__examples.jpg?raw=true &quot;Examples&quot;)
+  * Effect of changing the target balance `gamma`:
+    * ![Examples gamma](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/BEGAN__examples_gamma.jpg?raw=true &quot;Examples gamma&quot;)
+    * High gamma leads to more diversity at lower quality.
+  * Interpolations:
+    * ![Interpolations](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/BEGAN__interpolations.jpg?raw=true &quot;Interpolations&quot;)
+  * Convergence measure `M` and associated image quality during the training:
+    * ![M](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/BEGAN__convergence.jpg?raw=true &quot;M&quot;)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="leopaillier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=leopaillier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=leopaillier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Léo Paillier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: leopaillier&lt;br&gt;Posted: 2017-12-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1703.10717&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1089').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1703.10717%26a%3Dleopaillier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1089" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.10717&amp;a=leopaillier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Dleopaillier&amp;text=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks&amp;Body=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Dleopaillier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1703.10717%26a%3Dleopaillier&amp;title=Summary%20of%20BEGAN%3A%20Boundary%20Equilibrium%20Generative%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1703.10717&amp;a=leopaillier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=leopaillier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Léo Paillier 2017-12-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">_Objective:_ Improve GANs convergence to more diverse and visually pleasing images at higher resolution using a novel equilibrium method between the discriminator and the generator that also simplifies training procedures.
+
+_Dataset:_ [LFW](http://vis-www.cs.umass.edu/lfw/)
+
+## Inner workings:
+
+They try to match the distribution of the errors (assumed to be normally distributed) instead of matching the distribution of the samples directly. In order to do this they compute the Wasserstein distance between a pixel-wise autoencoder loss distributions of real and generated samples defined as follow:
+
+1.  Autoencoder loss:
+
+[![screen shot 2017-04-24 at 3 46 32 pm](https://cloud.githubusercontent.com/assets/17261080/25340190/429f9788-2905-11e7-88dc-b44567b9cd34.png)](https://cloud.githubusercontent.com/assets/17261080/25340190/429f9788-2905-11e7-88dc-b44567b9cd34.png)
+
+2.  Wasserstein distance for two normal distributions μ1 = N(m1, C1) and μ2 = N(m2, C2)
+
+[![screen shot 2017-04-24 at 3 46 44 pm](https://cloud.githubusercontent.com/assets/17261080/25340191/42b23474-2905-11e7-9810-58d5326bf886.png)](https://cloud.githubusercontent.com/assets/17261080/25340191/42b23474-2905-11e7-9810-58d5326bf886.png)
+
+They also introduce an equilibrium concept to account for the situation when `G` and `D` are not well balanced and the discriminator `D` wins easily. This is controlled by what they call the diversity ratio that balances between auto-encoding real images and discriminating real from generated images. It is defined as follow:  
+[![screen shot 2017-04-24 at 3 56 29 pm](https://cloud.githubusercontent.com/assets/17261080/25340609/992c2188-2906-11e7-8c51-498bbd293119.png)](https://cloud.githubusercontent.com/assets/17261080/25340609/992c2188-2906-11e7-8c51-498bbd293119.png)
+
+To maintain this balance they use a standard SGD but they introduce a variable `kt` initially 0 to control how much emphasis is put on the generator `G`. This removes the need to do `x` steps on `D` followed by `y` steps on `G` or to pretrained one of the two.  
+[![screen shot 2017-04-24 at 3 59 57 pm](https://cloud.githubusercontent.com/assets/17261080/25340859/4ee06476-2907-11e7-971f-90421449cb51.png)](https://cloud.githubusercontent.com/assets/17261080/25340859/4ee06476-2907-11e7-971f-90421449cb51.png)
+
+Finally they derive a global convergence measure by using the equilibrium concept that can be used to determine when the network has reached its final state or if the model has collapsed:  
+[![screen shot 2017-04-24 at 4 04 12 pm](https://cloud.githubusercontent.com/assets/17261080/25340998/b8bf6ad6-2907-11e7-8afa-294cae32c6af.png)](https://cloud.githubusercontent.com/assets/17261080/25340998/b8bf6ad6-2907-11e7-8afa-294cae32c6af.png)
+
+## Architecture:
+
+They tried to keep the architecture simple to really study the impact of their new equilibrium principle and loss. They don&#x27;t use batch normalization, dropout, transpose convolutions or exponential growth for convolution filters.
+
+[![screen shot 2017-04-24 at 4 09 29 pm](https://cloud.githubusercontent.com/assets/17261080/25341219/6fb7be28-2908-11e7-8774-287c1b7d7684.png)](https://cloud.githubusercontent.com/assets/17261080/25341219/6fb7be28-2908-11e7-8774-287c1b7d7684.png)
+
+## Results:
+
+They trained on images from 32x32 to 256x256, but at higher resolution images tend to lose sharpness. Nevertheless images are very very good!  
+[![screen shot 2017-04-24 at 4 20 30 pm](https://cloud.githubusercontent.com/assets/17261080/25341699/f99b0770-2909-11e7-84a0-3ac0436771e5.png)](https://cloud.githubusercontent.com/assets/17261080/25341699/f99b0770-2909-11e7-84a0-3ac0436771e5.png)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

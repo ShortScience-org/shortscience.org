@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fast Data in the Era of Big Data: Twitter&#x27;s Real-Time Related Query Suggestion Architecture - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Fast Data in the Era of Big Data: Twitter&#x27;s Real-Time Related Query Suggestion Architecture - ShortScience.org">
+<meta property="og:description" content="Twitter’s Real-Time Related Query Suggestion Architecture. The paper tells the story behind architec...">
+<meta name="description" content="Twitter’s Real-Time Related Query Suggestion Architecture. The paper tells the story behind architec...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1210.7350">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1210.7350" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Gilad Mishne and Jeff Dalton and Zhenghua Li and Aneesh Sharma and Jimmy Lin"}, "headline": "Fast Data in the Era of Big Data: Twitter's Real-Time Related Query Suggestion Architecture", "description": "Summary of Fast Data in the Era of Big Data: Twitter's Real-Time Related Query Suggestion Architecture", "datePublished": "2016-10-20 23:38:34", "dateModified": "2016-10-20 23:38:34", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1210.7350", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.IR,  cs.DB">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1210.7350v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Fast%20Data%20in%20the%20Era%20of%20Big%20Data%3A%20Twitter%27s%20Real-Time%20Related%20Query%20Suggestion%20Architecture%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Fast Data in the Era of Big Data: Twitter&#x27;s Real-Time Related Query Suggestion Architecture</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Gilad%20Mishne">Gilad Mishne</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jeff%20Dalton">Jeff Dalton</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zhenghua%20Li">Zhenghua Li</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Aneesh%20Sharma">Aneesh Sharma</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jimmy%20Lin">Jimmy Lin</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2012">arXiv e-Print archive - 2012</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.IR">cs.IR</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.DB"> cs.DB</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xMjEwLjczNTA-629">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2012/10/27<br><b>Abstract:</b>   We present the architecture behind Twitter&#x27;s real-time related query
+suggestion and spelling correction service. Although these tasks have received
+much attention in the web search literature, the Twitter context introduces a
+real-time &quot;twist&quot;: after significant breaking news events, we aim to provide
+relevant results within minutes. This paper provides a case study illustrating
+the challenges of real-time data processing in the era of &quot;big data&quot;. We tell
+the story of how our system was built twice: our first implementation was built
+on a typical Hadoop-based analytics stack, but was later replaced because it
+did not meet the latency requirements necessary to generate meaningful
+real-time results. The second implementation, which is the system deployed in
+production, is a custom in-memory processing engine specifically designed for
+the task. This experience taught us that the current typical usage of Hadoop as
+a &quot;big data&quot; platform, while great for experimentation, is not well suited to
+low-latency processing, and points the way to future work on data analytics
+platforms that can handle &quot;big&quot; as well as &quot;fast&quot; data.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xMjEwLjczNTA-629"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xMjEwLjczNTA-629').hide());void($('#showless-am91cm5hbHMvY29yci8xMjEwLjczNTA-629').show());void($('#more-am91cm5hbHMvY29yci8xMjEwLjczNTA-629').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xMjEwLjczNTA-629" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xMjEwLjczNTA-629').show());void($('#showless-am91cm5hbHMvY29yci8xMjEwLjczNTA-629').hide());void($('#more-am91cm5hbHMvY29yci8xMjEwLjczNTA-629').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1210.7350">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1210.7350&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-630').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1210.7350%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-630" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1210.7350&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1210.7350%26a%3Dshagunsodhani&amp;text=Summary%20of%20Fast%20Data%20in%20the%20Era%20of%20Big%20Data%3A%20Twitter%27s%20Real-Time%20Related%20Query%20Suggestion%20Architecture&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1210.7350%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Fast%20Data%20in%20the%20Era%20of%20Big%20Data%3A%20Twitter%27s%20Real-Time%20Related%20Query%20Suggestion%20Architecture&amp;Body=Summary%20of%20Fast%20Data%20in%20the%20Era%20of%20Big%20Data%3A%20Twitter%27s%20Real-Time%20Related%20Query%20Suggestion%20Architecture%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1210.7350%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1210.7350%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1210.7350%26a%3Dshagunsodhani&amp;title=Summary%20of%20Fast%20Data%20in%20the%20Era%20of%20Big%20Data%3A%20Twitter%27s%20Real-Time%20Related%20Query%20Suggestion%20Architecture" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1210.7350&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Twitter’s Real-Time Related Query Suggestion Architecture. The paper tells the story behind architecture to support Twitter’s real-time related query suggestion, why the architecture had to be designed twice and what lessons can be learned from this exercise. It does not talk much about the algorithms, rather it talks about the different design decisions that lead to the current architecture — the focus is not on how things were done but why they were done a certain way.
+
+Twitter has an interesting use case — search assistance — which boils down to things like a user searching for “Obama” and getting results for related queries like “White House” as well. Spelling correction is also a part of search assistance. The problem is quite well researched from volume perspective of data but in Twitter’s context, velocity mattered as much as volume. The results had to adapt to rapidly evolving global conversations in real-time — where real-time loosely translates to a target latency of 10 minutes. The real-time sense is important in Twitter’s context where “relevance” has a temporal aspect as well. For example, after the Nepal Earthquake in 2015, the query “Nepal” led to results related to “earthquake” as well. Then when the new constitution was passed in Nepal, the query “Nepal” led to results related to “constitution”. The time frame in which suggestions have maximum impact is very narrow. A suggestion made too early would seem irrelevant while a suggestion made too late would seem obvious and hence less impactful. These fast moving signals have to be mixed with slow moving ones for insightful results. Sometimes the query volume is very low in which case longer observation period is needed before suggestions can be made. Twitter noticed that 17% of top 1000 query terms churn over an hourly basis which means they are no longer in top 1000 after an hour. Similarly, around 13% of top 1000 query terms are churned out every day. This suggested that a fine-grained tracking of search terms was needed.
+
+Twitter started with a basic idea: if two queries are seen in the same context, then they are related. Now they had a large open design space. For example, context can be defined by user’s search session or tweet or both. Measures like log likelihood, chi-square test etc can be used to quantify how often 2 queries appear together. To consider the temporal effect, counts are decayed time. Finally, Twitter has to combine these factors, and some more factors, together to come up with a ranking mechanism. This paper does not focus on what algorithms were chosen for these tasks, it focuses on how an end-to-end system was created.
+
+#### Hadoop Solution
+Twitter has a powerful petabyte-scale Hadoop-based analytics platform. Both real-time and batch processes write data to the Hadoop Distributed File System (HDFS). These include bulk exports from databases, application logs, and many other sources. Contents are serialized using either Protocol Buffers or Thrift, and LZOcompressed. There is a work-flow manager, called Oink, which schedules recurring jobs and handles dataflow dependencies between jobs. For example, if job B requires data generated by job A, A will be scheduled first.
+
+Twitter wanted to take advantage of this stack and the first version was deployed in form of a Pig script that aggregated user search sessions to compute term and cooccurrence statistics and ranked related queries on top of the existing stack. While the results were pretty good, the latency was too high and results were not available until several hours.
+
+#### Bottleneck #1 Log Imports
+Twitter uses Scribe to aggregate streaming log data in an efficient manner. These logs are rich with user interaction and are used by the search assistant. A Scribe daemon is running on each production server where it collects and sends local log data (consisting of category and message) to a cluster of aggregators which are co-located with a staging Hadoop cluster. This cluster merges per-category streams from the server daemons and writes the results to HDFS of the staging cluster. These logs are then transformed and moved to the main Hadoop data warehouse in chunks of data for an hour. These log messages are put in per-category, per-hour directories and are bundled in a small number of large files. Only now can the search assistant start its computations. The hierarchical aggregation is required to “roll up” data into few, large files as HDFS is not good at handling large numbers of small files. As a result, there is a huge delay from when the logs are generated to when they are available for processing. Twitter estimated that they could bring down the latency to tens of minutes by re-engineering their stack though even that would be too high.
+
+#### Bottleneck #2 Hadoop:
+Hadoop is not meant for latency sensitive jobs. For example, a large job could take tens of seconds to just startup — irrespective of the amount of data crunched. Moreover, the Hadoop cluster was a shared resource across Twitter. Using a scheduler (in this case, FairScheduler) is not the ideal solution as the focus is on predictable end-to-end latency bound and not resource allocation. Lastly, the job completion time depending on stragglers. For some scenarios, a simple hash partitioning scheme created chunks of “work” with varying size. This lead to large varying running times for different map-reduce jobs. For scripts that chain together Hadoop jobs, the slowest task becomes the bottleneck. Just like with log imports, Twitter estimated the best case scenario for computing query suggestions to be of the order of ten minutes.
+
+Starting with the Hadoop stack had many advantages like a working prototype was built quickly and ad hoc analysis could be easily done. This also helped them to understand the query churn and make some important observations about factors to use in search assistant. For example, Twitter discovered that only 2 sources of context — search sessions and tweets — were good enough for an initial implementation.But due to high latency, Twitter had to restrict this solution to the experimental stage itself.
+
+#### Current Architecture
+Firehose is the streaming API that provides access to all tweets in real time and the frontend, called Blender, brokers all requests and provides a streaming API for queries — also called query hose. These two streams are used by EarlyBird, the inverted indexing engine, and search assistant engine. Now client logs are not needed as Blender has all search sessions. Twitter search assistance is an in-memory processing engine comprising of two decoupled components:
+
+1. Frontend Nodes — These are lightweight in-memory caches which periodically read fresh results from HDFS. They are implemented as a Thrift service, and can be scaled out to handle increased query load.
+2. Backend Nodes — These nodes perform the real computations. The backend processing engine is replicated but not sharded. Every five minutes, computed results are persisted to HDFS and every minute, the frontend caches poll a known HDFS location for updated results.
+
+Request routing to the replicas is handled by a ServerSet, which provides client-side load-balanced access to a replicated service, coordinated by
+ZooKeeper for automatic resource discovery and robust failover.
+
+Each backend instance is a multi-threaded application that consisting of:
+1. Stats collector: Reads the firehose and query hose
+2. In-memory stores: Hold the most up-to-date statistics
+3. Rankers: Periodically execute one or more ranking algorithm by getting raw features from the in-memory stores.
+
+There are three separate in-memory stores to keep track
+of relevant statistics:
+1. Sessions store: Keeps track of (anonymized) user sessions observed in the query hose, and for each session, the history of the queries issued in a linked list. Sessions older than a threshold are discarded. Metadata is also tracked separately.
+2. Query statistics store: Retains up-to-date statistics, like session count, about individual queries. These also include a weighted count based on a custom scoring function. This function captures things like association is more between 2 consecutively typed queries vs 2 consecutively clicked hash-tags. These weights are periodically decayed to reflect decreasing importance over time. It also keeps additional metadata about the query like its language.
+3. Query cooccurrence statistics store: Holds data about
+pairs of co-occurring queries. Weighting and decaying are applied like in the case of query statistics store.
+
+**Query Flow** — As a user query flows through the query hose, query statistics are updated in the query statistics store, it is added to the sessions store and some old queries may be removed. For each previous query in the session, a query cooccurrence is formed with the new query and statistics in the query cooccurrence statistics store are also updated.
+
+**Tweet Flow** — As a tweet flows through the firehose, its n-grams are checked to determine whether they are query-like or not. All matching n-grams are processed just like the query above except that the “session” is the tweet itself.
+
+**Decay/Prune cycles** — Periodically, all weights are decayed and queries or co-occurrences with scores below predefined thresholds are removed
+to control the overall memory footprint of the service. Even user sessions with no recent activity are pruned.
+
+**Ranking cycles** — Rankers are triggered periodically to generates suggestions for each query based on the various accumulated statistics. Top results are then persisted to HDFS.
+
+#### Scalability
+
+1. Since there is no sharding, each instance of the backend processing engine must consume the entire firehose and query hose to keep up with the upcoming data.
+
+2. The memory footprint for retaining various statistics, without any pruning, is very large. But if the footprint is reduced, by say pruning, the quality and coverage of results may be affected. Another approach could be to store less session history and decay the weights more aggressively though it may again affect the quality of the results.
+
+#### Lessons Learnt
+Twitter managed to solve the problem of fast moving big data but their solution is far from ideal. It works well but only for scenario it is fine-tuned for. What is needed is a unified data platform to process for big and fast moving data with varying latency requirements. Twitter’s current implementation is an in-memory engine which mostly uses tweets and search sessions to build the context. Rich parameters like clicks, impressions etc are left out for now to keep the latency under check. Twitter described it as “a patchwork of different processing paradigms”.
+
+Though not-so-complete, it is still an important step in the direction of unifying big data and fast data processing systems. A lot of systems exists which solve the problem is pieces eg message queues like Kafka for moving data in real time and Facebook’s ptail for running Hadoop operations in real time but there is no end-to-end general data platform which can adapt itself to perform analytics on both short and long term data and combine their results as per latency bound in different contexts.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

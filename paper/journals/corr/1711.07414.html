@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Promise and Peril of Human Evaluation for Model Interpretability - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Promise and Peril of Human Evaluation for Model Interpretability - ShortScience.org">
+<meta property="og:description" content="Model Interpretability aims at explaining the inner workings of a model promoting transparency of an...">
+<meta name="description" content="Model Interpretability aims at explaining the inner workings of a model promoting transparency of an...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.07414">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1711.07414" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Bernease Herman"}, "headline": "The Promise and Peril of Human Evaluation for Model Interpretability", "description": "Summary of The Promise and Peril of Human Evaluation for Model Interpretability", "datePublished": "2019-05-23 21:13:31", "dateModified": "2019-05-23 21:13:31", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1711.07414", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.AI,  cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1711.07414v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22The%20Promise%20and%20Peril%20of%20Human%20Evaluation%20for%20Model%20Interpretability%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">The Promise and Peril of Human Evaluation for Model Interpretability</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Bernease%20Herman">Bernease Herman</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.AI">cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/11/20<br><b>Abstract:</b>   Transparency, user trust, and human comprehension are popular ethical
+motivations for interpretable machine learning. In support of these goals,
+researchers evaluate model explanation performance using humans and real world
+applications. This alone presents a challenge in many areas of artificial
+intelligence. In this position paper, we propose a distinction between
+descriptive and persuasive explanations. We discuss reasoning suggesting that
+functional interpretability may be correlated with cognitive function and user
+preferences. If this is indeed the case, evaluation and optimization using
+functional metrics could perpetuate implicit cognitive bias in explanations
+that threaten transparency. Finally, we propose two potential research
+directions to disambiguate cognitive function and explanation models, retaining
+control over the tradeoff between accuracy and interpretability.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211').hide());void($('#showless-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211').show());void($('#more-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211').show());void($('#showless-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211').hide());void($('#more-am91cm5hbHMvY29yci8xNzExLjA3NDE0-1211').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1711.07414">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="apoorvashetty" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=apoorvashetty" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=apoorvashetty&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/2733d9d1134c9e989cf65d4811651fdd?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Apoorva Shetty&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: apoorvashetty&lt;br&gt;Posted: 2019-05-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1711.07414&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/2733d9d1134c9e989cf65d4811651fdd?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1212').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1711.07414%26a%3Dapoorvashetty" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1212" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.07414&amp;a=apoorvashetty" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.07414%26a%3Dapoorvashetty&amp;text=Summary%20of%20The%20Promise%20and%20Peril%20of%20Human%20Evaluation%20for%20Model%20Interpretability&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.07414%26a%3Dapoorvashetty" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20The%20Promise%20and%20Peril%20of%20Human%20Evaluation%20for%20Model%20Interpretability&amp;Body=Summary%20of%20The%20Promise%20and%20Peril%20of%20Human%20Evaluation%20for%20Model%20Interpretability%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.07414%26a%3Dapoorvashetty"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.07414%26a%3Dapoorvashetty" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1711.07414%26a%3Dapoorvashetty&amp;title=Summary%20of%20The%20Promise%20and%20Peril%20of%20Human%20Evaluation%20for%20Model%20Interpretability" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1711.07414&amp;a=apoorvashetty" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=apoorvashetty" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Apoorva Shetty 2019-05-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Model Interpretability aims at explaining the inner workings of a model promoting transparency of any decisions made by the model, however for the sake of human acceptance or understanding, these explanations seem to be more geared toward human trust than remaining faithful to the model.
+
+**Idea**
+There is a distinct difference and tradeoff between persuasive and descriptive Interpretations of a model, one promotes human trust while the other stays truthful to the model. Promoting the former can lead to a loss in transparency of the model.
+
+**Questions to be answered:**
+- How do we balance between a persuasive strategy and a descriptive strategy?
+- How do we combat human cognitive bias?
+
+**Solutions:**
+- *Separating the descriptive and persuasive steps: *
+    - We first generate a descriptive explanation, without trying to simplify it
+    - In our final steps we add persuasiveness to this explanation to make it more understandable
+- *Explicit inclusion of cognitive features:*
+    - We would include attributes that affect our functional measures of interpretability to our objective function.
+    - This approach has some drawbacks however:
+        - we would need to map the knowledge of the user which is an expensive process.
+        - Any features that we fail to add to the objective function would add to the human cognitive bias
+        - Increased complexity in optimizing of a multi-objective loss function.
+
+
+
+**Important terms:**
+- *Explanation Strategy*: An explanation strategy is defined as an explanation vehicle coupled with the objective function, constraints, and hyper parameters required to generate a model explanation
+- *Explanation model*: An explanation model is defined as the implementation of an explanation strategy, which is fit to a model that is to be interpreted.
+- *Human Cognitive Bias*: if an explanation model is highly persuasive or tuned toward human trust as opposed to staying true to the model, the overall evaluation of this explanation would be highly biased compared to a descriptive model. This bias can lead from commonalities between human users across a domain, expertise of the application, or the expectation of a model explanation. Such bias is known as implicit human cognitive bias. 
+- *Persuasive Explanation Strategy*: A persuasive explanation strategy aim at convincing a user/ humanizing a model so that the user feels more comfortable with the decisions generated by the model. Fidelity or truthfulness to the model in such a strategy can be very low, which can lead to ethical dilemmas as to where to draw the line between being persuasive and being descriptive. Persuasive strategies do promote human understanding and cognition, which are important aspects of interpretability, however they fail to address the certain other aspects such as fidelity to the model.
+- *Descriptive Explanation Strategy*: A descriptive explanation strategy stays true to the underlying model, and generates explanations with maximum fidelity to the model. Ideally such a strategy would describe exactly what the inner working of the underlying model is, which is the main purpose of model interpretation in terms of better understanding the actual workings of the model. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

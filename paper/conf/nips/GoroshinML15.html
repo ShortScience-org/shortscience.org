@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning to Linearize Under Uncertainty - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learning to Linearize Under Uncertainty - ShortScience.org">
+<meta property="og:description" content="I think this paper has two main ideas in there, I see them as independent, for reasons explained bel...">
+<meta name="description" content="I think this paper has two main ideas in there, I see them as independent, for reasons explained bel...">
+<meta property="og:image" content="http://www.inference.vc/content/images/2015/09/-RfX4Dp2Y3YAAAAASUVORK5CYII-.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/GoroshinML15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/GoroshinML15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Goroshin, Ross and Mathieu, Micha\u00ebl and LeCun, Yann"}, "headline": "Learning to Linearize Under Uncertainty", "description": "Summary of Learning to Linearize Under Uncertainty", "datePublished": "2016-07-15 03:10:56", "dateModified": "2016-07-15 03:18:29", "image": {"@type": "ImageObject", "url": "http://www.inference.vc/content/images/2015/09/-RfX4Dp2Y3YAAAAASUVORK5CYII-.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/GoroshinML15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/5951-learning-to-linearize-under-uncertainty"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Learning%20to%20Linearize%20Under%20Uncertainty%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Learning to Linearize Under Uncertainty</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Goroshin%2C%20Ross">Goroshin, Ross</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Mathieu%2C%20Micha%C3%ABl">Mathieu, Michaël</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=LeCun%2C%20Yann">LeCun, Yann</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2015">Neural Information Processing Systems Conference - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/GoroshinML15">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="inference" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=inference" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=inference&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;inFERENCe&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: inference&lt;br&gt;Posted: 2016-07-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/GoroshinML15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-407').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/GoroshinML15%26a%3Dinference" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-407" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoroshinML15&amp;a=inference" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoroshinML15%26a%3Dinference&amp;text=Summary%20of%20Learning%20to%20Linearize%20Under%20Uncertainty&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoroshinML15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Learning%20to%20Linearize%20Under%20Uncertainty&amp;Body=Summary%20of%20Learning%20to%20Linearize%20Under%20Uncertainty%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoroshinML15%26a%3Dinference"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoroshinML15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoroshinML15%26a%3Dinference&amp;title=Summary%20of%20Learning%20to%20Linearize%20Under%20Uncertainty" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoroshinML15&amp;a=inference" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=inference" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by inFERENCe 2016-07-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">I think this paper has two main ideas in there, I see them as independent, for reasons explained below:
+
+- A new penalty function that aims at regularising the second derivative of the trajectory the latent representation traces over time. I see this as a generalisation of the slowness principle or temporal constancy, more about this in the next section.
+
+- A new autoencoder-like method to predict future frames in video. Video is really hard to forward-predict with non-probabilistic models because high level aspects of video are genuinely uncertain. For example, in a football game, you can&#x27;t really predict whether the ball will hit the goalpost, but the results might look completely different visually. This, combined with L2 penalties often results in overly conservative, blurry predictions. The paper improves things by introducing extra hidden variables, that allow the model to represent uncertainty in its predictions. More on this later.
+
+#### Inductive bias: penalising curvature
+
+The key idea of this paper is to learn good distributed representations of natural images from video in an unsupervised way. Intuitively, there is a lot of information contained in video, which is lost if you scramble the video and look at statistics individual frames only. The race is on to develop the right kind of prior and inductive bias that helps us fully exploit this temporal information. This paper presents a way, which is called learning to linearise (I&#x27;m going to call this L2L).
+
+Naturally occurring images are thought to reside on some complex, nonlinear manifold whose intrinsic dimension is substantially lower than the number of pixels in an image. It is then natural to think about video as a journey on this manifold surface, along some smooth path. Therefore, if we aim to learn good generic features that correspond to coordinates on this underlying manifold, we should expect that these features vary in a smooth fashion over time as you play the video.
+
+L2L uses this intuition to motivate their choice of an objective function that penalises a scale-invariant measure of curvature over time. In a way it tries to recover features that transform nearly linearly as time progresses and the video is played.
+
+In their notations, $x_{t}$ denotes the data in frame $t$, which is transformed by a deep network to obtain the latent representation $z_{t}$. The penalty for the latent representation is as follows.
+
+$$-\sum_{t} \frac{(z_t - z_{t-1})^{T}(z_{t+1} - z_{t})}{\|z_t - z_{t-1}\|\|z_{t+1} - z_{t}\|}$$
+
+The expression above has a geometric meaning as the cosine of the angle between the vectors $(z_t - z_{t-1})$ and $(z_{t+1} - z_{t})$. The penalty is minimised if these two vectors are parallel and point in the same direction. In other words the penalty prefers when the latent feature representation keeps its momentum and continues along a linear path - and it does not like sharp turns or jumps. This seems like a sensible prior assumption to build on.
+
+L2L is very similar to another popular inductive bias used in slow feature analysis: the temporal slowness principle. According to this principle, the most relevant underlying features don&#x27;t change very quickly. The slowness principle has a long history both in machine learning and as a model of human visual perception. In SFA one would minimise the following penalty on the latent representation:
+
+$$\sum_{t} (z_t - z_{t-1})^{2},$$
+
+where the square is applied component-wise. There are additional constraints in SFA, more about this later. We can understand the connection between SFA and this paper&#x27;s penalty if we plot the penalty for a single hidden feature $z_{t,f}$ at time $t$, keeping all other features and values at neighbouring timesteps constant. This is plotted in the figure below (scaled and translated so the objectives line up nicely).
+
+![](http://www.inference.vc/content/images/2015/09/-RfX4Dp2Y3YAAAAASUVORK5CYII-.png)
+
+As you can see, both objectives have a minimum at the same location: they both try to force $z_{t,f}$ to linearly interpolate between the neighbouring timesteps. However, while SFA has a quadratic penalty, the learning to linearise objective tapers off at long distances. Compare this to Tukey&#x27;s loss function used in outlier-resistant robust regression.
+
+Based on this, my prediction is that compared to SFA, this loss function is more tolerant of outliers, which in the temporal domain would mean abrupt jumps in the latent representation. So while SFA is equivalent to assuming that the latent features follow a Brownian-motion-like Ornstein–Uhlenbeck process, I&#x27;d imagine this prior corresponds to something like a jump diffusion process (although I don&#x27;t think the analogy holds mathematically).
+
+Which one of these inductive biases/priors are better at exploiting temporal information in natural video? Slow Brownian motion, or nearly-linear trajectories with potentially a few jumps Unfortunately, don&#x27;t expect any empirical answer to that from the paper. All experiments seem to be performed on artificially constructed examples, where the temporal information is synthetically engineered. Nor there is any real comparison to SFA.
+
+#### Representing predictive uncertainty with auxillary variables
+
+While the encoder network learns to construct smoothly varrying features $z_t$, the model also has a decoder network that tries to reconstruct $x_t$ and predict subsequent frames. This, the authors agree, is necessary in order for $z_t$ to contain enough relevant information about the frame $x_t$ (more about whether or not this is necessary later). The precise way this decoding is done has a novel idea as well: minimising over auxillary variables.
+
+Let&#x27;s say our task is to predict a future frame $x_{t+k}$ based on the latent representation $z_{t}$. The problem is, this is a very hard problem. In video, just like in real life, anything can happen. Imagine you&#x27;re modelling soccer footage, and the ball is about to hit the goalpost. In order to predict the next frames, not only do we have to know about natural image statistics, we also have to be able to predict whether the goal is in or not. An optimal predictive model would give a highly multimodal probability distribution as its answer. If you use the L2 loss with a deterministic feed-forward predictive network, it&#x27;s likely to come up with a very blurry image, which would correspont to the average of this nasty multimodal distribution. This calls for something better, either a smarter objective function, or a better way of representing predictive uncertainty.
+
+The solution the authors gave is to introduce hidden variables $\delta_{t}$, that the decoder network also receives as input in addition to $z_t$. For each frame, $\delta_t$ is optimised so that only the best possible reconstruction is taken into account in the loss function. Thus, the decoder network is allowed to use $\delta$ as a source of non-determinism to hedge its bets as to what the contents of the next frame will be. This is one step closer to the ideal setting where the decoder network is allowed to give a full probability distribution of possibilities and then is evaluated using a strictly proper scoring rule.
+
+This inner loop minimisation (of $\delta$) looks very tedious, and introduces a few more parameters that may be hard to set. The algorithm is reminiscent of the E-step in expectation-maximisation, and also very similar to the iterated closest point algorithm Andrew Fitzgibbon talked about in his tutorial at BMVC this year.
+
+In his tutorial, Andrew gave examples where jointly optimising model parameters and auxiliary variables ($\delta$) is advantageous, and I think the same logic applies here. Instead of the inner loop, simultaneous optimisation helps fixing some pathologies, like slow convergence near the optimum. In addition, Andrew advocates exploiting the sparsity structure of the Hessian to implement efficient second-order gradient-based optimisation methods. These tricks are explained in paragraphs around equation 8 in (Prasad et al, 2010).
+
+#### Predictive model: Is it necessary?
+
+On a more fundamental level, I question whether the predictive decoder network is really a necessary addition to make L2L work.
+
+The authors observe that the objective function is minimised by the &quot;trivial&quot; solutions $z_{t} = at + b$, where $a,b$ can be arbitrary constants. They then say that in order to make sure features do something more than just discover some of these trivial solutions, we also have to include a decoder network, that uses $z_t$ to predict future frames. I believe this is not necessary at all.
+
+Because $z_t$ is a deterministic function of $x_t$, and $t$ is not accessible to $z_{t}$ in any other way than through inferring it from $x_t$, as long as $a\neq 0$, the linear solutions are not trivial at all. If the network discovers $z_{t} = at, a\neq 0$, you should in fact be very happy (assuming a single feature). The only problems with trivial solutions occur when $z_{t} = b$ ($z$ doesn&#x27;t depend on the data at all) or when $z$ is multidimensional and several redundant features are sensitive to exactly the same thing.
+
+These trivial solutions could be avoided the same way they are avoided in SFA, by constraining the overall spatial covariance of $z_{t}$ over the videoclip to be $I$. This would force each feature to vary at least a little bit with data- hence avoiding the trivial constant solutions. It would also force features to be linearly decorrelated - solving the redundant features problem.
+
+So I wonder if the decoder network is indeed a necessary addition to the model. I would love to encourage the authors to implement their new hypothesis of a prior both with and without the decoder. They may already have tried it without and found it really didn’t work, so it might just be a matter of including those results. This would in turn allow us to see SFA and L2L side-by-side, and learn something about whether and why their prior is better than the sl</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

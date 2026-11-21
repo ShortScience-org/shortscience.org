@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explaining Image Classifiers by Counterfactual Generation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Explaining Image Classifiers by Counterfactual Generation - ShortScience.org">
+<meta property="og:description" content="In the area of explaining model predictions over images, there are two main strains of technique: me...">
+<meta name="description" content="In the area of explaining model predictions over images, there are two main strains of technique: me...">
+<meta property="og:image" content="https://i.imgur.com/2fKnY0M.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.08024">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1807.08024" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Chun-Hao Chang and Elliot Creager and Anna Goldenberg and David Duvenaud"}, "headline": "Explaining Image Classifiers by Counterfactual Generation", "description": "Summary of Explaining Image Classifiers by Counterfactual Generation", "datePublished": "2019-05-31 06:59:46", "dateModified": "2019-05-31 06:59:46", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/2fKnY0M.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1807.08024", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1807.08024v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Explaining%20Image%20Classifiers%20by%20Counterfactual%20Generation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Explaining Image Classifiers by Counterfactual Generation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Chun-Hao%20Chang">Chun-Hao Chang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Elliot%20Creager">Elliot Creager</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Anna%20Goldenberg">Anna Goldenberg</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=David%20Duvenaud">David Duvenaud</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/07/20<br><b>Abstract:</b>   When an image classifier makes a prediction, which parts of the image are
+relevant and why? We can rephrase this question to ask: which parts of the
+image, if they were not seen by the classifier, would most change its decision?
+Producing an answer requires marginalizing over images that could have been
+seen but weren&#x27;t. We can sample plausible image in-fills by conditioning a
+generative model on the rest of the image. We then optimize to find the image
+regions that most change the classifier&#x27;s decision after in-fill. Our approach
+contrasts with ad-hoc in-filling approaches, such as blurring or injecting
+noise, which generate inputs far from the data distribution, and ignore
+informative relationships between different parts of the image. Our method
+produces more compact and relevant saliency maps, with fewer artifacts compared
+to previous methods.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379').hide());void($('#showless-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379').show());void($('#more-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379').show());void($('#showless-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379').hide());void($('#more-am91cm5hbHMvY29yci8xODA3LjA4MDI0-1379').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1807.08024">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-05-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1807.08024&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1380').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1807.08024%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1380" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.08024&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.08024%26a%3Ddecodyng&amp;text=Summary%20of%20Explaining%20Image%20Classifiers%20by%20Counterfactual%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.08024%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Explaining%20Image%20Classifiers%20by%20Counterfactual%20Generation&amp;Body=Summary%20of%20Explaining%20Image%20Classifiers%20by%20Counterfactual%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.08024%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.08024%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.08024%26a%3Ddecodyng&amp;title=Summary%20of%20Explaining%20Image%20Classifiers%20by%20Counterfactual%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.08024&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-05-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">In the area of explaining model predictions over images, there are two main strains of technique: methods that look for pixels that have the highest gradient effect on the output class, and assign those as the “reason” for the class, and approaches that ask which pixel regions are most responsible for a given classification, in the sense that the classification would change the most if they were substituted with some uninformative reference value. 
+
+The tricky thing about the second class of methods is that you need to decide what to use as your uninformative fill-in value. It’s easy enough to conceptually pose the problem of “what would our model predict if it couldn’t see this region of pixels,” but as a practical matter, these models take in full images, and you have to put *something* to give the classifier in a region, if you’re testing what the score would be if you removed the information contained in the pixels in that region. What should you fill in instead? The simplest answers are things like “zeros”, or “a constant value” or “white noise”. But all of these are very off-distribution for the model; it wouldn’t have typically seen images that resemble white noise, or all zeros, or all a single value. So if you measure the change in your model score from an off-distribution baseline to your existing pixels, you may not be getting the marginal value of the pixels, so much as the marginal disutility of having something so different from what the model has previously seen. There are other, somewhat more sensible approaches, like blurring out the areas around the pixel region of interest, but these experience less intense forms of the same issue. 
+
+This paper proposes instead, using generative models to fill in the regions conditioned on the surrounding pixels, and use that as a reference. The notion here is that a conditioned generative model, like a GAN or VAE, can take into account the surrounding pixels, and “imagine” a fill-in that flows smoothly from the surrounding pixels, and looks generally like an image, but which doesn’t contain the information from the pixels in the region being tested, since it wasn’t conditioned on that. 
+
+https://i.imgur.com/2fKnY0M.png
+
+Using this approach, the authors run two types of test: one where they optimize to find the smallest region they can remove from the image, and have it switch class (Smallest Deletion Region, or SDR), and also the smallest informative region that can be added to an otherwise uninformative image, and have the model predict the class connected to that region. They find that regions calculated using their generative model fill in, and specifically with GANs, find a smaller and more compact pixel region as their explanation for the prediction, which is consistent with both human intuitions and also with a higher qualitative sensibleness of the explanations found. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Confidence for Out-of-Distribution Detection in Neural Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learning Confidence for Out-of-Distribution Detection in Neural Networks - ShortScience.org">
+<meta property="og:description" content="## Summary
+In a prior work &#x27;On Calibration of Modern Nueral Networks&#x27;, temperature scailing is used...">
+<meta name="description" content="## Summary
+In a prior work &#x27;On Calibration of Modern Nueral Networks&#x27;, temperature scailing is used...">
+<meta property="og:image" content="https://i.imgur.com/vtKq9g0.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.04865">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1802.04865" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Terrance DeVries and Graham W. Taylor"}, "headline": "Learning Confidence for Out-of-Distribution Detection in Neural Networks", "description": "Summary of Learning Confidence for Out-of-Distribution Detection in Neural Networks", "datePublished": "2018-12-10 07:30:06", "dateModified": "2018-12-10 07:30:06", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/vtKq9g0.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1802.04865", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1802.04865v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Learning%20Confidence%20for%20Out-of-Distribution%20Detection%20in%20Neural%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Learning Confidence for Out-of-Distribution Detection in Neural Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Terrance%20DeVries">Terrance DeVries</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Graham%20W.%20Taylor">Graham W. Taylor</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/02/13<br><b>Abstract:</b>   Modern neural networks are very powerful predictive models, but they are
+often incapable of recognizing when their predictions may be wrong. Closely
+related to this is the task of out-of-distribution detection, where a network
+must determine whether or not an input is outside of the set on which it is
+expected to safely perform. To jointly address these issues, we propose a
+method of learning confidence estimates for neural networks that is simple to
+implement and produces intuitively interpretable outputs. We demonstrate that
+on the task of out-of-distribution detection, our technique surpasses recently
+proposed techniques which construct confidence based on the network&#x27;s output
+distribution, without requiring any additional labels or access to
+out-of-distribution examples. Additionally, we address the problem of
+calibrating out-of-distribution detectors, where we demonstrate that
+misclassified in-distribution examples can be used as a proxy for
+out-of-distribution examples.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285').hide());void($('#showless-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285').show());void($('#more-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285').show());void($('#showless-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285').hide());void($('#more-am91cm5hbHMvY29yci8xODAyLjA0ODY1-1285').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1802.04865">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="elbaro" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=elbaro" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=elbaro&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/932f47b58b2f6716cded521e3ee87ff2?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;elbaro&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: elbaro&lt;br&gt;Posted: 2018-12-10&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1802.04865&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/932f47b58b2f6716cded521e3ee87ff2?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1286').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1802.04865%26a%3Delbaro" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1286" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.04865&amp;a=elbaro" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.04865%26a%3Delbaro&amp;text=Summary%20of%20Learning%20Confidence%20for%20Out-of-Distribution%20Detection%20in%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.04865%26a%3Delbaro" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Learning%20Confidence%20for%20Out-of-Distribution%20Detection%20in%20Neural%20Networks&amp;Body=Summary%20of%20Learning%20Confidence%20for%20Out-of-Distribution%20Detection%20in%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.04865%26a%3Delbaro"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.04865%26a%3Delbaro" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.04865%26a%3Delbaro&amp;title=Summary%20of%20Learning%20Confidence%20for%20Out-of-Distribution%20Detection%20in%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.04865&amp;a=elbaro" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=elbaro" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by elbaro 2018-12-10</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">
+## Summary
+In a prior work &#x27;On Calibration of Modern Nueral Networks&#x27;, temperature scailing is used for outputing confidence. This is done at inference stage, and does not change the existing classifier. This paper considers the confidence at training stage, and directly outputs the confidence from the network.
+
+## Architecture
+An additional branch for confidence is added after the penultimate layer, in parallel to logits and probs (Figure 2).
+
+https://i.imgur.com/vtKq9g0.png
+
+## Training
+The network outputs the prob $p$ and the confidence $c$ which is a single scalar. The modified prob $p&#x27;=c*p+(1-c)y$ where $y$ is the label (hint). The confidence loss is $\mathcal{L}_c=-\log c$, the NLL is $\mathcal{L}_t= -\sum \log(p&#x27;_i)y_i$.
+
+### Budget Parameter
+The authors introduced the confidence loss weight $\lambda$ and a budget $\beta$. If $\mathcal{L}_c&gt;\beta$, increase $\lambda$, if $\mathcal{L}_c&lt;\beta$, decrease $\lambda$. $\beta$ is found reasonable in [0.1,1.0].
+
+### Hinting with 50%
+Sometimes the model relies on the free label ($c=0$) and does not fit the complicated structure of data. The authors give hints with 50% so the model cannot rely 100% on the hint. They used $p&#x27;$ for only half of the bathes for each epoch.
+
+### Misclassified Examples
+
+A high-capacity network with small dataset overfits well, and mis-classified samples are required to learn the confidence. The network likely assigns low confidence to samples. The paper used an aggressive data augmentation to create difficult examples.
+
+## Inference
+Reject if $c\le\delta$.
+
+For out-of-distribution detection, they used the same input perturbation as in ODIN (2018). ODIN used temperature scailing and used the max prob, while this paper does not need temperature scailing since it directly outputs $c$. In evaluation, this paper outperformed ODIN.
+
+
+
+
+## Reference
+ODIN: [Enhancing The Reliability of Out-of-distribution Image Detection in Neural Networks](http://www.shortscience.org/paper?bibtexKey=journals/corr/1706.02690#elbaro)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

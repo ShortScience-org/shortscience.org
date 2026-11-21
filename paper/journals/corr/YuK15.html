@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Scale Context Aggregation by Dilated Convolutions - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Multi-Scale Context Aggregation by Dilated Convolutions - ShortScience.org">
+<meta property="og:description" content="* They describe a variation of convolutions that have a differently structured receptive field....">
+<meta name="description" content="* They describe a variation of convolutions that have a differently structured receptive field....">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Multi-Scale_Context_Aggregation_by_Dilated_Convolutions__receptive.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/YuK15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/YuK15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Yu, Fisher and Koltun, Vladlen"}, "headline": "Multi-Scale Context Aggregation by Dilated Convolutions", "description": "Summary of Multi-Scale Context Aggregation by Dilated Convolutions", "datePublished": "2017-10-24 10:33:05", "dateModified": "2017-10-26 10:14:40", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Multi-Scale_Context_Aggregation_by_Dilated_Convolutions__receptive.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/YuK15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1511.07122"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Multi-Scale Context Aggregation by Dilated Convolutions</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Yu%2C%20Fisher">Yu, Fisher</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Koltun%2C%20Vladlen">Koltun, Vladlen</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/YuK15">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-24&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/YuK15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1793').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/YuK15%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1793" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/YuK15&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Daleju&amp;text=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions&amp;Body=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Daleju&amp;title=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/YuK15&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-24</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They describe a variation of convolutions that have a differently structured receptive field.
+  * They argue that their variation works better for dense prediction, i.e. for predicting values for every pixel in an image (e.g. coloring, segmentation, upscaling).
+
+### How
+  * One can image the input into a convolutional layer as a 3d-grid. Each cell is a &quot;pixel&quot; generated by a filter.
+  * Normal convolutions compute their output per cell as a weighted sum of the input cells in a dense area. I.e. all input cells are right next to each other.
+  * In dilated convolutions, the cells are not right next to each other. E.g. 2-dilated convolutions skip 1 cell between each input cell, 3-dilated convolutions skip 2 cells etc. (Similar to striding.)
+  * Normal convolutions are simply 1-dilated convolutions (skipping 0 cells).
+  * One can use a 1-dilated convolution and then a 2-dilated convolution. The receptive field of the second convolution will then be 7x7 instead of the usual 5x5 due to the spacing.
+  * Increasing the dilation factor by 2 per layer (1, 2, 4, 8, ...) leads to an exponential increase in the receptive field size, while every cell in the receptive field will still be part in the computation of at least one convolution.
+  * They had problems with badly performing networks, which they fixed using an identity initialization for the weights. (Sounds like just using resdiual connections would have been easier.)
+
+![Receptive field](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Multi-Scale_Context_Aggregation_by_Dilated_Convolutions__receptive.png?raw=true &quot;Receptive field&quot;)
+
+*Receptive fields of a 1-dilated convolution (1st image), followed by a 2-dilated conv. (2nd image), followed by a 4-dilated conv. (3rd image). The blue color indicates the receptive field size (notice the exponential increase in size). Stronger blue colors mean that the value has been used in more different convolutions.*
+
+
+### Results
+  * They took a VGG net, removed the pooling layers and replaced the convolutions with dilated ones (weights can be kept).
+  * They then used the network to segment images.
+  * Their results were significantly better than previous methods.
+  * They also added another network with more dilated convolutions in front of the VGG one, again improving the results.
+
+
+![Segmentation performance](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Multi-Scale_Context_Aggregation_by_Dilated_Convolutions__segmentation.png?raw=true &quot;Segmentation performance&quot;)
+
+*Their performance on a segmentation task compared to two competing methods. They only used VGG16 without pooling layers and with convolutions replaced by dilated convolutions.*</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="inference" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=inference" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=inference&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;inFERENCe&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: inference&lt;br&gt;Posted: 2016-07-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/YuK15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1794').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/YuK15%26a%3Dinference" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1794" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/YuK15&amp;a=inference" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Dinference&amp;text=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions&amp;Body=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Dinference"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FYuK15%26a%3Dinference&amp;title=Summary%20of%20Multi-Scale%20Context%20Aggregation%20by%20Dilated%20Convolutions" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/YuK15&amp;a=inference" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=inference" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by inFERENCe 2016-07-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">- I give an overview of the paper which proposes an exponential schedule of dilated convolutional layers as a way to combine local and global knowledge
+- I point out the connection between 2D dilated convolutions and Kronecker products
+- cascades of exponentially dilated convolutions - as proposed in the paper - can be thought of as parametrising a large convolution kernel as a Kronecker product of small kernels
+- the relationship to Kronecker factorisation only holds under particular assumptions, in this sense cascades of exponenetially diluted convolutions are a generalisation of the Kronecker layer (Zhou et al. 2015)
+- I note that dilated convolutions are equivariant under image translation, a property that other multi-scale architectures often violate.
+
+#### Background
+
+The key application the dilated convolution authors have in mind is dense prediction: vision applications where the predicted object that has similar size and structure to the input image. For example, semantic segmentation with one label per pixel; image super-resolution, denoising, demosaicing, bottom-up saliency, keypoint detection, etc.
+
+In many such applications one wants to integrate information from different spatial scales and balance two properties:
+
+1. local, pixel-level accuracy, such as precise detection of edges, and
+2. integrating knowledge of the wider, global context
+
+To address this problem, people often use some kind of multi-scale convolutional neural networks, which often relies on spatial pooling. Instead the authors here propose using layers dilated convolutions, which allow us to address the multi-scale problem efficiently without increasing the number of parameters too much.
+
+#### Dilated Convolutions
+
+It&#x27;s perhaps useful to first note why vanilla convolutions struggle to integrate global context. Consider a purely convolutional network composed of layers of $k\times k$ convolutions, without pooling. It is easy to see that size of the receptive field of each unit - the block of pixels which can influence its activation - is $l*(k-1)+k$, where $l$ is the layer index. So the effective receptive field of units can only grow linearly with layers. This is very limiting, especially for high-resolution input images.
+
+Dilated convolutions to the rescue! The dilated convolution between signal $f$ and kernel $k$ and dilution factor $l$ is defined as:
+
+$$ \left(k \ast_{l} f\right)_t = \sum_{\tau=-\infty}^{\infty} k_\tau \cdot f_{t - l\tau} $$
+
+Note that I&#x27;m using slightly different notation than the authors. The above formula differs from vanilla convolution in last subscript $f_{t - l\tau}$. For plain old convolution this would be $f_{t - \tau}$. In the dilated convolution, the kernel only touches the signal at every $l^{th}$ entry. This formula applies to a 1D signal, but it can be straightforwardly extended to 2D convolutions.
+
+The authors then build a network out of multiple layers of diluted convolutions, where the dilation factor $l$ increases exponentially at each layer. When you do that, even though the number of parameters grows only linearly with layers, the effective receptive field of units grows exponentially with layer depth. This is illustrated in the figure below:
+
+![](http://www.inference.vc/content/images/2016/05/Screen-Shot-2016-05-12-at-09-47-12.png)
+
+What this figure doesn&#x27;t really show is the parameter sharing and parameter dependencies across the receptive field (frankly, it&#x27;s pretty hard to visualise exactly with more than 2 layers). The receptive field grows at a faster rate than the number of parameters, and it is obvious that this can only be achieved by introducing additional constraints on the parameters across the receptive field. The network won&#x27;t be able to learn arbitrary receptive field behaviours, so one question is, how severe is that restriction?
+
+#### Relationship to Kronecker Products
+
+To me this whole dilated convolution paper cries Kronecker product, although this connection is never made in the paper itself. It&#x27;s easy to see that a 2D dilated convolution with matrix/filter $K$ is the same as vanilla convolution with a diluted filter $\hat{K}_{l}$ which can be represented as the following Kronecker product:
+
+$$ \hat{K}_l = K \otimes \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 
+0 &amp; 0 &amp; \ddots &amp; &amp; 0 \\ 
+0 &amp; \ddots &amp; \ddots &amp; \ddots &amp; \\ 
+0 &amp; &amp; \ddots &amp; \ddots &amp; 0 \\ 
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+\end{bmatrix} $$
+
+Using this, and properties of convolutions and Kronecker products (I suggest beginners to make extensive use of the matrix cookbook) we can even understand something about exponentially iterated dilated convolutions.
+
+Let&#x27;s assume we apply several layers of dilated convolutions, without nonlinearity, as in Equation 3 of the paper. For simplicity, I assume that that all convolution kernels $K_l, L=1\ldots L$ are $a\times a$ in size, the dilation factor at layer $l$ is $a^{l}$, and we only have a single channel throughout ($C=1$). In this case we can show that:
+
+$$ F_{L+1} = K_L \ast_{a^L} \left( K_{L-1} \ast_{a^{(L-1)}} \left( \cdots K_1 \ast_{a} \left( K_0 \ast F_0 \right) \cdots \right) \right) = \left( K_L \otimes K_{L-1} \otimes \cdots \otimes K_{0} \right) \ast F_0 
+$$
+
+The left-hand side of this equation is the same construction as in Equation 3 in the paper, but expanded. The right hand side is a single vanilla convolution, but with a convolution kernel that is constructed as the Kronecker product of all the $a\times a$ kernels $K_l$.
+
+It turns out Kronecker-factored parametrisations of convolution tensors are already used in CNNs, a quick googling revealed this paper:
+
+Shuchang Zhou, Jia-Nan Wu, Yuxin Wu, Xinyu Zhou (2015) Exploiting Local Structures with the Kronecker Layer in Convolutional Networks
+What can Kronecker-factored filters represent?
+
+Let&#x27;s look at what kind of kernels can we represent with Kronecker products, and hence what behaviour should we expect from dilated convolutions. Here are a few examples of $27\times 27$ kernels that result from taking the Kronecker product of three random $3\times 3$ kernels:
+
+![](http://www.inference.vc/content/images/2016/05/VzORx0FEfAAAAAElFTkSuQmCC.png)
+
+These look somehow natural, at least to me. They look like pretty plausible texture patches taken from some pixellated video game. You will notice the repeated patterns and the hierarchical structure. Indeed, we can draw cool self-similar fractal-like filters if we keep taking the Kronecker product of the same kernel with itself, some examples of such random fractals:
+
+![](http://www.inference.vc/content/images/2016/05/YSJIkSZIkLYw3bCRJkiRJkhbGGzaSJEmSJEkL8zeSmRmMrhHPQgAAAABJRU5ErkJggg--.png)
+
+I would say these kernels are not entirely unreasonable for a ConvNet, and if you allow for multiple channels ($C&gt;1$) they can represent pretty nice structured patterns and shapes with reasonable number of parameters.
+
+Compare these filters to another common technique for reducing parameters of convolution tensors: low-rank decompositions (see e.g. Lebedev et al, 2014). Spatially, a low-rank approximation to a square 2D convolution filter can be understood as subsequently applying two smaller rectangular filters: one with a limited horizontal extent and one with limited vertical extent. Here are a few random samples of $27\times 27$ filters with a rank of 1. These can be represented using the same number of parameters (27) as the Kronecker samples above.
+
+
+
+To me, these don&#x27;t look so natural. Notice also that for low-rank representations the number of parameters has to scale linearly with the spatial extent of the filter, whereas this scaling can be logarithmic if we use a Kronecker parametrisation. This is the real deal when using Kronecker products or dilated convolutions.
+
+Here is another cool illustration of the naturalness of the Kronecker approximation, taken out of the Kronecker layer paper:
+
+![](http://www.inference.vc/content/images/2016/05/Screen-Shot-2016-05-12-at-14-58-33.png)
+
+So in general, parametrising convolution kernels as Kronecker-products seems like a pretty good idea. The dilated convolutions paper presents a more flexible approach than just Kronecker-factors. Firstly, you can add nonlinearities after each layer of dilated convolution, which would now be different from Kronecker products. Secondly, the Kronecker analogy only holds if the dilation factor and the kernel size are the same. In the paper the authors used a kernel size of $3$ and dilation factor of $2$.
+
+#### Final note on translational equivariance
+
+One desirable property of convolutions is that they are translationally equivariant: if you shift the input image by any amount, the output remains the same, shifted by the same amount. This is a very useful inductive bias/prior assumtion to use in a dense prediction task.
+
+One way to introduce multiscale thinking to ConvNets is to use architectures that look like the figure below: we first decrease the spatial extent of feature-maps via pooling, then grow them back again via unpooling/deconvolution. Additional shortcut connections ensure that pixel-level local accuracy can be retained. The example below is from the SegNet paper, but there are multiple other papers such as this one on recombinator networks.
+
+![](http://www.inference.vc/content/images/2016/05/conv-deconv.png)
+
+However, as soon as you include spatial pooling, the translational equivariance property of the whole network might break. For example the SegNet above is not translationally equivariant anymore: the network&#x27;s predictions are sensitive to small, single-pixel shifts to the input image, which is undesirable. Thankfully, layers of dilated convolutions are still translationally equivariant, which is a good thing.
+
+#### Summary
+
+This dilated convolutions idea is pretty cool, and I think these papers are just scratching the surface of this topic. The dilated convolution architecture generalises Kronecker-factored convolutional filters, it allows for very large receptive fields while only growing the number o</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

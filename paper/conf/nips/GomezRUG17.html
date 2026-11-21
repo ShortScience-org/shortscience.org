@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reversible Residual Network: Backpropagation Without Storing Activations. - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Reversible Residual Network: Backpropagation Without Storing Activations. - ShortScience.org">
+<meta property="og:description" content="Residual Networks (ResNets)  have greatly advanced the state-of-the-art in Deep Learning by making...">
+<meta name="description" content="Residual Networks (ResNets)  have greatly advanced the state-of-the-art in Deep Learning by making...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/GomezRUG17">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/GomezRUG17" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Aidan N. Gomez and Mengye Ren and Raquel Urtasun and Roger B. Grosse"}, "headline": "The Reversible Residual Network: Backpropagation Without Storing Activations.", "description": "Summary of The Reversible Residual Network: Backpropagation Without Storing Activations.", "datePublished": "2018-12-05 15:09:19", "dateModified": "2018-12-05 15:14:10", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/GomezRUG17", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, ">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/6816-the-reversible-residual-network-backpropagation-without-storing-activations"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22The%20Reversible%20Residual%20Network%3A%20Backpropagation%20Without%20Storing%20Activations.%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">The Reversible Residual Network: Backpropagation Without Storing Activations.</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Aidan%20N.%20Gomez">Aidan N. Gomez</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Mengye%20Ren">Mengye Ren</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Raquel%20Urtasun">Raquel Urtasun</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Roger%20B.%20Grosse">Roger B. Grosse</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2017">Neural Information Processing Systems Conference - 2017</a> <small>via Local dblp</small>
+<br>
+Keywords: 
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/GomezRUG17">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="ameroyer" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=ameroyer" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ameroyer&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/17b931f3c8de38e05694f1b5ba2282f0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;ameroyer&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ameroyer&lt;br&gt;Posted: 2018-12-05&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/GomezRUG17&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/17b931f3c8de38e05694f1b5ba2282f0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-402').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/GomezRUG17%26a%3Dameroyer" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-402" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/GomezRUG17&amp;a=ameroyer" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGomezRUG17%26a%3Dameroyer&amp;text=Summary%20of%20The%20Reversible%20Residual%20Network%3A%20Backpropagation%20Without%20Storing%20Activations.&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGomezRUG17%26a%3Dameroyer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20The%20Reversible%20Residual%20Network%3A%20Backpropagation%20Without%20Storing%20Activations.&amp;Body=Summary%20of%20The%20Reversible%20Residual%20Network%3A%20Backpropagation%20Without%20Storing%20Activations.%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGomezRUG17%26a%3Dameroyer"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGomezRUG17%26a%3Dameroyer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGomezRUG17%26a%3Dameroyer&amp;title=Summary%20of%20The%20Reversible%20Residual%20Network%3A%20Backpropagation%20Without%20Storing%20Activations." target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/GomezRUG17&amp;a=ameroyer" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=ameroyer" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by ameroyer 2018-12-05</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Residual Networks (ResNets)  have greatly advanced the state-of-the-art in Deep Learning by making  it possible to train much deeper networks via the addition of skip connections. However, in order to compute gradients during the backpropagation pass, all the units&#x27; activations have to be stored during the feed-forward pass, leading to high memory requirements for these very deep networks.
+
+Instead, the authors propose a **reversible architecture** based on ResNets, in which activations at one layer can be computed from the ones of the next. Leveraging this invertibility property, they design  a more efficient implementation of backpropagation, effectively trading compute power for memory storage.
+  * **Pros (+): ** The change does not negatively impact model accuracy (for equivalent number of model parameters) and it only requires a small change in the backpropagation algorithm.
+  * **Cons (-): ** Increased number of parameters, thus need to change the unit depth to match the &quot;equivalent&quot; ResNet
+
+---
+
+# Proposed Architecture
+
+## RevNet
+This paper proposes to incorporate idea from previous reversible architectures, such as NICE [1], into a standard ResNet. The resulting model is called **RevNet** and is composed of reversible blocks, inspired from *additive coupling* [1, 2]:
+
+$
+ \begin{array}{r|r}
+\texttt{RevNet Block} &amp; \texttt{Inverse Transformation}\\
+\hline
+\mathbf{input }\  x &amp; \mathbf{input }\  y \\
+x_1, x_2 = \mbox{split}(x) &amp; y1, y2 = \mbox{split}(y)\\
+y_1 = x_1 + \mathcal{F}(x_2) &amp; x_2 = y_2 - \mathcal{G}(y_1) \\
+y_2 = x_2 + \mathcal{G}(y_1) &amp; x_1 = y_1 - \mathcal{F}(x_2)\\
+\mathbf{output}\ y = (y_1, y_2) &amp; \mathbf{output}\ x = (x_1, x_2)
+\end{array}
+$
+
+
+where $\mathcal F$ and $\mathcal G$ are residual functions, composed of sequences of convolutions, ReLU and Batch Normalization layers, analoguous to the ones in a standard ResNet block, although operations in the reversible blocks need to have a stride of 1 to avoid information loss and preserve invertibility. Finally, for the `split` operation, the authors consider spliting the input Tensor across the channel dimension as in [1, 2].
+
+Similarly to ResNet, the final RevNet architecture is composed of these invertible residual blocks, as well as non-reversible subsampling operations (e.g., pooling) for which activations have to be stored. However the number of such operations is much smaller than the number of residual blocks in a typical ResNet architecture. 
+
+## Backpropagation
+
+### Standard
+The backpropagaton algorithm is derived from the chain rule and is used to compute the total gradients of the loss with respect to the parameters  in a neural network: given a loss function $L$, we want to compute the gradients of $L$ with respect to the parameters of each layer, indexed by $n \in [1, N]$, i.e., the quantities $ \overline{\theta_{n}} = \partial L /\ \partial \theta_n$. (where $\forall x, \bar{x} = \partial L / \partial x$).
+
+We roughly summarize the algorithm in the left column of **Table 1**: In order to compute the gradients for the $n$-th block, backpropagation requires the input and output activation of this block, $y_{n - 1}$ and $y_{n}$, which have been stored, and the derivative of the loss respectively to the output, $\overline{y_{n}}$, which has been computed in the backpropagation iteration of the upper layer; Hence the name backpropagation
+
+### RevNet
+Since activations are not stored in RevNet, the algorithm needs to be slightly modified, which we describe in the right column of **Table 1**. In summary, we first need to recover the input activations of the RevNet block using its invertibility. These activations will be propagated to the earlier layers for further backpropagation.  Secondly, we need to compute the gradients of the loss with respect to the inputs, i.e. $\overline{y_{n - 1}} = (\overline{y_{n -1, 1}}, \overline{y_{n - 1, 2}})$, using the fact that:
+$
+\begin{align}
+\overline{y_{n - 1, i}} = \overline{y_{n, 1}}\ \frac{\partial y_{n, 1}}{y_{n - 1, i}} + \overline{y_{n, 2}}\ \frac{\partial y_{n, 2}}{y_{n - 1, i}}
+\end{align}
+$
+
+Once again, this result will be propagated further down the network.
+Finally, once we have computed both these quantities we can obtain the gradients with respect to the parameters of this block, $\theta_n$.
+
+
+
+
+
+$
+ \begin{array}{|c|l|l|}
+\hline
+&amp;  \mathbf{ResNet} &amp; \mathbf{RevNet} \\
+\hline
+\mathbf{Block} &amp; y_{n} = y_{n - 1} + \mathcal F(y_{n - 1}) &amp; y_{n - 1, 1}, y_{n - 1, 2} = \mbox{split}(y_{n - 1})\\
+&amp;&amp; y_{n, 1} = y_{n - 1, 1} + \mathcal{F}(y_{n - 1, 2})\\
+&amp;&amp; y_{n, 2} =  y_{n - 1, 2} + \mathcal{G}(y_{n, 1})\\
+ &amp;&amp; y_{n} = (y_{n, 1}, y_{n, 2})\\
+\hline
+\mathbf{Params} &amp; \theta = \theta_{\mathcal F} &amp; \theta = (\theta_{\mathcal F}, \theta_{\mathcal G})\\
+\hline
+\mathbf{Backprop} &amp; \mathbf{in:}\  y_{n - 1}, y_{n}, \overline{ y_{n}} &amp; \mathbf{in:}\ y_{n}, \overline{y_{n }}\\
+&amp; \overline{\theta_n} =\overline{y_n} \frac{\partial y_n}{\partial \theta_n} &amp;\texttt{# recover activations} \\
+&amp;\overline{y_{n - 1}} = \overline{y_{n}}\ \frac{\partial y_{n}}{\partial y_{n-1}} &amp;y_{n, 1}, y_{n, 2} = \mbox{split}(y_{n}) \\
+&amp;\mathbf{out:}\ \overline{\theta_n}, \overline{y_{n -1}} &amp; y_{n - 1, 2} =  y_{n, 2} - \mathcal{G}(y_{n, 1})\\
+&amp;&amp;y_{n - 1, 1} =  y_{n, 1} - \mathcal{F}(y_{n - 1, 2})\\
+&amp;&amp;\texttt{#  gradients wrt. inputs} \\
+&amp;&amp;\overline{y_{n -1, 1}} = \overline{y_{n, 1}} + \overline{y_{n,2}} \frac{\partial \mathcal G}{\partial y_{n,1}} \\
+&amp;&amp;\overline{y_{n -1, 2}} = \overline{y_{n, 1}} \frac{\partial \mathcal F}{\partial y_{n,2}} + \overline{y_{n,2}} \left(1 + \frac{\partial \mathcal F}{\partial y_{n,2}} \frac{\partial \mathcal G}{\partial y_{n,1}} \right) \\
+&amp;&amp;\texttt{ gradients wrt. parameters} \\
+&amp;&amp;\overline{\theta_{n, \mathcal G}} = \overline{y_{n, 2}} \frac{\partial \mathcal G}{\partial \theta_{n, \mathcal G}}\\
+&amp;&amp;\overline{\theta_{n, \mathcal F}} = \overline{y_{n,1}} \frac{\partial F}{\partial \theta_{n, \mathcal F}} + \overline{y_{n, 2}} \frac{\partial F}{\partial \theta_{n, \mathcal F}} \frac{\partial \mathcal G}{\partial y_{n,1}}\\
+&amp;&amp;\mathbf{out:}\ \overline{\theta_{n}}, \overline{y_{n -1}}, y_{n - 1}\\
+\hline
+\end{array}
+$
+
+**Table 1:** Backpropagation in the standard case and for Reversible blocks
+
+
+
+
+--- 
+
+## Experiments
+
+
+** Computational Efficiency.** RevNets trade off memory requirements, by avoiding storing activations, against computations. Compared to other methods that focus on improving memory requirements in deep networks, RevNet provides the best trade-off: no activations have to be stored, the spatial complexity is $O(1)$. For the computation complexity, it is linear in the number of layers, i.e. $O(L)$. 
+
+One small disadvantage is that RevNets introduces additional parameters, as each block is composed of two residuals, $\mathcal F$ and $\mathcal G$, and their number of channels is also halved as the input is first split into two. 
+
+**Results.** In the experiments section, the author compare ResNet architectures to their RevNets &quot;counterparts&quot;: they build a RevNet with roughly the same number of parameters by halving the number of residual units and doubling the number of channels.
+
+Interestingly, RevNets achieve **similar performances** to their ResNet counterparts, both in terms of final accuracy, and in terms of training dynamics. The authors also analyze the impact of floating errors that might occur when reconstructing activations rather than storing them, however it appears these errors are of small magnitude and do not seem to negatively impact the model.
+
+To summarize, reversible networks seems like a very promising direction to efficiently train very deep networks with memory budget constraints.
+
+---
+
+## References
+  * [1] NICE: Non-linear Independent Components Estimation, Dinh et al., ICLR 2015
+  * [2] Density estimation using Real NVP, Dinh et al., ICLR 2017
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

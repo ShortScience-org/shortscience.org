@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOLO9000: Better, Faster, Stronger - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="YOLO9000: Better, Faster, Stronger - ShortScience.org">
+<meta property="og:description" content="YOLOv2 is improved YOLO;
+ - can change image size for varying tradeoff between speed and accuracy;...">
+<meta name="description" content="YOLOv2 is improved YOLO;
+ - can change image size for varying tradeoff between speed and accuracy;...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Joseph Redmon and Ali Farhadi"}, "headline": "YOLO9000: Better, Faster, Stronger", "description": "Summary of YOLO9000: Better, Faster, Stronger", "datePublished": "2017-01-12 14:11:27", "dateModified": "2017-01-12 14:11:27", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1612.08242v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">YOLO9000: Better, Faster, Stronger</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Joseph%20Redmon">Joseph Redmon</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ali%20Farhadi">Ali Farhadi</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/12/25<br><b>Abstract:</b>   We introduce YOLO9000, a state-of-the-art, real-time object detection system
+that can detect over 9000 object categories. First we propose various
+improvements to the YOLO detection method, both novel and drawn from prior
+work. The improved model, YOLOv2, is state-of-the-art on standard detection
+tasks like PASCAL VOC and COCO. At 67 FPS, YOLOv2 gets 76.8 mAP on VOC 2007. At
+40 FPS, YOLOv2 gets 78.6 mAP, outperforming state-of-the-art methods like
+Faster RCNN with ResNet and SSD while still running significantly faster.
+Finally we propose a method to jointly train on object detection and
+classification. Using this method we train YOLO9000 simultaneously on the COCO
+detection dataset and the ImageNet classification dataset. Our joint training
+allows YOLO9000 to predict detections for object classes that don&#x27;t have
+labelled detection data. We validate our approach on the ImageNet detection
+task. YOLO9000 gets 19.7 mAP on the ImageNet detection validation set despite
+only having detection data for 44 of the 200 classes. On the 156 classes not in
+COCO, YOLO9000 gets 16.0 mAP. But YOLO can detect more than just 200 classes;
+it predicts detections for more than 9000 different object categories. And it
+still runs in real-time.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028').hide());void($('#showless-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028').show());void($('#more-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028').show());void($('#showless-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028').hide());void($('#more-am91cm5hbHMvY29yci8xNjEyLjA4MjQy-1028').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1612.08242">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="niz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=niz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=niz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3c8bec253b203c0ac57affd37330eb5f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;daisukelab&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: niz&lt;br&gt;Posted: 2017-01-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1612.08242&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3c8bec253b203c0ac57affd37330eb5f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1029').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1612.08242%26a%3Dniz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1029" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242&amp;a=niz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dniz&amp;text=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dniz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger&amp;Body=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dniz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dniz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dniz&amp;title=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242&amp;a=niz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=niz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by daisukelab 2017-01-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">YOLOv2 is improved YOLO;
+ - can change image size for varying tradeoff between speed and accuracy;
+ - uses anchor boxes to predict bounding boxes;
+ - overcomes localization errors and lower recall not by bigger nor ensemble but using variety of ideas from past work (batch normalization, multi-scaling and etc) to keep the network simple and fast;
+ - &quot;With batch nor-malization we can remove dropout from the model without overfitting&quot;
+ -  gets 78.6 mAP at 40 FPS.
+
+YOLO9000;
+ - uses WordTree representation which enables multi-label classification as well as making classification dataset also applicable to detection;
+ - is a model trained simultaneously both for detection on COCO and classification on ImageNet;
+ - is validated for detecting not labeled object classes;
+ - detects more than 9000 different object classes in real-time.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1612.08242&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1030').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1612.08242%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1030" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Daleju&amp;text=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger&amp;Body=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Daleju&amp;title=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a new version of YOLO, a model to detect bounding boxes in images.
+  * Their new version is more accurate, faster and is trained to recognize up to 9000 classes.
+
+### How
+  * Their base model is the previous YOLOv1, which they improve here.
+  * Accuracy improvements
+    * They add batch normalization to the network.
+    * Pretraining usually happens on ImageNet at 224x224, fine tuning for bounding box detection then on another dataset, say Pascal VOC 2012, at higher resolutions, e.g. 448x448 in the case of YOLOv1.
+      This is problematic, because the pretrained network has to learn to deal with higher resolutions and a new task at the same time.
+      They instead first pretrain on low resolution ImageNet examples, then on higher resolution ImegeNet examples and only then switch to bounding box detection.
+      That improves their accuracy by about 4 percentage points mAP.
+    * They switch to anchor boxes, similar to Faster R-CNN. That&#x27;s largely the same as in YOLOv1. Classification is now done per tested anchor box shape, instead of per grid cell.
+      The regression of x/y-coordinates is now a bit smarter and uses sigmoids to only translate a box within a grid cell.
+    * In Faster R-CNN the anchor box shapes are manually chosen (e.g. small squared boxes, large squared boxes, thin but high boxes, ...).
+      Here instead they learn these shapes from data.
+      That is done by applying k-Means to the bounding boxes in a dataset.
+      They cluster them into k=5 clusters and then use the centroids as anchor box shapes.
+      Their accuracy this way is the same as with 9 manually chosen anchor boxes.
+      (Using k=9 further increases their accuracy significantly, but also increases model complexity. As they want to predict 9000 classes they stay with k=5.)
+    * To better predict small bounding boxes, they add a pass-through connection from a higher resolution layer to the end of the network.
+    * They train their network now at multiple scales. (As the network is now fully convolutional, they can easily do that.)
+  * Speed improvements
+    * They get rid of their fully connected layers. Instead the network is now fully convolutional.
+    * They have also removed a handful or so of their convolutional layers.
+  * Capability improvement (weakly supervised learning)
+    * They suggest a method to predict bounding boxes of the 9000 most common classes in ImageNet.
+      They add a few more abstract classes to that (e.g. dog for all breeds of dogs) and arrive at over 9000 classes (9418 to be precise).
+    * They train on ImageNet and MSCOCO.
+    * ImageNet only contains class labels, no bounding boxes. MSCOCO only contains general classes (e.g. &quot;dog&quot; instead of the specific breed).
+    * They train iteratively on both datasets. MSCOCO is used for detection and classification, while ImageNet is only used for classification.
+      For an ImageNet example of class `c`, they search among the predicted bounding boxes for the one that has highest predicted probability of being `c`
+      and backpropagate only the classification loss for that box.
+    * In order to compensate the problem of different abstraction levels on the classes (e.g. &quot;dog&quot; vs a specific breed), they make use of WordNet.
+      Based on that data they generate a hierarchy/tree of classes, e.g. one path through that tree could be: object -&gt; animal -&gt; canine -&gt; dog -&gt; hunting dog -&gt; terrier -&gt; yorkshire terrier.
+      They let the network predict paths in that hierarchy, so that the prediction &quot;dog&quot; for a specific dog breed is not completely wrong.
+    * Visualization of the hierarchy:
+      * ![YOLO9000 hierarchy](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/YOLO9000__hierarchy.jpg?raw=true &quot;YOLO9000 hierarchy&quot;)
+    * They predict many small softmaxes for the paths in the hierarchy, one per node:
+      * ![YOLO9000 softmaxes](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/YOLO9000__softmaxes.jpg?raw=true &quot;YOLO9000 softmaxes&quot;)
+
+### Results
+  * Accuracy
+    * They reach about 73.4 mAP when training on Pascal VOC 2007 and 2012. That&#x27;s slightly behind Faster R-CNN with VGG16 with 75.9 mAP, trained on MSCOCO+2007+2012.
+  * Speed
+    * They reach 91 fps (10ms/image) at image resolution 288x288 and 40 fps (25ms/image) at 544x544.
+  * Weakly supervised learning
+    * They test their 9000-class-detection on ImageNet&#x27;s detection task, which contains bounding boxes for 200 object classes.
+    * They achieve 19.7 mAP for all classes and 16.0% mAP for the 156 classes which are not part of MSCOCO.
+    * For some classes they get 0 mAP accuracy.
+    * The system performs well for all kinds of animals, but struggles with not-living objects, like sunglasses.
+    * Example images (notice the class labels):
+      * ![YOLO9000 examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/YOLO9000__examples.jpg?raw=true &quot;YOLO9000 examples&quot;)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="leopaillier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=leopaillier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=leopaillier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Léo Paillier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: leopaillier&lt;br&gt;Posted: 2017-12-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1612.08242&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1031').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1612.08242%26a%3Dleopaillier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1031" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242&amp;a=leopaillier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dleopaillier&amp;text=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger&amp;Body=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dleopaillier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1612.08242%26a%3Dleopaillier&amp;title=Summary%20of%20YOLO9000%3A%20Better%2C%20Faster%2C%20Stronger" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1612.08242&amp;a=leopaillier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=leopaillier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Léo Paillier 2017-12-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">_Objective:_ Train on both classification and detection image to make a better faster and stronger detector.
+
+_Dataset:_ [ImageNet](http://www.image-net.org/), [COCO](http://mscoco.org/) and [WordNet](https://wordnet.princeton.edu/).
+
+
+## Architecture:
+
+Apart from amelioration such as batch norm or other general tweaking the real improvements come from:
+
+1.  Using both a classification dataset and a detection dataset at the same time.
+2.  Replacing the usual final soft-max layer (which assumes that all labels are mutually exclusive) with a WordTree label hierarchy base on WordNet which enables the network to predict `dog` even if it doesn&#x27;t know if it&#x27;s a `Fox Terrier`.
+
+[![screen shot 2017-04-12 at 7 24 28 pm](https://cloud.githubusercontent.com/assets/17261080/24970727/b7abaf02-1fb5-11e7-8b78-2a430a861cbd.png)](https://cloud.githubusercontent.com/assets/17261080/24970727/b7abaf02-1fb5-11e7-8b78-2a430a861cbd.png)
+
+## Results:
+
+State of the art results at full resolution and possibility to lower performance to gain in computation time.
+
+[![screen shot 2017-04-12 at 7 31 26 pm](https://cloud.githubusercontent.com/assets/17261080/24971010/a51556f8-1fb6-11e7-9289-fc277b182686.png)](https://cloud.githubusercontent.com/assets/17261080/24971010/a51556f8-1fb6-11e7-9289-fc277b182686.png)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

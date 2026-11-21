@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamo: amazon&#x27;s highly available key-value store - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Dynamo: amazon&#x27;s highly available key-value store - ShortScience.org">
+<meta property="og:description" content="Amazon’s platform is built upon different techniques working together to provide a single powerful,...">
+<meta name="description" content="Amazon’s platform is built upon different techniques working together to provide a single powerful,...">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*66VMYcQfvG3Z2acQD7aeYQ.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/sosp/DeCandiaHJKLPSVV07">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/sosp/DeCandiaHJKLPSVV07" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "DeCandia, Giuseppe and Hastorun, Deniz and Jampani, Madan and Kakulapati, Gunavardhan and Lakshman, Avinash and Pilchin, Alex and Sivasubramanian, Swaminathan and Vosshall, Peter and Vogels, Werner"}, "headline": "Dynamo: amazon's highly available key-value store", "description": "Summary of Dynamo: amazon's highly available key-value store", "datePublished": "2016-10-20 23:31:31", "dateModified": "2016-10-20 23:31:31", "image": {"@type": "ImageObject", "url": "https://cdn-images-1.medium.com/max/800/1*66VMYcQfvG3Z2acQD7aeYQ.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/sosp/DeCandiaHJKLPSVV07", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://doi.acm.org/10.1145/1294261.1294281"><span class="glyphicon glyphicon-link"></span> doi.acm.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Dynamo%3A%20amazon%27s%20highly%20available%20key-value%20store%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Dynamo: amazon&#x27;s highly available key-value store</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=DeCandia%2C%20Giuseppe">DeCandia, Giuseppe</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hastorun%2C%20Deniz">Hastorun, Deniz</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jampani%2C%20Madan">Jampani, Madan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kakulapati%2C%20Gunavardhan">Kakulapati, Gunavardhan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lakshman%2C%20Avinash">Lakshman, Avinash</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Pilchin%2C%20Alex">Pilchin, Alex</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sivasubramanian%2C%20Swaminathan">Sivasubramanian, Swaminathan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Vosshall%2C%20Peter">Vosshall, Peter</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Vogels%2C%20Werner">Vogels, Werner</a></span>
+<br>
+ACM SOSP - 2007 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/sosp/DeCandiaHJKLPSVV07">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/sosp/DeCandiaHJKLPSVV07&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-578').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/sosp/DeCandiaHJKLPSVV07%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-578" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/sosp/DeCandiaHJKLPSVV07&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsosp%2FDeCandiaHJKLPSVV07%26a%3Dshagunsodhani&amp;text=Summary%20of%20Dynamo%3A%20amazon%27s%20highly%20available%20key-value%20store&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsosp%2FDeCandiaHJKLPSVV07%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Dynamo%3A%20amazon%27s%20highly%20available%20key-value%20store&amp;Body=Summary%20of%20Dynamo%3A%20amazon%27s%20highly%20available%20key-value%20store%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsosp%2FDeCandiaHJKLPSVV07%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsosp%2FDeCandiaHJKLPSVV07%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsosp%2FDeCandiaHJKLPSVV07%26a%3Dshagunsodhani&amp;title=Summary%20of%20Dynamo%3A%20amazon%27s%20highly%20available%20key-value%20store" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/sosp/DeCandiaHJKLPSVV07&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Amazon’s platform is built upon different techniques working together to provide a single powerful, highly-available system. One of the core components powering this system is Dynamo. There are many services in the Amazon ecosystem which store and retrieve data by primary key. Take the example of the shopping cart service. Customers should be able to view and update their cart anytime. For these services, sophisticated solutions like RDBMS, GFS, etc are an overkill as these services do not need a complex query and data management system. Instead, they need a service which only supports read and write operations on a (key, value) store where the value is a small object (less than 1Mb in size) uniquely identified by the key. The service should be scalable and highly available with a well-defined consistency window. This is what Dynamo is: a scalable, distribute, highly available key-value store that provides an “always-on” experience.
+
+#### Design Considerations
+Dynamo achieves high availability at the cost of weaker consistency. Changes propagate to the replicas in the background and conflict resolution is done at read time to make sure none of the write operations can fail. Dynamo uses simple policies like “last write win” for conflict resolution though applications using Dynamo may override these techniques with their own methods. Eg the cart application may choose to add items across all versions to make sure none of the items is lost.
+
+A service could depend on multiple services to get its results. To guarantee that a service returns its results in a bounded time, each dependency in the service has to return its results with even tighter bounds. As a result clients enter into a contract with servers regarding service-related characteristics like expected request distribution rate, expected latency and so on. Such an agreement is called Service Level Agreement(SLA) and must be met to ensure efficiency. SLA apply in the context of Dynamo as well.
+
+Dynamo supports incremental scaling where the system is able to scale out one node at a time. Moreover, all the nodes are symmetrical in the sense they have the same set of responsibilities. Since Dynamo is used only by Amazon’s internal applications, there are no security related requirements like authentication and authorization .
+
+#### Architecture
+Dynamo exposes two operations: get() and put(). get(key) returns value or list of values along with context objects corresponding to the key. put(key, context, value) stores the value and the context corresponding to the key. context objects are used for conflict resolution.
+
+To support incremental scaling, Dynamo uses consistent hashing for its partitioning scheme. In consistent hashing, the output range of a hash function is treated as a fixed circular space. Each node and data object is assigned a random value or position within this space. A data object is mapped to the first node which is placed clockwise to the position of the data object. Every data item is replicated at N hosts. So every time a data item is assigned to a node, it is replicated to N-1 clockwise successor nodes as well. The list of nodes storing a data item is called its preference list. Generally preference list contains more than N nodes to account for system and network failures. An example case is shown with N = 3. Any key between A and B would be mapped to B (by consistent hashing logic) and to C and D (by replication logic).
+
+https://cdn-images-1.medium.com/max/800/1*66VMYcQfvG3Z2acQD7aeYQ.png
+
+Each time data is created/updated, a new version of data is created. So for a given key, several versions of data (or value) can exist. For versioning, Dynamo uses vector clocks. A vector clock is a list of (node, counter) pairs. When a put operation reaches node X, the node uses the context from the put request to know which version it is updating. If there is an entry corresponding to X in vector clock, the counter is incremented else a new entry is created for node X with counter = 1. When retrieving value corresponding to a key, the node will resolve conflicts among all versions based on Dynamo’s logic or client’s logic. A likely issue with this approach is that the vector clock list may grow very large. To mitigate this, Amazon keeps evicting pairs from the list in ascending order of the time when the entry was created till the size reaches below a threshold. Amazon has not faced any issues related to loss of accuracy with this approach. They also observed that the % of data with at least 2 versions is about 0.06%
+
+Dynamo uses a quorum system to maintain consistency. For a read (or write) operation to be successful R (or W) number of replicas out of N replicas must participate in the operation successfully with the condition that R+W &gt; N. If some of the first N replicas are not available, say due to network failure, the read and write operations are performed on the first N healthy nodes. eg if node A is down then node B can be included in its place for the quorum. In this case, B would keep track of data it received on behalf of A and when A comes online, B would hand over this data to A. This way a sloppy quorum is achieved.
+
+It is possible that B itself becomes unavailable before it can return the data to A. In this case, anti-entropy protocols are used to keep replicas synchronized. In Dynamo, each node maintains a Merkle tree for each key range it hosts. Nodes A and B exchange the roots of Merkle trees corresponding to set of keys they both host. Merkle tree is a hash tree whose leaves are hash values of individual keys and parents are hash values of children. This allows branches to be checked for replication without having to traverse the entire tree. A branch is traversed only when the hash values at the top of the branch differ. This way the amount of data to be transferred for synchronization is minimized.
+
+The nodes in a cluster communicate as per a gossip-based protocol in which each node contacts a random peer and then the two nodes reconcile their persisted membership history. This ensures an eventually consistent membership view. Apart from this, some nodes are marked as seed nodes which are known to all nodes including the ones that join later. Seed nodes ensure that logical partitions are not created within the network even when new nodes are added. Since consistent hashing is used, the overhead of key reallocation when adding a new node is quite low.
+
+#### Routing
+There are 2 modes of routing requests in Dynamo. In the first mode, servers route the request. The node fulfilling the request is called coordinator. If it is a read request, any node can act as the coordinator. For a write request, the coordinator is one of the nodes from the key’s current preference list. So if the write request reaches a node which is not in the preference list, it routes the request to one of the nodes in the preference list.
+
+An alternate approach would be where the client downloads the current membership state from any Dynamo node and determine which node to send the write request to. This approach saves an extra hop within the server cluster but it assumes the membership state to be fresh.
+
+#### Optimizations
+Apart from the architecture described above, Dynamo uses optimizations like read-repair where, during quorum, if a node returns a stale response for a read query, it is updated with the latest version of data. Similarly, since writes follow reads, the coordinator for read operation is the node that replies fastest to the previous read operation. This increases the chances of having read you write consistency.
+To further reduce the latency, each node maintains an object buffer in its main memory where write operations are stored and written to disk by a separate thread. The read operations also first refer the in-memory buffer before checking the disks. There is an added risk of the node crashing before writing the objects from the buffer to the disk. To mitigate this, one of the N replicas performs a durable write — that is, the data is written to the disk. Since the quorum requires only W responses, latency due to one node does not affect the performance.
+
+Amazon also experimented with different partitioning schemes to ensure uniform load distribution and adopted the scheme where hash space is divided into Q equally sized partitions and placement of partition is decoupled from the partitioning scheme.
+
+#### Lessons Learnt
+Although Dynamo is primarily designed as a write intensive data store, N, R and W provides ample control to modify its behavior for other scenarios as well. For example, setting R = 1 and W = N makes it a high performance read engine. Services maintaining product catalog and promotional items can use this mode. Similarly setting W = 1 means a write request is never rejected as long as at least one server is up though this increases the risk of inconsistency. Given that Dynamo allows the clients to override the conflict resolution methods, it becomes a general solution for many more scenarios than it was originally intended for.
+
+One limitation is the small size of data for which it is designed. The choice makes sense in the context of Amazon but it would be interesting to see how storing larger values affects its performance. The response time would obviously increase as more data needs to be transferred and in-memory buffers would be able to store lesser data. But using caching and larger in memory buffers, the response time may be brought down to the limit that Dynamo can be used with somewhat larger data objects as well.
+Dynamo scales well for a few hundred of nodes but it will not scale equally well for tens of thousands of nodes because of the large overhead of maintaining and distributing the routing table whose size increases with the number of nodes. Another problem that Amazon did not have to face was a high conflict resolution rate. They observed that around 99.94% requests saw exactly one version. Had this number been higher, the latency would have been more.
+
+All in all, Dynamo is not a universal solution for a distributed key-value store. But it solves one problem and it solves it very well.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

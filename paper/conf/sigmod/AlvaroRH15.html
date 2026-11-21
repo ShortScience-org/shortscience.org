@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineage-driven Fault Injection - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Lineage-driven Fault Injection - ShortScience.org">
+<meta property="og:description" content="Building fault tolerant systems is hard, like really hard. There are are a couple approaches to buil...">
+<meta name="description" content="Building fault tolerant systems is hard, like really hard. There are are a couple approaches to buil...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/sigmod/AlvaroRH15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/sigmod/AlvaroRH15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Alvaro, Peter and Rosen, Joshua and Hellerstein, Joseph M."}, "headline": "Lineage-driven Fault Injection", "description": "Summary of Lineage-driven Fault Injection", "datePublished": "2017-10-06 03:20:59", "dateModified": "2017-10-06 03:20:59", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/sigmod/AlvaroRH15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://doi.acm.org/10.1145/2723372.2723711"><span class="glyphicon glyphicon-link"></span> doi.acm.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Lineage-driven%20Fault%20Injection%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Lineage-driven Fault Injection</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Alvaro%2C%20Peter">Alvaro, Peter</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Rosen%2C%20Joshua">Rosen, Joshua</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hellerstein%2C%20Joseph%20M.">Hellerstein, Joseph M.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/sigmod&amp;year=2015">International Conference on Management of Data (ACM SIGMOD) - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/sigmod/AlvaroRH15">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="mwhittaker" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=mwhittaker" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mwhittaker&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Michael Whittaker&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mwhittaker&lt;br&gt;Posted: 2017-10-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/sigmod/AlvaroRH15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/48d1436f3502117add3d6375a3a158ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-568').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/sigmod/AlvaroRH15%26a%3Dmwhittaker" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-568" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/sigmod/AlvaroRH15&amp;a=mwhittaker" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2FAlvaroRH15%26a%3Dmwhittaker&amp;text=Summary%20of%20Lineage-driven%20Fault%20Injection&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2FAlvaroRH15%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Lineage-driven%20Fault%20Injection&amp;Body=Summary%20of%20Lineage-driven%20Fault%20Injection%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2FAlvaroRH15%26a%3Dmwhittaker"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2FAlvaroRH15%26a%3Dmwhittaker" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fsigmod%2FAlvaroRH15%26a%3Dmwhittaker&amp;title=Summary%20of%20Lineage-driven%20Fault%20Injection" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/sigmod/AlvaroRH15&amp;a=mwhittaker" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=mwhittaker" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Michael Whittaker 2017-10-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Building fault tolerant systems is hard, like really hard. There are are a couple approaches to building fault-tolerant systems, but none are perfect.
+
+
+ - In a bottom-up approach, we verify individual components of a system are fault-tolerant and then glue the components together. Unfortunately, fault-tolerance is not closed under composition: the combination of two fault-tolerant systems may not be fault tolerant.
+ - In a top-down, we can inject faults into an existing system and see whether or not it fails. Fault-injection can discover shallow bugs, but has trouble surfacing bugs that require more complex failure scenarios (e.g. a network partition followed by a particular sequence of machine failures).
+
+Lineage-driven Fault Injection (LDFI) is a top-down approach which uses lineage and fault injection to carefully discover fault-tolerance bugs in distributed systems. If a bug is found, the lineage of the bug is given to the user to help discover the root cause of the bug. If no bugs are found, LDFI provides some guarantees that there are no possible bugs for that particular configuration.
+
+In a nutshell, LDFI takes a program written in something like Bloom, inputs to the program, and some parameters (e.g. to bound the length the execution, to bound the number of faults, etc.). It runs the given program on the given input and computes a provenance graph of the output. It then carefully selects a small number of faults that invalidate every derivation. It then injects these faults into the system to see if it surfaces a bug. This is repeated until a bug is found or no such bugs exist.
+
+In this paper, Alvaro presents LDFI and an LDFI implementation named Molly.
+
+#### System Model
+
+LDFI injects faults, but not every kind of fault. We&#x27;ll explore dropped messages, failed nodes, and network partitions. We won&#x27;t explore message reordering or crash recovery. While we sacrifice generality, we gain tractability.
+
+LDFI is governed by three parameters:
+
+1. LDFI does not operate over arbitrarily long executions. A parameter EOT (end of time) prescribes the maximum logical time of any execution examined by LDFI.
+2. Distributed systems typically tolerate some number of faults, but cannot possible tolerate complete message loss for example. A parameter EFF (end of finite failures) &lt; EOT sets a logical time after which LDFI will not introduce faults. The time between EFF and EOT allows a distributed system to recover from message losses.
+3. A parameter Crashes sets an upper limit on the number of node crashes LDFI will consider.
+
+A failure specification is a three-tuple (EOT, EFF, Crashes). Molly will automatically find a good failure specification by repeatedly increasing EOT until programs can create meaningful results and increasing EFF until faults occur.
+
+We assume programs are written in Dedalus and that pre- and postconditions are expressed as special relations pre and post in the program.
+
+#### LDFI
+
+Consider an interaction between Molly and a user trying to implement a fault-tolerant broadcast protocol between three nodes A, B, and C where A begins with a message to broadcast. Our correctness condition asserts that if a message is delivered to any non-failed node, it is delivered to all of them.
+
+ - Implementation 1. Assume a user writes an incredibly naive broadcast protocol in which A sends a copy of the message to B and C once. Molly drops the message from A to B inducing a bug.
+ - Implementation 2. The author user then amends the program so that A continually sends the message to B and C. Molly drops the message from A to B and then crashes A. C has the message but B doesn&#x27;t: a bug.
+ - Implementation 3. The author then amends the program so that all three nodes continuously broadcast the message. Now, Molly cannot find a set of dropped messages or node crashes to prevent all three nodes from obtaining the message.
+ - Implementation 4. While implementation 3 is fault-tolerant it is also inefficient. The user amends the protocol so that nodes broadcast messages until they receive an ack from the other nodes. Molly can devise a sequence of message drops and node crashes to prevent the message from being delivered to all three nodes, but when it runs the system again with the same faults, the messages still appear.
+ - Implementation 5. A &quot;classic&quot; implementation of broadcast in which a node broadcasts any message it receives once is found to be buggy by Molly.
+
+#### Molly
+
+Molly begins by rewriting a Dedalus program into a Datalog program.
+
+Each relation is augmented with a time column.
+
+```
+foo(A,B) ==&gt; foo(A,B,T)
+foo(B,C) ==&gt; bar(B,C,T)
+baz(A,C) ==&gt; baz(A,C,T)
+```
+The time column of every predicate in the body of a rule is bound to the same variable T.
+
+```
+_ :- foo(A,B),   bar(B,C) ==&gt;
+_ :- foo(A,B,T), bar(B,C,T)
+
+```
+
+The head of every deductive rule is bound to T.
+
+```
+baz(A,C)   :- foo(A,B),   bar(B,C) ==&gt;
+baz(A,C,T) :- foo(A,B,T), bar(B,C,T)
+```
+
+The head of every inductive rule is bound to T + 1.
+
+```
+baz(A,C)     :- foo(A,B),   bar(B,C) ==&gt;
+baz(A,C,T+1) :- foo(A,B,T), bar(B,C,T)
+```
+
+For asynchronous rules, we introduce a Clock(From, To, T) relation which contains an entry (n, m, T) if node n sent a message to m at time T. Then, the body of asynchronous rules at node n whose heads are destined for node n are augmented with a Clock(n, m, t) predicate while the head is augmented with T + 1. Molly can add and remove entries from Clock to simulate faults.
+
+```
+foo(A,B)     :- foo(B,A) ==&gt;
+foo(A,B,T+1) :- foo(B,A,T), Clock(B,A,T)
+```
+
+It then rewrites the Datalog program to maintain its own provenance graph, and extracts lineage from the graph via recursive queries that walk the graph.
+
+Given an execution of the Datalog program, Molly generates a CNF formula where the disjuncts inside each conjunct x1 or .. or xn represent a message drop or node failure that would invalidate a particular derivation. If all derivations can be invalidated, then the formula is unsatisfiable and the program is fault-tolerant. If the formula is satisfiable, then each satisfied conjunct represents a counterexample of the derivation. Molly uses a SMT solver to solve these formulas.
+
+
+
+
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

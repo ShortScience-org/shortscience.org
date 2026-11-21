@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks - ShortScience.org">
+<meta property="og:description" content="This paper considers the problem of structured output prediction, in the specific case where the out...">
+<meta name="description" content="This paper considers the problem of structured output prediction, in the specific case where the out...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/BengioVJS15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/BengioVJS15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Bengio, Samy and Vinyals, Oriol and Jaitly, Navdeep and Shazeer, Noam"}, "headline": "Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks", "description": "Summary of Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks", "datePublished": "2016-04-17 19:55:25", "dateModified": "2016-04-17 20:04:02", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/BengioVJS15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/5956-scheduled-sampling-for-sequence-prediction-with-recurrent-neural-networks"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Bengio%2C%20Samy">Bengio, Samy</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Vinyals%2C%20Oriol">Vinyals, Oriol</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jaitly%2C%20Navdeep">Jaitly, Navdeep</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shazeer%2C%20Noam">Shazeer, Noam</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2015">Neural Information Processing Systems Conference - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/BengioVJS15">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-04-17&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/BengioVJS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-371').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/BengioVJS15%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-371" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/BengioVJS15&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dhlarochelle&amp;text=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks&amp;Body=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dhlarochelle&amp;title=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/BengioVJS15&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-04-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper considers the problem of structured output prediction, in the specific case where the output is a sequence and we represent the sequence as a (conditional) directed graphical model that generates from the first token to the last. The paper starts from the observation that training such models by maximum likelihood (ML) does not reflect well how the model is actually used at test time. Indeed, ML training implies that the model is effectively trained to predict each token conditioned on the previous tokens *from the ground truth* sequence (this is known as &quot;teacher forcing&quot;). Yet, when making a prediction for a new input, the model will actually generate a sequence by generating tokens one after another and conditioning on *its own predicted tokens* instead. 
+
+So the authors propose a different training procedure, where at training time each *conditioning* ground truth token is sometimes replaced by the model&#x27;s previous prediction. The choice of replacing the ground truth by the model&#x27;s prediction is made by &quot;flipping a coin&quot; with some probability, independently for each token. Importantly, the authors propose to start with a high probability of using the ground truth (i.e. start close to ML) and anneal that probability closer to 0, according to some schedule (thus the name Schedule Sampling). 
+
+Experiments on 3 tasks (image caption generation, constituency parsing and speech recognition) based on neural networks with LSTM units, demonstrate that this approach indeed improves over ML training in terms of the various performance metrics appropriate for each problem, and yields better sequence prediction models. 
+
+
+
+#### My two cents
+
+Big fan of this paper. It both identifies an important flaw in how sequential prediction models are currently trained and, most importantly, suggests a solution that is simple yet effective. I also believe that this approach played a non-negligible role in Google&#x27;s winner system for image caption generation, in the Microsoft COCO competition. 
+
+My alternative interpretation of why Scheduled Sampling helps is that ML training does not inform the model about the relative quality of the errors it can make. In terms of ML, it is as bad to put high probability on an output sequence that has just 1 token that&#x27;s wrong, than it is to put the same amount of probability on a sequence that has all tokens wrong. Yet, say for image caption generation, outputting a sentence that is one word away from the ground truth is clearly preferable from making a mistake on a words (something that is also reflected in the performance metrics, such as BLEU). 
+
+By training the model to be robust to its own mistakes, Scheduled Sampling ensures that errors won&#x27;t accumulate and makes predictions that are entirely off much less likely.
+
+An alternative to Scheduled Sampling is DAgger (Dataset Aggregation: \cite{journals/jmlr/RossGB11}), which briefly put alternates between training the model and adding to the training set examples that mix model predictions and the ground truth. However, Scheduled Sampling has the advantage that there is no need to explicitly create and store that increasingly large dataset of sampled examples, something that isn&#x27;t appealing for online learning or learning on large datasets.
+
+I&#x27;m also very curious and interested by one of the direction of future work mentioned in the conclusion: figuring out a way to backprop through the stochastic predictions made by the model. Indeed, as the authors point out, the current algorithm ignores the fact that, by sometimes taking as input its previous prediction, this induces an additional relationship between the model&#x27;s parameters and its ultimate prediction, a relationship that isn&#x27;t taken into account during training. To take it into account, you&#x27;d need to somehow backpropagate through the stochastic process that generated the previous token prediction. While the work on variational autoencoders has shown that we can backprop through gaussian samples, backpropagating through the sampling of a discrete multinomial distribution is essentially an open problem. I do believe that there is work that tried to tackle propagating through stochastic binary units however, so perhaps that&#x27;s a start. Anyways, if the authors could make progress on that specific issue, it could be quite useful not just in the context of Schedule Sampling, but possibly in the context of training networks with discrete stochastic units in general!</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="inference" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=inference" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=inference&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;inFERENCe&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: inference&lt;br&gt;Posted: 2016-07-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/BengioVJS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-372').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/BengioVJS15%26a%3Dinference" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-372" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/BengioVJS15&amp;a=inference" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dinference&amp;text=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks&amp;Body=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dinference"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FBengioVJS15%26a%3Dinference&amp;title=Summary%20of%20Scheduled%20Sampling%20for%20Sequence%20Prediction%20with%20Recurrent%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/BengioVJS15&amp;a=inference" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=inference" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by inFERENCe 2016-07-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Google&#x27;s team developed scheduled sampling as an alternative training procedure to fit RNNs, and they used it in their competition-winning method for image captioning. While I can&#x27;t argue with the empirical results (so I won&#x27;t), I was a bit skeptical about the technique at a fundamental level, so I decided to do a bit of math that resulted in this blog post.
+
+Overall, I have a suspicion that scheduled sampling is a flawed objective function for unsupervised/generative modelling, and I want to use this post to explain why I think so. I hope the comments section will work this time so people can comment and argue otherwise. Please also shoot me an email if you have more to say.
+
+#### Summary of this note
+
+- I have a critical look at scheduled sampling as objective function for training RNNs
+- I show it can lead to pathologies where the RNN learns marginal instead of conditional distributions
+- I explain why I think adversarial training/generative moment matching offers a better alternative
+- Lastly, I include a paragraph in which I apologise for being a di*k again.
+
+#### Strictly proper scoring rules
+
+I&#x27;ve mentioned scoring rules on this blog many times, and my PhD thesis was about them, so saying I&#x27;m obsessed with this topic would be a valid observation. But this is important stuff, particularly for unsupervised learning, and particularly as a framework to think about hard concepts like overfitting in generative models.
+
+Scoring rules are essentially loss functions for probabilistic models/forecasts. A scoring rule $$S(x,Q)$$ simply measures how bad a probabilistic forecast $Q$ for a variable is in the light of actual observation $x$. In this notation, lower is better. A scoring rule is called strictly proper, if for any $P$, the following holds:
+
+$$\underset{Q}{\operatorname{argmax}} \mathbb{E}_{x\sim P}S(x,Q) = P$$
+
+In other words, if you repeatedly sample observations from some true underlying distribution $P$, then the model $Q$ which minimises expected score is $P$. This means that the scoring rule cannot be fooled and that minimising the expected score yields a consistent estimator for $P$. Because I mention consistency, people may dismiss this as a learning theory argument, but it is not. If you are a Bayesian or a deep learning person with no interest in consistency, a scoring rule being strictly proper simply means that it is safe to use it as a loss function. Anything that&#x27;s not strictly proper is weird and wrong, it will lead to learning the wrong thing.
+
+This concept is central in unsupervised learning and generative modelling. Unsupervised learning is all about modelling the probability distribution of data, so it&#x27;s essential that we have loss functions that can measure the discrepancy between our model $Q$, and the true data distribution $P$ in a consistent way.
+
+#### log-likelihood
+
+One of the most frequently used strictly proper scoring rule is the logarithmic score:
+
+$$S(x,Q) = - \log Q(x)$$
+
+This quantity is also known as the negative log-likelihood. Minimising the expected score in an i.i.d scenario yields maximum likelihood estimation, which is known to be a consistent estimator and has nice properties.
+
+Often, the likelihood is impossible to evaluate. Luckily, it is not the only strictly proper scoring rule. In the context of generative models people have used the pseudolikelihood, score matching and moment matching, all of which are examples of strictly proper scoring rules.
+
+To recap, any learning method that corresponds to minimising a strictly proper scoring rule is fine, everything else can go horribly wrong, even if we feed it infinite data, it might just learn the wrong thing.
+
+#### Scheduled Sampling
+
+After successfully establishing myself as a proper-scoring-rule-nazi, let&#x27;s talk about scheduled sampling (SS). I don&#x27;t have a lot of space explaining SS in great detail here, only the basic idea. I encourage everyone to read the paper and Hugo&#x27;s summary above.
+
+SS is a new method to train recurrent neural networks(RNNs) to model sequences. I will use character-by-character models of text as an example. Typically, when you train an RNN, you aim to minimise the log predictive likelihood in predicting the next character in each training sentence, given the prefix string of previous characters. This can be thought of as a special case of maximum likelihood learning, and is all fine, you can actually do this properly without approximations.
+
+After training, you use the RNN to generate sample sentences in a recursive fashion: assuming you&#x27;ve already generated $n$ characters, you feed that prefix into the RNN, and ask it to predict the $n+1$st character. The $n+1$st character is then added to the prefix to predict the $n+2$th character, and so on.
+
+The authors say there is a disconnect between how the model is trained (it&#x27;s always fed real data) and how it&#x27;s used (it&#x27;s always fed synthetic data generated by itself). This, they argue, leads to the RNN being unable to recover from its own mistakes early on in the sentence.
+
+To address this, the authors propose an alternative training strategy, where every once in a while, the network is given its own synthetic data instead of real data at training time. More specifically, for each character in the training sentences, we flip a coin to decide whether we feed the character from the real training sentence, or whether to feed the model&#x27;s own prediction as to what that character would have been. The authors claim this makes the model more robust to recovering from mistakes, which is probably true.
+
+As far as I&#x27;m concerned, I&#x27;m happy as long as the new training procedure corresponds to a strictly proper scoring rule. But in this case, I have a strong feeling that it does not.
+
+#### case study: sequence of two variables
+
+For sake of simplicity, let&#x27;s consider using scheduled sampling to learn the joint distribution of a sequence of just two random variables. This is probably the simplest (shortest) time series I can think of. So SS in this case works as follows: For each datapoint train the network to predict the real $x_1$. Then we flip a coin to decide whether to keep $x_1$ from the datapoint, or to replace it with a sample from the model $Q_{x_1}$. Then we train $Q_{x_2\vert x_1}$ on the $(x_1,x_2)$ pair obtained this way.
+
+The scoring rule for selective sampling looks something like this:
+
+$$ S(Q_{x_1,x_2},(x_1,x_2)) = - (1 - \epsilon) [ \mathbb{E}_{z \sim Q_{x_1}} \log Q_{x_2 \vert x_1}(x_2 \vert z) + \log Q_{x_1}(x_1)] - \epsilon \log Q_{x_2 , x_1}(x_1,x_2),$$
+
+where $\epsilon$ is the probability with wich the true $x_1$ is used.
+
+The authors suggest starting training with $\epsilon=1$ and annealing it so that by the end of the training $\epsilon=0$. So as far as the eventual optimum of SS is concerned, we only have to focus on what the first term of the scoring rule does. The second term is the good old log-likelihood so we know that part works.
+
+After some math, one can show that scheduled sampling with a fixed $\epsilon$ minimises the following divergence between the true $P$ and the model $Q$:
+
+$$D_{SS}[P\|Q] = KL[P_{x_1}\|Q_{x_1}] + (1-\epsilon) \mathbb{E}_{z\sim Q_{x_1}} KL[P_{x_2}\|Q_{x_2\vert x_1=z}] + \epsilon KL[P_{x_2\vert x_1}\|Q_{x_2\vert x_1}]$$
+
+Now, if $\epsilon=1$, we recover the Kullback-Leibler divergence between the joint $P_{x_1,x_2}$ and $Q_{x_1,x_2}$, which is what we expect as it corresponds to maximum likelihood estimation. However, as $\epsilon$ is annealed to $0$, the objective function is somewhat strange, whereby the conditional distribution $Q_{x_2\vert x_1}$ is pushed to model the marginal distribution $P_{x_2}$, instead of $P_{x_2\vert x_1}$ as one would expect. One can therefore see that the factorised $Q^{*} = P_{x_1}P_{x_2}$ minimises this objective function.
+
+#### what this means for text modeling
+
+Extrapolating from the two variable case to longer sequences, one can see that the scheduled sampling objective would fail if minimised properly until convergence. Consider the case when the $\epsilon\approx 0$ stage is reached in the annealing schedule. Now consider what the RNN has to do to predict the $n$th character in a string during training. It is fed a random prefix string that was generated by itself but never seen any real data. Then the RNN has to give a probabilistic forecast of what the $n$th character in the training sentence is, having seen none of the previous characters in the sentence.
+
+The optimal model that minimises this objective would completely ignore all the characters in the sentence so far, but keep a simple linear counter that indexes where it is within the sentence. Then it would emit a character from an index-specific marginal distribution of characters. This is the equivalent of the factorised trivial solution above.
+
+Yes, such a model would be better at &quot;recovering from its own mistakes&quot;, because at every character it would start independently from what it has generated so far. But this is at the cost of paying no attention whatsoever as to what the prefix of the sentence was. I believe the reason why this trivial behaviour was not observed in the paper is that the authors did not run the optimisation until convergence, and did not implement the full gradient of the objective function, as they discuss in the paper.
+
+#### Constructive part of criticism
+
+#### What to do instead of SS?
+
+So the observed problem was that RNNs trained via maximum likelihood are unable to recover from their own mistakes early on in a sentence, when they are used to generate.
+
+`The main reason for the observed problem is that the log-likelihood is a local scoring rule`
+
+The local property of scoring rules means that at training time we only ever evaluate the model $Q$ on actually observed datapoints. So if the RNN is faced with a prefix subsequence that was not in the dataset, God knows what it&#x27;s going to complete that sentence with.
+
+The proper (shall I say strictly proper) way to fix this issue is to use </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

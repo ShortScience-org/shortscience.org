@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepFace: Closing the Gap to Human-Level Performance in Face Verification - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="DeepFace: Closing the Gap to Human-Level Performance in Face Verification - ShortScience.org">
+<meta property="og:description" content="## General stuff about face recognition
+
+Face recognition has 4 main tasks:
+
+* **Face detection**: G...">
+<meta name="description" content="## General stuff about face recognition
+
+Face recognition has 4 main tasks:
+
+* **Face detection**: G...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Taigman, Yaniv and Yang, Ming and Ranzato, Marc'Aurelio and Wolf, Lior"}, "headline": "DeepFace: Closing the Gap to Human-Level Performance in Face Verification", "description": "Summary of DeepFace: Closing the Gap to Human-Level Performance in Face Verification", "datePublished": "2016-06-29 18:42:14", "dateModified": "2019-04-27 21:36:31", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://doi.ieeecomputersociety.org/10.1109/CVPR.2014.220"><span class="glyphicon glyphicon-link"></span> doi.ieeecomputersociety.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">DeepFace: Closing the Gap to Human-Level Performance in Face Verification</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Taigman%2C%20Yaniv">Taigman, Yaniv</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yang%2C%20Ming">Yang, Ming</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ranzato%2C%20Marc%27Aurelio">Ranzato, Marc&#x27;Aurelio</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Wolf%2C%20Lior">Wolf, Lior</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/cvpr&amp;year=2014">Conference and Computer Vision and Pattern Recognition - 2014</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/cvpr/TaigmanYRW14">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="martinthoma" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-06-29&lt;br&gt;Edited: 2019-04-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/TaigmanYRW14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-203').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/TaigmanYRW14%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-203" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Dmartinthoma&amp;text=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification&amp;Body=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Dmartinthoma&amp;title=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-06-29</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## General stuff about face recognition
+
+Face recognition has 4 main tasks:
+
+* **Face detection**: Given an image, draw a rectangle around every face
+* **Face alignment**: Transform a face to be in a canonical pose
+* **Face representation**: Find a representation of a face which is suitable for follow-up tasks (small size, computationally cheap to compare, invariant to irrelevant changes)
+* **Face verification**: Images of two faces are given. Decide if it is the same person or not.
+
+The face verification task is sometimes (more simply) a face classification task (given a face, decide which of a fixed set of people it is).
+
+Datasets being used are:
+
+* **LFW** (Labeled Faces in the Wild): 97.35% accuracy; 13 323 web photos of 5 749 celebrities
+* **YTF** (YouTube Faces): 3425 YouTube videos of 1 595 subjects
+* **SFC** (Social Face Classification): 4.4 million labeled faces from 4030 people, each 800 to 1200 faces
+* **USF** (Human-ID database): 3D scans of faces
+
+## Ideas in this paper
+
+This paper deals with face alignment and face representation.
+
+**Face Alignment**
+
+They made an average face with the USF dataset. Then, for each new face, they apply the following procedure:
+
+* Find 6 points in a face (2 eyes, 1 nose tip, 2 corners of the lip, 1 middle point of the bottom lip)
+* Crop according to those
+* Find 67 points in the face / apply them to a normalized 3D model of a face
+* Transform (=align) face to a normalized position
+
+**Representation**
+
+Train a neural network on 152x152 images of faces to classify 4030 celebrities. Remove the softmax output layer and use the output of the second-last layer as the transformed representation.
+
+The network is:
+
+* C1 (convolution): 32 filters of size $11 \times 11 \times 3$ (RGB-channels) (returns $142\times 142$ &quot;images&quot;)
+* M2 (max pooling): $3 \times 3$, stride of 2  (returns $71\times 71$ &quot;images&quot;)
+* C3 (convolution): 16 filters of size $9 \times 9 \times 16$ (returns $63\times 63$ &quot;images&quot;)
+* L4 (locally connected): $16\times9\times9\times16$ (returns $55\times 55$ &quot;images&quot;)
+* L5 (locally connected): $16\times7\times7\times16$ (returns $25\times 25$ &quot;images&quot;)
+* L6 (locally connected): $16\times5\times5\times16$ (returns $21\times 21$ &quot;images&quot;)
+* F7 (fully connected): ReLU, 4096 units
+* F8 (fully connected): softmax layer with 4030 output neurons
+
+The training was done with:
+
+* Stochastic Gradient Descent (SGD)
+* Momentum of 0.9
+* Performance scheduling (LR starting at 0.01, ending at 0.0001)
+* Weight initialization: $w \sim \mathcal{N}(\mu=0, \sigma=0.01)$, $b = 0.5$
+* ~15 epochs ($\approx$ 3 days) of training
+
+
+## Evaluation results
+
+* **Quality**:
+  * 97.35% accuracy (or mean accuracy?) with an Ensemble of DNNs for LFW
+  * 91.4% accuracy with a single network on YTF
+* **Speed**: DeepFace runs in 0.33 seconds per image (I&#x27;m not sure which size). This includes image decoding, face detection and alignment, **the** feed forward network (why only one? wasn&#x27;t this the best performing Ensemble?) and final classification output
+
+## See also
+
+* Andrew Ng: [C4W4L03 Siamese Network](https://www.youtube.com/watch?v=6jfw8MuKwpI)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/cvpr/TaigmanYRW14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-204').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/cvpr/TaigmanYRW14%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-204" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Daleju&amp;text=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification&amp;Body=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fcvpr%2FTaigmanYRW14%26a%3Daleju&amp;title=Summary%20of%20DeepFace%3A%20Closing%20the%20Gap%20to%20Human-Level%20Performance%20in%20Face%20Verification" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">They describe a CNN architecture that can be used to identify a person given an image of their face.
+
+### How
+  * The expected input is the image of a face (i.e. it does not search for faces in images, the faces already have to be extracted by a different method).
+  * *Face alignment / Frontalization*
+    * Target of this step: Get rid of variations within the face images, so that every face seems to look straight into the camera (&quot;frontalized&quot;).
+    * 2D alignment
+      * They search for landmarks (fiducial points) on the face.
+        * They use SVRs (features: LBPs) for that.
+        * After every application of the SVR, the localized landmarks are used to transform/normalize the face. Then the SVR is applied again. By doing this, the locations of the landmarks are gradually refined.
+      * They use the detected landmarks to normalize the face images (via scaling, rotation and translation).
+    * 3D alignment
+      * The 2D alignment allows to normalize variations within the 2D-plane, not out-of-plane variations (e.g. seeing that face from its left/right side). To normalize out-of-plane variations they need a 3D transformation.
+      * They detect an additional 67 landmarks on the faces (again via SVRs).
+      * They construct a human face mesh from a dataset (USF Human-ID).
+      * They map the 67 landmarks to that mesh.
+      * They then use some more complicated steps to recover the frontalized face image.
+  * *CNN architecture*
+    * The CNN receives the frontalized face images (152x152, RGB).
+    * It then applies the following steps:
+      * Convolution, 32 filters, 11x11, ReLU (-&gt; 32x142x142, CxHxW)
+      * Max pooling over 3x3, stride 2 (-&gt; 32x71x71)
+      * Convolution, 16 filters, 9x9, ReLU (-&gt; 16x63x63)
+      * Local Convolution, 16 filters, 9x9, ReLU (-&gt; 16x55x55)
+      * Local Convolution, 16 filters, 7x7, ReLU (-&gt; 16x25x25)
+      * Local Convolution, 16 filters, 5x5, ReLU (-&gt; 16x21x21)
+      * Fully Connected, 4096, ReLU
+      * Fully Connected, 4030, Softmax
+    * Local Convolutions use a different set of learned weights at every &quot;pixel&quot; (while a normal convolution uses the same set of weights at all locations).
+    * They can afford to use local convolutions because of their frontalization, which roughly forces specific landmarks to be at specific locations.
+    * They use dropout (apparently only after the first fully connected layer).
+    * They normalize &quot;the features&quot; (probably the 4096 fully connected layer). Each component is divided by its maximum value across a training set. Additionally, the whole vector is L2-normalized. The goal of this step is to make the network less sensitive to illumination changes.
+    * The whole network has about 120 million parameters.
+    * Visualization of the architecture:
+      * ![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/DeepFace__architecture.jpg?raw=true &quot;Architecture&quot;)
+  * *Training*
+    * The network receives images, each showing a face, and is trained to classify the identity of the face (e.g. gets image of Obama, has to return &quot;that&#x27;s Obama&quot;).
+    * They use cross-entropy as their loss.
+  * *Face verification*
+    * In order to tell whether two images of faces show the same person they try three different methods.
+    * Each of these relies on the vector extracted by the first fully connected layer in the network (4096d).
+    * Let these vectors be `f1` (image 1) and `f2` (image 2). The methods are then:
+      1. Inner product between `f1` and `f2`. The classification (same person/not same person) is then done by a simple threshold.
+      2. Weighted X^2 (chi-squared) distance. Equation, per vector component i: `weight_i (f1[i] - f2[i])^2 / (f1[i] + f2[i])`. The vector is then fed into an SVM.
+      3. Siamese network. Means here simply that the absolute distance between `f1` and `f2` is calculated (`|f1-f2|`), each component is weighted by a learned weight and then the sum of the components is calculated. If the result is above a threshold, the faces are considered to show the same person.
+
+### Results
+  * They train their network on the Social Face Classification (SFC) dataset. That seems to be a Facebook-internal dataset (i.e. not public) with 4.4 million faces of 4k people.
+  * When applied to the LFW dataset:
+    * Face recognition (&quot;which person is shown in the image&quot;) (apparently they retrained the whole model on LFW for this task?):
+      * Simple SVM with LBP (i.e. not their network): 91.4% mean accuracy.
+      * Their model, with frontalization, with 2d alignment: ??? no value.
+      * Their model, no frontalization (only 2d alignment): 94.3% mean accuracy.
+      * Their model, no frontalization, no 2d alignment: 87.9% mean accuracy.
+    * Face verification (two images -&gt; same/not same person) (apparently also trained on LFW? unclear):
+      * Method 1 (inner product + threshold): 95.92% mean accuracy.
+      * Method 2 (X^2 vector + SVM): 97.00% mean accurracy.
+      * Method 3 (siamese): Apparently 96.17% accuracy alone, and 97.25% when used in an ensemble with other methods (under special training schedule using SFC dataset).
+  * When applied to the YTF dataset (YouTube video frames):
+    * 92.5% accuracy via X^2-method.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

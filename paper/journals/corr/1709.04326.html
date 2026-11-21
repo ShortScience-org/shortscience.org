@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning with Opponent-Learning Awareness - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learning with Opponent-Learning Awareness - ShortScience.org">
+<meta property="og:description" content="A central question of this paper is: under what circumstances will you see agents that have been tra...">
+<meta name="description" content="A central question of this paper is: under what circumstances will you see agents that have been tra...">
+<meta property="og:image" content="https://i.imgur.com/5xddJRj.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1709.04326">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1709.04326" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jakob N. Foerster and Richard Y. Chen and Maruan Al-Shedivat and Shimon Whiteson and Pieter Abbeel and Igor Mordatch"}, "headline": "Learning with Opponent-Learning Awareness", "description": "Summary of Learning with Opponent-Learning Awareness", "datePublished": "2018-07-19 16:55:33", "dateModified": "2018-07-19 16:55:33", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/5xddJRj.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1709.04326", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.AI,  cs.GT">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1709.04326v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Learning%20with%20Opponent-Learning%20Awareness%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Learning with Opponent-Learning Awareness</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jakob%20N.%20Foerster">Jakob N. Foerster</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Richard%20Y.%20Chen">Richard Y. Chen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Maruan%20Al-Shedivat">Maruan Al-Shedivat</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shimon%20Whiteson">Shimon Whiteson</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Pieter%20Abbeel">Pieter Abbeel</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Igor%20Mordatch">Igor Mordatch</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.AI">cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.GT"> cs.GT</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/09/13<br><b>Abstract:</b>   Multi-agent settings are quickly gathering importance in machine learning.
+This includes a plethora of recent work on deep multi-agent reinforcement
+learning, but also can be extended to hierarchical RL, generative adversarial
+networks and decentralised optimisation. In all these settings the presence of
+multiple learning agents renders the training problem non-stationary and often
+leads to unstable training or undesired final results. We present Learning with
+Opponent-Learning Awareness (LOLA), a method in which each agent shapes the
+anticipated learning of the other agents in the environment. The LOLA learning
+rule includes an additional term that accounts for the impact of one agent&#x27;s
+policy on the anticipated parameter update of the other agents. Preliminary
+results show that the encounter of two LOLA agents leads to the emergence of
+tit-for-tat and therefore cooperation in the iterated prisoners&#x27; dilemma, while
+independent learning does not. In this domain, LOLA also receives higher
+payouts compared to a naive learner, and is robust against exploitation by
+higher order gradient-based methods. Applied to repeated matching pennies, LOLA
+agents converge to the Nash equilibrium. In a round robin tournament we show
+that LOLA agents can successfully shape the learning of a range of multi-agent
+learning algorithms from literature, resulting in the highest average returns
+on the IPD. We also show that the LOLA update rule can be efficiently
+calculated using an extension of the policy gradient estimator, making the
+method suitable for model-free RL. This method thus scales to large parameter
+and input spaces and nonlinear function approximators. We also apply LOLA to a
+grid world task with an embedded social dilemma using deep recurrent policies
+and opponent modelling. Again, by explicitly considering the learning of the
+other agent, LOLA agents learn to cooperate out of self-interest.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169').hide());void($('#showless-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169').show());void($('#more-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169').show());void($('#showless-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169').hide());void($('#more-am91cm5hbHMvY29yci8xNzA5LjA0MzI2-1169').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1709.04326">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-07-19&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1709.04326&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1170').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1709.04326%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1170" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1709.04326&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Ddecodyng&amp;text=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness&amp;Body=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Ddecodyng&amp;title=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1709.04326&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-07-19</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">A central question of this paper is: under what circumstances will you see agents that have been trained to optimize their own reward implement strategies - like tit for tat - that are are more sophisticated and higher overall reward than each agent simply pursuing its dominant strategy. The games under consideration here are “general sum” games like Iterated Prisoner’s Dilemma, where each agent’s dominant strategy is to defect, but with some amount of coordination or reciprocity, better overall outcomes are possible. Previously, models have achieved this via explicit hardcoding, but this paper strove to use a simpler, more general approach: allowing each agent A to optimize its reward not only with regard to a fixed opponent, but with regard to an opponent that will make a predictable update move in response to the action A is about to take. 
+
+Specifically, this model  - shorthanded as LOLA, Learning with Opponent-Learning Awareness -  maximizes a given agent’s expected discount reward, but looks at reward *conditional on* the ways the opponent will update to a given action. In a simplified world where the explicit reward function is known, it’s possible to literally take the derivative through the opponent’s expected update step, taking into account the ways your expected reward is changed by the response you expect of your opponent. Outside of this simplified framework, in the world of policy gradients, there’s no analytic loss function; you can no longer directly differentiate your reward function with respect to your opponent’s actions, but you can differentiate your expected reward estimator with respect to them. This concept is quite similar to a 2016 paper, Metz et al, that used this concept to train a more effective GAN, by allowing each network in the adversarial pair to “look ahead” to their opponent’s expected response as a way to avoid getting stuck in repetitive action/response cycles. In circumstances where the parameters of the opponent are not known - obviously closer to realistic for an adversarial scenario - the paper demonstrates proof of concept ability to model an opponent’s strategy based on their past actions, and use that to conduct response-step estimates. 
+
+https://i.imgur.com/5xddJRj.png
+
+It should of course be said in all this: even though this setup did produce results closer to what we would expect in rational reciprocity, it’s still very simplified. In most of the experiments, each agent had perfect knowledge of the opponent’s priorities and likely responses; in most game theory scenarios, constructing a model of your opponent is a nontrivial part of the difficulty. Nonetheless, I found it a 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="mnoukhov" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=mnoukhov" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=mnoukhov&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/eae803a7d7c16e4a2d46830d328e16f1?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;mnoukhov&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: mnoukhov&lt;br&gt;Posted: 2018-08-13&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1709.04326&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/eae803a7d7c16e4a2d46830d328e16f1?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1171').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1709.04326%26a%3Dmnoukhov" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1171" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1709.04326&amp;a=mnoukhov" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Dmnoukhov&amp;text=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Dmnoukhov" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness&amp;Body=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Dmnoukhov"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Dmnoukhov" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1709.04326%26a%3Dmnoukhov&amp;title=Summary%20of%20Learning%20with%20Opponent-Learning%20Awareness" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1709.04326&amp;a=mnoukhov" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=mnoukhov" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by mnoukhov 2018-08-13</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Normal RL agents in multi-agent scenarios treat their opponents as a static part of the environment, not taking into account the fact that other agents are learning as well. This paper proposes LOLA, a learning rule that should take the agency and learning of opponents into account by optimizing &quot;return under one step look-ahead of opponent learning&quot;
+
+So instead of optimizing under the current parameters of agent 1 and 2 
+$$V^1(\theta_i^1, \theta_i^2)$$
+
+LOLA proposes to optimize taking into account one step of opponent (agent 2) learning
+$$V^1(\theta_i^1, \theta_i^2 + \Delta \theta^2_i)$$
+
+where we assume the opponent&#x27;s naive learning update $\Delta \theta^2_i = \nabla_{\theta^2} V^2(\theta^1, \theta^2) \cdot \eta$ and we add a second-order correction term
+
+on top of this, the authors propose
+- a learning rule with policy gradients in the case that the agent does not have access to exact gradients
+- a way to estimate the parameters of the opponent, $\theta^2$, from its trajectories using maximum likelihood in the case you can&#x27;t access them directly
+$$\hat \theta^2 = \text{argmax}_{\theta^2} \sum_t \log \pi_{\theta^2}(u_t^2|s_t)$$
+
+LOLA is tested on iterated prisoner&#x27;s dilemma and converges to a tit-for-tat strategy more frequently than the naive RL learning algorithm, and outperforms it. LOLA is tested on iterated matching pennies (similar to prisoner&#x27;s dilemma) and stably converges to the Nash equilibrium whereas the naive learners do not. In testing on coin game (a higher dimensional version of prisoner&#x27;s dilemma) they find that naive learners generally choose the defect option whereas LOLA agents have a mostly-cooperative strategy.
+
+As well, the authors show that LOLA is a dominant learning rule in IPD, where both agents always do better if either is using LOLA (and even better if both are using LOLA).
+
+Finally, the authors also propose second order LOLA, which instead of assuming the opponent is a naive learner, assumes the opponent uses a LOLA learning rule. They show that second order LOLA does not lead to improved performance so there is no need to have a $n$th order LOLA arms race.
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

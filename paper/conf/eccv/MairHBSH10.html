@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adaptive and Generic Corner Detection Based on the Accelerated Segment Test - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Adaptive and Generic Corner Detection Based on the Accelerated Segment Test - ShortScience.org">
+<meta property="og:description" content="**Introduction :**
+
+Corners, as feature cues in an image, is defined by two edge intersections. This...">
+<meta name="description" content="**Introduction :**
+
+Corners, as feature cues in an image, is defined by two edge intersections. This...">
+<meta property="og:image" content="https://i.imgur.com/lIHh7gL.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/eccv/MairHBSH10">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/eccv/MairHBSH10" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Mair, Elmar and Hager, Gregory D. and Burschka, Darius and Suppa, Michael and Hirzinger, Gerd"}, "headline": "Adaptive and Generic Corner Detection Based on the Accelerated Segment Test", "description": "Summary of Adaptive and Generic Corner Detection Based on the Accelerated Segment Test", "datePublished": "2019-11-22 08:17:13", "dateModified": "2019-11-22 08:17:13", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/lIHh7gL.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/eccv/MairHBSH10", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://doi.org/10.1007/978-3-642-15552-9_14"><span class="glyphicon glyphicon-link"></span> doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Adaptive%20and%20Generic%20Corner%20Detection%20Based%20on%20the%20Accelerated%20Segment%20Test%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Adaptive and Generic Corner Detection Based on the Accelerated Segment Test</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Mair%2C%20Elmar">Mair, Elmar</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hager%2C%20Gregory%20D.">Hager, Gregory D.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Burschka%2C%20Darius">Burschka, Darius</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Suppa%2C%20Michael">Suppa, Michael</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hirzinger%2C%20Gerd">Hirzinger, Gerd</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/eccv&amp;year=2010">European Conference on Computer Vision - 2010</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/eccv/MairHBSH10">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="desiananurchalifah" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=desiananurchalifah" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=desiananurchalifah&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/48cdd50c286d91e2537290e5a3cb1feb?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Desiana Nurchalifah&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: desiananurchalifah&lt;br&gt;Posted: 2019-11-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/eccv/MairHBSH10&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/48cdd50c286d91e2537290e5a3cb1feb?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-226').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/eccv/MairHBSH10%26a%3Ddesiananurchalifah" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-226" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/eccv/MairHBSH10&amp;a=desiananurchalifah" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FMairHBSH10%26a%3Ddesiananurchalifah&amp;text=Summary%20of%20Adaptive%20and%20Generic%20Corner%20Detection%20Based%20on%20the%20Accelerated%20Segment%20Test&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FMairHBSH10%26a%3Ddesiananurchalifah" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Adaptive%20and%20Generic%20Corner%20Detection%20Based%20on%20the%20Accelerated%20Segment%20Test&amp;Body=Summary%20of%20Adaptive%20and%20Generic%20Corner%20Detection%20Based%20on%20the%20Accelerated%20Segment%20Test%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FMairHBSH10%26a%3Ddesiananurchalifah"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FMairHBSH10%26a%3Ddesiananurchalifah" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FMairHBSH10%26a%3Ddesiananurchalifah&amp;title=Summary%20of%20Adaptive%20and%20Generic%20Corner%20Detection%20Based%20on%20the%20Accelerated%20Segment%20Test" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/eccv/MairHBSH10&amp;a=desiananurchalifah" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=desiananurchalifah" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Desiana Nurchalifah 2019-11-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">**Introduction :**
+
+Corners, as feature cues in an image, is defined by two edge intersections. This definition has benefit in allowing precise location of the cue, although it is only valid when locality is maintained and the result is similar to the real corner location
+
+**Related work:**
+* Corner detector method present are SIFT global tracker that is using Difference of Gaussians and SURF that is using Haar wavelet to approximate Hessian determinat. These methods have drawback in high computation
+* FAST method is a corner detector that performs better than conventional corner detectors such as Harris corner detection. Drawbacks of this method is that it depends on the environment, therefore decision tree needs to be always constructed from scratch (ID3 greedy algorithm)
+
+**Approach:**
+* In detecting corners, discretized circle pixels are used to be compared with the center area. A circle with 3.4 diameter is used as test mask
+* Based on accelerated segment test, pixel is identified to be a corner when there are a number of pixel that has different value, either darker or lighter, than threshold of center pixel
+* The number of pixel that is used in this paper is the same as FAST-9 method, which nine size segment as it has the best performance
+* This number has the property to detect corners with some standard such that when different viewpoints are applied, it has the highest number of repeatability to detect corners correctly
+* FAST algorithm is building ternary tree which has three possible states that are darker, lighter, or similar, added by unknown state that leads to $4^N$ configuration space, while FAST-9 has dissimilarity in the circle&#x27;s thickness which is increased to 3 pixels
+* Proposed corner detection describes the algorithm by testing one of the pixel with one question to pose. If a scenario of a pixel is given and question is evaluated, the next pixel and question in query is determined by the response
+* This algorithm expands the configuration space by adding not lighter and not darker which produces a binary tree representation in which evaluation can be done in each of the nodes, therefore the configuration space has the size of $6^N$
+* Memory is accessed by three types of cost which are second pixel comparison, same row pixel test, and other pixel test
+* To make decision tree optimal, a method that has resemblance with backward induction is formulated. Configuration space is explored using Depth First Search algorithm where each leaf is described whether it has satisfy corner criteria by accelerated segment test
+* Cost of each node is calculated by summation of minimum cost in each pair of child that has the positive or negative value with probability of pixel nodes both parent and child
+* The algorithm calculates the probability of an image whether it has homogeneous and structured areas then proceed to make a decision tree according to it. The distribution of probability contains three probabilities that are mirror state probability and similar state probability
+
+https://i.imgur.com/lIHh7gL.png
+
+* Algorithm is improved to make it generic by jumping from one optimized tree to another based on the configuration of the respected leaf once it has termination condition based on the corner criteria
+* This switching method has no cost as it happens in a leaf. However, it affects the time by one test delay. Thus, AGAST can only perform worse than FAST once it needs to jump between either homogeneous or heterogeneous pixels consecutively
+* Corner detection is compared using three pixel mask sizes that are 4, 12 and 16. Comparison is done by applying Gaussian noise and blur to database of variety viewpoints of checkerboard database
+* As limited computation using conventional computers are present, four state configuration space is used using three different arc lengths that are 9, 10 and 11
+* As the mask and arc length enlarged, the more features found. Small arc defines the location of the real corner
+* Large pattern leads to slower computation as it has more process to be done in order to detect the corner or evaluating features and it needs more advanced computing memory
+* Smaller pattern can also lead to elimination of feature detection as the features located near to each other, therefore in smaller feature, post processing technique is removed
+* When database is added by Gaussian blur and noise, the combination of pixel mask of 16 and arc length of 9 is more robust against the disturbance, therefore, repeatability is controlled by arc
+* Decision tree is also evaluated by computing the response time of corner detection. This is done by calculating the tests number that has possible pixel arrangement in a mask 
+* Pixels arrangements that have close similarities are grouped. By observing the standard deviation, the group with large number of pixels that are alike has unbalanced decision tree. This happens as possible pixel arrangements are limited. Observed as follows:
+
+https://i.imgur.com/DLqCXhy.png
+
+* However, when one tree is used, adaptive tree has better performance than the conventional method
+* In comparison for trees that has different weight, the algorithm that jumps between trees or AGAST is optimized when the value of the weights are 0.1 and 1/3
+* Performance of AGAST is also tested by comparison with FAST-9 where uniform probability distribution are used to make the trees
+* Both algorithm are tested on five scenes, which are laboratory, outdoor, indoor, aerial, and medical. The optimized tree can speed the corner detection up for 13$\%$ while AGAST can speed up in the range of 23$\%$ to over 30$\%$ 
+
+**Paper contributions**
+* Paper provides an improved FAST corner detector that is able to dynamically adapt with its environment while also processing an image input
+* AGAST method is improving its predecessors method in saving time spent to process the image and also memory that is being used
+* It is also able to find more keypoints in corner detection</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

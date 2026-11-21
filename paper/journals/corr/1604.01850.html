@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End-to-End Deep Learning for Person Search - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="End-to-End Deep Learning for Person Search - ShortScience.org">
+<meta property="og:description" content="The paper presents a new deep learning framework for person search. The authors propose to unify two...">
+<meta name="description" content="The paper presents a new deep learning framework for person search. The authors propose to unify two...">
+<meta property="og:image" content="https://i.imgur.com/ISDQd9L.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1604.01850">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1604.01850" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Tong Xiao and Shuang Li and Bochao Wang and Liang Lin and Xiaogang Wang"}, "headline": "End-to-End Deep Learning for Person Search", "description": "Summary of End-to-End Deep Learning for Person Search", "datePublished": "2017-10-13 04:42:43", "dateModified": "2017-10-13 04:42:43", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/ISDQd9L.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1604.01850", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1604.01850v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22End-to-End%20Deep%20Learning%20for%20Person%20Search%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">End-to-End Deep Learning for Person Search</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Tong%20Xiao">Tong Xiao</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shuang%20Li">Shuang Li</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Bochao%20Wang">Bochao Wang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Liang%20Lin">Liang Lin</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xiaogang%20Wang">Xiaogang Wang</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/04/07<br><b>Abstract:</b>   Existing person re-identification (re-id) benchmarks and algorithms mainly
+focus on matching cropped pedestrian images between queries and candidates.
+However, it is different from real-world scenarios where the annotations of
+pedestrian bounding boxes are unavailable and the target person needs to be
+found from whole images. To close the gap, we investigate how to localize and
+match query persons from the scene images without relying on the annotations of
+candidate boxes. Instead of breaking it down into two separate
+tasks---pedestrian detection and person re-id, we propose an end-to-end deep
+learning framework to jointly handle both tasks. A random sampling softmax loss
+is proposed to effectively train the model under the supervision of sparse and
+unbalanced labels. On the other hand, existing benchmarks are small in scale
+and the samples are collected from a few fixed camera views with low scene
+diversities. To address this issue, we collect a large-scale and
+scene-diversified person search dataset, which contains 18,184 images, 8,432
+persons, and 99,809 annotated bounding
+boxes\footnote{\url{http://www.ee.cuhk.edu.hk/~xgwang/PS/dataset.html}}. We
+evaluate our approach and other baselines on the proposed dataset, and study
+the influence of various factors. Experiments show that our method achieves the
+best result.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793').show());void($('#more-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793').show());void($('#showless-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793').hide());void($('#more-am91cm5hbHMvY29yci8xNjA0LjAxODUw-793').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1604.01850">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="anon" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><span class="glyphicon glyphicon-user" style="font-size:2em;" aria-hidden="true" title="Name hidden"></span></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-794').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1604.01850%26a%3Danon" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-794" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1604.01850&amp;a=anon" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.01850%26a%3Danon&amp;text=Summary%20of%20End-to-End%20Deep%20Learning%20for%20Person%20Search&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.01850%26a%3Danon" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20End-to-End%20Deep%20Learning%20for%20Person%20Search&amp;Body=Summary%20of%20End-to-End%20Deep%20Learning%20for%20Person%20Search%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.01850%26a%3Danon"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.01850%26a%3Danon" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1604.01850%26a%3Danon&amp;title=Summary%20of%20End-to-End%20Deep%20Learning%20for%20Person%20Search" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1604.01850&amp;a=anon" title="Link">[link]</a></span>
+<span class="authorbanner" style="color:gray;"><span><center style="background-color: #eeeeee;">Summary by Anonymous 2017-10-13</center></span></span>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper presents a new deep learning framework for person search. The authors propose to unify two disjoint tasks of &#x27;person detection&#x27; and &#x27;person re-identification&#x27; into a single problem of &#x27;person search&#x27; using a Convolutional Neural Network (CNN). Also, a new large-scale benchmark dataset for person search is collected and annotated. It contains $18,184$ images, $8,432$ identities, and $96,143$ pedestrian
+bounding boxes. 
+
+Conventional person re-identification approaches detect people first and then extract features for each person, finally classifying to a category (as depicted in the figure below). Instead of breaking this into separate processes of detection and classification, the problem is solved jointly by using a single CNN similar to the Faster-RCNN framework. https://i.imgur.com/ISDQd9L.png
+
+The proposed framework (shown in the figure below) has a pedestrian proposal net which is used to detect people, and an identification net for extracting features for comparing with the target person. The two modules adapt with each other through joint optimization. In addition, a loss function called Online Instance Matching (OIM) is introduced to cope with problems of using Softmax or pairwise/triplet distance loss functions when the number of identities is large. A lookup table of features from all the labeled identities is maintained. In addition, the approach takes into account many unlabeled identities likely to appear in scene images, as negatives for labeled identities. There are no parameters to learn, the lookup table (LUT) and circular queue (CQ) are just feature buffers. When forward, each labeled identity is matched with all the stored features. When backward, the LUT is updated according to the ID, pushing new features to CQ, and pop out-of-date ones. 
+https://i.imgur.com/1Smsi56.png
+
+To validate the approach, a new person search dataset is collected. On this dataset, the training accuracy when using Softmax loss is around $15\%$. However, with the OIM loss the accuracy improves consistently. Experiments are also performed to compare the method with baseline approaches. The baseline result is around $74\%$, while the proposed approach result (without unlabeled) is $76.1\%$ and $78.7\%$ with unlabeled data.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

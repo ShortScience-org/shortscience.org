@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditional Image Generation with PixelCNN Decoders - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Conditional Image Generation with PixelCNN Decoders - ShortScience.org">
+<meta property="og:description" content="#### Introduction
+
+* The paper explores the domain of conditional image generation by adopting and i...">
+<meta name="description" content="#### Introduction
+
+* The paper explores the domain of conditional image generation by adopting and i...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.05328">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1606.05328" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Aaron van den Oord and Nal Kalchbrenner and Oriol Vinyals and Lasse Espeholt and Alex Graves and Koray Kavukcuoglu"}, "headline": "Conditional Image Generation with PixelCNN Decoders", "description": "Summary of Conditional Image Generation with PixelCNN Decoders", "datePublished": "2016-10-26 19:51:00", "dateModified": "2016-10-26 19:51:00", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1606.05328", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.05328v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Conditional Image Generation with PixelCNN Decoders</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Aaron%20van%20den%20Oord">Aaron van den Oord</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Nal%20Kalchbrenner">Nal Kalchbrenner</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Oriol%20Vinyals">Oriol Vinyals</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lasse%20Espeholt">Lasse Espeholt</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alex%20Graves">Alex Graves</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Koray%20Kavukcuoglu">Koray Kavukcuoglu</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/06/16<br><b>Abstract:</b>   This work explores conditional image generation with a new image density
+model based on the PixelCNN architecture. The model can be conditioned on any
+vector, including descriptive labels or tags, or latent embeddings created by
+other networks. When conditioned on class labels from the ImageNet database,
+the model is able to generate diverse, realistic scenes representing distinct
+animals, objects, landscapes and structures. When conditioned on an embedding
+produced by a convolutional network given a single image of an unseen face, it
+generates a variety of new portraits of the same person with different facial
+expressions, poses and lighting conditions. We also show that conditional
+PixelCNN can serve as a powerful decoder in an image autoencoder. Additionally,
+the gated convolutional layers in the proposed model improve the log-likelihood
+of PixelCNN to match the state-of-the-art performance of PixelRNN on ImageNet,
+with greatly reduced computational cost.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863').show());void($('#more-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863').show());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863').hide());void($('#more-am91cm5hbHMvY29yci8xNjA2LjA1MzI4-863').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1606.05328">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.05328&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-864').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.05328%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-864" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.05328&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Dshagunsodhani&amp;text=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders&amp;Body=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Dshagunsodhani&amp;title=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.05328&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Introduction
+
+* The paper explores the domain of conditional image generation by adopting and improving PixelCNN architecture.
+* [Link to the paper](https://arxiv.org/abs/1606.05328)
+
+#### Based on PixelRNN and PixelCNN
+
+* Models image pixel by pixel by decomposing the joint image distribution as a product of conditionals.
+* PixelRNN uses two-dimensional LSTM while PixelCNN uses convolutional networks.
+* PixelRNN gives better results but PixelCNN is faster to train.
+
+#### Gated PixelCNN
+
+* PixelRNN outperforms PixelCNN due to the larger receptive field and because they contain multiplicative units, LSTM gates, which allow modelling more complex interactions.
+* To account for these, deeper models and gated activation units (equation 2 in the [paper](https://arxiv.org/abs/1606.05328)) can be used respectively.
+* Masked convolutions can lead to blind spots in the receptive fields.
+* These can be removed by combining 2 convolutional network stacks:
+    * Horizontal stack - conditions on the current row.
+    * Vertical stack - conditions on all rows above the current row.
+* Every layer in the horizontal stack takes as input the output of the previous layer as well as that of the vertical stack.
+* Residual connections are used in the horizontal stack and not in the vertical stack (as they did not seem to improve results in the initial settings).
+
+#### Conditional PixelCNN
+
+* Model conditional distribution of image, given the high-level description of the image, represented using the latent vector h (equation 4 in the [paper](https://arxiv.org/abs/1606.05328))
+* This conditioning does not depend on the location of the pixel in the image.
+* To consider the location as well, map h to spatial representation $s = m(h)$ (equation 5 in the the [paper](https://arxiv.org/abs/1606.05328))
+
+#### PixelCNN Auto-Encoders
+
+* Start with a traditional auto-encoder architecture and replace the deconvolutional decoder with PixelCNN and train the network end-to-end.
+
+#### Experiments
+
+* For unconditional modelling, Gated PixelCNN either outperforms PixelRNN or performs almost as good and takes much less time to train.
+* In the case of conditioning on ImageNet classes, the log likelihood measure did not improve a lot but the visual quality of the generated sampled was significantly improved.
+* Paper also included sample images generated by conditioning on human portraits and by training a PixelCNN auto-encoder on ImageNet patches.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.05328&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-865').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.05328%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-865" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.05328&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Daleju&amp;text=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders&amp;Body=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.05328%26a%3Daleju&amp;title=Summary%20of%20Conditional%20Image%20Generation%20with%20PixelCNN%20Decoders" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.05328&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * PixelRNN
+    * PixelRNNs generate new images pixel by pixel (and row by row) via LSTMs (or other RNNs).
+    * Each pixel is therefore conditioned on the previously generated pixels.
+    * Training of PixelRNNs is slow due to the RNN-architecture (hard to parallelize).
+    * Previously PixelCNNs have been suggested, which use masked convolutions during training (instead of RNNs), but their image quality was worse.
+  * They suggest changes to PixelCNNs that improve the quality of the generated images (while still keeping them faster than RNNs).
+
+### How
+  * PixelRNNs split up the distribution `p(image)` into many conditional probabilities, one per pixel, each conditioned on all previous pixels: `p(image) = &lt;product&gt; p(pixel i | pixel 1, pixel 2, ..., pixel i-1)`.
+  * PixelCNNs implement that using convolutions, which are faster to train than RNNs.
+    * These convolutions uses masked filters, i.e. the center weight and also all weights right and/or below the center pixel are `0` (because they are current/future values and we only want to condition on the past).
+    * In most generative models, several layers are stacked, ultimately ending in three float values per pixel (RGB images, one value for grayscale images). PixelRNNs (including this implementation) traditionally end in a softmax over 255 values per pixel and channel (so `3*255` per RGB pixel).
+    * The following image shows the application of such a convolution with the softmax output (left) and the mask for a filter (right):
+      * ![Masked convolution](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Conditional_Image_Generation_with_PixelCNN_Decoders__masked_convolution.png?raw=true &quot;Masked convolution&quot;)
+  * Blind spot
+    * Using the mask on each convolutional filter effectively converts them into non-squared shapes (the green values in the image).
+    * Advantage: Using such non-squared convolutions prevents future values from leaking into present values.
+    * Disadvantage: Using such non-squared convolutions creates blind spots, i.e. for each pixel, some past values (diagonally top-right from it) cannot influence the value of that pixel.
+      * ![Blind spot](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Conditional_Image_Generation_with_PixelCNN_Decoders__blind_spot.png?raw=true &quot;Blind Spot&quot;)
+    * They combine horizontal (1xN) and vertical (Nx1) convolutions to prevent that.
+  * Gated convolutions
+    * PixelRNNs via LSTMs so far created visually better images than PixelCNNs.
+    * They assume that one advantage of LSTMs is, that they (also) have multiplicative gates, while stacked convolutional layers only operate with summations.
+    * They alleviate that problem by adding gates to their convolutions:
+      * Equation: `output image = tanh(weights_1 * image) &lt;element-wise product&gt; sigmoid(weights_2 * image)`
+        * `*` is the convolutional operator.
+        * `tanh(weights_1 * image)` is a classical convolution with tanh activation function.
+        * `sigmoid(weights_2 * image)` are the gate values (0 = gate closed, 1 = gate open).
+        * `weights_1` and `weights_2` are learned.
+  * Conditional PixelCNNs
+    * When generating images, they do not only want to condition the previous values, but also on a laten vector `h` that describes the image to generate.
+    * The new image distribution becomes: `p(image) = &lt;product&gt; p(pixel i | pixel 1, pixel 2, ..., pixel i-1, h)`.
+    * To implement that, they simply modify the previously mentioned gated convolution, adding `h` to it:
+      * Equation: `output image = tanh(weights_1 * image + weights_2 . h) &lt;element-wise product&gt; sigmoid(weights_3 * image + weights_4 . h)`
+        * `.` denotes here the matrix-vector multiplication.
+  * PixelCNN Autoencoder
+    * The decoder in a standard autoencoder can be replaced by a PixelCNN, creating a PixelCNN-Autoencoder.
+
+### Results
+  * They achieve similar NLL-results as PixelRNN on CIFAR-10 and ImageNet, while training about twice as fast.
+    * Here, &quot;fast&quot; means that they used 32 GPUs for 60 hours.
+  * Using Conditional PixelCNNs on ImageNet (i.e. adding class information to each convolution) did not improve the NLL-score, but it did improve the image quality.
+    * ![ImageNet](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Conditional_Image_Generation_with_PixelCNN_Decoders__imagenet.png?raw=true &quot;ImageNet&quot;)
+  * They use a different neural network to create embeddings of human faces. Then they generate new faces based on these embeddings via PixelCNN.
+    * ![Portraits](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Conditional_Image_Generation_with_PixelCNN_Decoders__portraits.png?raw=true &quot;Portraits&quot;)
+  * Their PixelCNN-Autoencoder generates significantly sharper (i.e. less blurry) images than a &quot;normal&quot; autoencoder.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

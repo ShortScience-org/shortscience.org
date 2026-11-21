@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distributed representations of words and phrases and their compositionality - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Distributed representations of words and phrases and their compositionality - ShortScience.org">
+<meta property="og:description" content="The paper discusses a number of extensions to the Skip-gram model previously proposed by Mikolov et...">
+<meta name="description" content="The paper discusses a number of extensions to the Skip-gram model previously proposed by Mikolov et...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=mikolov2013distributed">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=mikolov2013distributed" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff"}, "headline": "Distributed representations of words and phrases and their compositionality", "description": "Summary of Distributed representations of words and phrases and their compositionality", "datePublished": "2016-06-15 18:30:27", "dateModified": "2016-06-15 18:30:27", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=mikolov2013distributed", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, thema:deepwalk,  language,  modelling,  representation">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://scholar.google.com/scholar?q=%22Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Distributed representations of words and phrases and their compositionality</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Mikolov%2C%20Tomas">Mikolov, Tomas</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sutskever%2C%20Ilya">Sutskever, Ilya</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chen%2C%20Kai">Chen, Kai</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Corrado%2C%20Greg%20S">Corrado, Greg S</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dean%2C%20Jeff">Dean, Jeff</a></span>
+<br>
+Advances in neural information processing systems - 2013 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=thema%3Adeepwalk">thema:deepwalk</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20language"> language</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20modelling"> modelling</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20representation"> representation</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=mikolov2013distributed">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="nipsreviews" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nipsreviews" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nipsreviews&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;NIPS Conference Reviews&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nipsreviews&lt;br&gt;Posted: 2016-06-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;mikolov2013distributed&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2028').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dnipsreviews" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2028" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=mikolov2013distributed&amp;a=nipsreviews" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dnipsreviews&amp;text=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality&amp;Body=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dnipsreviews"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dnipsreviews&amp;title=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=mikolov2013distributed&amp;a=nipsreviews" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nipsreviews" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by NIPS Conference Reviews 2016-06-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper discusses a number of extensions to the Skip-gram model previously proposed by Mikolov et al (citation [7] in the paper): which learns linear word embeddings that are particularly useful for analogical reasoning type tasks. The extensions proposed (namely, negative sampling and sub-sampling of high frequency words) enable extremely fast training of the model on large scale datasets. This also results in significantly improved performance as compared to previously proposed techniques based on neural networks. The authors also provide a method for training phrase level embeddings by slightly tweaking the original training algorithm. 
+
+This paper proposes 3 improvements for the skip-gram model which allows for learning embeddings for words. The first improvement is subsampling frequent word, the second is the use of a simplified version of noise constrastive estimation (NCE) and finally they propose a method to learn idiomatic phrase embeddings. In all three cases the improvements are somewhat ad-hoc. In practice, both the subsampling and negative samples help to improve generalization substantially on an analogical reasoning task. The paper reviews related work and furthers the interesting topic of additive compositionality in embeddings. 
+
+The article does not propose any explanation as to why the negative sampling produces better results than NCE which it is suppose to loosely approximate. In fact it doesn&#x27;t explain why besides the obvious generalization gain the negative sampling scheme should be preferred to NCE since they achieve similar speeds. </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="fabianboth" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=fabianboth" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=fabianboth&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/fc1bddc6b09befda3e0d2744014a8375?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;fabianboth&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: fabianboth&lt;br&gt;Posted: 2016-06-08&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;mikolov2013distributed&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/fc1bddc6b09befda3e0d2744014a8375?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2029').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dfabianboth" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2029" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=mikolov2013distributed&amp;a=fabianboth" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dfabianboth&amp;text=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dfabianboth" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality&amp;Body=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dfabianboth"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dfabianboth" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dfabianboth&amp;title=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=mikolov2013distributed&amp;a=fabianboth" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=fabianboth" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by fabianboth 2016-06-08</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The main contributions of [Distributed representations of words and phrases and their compositionality](http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf) by Mikolov et al. are several extension to their previously introduced skip-gram (and CBOW) model for word vector representations learned on large text corpora.
+
+For a given word in a training text corpus, the skip-gram model tries to predict surrounding words. Thus, training the skip-gram model on a text corpus adapts vector representations of words in a way that  maximizes the probability for correct surrounding words. This leads to distributed vector representations that capture a large number of precise syntactic and semantic word relationships.
+
+They propose a method to identify idiomatic phrases that are not compositions of individual words (like “Boston Globe”) in order to improve the vocabulary base. Also, an alternative training method to the hierarchical softmax, negative sampling, is introduced and analysed in detail. Further, they show that meaningful linear arithmetic operations can be performed on the trained vector representations, which makes precise analogical reasoning possible.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="gkcalat" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=gkcalat" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=gkcalat&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/737bbdb10ca3ac08adf13156b6b76675?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Ablaikhan Akhazhanov&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: gkcalat&lt;br&gt;Posted: 2019-05-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;mikolov2013distributed&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/737bbdb10ca3ac08adf13156b6b76675?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2030').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dgkcalat" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2030" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=mikolov2013distributed&amp;a=gkcalat" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dgkcalat&amp;text=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dgkcalat" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality&amp;Body=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dgkcalat"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dgkcalat" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmikolov2013distributed%26a%3Dgkcalat&amp;title=Summary%20of%20Distributed%20representations%20of%20words%20and%20phrases%20and%20their%20compositionality" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=mikolov2013distributed&amp;a=gkcalat" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=gkcalat" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Ablaikhan Akhazhanov 2019-05-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper presents the famously known Word2Vec model, which became ubiquitous in numerous NLP applications partially owing to its linear feature space with additive compositionality. To be fair, the paper is an extension to the previously presented work by Tomas Mikolov and his colleagues on distributed representation of words and phrases. The proposed approach is based on the skip-gram model and introduces four novel methods to significantly improve training speed and performance. Particularly, the approach is effective with frequent and rare words and phrases, including idiomatic phrases.
+
+Skip-gram model uses softmax function to define P(w_O | w_I), which becomes impractical when training on a large vocabulary due to expensive calculation of the denominator. To tackle it, the authors employ binary Huffman tree of words and calculate P(w_O | w_I) as a product of the sigmoids along the path from the root to any word w. The argument to the sigmoids is a product of the indicator function and the dot product between the vector representations of the words. The indicator flags whether a word is in the path from the root node to the word w. Tree structure simplifies the calculation from O(W) to average O(logW). Additionally, since Huffman tree assigns short codes to the frequent words, the training gets an extra speed up.
+
+As an alternative to tree-based hierarchical softmax, the authors introduce an extension to Noise Contrastive Estimation (NCE), which they call Negative Sampling. The idea is to use logistic binary regression to distinguish between negative and positive samples, rather than picking one class from the entire vocabulary. They sample k negative examples from a “noise distribution” Pn for each positive example. As Pn authors employ unigram distribution U(w)^(3/4)/Z, which works best for both Negative Sampling and Hierarchical Softmax models, although they do not elaborate on the choice of the noise distribution.
+
+To balance frequent and rare words, authors aggressively subsample words whose frequency is greater than a chosen threshold while preserving the ranking of the frequencies. They demonstrate that a heuristically chosen subsampling strategy accelerates learning and even significantly improves the accuracy of the learned vectors of the rare words. They discard a word w with probability p(w) = 1 – sqrt(t/f(w)), where t is a manually selected threshold (e.g. 10^-5) and f(w) is the word frequency.
+Finally, authors learn vector representation of the phrases by combining words into individual tokens. They score bigrams as score(w_i,w_j) = (cnt(w_i, w_j)-d)/(cnt(w_i) – cnt(w_j)) and then choose the ones that have scores above the chosen threshold. To form longer phrases, authors evaluate the scores recursively. The chosen score metric combines words that appear frequently together, and infrequently in other contexts.
+
+Although the paper lacks detailed discussion on critical choice of the subsampling and negative sampling, it creates a foundation for explainable linear feature space in NLP model. The model shows the state-of-the-art performance and significantly outperforms other approaches, though it is partially due to a much bigger size of the training dataset. One of the most outstanding results of the paper is the inherent additive compositionality. This directly comes from the use of the softmax that tries to maximize the product of the probabilities. It forces the word vectors to have a linear relationship with the inputs to the softmax and decreases the distance of between the words that appear lose to each other. As a results, the word vectors can be combined as follows: “Paris” – “France” + “Germany” = “Berlin”.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

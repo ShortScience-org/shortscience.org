@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pregel: a system for large-scale graph processing - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Pregel: a system for large-scale graph processing - ShortScience.org">
+<meta property="og:description" content="The [Pregel paper]( ) introduces a vertex-centric, large-scale graph computational model. Interestin...">
+<meta name="description" content="The [Pregel paper]( ) introduces a vertex-centric, large-scale graph computational model. Interestin...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=malewicz2010pregel">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=malewicz2010pregel" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Malewicz, Grzegorz and Austern, Matthew H and Bik, Aart JC and Dehnert, James C and Horn, Ilan and Leiser, Naty and Czajkowski, Grzegorz"}, "headline": "Pregel: a system for large-scale graph processing", "description": "Summary of Pregel: a system for large-scale graph processing", "datePublished": "2016-10-21 00:10:49", "dateModified": "2016-10-21 00:10:49", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=malewicz2010pregel", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, processing,  da,  tools,  graph">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://scholar.google.com/scholar?q=%22Pregel%3A%20a%20system%20for%20large-scale%20graph%20processing%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Pregel: a system for large-scale graph processing</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Malewicz%2C%20Grzegorz">Malewicz, Grzegorz</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Austern%2C%20Matthew%20H">Austern, Matthew H</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Bik%2C%20Aart%20JC">Bik, Aart JC</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dehnert%2C%20James%20C">Dehnert, James C</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Horn%2C%20Ilan">Horn, Ilan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Leiser%2C%20Naty">Leiser, Naty</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Czajkowski%2C%20Grzegorz">Czajkowski, Grzegorz</a></span>
+<br>
+Proceedings of the 2010 ACM SIGMOD International Conference on Management of data - 2010 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=processing">processing</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20da"> da</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20tools"> tools</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20graph"> graph</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=malewicz2010pregel">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-21&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;malewicz2010pregel&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2027').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dmalewicz2010pregel%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2027" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=malewicz2010pregel&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmalewicz2010pregel%26a%3Dshagunsodhani&amp;text=Summary%20of%20Pregel%3A%20a%20system%20for%20large-scale%20graph%20processing&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmalewicz2010pregel%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Pregel%3A%20a%20system%20for%20large-scale%20graph%20processing&amp;Body=Summary%20of%20Pregel%3A%20a%20system%20for%20large-scale%20graph%20processing%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmalewicz2010pregel%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmalewicz2010pregel%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dmalewicz2010pregel%26a%3Dshagunsodhani&amp;title=Summary%20of%20Pregel%3A%20a%20system%20for%20large-scale%20graph%20processing" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=malewicz2010pregel&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-21</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The [Pregel paper](https://kowshik.github.io/JPregel/pregel_paper.pdf) introduces a vertex-centric, large-scale graph computational model. Interestingly, the name Pregel comes from the name of the river which the Seven Bridges of Königsberg spanned. 
+
+### Computational Model
+
+The system takes as input a directed graph with properties assigned to both vertices and edges. The computation consists of a sequence of iterations, called supersteps. In each superstep, a user-defined function is invoked on each vertex in parallel. This function essentially implements the algorithm by specifying the behaviour of a single vertex V during a single superstep S. The function can read messages sent to the vertex V during the previous superstep (S-1), change the state of the vertex or its out-going edges&#x27;, mutate the graph topology by adding/removing vertices or edges and by sending messages to other vertices that would be received in the next superstep (S+1). Since all computation during a superstep is performed locally, the model is well suited for distributed computing and synchronization is needed only between supersteps.
+
+The computation terminates when every vertex is in the deactivated state. When computation starts, all vertices are in active state. A vertex deactivates itself by voting to halt and once deactivated, it does not take part in subsequent supersteps. But any time a deactivated vertex receives a message, it becomes activated again and takes part in subsequent supersteps. The resulting state machine is shown below:
+
+![Vertex State Machine](https://db.tt/Pdm1Rl6A)
+
+The output of the computation is the set of values produced by the vertices.
+
+Pregel adopts a pure message passing model that eliminates the need of shared memory and remote reads. Messages can be delivered asynchronously thereby reducing the latency. Graph Algorithms can also be expressed as a sequence of MapReduce jobs, but that requires passing the entire state of the graph from one stage to another. It also requires coordinating the various steps of chained MapReduce. In contrast, Pregel keeps vertices and out-going edges on machine performing the computation and only messages are transferred across. Though Pregel is similar in concept to MapReduce, it comes with a natural graph API and efficient support for running iterative algorithms over the graph.
+
+### API
+
+1. Pregel programs are written by subclassing the vertex class.
+2. The programmer overrides the compute() method. This is the user-defined function that is invoked on each vertex.
+3. Within compute(), the programmer can modify the value of vertex or out-going edges&#x27; properties and these changes are reflected immediately. These are the only per-vertex state that persists throughout each superstep.
+4. All messages sent to vertex V during superstep S are available via an iterator in superstep S+1. While it is guaranteed that each message would be delivered exactly once, there is no guarantee on the order of delivery.
+5. User defined handlers are invoked when destination vertex does not exist.
+6. Combiners are used to reduce the number of messages to be transferred by aggregating messages from different vertices (all of which are on the same machine) which have the same destination vertex. Since there is no guarantee about which messages will be aggregated and in what order, only commutative and associative operations can be used.
+7. Aggregators can be used for capturing the global state of the graph where each vertex provides a value to the aggregator during each superstep and these values are combined by the system using a reduce operation (which should be associative and commutative). The aggregated value is then available to all the vertices in the next superstep.
+
+
+### Topology Mutation
+
+Since compute() method allows the graph topology to be modified, conflicting requests can be made in the same superstep. Two mechanisms are used to handles the conflicts:
+
+* Within a super step, following order is followed when resolving conflicting operations:
+  *   Edge removal
+  *   Vertex removal
+  *   Vertex addition
+  *   Edge addition.
+*   User defined handlers are used for conflicts that can not be resolved by partial ordering alone. This would include scenarios where there are multiple requests to create a vertex with different initial values. In these cases, the user defines how to resolve the conflict.
+
+The coordination mechanism is lazy in the sense that global mutations do not require coordination until the point they are applied.
+
+
+### Execution Steps
+
+* Several instances of the user program start executing on a cluster of machines. One of the instances becomes the master and the rest are the workers. 
+* The master partitions the graph based on vertex id with each partition consisting of a set of vertices and its out-going edges. 
+* These partitions are assigned to workers. Each worker executes the compute method on all its vertices and manages messages to and from other vertices.
+* The master instructs each worker to perform a superstep. The workers run the computer method on each vertex and tell the master how many vertices would be active in the next superstep. This continues as long as even one vertex is active.
+* Once all the vertices become deactivated, the master may ask the workers to save their portion of the graph.
+
+
+### Fault Tolerance
+
+Fault tolerance is achieved through checkpointing where the master instructs the workers to save the state of computation to persistent storage. Master issues regular &quot;ping&quot; messages to workers and if a worker does not receive a message from the master in a specified time interval, the worker terminates itself. If the master does not hear back from the worker, the worker is marked as failed. In this case, the graph partitions assigned to the failed worker are reassigned to the active workers. All the active workers then load the computation state from the last checkpoint and may repeat some supersteps.
+
+An alternate to this would be confined recovery where along with basic checkpointing, the workers log out-going messages from their assigned partitions during graph loading and subsequent supersteps. This way, lost partitions can be recomputed from log messages and the entire system does not have to perform a rollback. 
+
+### Worker Implementation
+
+A worker contains a mapping of vertex id to vertex state for its portion of the complete graph. The vertex state would comprise of its current value, its put-going edges, the queue containing incoming messages and a flag marking whether it is in the active state. Two copies of queue and flag are maintained, one for the current superstep and one for the next superstep.
+
+While sending a message to another vertex, the worker checks if the destination vertex is on the same machine. If yes, it places the message directly on the receiver&#x27;s queue instead of sending it via the network. In case the vertex lies on the remote machine, the messages are buffered and sent to destination worker as a single network message.
+
+If a combiner is specified, it is applied to both the message being added to the outgoing message queue and to the message received at the incoming message queue.
+
+### Master Implementation
+
+The master coordinates the workers by maintaining a list of currently alive workers, their addressing information and the information on the portion of graph assigned to them. The size of master&#x27;s data structure depends on the number of partitions and a single master can be used for a very large graph.
+
+The master sends the computation task to workers and waits for a response. If any worker fails, the master enters recovery mode as discussed in the section on fault tolerance. Otherwise, it proceeds to the next superstep. It also runs an internal hHTTP server to serve statistics about the graph and the state of the computation.
+
+### Aggregators
+
+Workers combine all the values supplied to an aggregator, by all the vertices in a superstep, into a single local value. At the end of the superstep, the workers perform the tree-based reduction on the local value and deliver the global values to the master. The tree-based reduction is better than pipelining with a chain of workers as it allows fro more parallelization.
+
+### Applications/Experiments
+
+The paper has described how to implement PageRank, ShortestPath, Bipartite Matching and Semi Clustering algorithm on top of Pregel. The emphasis is on showing how to think of these algorithms in a vertex-centric manner and not on how to implement them on Pregel in the best possible way.
+
+The experiments were conducted with the single-source shortest paths algorithm with input as binary trees and log-normal graphs. Default partitioning strategy and naive implementation of the algorithms was used to show that satisfactory performance can be achieved with little coding effort. The runtime increases approximately linearly in the graph size.
+
+### Limitations
+
+One obvious limitation is that the entire computation state resides in main memory. Secondly, Pregel is designed around sparse graphs and performance will take a hit in case of dense graphs where a lot of communication takes place between vertices. The paper counters this by arguing that realistic dense graphs and algorithms with dense computation are rare. Moreover, communication in such dense networks can be reduced by using aggregators and combiners. An add-on would be to support dynamic partitioning of graph based on message traffic to minimize communication over the network.
+
+
+Pregel&#x27;s open-source implementation, called [Giraph](http://giraph.apache.org/), adds several features beyond the basic Pregel model, including out-of-core computation, and edge-oriented input which does take away some of the original limitations. Facebook is using Giraph to analyze its social network and has [scaled it to a trillion edges](https://code.facebook.com/posts/509727595776839/scaling-apache-giraph-to-a-trillion-edges/) showing the scalability of the Pregel model itself.    </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

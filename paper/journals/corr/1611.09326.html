@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation - ShortScience.org">
+<meta property="og:description" content="In the paper, authors  Bengio et al. , use the DenseNet for semantic segmentation. DenseNets iterati...">
+<meta name="description" content="In the paper, authors  Bengio et al. , use the DenseNet for semantic segmentation. DenseNets iterati...">
+<meta property="og:image" content="https://i.imgur.com/tqsPj72.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.09326">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1611.09326" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Simon J\u00e9gou and Michal Drozdzal and David Vazquez and Adriana Romero and Yoshua Bengio"}, "headline": "The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation", "description": "Summary of The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation", "datePublished": "2016-12-05 13:44:59", "dateModified": "2016-12-05 13:50:32", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/tqsPj72.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1611.09326", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1611.09326v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22The%20One%20Hundred%20Layers%20Tiramisu%3A%20Fully%20Convolutional%20DenseNets%20for%20Semantic%20Segmentation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Simon%20J%C3%A9gou">Simon Jégou</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Michal%20Drozdzal">Michal Drozdzal</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=David%20Vazquez">David Vazquez</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Adriana%20Romero">Adriana Romero</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yoshua%20Bengio">Yoshua Bengio</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/11/28<br><b>Abstract:</b>   State-of-the-art approaches for semantic image segmentation are built on
+Convolutional Neural Networks (CNNs). The typical segmentation architecture is
+composed of (a) a downsampling path responsible for extracting coarse semantic
+features, followed by (b) an upsampling path trained to recover the input image
+resolution at the output of the model and, optionally, (c) a post-processing
+module (e.g. Conditional Random Fields) to refine the model predictions.
+  Recently, a new CNN architecture, Densely Connected Convolutional Networks
+(DenseNets), has shown excellent results on image classification tasks. The
+idea of DenseNets is based on the observation that if each layer is directly
+connected to every other layer in a feed-forward fashion then the network will
+be more accurate and easier to train.
+  In this paper, we extend DenseNets to deal with the problem of semantic
+segmentation. We achieve state-of-the-art results on urban scene benchmark
+datasets such as CamVid and Gatech, without any further post-processing module
+nor pretraining. Moreover, due to smart construction of the model, our approach
+has much less parameters than currently published best entries for these
+datasets.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013').hide());void($('#showless-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013').show());void($('#more-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013').show());void($('#showless-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013').hide());void($('#more-am91cm5hbHMvY29yci8xNjExLjA5MzI2-1013').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1611.09326">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="qureai" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=qureai" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=qureai&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Qure.ai&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: qureai&lt;br&gt;Posted: 2016-12-05&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1611.09326&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1014').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1611.09326%26a%3Dqureai" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1014" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.09326&amp;a=qureai" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.09326%26a%3Dqureai&amp;text=Summary%20of%20The%20One%20Hundred%20Layers%20Tiramisu%3A%20Fully%20Convolutional%20DenseNets%20for%20Semantic%20Segmentation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.09326%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20The%20One%20Hundred%20Layers%20Tiramisu%3A%20Fully%20Convolutional%20DenseNets%20for%20Semantic%20Segmentation&amp;Body=Summary%20of%20The%20One%20Hundred%20Layers%20Tiramisu%3A%20Fully%20Convolutional%20DenseNets%20for%20Semantic%20Segmentation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.09326%26a%3Dqureai"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.09326%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1611.09326%26a%3Dqureai&amp;title=Summary%20of%20The%20One%20Hundred%20Layers%20Tiramisu%3A%20Fully%20Convolutional%20DenseNets%20for%20Semantic%20Segmentation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1611.09326&amp;a=qureai" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=qureai" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Qure.ai 2016-12-05</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">In the paper, authors  Bengio et al. , use the DenseNet for semantic segmentation. DenseNets iteratively concatenates input feature maps to output feature maps. The biggest contribution was the use of a novel upsampling path - given conventional upsampling would&#x27;ve caused severe memory cruch.
+
+#### Background
+
+All fully convolutional semantic segmentation nets generally follow a conventional path - a downsampling path which acts as feature extractor, an upsampling path that restores the locational information of every feature extracted in the downsampling path. 
+
+As opposed to Residual Nets (where input feature maps are added to the output) , in DenseNets,the output is concatenated to input which has some interesting implications:  
+- DenseNets  are efficient in the parameter usage, since all the feature maps are reused
+- DenseNets perform deep supervision thanks to short path to all feature maps in the architecture 
+
+Using DenseNets for segmentation though had an issue with upsampling in the conventional way of concatenating feature maps through skip connections as feature maps could easily go beyond 1-1.5 K. So Bengio et al. suggests a novel way - wherein only feature maps produced in the last Dense layer are only upsampled and not the entire feature maps. Post upsampling, the output is concatenated with feature maps of same resolution from downsampling path through skip connection. That way, the information lost during pooling in the downsampling path can be recovered.
+
+#### Methodology &amp; Architecture
+
+In the downsampling path, the input is concatenated with the output of a dense block, whereas for upsampling the output of dense block is upsampled (without concatenating it with the input) and then concatenated with the same resolution output of downsampling path. 
+
+Here&#x27;s the overall architecture 
+![](https://i.imgur.com/tqsPj72.png)
+
+Here&#x27;s how a Dense Block looks like 
+![](https://i.imgur.com/MMqosoj.png)
+
+#### Results
+The 103 Conv layer based DenseNet (FC-DenseNet103) performed better than shallower networks when compared on CamVid dataset. Though the FC-DenseNets were not pre-trained or used any post-processing like CRF or temporal smoothening etc.  When comparing to other nets FC-DenseNet architectures achieve state-of-the-art, improving upon models with 10 times more parameters. It is also worth mentioning that  small model FC-DenseNet56 already outperforms  popular  architectures  with  at  least 100 times more parameters. </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

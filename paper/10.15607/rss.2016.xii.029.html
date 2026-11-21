@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planning for Autonomous Cars that Leverage Effects on Human Actions - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Planning for Autonomous Cars that Leverage Effects on Human Actions - ShortScience.org">
+<meta property="og:description" content="## General Framework
+*wording: car = the autonomous car, driver = the other car it is interacting wi...">
+<meta name="description" content="## General Framework
+*wording: car = the autonomous car, driver = the other car it is interacting wi...">
+<meta property="og:image" content="https://i.imgur.com/RK1Gx2P.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=10.15607/rss.2016.xii.029">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=10.15607/rss.2016.xii.029" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Dorsa Sadigh and Shankar Sastry and Sanjit A. Seshia and Anca D. Dragan"}, "headline": "Planning for Autonomous Cars that Leverage Effects on Human Actions", "description": "Summary of Planning for Autonomous Cars that Leverage Effects on Human Actions", "datePublished": "2020-07-13 13:31:14", "dateModified": "2020-07-27 02:14:17", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/RK1Gx2P.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=10.15607/rss.2016.xii.029", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, ">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://doi.org/10.15607/rss.2016.xii.029"><span class="glyphicon glyphicon-link"></span> doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Planning%20for%20Autonomous%20Cars%20that%20Leverage%20Effects%20on%20Human%20Actions%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Planning for Autonomous Cars that Leverage Effects on Human Actions</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Dorsa%20Sadigh">Dorsa Sadigh</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shankar%20Sastry">Shankar Sastry</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sanjit%20A.%20Seshia">Sanjit A. Seshia</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Anca%20D.%20Dragan">Anca D. Dragan</a></span>
+<br>
+Robotics: Science and Systems XII -  <small>via Local CrossRef</small>
+<br>
+Keywords: 
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=10.15607/rss.2016.xii.029">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="muntermulehitch" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=muntermulehitch" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=muntermulehitch&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3d52639a2aab77c0a65364e3b47eddf7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Paul Barde&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: muntermulehitch&lt;br&gt;Posted: 2020-07-13&lt;br&gt;Edited: 2020-07-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;10.15607/rss.2016.xii.029&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3d52639a2aab77c0a65364e3b47eddf7?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-90').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3D10.15607/rss.2016.xii.029%26a%3Dmuntermulehitch" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-90" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=10.15607/rss.2016.xii.029&amp;a=muntermulehitch" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.15607%2Frss.2016.xii.029%26a%3Dmuntermulehitch&amp;text=Summary%20of%20Planning%20for%20Autonomous%20Cars%20that%20Leverage%20Effects%20on%20Human%20Actions&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.15607%2Frss.2016.xii.029%26a%3Dmuntermulehitch" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Planning%20for%20Autonomous%20Cars%20that%20Leverage%20Effects%20on%20Human%20Actions&amp;Body=Summary%20of%20Planning%20for%20Autonomous%20Cars%20that%20Leverage%20Effects%20on%20Human%20Actions%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.15607%2Frss.2016.xii.029%26a%3Dmuntermulehitch"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.15607%2Frss.2016.xii.029%26a%3Dmuntermulehitch" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3D10.15607%2Frss.2016.xii.029%26a%3Dmuntermulehitch&amp;title=Summary%20of%20Planning%20for%20Autonomous%20Cars%20that%20Leverage%20Effects%20on%20Human%20Actions" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=10.15607/rss.2016.xii.029&amp;a=muntermulehitch" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=muntermulehitch" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Paul Barde 2020-07-13</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## General Framework
+*wording: car = the autonomous car, driver = the other car it is interacting with* 
+
+Builds a model of an **autonomous car&#x27;s influence over the behavior of an interacting driver** (human or simulated) that the autonomous car can leverage to plan more efficiently. The driver is modeled by the policy that maximizes his defined objective. In brief, a **linear reward function is learned off-line with IRL on human demonstrations** and the modeled policy takes the actions that maximize the driver&#x27;s return under this reward function (computed with **Model Predictive Control (MPC)**). 
+They show that a car planning while using this driver learns ways to **influence the driver either towards specified behaviors** or in ways that **achieve higher payoff**. These results also hold when interacting with human **drivers which are loosely approximated by this driver model**.
+
+I believe the **key to this success lies in a learned reward that generalizes well** (linear function with few, clever hand-designed features) to new states as well as the **use of MPC**: by **focusing on modeling goals it captures a reasonable driver&#x27;s policy** (since the learned reward is accurate) and does not have to deal with concurrent learning dynamics. On the other hand, IL would try to match behavior instead of goals and might not generalize as well to new (unseen) situations. Additionally, MPC enables to coordinate the car-driver interactions over **extended time horizons** (through planning).
+
+**This shows that leveraging an influence model is promising for communication emergence.** *Parallel with: Promoting influence like Jaques et al. is more effective than hoping agents figure it out by themselves like MADDPG* 
+
+## Motivations
+Previous methods use simplistic influence models (&quot;will keep constant velocity&quot;), yet the car behavior influences the driver whether the car is aware of it or not. This simplistic model only leads to &quot;defensive behaviors&quot; where the car avoids disturbing the driver and therefore does not interact with it and yields suboptimal strategies. Additionally, a simplistic interaction model seems to lead to exclusively to functional actions instead of communicative ones. 
+
+## Assumptions
+* **Sequential decision making**: the car acts first which forces a driver response which makes the world transition to a new state (could be alleviated by considering influence over time steps: car&#x27;s action a time t influences driver&#x27;s action at time t+1)
+* Approximates the **human as an optimal planner** (but with limited recursive induction) without uncertainty (deterministic model) etc. 
+* The car uses **1st-order recursive induction** (&quot;my action influences the driver but the driver believes that its action won&#x27;t influence me (that my action is constant no matter what it does)&quot;): *I see this as assuming &quot;defensive&quot; driver and &quot;aggressive&quot; car.*
+* **Fully observable** environment (not sure how difficult it would be to wave this)
+* Model Predictive Control (MPC) with L-BFGS requires access to the **differentiable transition function**. 
+
+## Method 
+Model the interaction as a dynamical system where the car&#x27;s action influences both the next state and the driver&#x27;s action.  Uses Theano to backprop through the transition function, and implicit function theorem to derive a symbolic expression of the gradient. 
+
+## Results
+* Car leverages driver&#x27;s model to **influence** the simulated drivers (car has **perfect model**) in **specified ways** (modifying the car&#x27;s reward function).
+* Car leverages driver&#x27;s model to **influence** the simulated drivers (car has **perfect model**) in order to be **more efficient wrt its own objective**.
+* Car leverages driver&#x27;s model to **influence** the human drivers (car has **imperfect model**) in **specified ways**.
+
+*colors: autonomous car is yellow, driver&#x27;s car is red*
+![](https://i.imgur.com/RK1Gx2P.png)
+![](https://i.imgur.com/F77hSfp.png)
+![](https://i.imgur.com/3elOG9O.png)
+![](https://i.imgur.com/yeSsjiP.png)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

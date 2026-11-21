@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open-Vocabulary DETR with Conditional Matching - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Open-Vocabulary DETR with Conditional Matching - ShortScience.org">
+<meta property="og:description" content="The paper proposed a new object detection method to detect novel classes by using Conditional Matchi...">
+<meta name="description" content="The paper proposed a new object detection method to detect novel classes by using Conditional Matchi...">
+<meta property="og:image" content="https://i.imgur.com/GqvvSVs.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/2203.11876">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/2203.11876" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Yuhang Zang and Wei Li and Kaiyang Zhou and Chen Huang and Chen Change Loy"}, "headline": "Open-Vocabulary DETR with Conditional Matching", "description": "Summary of Open-Vocabulary DETR with Conditional Matching", "datePublished": "2023-02-22 17:10:43", "dateModified": "2023-02-22 17:10:43", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/GqvvSVs.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/2203.11876", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.AI">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/2203.11876v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Open-Vocabulary%20DETR%20with%20Conditional%20Matching%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Open-Vocabulary DETR with Conditional Matching</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Yuhang%20Zang">Yuhang Zang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Wei%20Li">Wei Li</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kaiyang%20Zhou">Kaiyang Zhou</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chen%20Huang">Chen Huang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chen%20Change%20Loy">Chen Change Loy</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2022">arXiv e-Print archive - 2022</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549">
+<hr style="border-color:gray;margin:5px;">
+<b>Abstract:</b>   Open-vocabulary object detection, which is concerned with the problem of
+detecting novel objects guided by natural language, has gained increasing
+attention from the community. Ideally, we would like to extend an
+open-vocabulary detector such that it can produce bounding box predictions
+based on user inputs in form of either natural language or exemplar image. This
+offers great flexibility and user experience for human-computer interaction. To
+this end, we propose a novel open-vocabulary detector based on DETR -- hence
+the name OV-DETR -- which, once trained, can detect any object given its class
+name or an exemplar image. The biggest challenge of turning DETR into an
+open-vocabulary detector is that it is impossible to calculate the
+classification cost matrix of novel classes without access to their labeled
+images. To overcome this challenge, we formulate the learning objective as a
+binary matching one between input queries (class name or exemplar image) and
+the corresponding objects, which learns useful correspondence to generalize to
+unseen queries during testing. For training, we choose to condition the
+Transformer decoder on the input embeddings obtained from a pre-trained
+vision-language model like CLIP, in order to enable matching for both text and
+image queries. With extensive experiments on LVIS and COCO datasets, we
+demonstrate that our OV-DETR -- the first end-to-end Transformer-based
+open-vocabulary detector -- achieves non-trivial improvements over current
+state of the arts.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549').hide());void($('#showless-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549').show());void($('#more-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549').show());void($('#showless-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549').hide());void($('#more-am91cm5hbHMvY29yci8yMjAzLjExODc2-1549').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/2203.11876">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="ngthanhtinqn" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=ngthanhtinqn" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ngthanhtinqn&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/d676019ba2ccb6266791742c5a40a39e?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;ngthanhtinqn&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ngthanhtinqn&lt;br&gt;Posted: 2023-02-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/2203.11876&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/d676019ba2ccb6266791742c5a40a39e?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1550').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/2203.11876%26a%3Dngthanhtinqn" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1550" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/2203.11876&amp;a=ngthanhtinqn" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2203.11876%26a%3Dngthanhtinqn&amp;text=Summary%20of%20Open-Vocabulary%20DETR%20with%20Conditional%20Matching&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2203.11876%26a%3Dngthanhtinqn" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Open-Vocabulary%20DETR%20with%20Conditional%20Matching&amp;Body=Summary%20of%20Open-Vocabulary%20DETR%20with%20Conditional%20Matching%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2203.11876%26a%3Dngthanhtinqn"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2203.11876%26a%3Dngthanhtinqn" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2203.11876%26a%3Dngthanhtinqn&amp;title=Summary%20of%20Open-Vocabulary%20DETR%20with%20Conditional%20Matching" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/2203.11876&amp;a=ngthanhtinqn" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=ngthanhtinqn" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by ngthanhtinqn 2023-02-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper proposed a new object detection method to detect novel classes by using Conditional Matching. This detector can be conditioned on either image or text, which means a user can use an image or text to let the model detect the corresponding bounding boxes in the picture.
+
+This model has 2 changes compared to other open-vocabulary detectors:
+
+1) Other detectors rely on Region Proposal Network (RPN) which can not cover all the objects in a picture, so it will worsen the performance of detecting novel objects. So in this work, they use CLIP to detect novel objects, it is better than RPN because it uses queries as a reader to read the whole picture, then these queries can cover many objects in the picture.
+
+https://i.imgur.com/GqvvSVs.png
+
+2) Other detectors rely on Bipartite Matching to match between class label names and detected bounding boxes. But the downside of Bipartite Matching is that it can not match the novel objects with any label names because the novel objects do not have the labels. So, in this work, they proposed to use Conditional Matching which turns the matching problem into a binary matching problem. By using Conditional Matching, an object can be assigned to a &quot;matched&quot; or &quot;not matched&quot; label.
+
+https://i.imgur.com/FjI2iub.png</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

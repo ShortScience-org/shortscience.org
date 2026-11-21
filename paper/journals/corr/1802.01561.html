@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures - ShortScience.org">
+<meta property="og:description" content="This reinforcement learning paper starts with the constraints imposed an engineering problem - the n...">
+<meta name="description" content="This reinforcement learning paper starts with the constraints imposed an engineering problem - the n...">
+<meta property="og:image" content="https://i.imgur.com/4jKVhCe.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.01561">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1802.01561" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Lasse Espeholt and Hubert Soyer and Remi Munos and Karen Simonyan and Volodymir Mnih and Tom Ward and Yotam Doron and Vlad Firoiu and Tim Harley and Iain Dunning and Shane Legg and Koray Kavukcuoglu"}, "headline": "IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures", "description": "Summary of IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures", "datePublished": "2018-11-12 08:19:15", "dateModified": "2018-11-12 08:19:15", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/4jKVhCe.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1802.01561", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1802.01561v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22IMPALA%3A%20Scalable%20Distributed%20Deep-RL%20with%20Importance%20Weighted%20Actor-Learner%20Architectures%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Lasse%20Espeholt">Lasse Espeholt</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hubert%20Soyer">Hubert Soyer</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Remi%20Munos">Remi Munos</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Karen%20Simonyan">Karen Simonyan</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Volodymir%20Mnih">Volodymir Mnih</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tom%20Ward">Tom Ward</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yotam%20Doron">Yotam Doron</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Vlad%20Firoiu">Vlad Firoiu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tim%20Harley">Tim Harley</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Iain%20Dunning">Iain Dunning</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Shane%20Legg">Shane Legg</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Koray%20Kavukcuoglu">Koray Kavukcuoglu</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/02/05<br><b>Abstract:</b>   In this work we aim to solve a large collection of tasks using a single
+reinforcement learning agent with a single set of parameters. A key challenge
+is to handle the increased amount of data and extended training time. We have
+developed a new distributed agent IMPALA (Importance Weighted Actor-Learner
+Architecture) that not only uses resources more efficiently in single-machine
+training but also scales to thousands of machines without sacrificing data
+efficiency or resource utilisation. We achieve stable learning at high
+throughput by combining decoupled acting and learning with a novel off-policy
+correction method called V-trace. We demonstrate the effectiveness of IMPALA
+for multi-task reinforcement learning on DMLab-30 (a set of 30 tasks from the
+DeepMind Lab environment (Beattie et al., 2016)) and Atari-57 (all available
+Atari games in Arcade Learning Environment (Bellemare et al., 2013a)). Our
+results show that IMPALA is able to achieve better performance than previous
+agents with less data, and crucially exhibits positive transfer between tasks
+as a result of its multi-task approach.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275').hide());void($('#showless-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275').show());void($('#more-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275').show());void($('#showless-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275').hide());void($('#more-am91cm5hbHMvY29yci8xODAyLjAxNTYx-1275').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1802.01561">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1802.01561&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1276').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1802.01561%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1276" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.01561&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.01561%26a%3Ddecodyng&amp;text=Summary%20of%20IMPALA%3A%20Scalable%20Distributed%20Deep-RL%20with%20Importance%20Weighted%20Actor-Learner%20Architectures&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.01561%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20IMPALA%3A%20Scalable%20Distributed%20Deep-RL%20with%20Importance%20Weighted%20Actor-Learner%20Architectures&amp;Body=Summary%20of%20IMPALA%3A%20Scalable%20Distributed%20Deep-RL%20with%20Importance%20Weighted%20Actor-Learner%20Architectures%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.01561%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.01561%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1802.01561%26a%3Ddecodyng&amp;title=Summary%20of%20IMPALA%3A%20Scalable%20Distributed%20Deep-RL%20with%20Importance%20Weighted%20Actor-Learner%20Architectures" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1802.01561&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This reinforcement learning paper starts with the constraints imposed an engineering problem - the need to scale up learning problems to operate across many GPUs - and ended up, as a result, needing to solve an algorithmic problem along with it. 
+
+In order to massively scale up their training to be able to train multiple problem domains in a single model, the authors of this paper implemented a system whereby many “worker” nodes execute trajectories (series of actions, states, and reward) and then send those trajectories back to a “learner” node, that calculates gradients and updates a central policy model. However, because these updates are queued up to be incorporated into the central learner, it can frequently happen that the policy that was used to collect the trajectories is a few steps behind from the policy on the central learner to which its gradients will be applied (since other workers have updated the learner since this worker last got a policy download). This results in a need to modify the policy network model design accordingly. 
+
+IMPALA (Importance Weighted Actor Learner Architectures) uses an “Actor Critic” model design, which means you learn both a policy function and a value function. The policy function’s job is to choose which actions to take at a given state, by making some higher probability than others. The value function’s job is to estimate the reward from a given state onward, if a certain policy p is followed. The value function is used to calculate the “advantage” of each action at a given state, by taking the reward you receive through action a (and reward you expect in the future), and subtracting out the value function for that state, which represents the average future reward you’d get if you just sampled randomly from the policy from that point onward. The policy network is then updated to prioritize actions which are higher-advantage. If you’re on-policy, you can calculate a value function without needing to explicitly calculate the probabilities of each action, because, by definition, if you take actions according to your policy probabilities, then you’re sampling each action with a weight proportional to its probability. However, if your actions are calculated off-policy, you need correct for this, typically by calculating an “importance sampling” ratio, that multiplies all actions by a probability under the desired policy divided by the probability under the policy used for sampling. This cancels out the implicit probability under the sampling policy, and leaves you with your actions scaled in proportion to their probability under the policy you’re actually updating. IMPALA shares the basic structure of this solution, but with a few additional parameters to dynamically trade off between the bias and variance of the model. 
+
+The first parameter, rho, controls how much bias you allow into your model, where bias here comes from your model not being fully corrected to “pretend” that you were sampling from the policy to which gradients are being applied. The trade-off here is that if your policies are far apart, you might downweight its actions so aggressively that you don’t get a strong enough signal to learn quickly. However, the policy you learn might be statistically biased. Rho does this by weighting each value function update by: 
+
+https://i.imgur.com/4jKVhCe.png
+
+where rho-bar is a hyperparameter. If rho-bar is high, then we allow stronger weighting effects, whereas if it’s low, we put a cap on those weights. 
+
+The other parameter is c, and instead of weighting each value function update based on policy drift at that state, it weights each timestep based on how likely or unlikely the action taken at that timestep was under the true policy. 
+
+https://i.imgur.com/8wCcAoE.png
+
+Timesteps that much likelier under the true policy are upweighted, and, once again, we use a hyperparameter, c-bar, to put a cap on the amount of allowed upweighting. Where the prior parameter controlled how much bias there was in the policy we learn, this parameter helps control the variance - the higher c-bar, the higher the amount of variance there will be in the updates used to train the model, and the longer it’ll take to converge. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

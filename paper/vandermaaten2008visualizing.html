@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualizing data using t-SNE - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Visualizing data using t-SNE - ShortScience.org">
+<meta property="og:description" content="#### Introduction
+
+* Method to visualize high-dimensional data points in 2/3 dimensional space.
+* Da...">
+<meta name="description" content="#### Introduction
+
+* Method to visualize high-dimensional data points in 2/3 dimensional space.
+* Da...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=vandermaaten2008visualizing">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=vandermaaten2008visualizing" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Van der Maaten, Laurens and Hinton, Geoffrey"}, "headline": "Visualizing data using t-SNE", "description": "Summary of Visualizing data using t-SNE", "datePublished": "2016-10-21 01:21:28", "dateModified": "2016-10-21 01:21:28", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=vandermaaten2008visualizing", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, visualization,  clustering,  machine_learning,  t-SNE,  PCA">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://www.jmlr.org/papers/v9/vandermaaten08a.html"><span class="glyphicon glyphicon-link"></span> www.jmlr.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Visualizing%20data%20using%20t-SNE%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Visualizing data using t-SNE</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Van%20der%20Maaten%2C%20Laurens">Van der Maaten, Laurens</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hinton%2C%20Geoffrey">Hinton, Geoffrey</a></span>
+<br>
+Journal of Machine Learning Research - 2008 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=visualization">visualization</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20clustering"> clustering</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20machine_learning"> machine_learning</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20t-SNE"> t-SNE</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20PCA"> PCA</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=vandermaaten2008visualizing">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="shagunsodhani" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-21&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;vandermaaten2008visualizing&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2047').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dvandermaaten2008visualizing%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2047" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=vandermaaten2008visualizing&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dvandermaaten2008visualizing%26a%3Dshagunsodhani&amp;text=Summary%20of%20Visualizing%20data%20using%20t-SNE&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dvandermaaten2008visualizing%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Visualizing%20data%20using%20t-SNE&amp;Body=Summary%20of%20Visualizing%20data%20using%20t-SNE%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dvandermaaten2008visualizing%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dvandermaaten2008visualizing%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dvandermaaten2008visualizing%26a%3Dshagunsodhani&amp;title=Summary%20of%20Visualizing%20data%20using%20t-SNE" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=vandermaaten2008visualizing&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-21</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Introduction
+
+* Method to visualize high-dimensional data points in 2/3 dimensional space.
+* Data visualization techniques like Chernoff faces and graph approaches just provide a representation and not an interpretation.
+* Dimensionality reduction techniques fail to retain both local and global structure of the data simultaneously. For example, PCA and MDS are linear techniques and fail on data lying on a non-linear manifold.
+* t-SNE approach converts data into a matrix of pairwise similarities and visualizes this matrix.
+* Based on SNE (Stochastic Neighbor Embedding)
+* [Link to paper](http://jmlr.csail.mit.edu/papers/volume9/vandermaaten08a/vandermaaten08a.pdf)
+
+#### SNE
+
+* Given a set of datapoints $x_1, x_2, ...x_n, p_{i|j}$ is the probability that $x_i$ would pick $x_j$ as its neighbor if neighbors were picked in proportion to their probability density under a Gaussian centered at $x_i$. Calculation of $\sigma_i$ is described later.
+* Similarly, define $q_{i|j}$ as conditional probability corresponding to low-dimensional representations of $y_i$ and $y_j$ (corresponding to $x_i$ and $x_j$). The variance of Gaussian in this case is set to be $1/\sqrt{2}$
+* Argument is that if $y_i$ and $y_j$ captures the similarity between $x_i$ and $x_j$, $p_{i|j}$ and $q_{i|j}$ should be equal. So objective function to be minimized is Kullback-Leibler (KL) Divergence measure for $P_i$ and $Q_i$, where $P_i$ ($Q_i$) represent conditional probability distribution given $x_i$ ($y_i$)
+* Since KL Divergence is not symmetric, the objective function focuses on retaining the local structure.
+* Users specify a value called perplexity (measure of effective number of neighbors). A binary search is performed to find $\sigma_i$ which produces the $P_i$ having same perplexity as specified by the user.
+* Gradient Descent (with momentum) is used to minimize objective function and Gaussian noise is added in early stages to perform simulated annealing.
+
+#### t-SNE (t-Distributed SNE)
+
+##### Symmetric SNE
+
+* A single KL Divergence between P (joint probability distribution in high-dimensional space) and Q (joint probability distribution in low-dimensional space) is minimized.
+* Symmetric because $p_{i|j} = p_{j|i}$ and $q_{i|j} = q_{j|i}$
+* More robust to outliers and has a simpler gradient expression.
+
+##### Crowding Problem
+
+* When we model a high-dimensional dataset in 2 (or 3) dimensions, it is difficult to segregate the nearby datapoints from moderately distant datapoints and gaps can not form between natural clusters.
+* One way around this problem is to use UNI-SNE but optimization of the cost function, in that case, is difficult.
+
+##### t-SNE
+
+* Instead of Gaussian, use a heavy-tailed distribution (like Student-t distribution) to convert distances into probability scores in low dimensions. This way moderate distance in high-dimensional space can be modeled by larger distance in low-dimensional space.
+* Student-t distribution is an infinite mixture of Gaussians and density for a point under this distribution can be computed very fast. 
+* The cost function is easy to optimize.
+
+##### Optimization Tricks
+
+###### Early Compression
+
+* At the start of optimization, force the datapoints (in low-dimensional space) to stay close together so that datapoints can easily move from one cluster to another. 
+* Implemented an L2-penalty term proportional to the sum of the squared distance of datapoints from the origin.
+
+###### Early Exaggeration
+
+* Scale all the $p_{i|j}$&#x27;s so that large $q_{i|j}$*&#x27;s are obtained with the effect that natural clusters in the data form tight, widely separated clusters as a lot of empty space is created in the low-dimensional space.
+
+##### t-SNE on large datasets
+
+* Space and time complexity is quadratic in the number of datapoints so infeasible to apply on large datasets.
+* Select a random subset of points (called landmark points) to display.
+* for each landmark point, define a random walk starting at a landmark point and terminating at any other landmark point.
+* $p_{i|j}$ is defined as fraction of random walks starting at $x_i$ and finishing at $x_j$ (both these points are landmark points). This way, $p_{i|j}$ is not sensitive to &quot;short-circuits&quot; in the graph (due to noisy data points).
+
+#### Advantages of t-SNE
+
+* Gaussian kernel employed by t-SNE (in high-dimensional) defines a soft border between the local and global structure of the data.
+* Both nearby and distant pair of datapoints get equal importance in modeling the low-dimensional coordinates.
+* The local neighborhood size of each datapoint is determined on the basis of the local density of the data.
+* Random walk version of t-SNE takes care of &quot;short-circuit&quot; problem.
+
+#### Limitations of t-SNE
+
+* It is unclear t-SNE would perform on general **Dimensionality Reduction** for more than 3 dimensions. For such higher (than 3) dimensions, Student-t distribution with more degrees of freedom should be more appropriate.
+* t-SNE reduces the dimensionality of data mainly based on local properties of the data which means it would fail in data which has intrinsically high dimensional structure (**curse of dimensionality**).
+* The cost function for t-SNE is not convex requiring several optimization parameters to be chosen which would affect the constructed solution.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

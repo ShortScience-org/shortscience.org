@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaceNet: A Unified Embedding for Face Recognition and Clustering - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="FaceNet: A Unified Embedding for Face Recognition and Clustering - ShortScience.org">
+<meta property="og:description" content="FaceNet directly maps face images to $\mathbb{R}^{128}$ where distances directly correspond to a mea...">
+<meta name="description" content="FaceNet directly maps face images to $\mathbb{R}^{128}$ where distances directly correspond to a mea...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1503.03832">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1503.03832" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Florian Schroff and Dmitry Kalenichenko and James Philbin"}, "headline": "FaceNet: A Unified Embedding for Face Recognition and Clustering", "description": "Summary of FaceNet: A Unified Embedding for Face Recognition and Clustering", "datePublished": "2016-11-12 19:54:08", "dateModified": "2016-11-18 13:25:35", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1503.03832", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1503.03832v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">FaceNet: A Unified Embedding for Face Recognition and Clustering</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Florian%20Schroff">Florian Schroff</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dmitry%20Kalenichenko">Dmitry Kalenichenko</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=James%20Philbin">James Philbin</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/03/12<br><b>Abstract:</b>   Despite significant recent advances in the field of face recognition,
+implementing face verification and recognition efficiently at scale presents
+serious challenges to current approaches. In this paper we present a system,
+called FaceNet, that directly learns a mapping from face images to a compact
+Euclidean space where distances directly correspond to a measure of face
+similarity. Once this space has been produced, tasks such as face recognition,
+verification and clustering can be easily implemented using standard techniques
+with FaceNet embeddings as feature vectors.
+  Our method uses a deep convolutional network trained to directly optimize the
+embedding itself, rather than an intermediate bottleneck layer as in previous
+deep learning approaches. To train, we use triplets of roughly aligned matching
+/ non-matching face patches generated using a novel online triplet mining
+method. The benefit of our approach is much greater representational
+efficiency: we achieve state-of-the-art face recognition performance using only
+128-bytes per face.
+  On the widely used Labeled Faces in the Wild (LFW) dataset, our system
+achieves a new record accuracy of 99.63%. On YouTube Faces DB it achieves
+95.12%. Our system cuts the error rate in comparison to the best published
+result by 30% on both datasets.
+  We also introduce the concept of harmonic embeddings, and a harmonic triplet
+loss, which describe different versions of face embeddings (produced by
+different networks) that are compatible to each other and allow for direct
+comparison between each other.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701').hide());void($('#showless-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701').show());void($('#more-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701').show());void($('#showless-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701').hide());void($('#more-am91cm5hbHMvY29yci8xNTAzLjAzODMy-701').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1503.03832">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="martinthoma" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-11-12&lt;br&gt;Edited: 2016-11-18&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1503.03832&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-702').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1503.03832%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-702" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1503.03832&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Dmartinthoma&amp;text=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering&amp;Body=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Dmartinthoma&amp;title=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1503.03832&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-11-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">FaceNet directly maps face images to $\mathbb{R}^{128}$ where distances directly correspond to a measure of face similarity. They use a triplet loss function. The triplet is (face of person A, other face of person A, face of person which is not A). Later, this is called (anchor, positive, negative).
+
+The loss function is learned and inspired by LMNN. The idea is to minimize the distance between the two images of the same person and maximize the distance to the other persons image.
+
+## LMNN
+
+Large Margin Nearest Neighbor (LMNN) is learning a pseudo-metric
+
+$$d(x, y) = (x -y) M  (x -y)^T$$
+
+where $M$ is a positive-definite matrix. The only difference between a pseudo-metric and a metric is that $d(x, y) = 0 \Leftrightarrow x = y$ does not hold.
+
+## Curriculum Learning: Triplet selection
+
+Show simple examples first, then increase the difficulty. This is done by selecting the triplets.
+
+They use the triplets which are *hard*. For the positive example, this means the distance between the anchor and the positive example is high. For the negative example this means the distance between the anchor and the negative example is low.
+
+They want to have
+
+$$||f(x_i^a) - f(x_i^p)||_2^2 + \alpha &lt; ||f(x_i^a) - f(x_i^n)||_2^2$$
+
+where $\alpha$ is a margin and $x_i^a$ is the anchor, $x_i^p$ is the positive face example and $x_i^n$ is the negative example. They increase $\alpha$ over time. It is crucial that $f$ maps the images not in the complete $\mathbb{R}^{128}$, but on the unit sphere. Otherwise one could double $\alpha$ by simply making $f&#x27; = 2 \cdot f$.
+
+## Tasks
+
+* **Face verification**: Is this the same person?
+* **Face recognition**: Who is this person?
+
+## Datasets
+
+* 99.63% accuracy on Labeled FAces in the Wild (LFW)
+* 95.12% accuracy on YouTube Faces DB
+
+## Network
+
+Two models are evaluated: The [Zeiler &amp; Fergus model](http://www.shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13)  and an architecture based on the [Inception model](http://www.shortscience.org/paper?bibtexKey=journals/corr/SzegedyLJSRAEVR14).
+
+## See also
+
+* [DeepFace](http://www.shortscience.org/paper?bibtexKey=conf/cvpr/TaigmanYRW14#martinthoma)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="anirudhnj" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=anirudhnj" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=anirudhnj&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/0e5f4497045593462664815d7117d9cf?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;ANIRUDH NJ&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: anirudhnj&lt;br&gt;Posted: 2018-11-29&lt;br&gt;Edited: 2018-11-30&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1503.03832&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/0e5f4497045593462664815d7117d9cf?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-703').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1503.03832%26a%3Danirudhnj" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-703" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1503.03832&amp;a=anirudhnj" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Danirudhnj&amp;text=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Danirudhnj" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering&amp;Body=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Danirudhnj"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Danirudhnj" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1503.03832%26a%3Danirudhnj&amp;title=Summary%20of%20FaceNet%3A%20A%20Unified%20Embedding%20for%20Face%20Recognition%20and%20Clustering" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1503.03832&amp;a=anirudhnj" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=anirudhnj" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by ANIRUDH NJ 2018-11-29</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">
+## Keywords
+Triplet-loss , face embedding , harmonic embedding
+
+---
+## Summary
+
+### Introduction
+
+**Goal of the paper**    
+A unified system is given for face verification , recognition and clustering.
+Use of a 128 float  pose and illumination invariant feature vector or embedding in the euclidean space.
+* Face Verification : Same faces of the person gives feature vectors that have a very close L2 distance between them. 
+* Face recognition : Face recognition becomes a clustering task in the embedding space
+	
+**Previous work**    
+* Previous use of deep learning made use of an bottleneck layer to represent face as an embedding of  1000s  dimension  vector.
+* Some other techniques use PCA to reduce the dimensionality of the embedding for comparison.
+
+**Method**
+* This method makes use of inception style CNN to get an embedding of each face.
+* The thumbnails of the face image are the tight crop of the face area with only scaling and translation done on them.
+	
+**Triplet Loss**
+Triplet loss  makes use of two matching face thumbnails and a non-matching thumbnail. The loss function tries to reduce the distance between the matching pair while increasing the separation between the the non-matching pair of images.
+
+**Triplet Selection**
+* Selection of triplets is done such that samples are hard-positive or hard-negative .
+* Hardest negative can lead to local minima early in the training and a collapse model in a few cases
+* Use of semi-hard negatives help to improve the convergence speed while at the same time reach nearer to the global minimum.
+
+**Deep Convolutional Network**
+* Training is done using SGD (Stochastic gradient descent) with Backpropagation and AdaGrad
+* The training is done on two networks :
+    - Zeiler&amp;Fergus architecture with model depth of 22 and 140 million parameters
+    - GoogLeNet style inception model with 6.6 to 7.5 million parameters.
+
+**Experiment**
+* Study of the following cases are done :
+    - Quality of the jpeg image : The validation rate of model improves with the JPEG quality upto a certain threshold.
+
+    - Embedding dimensionality : The dimension of the embedding increases from 64 to 128,256 and then gradually starts to decrease at 512 dimensions. 
+
+    - No. of images in the training data set 
+
+
+
+**Results classification accuracy** :
+   - LFW(Labelled faces in the wild) dataset : 98.87% 0.15
+   - Youtube Faces DB : 95.12%  .39
+On clustering tasks the model was able to work on a wide varieties of face images and is invariant to pose , lighting and also age.
+
+**Conclusion**
+
+* The model can be extended further to improve the overall accuracy.
+* Training networks to run on smaller systems like mobile phones.
+* There is need for improving the training efficiency.
+
+---
+
+## Notes 
+
+* Harmonic embedding is a set of embedding that we get from different models but are compatible to each other. This helps to improve future upgrades and transitions to a newer model
+
+* To make the embeddings compatible with different models , harmonic-triplet loss and the generated triplets must be compatible with each other
+
+## Open research questions
+
+* Better understanding of the error cases.
+* Making the model more compact for embedded and mobile use cases.
+* Methods to reduce the training times.
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

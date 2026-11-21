@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swapout: Learning an ensemble of deep architectures - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Swapout: Learning an ensemble of deep architectures - ShortScience.org">
+<meta property="og:description" content="This paper presents Swapout, a simple dropout method applied to Residual Networks (ResNets). In a Re...">
+<meta name="description" content="This paper presents Swapout, a simple dropout method applied to Residual Networks (ResNets). In a Re...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Saurabh Singh and Derek Hoiem and David Forsyth"}, "headline": "Swapout: Learning an ensemble of deep architectures", "description": "Summary of Swapout: Learning an ensemble of deep architectures", "datePublished": "2016-06-06 11:45:25", "dateModified": "2016-06-06 11:45:25", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CV,  cs.LG,  cs.NE">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1605.06465v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Swapout: Learning an ensemble of deep architectures</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Saurabh%20Singh">Saurabh Singh</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Derek%20Hoiem">Derek Hoiem</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=David%20Forsyth">David Forsyth</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CV">cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/05/20<br><b>Abstract:</b>   We describe Swapout, a new stochastic training method, that outperforms
+ResNets of identical network structure yielding impressive results on CIFAR-10
+and CIFAR-100. Swapout samples from a rich set of architectures including
+dropout, stochastic depth and residual architectures as special cases. When
+viewed as a regularization method swapout not only inhibits co-adaptation of
+units in a layer, similar to dropout, but also across network layers. We
+conjecture that swapout achieves strong regularization by implicitly tying the
+parameters across layers. When viewed as an ensemble training method, it
+samples a much richer set of architectures than existing methods such as
+dropout or stochastic depth. We propose a parameterization that reveals
+connections to exiting architectures and suggests a much richer set of
+architectures to be explored. We show that our formulation suggests an
+efficient training method and validate our conclusions on CIFAR-10 and
+CIFAR-100 matching state of the art accuracy. Remarkably, our 32 layer wider
+model performs similar to a 1001 layer ResNet model.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811').show());void($('#more-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811').show());void($('#showless-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811').hide());void($('#more-am91cm5hbHMvY29yci8xNjA1LjA2NDY1-811').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1605.06465">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-06-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1605.06465&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">15</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-812').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1605.06465%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-812" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dhlarochelle&amp;text=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures&amp;Body=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dhlarochelle&amp;title=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-06-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents Swapout, a simple dropout method applied to Residual Networks (ResNets). In a ResNet, a layer $Y$ is computed from the previous layer $X$ as
+
+$Y = X + F(X)$
+
+where $F(X)$ is essentially the composition of a few convolutional layers. Swapout simply applies dropout separately on both terms of a layer&#x27;s equation:
+
+$Y = \Theta_1 \odot X + \Theta_2 \odot F(X)$
+
+where $\Theta_1$ and $\Theta_2$ are independent dropout masks for each term. 
+
+The paper shows that this form of dropout is at least as good or superior as other forms of dropout, including the recently proposed [stochastic depth dropout][1]. Much like in the stochastic depth paper, better performance is achieved by linearly increasing the dropout rate (from 0 to 0.5) from the first hidden layer to the last.
+
+In addition to this observation, I also note the following empirical observations:
+
+1. At test time, averaging the output layers of multiple dropout mask samples (referenced to as stochastic inference) is better than replacing the masks by their expectation (deterministic inference), the latter being the usual standard.
+2. Comparable performance is achieved by making the ResNet wider (e.g. 4 times) and with fewer layers (e.g. 32) than the orignal ResNet work with thin but very deep (more than 1000 layers) ResNets. This would confirm a similar observation from [this paper][2].
+
+Overall, these are useful observations to be aware of for anyone wanting to use ResNets in practice.
+
+[1]: http://arxiv.org/abs/1603.09382v1
+[2]: https://arxiv.org/abs/1605.07146
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="nipsreviews" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nipsreviews" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nipsreviews&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;NIPS Conference Reviews&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nipsreviews&lt;br&gt;Posted: 2017-04-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1605.06465&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-813').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1605.06465%26a%3Dnipsreviews" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-813" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465&amp;a=nipsreviews" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dnipsreviews&amp;text=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures&amp;Body=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dnipsreviews"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Dnipsreviews&amp;title=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465&amp;a=nipsreviews" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nipsreviews" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by NIPS Conference Reviews 2017-04-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Swapout is a method that stochastically selects forward propagation in a neural network from a palette of choices: drop, identity, feedforward, residual. Achieves best results on CIFAR-10,100 that I&#x27;m aware of.
+
+This paper examines a stochastic training method for deep architectures that is formulated in such a way that the method generalizes dropout and stochastic depth techniques. The paper studies a stochastic formulation for layer outputs which could be formulated as $Y =\Theta_1  \odot X+ \Theta_2  \odot F(X)$ where $\Theta_1$ and $\Theta_2$ are tensors of i.i.d. Bernoulli random variables. This allows layers to either: be dropped $(Y=0)$, act a feedforward layer $Y=F(X)$, be skipped $Y=X$, or behave like a residual network $Y=X+F(X)$. The paper provides some well reasoned conjectures as to why &quot;both dropout and swapout networks interact poorly with batch normalization if one uses deterministic inference&quot;, while also providing some nice experiments on the importance of the choice of the form of stochastic training schedules and the number of samples required to obtain estimates that make sampling useful. The approach is able to yield performance improvement over comparable models if the key and critical details of the stochastic training schedule and a sufficient number of samples are used.
+
+This paper proposes a generalization of some stochastic regularization techniques for effectively training deep networks with skip connections (i.e. dropout, stochastic depth, ResNets.) Like stochastic depth, swapout allows for connections that randomly skip layers, which has been shown to give improved performance--perhaps due to shorter paths to the loss layer and the resulting implicit ensemble over architectures with differing depth. However, like dropout, swapout is independently applied to each unit in a layer allowing for a richer space of sampled architectures. Since accurate expectation approximations are not easily attainable due to the skip connections, the authors propose stochastic inference (in which multiple forward passes are averaged during inference) instead of deterministic inference. To evaluate its effectiveness, the authors evaluate swapout on the CIFAR dataset, showing improvements over various baselines.
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-24&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1605.06465&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-814').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1605.06465%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-814" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Daleju&amp;text=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures&amp;Body=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1605.06465%26a%3Daleju&amp;title=Summary%20of%20Swapout%3A%20Learning%20an%20ensemble%20of%20deep%20architectures" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1605.06465&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-24</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They describe a regularization method similar to dropout and stochastic depth.
+  * The method could be viewed as a merge of the two techniques (dropout, stochastic depth).
+  * The method seems to regularize better than any of the two alone.
+
+### How
+  * Let `x` be the input to a layer. That layer produces an output. The output can be:
+    * Feed forward (&quot;classic&quot;) network: `F(x)`.
+    * Residual network: `x + F(x)`.
+  * The standard dropout-like methods do the following:
+    * Dropout in feed forward networks: Sometimes `0`, sometimes `F(x)`. Decided per unit.
+    * Dropout in residual networks (rarely used): Sometimes `0`, sometimes `x + F(x)`. Decided per unit.
+    * Stochastic depth (only in residual networks): Sometimes `x`, sometimes `x + F(x)`. Decided per *layer*.
+    * Skip forward (only in residual networks): Sometimes `x`, sometimes `x + F(x)`. Decided per unit.
+    * **Swapout** (any network): Sometimes `0`, sometimes `F(x)`, sometimes `x`, sometimes `x + F(x)`. Decided per unit.
+  * Swapout can be represented using the formula `y = theta_1 * x + theta_2 * F(x)`.
+    * `*` is the element-wise product.
+    * `theta_1` and `theta_2` are tensors following bernoulli distributions, i.e. their values are all exactly `0` or exactly `1`.
+    * Setting the values of `theta_1` and `theta_2` per unit in the right way leads to the values `0` (both 0), `x` (1, 0), `F(x)` (0, 1) or `x + F(x)` (1, 1).
+  * Deterministic and Stochastic Inference
+    * Ideally, when using a dropout-like technique you would like to get rid of its stochastic effects during prediction, so that you can predict values with exactly *one* forward pass through the network (instead of having to average over many passes).
+    * For Swapout it can be mathematically shown that you can&#x27;t calculate a deterministic version of it that performs equally to the stochastic one (averaging over many forward passes).
+    * This is even more the case when using Batch Normalization in a network. (Actually also when not using Swapout, but instead Dropout + BN.)
+    * So for best results you should use the stochastic method (averaging over many forward passes).
+
+### Results
+  * They compare various dropout-like methods, including Swapout, applied to residual networks. (On CIFAR-10 and CIFAR-100.)
+  * General performance:
+    * Results with Swapout are better than with the other methods.
+    * According to their results, the ranking of methods is roughly: Swapout &gt; Dropout &gt; Stochastic Depth &gt; Skip Forward &gt; None.
+  * Stochastic vs deterministic method:
+    * The stochastic method of swapout (average over N forward passes) performs significantly better than the deterministic one.
+    * Using about 15-30 forward passes seems to yield good results.
+  * Optimal parameter choice:
+    * Previously the Swapout-formula `y = theta_1 * x + theta_2 * F(x)` was mentioned.
+    * `theta_1` and `theta_2` are generated via Bernoulli distributions which have parameters `p_1` and `p_2`.
+    * If using fixed values for `p_1` and `p_2` throughout the network, it seems to be best to either set both of them to `0.5` or to set `p_1` to `&gt;0.5` and `p_2` to `&lt;0.5` (preference towards `y = x`).
+    * It&#x27;s best however to start both at `1.0` (always `y = x + F(x)`) and to then linearly decay them to both `0.5` towards the end of the network, i.e. to apply less noise to the early layers. (This is similar to the results in the Stochastic Depth paper.)
+  * Thin vs. wide residual networks:
+    * The standard residual networks that they compared to used a `(16, 32, 64)` pattern for their layers, i.e. they started with layers of each having 16 convolutional filters, followed by some layers with each having 32 filters, followed by some layers with 64 filters.
+    * They tried instead a `(32, 64, 128)` pattern, i.e. they doubled the amount of filters.
+    * Then they reduced the number of layers from 100 down to 20.
+    * Their wider residual network performed significantly better than the deep and thin counterpart. However, their parameter count also increased by about `4` times.
+    * Increasing the pattern again to `(64, 128, 256)` and increasing the number of layers from 20 to 32 leads to another performance improvement, beating a 1000-layer network of pattern `(16, 32, 64)`. (Parameter count is then `27` times the original value.)
+
+* Comments
+  * Stochastic depth works layer-wise, while Swapout works unit-wise. When a layer in Stochastic Depth is dropped, its whole forward- and backward-pass don&#x27;t have to be calculated. That saves time. Swapout is not going to save time.
+  * They argue that dropout+BN would also profit from using stochastic inference instead of deterministic inference, just like Swapout does. However, they don&#x27;t mention using it for dropout in their comparison, only for Swapout.
+  * They show that linear decay for their parameters (less dropping on early layers, more on later ones) significantly improves the results of Swapout. However, they don&#x27;t mention testing the same thing for dropout. Maybe dropout would also profit from it?
+  * For the above two points: Dropout&#x27;s test error is at 5.87, Swapout&#x27;s test error is at 5.68. So the difference is already quite small, making any disadvantage for dropout significant.
+
+
+![Visualization](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Swapout__visualization.png?raw=true &quot;Visualization&quot;)
+
+*Visualization of how Swapout works. From left to right: An input `x`; a standard layer is applied to the input `F(x)`; a residual layer is applied to the input `x + F(x)`; Skip Forward is applied to the layer; Swapout is applied to the layer. Stochastic Depth would be all units being orange (`x`) or blue (`x + F(x)`).*
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

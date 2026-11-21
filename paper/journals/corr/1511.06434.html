@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks - ShortScience.org">
+<meta property="og:description" content="* DCGANs are just a different architecture of GANs.
+  * In GANs a Generator network (G) generates...">
+<meta name="description" content="* DCGANs are just a different architecture of GANs.
+  * In GANs a Generator network (G) generates...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Unsupervised_Representation_Learning_with_Deep_Convolutional_Generative_Adversarial_Networks__G.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Alec Radford and Luke Metz and Soumith Chintala"}, "headline": "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks", "description": "Summary of Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks", "datePublished": "2017-10-17 22:05:21", "dateModified": "2017-10-27 10:24:00", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Unsupervised_Representation_Learning_with_Deep_Convolutional_Generative_Adversarial_Networks__G.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1511.06434v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Alec%20Radford">Alec Radford</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Luke%20Metz">Luke Metz</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Soumith%20Chintala">Soumith Chintala</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/11/19<br><b>Abstract:</b>   In recent years, supervised learning with convolutional networks (CNNs) has
+seen huge adoption in computer vision applications. Comparatively, unsupervised
+learning with CNNs has received less attention. In this work we hope to help
+bridge the gap between the success of CNNs for supervised learning and
+unsupervised learning. We introduce a class of CNNs called deep convolutional
+generative adversarial networks (DCGANs), that have certain architectural
+constraints, and demonstrate that they are a strong candidate for unsupervised
+learning. Training on various image datasets, we show convincing evidence that
+our deep convolutional adversarial pair learns a hierarchy of representations
+from object parts to scenes in both the generator and discriminator.
+Additionally, we use the learned features for novel tasks - demonstrating their
+applicability as general image representations.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734').hide());void($('#showless-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734').show());void($('#more-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734').show());void($('#showless-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734').hide());void($('#more-am91cm5hbHMvY29yci8xNTExLjA2NDM0-734').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1511.06434">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1511.06434&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-735').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1511.06434%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-735" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Daleju&amp;text=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks&amp;Body=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Daleju&amp;title=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * DCGANs are just a different architecture of GANs.
+  * In GANs a Generator network (G) generates images. A discriminator network (D) learns to differentiate between real images from the training set and images generated by G.
+  * DCGANs basically convert the laplacian pyramid technique (many pairs of G and D to progressively upscale an image) to a single pair of G and D.
+
+### How
+  * Their D: Convolutional networks. No linear layers. No pooling, instead strided layers. LeakyReLUs.
+  * Their G: Starts with 100d noise vector. Generates with linear layers 1024x4x4 values. Then uses fractionally strided convolutions (move by 0.5 per step) to upscale to 512x8x8. This is continued till Cx32x32 or Cx64x64. The last layer is a convolution to 3x32x32/3x64x64 (Tanh activation).
+  * The fractionally strided convolutions do basically the same as the progressive upscaling in the laplacian pyramid. So it&#x27;s basically one laplacian pyramid in a single network and all upscalers are trained jointly leading to higher quality images.
+  * They use Adam as their optimizer. To decrease instability issues they decreased the learning rate to 0.0002 (from 0.001) and the momentum/beta1 to 0.5 (from 0.9).
+
+![Architecture of G](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Unsupervised_Representation_Learning_with_Deep_Convolutional_Generative_Adversarial_Networks__G.png?raw=true &quot;Architecture of G&quot;)
+
+*Architecture of G using fractionally strided convolutions to progressively upscale the image.*
+
+
+### Results
+  * High quality images. Still with distortions and errors, but at first glance they look realistic.
+  * Smooth interpolations between generated images are possible (by interpolating between the noise vectors and feeding these interpolations into G).
+  * The features extracted by D seem to have some potential for unsupervised learning.
+  * There seems to be some potential for vector arithmetics (using the initial noise vectors) similar to the vector arithmetics with wordvectors. E.g. to generate mean with sunglasses via `vector(men) + vector(sunglasses)`.
+
+
+![Example images (bedrooms)](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Unsupervised_Representation_Learning_with_Deep_Convolutional_Generative_Adversarial_Networks__bedrooms.png?raw=true &quot;Example images (bedrooms)&quot;)
+
+*Generated images, bedrooms.*
+
+
+![Example images (faces)](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Unsupervised_Representation_Learning_with_Deep_Convolutional_Generative_Adversarial_Networks__faces.png?raw=true &quot;Example images (faces)&quot;)
+
+*Generated images, faces.*
+
+
+
+### Rough chapter-wise notes
+
+* Introduction
+  * For unsupervised learning, they propose to use to train a GAN and then reuse the weights of D.
+  * GANs have traditionally been hard to train.
+
+* Approach and model architecture
+  * They use for D an convnet without linear layers, withput pooling layers (only strides), LeakyReLUs and Batch Normalization.
+  * They use for G ReLUs (hidden layers) and Tanh (output).
+
+* Details of adversarial training
+  * They trained on LSUN, Imagenet-1k and a custom dataset of faces.
+  * Minibatch size was 128.
+  * LeakyReLU alpha 0.2.
+  * They used Adam with a learning rate of 0.0002 and momentum of 0.5.
+  * They note that a higher momentum lead to oscillations.
+
+* LSUN
+  * 3M images of bedrooms.
+  * They use an autoencoder based technique to filter out 0.25M near duplicate images.
+
+* Faces
+  * They downloaded 3M images of 10k people.
+  * They extracted 350k faces with OpenCV.
+
+* Empirical validation of DCGANs capabilities
+  * Classifying CIFAR-10 GANs as a feature extractor
+    * They train a pair of G and D on Imagenet-1k.
+    * D&#x27;s top layer has `512*4*4` features.
+    * They train an SVM on these features to classify the images of CIFAR-10.
+    * They achieve a score of 82.8%, better than unsupervised K-Means based methods, but worse than Exemplar CNNs.
+  * Classifying SVHN digits using GANs as a feature extractor
+    * They reuse the same pipeline (D trained on CIFAR-10, SVM) for the StreetView House Numbers dataset.
+    * They use 1000 SVHN images (with the features from D) to train the SVM.
+    * They achieve 22.48% test error.
+
+* Investigating and visualizing the internals of the networks
+  * Walking in the latent space
+    * The performs walks in the latent space (= interpolate between input noise vectors and generate several images for the interpolation).
+    * They argue that this might be a good way to detect overfitting/memorizations as those might lead to very sudden (not smooth) transitions.
+  * Visualizing the discriminator features
+    * They use guided backpropagation to visualize what the feature maps in D have learned (i.e. to which images they react).
+    * They can show that their LSUN-bedroom GAN seems to have learned in an unsupervised way what beds and windows look like.
+  * Forgetting to draw certain objects
+    * They manually annotated the locations of objects in some generated bedroom images.
+    * Based on these annotations they estimated which feature maps were mostly responsible for generating the objects.
+    * They deactivated these feature maps and regenerated the images.
+    * That decreased the appearance of these objects. It&#x27;s however not as easy as one feature map deactivation leading to one object disappearing. They deactivated quite a lot of feature maps (200) and they objects were often still quite visible or replaced by artefacts/errors.
+  * Vector arithmetic on face samples
+    * Wordvectors can be used to perform semantic arithmetic (e.g. `king - man + woman = queen`).
+    * The unsupervised representations seem to be useable in a similar fashion.
+    * E.g. they generated images via G. They then picked several images that showed men with glasses and averaged these image&#x27;s noise vectors. They did with same with men without glasses and women without glasses. Then they performed on these vectors `men with glasses - mean without glasses + women without glasses` to get `woman with glasses</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="shagunsodhani" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-11-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1511.06434&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-736').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1511.06434%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-736" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dshagunsodhani&amp;text=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks&amp;Body=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dshagunsodhani&amp;title=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-11-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"># Deep Convolutional Generative Adversarial Nets
+
+## Introduction
+
+* The paper presents Deep Convolutional Generative Adversarial Nets (DCGAN) - a topologically constrained variant of conditional GAN.
+* [Link to the paper](https://arxiv.org/abs/1511.06434)
+
+## Benefits
+
+* Stable to train
+* Very useful to learn unsupervised image representations.
+
+## Model
+
+* GANs difficult to scale using CNNs.
+* Paper proposes following changes to GANs:
+    * Replace any pooling layers with strided convolutions (for discriminator) and fractional strided convolutions (for generators).
+    * Remove fully connected hidden layers.
+    * Use batch normalisation in both generator (all layers except output layer) and discriminator (all layers except input layer).
+    * Use LeakyReLU in all layers of the discriminator.
+    * Use ReLU activation in all layers of the generator (except output layer which uses Tanh).
+
+## Datasets
+    
+* Large-Scale Scene Understanding.
+* Imagenet-1K.
+* Faces dataset.
+
+## Hyperparameters
+
+* Minibatch SGD with minibatch size of 128.
+* Weights initialized with 0 centered Normal distribution with standard deviation = 0.02
+* Adam    Optimizer
+* Slope of leak = 0.2 for LeakyReLU.
+* Learning rate = 0.0002, β1 = 0.5
+
+## Observations
+
+* Large-Scale Scene Understanding data
+    * Demonstrates that model scales with more data and higher resolution generation.
+    * Even though it is unlikely that model would have memorized images (due to low learning rate of minibatch SGD).
+* Classifying CIFAR-10 dataset
+    * Features
+        * Train in Imagenet-1K and test on CIFAR-10.
+        * Max pool discriminator&#x27;s convolutional features (from all layers) to get 4x4 spatial grids.
+        * Flatten and concatenate to get a 28672-dimensional vector.
+        * Linear L2-SVM classifier trained over the feature vector.
+    * 82.8% accuracy, outperforms K-means (80.6%)
+* Street View House Number Classifier
+    * Similar pipeline as CIFAR-10
+    * 22.48% test error.
+* The paper contains many examples of images generated by final and intermediate layers of the network.
+* Images in the latent space do not show sharp transitions indicating that network did not memorize images.
+* DCGAN can learn an interesting hierarchy of features.
+* Networks seems to have some success in disentangling image representation from object representation.
+* Vector arithmetic can be performed on the Z vectors corresponding to the face samples to get results like `smiling woman - normal woman + normal man = smiling man` visually.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="leopaillier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=leopaillier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=leopaillier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Léo Paillier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: leopaillier&lt;br&gt;Posted: 2017-12-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1511.06434&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-737').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1511.06434%26a%3Dleopaillier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-737" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434&amp;a=leopaillier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dleopaillier&amp;text=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks&amp;Body=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dleopaillier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1511.06434%26a%3Dleopaillier&amp;title=Summary%20of%20Unsupervised%20Representation%20Learning%20with%20Deep%20Convolutional%20Generative%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1511.06434&amp;a=leopaillier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=leopaillier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Léo Paillier 2017-12-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">_Objective:_ Propose a more stable set of architectures for training GAN and show that they learn good representations of images for supervised learning and generative modeling.
+
+_Dataset:_ [LSUN](http://www.yf.io/p/lsun) and [ImageNet 1k](www.image-net.org/).
+
+## Architecture:
+
+Below are the guidelines for making DCGANs.  
+[![screen shot 2017-04-24 at 10 58 17 am](https://cloud.githubusercontent.com/assets/17261080/25329644/f3885f7c-28dc-11e7-8895-051124c8ff6c.png)](https://cloud.githubusercontent.com/assets/17261080/25329644/f3885f7c-28dc-11e7-8895-051124c8ff6c.png)
+
+And here is a sample network:  
+[![screen shot 2017-04-24 at 10 57 54 am](https://cloud.githubusercontent.com/assets/17261080/25329634/e9c14abc-28dc-11e7-8bed-068f7f7bc78d.png)](https://cloud.githubusercontent.com/assets/17261080/25329634/e9c14abc-28dc-11e7-8bed-068f7f7bc78d.png)
+
+A tensorflow implementation can be found [here](https://github.com/carpedm20/DCGAN-tensorflow) along with an [online demo](https://carpedm20.github.io/faces/).
+
+## Results:
+
+Quite interesting especially concerning the structure learned in the Z-space and how this can be used for interpolation or object removal, see the example that is shown everywhere:  
+[![screen shot 2017-04-24 at 11 20 03 am](https://cloud.githubusercontent.com/assets/17261080/25330458/080b6b4e-28e0-11e7-9ab6-ce58ef5b5562.png)](https://cloud.githubusercontent.com/assets/17261080/25330458/080b6b4e-28e0-11e7-9ab6-ce58ef5b5562.png)
+
+Nonetheless the network is still generating small images (32x32).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

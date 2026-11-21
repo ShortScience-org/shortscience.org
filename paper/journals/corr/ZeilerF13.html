@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualizing and Understanding Convolutional Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Visualizing and Understanding Convolutional Networks - ShortScience.org">
+<meta property="og:description" content="The main contribution of this paper is a new way to analyze CNNs by (a) visualizing intermediate lea...">
+<meta name="description" content="The main contribution of this paper is a new way to analyze CNNs by (a) visualizing intermediate lea...">
+<meta property="og:image" content="http://i.imgur.com/Q1Ama2z.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Zeiler, Matthew D. and Fergus, Rob"}, "headline": "Visualizing and Understanding Convolutional Networks", "description": "Summary of Visualizing and Understanding Convolutional Networks", "datePublished": "2016-11-12 20:38:38", "dateModified": "2017-01-08 11:44:10", "image": {"@type": "ImageObject", "url": "http://i.imgur.com/Q1Ama2z.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cnn,  deeplearning">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1311.2901"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Visualizing%20and%20Understanding%20Convolutional%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Visualizing and Understanding Convolutional Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Zeiler%2C%20Matthew%20D.">Zeiler, Matthew D.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Fergus%2C%20Rob">Fergus, Rob</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2013">arXiv e-Print archive - 2013</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cnn">cnn</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20deeplearning"> deeplearning</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/ZeilerF13">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="martinthoma" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-11-12&lt;br&gt;Edited: 2017-01-08&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/ZeilerF13&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1801').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/ZeilerF13%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1801" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dmartinthoma&amp;text=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks&amp;Body=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dmartinthoma&amp;title=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-11-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The main contribution of this paper is a new way to analyze CNNs by (a) visualizing intermediate learned features and (b) occlusion sensitivity analysis.
+
+## Analyzation techniques
+### Visualization
+
+A multi-layer deconvolutional network is used to project the feature activations back into pixel space, showing what input pattern originally caused a given activation in the feature maps. The idea is to train a network which is given the result of a layer $L_i$ and has to reconstruct the input feature map of $L_i$. This is repeated until the input image is reached.
+
+The deconv-net has a special **unpooling layer**: The max-pooling layers have to save where an activation came from and store those to a switch variable, which is used in unpooling.
+
+### Occlusion sensitivity analysis
+
+* Occlude(I, x, y): Put a gray square centered at $(x, y)$ over a part of the image $I$. Run the classifier.
+* Create an image like this:
+    * Run Occlude(I, x, y) for all $(x, y)$ (possible with stride)
+    * At $(x, y)$, either ...
+        * (d) ... place a pixel which color-encodes the probability of the correct class
+        * (e) ... place a pixel which color-encodes the most probable class
+
+The following image from the Zeiler &amp; Fergus paper visualizes this pretty well:
+
+If the dogs face is occluded, the probability of the correct class drops a lot:
+![Imgur](http://i.imgur.com/Q1Ama2z.png)
+
+If the dogs face is occluded, the most likely class suddenly is &quot;tennisball&quot; and no longer &quot;Pomeranian&quot;.
+![Imgur](http://i.imgur.com/5QYKh7b.png)
+
+See [LIME](http://www.shortscience.org/paper?bibtexKey=journals/corr/1602.04938#martinthoma).
+
+
+## How visualization helped to construct ZF-Net
+
+* &quot;The first layer filters are a mix of extremely high and low frequency information, with little coverage of the mid frequencies&quot; -&gt; Lower filter size from $11 \times 11$ to $7 \times 7$
+* &quot;the 2nd layer visualization shows aliasing artifacts caused by the large stride 4 used in the 1st layer convolutions&quot; -&gt; Lower stride from 4 to 2
+* The occlusion analysis helps to boost confidence that the kind of features being learned are actually correct. 
+
+## ZF-Net
+Zeiler and Fergus also created a new network for ImageNet.
+
+The network consists of multiple interleaved layers of convolutions, non-linear activations, local response normalizations and max pooling layers.
+
+Training setup:
+
+* **Preprocessing**: Resize smallest dimension to 256, per-pixel mean subtraction per channel, crop $224\text{px} \times 224\text{px}$ region
+* **Optimization**: Mini-Batch SGD, learning rate $= 10^{-2}$, momentum = $0.9$, 70 epochs
+* **Resources**: took around 12 days on a single GTX580 GPU
+
+The network was evaluated on
+
+* ImageNet 2012: 14.8% error
+* Caltech-101: $86.5 \pm 0.5$ (pretrained on ImageNet)
+* Caltech-256: $74.2\% \pm 0.3$ (pretrained on ImageNet)
+
+## Minor errors
+
+* typo: &quot;goes give&quot; (also: something went wrong with the link there - the whole block is a link)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/ZeilerF13&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1802').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/ZeilerF13%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1802" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dabhshkdz&amp;text=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks&amp;Body=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FZeilerF13%26a%3Dabhshkdz&amp;title=Summary%20of%20Visualizing%20and%20Understanding%20Convolutional%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/ZeilerF13&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper introduces a novel visualization technique to understand
+representations learnt by intermediate layers of a deep convolutional
+neural network - DeconvNet. Using DeconvNet visualizations as a
+diagnostic tool in different settings, the authors propose changes to the
+model proposed by Alex Krizhevsky, which performs slightly better and
+generalizes well to other datasets. Key contributions:
+
+- Deconvolutional network
+    - Feature activations are mapped back to input pixel space by setting
+    other activations in the layer to zero and successively unpooling,
+    rectifying and filtering (using the same parameters).
+    - Unpooling is approximated by using switch variables to remember
+    the location of highest input activation (and hence these visualizations
+    are image-specific).
+    - Rectification involves passing the signal through a ReLU
+    non-linearity.
+    - Filtering involves convolving the reconstructed signal with
+    the transpose of the convolutional layer filters.
+- Well-designed experiments to provide insights
+
+## Strengths
+
+- Observation of evolution of features
+    - Visualizations clearly demonstrate that lower layers
+    converge within a few epochs and upper layers
+    develop after a considerable number of epochs (40-50).
+- Feature invariance
+    - Visualizations show that small transformations have a
+    dramatic effect on lower layers and lesser impact on higher
+    layers. The model is fairly stable to translation and scaling,
+    not so much to rotation.
+- Occlusion sensitivity analysis
+    - Parts of the image are occluded, and posterior and activities
+    are visualized. Clearly show that activities drop when the object
+    is occluded.
+- Correspondence analysis
+    - The intuition is that CNNs implicitly learn the correspondence between different parts.
+    - To verify this, dog images with frontal pose are taken and the same part of the face
+    is occluded in each of them. Then the difference in feature maps for each of those and the
+    original image is calculated, and the consistency of this difference across all image pairs
+    is verified by Hamming distance. Lower scores as compared to random occlusions does show
+    that the model learns correspondences.
+- Proposed model performs better than Alex Krizhevsky&#x27;s model, and generalizes
+well to other datasets.
+
+## Weaknesses / Notes
+
+- The justification / intuition for choice of smaller filters wasn&#x27;t convincing
+enough.
+- Why does removing layer 7 give better top-1 error rate on train and
+val?
+- Rotation invariance might be something worth looking into.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

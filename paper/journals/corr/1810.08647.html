@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intrinsic Social Motivation via Causal Influence in Multi-Agent RL - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Intrinsic Social Motivation via Causal Influence in Multi-Agent RL - ShortScience.org">
+<meta property="og:description" content="This paper builds very directly on the idea of “empowerment” as an intrinsic reward for RL agents. W...">
+<meta name="description" content="This paper builds very directly on the idea of “empowerment” as an intrinsic reward for RL agents. W...">
+<meta property="og:image" content="https://i.imgur.com/oxXCbdK.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.08647">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1810.08647" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Natasha Jaques and Angeliki Lazaridou and Edward Hughes and Caglar Gulcehre and Pedro A. Ortega and DJ Strouse and Joel Z. Leibo and Nando de Freitas"}, "headline": "Intrinsic Social Motivation via Causal Influence in Multi-Agent RL", "description": "Summary of Intrinsic Social Motivation via Causal Influence in Multi-Agent RL", "datePublished": "2018-11-21 05:17:28", "dateModified": "2018-11-21 05:17:28", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/oxXCbdK.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1810.08647", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI,  cs.MA,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1810.08647v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Intrinsic%20Social%20Motivation%20via%20Causal%20Influence%20in%20Multi-Agent%20RL%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Intrinsic Social Motivation via Causal Influence in Multi-Agent RL</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Natasha%20Jaques">Natasha Jaques</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Angeliki%20Lazaridou">Angeliki Lazaridou</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Edward%20Hughes">Edward Hughes</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Caglar%20Gulcehre">Caglar Gulcehre</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Pedro%20A.%20Ortega">Pedro A. Ortega</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=DJ%20Strouse">DJ Strouse</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Joel%20Z.%20Leibo">Joel Z. Leibo</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Nando%20de%20Freitas">Nando de Freitas</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.MA"> cs.MA</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/10/19<br><b>Abstract:</b>   We derive a new intrinsic social motivation for multi-agent reinforcement
+learning (MARL), in which agents are rewarded for having causal influence over
+another agent&#x27;s actions. Causal influence is assessed using counterfactual
+reasoning. The reward does not depend on observing another agent&#x27;s reward
+function, and is thus a more realistic approach to MARL than taken in previous
+work. We show that the causal influence reward is related to maximizing the
+mutual information between agents&#x27; actions. We test the approach in challenging
+social dilemma environments, where it consistently leads to enhanced
+cooperation between agents and higher collective reward. Moreover, we find that
+rewarding influence can lead agents to develop emergent communication
+protocols. We therefore employ influence to train agents to use an explicit
+communication channel, and find that it leads to more effective communication
+and higher collective reward. Finally, we show that influence can be computed
+by equipping each agent with an internal model that predicts the actions of
+other agents. This allows the social influence reward to be computed without
+the use of a centralised controller, and as such represents a significantly
+more general and scalable inductive bias for MARL with independent agents.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428').hide());void($('#showless-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428').show());void($('#more-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428').show());void($('#showless-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428').hide());void($('#more-am91cm5hbHMvY29yci8xODEwLjA4NjQ3-1428').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1810.08647">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-21&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1810.08647&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1429').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1810.08647%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1429" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.08647&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.08647%26a%3Ddecodyng&amp;text=Summary%20of%20Intrinsic%20Social%20Motivation%20via%20Causal%20Influence%20in%20Multi-Agent%20RL&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.08647%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Intrinsic%20Social%20Motivation%20via%20Causal%20Influence%20in%20Multi-Agent%20RL&amp;Body=Summary%20of%20Intrinsic%20Social%20Motivation%20via%20Causal%20Influence%20in%20Multi-Agent%20RL%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.08647%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.08647%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.08647%26a%3Ddecodyng&amp;title=Summary%20of%20Intrinsic%20Social%20Motivation%20via%20Causal%20Influence%20in%20Multi-Agent%20RL" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.08647&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-21</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper builds very directly on the idea of “empowerment” as an intrinsic reward for RL agents. Where empowerment incentivizes agents to increase the amount of influence they’re able to have over the environment, “social influence,” this paper’s metric, is based on the degree which the actions of one agent influence the actions of other agents, within a multi-agent setting. The goals between the two frameworks are a little different. The notion of “empowerment” is built around a singular agent trying to figure out a short-term proxy for likelihood of long-term survival (which is a feedback point no individual wants to hit). By contrast, the problems that the authors of this paper seek to solve are more explicitly multi-agent coordination problems: prisoner’s dilemma-style situations where collective reward requires cooperation. However, they share a mathematical basis: the idea that an agent’s influence on some other element of its environment (be it the external state, or another agent’s actions) is well modeled by calculating the mutual information between its agents and that element. 
+
+While this is initially a bit of an odd conceptual jump, it does make sense: if an action can give statistical information to help you predict an outcome, it’s likely (obviously not certain, but likely) that that action influenced that outcome. In a multi-agent problem, where cooperation and potentially even communication can help solve the task, being able to influence other agents amounts to “finding ways to make oneself useful to other agents”, because other agents aren’t going to change behavior based on your actions, or “listen” to your “messages” (in the experiment where a communication channel was available between agents) if these signals don’t help them achieve *their* goals. So, this incentive, to influence the behavior of other (self-interested) agents, amounts to a good proxy for incentivizing useful cooperation. 
+
+Zooming in on the exact mathematical formulations (which differ slightly from, though they’re in a shared spirit with, the empowerment math): the agent’s (A’s) Causal Influence reward is calculated by taking a KL divergence between the action distribution of the other agent (B) conditional on the action A took, compared to other actions A might have taken. (see below. Connecting back to empowerment: Mutual Information is just the expected value of this quantity, taken over A’s action distribution). 
+
+https://i.imgur.com/oxXCbdK.png
+
+One thing you may notice from the above equation is that, because we’re working in KL divergences, we expect agent A to have access to the full distribution of agent B’s policy conditional on A’s action, not just the action B actually took. We also require the ability to sample “counterfactuals,” i.e. what agent B would have done if agent A had done something differently. Between these two requirements. If we take a realistic model of two agents interacting with each other, in only one timeline, only having access to the external and not internal parameters of the other, it makes it clear that these quantities can’t be pulled from direct experience. Instead, they are calculated by using an internal model: each agent builds its own MOA (Model of Other Agents), where they build a predictive model of what an agent will do at a given time, conditional on the environment and the actions of all other agents. It’s this model that is used to sample the aforementioned counterfactuals, since that just involves passing in a different input. I’m not entirely sure, in each experiment, whether the MOAs are trained concurrent with agent policies, or in a separate prior step. 
+
+https://i.imgur.com/dn2cBg4.png
+
+Testing on, again, Prisoner’s Dilemma style problems requiring agents to take risky collaborative actions, the authors did find higher performance using their method, compared to approaches where each agent just maximizes its own external reward (which, it should be said, does depend on other agents’ actions), with no explicit incentive towards collaboration. Interestingly, when they specifically tested giving agents access to a “communication channel” (the ability to output discrete signals or “words” visible to other agents), they found that it was able to train just as effectively with only an influence reward, as it was with both an influence and external reward. 
+
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

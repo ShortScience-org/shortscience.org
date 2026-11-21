@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DRAW: A Recurrent Neural Network For Image Generation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="DRAW: A Recurrent Neural Network For Image Generation - ShortScience.org">
+<meta property="og:description" content="The paper introduces a sequential variational auto-encoder that generates complex images iteratively...">
+<meta name="description" content="The paper introduces a sequential variational auto-encoder that generates complex images iteratively...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Gregor, Karol and Danihelka, Ivo and Graves, Alex and Rezende, Danilo Jimenez and Wierstra, Daan"}, "headline": "DRAW: A Recurrent Neural Network For Image Generation", "description": "Summary of DRAW: A Recurrent Neural Network For Image Generation", "datePublished": "2016-04-17 16:07:00", "dateModified": "2016-04-17 16:07:00", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://jmlr.org/proceedings/papers/v37/gregor15.html"><span class="glyphicon glyphicon-link"></span> jmlr.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">DRAW: A Recurrent Neural Network For Image Generation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Gregor%2C%20Karol">Gregor, Karol</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Danihelka%2C%20Ivo">Danihelka, Ivo</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Graves%2C%20Alex">Graves, Alex</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Rezende%2C%20Danilo%20Jimenez">Rezende, Danilo Jimenez</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Wierstra%2C%20Daan">Wierstra, Daan</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/icml&amp;year=2015">International Conference on Machine Learning - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/icml/GregorDGRW15">Summaries/Notes <span class="badge">5</span></a></li></ul><br>
+<div id="josesotelo" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=josesotelo" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=josesotelo&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/57b051f758ad475eb4fb844433e11f9d?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;José Manuel Rodríguez Sotelo&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: josesotelo&lt;br&gt;Posted: 2016-04-17&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/GregorDGRW15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/57b051f758ad475eb4fb844433e11f9d?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-300').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/GregorDGRW15%26a%3Djosesotelo" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-300" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=josesotelo" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Djosesotelo&amp;text=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Djosesotelo" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;Body=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Djosesotelo"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Djosesotelo" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Djosesotelo&amp;title=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=josesotelo" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=josesotelo" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by José Manuel Rodríguez Sotelo 2016-04-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The paper introduces a sequential variational auto-encoder that generates complex images iteratively. The authors also introduce a new spatial attention mechanism that allows the model to focus on small subsets of the image. This new approach for image generation produces images that can’t be distinguished from the training data.
+
+#### What is DRAW:
+The deep recurrent attention writer (DRAW) model has two differences with respect to other variational auto-encoders. First, the encoder and the decoder are recurrent networks. Second, it includes an attention mechanism that restricts the input region observed by the encoder and the output region observed by the decoder.
+
+#### What do we gain?
+The resulting images are greatly improved by allowing a conditional and sequential generation. In addition, the spatial attention mechanism can be used in other contexts to solve the “Where to look?” problem.
+
+#### What follows?
+A possible extension to this model would be to use a convolutional architecture in the encoder or the decoder. Although this might be less useful since we are already restricting the input of the network.
+
+#### Like:
+* As observed in the samples generated by the model, the attention mechanism works effectively by reconstructing images in a local way.
+* The attention model is fully differentiable.
+
+#### Dislike:
+* I think a better exposition of the attention mechanism would improve this paper.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/GregorDGRW15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-301').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/GregorDGRW15%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-301" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dabhshkdz&amp;text=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;Body=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dabhshkdz&amp;title=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">
+This paper introduces a neural network architecture
+that generates realistic images sequentially. They
+also introduce a differentiable attention mechanism
+that allows the network to focus on local regions of the image
+during reconstruction. Main contributions:
+
+- The network architecture is similar to other variational
+auto-encoders, except that
+    - The encoder and decoder are recurrent networks (LSTMs).
+    The encoder&#x27;s output is conditioned on the decoder&#x27;s
+    previous outputs, and the decoder&#x27;s outputs are iteratively
+    added to the resulting distribution from which images are
+    generated.
+    - The spatial attention mechanism restricts the input region
+    observed by the encoder and available to write for the decoder.
+
+## Strengths
+
+- The spatial soft attention mechanism is effective and fully differentiable,
+and can be used for other tasks.
+
+- Images generated by DRAW look very realistic.
+
+## Weaknesses / Notes</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="cubs" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=cubs" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=cubs&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Cubs Reading Group&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: cubs&lt;br&gt;Posted: 2017-10-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/GregorDGRW15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-302').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/GregorDGRW15%26a%3Dcubs" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-302" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=cubs" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dcubs&amp;text=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;Body=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dcubs"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Dcubs&amp;title=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=cubs" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=cubs" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Cubs Reading Group 2017-10-04</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Problem addressed: 
+Generate images with recurrent neural networks
+
+#### Summary: 
+This paper propose an architecture for image generation. The model itself is similar to variational autoencoder, but both the encoder and decoder are implemented with recurrent neural networks, in particular LSTM. It also has two new components: 
+
+1. a reader that select an area of interest for the next recurrence and 
+
+2. a writer that write to that particular area. They believe this mimics the attention and demonstrated this on a cluttered mnist dataset.
+
+#### Novelty:
+Using RNNs for image generation and selective attention of the region of interest
+
+#### Drawbacks:
+Idea seems over complicated and the image generation performance is not that good on real image datset such as CIFAR.
+
+#### Datasets:
+MNIST, SVHN, CIFAR
+
+#### Additional remarks:
+Presentation video available on cedar server
+
+#### Presenter:
+Yingbo Zhou</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/icml/GregorDGRW15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-303').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/GregorDGRW15%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-303" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Daleju&amp;text=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;Body=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Daleju&amp;title=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * DRAW = deep recurrent attentive writer
+  * DRAW is a recurrent autoencoder for (primarily) images that uses attention mechanisms.
+  * Like all autoencoders it has an encoder, a latent layer `Z` in the &quot;middle&quot; and a decoder.
+  * Due to the recurrence, there are actually multiple autoencoders, one for each timestep (the number of timesteps is fixed).
+  * DRAW has attention mechanisms which allow the model to decide where to look at in the input image (&quot;glimpses&quot;) and where to write/draw to in the output image.
+  * If the attention mechanisms are skipped, the model becomes a simple recurrent autoencoder.
+  * By training the full autoencoder on a dataset and then only using the decoder, one can generate new images that look similar to the dataset images.
+
+
+![DRAW Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/DRAW_A_Recurrent_Neural_Network_for_Image_Generation__architecture.png?raw=true &quot;DRAW Architecture&quot;)
+
+*Basic recurrent architecture of DRAW.*
+
+
+### How
+  * General architecture
+    * The encoder-decoder-pair follows the design of variational autoencoders.
+    * The latent layer follows an n-dimensional gaussian distribution. The hyperparameters of that distribution (means, standard deviations) are derived from the output of the encoder using a linear transformation.
+    * Using a gaussian distribution enables the use of the reparameterization trick, which can be useful for backpropagation.
+    * The decoder receives a sample drawn from that gaussian distribution.
+    * While the encoder reads from the input image, the decoder writes to an image canvas (where &quot;write&quot; is an addition, not a replacement of the old values).
+    * The model works in a fixed number of timesteps. At each timestep the encoder performs a read operation and the decoder a write operation.
+    * Both the encoder and the decoder receive the previous output of the encoder.
+  * Loss functions
+    * The loss function of the latent layer is the KL-divergence between that layer&#x27;s gaussian distribution and a prior, summed over the timesteps.
+    * The loss function of the decoder is the negative log likelihood of the image given the final canvas content under a bernoulli distribution.
+    * The total loss, which is optimized, is the expectation of the sum of both losses (latent layer loss, decoder loss).
+  * Attention
+    * The selective read attention works on image patches of varying sizes. The result size is always NxN.
+    * The mechanism has the following parameters:
+        * `gx`: x-axis coordinate of the center of the patch
+        * `gy`: y-axis coordinate of the center of the patch
+        * `delta`: Strides. The higher the strides value, the larger the read image patch.
+        * `sigma`: Standard deviation. The higher the sigma value, the more blurry the extracted patch will be.
+        * `gamma`: Intensity-Multiplier. Will be used on the result.
+        * All of these parameters are generated using a linear transformation applied to the decoder&#x27;s output.
+    * The mechanism places a grid of NxN gaussians on the image. The grid is centered at `(gx, gy)`. The gaussians are `delta` pixels apart from each other and have a standard deviation of `sigma`.
+    * Each gaussian is applied to the image, the center pixel is read and added to the result.
+
+
+![DRAW Attention](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/DRAW_A_Recurrent_Neural_Network_for_Image_Generation__attention.png?raw=true &quot;DRAW Attention&quot;)
+
+*The basic attention mechanism. (gx, gy) is the read patch center. delta is the strides. On the right: Patches with different sizes/strides and standard deviations/blurriness.*
+
+
+### Results
+  * Realistic looking generated images for MNIST and SVHN.
+  * Structurally OK, but overall blurry images for CIFAR-10.
+  * Results with attention are usually significantly better than without attention.
+  * Image generation without attention starts with a blurry image and progressively sharpens it.
+
+![DRAW SVHN Results](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/DRAW_A_Recurrent_Neural_Network_for_Image_Generation__svhn.png?raw=true &quot;DRAW SVHN Results&quot;)
+
+*Using DRAW with attention to generate new SVHN images.*
+
+----------
+
+### Rough chapter-wise notes
+
+* 1. Introduction
+  * The natural way to draw an image is in a step by step way (add some lines, then add some more, etc.).
+  * Most generative neural networks however create the image in one step.
+  * That removes the possibility of iterative self-correction, is hard to scale to large images and makes the image generation process dependent on a single latent distribution (input parameters).
+  * The DRAW architecture generates images in multiple steps, allowing refinements/corrections.
+  * DRAW is based on varational autoencoders: An encoder compresses images to codes and a decoder generates images from codes.
+  * The loss function is a variational upper bound on the log-likelihood of the data.
+  * DRAW uses recurrance to generate images step by step.
+  * The recurrance is combined with attention via partial glimpses/foveations (i.e. the model sees only a small part of the image).
+  * Attention is implemented in a differentiable way in DRAW.
+
+* 2. The DRAW Network
+  * The DRAW architecture is based on variational autoencoders:
+    * Encoder: Compresses an image to latent codes, which represent the information contained in the image.
+    * Decoder: Transforms the codes from the encoder to images (i.e. defines a distribution over images which is conditioned on the distribution of codes).
+  * Differences to variational autoencoders:
+    * Encoder and decoder are both recurrent neural networks.
+    * The encoder receives the previous output of the decoder.
+    * The decoder writes several times to the image array (instead of only once).
+    * The encoder has an attention mechanism. It can make a decision about the read location in the input image.
+    * The decoder has an attention mechanism. It can make a decision about the write location in the output image.
+  * 2.1 Network architecture
+    * They use LSTMs for the encoder and decoder.
+    * The encoder generates a vector.
+    * The decoder generates a vector.
+    * The encoder receives at each time step the image and the output of the previous decoding step.
+    * The hidden layer in between encoder and decoder is a distribution Q(Zt|ht^enc), which is a diagonal gaussian.
+    * The mean and standard deviation of that gaussian is derived from the encoder&#x27;s output vector with a linear transformation.
+    * Using a gaussian instead of a bernoulli distribution enables the use of the reparameterization trick. That trick makes it straightforward to backpropagate &quot;low variance stochastic gradients of the loss function through the latent distribution&quot;.
+    * The decoder writes to an image canvas. At every timestep the vector generated by the decoder is added to that canvas.
+  * 2.2 Loss function
+    * The main loss function is the negative log probability: `-log D(x|ct)`, where `x` is the input image and `ct` is the final output image of the autoencoder. `D` is a bernoulli distribution if the image is binary (only 0s and 1s).
+    * The model also uses a latent loss for the latent layer (between encoder and decoder). That is typical for VAEs. The loss is the KL-Divergence between Q(Zt|ht_enc) (`Zt` = latent layer, `ht_enc` = result of encoder) and a prior `P(Zt)`.
+    * The full loss function is the expection value of both losses added up.
+  * 2.3 Stochastic Data Generation
+    * To generate images, samples can be picked from the latent layer based on a prior. These samples are then fed into the decoder. That is repeated for several timesteps until the image is finished.
+
+* 3. Read and Write Operations
+  * 3.1 Reading and writing without attention
+    * Without attention, DRAW simply reads in the whole image and modifies the whole output image canvas at every timestep.
+  * 3.2 Selective attention model
+    * The model can decide which parts of the image to read, i.e. where to look at. These looks are called glimpses.
+    * Each glimpse is defined by its center (x, y), its stride (zoom level), its gaussian variance (the higher the variance, the more blurry is the result) and a scalar multiplier (that scales the intensity of the glimpse result).
+    * These parameters are calculated based on the decoder output using a linear transformation.
+    * For an NxN patch/glimpse `N*N` gaussians are created and applied to the image. The center pixel of each gaussian is then used as the respective output pixel of the glimpse.
+  * 3.3 Reading and writing with attention
+    * Mostly the same technique from (3.2) is applied to both reading and writing.
+    * The glimpse parameters are generated from the decoder output in both cases. The parameters can be different (i.e. read and write at different positions).
+    * For RGB the same glimpses are applied to each channel.
+
+* 4. Experimental results
+  * They train on binary MNIST, cluttered MNIST, SVHN and CIFAR-10.
+  * They then classfiy the images (cluttered MNIST) or generate new images (other datasets).
+  * They say that these generated images are unique (to which degree?) and that they look realistic for MNIST and SVHN.
+  * Results on CIFAR-10 are blurry.
+  * They use binary crossentropy as the loss function for binary MNIST.
+  * They use crossentropy as the loss function for SVHN and CIFAR-10 (color).
+  * They used Adam as their optimizer.
+  * 4.1 Cluttered MNIST classification
+    * They classify images of cluttered MNIST. To do that, they use an LSTM that performs N read-glimpses and then classifies via a softmax layer.
+    * Their model&#x27;s error rate is significantly below a previous non-differentiable attention based model.
+    * Performing more glimpses seems to decrease the error rate further.
+  * 4.2 MNIST generation
+    * They generate binary MNIST images using only the decoder.
+    * DRAW without attention seems to perform similarly to previous models.
+    * DRAW with attention seems to perform significantly better than previous models.
+    * DRAW without attention progressively sharpens images.
+    * DRAW with attention draws lines by tracing them.
+  * 4.3 MNIST generation with two digits
+    * They created a dataset of 60x60 images, each of them containing two random 28x28 MNIST images.
+    * They then generated new images using only the decoder.
+    * DRAW learned to do that.
+    * Using attention, the model usually first drew one digit then the other.
+  * 4.4 Street view house number generation
+    * They generate SVHN images using only the decoder.
+    * Results look quite realistic.
+  * 4.5 Generating CIFAR images
+    * They generate CIFAR-10 images using only the decoder.
+    * Results follow roughly the structure of CIFAR-images, but look blurry.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="anon" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><span class="glyphicon glyphicon-user" style="font-size:2em;" aria-hidden="true" title="Name hidden"></span></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-304').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/icml/GregorDGRW15%26a%3Danon" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-304" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=anon" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Danon&amp;text=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Danon" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation&amp;Body=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Danon"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Danon" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Ficml%2FGregorDGRW15%26a%3Danon&amp;title=Summary%20of%20DRAW%3A%20A%20Recurrent%20Neural%20Network%20For%20Image%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/icml/GregorDGRW15&amp;a=anon" title="Link">[link]</a></span>
+<span class="authorbanner" style="color:gray;"><span><center style="background-color: #eeeeee;">Summary by Anonymous 2017-02-15</center></span></span>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">http://blog.evjang.com/2016/06/understanding-and-implementing.html</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

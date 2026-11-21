@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualizing the Loss Landscape of Neural Nets - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Visualizing the Loss Landscape of Neural Nets - ShortScience.org">
+<meta property="og:description" content="This paper was a real delight to read, and even though I’m summarizing it here, I’d really encourage...">
+<meta name="description" content="This paper was a real delight to read, and even though I’m summarizing it here, I’d really encourage...">
+<meta property="og:image" content="https://i.imgur.com/V0H13kK.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1712.09913">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1712.09913" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Hao Li and Zheng Xu and Gavin Taylor and Christoph Studer and Tom Goldstein"}, "headline": "Visualizing the Loss Landscape of Neural Nets", "description": "Summary of Visualizing the Loss Landscape of Neural Nets", "datePublished": "2018-11-26 07:05:34", "dateModified": "2018-11-26 07:05:34", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/V0H13kK.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1712.09913", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.CV,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1712.09913v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Visualizing the Loss Landscape of Neural Nets</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Hao%20Li">Hao Li</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zheng%20Xu">Zheng Xu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gavin%20Taylor">Gavin Taylor</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Christoph%20Studer">Christoph Studer</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tom%20Goldstein">Tom Goldstein</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/12/28<br><b>Abstract:</b>   Neural network training relies on our ability to find &quot;good&quot; minimizers of
+highly non-convex loss functions. It is well-known that certain network
+architecture designs (e.g., skip connections) produce loss functions that train
+easier, and well-chosen training parameters (batch size, learning rate,
+optimizer) produce minimizers that generalize better. However, the reasons for
+these differences, and their effects on the underlying loss landscape, are not
+well understood. In this paper, we explore the structure of neural loss
+functions, and the effect of loss landscapes on generalization, using a range
+of visualization methods. First, we introduce a simple &quot;filter normalization&quot;
+method that helps us visualize loss function curvature and make meaningful
+side-by-side comparisons between loss functions. Then, using a variety of
+visualizations, we explore how network architecture affects the loss landscape,
+and how training parameters affect the shape of minimizers.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245').hide());void($('#showless-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245').show());void($('#more-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245').show());void($('#showless-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245').hide());void($('#more-am91cm5hbHMvY29yci8xNzEyLjA5OTEz-1245').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1712.09913">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1712.09913&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1246').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1712.09913%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1246" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1712.09913&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Ddecodyng&amp;text=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets&amp;Body=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Ddecodyng&amp;title=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1712.09913&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper was a real delight to read, and even though I’m summarizing it here, I’d really encourage you, if you’re reading this, to read the paper itself, since I found it to be unusually clearly written. It tackles the problem of understanding how features of loss functions - these integral, yet arcane, objects defined in millions of parameter-dimensions - impact model performance. Loss function analysis is generally a difficult area, since the number of dimensions and number of points needed to evaluate to calculate loss are both so high. The latter presents computational challenges, the former ones of understanding: human brains and many-dimensional spaces are not a good fit. Overall, this paper contributes by 1) arguing for a new way of visualizing loss functions, 2) demonstrating how and in what cases “flatness” of loss function contributes to performance and trainability, and 3)) 
+
+The authors review a few historically common ways of visualizing loss functions, before introducing their variant. The simplest, one-dimensional visualization technique, 1-D Linear Interpolation, works by taking two parameter settings (say, a random initialization, and the final network minimum), and smoothly interpolating between the two, by taking a convex combination mediated by alpha. Then, you can plot the value of the loss at all of these parameter configurations as a function of alpha. If you want to plot in 2D, with a contour plot, you can do so in a pretty similar manner, by picking two random “direction vectors” of the same size as the parameter vector, and then adding amounts of those directions, weighted by alpha and beta, to your starting point. These random directions become your axes, and you get a snapshot of the change in your loss function as you move along them. 
+
+
+The authors then make the observation that these techniques can’t natively be used to compare two different models, if the parameters of those models are on different scales. If you take a neural net, multiply one layer by 10, and then divide the next layer by 10, you’ve essentially done a no-op that won’t impact the outcome. However, if you’re moving by a fixed amount along your random direction in parameter space, you’ll have to move much farther to go the commensurate amount of distance in the network that’s been multiplied by 10. To address this problem, they suggest a simple fix: after you’ve selected each of your random directions, scale the value in each direction vector by the norm of the filter that corresponds to that value. This gets rid of the sensitivity of your plots to the scale of weights. (One thing I admit I’m a little confused by here is the fact that each value in the direction vector corresponds to a filter, rather than to a weight; I would have natively thought theta, and all the direction vectors, are of length number-of-model-parameters, and each value is a single weight. I think I still broadly grasp the intuition, but I’d value having a better sense of this). 
+
+To demonstrate the value of their normalization system, they compare the interpolation plots for a model with small and large batch size, with and without weight decay. Small batches are known to increase flatness of the loss function around the eventual minimum, which seems co-occurrent with good generalization results. And, that bears out in the original model’s linear interpolation (figs a, b, c), where the small model has the wider solution basin, and also better performance. However, once weight decay is applied (figs d, e, f), the small-batch basin appears to shrink to be very narrow, although small-batch still has dominant performance. At first glance, this would seem to be a contradiction of the “flatter solutions mean more generalization” rule.  
+
+https://i.imgur.com/V0H13kK.png
+
+But this is just because weight decay hits smaller models more strongly, because they have more distinct updates during which they apply the weight decay penalty. This means that when weight decay is applied, the overall scale of weights in the small-batch network is lower, and so it’s solution looked “sharp” when plotted on the same weight scale as the large-batch network. When normalization was used, this effect by and large went away, and you once again saw higher performance with flatter loss functions. (batch size and performance with and without weight decay, shown normalized below)
+
+https://i.imgur.com/vEUIgo0.png
+
+A few other, more scattered observations from the paper:
+
+- I’ve heard explanations of skip connections in terms of “giving the model shorter gradient paths between parameters and output,” but haven’t really seen an argument for why skip connections lead to smoother loss functions, even they empirically seem to
+
+https://i.imgur.com/g3QqRzh.png
+
+- The authors also devise a technique for visualizing the change in loss function along the trajectory taken by the optimization algorithm, so that different ones can be compared.  The main problem in previous methods for this has been that optimization trajectories happen in a low-dimensional manifold within parameter space, so if you just randomly select directions, you won’t see any interesting movement along the trajectory. To fix this, they choose as their axes the principal components you get from making a matrix out of the parameter values at each epoch: this prioritizes the parameters that had the most variance throughout training. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="niz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=niz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=niz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3c8bec253b203c0ac57affd37330eb5f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;daisukelab&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: niz&lt;br&gt;Posted: 2018-12-05&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1712.09913&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3c8bec253b203c0ac57affd37330eb5f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1247').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1712.09913%26a%3Dniz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1247" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1712.09913&amp;a=niz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Dniz&amp;text=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Dniz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets&amp;Body=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Dniz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Dniz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1712.09913%26a%3Dniz&amp;title=Summary%20of%20Visualizing%20the%20Loss%20Landscape%20of%20Neural%20Nets" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1712.09913&amp;a=niz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=niz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by daisukelab 2018-12-05</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">- Presents a simple visualization method based on “filter normalization.”
+- Observed that __the deeper networks become, neural loss landscapes become more chaotic__; causes a dramatic drop in generalization error, and ultimately to a lack of trainability.
+- Observed that __skip connections promote flat minimizers and prevent the transition to chaotic behavior__; helps explain why skip connections are necessary for training extremely deep networks.
+- Quantitatively measures non-convexity.
+- Studies the visualization of SGD optimization trajectories.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

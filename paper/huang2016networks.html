@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Networks with Stochastic Depth - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Deep Networks with Stochastic Depth - ShortScience.org">
+<meta property="og:description" content="**Dropout for layers** sums it up pretty well. The authors built on the idea of [deep residual netwo...">
+<meta name="description" content="**Dropout for layers** sums it up pretty well. The authors built on the idea of [deep residual netwo...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=huang2016networks">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=huang2016networks" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Huang, Gao and Sun, Yu and Liu, Zhuang and Sedra, Daniel and Weinberger, Kilian"}, "headline": "Deep Networks with Stochastic Depth", "description": "Summary of Deep Networks with Stochastic Depth", "datePublished": "2016-04-20 20:24:40", "dateModified": "2017-03-26 16:03:17", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=huang2016networks", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, deeplearning,  acreuser">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1603.09382"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Deep%20Networks%20with%20Stochastic%20Depth%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Deep Networks with Stochastic Depth</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Huang%2C%20Gao">Huang, Gao</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sun%2C%20Yu">Sun, Yu</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Liu%2C%20Zhuang">Liu, Zhuang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sedra%2C%20Daniel">Sedra, Daniel</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Weinberger%2C%20Kilian">Weinberger, Kilian</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=deeplearning">deeplearning</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20acreuser"> acreuser</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=huang2016networks">Summaries/Notes <span class="badge">4</span></a></li></ul><br>
+<div id="martinthoma" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-04-20&lt;br&gt;Edited: 2017-03-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;huang2016networks&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-599').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dhuang2016networks%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-599" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dmartinthoma&amp;text=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;Body=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dmartinthoma&amp;title=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-04-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">**Dropout for layers** sums it up pretty well. The authors built on the idea of [deep residual networks](http://arxiv.org/abs/1512.03385) to use identity functions to skip layers. 
+
+The main advantages:
+
+* Training speed-ups by about 25%
+* Huge networks without overfitting
+
+## Evaluation
+
+* [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html): 4.91% error ([SotA](https://martin-thoma.com/sota/#image-classification): 2.72 %) Training Time: ~15h
+* [CIFAR-100](https://www.cs.toronto.edu/~kriz/cifar.html): 24.58% ([SotA](https://martin-thoma.com/sota/#image-classification): 17.18 %) Training time: &lt; 16h
+* [SVHN](http://ufldl.stanford.edu/housenumbers/):  1.75% ([SotA](https://martin-thoma.com/sota/#image-classification): 1.59 %) - trained for 50 epochs, begging with a LR of 0.1, divided by 10 after 30 epochs and 35. Training time: &lt; 26h</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;huang2016networks&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-600').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dhuang2016networks%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-600" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dabhshkdz&amp;text=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;Body=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Dabhshkdz&amp;title=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">
+This paper presents a way to reduce the expected network depth of deep residual networks during training by randomly dropping a subset of residual blocks and bypassing them with identity connections. The &#x27;survival&#x27; probability $p\_l$ decreases linearly with depth (from 1.0 to 0.5 at last layer) so as to keep layers that extract low-level features with higher probability. At test time, residual block functions are scaled by the expected number of times it appears during training, i.e. $p\_l$. This model achieves lower test errors than ResNets (with ReLU activations) on CIFAR-10, CIFAR-100 and SVHN.
+
+## Strengths
+
+- Shorter expected depth leads to faster training (&gt;25% speedup).
+
+- Helps reduce the vanishing gradient problem as shown by the mean gradient magnitude v/s epochs plot.
+
+- Linear decay of survival probability works better than uniform survival, which supports the intuition that low-level features need to be reliably present.
+
+- Stochastic depth acts as a regularizer. The 1202-layer stochastic depth residual network shows improvements over the 110-layer network, while the original ResNets paper reports overfitting and higher test error with 1000+ layers.
+
+## Weaknesses / Notes
+
+- Test errors for the updated ResNet architecture (ReLU activation inside residual function) are missing. That should perform better. Also, numbers on ImageNet.
+
+- Stochastic depth can be interpreted as sequential ensembling as compared to parallel ensembles.
+
+- It would be interesting to look at the filters learnt by stochastic depth residual networks, and to understand whether/how these networks learn hierarchical features as compared to the conventional CNN intuitions of compositionality.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="dennybritz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2016-05-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;huang2016networks&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-601').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dhuang2016networks%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-601" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Ddennybritz&amp;text=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;Body=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Ddennybritz&amp;title=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2016-05-12</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors randomly drop out complete layers during training using a modified ResNet architecture. The dropout probability hyperparameter decreases linearly (higher layers have a higher chance to be dropped) ending at 0.5 at the final layer in the experiments. This mechanisms helps vanishing gradients, diminishing feature reuse, and long training time. The model achieves new records on the CIFAR-10, CIFAR-100 and SVHN dataset.
+
+
+#### Key Points:
+
+- Can easily modify ResNet architecture to dropout out whole layer by only keeping the identity skip connection
+- Lower layers get lower probability of being dropped since they intuitively contain more &quot;stable&quot; features. Authors use linear decay with final value 0.5.
+- Training time reduces by 25% - 50% depending on dropout probability hyperparameter
+- Authors find that vanishing gradients are indeed reduces by plotting the gradient magnitudes vs. number of epochs
+- Can be interpreted as an ensemble of networks with varying depth
+- All layers are used during test time and need to scale activations appropriately
+- Authors successfully train network with 1000+ layers and achieve further error reduction
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;huang2016networks&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-602').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dhuang2016networks%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-602" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Daleju&amp;text=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth&amp;Body=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dhuang2016networks%26a%3Daleju&amp;title=Summary%20of%20Deep%20Networks%20with%20Stochastic%20Depth" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=huang2016networks&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * Stochastic Depth (SD) is a method for residual networks, which randomly removes/deactivates residual blocks during training.
+  * As such, it is similar to dropout.
+  * While dropout removes neurons, SD removes blocks (roughly the layers of a residual network).
+  * One can argue that dropout randomly changes the width of layers, while SD randomly changes the depth of the network.
+  * One can argue that using dropout is similar to training an ensemble of networks with different layer widths, while using SD is similar to training an ensemble of networks with different depths.
+  * Using SD has the following advantages:
+    * It decreases the effects of vanishing gradients, because on average the network is shallower during training (per batch), thereby increasing the gradient that reaches the early blocks.
+    * It increases training speed, because on average less convolutions have to be applied (due to blocks being removed).
+    * It has a regularizing effect, because blocks cannot easily co-adapt any more. (Similar to dropout avoiding co-adaption of neurons.)
+    * If using an increasing removal probability for later blocks: It spends more training time on the early (and thus most important) blocks than on the later blocks.
+
+### How
+  * Normal formula for a residual block (test and train):
+    * `output = ReLU(f(input) + identity(input))`
+    * `f(x)` are usually one or two convolutions.
+  * Formula with SD (during training):
+    * `output = ReLU(b * f(input) + identity(input))`
+    * `b` is either exactly `1` (block survived, i.e. is not removed) or exactly `0` (block was removed).
+    * `b` is sampled from a bernoulli random variable that has the hyperparameter `p`.
+    * `p` is the survival probability of a block (i.e. chance to *not* be removed). (Note that this is the opposite of dropout, where higher values lead to more removal.)
+  * Formula with SD (during test):
+    * `output = ReLU(p * f(input) + input)`
+    * `p` is the average probability with which this residual block survives during training, i.e. the hyperparameter for the bernoulli variable.
+    * The test formula has to be changed, because the network will adapt during training to blocks being missing. Activating them all at the same time can lead to overly strong signals. This is similar to dropout, where weights also have to be changed during test.
+  * There are two simple schemas to set `p` per layer:
+    * Uniform schema: Every block gets the same `p` hyperparameter, i.e. the last block has the same chance of survival as the first block.
+    * Linear decay schema: Survival probability is higher for early layers and decreases towards the end.
+      * The formula is `p = 1 - (l/L)(1-q)`.
+      * `l`: Number of the block for which to set `p`.
+      * `L`: Total number of blocks.
+      * `q`: Desired survival probability of the last block (0.5 is a good value).
+  * For linear decay with `q=0.5` and `L` blocks, on average `(3/4)L` blocks will be trained per minibatch.
+  * For linear decay with `q=0.5` the average speedup will be about `1/4` (25%). If using `q=0.2` the speedup will be ~40%.
+
+### Results
+  * 152 layer networks with SD outperform identical networks without SD on CIFAR-10, CIFAR-100 and SVHN.
+  * The improvement in test error is quite significant.
+  * SD seems to have a regularizing effect. Networks with SD are not overfitting where networks without SD already are.
+  * Even networks with &gt;1000 layers are well trainable with SD.
+  * The gradients that reach the early blocks of the networks are consistently significantly higher with SD than without SD (i.e. less vanishing gradient).
+  * The linear decay schema consistently outperforms the uniform schema (in test error). The best value seems to be `q=0.5`, though values between 0.4 and 0.8 all seem to be good. For the uniform schema only 0.8 seems to be good.
+
+![SVHN 152 layers](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Deep_Networks_with_Stochastic_Depth__svhn.png?raw=true &quot;SVHN 152 layers&quot;)
+
+*Performance on SVHN with 152 layer networks with SD (blue, bottom) and without SD (red, top).*
+
+
+![CIFAR-10 1202 layers](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Deep_Networks_with_Stochastic_Depth__svhn1202.png?raw=true &quot;CIFAR-10 1202 layers&quot;)
+
+*Performance on CIFAR-10 with 1202 layer networks with SD (blue, bottom) and without SD (red, top).*
+
+
+![Optimal choice of p_L](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Deep_Networks_with_Stochastic_Depth__optimal_p.png?raw=true &quot;Optimal choice of p_l&quot;)
+
+*Optimal choice of the survival probability `p_L` (in this summary `q`) for the last layer, for the uniform schema (same for all other layers) and the linear decay schema (decreasing towards `p_L`). Linear decay performs consistently better and allows for lower `p_L` values, leading to more speedup.*
+
+
+--------------------
+
+### Rough chapter-wise notes
+
+* (1) Introduction
+  * Problems of deep networks:
+    * Vanishing Gradients: During backpropagation, gradients approach zero due to being repeatedly multiplied with small weights. Possible counter-measures: Careful initialization of weights, &quot;hidden layer supervision&quot; (?), batch normalization.
+    * Diminishing feature reuse: Aequivalent problem to vanishing gradients during forward propagation. Results of early layers are repeatedly multiplied with later layer&#x27;s (randomly initialized) weights. The total result then becomes meaningless noise and doesn&#x27;t have a clear/strong gradient to fix it.
+    * Long training time: The time of each forward-backward increases linearly with layer depth. Current 152-layer networks can take weeks to train on ImageNet.
+  * I.e.: Shallow networks can be trained effectively and fast, but deep networks would be much more expressive.
+  * During testing we want deep networks, during training we want shallow networks.
+  * They randomly &quot;drop out&quot; (i.e. remove) complete layers during training (per minibatch), resulting in shallow networks.
+  * Result: Lower training time *and* lower test error.
+  * While dropout randomly removes width from the network, stochastic depth randomly removes depth from the networks.
+  * While dropout can be thought of as training an ensemble of networks with different depth, stochastic depth can be thought of as training an ensemble of networks with different depth.
+  * Stochastic depth acts as a regularizer, similar to dropout and batch normalization. It allows deeper networks without overfitting (because 1000 layers clearly wasn&#x27;t enough!).
+
+* (2) Background
+  * Some previous methods to train deep networks: Greedy layer-wise training, careful initializations, batch normalization, highway connections, residual connections.
+  * &lt;Standard explanation of residual networks&gt;
+  * &lt;Standard explanation of dropout&gt;
+  * Dropout loses effectiveness when combined with batch normalization. Seems to have basically no benefit any more for deep residual networks with batch normalization.
+
+* (3) Deep Networks with Stochastic Depth
+  * They randomly skip entire layers during training.
+  * To do that, they use residual connections. They select random layers and use only the identity function for these layers (instead of the full residual block of identity + convolutions + add).
+  * ResNet architecture: They use standard residual connections. ReLU activations, 2 convolutional layers (conv-&gt;BN-&gt;ReLU-&gt;conv-&gt;BN-&gt;add-&gt;ReLU). They use &lt;= 64 filters per conv layer.
+  * While the standard formula for residual connections is `output = ReLU(f(input) + identity(input))`, their formula is `output = ReLU(b * f(input) + identity(input))` with `b` being either 0 (inactive/removed layer) or 1 (active layer), i.e. is a sample of a bernoulli random variable.
+  * The probabilities of the bernoulli random variables are now hyperparameters, similar to dropout.
+  * Note that the probability here means the probability of *survival*, i.e. high value = more survivors.
+  * The probabilities could be set uniformly, e.g. to 0.5 for each variable/layer.
+  * They can also be set with a linear decay, so that the first layer has a very high probability of survival, while the last layer has a very low probability of survival.
+  * Linear decay formula: `p = 1 - (l/L)(1-q)` where `l` is the current layer&#x27;s number, `L` is the total number of layers, `p` is the survival probability of layer `l` and `q` is the desired survival probability of the last layer (e.g. 0.5).
+  * They argue that linear decay is better, as the early layer extract low level features and are therefor more important.
+  * The expected number of surviving layers is simply the sum of the probabilities.
+  * For linear decay with `q=0.5` and `L=54` (i.e. 54 residual blocks = 110 total layers) the expected number of surviving blocks is roughly `(3/4)L = (3/4)54 = 40`, i.e. on average 14 residual blocks will be removed per training batch.
+  * With linear decay and `q=0.5` the expected speedup of training is about 25%. `q=0.2` leads to about 40% speedup (while in one test still achieving the test error of the same network without stochastic depth).
+  * Depending on the `q` setting, they observe significantly lower test errors. They argue that stochastic depth has a regularizing effect (training an ensemble of many networks with different depths).
+  * Similar to dropout, the forward pass rule during testing must be slightly changed, because the network was trained on missing values. The residual formular during test time becomes `output = ReLU(p * f(input) + input)` where `p` is the average probability with which this residual block survives during training.
+
+* (4) Results
+  * Their model architecture:
+    * Three chains of 18 residual blocks each, so 3*18 blocks per model.
+    * Number of filters per conv. layer: 16 (first chain), 32 (second chain), 64 (third chain)
+    * Between each block they use average pooling. Then they zero-pad the new dimensions (e.g. from 16 to 32 at the end of the first chain).
+  * CIFAR-10:
+    * Trained with SGD (momentum=0.9, dampening=0, lr=0.1 after 1st epoch, 0.01 after epoch 250, 0.001 after epoch 375).
+    * Weight decay/L2 of 1e-4.
+    * Batch size 128.
+    * Augmentation: Horizontal flipping, crops (4px offset).
+    * They achieve 5.23% error (compared to 6.41% in the original paper about residual networks).
+  * CIFAR-100:
+    * Same settings as before.
+    * 24.58% error with stochastic depth, 27.22% without.
+  * SVHN:
+    * The use both the hard and easy sub-datasets of images.
+    * They preprocess to zero-mean, unit-variance.
+    * Batch size 128.
+    * Learning rate is 0.1 (start), 0.01 (after epoch 30), 0.001 (after epoch 35).
+    * 1.75% error with stochastic depth, 2.01% error without.
+    * Network without stochastic depth starts to overfit towards the end.
+  * Stochastic depth with linear decay and `q=0.5` gives ~25% speedup.
+  * 1202-layer CIFAR-10:
+    * They trained a 1202-layer deep network on CIFAR-10 (previous tests: 152 layers).
+    * Without stochastic depth: 6.72% test error.
+    * With stochastic depth: 4.91% test error.
+
+* (5) Analytic experiments
+  * Vanishing Gradient:
+    * They analyzed the gradient that reaches the first layer.
+    * The gradient with stochastic depth is consistently higher (throughout the epochs) than without stochastic depth.
+    * The difference is very significant after decreasing the learning rate.
+  * Hyper-parameter sensitivity:
+    * They evaluated with test error for different choices of the survival probability `q`.
+    * Linear decay schema: Values between 0.4 and 0.8 perform best. 0.5 is suggested (nearly best value, good spedup). Even 0.2 improves the test error (compared to no stochastic depth).
+    * Uniform schema: 0.8 performs best, other values mostly significantly worse.
+    * Linear decay performs consistently better than the uniform schema.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

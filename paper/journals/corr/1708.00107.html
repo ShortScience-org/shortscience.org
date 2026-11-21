@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learned in Translation: Contextualized Word Vectors - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learned in Translation: Contextualized Word Vectors - ShortScience.org">
+<meta property="og:description" content="This paper’s approach goes a step further away from the traditional word embedding approach - of tra...">
+<meta name="description" content="This paper’s approach goes a step further away from the traditional word embedding approach - of tra...">
+<meta property="og:image" content="https://i.imgur.com/wjloHdi.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1708.00107">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1708.00107" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Bryan McCann and James Bradbury and Caiming Xiong and Richard Socher"}, "headline": "Learned in Translation: Contextualized Word Vectors", "description": "Summary of Learned in Translation: Contextualized Word Vectors", "datePublished": "2018-06-26 04:32:53", "dateModified": "2018-06-26 04:32:53", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/wjloHdi.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1708.00107", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CL,  cs.AI,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1708.00107v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Learned%20in%20Translation%3A%20Contextualized%20Word%20Vectors%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Learned in Translation: Contextualized Word Vectors</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Bryan%20McCann">Bryan McCann</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=James%20Bradbury">James Bradbury</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Caiming%20Xiong">Caiming Xiong</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Richard%20Socher">Richard Socher</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CL">cs.CL</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/08/01<br><b>Abstract:</b>   Computer vision has benefited from initializing multiple deep layers with
+weights pretrained on large supervised training sets like ImageNet. Natural
+language processing (NLP) typically sees initialization of only the lowest
+layer of deep models with pretrained word vectors. In this paper, we use a deep
+LSTM encoder from an attentional sequence-to-sequence model trained for machine
+translation (MT) to contextualize word vectors. We show that adding these
+context vectors (CoVe) improves performance over using only unsupervised word
+and character vectors on a wide variety of common NLP tasks: sentiment analysis
+(SST, IMDb), question classification (TREC), entailment (SNLI), and question
+answering (SQuAD). For fine-grained sentiment analysis and entailment, CoVe
+improves performance of our baseline models to the state of the art.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151').hide());void($('#showless-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151').show());void($('#more-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151').show());void($('#showless-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151').hide());void($('#more-am91cm5hbHMvY29yci8xNzA4LjAwMTA3-1151').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1708.00107">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1708.00107&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1152').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1708.00107%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1152" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1708.00107&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1708.00107%26a%3Ddecodyng&amp;text=Summary%20of%20Learned%20in%20Translation%3A%20Contextualized%20Word%20Vectors&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1708.00107%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Learned%20in%20Translation%3A%20Contextualized%20Word%20Vectors&amp;Body=Summary%20of%20Learned%20in%20Translation%3A%20Contextualized%20Word%20Vectors%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1708.00107%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1708.00107%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1708.00107%26a%3Ddecodyng&amp;title=Summary%20of%20Learned%20in%20Translation%3A%20Contextualized%20Word%20Vectors" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1708.00107&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper’s approach goes a step further away from the traditional word embedding approach - of training embeddings as the lookup-table first layer of an unsupervised monolingual network - and proposes a more holistic form of transfer learning that involves not just transferring over learned knowledge contained in a set of vectors, but a fully trained model. 
+
+Transfer learning is the general idea of using part or all of a network trained on one task to perform a different task. The most common kind of transfer learning is in the image domain, where models are first trained on the enormous ImageNet dataset, and then several of the lower layers of the network (where more local, small-pixel-range patterns are detected) are transferred, with their weights fixed in place to a new network. The modeler then attaches a few more layers to the top, connects it to a new target, and then is able to much more quickly learn their new target, because the pre-training has gotten them into a useful region of parameter-space. 
+
+https://i.imgur.com/wjloHdi.png
+Within NLP, the most common form of transfer learning is initializing the lookup table of vectors that’s used to convert discrete words in to vectors (also known as an embedding) with embeddings pre-trained on huge unsupervised datasets, like GloVe, trained on all of English Wikipedia. Again, this makes your overall task easier to train, because you’ve already converted words from their un-useful binary representation (where the word cat is just as far from Peru as it is from kitten) to a meaningful real-valued representation.
+
+The approach suggested in this paper goes beyond simply learning the vector input representation of words. Instead, the authors suggest using as word vectors the sequence of encodings produced by an encoder-decoder bi-directional recurrent model. An encoder-decoder model means that you have one part of the network that maps from input sentence to an “encoded” representation of the sentence, and then another part that maps that encoded representation into the proper tokens in the target language. Historically, this encoding had been a single vector for the whole sentence, which tried to conceptually capture all of the words into one vector. More recently, a different approach has grown popular, where the RNN produces a number of encodings equal to the number of input words. Then, when the decoder is producing words in the target sentence, it uses something called “attention” to select a weighted combination of these encodings at each point in time. Under this scheme, the decoder might pull out information about verbs when its own hidden state suggests it needs a verb, and might pull out information about pronoun referents when its own hidden state asks for that. The upshot of all of this is that you end up with a sequence of encoded vectors equal in length to your number of inputs. Because the RNN is bidirectional, which means the encoding is a concatenation of the forward RNN and backward RNN, that means that each of these encodings captures both information about its corresponding word, and contextual information about the rest of the sentence. 
+
+The proposal of the authors is to train the encoder-decoder outlined above, and, once it is trained, lop off the decoder, and use the encoded sequence of words as your representation of the input sequence of words. An important note in all this is that recurrent encoder-decoder model was itself trained using a lookup table initialized with learned GloVe vectors, so in a sense they’re not substituting for the unsupervised embeddings so much as learning marginal information on top of them.
+
+The authors went on to test this approach on a few problems - question answering, logical entailment, and sentiment classification. They compared their use of the RNN encoded word vectors (which they call Context Vectors, or CoVE) with models initialized just using the fixed GloVE word vectors. One important note here is that, because each word vector is learned fully in context, the same word will have a different vector in each sentence it appears in. That’s why you can’t transfer one single vector per word, but instead have to transfer the recurrent model that can produce the vectors. All in all, the authors found that concatenating CoVe vectors to GloVe vectors, and using the concatenated version as input, produced sizable gains on the problems where it was tried. 
+
+That said, it’s a pretty heavy lift to integrate someone else’s learned weights into your own model, just in terms of getting all the code to play together nicely. I’m not sure if this is a compelling enough result, a la ImageNet pretraining, for practitioners to want to go to the trouble of tacking a non-training RNN onto the bottom of all their models. If I ever get a chance, I’d be interested to play with the vectors you get out of this model, and look at how much variance you see in the vectors learned for different words across different sentences. Do you see clusters that correspond to sense disambiguation, (a la state of mind, vs a rogue state)? And, how does this contextual approach to the paper I reviewed yesterday, that also learns embeddings on a machine translation task, but does so in terms of training a lookup table, rather than using trained encodings? All in all, I enjoyed this paper: it was a simple idea, and I’m not sure whether it was a compelling one, but it did leave me with some interesting questions. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

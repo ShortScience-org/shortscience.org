@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The challenge of realistic music generation: modelling raw audio at scale - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The challenge of realistic music generation: modelling raw audio at scale - ShortScience.org">
+<meta property="og:description" content="This paper draws from two strains of recent work: the hierarchical music modeling of MusicVAE - whic...">
+<meta name="description" content="This paper draws from two strains of recent work: the hierarchical music modeling of MusicVAE - whic...">
+<meta property="og:image" content="https://i.imgur.com/H5YqSZG.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.10474">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1806.10474" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Sander Dieleman and A\u00e4ron van den Oord and Karen Simonyan"}, "headline": "The challenge of realistic music generation: modelling raw audio at scale", "description": "Summary of The challenge of realistic music generation: modelling raw audio at scale", "datePublished": "2018-07-22 05:48:19", "dateModified": "2018-07-22 05:48:19", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/H5YqSZG.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1806.10474", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.SD,  cs.LG,  eess.AS,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1806.10474v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22The%20challenge%20of%20realistic%20music%20generation%3A%20modelling%20raw%20audio%20at%20scale%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">The challenge of realistic music generation: modelling raw audio at scale</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Sander%20Dieleman">Sander Dieleman</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=A%C3%A4ron%20van%20den%20Oord">Aäron van den Oord</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Karen%20Simonyan">Karen Simonyan</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.SD">cs.SD</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20eess.AS"> eess.AS</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/06/26<br><b>Abstract:</b>   Realistic music generation is a challenging task. When building generative
+models of music that are learnt from data, typically high-level representations
+such as scores or MIDI are used that abstract away the idiosyncrasies of a
+particular performance. But these nuances are very important for our perception
+of musicality and realism, so in this work we embark on modelling music in the
+raw audio domain. It has been shown that autoregressive models excel at
+generating raw audio waveforms of speech, but when applied to music, we find
+them biased towards capturing local signal structure at the expense of
+modelling long-range correlations. This is problematic because music exhibits
+structure at many different timescales. In this work, we explore autoregressive
+discrete autoencoders (ADAs) as a means to enable autoregressive models to
+capture long-range correlations in waveforms. We find that they allow us to
+unconditionally generate piano music directly in the raw audio domain, which
+shows stylistic consistency across tens of seconds.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364').hide());void($('#showless-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364').show());void($('#more-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364').show());void($('#showless-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364').hide());void($('#more-am91cm5hbHMvY29yci8xODA2LjEwNDc0-1364').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1806.10474">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-07-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1806.10474&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1365').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1806.10474%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1365" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.10474&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.10474%26a%3Ddecodyng&amp;text=Summary%20of%20The%20challenge%20of%20realistic%20music%20generation%3A%20modelling%20raw%20audio%20at%20scale&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.10474%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20The%20challenge%20of%20realistic%20music%20generation%3A%20modelling%20raw%20audio%20at%20scale&amp;Body=Summary%20of%20The%20challenge%20of%20realistic%20music%20generation%3A%20modelling%20raw%20audio%20at%20scale%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.10474%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.10474%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1806.10474%26a%3Ddecodyng&amp;title=Summary%20of%20The%20challenge%20of%20realistic%20music%20generation%3A%20modelling%20raw%20audio%20at%20scale" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1806.10474&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-07-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper draws from two strains of recent work: the hierarchical music modeling of MusicVAE - which intentionally model musical structure at both local and more global levels - , and the discrete autoencoder approaches of Vector Quantized VAEs - which seek to maintain the overall structure of a VAE, but apply a less aggressive form of regularization.
+
+The goal of this paper is to build a model that can generate music, not from that music’s symbolic representation - lists of notes - but from actual waveform audio. This is a more difficult task because the model now has to learn mappings between waveforms and symbolic notes, but confers the advantage of being able to model expressive dimensions of music that are difficult to capture in a pure symbolic representation. Models of pure waveform data have been used before - Wavenet is a central example - but typically they are learned alongside some kind of text conditioning structure, which is to say, you tell the model to say “Hello there, world” and the model is only responsible for building local mappings between those phonemes and waveforms, not actually modeling coherent words to follow after “Hello”. To try to address this problem, the authors of the paper propose the solution of learning an autoencoded representation over the full music sample, to try to capture global structure. Each predicted value of the global structure sequence then represents some number of timesteps of the generated sequence: say, 20. The idea here is: learn a global model that produces 1/N (1/20, in this case) fewer sequence points, whose job is ensuring long term consistency. Then, the authors also suggest the use of a lower level decoder model that uses the conditioning information from the autoencoder, and, in a similar fashion to a text to speech wavenet, captures a high fidelity mapping between that conditioning and the output waveform. 
+
+This overall structure has a lot in common with the recently released MusicVAE paper. The most salient architectural change proposed by this paper is that of Argmax VAEs, rather than VQ VAEs. Overall, the reason for training discrete autoencoders is to have a more easily adjustable way of regularizing the bottlenecked representation, to avoid the fact that for some challenging problems, excessively strong VAE regularization can lead to that high level representational space just not being used. To understand the difference, it’s worth understanding that VQ VAEs work by generating a continuous encoding vector (the same as a typical VAE) but then instead of passing that continuous vector itself directly on to the decoder, the VQ VAE instead fits what is basically a K means operation: it maps the continuous vector to one of it’s “prototypical” or “codebook” vectors based on closeness in Euclidean distance (these codebook vectors are learned in a separate trading loop, in a K Means style algorithm). The Argmax VAE is similar, but instead of needing to take that alternating step of learning the codebook vectors via K Means, it performs a much simpler quantization operation: just taking the argmax of indices across the continuous vector, so that the output is the one-hot vector closest to the continuous input. While this reduces the capacity of the model, it also limits the problem of “codebook collapse”, which is a failure mode that can happen during the K Means iteration (I’m actually not entirely clear on the prototypical example of codebook collapse, or exactly why it happens). 
+
+https://i.imgur.com/H5YqSZG.png
+
+Combining these ideas together: this paper’s model works by learning an Argmax VAE over a larger and courser timeframe of the model, and then learning a local, high resolution decoder - similar to Wavenet - over the smaller time scales, conditioned on the output of the Argmax VAE making high level decisions. This combination balances the needs of coherent musical structure and local fidelity, and allows for different weighing of those trade-offs in a fairly flexible way, by changing the frequency at which you produce Argmax VAE conditioning output. 
+ 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

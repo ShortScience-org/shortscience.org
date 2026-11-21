@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recurrent World Models Facilitate Policy Evolution - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Recurrent World Models Facilitate Policy Evolution - ShortScience.org">
+<meta property="og:description" content="## General Framework 
+The take-home message is that the challenge of Reinforcement Learning for envi...">
+<meta name="description" content="## General Framework 
+The take-home message is that the challenge of Reinforcement Learning for envi...">
+<meta property="og:image" content="https://i.imgur.com/tgV17k4.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1809.01999">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1809.01999" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "David Ha and J\u00fcrgen Schmidhuber"}, "headline": "Recurrent World Models Facilitate Policy Evolution", "description": "Summary of Recurrent World Models Facilitate Policy Evolution", "datePublished": "2020-07-20 20:11:45", "dateModified": "2020-07-27 13:05:14", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/tgV17k4.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1809.01999", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1809.01999v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Recurrent%20World%20Models%20Facilitate%20Policy%20Evolution%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Recurrent World Models Facilitate Policy Evolution</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=David%20Ha">David Ha</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=J%C3%BCrgen%20Schmidhuber">Jürgen Schmidhuber</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/09/04<br><b>Abstract:</b>   A generative recurrent neural network is quickly trained in an unsupervised
+manner to model popular reinforcement learning environments through compressed
+spatio-temporal representations. The world model&#x27;s extracted features are fed
+into compact and simple policies trained by evolution, achieving state of the
+art results in various environments. We also train our agent entirely inside of
+an environment generated by its own internal world model, and transfer this
+policy back into the actual environment. Interactive version of paper at
+https://worldmodels.github.io
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393').hide());void($('#showless-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393').show());void($('#more-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393').show());void($('#showless-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393').hide());void($('#more-am91cm5hbHMvY29yci8xODA5LjAxOTk5-1393').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1809.01999">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="muntermulehitch" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=muntermulehitch" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=muntermulehitch&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3d52639a2aab77c0a65364e3b47eddf7?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Paul Barde&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: muntermulehitch&lt;br&gt;Posted: 2020-07-20&lt;br&gt;Edited: 2020-07-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1809.01999&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3d52639a2aab77c0a65364e3b47eddf7?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1394').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1809.01999%26a%3Dmuntermulehitch" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1394" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1809.01999&amp;a=muntermulehitch" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1809.01999%26a%3Dmuntermulehitch&amp;text=Summary%20of%20Recurrent%20World%20Models%20Facilitate%20Policy%20Evolution&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1809.01999%26a%3Dmuntermulehitch" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Recurrent%20World%20Models%20Facilitate%20Policy%20Evolution&amp;Body=Summary%20of%20Recurrent%20World%20Models%20Facilitate%20Policy%20Evolution%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1809.01999%26a%3Dmuntermulehitch"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1809.01999%26a%3Dmuntermulehitch" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1809.01999%26a%3Dmuntermulehitch&amp;title=Summary%20of%20Recurrent%20World%20Models%20Facilitate%20Policy%20Evolution" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1809.01999&amp;a=muntermulehitch" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=muntermulehitch" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Paul Barde 2020-07-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">## General Framework 
+The take-home message is that the challenge of Reinforcement Learning for environments with high-dimensional and partial observations is learning a good representation of the environment. This means learning a sensory features extractor V to deal with the highly dimensional observation (pixels for example). But also learning a temporal representation M of the environment dynamics to deal with the partial observability. If provided with such representations, learning a controller so as to maximize a reward is really easy (single linear layer evolved with CMA-ES).  
+
+Authors call these representations a *World model* since they can use the learned environment&#x27;s dynamics to simulate roll-outs. They show that policies trained inside the world model transfer well back to the real environment provided that measures are taken to prevent the policy from exploiting the world model&#x27;s inaccuracies. 
+
+## Method 
+**Learning the World Model**
+![](https://i.imgur.com/tgV17k4.png =600x)
+
+In this work they propose to learn these representations off-line in an unsupervized manner in order to be more efficient.
+They use a VAE for V that they train exclusively with the reconstruction loss, that way the learned representations are independent of the reward and can be used alongside any reward. They then train M as Mixture-Density-Network-RNN to predict the next sensory features (as extracted by the VAE) --and possibly the done condition and the reward-- and thus learn the dynamics of the environment in the VAE&#x27;s latent space (which is likely simpler there than in the pixel space).
+Note that the VAE&#x27;s latent space is a single Gaussian (adding stochasticity makes it more robust to the &quot;next state&quot; outputs of M), whereas M outputs next states in a mixture of Gaussians. Indeed, an image is likely to have one visual encoding, yet it can have multiple and different future scenarii which are captured by the multimodal output of M. 
+
+**Training the policy**
+![](https://i.imgur.com/H5vpb2H.png)
+
+* In the real env: 
+The agent is provided with the visual features and M&#x27;s hidden state (temporal features).
+
+* In the world model: 
+To avoid that the agent exploits this imperfect simulator they increase its dynamics&#x27; stochasticity by playing with $\tau$ the sampling temperature of $z_{t+1}$ in M. 
+
+
+## Limitations
+If exploration is important in the environment the initial random policy might fail to collect data in all the relevant part of the environment and an iterative version of Algorithm 1 might be required (see https://worldmodels.github.io/ for a discussion on the different iterative methods) for the data collection.
+
+By training V independently of M it might fail to encode all the information relevant to the task. Another option would be to train V and M concurrently so that the reward and $z_{t+1}$&#x27;s prediction loss (or next state reconstruction loss) of M flows through V (that would also be trained with its own reconstruction loss). The trade-off is that now V is tuned to a particular reward and cannot be reused.
+
+The authors argue that since $h_t$ is such that it can predict $z_{t+1}$, it contains enough insight about the future for the agent not needing to *plan ahead* and just doing reflexive actions based on $h_t$. This is interesting but the considered tasks (driving, dodging fireball) are still very reflexive and do not require much planning. 
+
+## Results
+When trained on the true env, a simple controller with the V and M representations achieve SOTA on car-racing. V + M is better than V alone. 
+When trained inside the world model, its dynamics&#x27; stochasticity must be tuned in order for the policy to transfer well and perform well on the real env: too little stochasticity and the agent overfits to the world model flaws and does not transfer to the real env, too much and the agent becomes risk-averse and robust but suboptimal.  
+
+![](https://i.imgur.com/e8ETSjQ.png)
+
+## Additional ressources 
+Thorough interactive blog post with additional experiments and discussions: https://worldmodels.github.io/</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

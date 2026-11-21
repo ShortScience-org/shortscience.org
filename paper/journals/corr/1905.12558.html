@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limitations of the Empirical Fisher Approximation for Natural Gradient Descent - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Limitations of the Empirical Fisher Approximation for Natural Gradient Descent - ShortScience.org">
+<meta property="og:description" content="The authors analyse in the very well written paper the relation between Fisher $F(\theta) = \sum_n \...">
+<meta name="description" content="The authors analyse in the very well written paper the relation between Fisher $F(\theta) = \sum_n \...">
+<meta property="og:image" content="https://i.imgur.com/c5iCqXW.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.12558">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1905.12558" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Frederik Kunstner and Lukas Balles and Philipp Hennig"}, "headline": "Limitations of the Empirical Fisher Approximation for Natural Gradient Descent", "description": "Summary of Limitations of the Empirical Fisher Approximation for Natural Gradient Descent", "datePublished": "2020-03-19 08:59:52", "dateModified": "2020-03-19 08:59:52", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/c5iCqXW.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1905.12558", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1905.12558v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Limitations%20of%20the%20Empirical%20Fisher%20Approximation%20for%20Natural%20Gradient%20Descent%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Limitations of the Empirical Fisher Approximation for Natural Gradient Descent</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Frederik%20Kunstner">Frederik Kunstner</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lukas%20Balles">Lukas Balles</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Philipp%20Hennig">Philipp Hennig</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2019/05/29<br><b>Abstract:</b>   Natural gradient descent, which preconditions a gradient descent update with
+the Fisher information matrix of the underlying statistical model, is a way to
+capture partial second-order information. Several highly visible works have
+advocated an approximation known as the empirical Fisher, drawing connections
+between approximate second-order methods and heuristics like Adam. We dispute
+this argument by showing that the empirical Fisher---unlike the Fisher---does
+not generally capture second-order information. We further argue that the
+conditions under which the empirical Fisher approaches the Fisher (and the
+Hessian) are unlikely to be met in practice, and that, even on simple
+optimization problems, the pathologies of the empirical Fisher can have
+undesirable effects.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485').hide());void($('#showless-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485').show());void($('#more-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485').show());void($('#showless-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485').hide());void($('#more-am91cm5hbHMvY29yci8xOTA1LjEyNTU4-1485').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1905.12558">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="robertmueller" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=robertmueller" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=robertmueller&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/9963a8cdb9f7c49235a58e8c5cefff1d?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Robert Müller&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: robertmueller&lt;br&gt;Posted: 2020-03-19&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1905.12558&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/9963a8cdb9f7c49235a58e8c5cefff1d?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1486').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1905.12558%26a%3Drobertmueller" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1486" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.12558&amp;a=robertmueller" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.12558%26a%3Drobertmueller&amp;text=Summary%20of%20Limitations%20of%20the%20Empirical%20Fisher%20Approximation%20for%20Natural%20Gradient%20Descent&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.12558%26a%3Drobertmueller" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Limitations%20of%20the%20Empirical%20Fisher%20Approximation%20for%20Natural%20Gradient%20Descent&amp;Body=Summary%20of%20Limitations%20of%20the%20Empirical%20Fisher%20Approximation%20for%20Natural%20Gradient%20Descent%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.12558%26a%3Drobertmueller"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.12558%26a%3Drobertmueller" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1905.12558%26a%3Drobertmueller&amp;title=Summary%20of%20Limitations%20of%20the%20Empirical%20Fisher%20Approximation%20for%20Natural%20Gradient%20Descent" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1905.12558&amp;a=robertmueller" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=robertmueller" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Robert Müller 2020-03-19</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The authors analyse in the very well written paper the relation between Fisher $F(\theta) = \sum_n \mathbb{E}_{p_{\theta}(y \vert x)}[\nabla_{\theta} \log(p_{\theta}(y \vert x_n))\nabla_{\theta} \log(p_{\theta}(y \vert x_n))^T] $ and empirical Fisher $\bar{F}(\theta) = \sum_n [\nabla_{\theta} \log(p_{\theta}(y_n \vert x_n))\nabla_{\theta} \log(p_{\theta}(y_n \vert x_n))^T] $, which has recently seen a surge in interest. . The definitions differ in that $y_n$ is a training label instead of a sample of the model $p_{\theta}(y \vert x_n)$, thus even so the name suggests otherwise $\bar{F}$ is not a empirical, for example Monte Carlo, estimate of the Fisher. The authors rebuff common arguments used to justify the use of the empirical fisher by an amendment to the generalized Gauss-Newton, give conditions when the empirical Fisher does indeed approach the Fisher and give an argument why the empirical fisher might work in practice nonetheless.   
+
+The Fisher, capturing the curvature of the parameter space, provides information about the geometry of the parameters pace, the empirical Fisher might however fail so capture the curvature as the striking plot from the paper shows:
+https://i.imgur.com/c5iCqXW.png
+
+The authors rebuff the two major justifications for the use of empirical Fisher:
+1. &quot;the empirical Fisher matches the construction of a generalized Gauss-Newton&quot;
+ * for the log-likelihood $log(p(y \vert f) = \log \exp(-\frac{1}{2}(y-f)^2))$ the generalized Gauss-Newton intuition that small residuals $f(x_n, \theta) - y_n$ lead to a good approximation of the Hessian is not satisfied. Whereas the Fisher approaches the Hessian, the empirical Fisher approaches 0
+2. &quot;the empirical Fisher converges to the true Fisher when the model is a good fit for the data&quot;
+ * the authors sharpen the argument to &quot;the empirical Fisher converges at the minimum to the Fisher as the number of samples grows&quot;, which is unlikely to be satisfied in practice. 
+
+The authors provide an alternative perspective on why the empirical Fisher might be successful, namely to adapt the gradient to the gradient noise in stochastic optimization. The empirical Fisher coincides with the second moment of the stochastic gradient estimate and encodes as such covariance information about the gradient noise. This allows to reduce the effects of gradient noise by scaling back the updates in high variance aka noise directions. </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

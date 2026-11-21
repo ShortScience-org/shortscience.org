@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woulda, Coulda, Shoulda: Counterfactually-Guided Policy Search - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Woulda, Coulda, Shoulda: Counterfactually-Guided Policy Search - ShortScience.org">
+<meta property="og:description" content="It is a fact universally acknowledged that a reinforcement learning algorithm not in possession of a...">
+<meta name="description" content="It is a fact universally acknowledged that a reinforcement learning algorithm not in possession of a...">
+<meta property="og:image" content="https://i.imgur.com/sNAcGjZ.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1811.06272">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1811.06272" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Lars Buesing and Theophane Weber and Yori Zwols and Sebastien Racaniere and Arthur Guez and Jean-Baptiste Lespiau and Nicolas Heess"}, "headline": "Woulda, Coulda, Shoulda: Counterfactually-Guided Policy Search", "description": "Summary of Woulda, Coulda, Shoulda: Counterfactually-Guided Policy Search", "datePublished": "2018-11-29 07:14:06", "dateModified": "2018-11-29 07:14:06", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/sNAcGjZ.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1811.06272", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1811.06272v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Woulda%2C%20Coulda%2C%20Shoulda%3A%20Counterfactually-Guided%20Policy%20Search%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Woulda, Coulda, Shoulda: Counterfactually-Guided Policy Search</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Lars%20Buesing">Lars Buesing</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Theophane%20Weber">Theophane Weber</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yori%20Zwols">Yori Zwols</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sebastien%20Racaniere">Sebastien Racaniere</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Arthur%20Guez">Arthur Guez</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jean-Baptiste%20Lespiau">Jean-Baptiste Lespiau</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Nicolas%20Heess">Nicolas Heess</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/11/15<br><b>Abstract:</b>   Learning policies on data synthesized by models can in principle quench the
+thirst of reinforcement learning algorithms for large amounts of real
+experience, which is often costly to acquire. However, simulating plausible
+experience de novo is a hard problem for many complex environments, often
+resulting in biases for model-based policy evaluation and search. Instead of de
+novo synthesis of data, here we assume logged, real experience and model
+alternative outcomes of this experience under counterfactual actions, actions
+that were not actually taken. Based on this, we propose the
+Counterfactually-Guided Policy Search (CF-GPS) algorithm for learning policies
+in POMDPs from off-policy experience. It leverages structural causal models for
+counterfactual evaluation of arbitrary policies on individual off-policy
+episodes. CF-GPS can improve on vanilla model-based RL algorithms by making use
+of available logged data to de-bias model predictions. In contrast to
+off-policy algorithms based on Importance Sampling which re-weight data, CF-GPS
+leverages a model to explicitly consider alternative outcomes, allowing the
+algorithm to make better use of experience data. We find empirically that these
+advantages translate into improved policy evaluation and search results on a
+non-trivial grid-world task. Finally, we show that CF-GPS generalizes the
+previously proposed Guided Policy Search and that reparameterization-based
+algorithms such Stochastic Value Gradient can be interpreted as counterfactual
+methods.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449').hide());void($('#showless-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449').show());void($('#more-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449').show());void($('#showless-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449').hide());void($('#more-am91cm5hbHMvY29yci8xODExLjA2Mjcy-1449').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1811.06272">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-29&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1811.06272&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1450').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1811.06272%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1450" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1811.06272&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1811.06272%26a%3Ddecodyng&amp;text=Summary%20of%20Woulda%2C%20Coulda%2C%20Shoulda%3A%20Counterfactually-Guided%20Policy%20Search&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1811.06272%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Woulda%2C%20Coulda%2C%20Shoulda%3A%20Counterfactually-Guided%20Policy%20Search&amp;Body=Summary%20of%20Woulda%2C%20Coulda%2C%20Shoulda%3A%20Counterfactually-Guided%20Policy%20Search%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1811.06272%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1811.06272%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1811.06272%26a%3Ddecodyng&amp;title=Summary%20of%20Woulda%2C%20Coulda%2C%20Shoulda%3A%20Counterfactually-Guided%20Policy%20Search" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1811.06272&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-29</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">It is a fact universally acknowledged that a reinforcement learning algorithm not in possession of a model must be in want of more data. Because they generally are. Joking aside, it is broadly understood that model-free RL takes a lot of data to train, and, even when you can design them to use off-policy trajectories, collecting data in the real environment might still be too costly. Under those conditions, we might want to learn a model of the environment and generate synthesized trajectories, and train on those. This has the advantage of not needing us to run the actual environment, but the obvious disadvantage that any model will be a simplification of the true environment, and potentially an inaccurate one. These authors seek to answer the question of: “is there a way to generate trajectories that has higher fidelity to the true environment.” As you might infer from the fact that they published a paper, and that I’m now writing about it, they argue that, yes, there is, and it’s through explicit causal/counterfactual modeling. 
+
+Causal modeling is one of those areas of statistics that seems straightforward at its highest level of abstraction, but tends to get mathematically messy and unintuitive when you dive into the math. So, rather than starting with equations, I’m going to try to verbally give some intuitions for the way causal modeling is framed here. Imagine you’re trying to understand what would happen if a person had gone to college. There’s some set of information you know about them, and some set of information you don’t, that’s just random true facts about them and about the universe. If, in the real world, they did go to college, and you want to simulate what would have happened if they didn’t, it’s not enough to just know the observed facts about them, you want to actually isolate all of the random other facts (about them, about the world) that weren’t specifically “the choice to go to college”, and condition on those as well. Obviously, in the example given here, it isn’t really practically possible to isolate all the specific unseen factors that influence someone’s outcome. But, conceptually, this quantity, is what we’re going to focus on in this paper. 
+
+Now, imagine a situation where a RL agent has been dropped into a maze-like puzzle. It has some set of dynamics, not immediately visible to the player, that make it difficult, but ultimately solvable.  The best kind of simulated data, the paper argues, would be to keep that state of the world (which is partially unobservable) fixed, and sample different sets of actions the agent might take in that space. Thus, “counterfactual modeling”: for a given configuration of random states in the world, sampling different actions within it. To do this, you first have to infer the random state the agent is experiencing. In the normal model-based case, you’d have some prior over world states, and just sample from it. However, if you use the experience of the agent’s trajectory, you can make a better guess as to what world configuration it was dropped into. If you can do this, which is, technically speaking, sampling from the posterior over unseen context, conditional on an agent’s experience, then the paper suggests you’ll be able to generate data that’s more realistic, because the trajectories will be direct counterfactuals of “real world” scenarios, rather than potentially-unsolvable or unrealistic draws from the prior. 
+
+This is, essentially, the approach proposed by the paper: during training, they make this “world state” visible to the agent, and let it learn a model predicting what state it started with, given some trajectory of experience. They also learn a model that predicts the outcome and ultimately the value of actions taken, conditioned on this random context (as well as visible context, and the agent’s prior actions). They start out by using this as a tool for policy evaluation, which is a nice problem setup because you can actually check how well you’re doing against some baseline: if you want to know how good your simulated data is at replicating the policy reward on real data, you can just try it out on real data and see. The authors find that they reduce policy reward estimation error pretty substantially by adding steps of experience (in Bayesian terms, bit of evidence moving them from the prior, towards the posterior). 
+
+https://i.imgur.com/sNAcGjZ.png
+They also experiment with using this for actual policy search, but, honestly, I didn’t quite follow the intuitions behind Guided Policy Search, so I’m just going to not dive into that for now, since I think a lot of the key contributions of the paper are wrapped up in the idea of “estimate the reward of a policy by simulating data from a counterfactual trajectory”
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

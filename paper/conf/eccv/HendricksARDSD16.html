@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generating Visual Explanations - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Generating Visual Explanations - ShortScience.org">
+<meta property="og:description" content="This paper deals with an important problem where a deep classification system is made explainable. A...">
+<meta name="description" content="This paper deals with an important problem where a deep classification system is made explainable. A...">
+<meta property="og:image" content="https://i.imgur.com/tta2qDp.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/eccv/HendricksARDSD16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/eccv/HendricksARDSD16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Hendricks, Lisa Anne and Akata, Zeynep and Rohrbach, Marcus and Donahue, Jeff and Schiele, Bernt and Darrell, Trevor"}, "headline": "Generating Visual Explanations", "description": "Summary of Generating Visual Explanations", "datePublished": "2017-09-06 01:49:11", "dateModified": "2017-09-06 01:49:11", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/tta2qDp.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/eccv/HendricksARDSD16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://dx.doi.org/10.1007/978-3-319-46493-0_1"><span class="glyphicon glyphicon-link"></span> dx.doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Generating%20Visual%20Explanations%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Generating Visual Explanations</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Hendricks%2C%20Lisa%20Anne">Hendricks, Lisa Anne</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Akata%2C%20Zeynep">Akata, Zeynep</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Rohrbach%2C%20Marcus">Rohrbach, Marcus</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Donahue%2C%20Jeff">Donahue, Jeff</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Schiele%2C%20Bernt">Schiele, Bernt</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Darrell%2C%20Trevor">Darrell, Trevor</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/eccv&amp;year=2016">European Conference on Computer Vision - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/eccv/HendricksARDSD16">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="dasabir" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dasabir" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dasabir&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/c3557aafa54456bc30f8c2998ac977d8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abir Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dasabir&lt;br&gt;Posted: 2017-09-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/eccv/HendricksARDSD16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/c3557aafa54456bc30f8c2998ac977d8?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-221').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/eccv/HendricksARDSD16%26a%3Ddasabir" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-221" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/eccv/HendricksARDSD16&amp;a=dasabir" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FHendricksARDSD16%26a%3Ddasabir&amp;text=Summary%20of%20Generating%20Visual%20Explanations&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FHendricksARDSD16%26a%3Ddasabir" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generating%20Visual%20Explanations&amp;Body=Summary%20of%20Generating%20Visual%20Explanations%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FHendricksARDSD16%26a%3Ddasabir"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FHendricksARDSD16%26a%3Ddasabir" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FHendricksARDSD16%26a%3Ddasabir&amp;title=Summary%20of%20Generating%20Visual%20Explanations" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/eccv/HendricksARDSD16&amp;a=dasabir" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dasabir" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abir Das 2017-09-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper deals with an important problem where a deep classification system is made explainable. After the (continuing) success of Deep Networks, researchers are trying to open the blackbox and this work is one of the foremosts. The authors explored the strength of a deep learning method (vision-language model) to explain the performance of another deep learning model (image classification). The approach jointly predicts a class label and explains why it predicted so in natural language.
+
+The paper starts with a very important differentiation between two basic schools of *explnation* systems - the *introspection* explanation system and the *justification* explanation system. The introspection system looks into the model to get an explanation (e.g., &quot;This is a Western Grebe because filter 2 has a high activation...&quot;). On the other hand, a justification system justifies the decision by producing sentence details on how visual evidence is compatible with the system output (e.g., &quot;This is a Western Grebe because it has red eyes...&quot;). The paper focuses on *justification* explanation system and proposes a novel one.
+
+The authors argue that unlike a description of an image or a sentence defining a class (not necessarily in presence of an image), visual explanation, conditioned on an input image, provides much more of an explanatory text on why the image is classified as a certain category mentioning only image relevant features. The broad outline of the approach is given in Fig (2) of the paper.
+https://i.imgur.com/tta2qDp.png
+The first stage consists of a deep convolutional network for classification which generates a softmax distribution over the classes. As the task handles fine-grained bird species classification, it uses a compact bilinear feature representation known to work well for the fine-grained classification tasks. The second stage is a stacked LSTM which generates natural language sentences or explanations justifying the decision of the first stage. The first LSTM of the stack receives the previously generated word. The second LSTM receives the output of the first LSTM along with image features and predicted label distribution from the classification network. This LSTM produces the sequence of output words until an &quot;end-of-sentence&quot; token is generated. The intuition behind using predicted label distribution for explanation is that it would inform the explanation generation model which words and attributes are more likely to occur in the description.
+
+Two kinds of losses are used for the second stage *i.e.*, the language model. The first one is termed as the *Relevance Loss* which is the typical sentence generation loss that is seen in literature. This is the sum of cross-entropy losses of the generated words with respect to the ground truth words. Its role is to optimize the alignment between generated and ground truth sentences. However, this loss is not very effective in producing sentences which include class discriminative information. class specificity is a global sentence property. This is illustrated with the following example - *whereas a sentence &quot;This is an all black bird with a bright red eye&quot; is class specific to a &quot;Bronzed Cowbird&quot;, words and phrases in the sentence, such as &quot;black&quot; or &quot;red eye&quot; are less class discriminative on their own.* As a result, cross entropy loss on individual words turns out to be less effective in capturing the global sentence property of which class specifity is an example. The authors address this issue by proposing an addiitonal loss, termed as the *Discriminative Loss* which is based on a reinforcement learning paradigm. Before computing the loss, a sentence is sampled. The sentence is passed through a LSTM-based classification network whose task is to produce the ground truth category $C$ given only the sampled sentence. The reward for this operation is simply the probability of the ground truth category $C$ given only the sentence. The intuition is - for the model to produce an output with a large reward, the generated sentence must include enough information to classify the original image properly. The *Discriminative Loss* is the expectation of the negative of this reward and a wieghted linear combination of the two losses is optimized during training.
+
+My experience in reinforcement learning is limited. However, I must say I did not quite get why is sampling of the sentences required (which called for the special algorithm for backpropagation). If the idea is to see whether a generated sentence can be used to get at the ground truth category, could the last internal state of one of the stacked LSTM not be used? It would have been better to get some more intution behind the sampling operation. Another thing which (is fairly obvious but still I felt) is missing is not mentioning the loss used in the fine grained classification network.
+
+The experimentation is rigorous. The proposed method is compared with four different baseline and ablation models - description, definition, explanation-label, explanation-discriminative with different permutation and combinations of the presence of two types losses, class precition informations etc. Also the evaluation metrics measure different qualities of the generated exlanations, specifically image and class relevances. To measure image relevance METEOR/CIDEr scores of the generated sentences with the ground truth (image based) explanations are computed. On the other hand, to measure the class relevance, CIDEr scores with class definition (not necessarily based on the images from the dataset) sentences are computed. The proposed approach has continuously shown better performance than any of the baseline or ablation methods. I&#x27;d specifically mention about one experiment where the effect of class conditioning is studies (end of Sec 5.2). The finding is quite interesting as it shows that providing or not providing correct class information has drastic effect at the generated explanations. It is seen that giving incorrect class information makes the explanation model hallucinate colors or attributes which are not present in the image but are specific to the class. This raises the question whether it is worth giving the class information when the classifier is poor on the first hand? But, I think the answer lies in the observation that row 5 (with class prediction information) in table 1 is always better than row 4 (no class prediction information). Since, row 5 is better than row 4, this means the classifier is also reasonable and this in turn implies that end-to-end training can improve all the stages of a pipeline which ultimately improves the overall performance of the system too!
+
+In summary, the paper is a very good first step to explain intelligent systems and should encourage a lot more effort in this direction.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

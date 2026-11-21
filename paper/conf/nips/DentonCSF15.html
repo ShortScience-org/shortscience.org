@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks - ShortScience.org">
+<meta property="og:description" content="This post is a comment on the Laplacian pyramid-based generative model proposed by researchers from...">
+<meta name="description" content="This post is a comment on the Laplacian pyramid-based generative model proposed by researchers from...">
+<meta property="og:image" content="http://www.inference.vc/content/images/2015/07/Screen-Shot-2015-07-23-at-11-15-17.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Denton, Emily L. and Chintala, Soumith and Szlam, Arthur and Fergus, Rob"}, "headline": "Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks", "description": "Summary of Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks", "datePublished": "2016-07-15 03:12:11", "dateModified": "2016-07-15 03:18:24", "image": {"@type": "ImageObject", "url": "http://www.inference.vc/content/images/2015/07/Screen-Shot-2015-07-23-at-11-15-17.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/5773-deep-generative-image-models-using-a-laplacian-pyramid-of-adversarial-networks"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Denton%2C%20Emily%20L.">Denton, Emily L.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Chintala%2C%20Soumith">Chintala, Soumith</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Szlam%2C%20Arthur">Szlam, Arthur</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Fergus%2C%20Rob">Fergus, Rob</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2015">Neural Information Processing Systems Conference - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/DentonCSF15">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="inference" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=inference" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=inference&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;inFERENCe&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: inference&lt;br&gt;Posted: 2016-07-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/DentonCSF15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/88af2d9674f1a70ee40a75c93c2fabc0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-390').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/DentonCSF15%26a%3Dinference" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-390" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15&amp;a=inference" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dinference&amp;text=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks&amp;Body=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dinference"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dinference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dinference&amp;title=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15&amp;a=inference" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=inference" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by inFERENCe 2016-07-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This post is a comment on the Laplacian pyramid-based generative model proposed by researchers from NYU/Facebook AI Research.
+
+Let me start by saying that I really like this model, and I think - looking at the samples drawn - it represents a nice big step towards convincing generative models of natural images.
+
+To summarise the model, the authors use the Laplacian pyramid representation of images, where you recursively decompose the image to a lower resolution subsampled component and the high-frequency residual. The reason this decomposition is favoured in image processing is the fact that the high-frequency residuals tend to be very sparse, so they are relatively easy to compress and encode.
+
+In this paper the authors propose using convolutional neural networks at each layer of the Laplacian pyramid representation to generate an image sequentially, increasing the resolution at each step. The convnet at each layer is conditioned on the lower resolution image, and some noise component $z_k$, and generates a random higher resolution image. The process continues recursively until the desired resilution is reached. For training they use the adversarial objective function. Below is the main figure that explains how the generative model works, I encourage everyone to have a look at the paper for more details:
+
+![](http://www.inference.vc/content/images/2015/07/Screen-Shot-2015-07-23-at-11-15-17.png)
+
+#### An argument about Conditional Entropies
+
+What I think is weird about the model is the precise amount of noise that is injected at each layer/resolution. In the schematic above, these are the $z_k$ variables. Adding the noise is crucial to defining a probabilistic generative process; this is how it defines a probability distribution.
+
+I think it&#x27;s useful to think about entropies of natural images at different resolutions. When doing generative modelling or unsuperised learning, we want to capture the distribution of data. One important aspect of a probability distribution is its entropy, which measures the variability of the random quantity. In this case, we want to describe the statistics of the full resolution observed natural image $I_0$. (I borrow the authors&#x27; notation where $I_0$ represents the highest resolution image, and $I_k$ represent the $k$-times subsampled version. Using the Laplacian pyramid representation, we can decompose the entropy of an image in the following way:
+
+$$\mathbb{H}[I_0] = \mathbb{H}[I_{K}] + \sum_{k=0}^{K-1} \mathbb{H}[I_k\vert I_{k+1}].$$
+
+The reason why the above decomposition holds is very simple. Because $I_{k+1}$ is a deterministic function of $I_{k}$ (subsampling), the conditional entropy $\mathbb{H}[I_{k+1}\vert I_{k}] = 0$. Therefore the joint entropy of the two variables is simply the entropy of the higher resolution image $I_{k}$, that is $\mathbb{H}[I_{k},I_{k+1}] = \mathbb{H}[I_{k}] + \mathbb{H}[I_{k+1}\vert I_{k}] = \mathbb{H}[I_{k}]$. So by induction, the join entropy of all images $I_{k}$ is just the marginal entropy of the highest resolution image $I_0$. Applying the chain rule for joint entropies we get the expression above.
+
+Now, the interesting bit is how the conditional entropies $\mathbb{H}[I_k\vert I_{k+1}]$ are &#x27;achieved&#x27; in the Laplacian pyramid generative model paper. These entropies are provided by the injected random noise variables $z_k$. By the information processing lemma $\mathbb{H}[I_k\vert I_{k+1}] \leq \mathbb{H}[z_k]$. The authors choose $z_k$ to be uniform random variables whose dimensionality grows with the resolution of $I_k$. To quote them &quot;The noise input $z_k$ to $G_k$ is presented as a 4th color plane to low-pass $l_k$, hence its dimensionality varies with the pyramid level.&quot; Therefore $\mathbb{H}[z_k] \propto 4^{-k}$, assuming that the pixel count quadruples at each layer.
+
+So the conditional entropy $\mathbb{H}[I_k\vert I_{k+1}]$ is allowed to grow exponentially with resolution, at the same rate it would grow if the images contained pure white noise. In their model, they allow the per-pixel conditional entropy $c\cdot 4^{-k}\cdot \mathbb{H}[I_k\vert I_{k+1}]$ to be constant across resolutions. To me, this seems undesirable. My intuition is, for natural images, $\mathbb{H}[I_k\vert I_{k+1}]$ may grow as $k$ decreases (because the dimensionality gorws), but the per-pixel value $c\cdot 4^{k}\cdot \mathbb{H}[I_k\vert I_{k+1}]$ should decrease or converge to $0$ as the resolution increases. Very low low-resolution subsampled natural images behave a little bit like white noise, there is a lot of variability in them. But as you increase the resolution, the probability distribution of the high-res image given the low-res image will become a lot sharper.
+
+In terms of model capacity, this is not a problem, inasmuch as the convolutional models $G_{k}$ can choose to ignore some variance in $z_k$ and learn a more deterministic superresolution process. However, adding unnecessarily high entropy will almost certainly make the fitting of such model harder. For example, the adversarial training process relies on sampling from $z_k$, and the procedure is pretty sensitive to sampling noise. If you make the distribution of $z_k$ unneccessarily high entropy, you will end up doing a lot of extra work during training until the network figures out to ignore the extra variance.
+
+To solve this problem, I propose to keep the entropy of the noise vectors constant, or make them grow sub-linearly with the number of pixels in the image. This mperhaps akes the generative convnets harder to implement. Another quick solution would be to introduce dependence between components of $z_k$ via a low-rank covariance matrix, or some sort of a hashing trick.
+
+#### Adversarial training vs superresolution autoencoders
+
+Another weird thing is that the adversarial objective function forgets the identity of the image. For example, you would want your model so that
+
+`&quot;if at the previous layer you have a low-resolution parrot, the next layer should be a higher-resolution parrot&quot;`
+
+Instead, what you get with the adversarial objective is
+
+`&quot;if at the previous layer you have a low-resolution parrot, the next layer should output a higher-dimensional image that looks like a plausible natural image&quot;`
+
+So, there is nothing in the objective function that enforces dependency between subsequent layers of the pyramid. I think if you made $G_k$ very complex, it could just learn to model natural images by itself, so that $I_{k}$ is in essence independent of $I_{k+1}$ and is purely driven by the noise $z_{k}$. You could sidestep this problem by restricting the complexity of the generative nets, or, again, to restrict the entropy of the noise.
+
+Overall, I think the approach would benefit from a combination of the adversarial and a supervised (superresolution autoencoder) objective function.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="cubs" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=cubs" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=cubs&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Cubs Reading Group&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: cubs&lt;br&gt;Posted: 2017-10-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/DentonCSF15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-391').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/DentonCSF15%26a%3Dcubs" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-391" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15&amp;a=cubs" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dcubs&amp;text=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks&amp;Body=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dcubs"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Dcubs&amp;title=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15&amp;a=cubs" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=cubs" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Cubs Reading Group 2017-10-04</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Problem addressed: 
+Learn to generate sharp high resolution images
+
+#### Summary: 
+The authors applied generative adversarial networks (GANs) for image modeling. Instead of learning one model for a high resolution image directly, they learn it in a hierachical way using pyramid decomposition of the image. The image is decomposed to smaller versions that contains all low frequency information and its corresponding high frequency ones. It can also be regarded as a similar idea from lossless compression, where one have both compressed version of the image and the corresponding error so that once the compression is given the image can be reconstructed perfectly. The quantitative and qualitaive performance are impressive, and is so that the best image generative model for high resolution images.
+
+#### Novelty:
+Using laplacian pyramid decomposition that enables the generation of sharp high resolution images possible
+
+#### Drawbacks:
+Training is stagewise and slow, and levels of decomposition is fixed for all kinds of images.
+
+#### Datasets:
+CIFAR-10, STL, SUN
+
+#### Additional remarks:
+Presentation video available on cedar server
+
+#### Resources:
+Other relevant work to this one: Conditional Generative Adversarial Nets, Conditional generative adversarial nets for convolutional face generation
+
+#### Presenter:
+Yingbo Zhou</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/DentonCSF15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-392').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/DentonCSF15%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-392" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Daleju&amp;text=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks&amp;Body=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FDentonCSF15%26a%3Daleju&amp;title=Summary%20of%20Deep%20Generative%20Image%20Models%20using%20a%20Laplacian%20Pyramid%20of%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/DentonCSF15&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * The original GAN approach used one Generator (G) to generate images and one Discriminator (D) to rate these images.
+  * The laplacian pyramid GAN uses multiple pairs of G and D.
+  * It starts with an ordinary GAN that generates small images (say, 4x4).
+  * Each following pair learns to generate plausible upscalings of the image, usually by a factor of 2. (So e.g. from 4x4 to 8x8.)
+  * This scaling from coarse to fine resembles a laplacian pyramid, hence the name.
+
+### How
+  * The first pair of G and D is just like an ordinary GAN.
+  * For each pair afterwards, G recieves the output of the previous step, upscaled to the desired size. Due to the upscaling, the image will be blurry.
+  * G has to learn to generate a plausible sharpening of that blurry image.
+  * G outputs a difference image, not the full sharpened image.
+  * D recieves the upscaled/blurry image. D also recieves either the optimal difference image (for images from the training set) or G&#x27;s generated difference image.
+  * D adds the difference image to the blurry image as its first step. Afterwards it applies convolutions to the image and ends in one sigmoid unit.
+  * The training procedure is just like in the ordinary GAN setting. Each upscaling pair of G and D can be trained on its own.
+  * The first G recieves a &quot;normal&quot; noise vector, just like in the ordinary GAN setting. Later Gs recieve noise as one plane, so each image has four channels: R, G, B, noise.
+
+### Results
+  * Images are rated as looking more realistic than the ones from ordinary GANs.
+  * The approximated log likelihood is significantly lower (improved) compared to ordinary GANs.
+  * The generated images do however still look distorted compared to real images.
+  * They also tried to add class conditional information to G and D (just a one hot vector for the desired class of the image). G and D learned successfully to adapt to that information (e.g. to only generate images that seem to show birds).
+
+
+
+![Sampling Process](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Deep_Generative_Image_Models_using_a_Laplacian_Pyramid_of_Adversarial_Networks__pyramid.png?raw=true &quot;Sampling process&quot;)
+
+*Basic training and sampling process. The first image is generated directly from noise. Everything afterwards is de-blurring of upscaled images.*
+
+
+-------------------------
+
+### Rough chapter-wise notes
+
+* Introduction
+  * Instead of just one big generative model, they build multiple ones.
+  * They start with one model at a small image scale (e.g. 4x4) and then add multiple generative models that increase the image size (e.g. from 4x4 to 8x8).
+  * This scaling from coarse to fine (low frequency to high frequency components) resembles a laplacian pyramid, hence the name of the paper.
+
+* Related Works
+  * Types of generative image models:
+    * Non-Parametric: Models copy patches from training set (e.g. texture synthesis, super-resolution)
+    * Parametric: E.g. Deep Boltzmann machines or denoising auto-encoders
+  * Novel approaches: e.g. DRAW, diffusion-based processes, LSTMs
+  * This work is based on (conditional) GANs
+
+* Approach
+  * They start with a Gaussian and a Laplacian pyramid.
+  * They build the Gaussian pyramid by repeatedly decreasing the image height/width by 2: [full size image, half size image, quarter size image, ...]
+  * They build a Laplacian pyramid by taking pairs of images in the gaussian pyramid, upscaling the smaller one and then taking the difference.
+  * In the laplacian GAN approach, an image at scale k is created by first upscaling the image at scale k-1 and then adding a refinement to it (de-blurring). The refinement is created with a GAN that recieves the upscaled image as input.
+  * Note that the refinement is a difference image (between the upscaled image and the optimal upscaled image).
+  * The very first (small scale) image is generated by an ordinary GAN.
+  * D recieves an upscaled image and a difference image. It then adds them together to create an upscaled and de-blurred image. Then D applies ordinary convolutions to the result and ends in a quality rating (sigmoid).
+
+* Model Architecture and Training
+  * Datasets: CIFAR-10 (32x32, 100k images), STL (96x96, 100k), LSUN (64x64, 10M)
+  * They use a uniform distribution of [-1, 1] for their noise vectors.
+  * For the upscaling Generators they add the noise as a fourth plane (to the RGB image).
+  * CIFAR-10: 8-&gt;14-&gt;28 (height/width), STL: 8-&gt;16-&gt;32-&gt;64-&gt;96, LSUN: 4-&gt;8-&gt;16-&gt;32-&gt;64
+  * CIFAR-10: G=3 layers, D=2 layers, STL: G=3 layers, D=2 layers, LSUN: G=5 layers, D=3 layers.
+
+* Experiments
+  * Evaluation methods:
+    * Computation of log-likelihood on a held out image set
+      * They use a Gaussian window based Parzen estimation to approximate the probability of an image (note: not very accurate).
+      * They adapt their estimation method to the special case of the laplacian pyramid.
+      * Their laplacian pyramid model seems to perform significantly better than ordinary GANs.
+    * Subjective evaluation of generated images
+      * Their model seems to learn the rough structure and color correlations of images to generate.
+      * They add class conditional information to G and D. G indeed learns to generate different classes of images.
+      * All images still have noticeable distortions.
+    * Subjective evaluation of generated images by other people
+      * 15 volunteers.
+      * They show generated or real images in an interface for 50-2000ms. Volunteer then has to decide whether the image is fake or real.
+      * 10k ratings were collected.
+      * At 2000ms, around 50% of the generated images were considered real, ~90 of the true real ones and &lt;10% of the images generated by an ordinary GAN. </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

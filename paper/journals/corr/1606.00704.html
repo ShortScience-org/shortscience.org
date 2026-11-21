@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adversarially Learned Inference - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Adversarially Learned Inference - ShortScience.org">
+<meta property="og:description" content="* They suggest a new architecture for GANs.
+  * Their architecture adds another Generator for a re...">
+<meta name="description" content="* They suggest a new architecture for GANs.
+  * Their architecture adds another Generator for a re...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Adversarially_Learned_Inference__celeba-samples.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.00704">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1606.00704" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Vincent Dumoulin and Ishmael Belghazi and Ben Poole and Alex Lamb and Martin Arjovsky and Olivier Mastropietro and Aaron Courville"}, "headline": "Adversarially Learned Inference", "description": "Summary of Adversarially Learned Inference", "datePublished": "2017-10-24 10:40:21", "dateModified": "2017-10-27 10:21:15", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Adversarially_Learned_Inference__celeba-samples.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1606.00704", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1606.00704v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Adversarially%20Learned%20Inference%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Adversarially Learned Inference</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Vincent%20Dumoulin">Vincent Dumoulin</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ishmael%20Belghazi">Ishmael Belghazi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ben%20Poole">Ben Poole</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alex%20Lamb">Alex Lamb</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Martin%20Arjovsky">Martin Arjovsky</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Olivier%20Mastropietro">Olivier Mastropietro</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Aaron%20Courville">Aaron Courville</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/06/02<br><b>Abstract:</b>   We introduce the adversarially learned inference (ALI) model, which jointly
+learns a generation network and an inference network using an adversarial
+process. The generation network maps samples from stochastic latent variables
+to the data space while the inference network maps training examples in data
+space to the space of latent variables. An adversarial game is cast between
+these two networks and a discriminative network that is trained to distinguish
+between joint latent/data-space samples from the generative network and joint
+samples from the inference network. We illustrate the ability of the model to
+learn mutually coherent inference and generation networks through the
+inspections of model samples and reconstructions and confirm the usefulness of
+the learned representations by obtaining a performance competitive with other
+recent approaches on the semi-supervised SVHN task.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830').show());void($('#more-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830').show());void($('#showless-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830').hide());void($('#more-am91cm5hbHMvY29yci8xNjA2LjAwNzA0-830').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1606.00704">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-24&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.00704&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-831').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.00704%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-831" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.00704&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Daleju&amp;text=Summary%20of%20Adversarially%20Learned%20Inference&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Adversarially%20Learned%20Inference&amp;Body=Summary%20of%20Adversarially%20Learned%20Inference%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Daleju&amp;title=Summary%20of%20Adversarially%20Learned%20Inference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.00704&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-24</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a new architecture for GANs.
+  * Their architecture adds another Generator for a reverse branch (from images to noise vector `z`).
+  * Their architecture takes some ideas from VAEs/variational neural nets.
+  * Overall they can improve on the previous state of the art (DCGAN).
+
+### How
+  * Architecture
+    * Usually, in GANs one feeds a noise vector `z` into a Generator (G), which then generates an image (`x`) from that noise.
+    * They add a reverse branch (G2), in which another Generator takes a real image (`x`) and generates a noise vector `z` from that.
+      * The noise vector can now be viewed as a latent space vector.
+    * Instead of letting G2 generate *discrete* values for `z` (as it is usually done), they instead take the approach commonly used VAEs and use *continuous* variables instead.
+      * That is, if `z` represents `N` latent variables, they let G2 generate `N` means and `N` variances of gaussian distributions, with each distribution representing one value of `z`.
+      * So the model could e.g. represent something along the lines of &quot;this face looks a lot like a female, but with very low probability could also be male&quot;.
+  * Training
+    * The Discriminator (D) is now trained on pairs of either `(real image, generated latent space vector)` or `(generated image, randomly sampled latent space vector)` and has to tell them apart from each other.
+    * Both Generators are trained to maximally confuse D.
+      * G1 (from `z` to `x`) confuses D maximally, if it generates new images that (a) look real and (b) fit well to the latent variables in `z` (e.g. if `z` says &quot;image contains a cat&quot;, then the image should contain a cat).
+      * G2 (from `x` to `z`) confuses D maximally, if it generates good latent variables `z` that fit to the image `x`.
+    * Continuous variables
+      * The variables in `z` follow gaussian distributions, which makes the training more complicated, as you can&#x27;t trivially backpropagate through gaussians.
+      * When training G1 (from `z` to `x`) the situation is easy: You draw a random `z`-vector following a gaussian distribution (`N(0, I)`). (This is basically the same as in &quot;normal&quot; GANs. They just often use uniform distributions instead.)
+      * When training G2 (from `x` to `z`) the situation is a bit harder.
+        * Here we need to use the reparameterization trick here.
+        * That roughly means, that G2 predicts the means and variances of the gaussian variables in `z` and then we draw a sample of `z` according to exactly these means and variances.
+        * That sample gives us discrete values for our backpropagation.
+        * If we do that sampling often enough, we get a good approximation of the true gradient (of the continuous variables). (Monte Carlo approximation.)
+
+* Results
+  * Images generated based on Celeb-A dataset:
+    * ![Celeb-A samples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Adversarially_Learned_Inference__celeba-samples.png?raw=true &quot;Celeb-A samples&quot;)
+  * Left column per pair: Real image, right column per pair: reconstruction (`x -&gt; z` via G2, then `z -&gt; x` via G1)
+    * ![Celeb-A reconstructions](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Adversarially_Learned_Inference__celeba-reconstructions.png?raw=true &quot;Celeb-A reconstructions&quot;)
+  * Reconstructions of SVHN, notice how the digits often stay the same, while the font changes:
+    * ![SVHN reconstructions](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Adversarially_Learned_Inference__svhn-reconstructions.png?raw=true &quot;SVHN reconstructions&quot;)
+  * CIFAR-10 samples, still lots of errors, but some quite correct:
+    * ![CIFAR10 samples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Adversarially_Learned_Inference__cifar10-samples.png?raw=true &quot;CIFAR10 samples&quot;)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="decodyng" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1606.00704&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-832').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1606.00704%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-832" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.00704&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Ddecodyng&amp;text=Summary%20of%20Adversarially%20Learned%20Inference&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Adversarially%20Learned%20Inference&amp;Body=Summary%20of%20Adversarially%20Learned%20Inference%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1606.00704%26a%3Ddecodyng&amp;title=Summary%20of%20Adversarially%20Learned%20Inference" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1606.00704&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Despite their difficulties in training, Generative Adversarial Networks are still one of the most exciting recent ideas in machine learning; a way to generate data without the fuzziness and averaging of earlier methods. However, up until recently, there had been major way in which the GAN’s primary competitor in the field, the Variational Autoencoder, was superior: it could do inference. 
+
+Intuitively, inference is the inverse of generation. Whereas generation works by taking some source of randomness - a random vector, the setting of some latent code - and transforming that recipe into an observation, an inference process tries to work in reverse, taking in the observation as input and trying to guess what “recipe” was used to generate it. (As a note: in real world data, it’s generally not the case that there were explicit numerical factors used to generate data; this framing is a simplified model meant to represent the way a small set of latent settings of an object jointly cause a lot of that object’s feature values). The authors of this paper proposed the BiGAN to fix that deficiency in GAN literature. 
+
+https://i.imgur.com/vZZzWH5.png
+
+The BiGAN - short for Bidirectional GAN - works by having two generators, not one. One generator works in the typical fashion of a GAN: taking in a random vector z, and transforming that into G(z) = x. The second generator works in reverse, taking in as input data from the underlying dataset, and transforming it into a code z, E(x) = z. Once these generators are in place, the discriminators work, not by trying to differentiate the x and z values separately, but all together. That works by giving the discriminator a pair, (x, z), and asking the discriminator to decide whether that pair came from the z -&gt; x decoder, or the x -&gt; z encoder. If this model fully converges, it becomes the case that G(z) and E(x) are inverse transformations, giving us a way to take in a new input x, and infer its underlying factors z. This is valuable because it’s been shown that, in typical GANs, changes in z often correspond to latent values we care about, and it would be useful to be able to generate z from x for purposes of representation learning.  
+
+The authors offer quite a nice intuitive proof for why the model learns this inverse mapping. For each pair of (x, z), it’s either the case that E(x) = z (if the pair came from the encoder), or that G(z) = x (if the pair came from the decoder). But if only one of those is the case, then it’s easy for the discriminator to tell which generation process produced the pair. So, in order to fool the discriminator, G(z) and E(x) need to synchronize their decoding and encoding processes. 
+
+The authors also tried a method where, instead of having this bidirectional GAN structure, they instead simply built a network on top of the generated samples, that tries to predict the original z used, taking the generated x as input. They show that this performs less well on subjective quality measures of the learned representation, which they attribute to the fact that GANs notoriously only learn some modes of the data, and thus a x -&gt; z encoder that only takes the generated z as input will not have good coverage over the full distribution of x.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

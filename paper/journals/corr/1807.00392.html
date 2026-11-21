@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Reversal Against Discrimination - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Gradient Reversal Against Discrimination - ShortScience.org">
+<meta property="og:description" content="Given some input data $x$ and attribute $a_p$,  the task  is to predict label $y$ from $x$ while ma...">
+<meta name="description" content="Given some input data $x$ and attribute $a_p$,  the task  is to predict label $y$ from $x$ while ma...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.00392">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1807.00392" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Edward Raff and Jared Sylvester"}, "headline": "Gradient Reversal Against Discrimination", "description": "Summary of Gradient Reversal Against Discrimination", "datePublished": "2018-12-03 12:35:48", "dateModified": "2018-12-03 13:03:21", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1807.00392", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.AI,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1807.00392v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Gradient%20Reversal%20Against%20Discrimination%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Gradient Reversal Against Discrimination</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Edward%20Raff">Edward Raff</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jared%20Sylvester">Jared Sylvester</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/07/01<br><b>Abstract:</b>   No methods currently exist for making arbitrary neural networks fair. In this
+work we introduce GRAD, a new and simplified method to producing fair neural
+networks that can be used for auto-encoding fair representations or directly
+with predictive networks. It is easy to implement and add to existing
+architectures, has only one (insensitive) hyper-parameter, and provides
+improved individual and group fairness. We use the flexibility of GRAD to
+demonstrate multi-attribute protection.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369').hide());void($('#showless-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369').show());void($('#more-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369').show());void($('#showless-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369').hide());void($('#more-am91cm5hbHMvY29yci8xODA3LjAwMzky-1369').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1807.00392">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="ameroyer" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=ameroyer" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ameroyer&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/17b931f3c8de38e05694f1b5ba2282f0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;ameroyer&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ameroyer&lt;br&gt;Posted: 2018-12-03&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1807.00392&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/17b931f3c8de38e05694f1b5ba2282f0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1370').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1807.00392%26a%3Dameroyer" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1370" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.00392&amp;a=ameroyer" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.00392%26a%3Dameroyer&amp;text=Summary%20of%20Gradient%20Reversal%20Against%20Discrimination&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.00392%26a%3Dameroyer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Gradient%20Reversal%20Against%20Discrimination&amp;Body=Summary%20of%20Gradient%20Reversal%20Against%20Discrimination%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.00392%26a%3Dameroyer"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.00392%26a%3Dameroyer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1807.00392%26a%3Dameroyer&amp;title=Summary%20of%20Gradient%20Reversal%20Against%20Discrimination" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1807.00392&amp;a=ameroyer" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=ameroyer" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by ameroyer 2018-12-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"> Given some input data $x$ and attribute $a_p$,  the task  is to predict label $y$ from $x$ while making $a_p$ *protected*, in other words, such that the model predictions are invariant to changes in $a_p$.
+ 
+  * **Pros (+)**: Simple and intuitive idea, easy to train, naturally extended to protecting multiple attributes.
+  * **Cons (-)**: Comparison to baselines could be more detailed / comprehensive, in particular the comparison to ALFR [4] which also relies on adversarial training.
+---
+
+ ## Proposed Method
+ 
+ **Domain adversarial networks.**
+ The proposed model builds on the *Domain Adversarial Network* [1], originally introduced for unsupervised domain adaptation. Given some labeled data $(x, y) \sim \mathcal X 
+\times \mathcal Y$, and some unlabeled data $\tilde x \sim  \tilde{\mathcal X}$, the goal is to learn a network that solves both classification tasks $\mathcal X \rightarrow \mathcal Y$ and $\tilde{\mathcal X} \rightarrow \mathcal Y$ while learning a shared representation between $\mathcal X$ and $\tilde{\mathcal X}$.
+
+The model is composed of a feature extractor $G_f$ which then branches off into a *target* branch, $G_t$, to predict the target label, and a *domain* branch, $G_d$, predicting whether the input data comes either from domain $\mathcal X$ or $\tilde{\mathcal X}$. The model parameters are trained with the following objective:
+
+$$
+\begin{align}
+(\theta_{G_f}, \theta_{G_t} ) &amp;= \arg\min \mathbb E_{(x, y) \sim \mathcal X \times \mathcal Y}\  \ell_t \left( G_t \circ G_f(x), y \right)\\
+\theta_{G_d} &amp;= \arg\max \mathbb E_{x \sim \mathcal X} \ \ell_d\left(  G_d \circ G_f(x), 1 \right) + \mathbb E_{\tilde x \sim \tilde{\mathcal X}}\ \ell_d \left(G_d \circ G_f(\tilde x), 0\right)\\
+\mbox{where } &amp;\ell_t \mbox{ and } \ell_d \mbox{ are classification losses}
+\end{align}
+$$
+
+The gradient updates for this saddle point problem can be efficiently implemented using the Gradient Reversal Layer introduced in [1]
+
+**GRAD-pred.** In **G**radient **R**eversal **A**gainst **D**iscrimination, samples come only from one domain $\mathcal X$, and the domain classifier $G_d$ is replaced by an *attribute* classifier, $G_p$, whose goal is to predict the value of the protected attribute $a_p$. 
+In other words, the training objective strives to build a feature representation of $x$ that is good enough to predict the correct label $y$ but such that $a_p$ cannot easily be deduced from it. 
+
+
+
+On the contrary, directly learning classification network $G_y \circ G_f$ penalized when predicting the correct value of attribute $a_p$ could instead lead to a model that learns $a_p$ and trivially outputs an incorrect value. This situation is prevented by the adversarial training scheme here.
+
+**GRAD-auto.** The authors also consider a variant of the described model where the target branch  $G_t$ instead solves the auto-encoding/reconstruction task. The features learned by the encoder $G_f$ can then later be used as entry point of a smaller network for classification or any other task.
+ 
+---
+
+ ## Experiments
+ 
+ **Evaluation metrics.**  The model is evaluated on four metrics to qualify both accuracy and fairness, following the protocol in [2]:
+   * *Accuracy*, the proportion of correct classifications
+   * *Discrimination*, the average score differences (logits of the ground-truth class) between samples with $a_p = + 1$ and $a_p = -1 $ (assuming a binary attribute)
+   * *Consistency*, the average difference between a sample score and the mean of its nearest neighbors&#x27; score.
+   * *Delta = Accuracy - Discrimination*, a penalized version of accuracy
+   
+   
+**Baselines.**
+ * **Vanilla** CNN trained without the protected attribute protection branch
+ * **LFR** [2]: A classifier with an intermediate latent code $Z \in \{1 \dots K\}$ is trained with an objective that combines a classification loss (the model should accurately classify $x$), a reconstruction loss (the learned representation should encode enough information about the input to reconstruct it accurately) and a parity loss (estimate the probability $P(Z=z | x)$ for both populations with $a_p = 1$ and $a_p = -1$ and strive to make them equal)
+ * **VFA** [3]: A VAE where the protected attribute $a_p$ is factorized out of the latent code $z$, and additional invariance is imposed via a MMD objective which tries to match the moments of the posterior distributions $q(z|a_p = -1)$ and $q(z| a_p = 1)$.
+ * **ALFR** [4] : As in LFR, this paper proposes a model trained with a reconstruction loss and a classification loss. Additionally, they propose to quantify the dependence between the learned representation and the protected attribute by adding an adversary classifier that tries to extract the attribute value from the representation, formulated and trained as in the Generative Adversarial Network (GAN) setting.
+    
+**Results.** GRAD always reaches highest consistency compared to baselines. For the other metrics, the results are more mitigated, although it usually achieves best or second best results. It&#x27;s also not clear how to choose between GRAD-pred and GRAD-auto as there does not seem to be a clear winner, although GRAD-pred seems more intuitive when supervision is available, as it directly solves the classification task.
+
+Authors also report a small experiment showing that protecting several attributes at the same time can be more beneficial than protecting a single attribute. This can be expected as some attributes are highly correlated or interact in meaningful way. 
+In particular, protecting several attributes at once can easily be done in the GRAD framework by making the attribute prediction branch multi-class for instance: however it is not clear in the paper how it is actually done in practice, nor whether the same  idea could also be integrated in the baselines for further comparison.
+    
+---  
+ ## References
+   * [1] Domain-Adversarial Training of Neural Networks, Ganin et al, JMRL 2016
+   * [2] Learning Fair Representations,  Zemel et al, ICML 2013
+   * [3] The Variational Fair Autoencoder, Louizos et al, 2016
+   * [4] Censoring Representations with an Adversary, Edwards and Storkey, ICLR 2016</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

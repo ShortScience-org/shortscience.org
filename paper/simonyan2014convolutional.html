@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Very Deep Convolutional Networks for Large-Scale Image Recognition - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Very Deep Convolutional Networks for Large-Scale Image Recognition - ShortScience.org">
+<meta property="og:description" content="#### Goal:
++ Train deep convolutional neural networks with small convolutional filters to classify i...">
+<meta name="description" content="#### Goal:
++ Train deep convolutional neural networks with small convolutional filters to classify i...">
+<meta property="og:image" content="https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Simonyan2015_architectures.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=simonyan2014convolutional">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=simonyan2014convolutional" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Simonyan, Karen and Zisserman, Andrew"}, "headline": "Very Deep Convolutional Networks for Large-Scale Image Recognition", "description": "Summary of Very Deep Convolutional Networks for Large-Scale Image Recognition", "datePublished": "2017-11-22 18:00:10", "dateModified": "2017-11-22 18:00:10", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Simonyan2015_architectures.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=simonyan2014convolutional", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, deep-learning,  VGG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1409.1556"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Very Deep Convolutional Networks for Large-Scale Image Recognition</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Simonyan%2C%20Karen">Simonyan, Karen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Zisserman%2C%20Andrew">Zisserman, Andrew</a></span>
+<br>
+ - 2014 <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=deep-learning">deep-learning</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20VGG"> VGG</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=simonyan2014convolutional">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="tiagotvv" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=tiagotvv" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=tiagotvv&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a9b6f660a07324edd0e695611b04a7a3?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Tiago Vinhoza&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: tiagotvv&lt;br&gt;Posted: 2017-11-22&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;simonyan2014convolutional&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a9b6f660a07324edd0e695611b04a7a3?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2043').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dtiagotvv" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2043" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=simonyan2014convolutional&amp;a=tiagotvv" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dtiagotvv&amp;text=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dtiagotvv" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition&amp;Body=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dtiagotvv"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dtiagotvv" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dtiagotvv&amp;title=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=simonyan2014convolutional&amp;a=tiagotvv" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=tiagotvv" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Tiago Vinhoza 2017-11-22</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Goal:
++ Train deep convolutional neural networks with small convolutional filters to classify images into 1000 different categories.
+
+#### Dataset
++ ImageNet Large-Scale Visual Recognition Challenge (ILSVRC): subset of ImageNet
+    + 1.2 million training images, 50000 validation images, 150000 test images.
+    + 1000 categories.
+
+#### Architecture:
++ Convolutional layers followed by fully-connected layers and 1000-way softmax at the output.
+
+![Configurations](https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Simonyan2015_architectures.png?raw=true &quot;Convnet configurations&quot;)
+
++ Convolutional Layers
+    + Convolutional filter: 3x3, stride = 1. 
+    + &#x27;Same&#x27; convolution, padding = 1.
+    + Width of convolutional layers start at 64 and increases by a factor of 2 after max-pooling until reaching 512.
++ Max Pooling: 2x2 window, stride = 2
++ Activation function: ReLU
++ Number of parameters:
+![Number of parameters](https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Simonyan2015_parameters.png?raw=true &quot;Number of parameters&quot;)
+
+#### Discussion:
+
++ A stack of three 3x3 convolutional layers (without max-pooling in between) is equivalent to a 7x7 convolutional layer. Why is it better?
+    + Three non-linearities instead of just one.
+    + Reduced number of parameters. A n x n convolutional layer with C channels has (nC)^2 parameters.
+
+    
+Architecture |n | C | # of parameters
+------|-------|----|---
+1-layer CNN | 7 | 64 | 49*4096 = 200704
+3-layer CNN | 3 | 64 | 9*4096 = 36864
+
++ The 1x1 convolution layers from configuration C aimed to increase the non-linearity of the decision function without affecting the the receptive fields of the convolutional layers.
+
+#### Methodology:
+
++ Training
+    + Optimize the multinomial logistic regression cost function.
+    + Gradient descent. 
+        + Mini batch size = 256, Momentum = 0.9, Weight decay = 0.0005
+    + Initial learing rate: 0.01
+        + Divided by 10 when the validation set accuracy stopped improving.
+        + Decreased 3 times. Learning stopped after 370K iterations (74 epochs).
+    + Weight initialization:
+        + Configuration A was trained with random initialization of weights.
+        + For the other configurations, the first convolutional nets and the fully connected nets were initialized using weights from configuration A. The other layers were randomly initialized.
+        + Random initialization: weights are sampled from a zero-mean normal distribution with 0.01 variance. Biases are initialized wirh zero.
++ Reduce Overfitting:
+    + Data Augmentation: followed [Krizhevsky2012](https://github.com/tiagotvv/ml-papers/blob/master/convolutional/ImageNet_Classification_with_Deep_Convolutional_Neural_Networks.md) principles with random flippings and changes in RGB levels.
+    + Dropout regularization for the first two fully-connected layers - p(keep) = 0.5
++ Image Resolution:
+    + Models were trained at two fixed scales S=256 and S=384.
+    + Multi-scale training (randomly sampling S): minimum=256, maximum=512.
+        + Can be seen as training set augmentation by scale jittering.
+    + At test time, test scale Q is not necessarily equal to training scale S.
+
+#### Results
+
++ Implementation derived from C++ Caffe toolbox.
++ Training and evaluation on multiple GPUs (no information regarding training time).
+
++ Single scale evaluation: 
+    + Fixed training scale: Q=S.
+    + Jittered training scale: Q=0.5(S_min + S_max).
+    + Local Response Normalization did not improved results.
+
+Configuration | S | Q | top-1 error (%) | top-5 error (%)
+:--------------:|:---:|---|:-----------------:|:---------------: 
+A | 256 | 256 | 29.6 | 10.4  
+A-LRN | 256 | 256 | 29.7 | 10.5
+B | 256 | 256 | 28.7 | 9.9
+C | 256 | 256 | 28.1 | 9.4 
+  | 384 | 384 | 28.1 | 9.3
+  | [256;512] | 384 | 27.3 | 8.8 
+D | 256 | 256 | 27.0 | 8.8
+  | 384 | 384 | 26.8 | 8.7
+  | [256;512] | 384 | 25.6 | 8.1 
+E | 256 | 256 | 27.3 | 9.0 
+  | 384 | 384 | 26.9 | 8.7
+  | [256;512] | 384 | **25.5** | **8.0** 
+
++ Multi-scale evaluation: 
+    + Fixed training scale: Q={S-32,S,S+32}. 
+    + Jittered training scale: Q={S_min, 0.5(S_min + S_max), S_max}. 
+
+Configuration | S | Q | top-1 error (%) | top-5 error (%)
+:--------------:|:---:|---|:-----------------:|:---------------: 
+B | 256 | 224,256,288 | 28.2 | 9.6
+C | 256 | 224,256,288 | 27.7 | 9.2 
+  | 384 | 352,384,416 | 27.8 | 9.2
+  | [256;512] | 256,384,512 | 26.3 | 8.2 
+D | 256 | 224,256,288 | 26.6 | 8.6
+  | 384 | 352,384,416 | 26.5 | 8.6
+  | [256;512] | 256,384,512 | **24.8** | **7.5** 
+E | 256 | 224,256,288 | 26.9 | 8.7 
+  | 384 | 352,384,416 | 26.7 | 8.6
+  | [256;512] | 256,384,512 | **24.8** | **7.5** 
+
++ Dense versus multi-crop evaluation
+    + Dense evaluation: fully connected layers are converted to convolutional layers at test time. Scores are obtained for full uncropped image and its flipped version and then averaged.
+    + Multi-crop evaluation: average of scores obtained by passing multiple crops of the test image through the convolutional network. 
+    + Combination of multi-crop and dense has best results: probably due to different treatment of convolution boundary conditions.
+
+Configuration | Method | top-1 error (%) | top-5 error (%)
+:--------------:|:---:|:-----------------:|:---------------: 
+D | dense | 24.8 | 7.5
+  | multi-crop | 24.6 | 7.5
+  | multi-crop &amp; dense | **24.4** | **7.2** 
+E | dense | 24.8 | 7.5
+  | multi-crop | 24.6 | 7.4
+  | multi-crop &amp; dense | **24.4** | **7.1** 
+ 
+
++ Comparison with State of the art solutions:
+
+    + VGG (2 nets) = ensemble of 2 models trained using configurations D and E.
+    + VGG (7 nets) = ensemble of 7 models different models trained using configurations C, D, E.
+
+![Results](https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Simonyan2015_results.png?raw=true &quot;Results&quot;)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;simonyan2014convolutional&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2044').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2044" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=simonyan2014convolutional&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dabhshkdz&amp;text=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition&amp;Body=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dsimonyan2014convolutional%26a%3Dabhshkdz&amp;title=Summary%20of%20Very%20Deep%20Convolutional%20Networks%20for%20Large-Scale%20Image%20Recognition" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=simonyan2014convolutional&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper proposes a modified convolutional network architecture
+by increasing the depth, using smaller filters, data augmentation
+and a bunch of engineering tricks, an ensemble of which
+achieves second place in the classification task and first place
+in the localization task at ILSVRC2014.
+
+Main contributions:
+
+- Experiments with architectures with different depths from 11 to
+19 weight layers.
+- Changes in architecture
+    - Smaller convolution filters
+    - 1x1 convolutions: linear transformation of input channels
+    followed by a non-linearity, increases discriminative capability
+    of decision function.
+- Varying image scales
+    - During training, the image is rescaled to set the length of the shortest side
+    to S and then 224x224 crops are taken.
+    - Fixed S; S=256 and S=384
+    - Multi-scale; Randomly sampled S from [256,512]
+    - This can be interpreted as a kind of data augmentation by scale jittering,
+    where a single model is trained to recognize objects over a wide range of scales.
+    - Single scale evaluation: At test time, Q=S for fixed S and Q=0.5(S_min + S_max)
+    for jittered S.
+    - Multi-scale evaluation: At test time, Q={S-32,S,S+32} for fixed S and Q={S_min,
+    0.5(S_min + S_max), S_max} for jittered S. Resulting class posteriors are averaged.
+    This performs the best.
+- Dense v/s multi-crop evaluation
+    - In dense evaluation, the fully connected layers are converted to convolutional
+    layers at test time, and the uncropped image is passed through the fully convolutional net
+    to get dense class scores. Scores are averaged for the uncropped image and its
+    flip to obtain the final fixed-width class posteriors.
+    - This is compared against taking multiple crops of the test image and averaging scores
+    obtained by passing each of these through the CNN.
+    - Multi-crop evaluation works slightly better than dense evaluation, but the methods
+    are somewhat complementary as averaging scores from both did better than each of them
+    individually. The authors hypothesize that this is probably because of the different
+    boundary conditions: when applying a ConvNet to a crop, the convolved feature maps are padded with zeros, while in the case of dense evaluation the padding for the same crop naturally comes from the neighbouring parts of an image (due to both the convolutions and spatial pooling), which substantially increases the overall network receptive field, so more context is captured.
+
+## Strengths
+
+- Thoughtful design of network architectures and experiments to study the effect of
+depth, LRN, 1x1 convolutions, pre-initialization of weights, image scales,
+and dense v/s multi-crop evaluations.
+
+
+## Weaknesses / Notes
+
+- No analysis of how much time these networks take to train.
+- It is interesting how the authors trained a deeper model (D,E)
+by initializing initial and final layer parameters with those from
+a shallower model (A).
+- It would be interesting to visualize and see the representations
+learnt by three stacked 3x3 conv layers and one 7x7 conv layer, and
+maybe compare their receptive fields.
+- They mention that performance saturates with depth while going
+from D to E, but there should have been a more formal characterization
+of why that happens (deeper is usually better, yes? no?).
+- The ensemble consists of just 2 nets, yet performs really well.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

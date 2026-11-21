@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You May Not Need Attention - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="You May Not Need Attention - ShortScience.org">
+<meta property="og:description" content="I admit it - the title of the paper pulled me in, existing as it does in the chain of weirdly inside...">
+<meta name="description" content="I admit it - the title of the paper pulled me in, existing as it does in the chain of weirdly inside...">
+<meta property="og:image" content="https://i.imgur.com/Gitpxi7.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.13409">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1810.13409" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Ofir Press and Noah A. Smith"}, "headline": "You May Not Need Attention", "description": "Summary of You May Not Need Attention", "datePublished": "2018-11-03 03:11:48", "dateModified": "2018-11-03 03:11:48", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/Gitpxi7.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1810.13409", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.CL">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1810.13409v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22You%20May%20Not%20Need%20Attention%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">You May Not Need Attention</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Ofir%20Press">Ofir Press</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Noah%20A.%20Smith">Noah A. Smith</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.CL">cs.CL</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/10/31<br><b>Abstract:</b>   In NMT, how far can we get without attention and without separate encoding
+and decoding? To answer that question, we introduce a recurrent neural
+translation model that does not use attention and does not have a separate
+encoder and decoder. Our eager translation model is low-latency, writing target
+tokens as soon as it reads the first source token, and uses constant memory
+during decoding. It performs on par with the standard attention-based model of
+Bahdanau et al. (2014), and better on long sentences.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438').hide());void($('#showless-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438').show());void($('#more-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438').show());void($('#showless-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438').hide());void($('#more-am91cm5hbHMvY29yci8xODEwLjEzNDA5-1438').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1810.13409">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-03&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1810.13409&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1439').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1810.13409%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1439" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.13409&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Ddecodyng&amp;text=Summary%20of%20You%20May%20Not%20Need%20Attention&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20You%20May%20Not%20Need%20Attention&amp;Body=Summary%20of%20You%20May%20Not%20Need%20Attention%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Ddecodyng&amp;title=Summary%20of%20You%20May%20Not%20Need%20Attention" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.13409&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">I admit it - the title of the paper pulled me in, existing as it does in the chain of weirdly insider-meme papers, starting with Vaswani’s 2017 “Attention Is All You Need”. That paper has been hugely influential, and the domain of machine translation as a whole has begun to move away from processing (or encoding) source sentences with recurrent architectures, to instead processing them using self-attention architectures. (Self-attention is a little too nuanced to go into in full depth here, but the basic idea is: instead of summarizing varying-length sequences by feeding each timestep into a recurrent loop and building up hidden states, generate a query, and weight the contribution of each timestep to each “hidden state” based on the dot product between that query and each timestep’s representation). There has been an overall move in recent years away from recurrence being the accepted default for sequence data, and towards attention and (often dilated) convolution taking up more space. I find this an interesting set of developments, and had hopes that this paper would address that arc. 
+
+However, unfortunately, the title was quite out of sync with the actual focus of the paper - instead of addressing the contribution of attention mechanisms vs recurrence, or even directly addressing any of the particular ideas posed in the “Attention is All You Need” paper, this YMNNA instead takes aim at a more fundamental structural feature of translation models: the encoder/decoder structure. The basic idea of an encoder/decoder approach, in a translation paradigm, is that you process the entire source sentence before you start generating the tokens of the predicted, other-language target sentence. Initially, this would work by running a RNN over the full sentence, and using the final hidden state of that RNN as a compressed representation of the full sentence. More recently, the norm has been to use multiple layers of RNN, and to represent the source sentence via the hidden states at each timestep (so: as many hidden states as you have input tokens), and then at each step in the decoding process, calculate an attention-weighted average over all of those hidden states. But, fundamentally, both of these structures share the fact that some kind of global representation is calculated and made available to the decoder before it starts predicting words in the output sentence. 
+
+This makes sense for a few reasons. First, and most obviously, languages aren’t naturally aligned with one another, in the sense of one word in language X corresponding to one word in language Y. It’s not possible for you to predict a word in the target sentence if its corresponding source sentence token has not yet been processed. For another, there can be contextual information from the sentence as a whole that can disambiguate between different senses of a word, which may have different translations - think Teddy Bear vs Teddy Roosevelt. However, this paper poses the question: how well can you do if you throw away this structure, and build a model that continually emits tokens of the target sequence as it reads in the source sentence? Using a recurrent model, the YMNNA model takes, at each timestep, the new source token, the previous target token, and the prior hidden state from the last time step of the RNN, and uses that to predict a token.
+
+However, that problem mentioned earlier - of languages not natively being aligned such that you have the necessary information to predict a word by the time you get to its point in the target sequence - hasn’t gone away, and is still alive and kicking. This paper solves it in a pretty unsatisfying way - by relying on an external tool, fast-align, that does the work of guessing which source tokens correspond to which target tokens, and inserting buffer tokens into the target, so that you don’t need to predict a word until it’s already been seen by the source-reading RNN; until then you just predict the buffer. This is fine and clever as a practical heuristic, but it really does make their comparisons against models that do alignment and translation jointly feel a little weak. 
+
+https://i.imgur.com/Gitpxi7.png
+
+An additional heuristic that makes the overall narrative of the paper less compelling is the fact that, in order to get comparable performance to their baselines, they padded the target sequences with between 3 and 5 buffer tokens, meaning that the models learned that they could process the first 3-5 tokens of the sentence before they need to start emitting the target. Again, there’s nothing necessarily wrong with this, but, since they are consuming a portion of the sentence before they start emitting translations, it does make for a less stark comparison with the “read the whole sentence” encoder/decoder framework. 
+
+A few other frustrations, and notes from the paper’s results section: 
+As earlier mentioned, the authors don’t actually compare their work against the “Attention is All You Need” paper, but instead to a 2014 paper. This is confusing both in terms of using an old baseline for SOTA, and also in terms of their title implicitly arguing they are refuting a paper they didn’t compare to 
+Comparing against their old baseline, their eager translation model performs worse on all sentences less than 60 tokens in length (which makes up the vast majority of all the sentences there are), and only beats the baseline on sentences &gt; 60 tokens in length 
+Additionally, they note as a sort of throwaway line that their model took almost three times as long to train as the baseline, with the same amount of parameters, simply because it took so much longer to converge. 
+
+Being charitable, it seems like there is some argument that an eager translation framework performs well on long sentences, and can do so while only keeping a hidden state in memory, rather than having to keep the hidden states for each source sequence element around, like attention-based decoders require. However, overall, I found this paper to be a frustrating let-down, that used too many heuristics and hacks to be a compelling comparison to prior work. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="decodyngcomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=ofirpress" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ofirpress&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f8792352f16be80bd138ffc911138be1?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Ofir Press&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ofirpress&lt;br&gt;Posted: 2018-11-03">
+<img src="https://www.gravatar.com/avatar/f8792352f16be80bd138ffc911138be1?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">
+Not all research advances are made with state of the art models. Sometimes new methods are introduced that are slow, parameter-heavy or have some other deficiency. Such ideas are not meant to be introduced into production servers, they are meant to spark a discussion, which could then lead the research community to discover new ideas which will one day be used to improve state of the art models.
+                                                                                                   
+--------------------------------------------------------------------------------------------
+This paper does not try to present a state of the art model. This paper was written to question two commonly held beliefs- that separate encoding/decoding are necessary in NMT and that attention is a required component of all NMT models. If you look at the many NMT models published in the last two years, all of them contain at least one of these properties, and the vast majority contain both.
+
+--------------------------------------------------------------------------------------------
+This paper is not claiming that we should just throw away all of that progress. We just want to show the research community that it is possible to build vastly different translation models that can still perform well. This specific model that we presented also has the advantage of being extremely simple.  Usually new NMT papers introduce a new mechanism, they make an existing model more complex. Here we want to step forward by showing an NMT model that is simpler than almost anything else that came before it. 
+
+--------------------------------------------------------------------------------------------
+Yes, its not state of the art.  Yes, it is trained using external alignment data.  Yes, it requires special preprocessing. But it shatters two widely held beliefs. It also uses a constant amount of memory. And it works well on long sequences, which are known to be difficult for attention models. We firmly believe that these advantages far outweigh the disadvantages of our model. And *that* is why we posted this paper. We think the community should start thinking more about models that don’t use attention. Or models that have combined encoding/decoding. Or maybe just take the eagerness property from our model and apply it to an attention model. These research directions could lead to an improvement in performance of state of the art models on long sequences. Or they could be used to lower the memory requirements of simultaneous translation systems. Interesting methods aren’t found only in state of the art models. 
+</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+<div id="ofirpress" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=ofirpress" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ofirpress&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/f8792352f16be80bd138ffc911138be1?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Ofir Press&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ofirpress&lt;br&gt;Posted: 2018-11-03&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1810.13409&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/f8792352f16be80bd138ffc911138be1?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1440').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1810.13409%26a%3Dofirpress" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1440" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.13409&amp;a=ofirpress" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Dofirpress&amp;text=Summary%20of%20You%20May%20Not%20Need%20Attention&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Dofirpress" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20You%20May%20Not%20Need%20Attention&amp;Body=Summary%20of%20You%20May%20Not%20Need%20Attention%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Dofirpress"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Dofirpress" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1810.13409%26a%3Dofirpress&amp;title=Summary%20of%20You%20May%20Not%20Need%20Attention" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1810.13409&amp;a=ofirpress" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=ofirpress" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Ofir Press 2018-11-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">An attention mechanism and a separate encoder/decoder are two properties of almost every single neural translation model. The question asked in this paper is- how far can we go without attention and without a separate encoder and decoder? And the answer is- pretty far! The model presented preforms just as well as the attention model of Bahdanau on the four language directions that are studied in the paper.
+
+The translation model presented in the paper is basically a simple recurrent language model. A recurrent language model receives at every timestep the current input word and has to predict the next word in the dataset. To translate with such a model, simply give it the current word from the source sentence and have it try to predict the next word from the target sentence.
+
+Obviously, in many cases such a simple model wouldn&#x27;t work. For example, if your sentence was &quot;The white dog&quot; and you wanted to translate to Spanish (&quot;El perro blanco&quot;), at the 2nd timestep, the input would be &quot;white&quot; and the expected output would be &quot;perro&quot; (dog). But how could the model predict &quot;perro&quot; when it hasn&#x27;t seen &quot;dog&quot; yet?
+
+To solve this issue, we preprocess the data before training and insert &quot;empty&quot; padding tokens into the target sentence. When the model outputs such a token, it means that the model would like to read more of the input sentence before emitting the next output word.
+
+So in the example from above, we would change the target sentence to &quot;El PAD perro blanco&quot;. Now, at timestep 2 the model emits the PAD symbol. At timestep 3, when the input is &quot;dog&quot;, the model can emit the token &quot;perro&quot;. These padding symbols are deleted in post-processing, before the output is returned to the user. You can see a visualization of the decoding process below:
+
+https://i.imgur.com/znI6xoN.png
+
+To enable us to use beam search, our model actually receives the previous outputted target token in addition to receiving the current source token at every timestep.
+
+PyTorch code for the model is available at https://github.com/ofirpress/YouMayNotNeedAttention </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

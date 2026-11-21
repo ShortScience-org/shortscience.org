@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critic Regularized Regression - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Critic Regularized Regression - ShortScience.org">
+<meta property="og:description" content="Offline reinforcement learning is potentially high-value thing for the machine learning community le...">
+<meta name="description" content="Offline reinforcement learning is potentially high-value thing for the machine learning community le...">
+<meta property="og:image" content="https://i.imgur.com/jGmhYdd.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/2006.15134">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/2006.15134" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Ziyu Wang and Alexander Novikov and Konrad Zolna and Jost Tobias Springenberg and Scott Reed and Bobak Shahriari and Noah Siegel and Josh Merel and Caglar Gulcehre and Nicolas Heess and Nando de Freitas"}, "headline": "Critic Regularized Regression", "description": "Summary of Critic Regularized Regression", "datePublished": "2020-11-23 05:52:49", "dateModified": "2020-11-23 05:52:49", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/jGmhYdd.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/2006.15134", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/2006.15134v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Critic%20Regularized%20Regression%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Critic Regularized Regression</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Ziyu%20Wang">Ziyu Wang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alexander%20Novikov">Alexander Novikov</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Konrad%20Zolna">Konrad Zolna</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jost%20Tobias%20Springenberg">Jost Tobias Springenberg</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Scott%20Reed">Scott Reed</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Bobak%20Shahriari">Bobak Shahriari</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Noah%20Siegel">Noah Siegel</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Josh%20Merel">Josh Merel</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Caglar%20Gulcehre">Caglar Gulcehre</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Nicolas%20Heess">Nicolas Heess</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Nando%20de%20Freitas">Nando de Freitas</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2020">arXiv e-Print archive - 2020</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515">
+<hr style="border-color:gray;margin:5px;">
+<b>Abstract:</b>   Offline reinforcement learning (RL), also known as batch RL, offers the
+prospect of policy optimization from large pre-recorded datasets without online
+environment interaction. It addresses challenges with regard to the cost of
+data collection and safety, both of which are particularly pertinent to
+real-world applications of RL. Unfortunately, most off-policy algorithms
+perform poorly when learning from a fixed dataset. In this paper, we propose a
+novel offline RL algorithm to learn policies from data using a form of
+critic-regularized regression (CRR). We find that CRR performs surprisingly
+well and scales to tasks with high-dimensional state and action spaces --
+outperforming several state-of-the-art offline RL algorithms by a significant
+margin on a wide range of benchmark tasks.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515').hide());void($('#showless-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515').show());void($('#more-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515').show());void($('#showless-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515').hide());void($('#more-am91cm5hbHMvY29yci8yMDA2LjE1MTM0-1515').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/2006.15134">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2020-11-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/2006.15134&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1516').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/2006.15134%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1516" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/2006.15134&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2006.15134%26a%3Ddecodyng&amp;text=Summary%20of%20Critic%20Regularized%20Regression&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2006.15134%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Critic%20Regularized%20Regression&amp;Body=Summary%20of%20Critic%20Regularized%20Regression%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2006.15134%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2006.15134%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F2006.15134%26a%3Ddecodyng&amp;title=Summary%20of%20Critic%20Regularized%20Regression" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/2006.15134&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2020-11-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Offline reinforcement learning is potentially high-value thing for the machine learning community learn to do well, because there are many applications where it&#x27;d be useful to generate a learnt policy for responding to a dynamic environment, but where it&#x27;d be too unsafe or expensive to learn in an on-policy or online way, where we continually evaluate our actions in the environment to test their value. In such settings, we&#x27;d like to be able to take a batch of existing data - collected from a human demonstrator, or from some other algorithm - and be able to learn a policy from those pre-collected transitions, without being able to query the environment further by taking arbitrary actions. 
+
+There are two broad strategies for learning a policy from precollected transitions. One is to simply learn to mimic the action policy used by the demonstrator, predicting the action the demonstrator would take in a given state, without making use of reward data at all. This is Behavioral Cloning, and has the advantage of being somewhat more conservative (in terms of not experimenting with possibly-unsafe-or-low-reward actions the demonstrator never took), but this is also a disadvantage, because it&#x27;s not possible to get higher reward than the demonstrator themselves got if you&#x27;re simply copying their behavior. Another approach is to learn a Q function - estimating the value of a given action in a given state - using the reward data from the precollected transitions. This can also have some downsides, mostly in the direction of overconfidence. Q value Temporal Difference learning works by using the current reward added to the max Q value over possible next actions as the target for the current-state Q estimate. This tends to lead to overestimates, because regression to the mean effects mean that the highest value Q estimates are disproportionately likely to be noisy (possibly because they correspond to an action with little data in the demonstrator dataset). In on-policy Q learning, this is less problematic, because the agent can take the action associated with their noisily inaccurate estimate, and as a result get more data for that action, and get an estimate that is less noisy in future. But when we&#x27;re in a fully offline setting, all our learning is completed before we actually start taking actions with our policy, so taking high-uncertainty actions isn&#x27;t a valuable source of new information, but just risky. 
+
+The approach suggested by this DeepMind paper - Critic Regularized Regression, or CRR - is essentially a synthesis of these two possible approaches. The method learns a Q function as normal, using temporal difference methods. The distinction in this method comes from how to get a policy, given a learned Q function. Rather than simply taking the action your Q estimate says is highest-value at a particular point, CRR optimizes a policy according to the formula shown below. The f() function is a stand-in for various potential functions, all of which are monotonic with respect to the Q function, meaning they increase when the Q function does. 
+
+https://i.imgur.com/jGmhYdd.png
+
+This basically amounts to a form of a behavioral cloning loss (with the part that maximizes the probability under your policy of the actions sampled from the demonstrator dataset), but weighted or, as the paper terms it, filtered, by the learned Q function. The higher the estimated q value for a transition, the more weight is placed on that transition from the demo dataset having high probability under your policy. Rather than trying to mimic all of the actions of the demonstrator, the policy preferentially tries to mimic the demonstrator actions that it estimates were particularly high-quality. Different f() functions lead to different kinds of filtration. The `binary`version is an indicator function for the Advantage of an action (the Q value for that action at that state minus some reference value for the state, describing how much better the action is than other alternatives at that state) being greater than zero. Another, `exp`, uses exponential weightings which do a more &quot;soft&quot; upweighting or downweighting of transitions based on advantage, rather than the sharp binary of whether an actions advantage is above 1. 
+
+The authors demonstrate that, on multiple environments from three different environment suites, CRR outperforms other off-policy baselines - either more pure behavioral cloning, or more pure RL - and in many cases does so quite dramatically. They find that the sharper binary weighting scheme does better on simpler tasks, since the trade-off of fewer but higher-quality samples to learn from works there. However, on more complex tasks, the policy benefits from the exp weighting, which still uses and learns from more samples (albeit at lower weights), which introduces some potential mimicking of lower-quality transitions, but at the trade of a larger effective dataset size to learn from.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

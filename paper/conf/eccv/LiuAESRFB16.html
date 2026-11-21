@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSD: Single Shot MultiBox Detector - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="SSD: Single Shot MultiBox Detector - ShortScience.org">
+<meta property="og:description" content="SSD aims to solve the major problem with most of the current state of the art object detectors namel...">
+<meta name="description" content="SSD aims to solve the major problem with most of the current state of the art object detectors namel...">
+<meta property="og:image" content="https://i.imgur.com/HOhsPZh.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/eccv/LiuAESRFB16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/eccv/LiuAESRFB16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Liu, Wei and Anguelov, Dragomir and Erhan, Dumitru and Szegedy, Christian and Reed, Scott E. and Fu, Cheng-Yang and Berg, Alexander C."}, "headline": "SSD: Single Shot MultiBox Detector", "description": "Summary of SSD: Single Shot MultiBox Detector", "datePublished": "2017-04-11 19:42:28", "dateModified": "2017-04-11 19:47:11", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/HOhsPZh.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/eccv/LiuAESRFB16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://dx.doi.org/10.1007/978-3-319-46448-0_2"><span class="glyphicon glyphicon-link"></span> dx.doi.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22SSD%3A%20Single%20Shot%20MultiBox%20Detector%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">SSD: Single Shot MultiBox Detector</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Liu%2C%20Wei">Liu, Wei</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Anguelov%2C%20Dragomir">Anguelov, Dragomir</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Erhan%2C%20Dumitru">Erhan, Dumitru</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Szegedy%2C%20Christian">Szegedy, Christian</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Reed%2C%20Scott%20E.">Reed, Scott E.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Fu%2C%20Cheng-Yang">Fu, Cheng-Yang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Berg%2C%20Alexander%20C.">Berg, Alexander C.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/eccv&amp;year=2016">European Conference on Computer Vision - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/eccv/LiuAESRFB16">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="qureai" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=qureai" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=qureai&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Qure.ai&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: qureai&lt;br&gt;Posted: 2017-04-11&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/eccv/LiuAESRFB16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/21cd04a94e4fc7d513bc66b2f78f3fea?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">10</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-224').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/eccv/LiuAESRFB16%26a%3Dqureai" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-224" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/eccv/LiuAESRFB16&amp;a=qureai" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Dqureai&amp;text=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector&amp;Body=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Dqureai"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Dqureai" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Dqureai&amp;title=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/eccv/LiuAESRFB16&amp;a=qureai" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=qureai" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Qure.ai 2017-04-11</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">SSD aims to solve the major problem with most of the current state of the art object detectors namely Faster RCNN and like. All the object detection algortihms have same  methodology 
+
+- Train 2 different nets - Region Proposal Net (RPN) and advanced classifier to detect class of an object and bounding box separately.
+- During inference, run the test image at different scales to detect object at multiple scales to account for invariance
+
+This makes the nets extremely slow. Faster RCNN could operate at **7 FPS with 73.2% mAP** while SSD could achieve **59 FPS with 74.3% mAP ** on VOC 2007 dataset.
+
+#### Methodology
+
+SSD uses a single net for predict object class and bounding box. However it doesn&#x27;t do that directly. It uses a mechanism for choosing ROIs, training end-to-end for predicting class and boundary shift for that ROI.
+
+##### ROI selection
+
+Borrowing from FasterRCNNs SSD uses the  concept of anchor boxes for generating ROIs from the feature maps of last layer of shared conv layer. For each pixel in layer of feature maps, k default boxes with different aspect ratios are chosen around every pixel in the map. So if there are feature maps each of m x n resolutions - that&#x27;s *mnk* ROIs for a single feature layer. Now SSD uses multiple feature layers (with differing resolutions) for generating such ROIs primarily to capture size invariance of objects. But because earlier layers in deep conv net tends to capture low level features, it uses features after certain levels and layers henceforth.
+
+##### ROI labelling
+Any ROI that matches to Ground Truth for a class after applying appropriate transforms and having Jaccard overlap greater than 0.5 is positive. Now, given all feature maps are at different resolutions and each boxes are at different aspect ratios, doing that&#x27;s not simple. SDD uses simple scaling and aspect ratios to get to the appropriate  ground truth dimensions for calculating Jaccard overlap for default boxes for each pixel at the given resolution
+
+##### ROI classification
+
+SSD uses single convolution kernel of 3*3 receptive fields to predict for each ROI the 4 offsets (centre-x offset, centre-y offset, height offset , width offset) from the Ground Truth box for each RoI, along with class confidence scores for each class. So that is if there are c classes (including background), there are (c+4) filters for each convolution kernels that looks at a ROI. 
+
+So summarily we have convolution kernels  that look at ROIs (which are default boxes around each pixel in feature map layer) to generate (c+4) scores for each RoI. Multiple feature map layers with different resolutions are used for generating such ROIs. Some ROIs are positive and some negative depending on jaccard overlap after ground box has scaled appropriately taking resolution differences in input image and feature map into consideration.
+
+Here&#x27;s how it looks :
+![](https://i.imgur.com/HOhsPZh.png)
+
+##### Training
+
+For each ROI a combined loss is calculated as a combination of localisation error and classification error. The details are best explained in the figure. 
+![](https://i.imgur.com/zEDuSgi.png)
+
+##### Inference
+For each ROI predictions a small threshold is used to first filter out irrelevant predictions, Non Maximum Suppression (nms) with jaccard overlap of 0.45 per class is applied then on the remaining candidate ROIs and the top 200 detections per image are kept.
+
+For further understanding of the intuitions regarding the paper and the results obtained please consider giving the full paper a read. 
+
+The open sourced code is available at this [Github repo](https://github.com/weiliu89/caffe/tree/ssd)
+ </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/eccv/LiuAESRFB16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-225').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/eccv/LiuAESRFB16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-225" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/eccv/LiuAESRFB16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Daleju&amp;text=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector&amp;Body=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Feccv%2FLiuAESRFB16%26a%3Daleju&amp;title=Summary%20of%20SSD%3A%20Single%20Shot%20MultiBox%20Detector" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/eccv/LiuAESRFB16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They suggest a new bounding box detector.
+  * Their detector works without an RPN and RoI-Pooling, making it very fast (almost 60fps).
+  * Their detector works at multiple scales, making it better at detecting small and large objects.
+  * They achieve scores similar to Faster R-CNN.
+
+### How
+  * Architecture
+    * Similar to Faster R-CNN, they use a base network (modified version of VGG16) to transform images to feature maps.
+    * They do not use an RPN.
+    * They predict via convolutions for each location in the feature maps:
+      * (a) one confidence value per class (high confidence indicates that there is a bounding box of that class at the given location)
+      * (b) x/y offsets that indicate where exactly the center of the bounding box is (e.g. a bit to the left or top of the feature map cell&#x27;s center)
+      * (c) height/width values that reflect the (logarithm of) the height/width of the bounding box
+    * Similar to Faster R-CNN, they also use the concept of anchor boxes.
+      So they generate the described values not only once per location, but several times for several anchor boxes (they use six anchor boxes).
+      Each anchor box has different height/width and optionally scale.
+    * Visualization of the predictions and anchor boxes:
+      * ![predictions](https://github.com/aleju/papers/blob/master/neural-nets/images/SSD/predictions.jpg?raw=true &quot;predictions&quot;)
+    * They generate these predictions not only for the final feature map, but also for various feature maps in between (e.g. before pooling layers).
+      This makes it easier for the network to detect small (as well as large) bounding boxes (multi-scale detection).
+    * Visualization of the multi-scale architecture:
+      * ![architecture](https://github.com/aleju/papers/blob/master/neural-nets/images/SSD/architecture.jpg?raw=true &quot;architecture&quot;)
+  * Training
+    * Ground truth bounding boxes have to be matched with anchor boxes (at multiple scales) to determine correct outputs.
+      To do this, anchor boxes and ground truth bounding boxes are matched if their jaccard overlap is 0.5 or higher.
+      Any unmatched ground truth bounding box is matched to the anchor box with highest jaccard overlap.
+    * Note that this means that a ground truth bounding box can be assigned to multiple anchor boxes (in Faster R-CNN it is always only one).
+    * The loss function is similar to Faster R-CNN, i.e. a mixture of confidence loss (classification) and location loss (regression).
+      They use softmax with crossentropy for the confidence loss and smooth L1 loss for the location.
+    * Similar to Faster R-CNN, they perform hard negative mining.
+      Instead of training every anchor box at every scale they only train the ones with the highest loss (per example image).
+      While doing that, they also pick the anchor boxes to be trained so that 3 in 4 boxes are negative examples (and 1 in 4 positive).
+    * Data Augmentation: They sample patches from images using a wide range of possible sizes and aspect ratios.
+      They also horizontally flip images, perform cropping and padding and perform some photo-metric distortions.
+  * Non-Maximum-Suppression (NMS)
+    * Upon inference, they remove all bounding boxes that have a confidence below 0.01.
+    * They then apply NMS, removing bounding boxes if there is already a similar one (measured by jaccard overlap of 0.45 or more).
+
+### Results
+  * Pascal VOC 2007
+    * They achieve around 1-3 points mAP better results than Faster R-CNN.
+    * ![results pascal](https://github.com/aleju/papers/blob/master/neural-nets/images/SSD/results_pascal.jpg?raw=true &quot;results pascal&quot;)
+    * Despite the multi-scale method, the model&#x27;s performance is still significantly worse for small objects than for large ones.
+    * Adding data augmentation significantly improved the results compared to no data augmentation (around 6 points mAP).
+    * Using more than one anchor box also had noticeable effects on the results (around 2 mAP or more).
+    * Using multiple feature maps to predict outputs (multi-scale architecture) significantly improves the results (around 10 mAP).
+      Though adding very coarse (high-level) feature maps seems to rather hurt than help.
+  * Pascal VOC 2012
+    * Around 4 mAP better results than Faster R-CNN.
+  * COCO
+    * Between 1 and 4 mAP better results than Faster R-CNN.
+  * Times
+    * At a batch size of 1, SSD runs at about 46 fps at input resolution 300x300 (74.3 mAP on Pascal VOC) and 19 fps at input resolution 512x512 (76.8 mAP on Pascal VOC).
+    * ![results timings](https://github.com/aleju/papers/blob/master/neural-nets/images/SSD/results_timings.jpg?raw=true &quot;results timings&quot;)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+<div id="alejucomments" class="col-sm-offset-3 col-sm-9"><div class="row comment" style="overflow: auto; overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+<table style="width:100%"><tr>
+<td style="vertical-align: top;"><center>
+<a href="/user?name=minimax" class="commentusericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=minimax&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/7945ad82610acc9db95ddf8d748f5ae2?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;minimax&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: minimax&lt;br&gt;Posted: 2018-02-19">
+<img src="https://www.gravatar.com/avatar/7945ad82610acc9db95ddf8d748f5ae2?s=20&d=identicon&r=g" style="border-radius: 50%;height:20px;" alt="" /></a>
+</center></td>
+<td style="width:100%"><div class="comment-text" style="padding-left:10px;">Hello ,
+i have some question , please help me.
+1) the authors told we  use the atrous algorithm . 
+Q: what&#x27;s mean of atrous algorithm ? same as use atrous convolution ? 
+۲) Sample a patch so that the minimum jaccard overlap with the objects is 0.1, 0.3, 0.5, 0.7, or 0.9.
+Q: what&#x27;s mean ?
+3)  We keep the overlapped part of the ground truth box if the center of it is in the sampled patch. 
+Q: if sampled two upper coordinate , in this case , the lower coordinate what is ? in the loss function this coordinates are necessary . right ?</div></td>
+</tr></table>
+<hr style="margin:5px;">
+</div></div>
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

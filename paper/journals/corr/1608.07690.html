@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Boundary Tilting Persepective on the Phenomenon of Adversarial Examples - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Boundary Tilting Persepective on the Phenomenon of Adversarial Examples - ShortScience.org">
+<meta property="og:description" content="Tanay and Griffin introduce the boundary tilting perspective as alternative to the “linear explanati...">
+<meta name="description" content="Tanay and Griffin introduce the boundary tilting perspective as alternative to the “linear explanati...">
+<meta property="og:image" content="https://i.imgur.com/SrviKgm.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1608.07690">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1608.07690" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Thomas Tanay and Lewis Griffin"}, "headline": "A Boundary Tilting Persepective on the Phenomenon of Adversarial Examples", "description": "Summary of A Boundary Tilting Persepective on the Phenomenon of Adversarial Examples", "datePublished": "2018-06-28 17:50:32", "dateModified": "2018-06-28 17:50:32", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/SrviKgm.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1608.07690", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1608.07690v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22A%20Boundary%20Tilting%20Persepective%20on%20the%20Phenomenon%20of%20Adversarial%20Examples%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">A Boundary Tilting Persepective on the Phenomenon of Adversarial Examples</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Thomas%20Tanay">Thomas Tanay</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lewis%20Griffin">Lewis Griffin</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/08/27<br><b>Abstract:</b>   Deep neural networks have been shown to suffer from a surprising weakness:
+their classification outputs can be changed by small, non-random perturbations
+of their inputs. This adversarial example phenomenon has been explained as
+originating from deep networks being &quot;too linear&quot; (Goodfellow et al., 2014). We
+show here that the linear explanation of adversarial examples presents a number
+of limitations: the formal argument is not convincing, linear classifiers do
+not always suffer from the phenomenon, and when they do their adversarial
+examples are different from the ones affecting deep networks.
+  We propose a new perspective on the phenomenon. We argue that adversarial
+examples exist when the classification boundary lies close to the submanifold
+of sampled data, and present a mathematical analysis of this new perspective in
+the linear case. We define the notion of adversarial strength and show that it
+can be reduced to the deviation angle between the classifier considered and the
+nearest centroid classifier. Then, we show that the adversarial strength can be
+made arbitrarily high independently of the classification performance due to a
+mechanism that we call boundary tilting. This result leads us to defining a new
+taxonomy of adversarial examples. Finally, we show that the adversarial
+strength observed in practice is directly dependent on the level of
+regularisation used and the strongest adversarial examples, symptomatic of
+overfitting, can be avoided by using a proper level of regularisation.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918').hide());void($('#showless-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918').show());void($('#more-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918').show());void($('#showless-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918').hide());void($('#more-am91cm5hbHMvY29yci8xNjA4LjA3Njkw-918').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1608.07690">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="davidstutz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=davidstutz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=davidstutz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;David Stutz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: davidstutz&lt;br&gt;Posted: 2018-06-28&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1608.07690&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/502b868eba2bb7b66b7150b12bde5e81?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-919').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1608.07690%26a%3Ddavidstutz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-919" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1608.07690&amp;a=davidstutz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.07690%26a%3Ddavidstutz&amp;text=Summary%20of%20A%20Boundary%20Tilting%20Persepective%20on%20the%20Phenomenon%20of%20Adversarial%20Examples&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.07690%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20A%20Boundary%20Tilting%20Persepective%20on%20the%20Phenomenon%20of%20Adversarial%20Examples&amp;Body=Summary%20of%20A%20Boundary%20Tilting%20Persepective%20on%20the%20Phenomenon%20of%20Adversarial%20Examples%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.07690%26a%3Ddavidstutz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.07690%26a%3Ddavidstutz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1608.07690%26a%3Ddavidstutz&amp;title=Summary%20of%20A%20Boundary%20Tilting%20Persepective%20on%20the%20Phenomenon%20of%20Adversarial%20Examples" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1608.07690&amp;a=davidstutz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=davidstutz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by David Stutz 2018-06-28</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Tanay and Griffin introduce the boundary tilting perspective as alternative to the “linear explanation” for adversarial examples. Specifically, they argue that it is not reasonable to assume that the linearity in deep neural networks causes the existence of adversarial examples. Originally, Goodfellow et al. [1] explained the impact of adversarial examples by considering a linear classifier:
+
+$w^T x&#x27; = w^Tx + w^T\eta$
+
+where $\eta$ is the adversarial perturbations. In large dimensions, the second term might result in a significant shift of the neuron&#x27;s activation. Tanay and Griffin, in contrast, argue that the dimensionality does not have an impact; althought he impact of $w^T\eta$ grows with the dimensionality, so does $w^Tx$, such that the ratio should be preserved. Additionally, they showed (by giving a counter-example) that linearity is not sufficient for the existence of adversarial examples.
+
+Instead, they offer a different perspective on the existence of adversarial examples that is, in the course of the paper, formalized. Their main idea is that the training samples live on a manifold in the actual input space. The claim is, that on the manifold there are no adversarial examples (meaning that the classes are well separated on the manifold and it is hard to find adversarial examples for most training samples). However, the decision boundary extends beyond the manifold and might lie close to the manifold such that adversarial examples leaving the manifold can be found easily. This idea is illustrated in Figure 1.
+
+https://i.imgur.com/SrviKgm.png
+Figure 1: Illustration of the underlying idea of the boundary tilting perspective, see the text for details.
+
+[1] Ian J. Goodfellow, Jonathon Shlens, Christian Szegedy:
+Explaining and Harnessing Adversarial Examples. CoRR abs/1412.6572 (2014)
+
+Also find this summary at [davidstutz.de](https://davidstutz.de/category/reading/).
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

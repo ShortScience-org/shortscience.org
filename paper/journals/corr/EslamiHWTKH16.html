@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attend, Infer, Repeat: Fast Scene Understanding with Generative Models - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Attend, Infer, Repeat: Fast Scene Understanding with Generative Models - ShortScience.org">
+<meta property="og:description" content="This paper presents an unsupervised generative model, based on the variational autoencoder framework...">
+<meta name="description" content="This paper presents an unsupervised generative model, based on the variational autoencoder framework...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/EslamiHWTKH16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/EslamiHWTKH16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Eslami, S. M. Ali and Heess, Nicolas and Weber, Theophane and Tassa, Yuval and Kavukcuoglu, Koray and Hinton, Geoffrey E."}, "headline": "Attend, Infer, Repeat: Fast Scene Understanding with Generative Models", "description": "Summary of Attend, Infer, Repeat: Fast Scene Understanding with Generative Models", "datePublished": "2016-05-24 11:40:03", "dateModified": "2016-05-24 11:40:03", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/EslamiHWTKH16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1603.08575"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Attend, Infer, Repeat: Fast Scene Understanding with Generative Models</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Eslami%2C%20S.%20M.%20Ali">Eslami, S. M. Ali</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Heess%2C%20Nicolas">Heess, Nicolas</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Weber%2C%20Theophane">Weber, Theophane</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tassa%2C%20Yuval">Tassa, Yuval</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kavukcuoglu%2C%20Koray">Kavukcuoglu, Koray</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hinton%2C%20Geoffrey%20E.">Hinton, Geoffrey E.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/EslamiHWTKH16">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-05-24&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/EslamiHWTKH16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">15</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1609').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/EslamiHWTKH16%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1609" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/EslamiHWTKH16&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Dhlarochelle&amp;text=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models&amp;Body=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Dhlarochelle&amp;title=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/EslamiHWTKH16&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-05-24</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents an unsupervised generative model, based on the variational autoencoder framework, but where the encoder is a recurrent neural network that sequentially infers the identity, pose and number of objects in some input scene (2D image or 3D scene). 
+
+In short, this is done by extending the DRAW model to incorporate discrete latent variables that determine whether an additional object is present or not. Since the reparametrization trick cannot be used for discrete variables, the authors estimate the gradient through the sampling operation using a likelihood ratio estimator. 
+
+Another innovation over DRAW is the application to 3D scenes, in which the decoder is a graphics renderer. Since it is not possible to backpropagate through the renderer, gradients are estimated using finite-difference estimates (which require going through the renderer several times).
+
+Experiments are presented where the evaluation is focused on the ability of the model to detect and count the number of objects in the image or scene.
+
+**My two cents**
+
+This is a nice, natural extension of DRAW. I&#x27;m particularly impressed by the results for the 3D scene setting. Despite the fact that setup is obviously synthetic and simplistic, I really surprised that estimating the decoder gradients using finite-differences worked at all. It&#x27;s also interesting to see that the proposed model does surprisingly well compared to a CNN supervised approach that directly predicts the objects identity and pose. Quite cool!
+
+To see the model in action, see [this cute video][1].
+
+[1]: https://www.youtube.com/watch?v=4tc84kKdpY4 </pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/EslamiHWTKH16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1610').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/EslamiHWTKH16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1610" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/EslamiHWTKH16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Daleju&amp;text=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models&amp;Body=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FEslamiHWTKH16%26a%3Daleju&amp;title=Summary%20of%20Attend%2C%20Infer%2C%20Repeat%3A%20Fast%20Scene%20Understanding%20with%20Generative%20Models" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/EslamiHWTKH16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * AIR (attend, infer, repeat) is a recurrent autoencoder architecture to transform images into latent representations object by object.
+  * As an autoencoder it is unsupervised.
+  * The latent representation is generated in multiple time steps.
+  * Each time step is intended to encode information about exactly one object in the image.
+  * The information encoded for each object is (mostly) a what-where information, i.e. which class the object has and where (in 2D: translation, scaling) it is shown.
+  * AIR has a dynamic number of time step. After encoding one object the model can decide whether it has encoded all objects or whether there is another one to encode. As a result the latent layer size is not fixed.
+  * AIR uses an attention mechanism during the encoding to focus on each object.
+
+### How
+  * At its core, AIR is a variational autoencoder.
+  * It maximizes lower bounds on the error instead of using a &quot;classic&quot; reconstruction error (like MSE on the euclidean distance).
+  * It has an encoder and a decoder.
+  * The model uses a recurrent architecture via an LSTM.
+  * It (ideally) encodes/decodes one object per time step.
+  * Encoder
+    * The encoder receives the image and generates latent information for one object (what object, where it is).
+    * At the second timestep it receives the image, the previous timestep&#x27;s latent information and the previous timestep&#x27;s hidden layer. It then generates another latent information (for another object).
+    * And so on.
+  * Decoder
+    * The decoder receives latent information from the encoder (timestep by timestep) and treats it as a what-where information when reconstructing the images.
+      * It takes the what-part and uses a &quot;normal&quot; decoder to generate an image that shows the object.
+      * It takes the where-part and the generated image and feeds both into a spatial transformer, which then transforms the generated image by translating or rotating it.
+  * Dynamic size
+    * AIR makes use of a dynamically sized latent layer. It is not necessarily limited to a fixed number of time steps.
+    * Implementation: Instead of just letting the encoder generate what-where information, the encoder also generates a &quot;present&quot; information, which is 0 or 1. If it is 1, the reccurence will continue with encoding and decoding another object. Otherwise it will stop.
+  * Attention
+    * To add an attention mechanism, AIR first uses the LSTM&#x27;s hidden layer to generate &quot;where&quot; and &quot;present&quot; information per object.
+    * It stops if the &quot;present&quot; information is 0.
+    * Otherwise it uses the &quot;where&quot; information to focus on the object using a spatial transformer. The object is then encoded to the &quot;what&quot; information.
+
+### Results
+  * On a dataset of images, each containing multiple MNIST digits, AIR learns to accurately count the digits and estimate their position and scale.
+  * When AIR is trained on images of 0 to 2 digits and tested on images containing 3 digits it performs poorly.
+  * When AIR is trained on images of 0, 1 or 3 digits and tested on images containing 2 digits it performs mediocre.
+  * DAIR performs well on both tasks. Likely because it learns to remove each digit from the image after it has investigated it.
+  * When AIR is trained on 0 to 2 digits and a second network is trained (separately) to work with the generated latent layer (trained to sum the shown digits and rate whether they are shown in ascending order), then that second network reaches high accuracy with relatively few examples. That indicates usefulness for unsupervised learning.
+  * When AIR is trained on a dataset of handwritten characters from different alphabets, it learns to represent distinct strokes in its latent layer.
+  * When AIR is trained in combination with a renderer (inverse graphics), it is able to accurately recover latent parameters of rendered objects - better than supervised networks. That indicates usefulness for robots which have to interact with objects.
+
+
+![Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Attend_Infer_Repeat__architecture.png?raw=true &quot;Architecture.&quot;)
+
+*AIR architecture for MNIST. Left: Decoder for two objects that are each first generated (y_att) and then fed into a Spatial Transformer (y) before being combined into an image (x). Middle: , Right: Encoder with multiple time steps that generates what-where information per object and stops when the &quot;present&quot; information (z_pres) is 0. Right: Combination of both for MNIST with Spatial Transformer for the attention mechanism (top left).*
+
+
+![DAIR Architecture](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Attend_Infer_Repeat__architecture_dair.png?raw=true &quot;DAIR Architecture.&quot;)
+
+*Encoder with DAIR architecture. DAIR modifies the image after every timestep (e.g. to remove objects that were already encoded).*
+
+
+--------------------
+
+### Rough chapter-wise notes
+
+* (1) Introduction
+  * Assumption: Images are made up of distinct objects. These objects have visual and physical properties.
+  * They developed a framework for efficient inference in images (i.e. get from the image to a latent representation of the objects, i.e. inverse graphics).
+  * Parts of the framework: High dimensional representations (e.g. object images), interpretable latent variables (e.g. for rotation) and generative processes (to combine object images with latent variables).
+  * Contributions:
+    * A scheme for efficient variational inference in latent spaces of variable dimensionality.
+      * Idea: Treat inference as an iterative process, implemented via an RNN that looks at one object at a time and learns an appropriate number of inference steps. (Attend-Infer-Repeat, AIR)
+      * End-to-end training via amortized variational inference (continuous variables: gradient descent, discrete variables: black-box optimization).
+    * AIR allows to train generative models that automatically learn to decompose scenes.
+    * AIR allows to recover objects and their attributes from rendered 3D scenes (inverse rendering).
+
+* (2) Approach
+  * Just like in VAEs, the scene interpretation is treated with a bayesian approach.
+  * There are latent variables `z` and images `x`.
+  * Images are generated via a probability distribution `p(x|z)`.
+  * This can be reversed via bayes rule to `p(x|z) = p(x)p(z|x) / p(z)`, which means that `p(x|z)p(z) / p(x) = p(z|x)`.
+  * The prior `p(z)` must be chosen and captures assumptions about the distributions of the latent variables.
+  * `p(x|z)` is the likelihood and represents the model that generates images from latent variables.
+  * They assume that there can be multiple objects in an image.
+  * Every object gets its own latent variables.
+  * A probability distribution p(x|z) then converts each object (on its own) from the latent variables to an image.
+  * The number of objects follows a probability distribution `p(n)`.
+  * For the prior and likelihood they assume two scenarios:
+    * 2D: Three dimensions for X, Y and scale. Additionally n dimensions for its shape.
+    * 3D: Dimensions for X, Y, Z, rotation, object identity/category (multinomial variable). (No scale?)
+  * Both 2D and 3D can be separated into latent variables for &quot;where&quot; and &quot;what&quot;.
+  * It is assumed that the prior latent variables are independent of each other.
+  * (2.1) Inference
+    * Inference for their model is intractable, therefore they use an approximation `q(z,n|x)`, which minizes `KL(q(z,n|x)||p(z,n|x))`, i.e. KL(approximation||real) using amortized variational approximation.
+    * Challenges for them:
+      * The dimensionality of their latent variable layer is a random variable p(n) (i.e. no static size.).
+      * Strong symmetries.
+    * They implement inference via an RNN which encodes the image object by object.
+    * The encoded latent variables can be gaussians.
+    * They encode the latent layer length `n` via a vector (instead of an integer). The vector has the form of `n` ones followed by one zero.
+    * If the length vector is `#z` then they want to approximate `q(z,#z|x)`.
+    * That can apparently be decomposed into `&lt;product&gt; q(latent variable value i, #z is still 1 at i|x, previous latent variable values) * q(has length n|z,x)`.
+    * So instead of computing `#z` once, they instead compute at every time step whether there is another object in the image, which indirectly creates a chain of ones followed by a zero (the `#z` vector).
+  * (2.2) Learning
+    * The parameters theta (`p`, latent variable -&gt; image) and phi (`q`, image -&gt; latent variables) are jointly optimized.
+    * Optimization happens by maximizing a lower bound `E[log(p(x,z,n) / q(z,n|x))]` called the negative free energy.
+    * (2.2.1) Parameters of the model theta
+      * Parameters theta of log(p(x,z,n)) can easily be obtained using differentiation, so long as z and n are well approximated.
+      * The differentiation of the lower bound with repsect to theta can be approximated using Monte Carlo methods.
+    * (2.2.2) Parameters of the inference network phi
+      * phi are the parameters of q, i.e. of the RNN that generates z and #z in i timesteps.
+      * At each timestep (i.e. per object) the RNN generates three kinds of information: What (object), where (it is), whether it is present (i &lt;= n).
+      * Each of these information is represented via variables. These variables can be discrete or continuous.
+      * When differentiating w.r.t. a continuous variable they use the reparameterization trick.
+      * When differentiating w.r.t. a discrete variable they use the likelihood ratio estimator.
+
+* (3) Models and Experiments
+  * The RNN is implemented via an LSTM.
+  * DAIR
+    * The &quot;normal&quot; AIR model uses at every time step the image and the RNN&#x27;s hidden layer to generate the next latent information (what object, where it is and whether it is present).
+    * DAIR uses that latent information to change the image at every time step and then use the difference (D) image for the next time step, i.e. DAIR can remove an object from the image after it has generated latent variables for it.
+  * (3.1) Multi-MNIST
+    * They generate a dataset of images containing multiple MNIST digits.
+    * Each image contains 0 to 2 digits.
+    * AIR is trained on the dataset.
+    * It learns without supervision a good attention scanning policy for the images (to &quot;hit&quot; all digits), to count the digits visible in the image and to use a matching number of time steps.
+    * During training, the model seems to first learn proper reconstruction of the digits and only then to do it with as few timesteps as possible.
+    * (3.1.1) Strong Generalization
+      * They test the generalization capabilities of AIR.
+      * *Extrapolation task*: They generate images with 0 to 2 digits for training, then test on images with 3 digits. The model is unable to correctly count the digits (~0% accuracy).
+      * *Interpolation task*: They generate images with 0, 1 or 3 digits for training, then test on images with 2 digits. The model performs OK-ish (~60% accuracy).
+      * DAIR performs in both cases well (~80% for extrapolation, ~95% accuracy for interpolation).
+    * (3.1.2) Representational Power
+      * They train AIR on images containing 0, 1 or 2 digits.
+      * Then they train a second network. That network takes the output of the first one and computes a) the sum of the digits and b) estimates whether they are shown in ascending order.
+      * Accuracy for both tasks is ~95%.
+      * The network reaches that accuracy significantly faster than a separately trained CNN (i.e. requires less labels / is more unsupervised).
+  * (3.2) Omniglot
+    * They train AIR on the Omniglot dataset (1.6k handwritten characters from 50 alphabets).
+    * They allow the model to use up to 4 timesteps.
+    * The model learns to reconstruct the images in timesteps that resemble strokes.
+  * (3.3) 3D Scenes
+    * Here, the generator p(x|z) is a 3D renderer, only q(z|x) must be approximated.
+    * The model has to learn to count the objects and to estimate per object its identity (class) and pose.
+    * They use &quot;finite-differencing&quot; to get gradients through the renderer and use &quot;score function estimators&quot; to get gradients with respect to discrete variables.
+    * They first test with a setup where the object count is always 1. The network learns to accurately recover the object parameters.
+    * A similar &quot;normal&quot; network has much more problems with recovering the parameters, especially rotation, because the conditional probabilities are multi-modal. The lower bound maximization strategy seems to work better in those cases.
+    * In a second experiment with multiple complex objects, AIR also achieves high reconstruction accuracy.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

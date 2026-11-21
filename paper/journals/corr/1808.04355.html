@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Large-Scale Study of Curiosity-Driven Learning - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Large-Scale Study of Curiosity-Driven Learning - ShortScience.org">
+<meta property="og:description" content="I really enjoyed this paper - in addition to being a clean, fundamentally empirical work, it was als...">
+<meta name="description" content="I really enjoyed this paper - in addition to being a clean, fundamentally empirical work, it was als...">
+<meta property="og:image" content="https://i.imgur.com/zhl39vo.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1808.04355">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1808.04355" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Yuri Burda and Harri Edwards and Deepak Pathak and Amos Storkey and Trevor Darrell and Alexei A. Efros"}, "headline": "Large-Scale Study of Curiosity-Driven Learning", "description": "Summary of Large-Scale Study of Curiosity-Driven Learning", "datePublished": "2018-11-15 05:45:55", "dateModified": "2018-11-15 05:45:55", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/zhl39vo.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1808.04355", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.AI,  cs.CV,  cs.RO,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1808.04355v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Large-Scale%20Study%20of%20Curiosity-Driven%20Learning%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Large-Scale Study of Curiosity-Driven Learning</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Yuri%20Burda">Yuri Burda</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Harri%20Edwards">Harri Edwards</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Deepak%20Pathak">Deepak Pathak</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Amos%20Storkey">Amos Storkey</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Trevor%20Darrell">Trevor Darrell</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Alexei%20A.%20Efros">Alexei A. Efros</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.AI"> cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.RO"> cs.RO</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2018/08/13<br><b>Abstract:</b>   Reinforcement learning algorithms rely on carefully engineering environment
+rewards that are extrinsic to the agent. However, annotating each environment
+with hand-designed, dense rewards is not scalable, motivating the need for
+developing reward functions that are intrinsic to the agent. Curiosity is a
+type of intrinsic reward function which uses prediction error as reward signal.
+In this paper: (a) We perform the first large-scale study of purely
+curiosity-driven learning, i.e. without any extrinsic rewards, across 54
+standard benchmark environments, including the Atari game suite. Our results
+show surprisingly good performance, and a high degree of alignment between the
+intrinsic curiosity objective and the hand-designed extrinsic rewards of many
+game environments. (b) We investigate the effect of using different feature
+spaces for computing prediction error and show that random features are
+sufficient for many popular RL game benchmarks, but learned features appear to
+generalize better (e.g. to novel game levels in Super Mario Bros.). (c) We
+demonstrate limitations of the prediction-based rewards in stochastic setups.
+Game-play videos and code are at
+https://pathak22.github.io/large-scale-curiosity/
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385').hide());void($('#showless-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385').show());void($('#more-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385').show());void($('#showless-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385').hide());void($('#more-am91cm5hbHMvY29yci8xODA4LjA0MzU1-1385').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1808.04355">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-11-15&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1808.04355&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1386').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1808.04355%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1386" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1808.04355&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1808.04355%26a%3Ddecodyng&amp;text=Summary%20of%20Large-Scale%20Study%20of%20Curiosity-Driven%20Learning&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1808.04355%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Large-Scale%20Study%20of%20Curiosity-Driven%20Learning&amp;Body=Summary%20of%20Large-Scale%20Study%20of%20Curiosity-Driven%20Learning%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1808.04355%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1808.04355%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1808.04355%26a%3Ddecodyng&amp;title=Summary%20of%20Large-Scale%20Study%20of%20Curiosity-Driven%20Learning" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1808.04355&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-11-15</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">I really enjoyed this paper - in addition to being a clean, fundamentally empirical work, it was also clearly written, and had some pretty delightful moments of quotable zen, which I’ll reference at the end. The paper’s goal is to figure out how far curiosity-driven learning alone can take reinforcement learning systems, without the presence of an external reward signal. “Intrinsic” reward learning is when you construct a reward out of internal, inherent features of the environment, rather than using an explicit reward function. In some ways, intrinsic learning in RL can be thought of as analogous to unsupervised learning in classification problems, since reward functions are not inherent to most useful environments, and (when outside of game environments that inherently provide rewards), frequently need to be hand-designed. Curiosity-driven learning is a subset of intrinsic learning, which uses as a reward signal the difference between a prediction made by the dynamics model (predicting next state, given action) and the true observed next state. Situations where the this prediction area are high generate high reward for the agent, which incentivizes it to reach those states, which allows the dynamics model to then make ever-better predictions about them. 
+
+Two key questions this paper raises are: 
+
+
+1) Does this approach even work when used on it’s own? Curiosity had previously most often been used as a supplement to extrinsic rewards, and the authors wanted to know how far it could go separately. 
+
+
+2) What is the best feature to do this “surprisal difference” calculation in? Predicting raw pixels is a high-dimensional and noisy process, so naively we might want something with fewer, more informationally-dense dimensions, but it’s not obvious which methods that satisfy these criteria will work the best, so the paper empirically tried them. 
+
+The answer to (1) seems to be: yes, at least in the video games tested. Impressively, when you track against extrinsic reward (which, again, these games have, but we’re just ignoring in a curiosity-only setting), the agents manage to increase it despite not optimizing against it directly. There were some Atari games where this effect was stronger than others, but overall performance was stronger than might have been naively expected. One note the authors made, worth keeping in mind, is that it’s unclear how much of this is an artifact of the constraints and incentives surrounding game design, which might reflect back a preference for gradually-increasing novelty because humans find it pleasant. 
+
+https://i.imgur.com/zhl39vo.png
+
+As for (2), another interesting result of this paper is that random features performed consistently well as a feature space to do these prediction/reality comparisons in. Random features here is really just as simple as “design a convolutional net that compresses down to some dimension, randomly initialize it, and then use those randomly initialized weights to run forward passes of the network to get your lower-dimensional state”. This has the strong disadvantage of (presumably) not capturing any meaningful information about the state, but also has the advantage of being stable: the other techniques tried, like pulling out the center of a VAE bottleneck, changed over time as they were being trained on new states, so they were informative, but non-stationary. 
+
+My two favorite quotable moments from this paper were: 
+1) When the authors noted that they had removed the “done” signal associated with an agent “dying,” because it is itself a sort of intrinsic reward. However, “in practice, we do find that the agent avoids dying in the games since that brings it back to the beginning of the game, an area it has already seen many times and where it can predict the dynamics well.”. Short and sweet: “Avoiding death, because it’s really boring” 
+
+https://i.imgur.com/SOfML8d.png
+
+2) When they noted that an easy way to hack the motivation structure of a curiosity-driven agent was through a “noisy tv”, which, every time you pressed the button, jumped to a random channel. As expected, when they put this distraction inside a maze, the agent spent more time jacking up reward through that avenue, rather than exploring. Any resemblance to one’s Facebook feed is entirely coincidental. 
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generative Adversarial Nets - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Generative Adversarial Nets - ShortScience.org">
+<meta property="og:description" content="* GANs are based on adversarial training.
+  * Adversarial training is a basic technique to train g...">
+<meta name="description" content="* GANs are based on adversarial training.
+  * Adversarial training is a basic technique to train g...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generative_Adversarial_Networks__faces.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Goodfellow, Ian J. and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron C. and Bengio, Yoshua"}, "headline": "Generative Adversarial Nets", "description": "Summary of Generative Adversarial Nets", "datePublished": "2017-10-17 23:04:53", "dateModified": "2017-10-26 10:20:58", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generative_Adversarial_Networks__faces.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/5423-generative-adversarial-nets"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Generative%20Adversarial%20Nets%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Generative Adversarial Nets</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Goodfellow%2C%20Ian%20J.">Goodfellow, Ian J.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Pouget-Abadie%2C%20Jean">Pouget-Abadie, Jean</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Mirza%2C%20Mehdi">Mirza, Mehdi</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Xu%2C%20Bing">Xu, Bing</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Warde-Farley%2C%20David">Warde-Farley, David</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ozair%2C%20Sherjil">Ozair, Sherjil</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Courville%2C%20Aaron%20C.">Courville, Aaron C.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Bengio%2C%20Yoshua">Bengio, Yoshua</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2014">Neural Information Processing Systems Conference - 2014</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/GoodfellowPMXWOCB14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-404').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/GoodfellowPMXWOCB14%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-404" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Daleju&amp;text=Summary%20of%20Generative%20Adversarial%20Nets&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generative%20Adversarial%20Nets&amp;Body=Summary%20of%20Generative%20Adversarial%20Nets%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Daleju&amp;title=Summary%20of%20Generative%20Adversarial%20Nets" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * GANs are based on adversarial training.
+  * Adversarial training is a basic technique to train generative models (so here primarily models that create new images).
+  * In an adversarial training one model (G, Generator) generates things (e.g. images). Another model (D, discriminator) sees real things (e.g. real images) as well as fake things (e.g. images from G) and has to learn how to differentiate the two.
+  * Neural Networks are models that can be trained in an adversarial way (and are the only models discussed here).
+
+### How
+  * G is a simple neural net (e.g. just one fully connected hidden layer). It takes a vector as input (e.g. 100 dimensions) and produces an image as output.
+  * D is a simple neural net (e.g. just one fully connected hidden layer). It takes an image as input and produces a quality rating as output (0-1, so sigmoid).
+  * You need a training set of things to be generated, e.g. images of human faces.
+  * Let the batch size be B.
+  * G is trained the following way:
+    * Create B vectors of 100 random values each, e.g. sampled uniformly from [-1, +1]. (Number of values per components depends on the chosen input size of G.)
+    * Feed forward the vectors through G to create new images.
+    * Feed forward the images through D to create ratings.
+    * Use a cross entropy loss on these ratings. All of these (fake) images should be viewed as label=0 by D. If D gives them label=1, the error will be low (G did a good job).
+    * Perform a backward pass of the errors through D (without training D). That generates gradients/errors per image and pixel.
+    * Perform a backward pass of these errors through G to train G.
+  * D is trained the following way:
+    * Create B/2 images using G (again, B/2 random vectors, feed forward through G).
+    * Chose B/2 images from the training set. Real images get label=1.
+    * Merge the fake and real images to one batch. Fake images get label=0.
+    * Feed forward the batch through D.
+    * Measure the error using cross entropy.
+    * Perform a backward pass with the error through D.
+  * Train G for one batch, then D for one (or more) batches. Sometimes D can be too slow to catch up with D, then you need more iterations of D per batch of G.
+
+### Results
+  * Good looking images MNIST-numbers and human faces. (Grayscale, rather homogeneous datasets.)
+  * Not so good looking images of CIFAR-10. (Color, rather heterogeneous datasets.)
+
+
+![Generated Faces](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Generative_Adversarial_Networks__faces.jpg?raw=true &quot;Generated Faces&quot;)
+
+*Faces generated by MLP GANs. (Rightmost column shows examples from the training set.)*
+
+-------------------------
+
+### Rough chapter-wise notes
+
+* Introduction
+  * Discriminative models performed well so far, generative models not so much.
+  * Their suggested new architecture involves a generator and a discriminator.
+  * The generator learns to create content (e.g. images), the discriminator learns to differentiate between real content and generated content.
+  * Analogy: Generator produces counterfeit art, discriminator&#x27;s job is to judge whether a piece of art is a counterfeit.
+  * This principle could be used with many techniques, but they use neural nets (MLPs) for both the generator as well as the discriminator.
+ 
+* Adversarial Nets
+  * They have a Generator G (simple neural net)
+    * G takes a random vector as input (e.g. vector of 100 random values between -1 and +1).
+    * G creates an image as output.
+  * They have a Discriminator D (simple neural net)
+    * D takes an image as input (can be real or generated by G).
+    * D creates a rating as output (quality, i.e. a value between 0 and 1, where 0 means &quot;probably fake&quot;).
+  * Outputs from G are fed into D. The result can then be backpropagated through D and then G. G is trained to maximize log(D(image)), so to create a high value of D(image).
+  * D is trained to produce only 1s for images from G.
+  * Both are trained simultaneously, i.e. one batch for G, then one batch for D, then one batch for G...
+  * D can also be trained multiple times in a row. That allows it to catch up with G.
+
+* Theoretical Results
+  * Let
+    * pd(x): Probability that image `x` appears in the training set.
+    * pg(x): Probability that image `x` appears in the images generated by G.
+  * If G is now fixed then the best possible D classifies according to: `D(x) = pd(x) / (pd(x) + pg(x))`
+  * It is proofable that there is only one global optimum for GANs, which is reached when G perfectly replicates the training set probability distribution. (Assuming unlimited capacity of the models and unlimited training time.)
+  * It is proofable that G and D will converge to the global optimum, so long as D gets enough steps per training iteration to model the distribution generated by G. (Again, assuming unlimited capacity/time.)
+  * Note that these things are proofed for the general principle for GANs. Implementing GANs with neural nets can then introduce problems typical for neural nets (e.g. getting stuck in saddle points).
+
+* Experiments
+  * They tested on MNIST, Toronto Face Database (TFD) and CIFAR-10.
+  * They used MLPs for G and D.
+  * G contained ReLUs and Sigmoids.
+  * D contained Maxouts.
+  * D had Dropout, G didn&#x27;t.
+  * They use a Parzen Window Estimate aka KDE (sigma obtained via cross validation) to estimate the quality of their images.
+  * They note that KDE is not really a great technique for such high dimensional spaces, but its the only one known.
+  * Results on MNIST and TDF are great. (Note: both grayscale)
+  * CIFAR-10 seems to match more the texture but not really the structure.
+  * Noise is noticeable in CIFAR-10 (a bit in TFD too). Comes from MLPs (no convolutions).
+  * Their KDE score for MNIST and TFD is competitive or better than other approaches.
+
+* Advantages and Disadvantages
+  * Advantages
+    * No Markov Chains, only backprob
+    * Inference-free training
+    * Wide variety of functions can be incorporated into the model (?)
+    * Generator never sees any real example. It only gets gradients. (Prevents overfitting?)
+    * Can represent a wide variety of distributions, including sharp ones (Markov chains only work with blurry images).
+   * Disadvantages
+    * No explicit representation of the distribution modeled by G (?)
+    * D and G must be well synchronized during training
+      * If G is trained to much (i.e. D can&#x27;t catch up), it can collapse many components of the random input vectors to the same output (&quot;Helvetica&quot;)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="shagunsodhani" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-11-14&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/GoodfellowPMXWOCB14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-405').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/GoodfellowPMXWOCB14%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-405" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dshagunsodhani&amp;text=Summary%20of%20Generative%20Adversarial%20Nets&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generative%20Adversarial%20Nets&amp;Body=Summary%20of%20Generative%20Adversarial%20Nets%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dshagunsodhani&amp;title=Summary%20of%20Generative%20Adversarial%20Nets" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-11-14</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px"># Generative Adversarial Nets
+
+## Introduction
+
+* The paper proposes an adversarial approach for estimating generative models where one model (generative model) tries to learn a data distribution and another model (discriminative model) tries to distinguish between samples from the generative model and original data distribution.
+* [Link to the paper](https://arxiv.org/abs/1406.2661)
+
+## Adversarial Net
+
+* Two models - Generative Model(*G*) and Discriminative Model(*D*)
+* Both are multi-layer perceptrons.
+* *G* takes as input a noise variable *z* and outputs data sample *x(=G(z))*.
+* *D* takes as input a data sample *x* and predicts whether it came from true data or from *G*.
+* *G* tries to minimise *log(1-D(G(z)))* while *D* tries to maximise the probability of correct classification.
+* Think of it as a minimax game between 2 players and the global optimum would be when *G* generates perfect samples and *D* can not distinguish between the samples (thereby always returning 0.5 as the probability of sample coming from true data).
+* Alternate between *k* steps of training *D* and 1 step of training *G* so that *D* is maintained near its optimal solution.
+* When starting training, the loss *log(1-D(G(z)))* would saturate as *G* would be weak. Instead maximise *log(D(G(z)))*
+* The paper contains the theoretical proof for global optimum of the minimax game.
+
+## Experiments
+
+* Datasets
+    * MNIST, Toronto Face Database, CIFAR-10
+* Generator model uses RELU and sigmoid activations.
+* Discriminator model uses maxout and dropout.
+* Evaluation Metric
+    * Fit Gaussian Parzen window to samples obtained from *G* and compare log-likelihood.
+
+## Strengths
+
+* Computational advantages
+    * Backprop is sufficient for training with no need for Markov chains or performing inference.
+    * A variety of functions can be used in the model.
+* Since *G* is trained only using the gradients from *D*, fewer chances of directly copying features from the true data.
+* Can represent sharp (even degenerate) distributions.
+
+## Weakness
+
+* *D* must be well synchronised with *G*.
+* While *G* may learn to sample data points that are indistinguishable from true data, no explicit representation can be obtained.
+
+## Possible Extensions
+
+* Conditional generative models.
+* Inference network to predict *z* given *x*.
+* Implement a stochastic extension of the deterministic [Multi-Prediction Deep Boltzmann Machines](https://papers.nips.cc/paper/5024-multi-prediction-deep-boltzmann-machines.pdf)
+* Using discriminator net or inference net for feature selection.
+* Accelerating training by ensuring better coordination between *G* and *D* or by determining better distributions to sample *z* from during training.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="cubs" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=cubs" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=cubs&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Cubs Reading Group&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: cubs&lt;br&gt;Posted: 2017-10-04&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/GoodfellowPMXWOCB14&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/4b0476107bc150b1f9ddb98271c922bc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-406').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/GoodfellowPMXWOCB14%26a%3Dcubs" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-406" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14&amp;a=cubs" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dcubs&amp;text=Summary%20of%20Generative%20Adversarial%20Nets&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generative%20Adversarial%20Nets&amp;Body=Summary%20of%20Generative%20Adversarial%20Nets%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dcubs"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dcubs" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FGoodfellowPMXWOCB14%26a%3Dcubs&amp;title=Summary%20of%20Generative%20Adversarial%20Nets" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/GoodfellowPMXWOCB14&amp;a=cubs" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=cubs" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Cubs Reading Group 2017-10-04</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Problem addressed: 
+learning data distribution using non-parametric models
+
+#### Summary: 
+The authors propose learning generative model as playing an adversarial game, where one player is the generative model and the other is a discriminative model. The discriminative model learns to differentiate samples obtained from the generative model with true samples from the dataset, and the generative model tries to improve its data likelihood. They provide theoretical result that when one use such adversarial objective the global optimum of generative model will be the data distribution. Good generative performance is presented both quantitatively and qualitatively.
+
+#### Novelty:
+Treating learning generative model as playing a two player adversarial game, although such idea is kind of there in the training of energy based models, this paper is the first to successfully demonstrate this power.
+
+#### Drawbacks:
+As with any of the non-parametric generative models, the evaluation of data probability is not very easy.
+
+#### Datasets:
+MNIST, TFD, CIFAR-10 (only qualitative)
+
+#### Additional remarks:
+Presentation video available on cedar server
+
+#### Presenter:
+Yingbo Zhou</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professor Forcing: A New Algorithm for Training Recurrent Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Professor Forcing: A New Algorithm for Training Recurrent Networks - ShortScience.org">
+<meta property="og:description" content="TLDR; The authors adopt Generative Adversarial Networks (GANs) to RNNs and train a discriminator to...">
+<meta name="description" content="TLDR; The authors adopt Generative Adversarial Networks (GANs) to RNNs and train a discriminator to...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.09038">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1610.09038" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Alex Lamb and Anirudh Goyal and Ying Zhang and Saizheng Zhang and Aaron Courville and Yoshua Bengio"}, "headline": "Professor Forcing: A New Algorithm for Training Recurrent Networks", "description": "Summary of Professor Forcing: A New Algorithm for Training Recurrent Networks", "datePublished": "2017-01-01 19:54:44", "dateModified": "2017-01-01 19:54:44", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1610.09038", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1610.09038v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Professor Forcing: A New Algorithm for Training Recurrent Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Alex%20Lamb">Alex Lamb</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Anirudh%20Goyal">Anirudh Goyal</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ying%20Zhang">Ying Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Saizheng%20Zhang">Saizheng Zhang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Aaron%20Courville">Aaron Courville</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Yoshua%20Bengio">Yoshua Bengio</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/10/27<br><b>Abstract:</b>   The Teacher Forcing algorithm trains recurrent networks by supplying observed
+sequence values as inputs during training and using the network&#x27;s own
+one-step-ahead predictions to do multi-step sampling. We introduce the
+Professor Forcing algorithm, which uses adversarial domain adaptation to
+encourage the dynamics of the recurrent network to be the same when training
+the network and when sampling from the network over multiple time steps. We
+apply Professor Forcing to language modeling, vocal synthesis on raw waveforms,
+handwriting generation, and image generation. Empirically we find that
+Professor Forcing acts as a regularizer, improving test likelihood on character
+level Penn Treebank and sequential MNIST. We also find that the model
+qualitatively improves samples, especially when sampling for a large number of
+time steps. This is supported by human evaluation of sample quality. Trade-offs
+between Professor Forcing and Scheduled Sampling are discussed. We produce
+T-SNEs showing that Professor Forcing successfully makes the dynamics of the
+network during training and sampling more similar.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960').hide());void($('#showless-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960').show());void($('#more-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960').show());void($('#showless-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960').hide());void($('#more-am91cm5hbHMvY29yci8xNjEwLjA5MDM4-960').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1610.09038">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="dennybritz" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2017-01-01&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1610.09038&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-961').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1610.09038%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-961" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.09038&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Ddennybritz&amp;text=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks&amp;Body=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Ddennybritz&amp;title=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.09038&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2017-01-01</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors adopt Generative Adversarial Networks (GANs) to RNNs and train a discriminator to distinguish between sequences generated using teacher forcing (feeding ground truth inputs to the RNN) and scheduled sampling (feeding generated outputs as the next inputs). The inputs to the discriminator are both the predictions and the hidden states of the generative RNN. The generator is trained to fool the discriminator, forcing the dynamics of teacher forcing and scheduled sampling to become more similar. This procedure acts as regularizer, and results in better sample quality and generalization, particularly for long sequences. The authors evaluate their framework on Language Model (PTB), Pixel Generation (Sequential MNIST), Handwriting Generation, and Musisc Synthesis.
+
+### Key Points
+
+- Problem: During inference, errors in an RNN easily compound because the conditioning context may diverge from what is seen during training when the ground-truth labels are fed as inputs (teacher forcing).
+- Goal of professor forcing: Make the generative (free-run) behavior and the teacher-forced behavior match as closely as possible.
+- Discriminator Details
+  - Input is a behavior sequence `B(x, y, theta)` from the generative RNN that contains the hidden states and outputs.
+  - The training objective is to correctly classify whether or not a behavior sequence is generated using teacher forcing vs. scheduled sampling.
+- Generator
+  - Standard RNN with MLE training objective and an additional term to fool the discrimator: Change the free-running behavior as to match the teacher-forced behavior while keeping the latter constant.
+  - Second optional another term: Change the teacher-forced behavior to match the free-running behavior.
+  - Like GAN, backprop from discriminator into generator.
+- Architectures
+  - Generator is a standard GRU Recurrent Neural Network with softmax
+  - Behavior function `B(x, y, theta)` outputs pre-tanh activation of GRU states and tje softmax output
+  - Discriminator: Bidirectional GRU with 3-layer MLP on top
+  - Training trick: To prevent &quot;bad gradients&quot; the authors backprop from the discriminator into the generator only if the classification accuracy is between 75% and 99%.
+  - Trained used Adam optimizer
+- Experiments
+  - PTB Chracter-Level Modeling: Reduction in test NLL, profesor forcing seem to act as a regularizier. 1.48 BPC
+  - Sequential MNIST: Second-best NLL (79.58) after PixelCNN
+  - Handwriting generation: Professor forcing is better at generating longer sequences than seen during training as per human eval.
+  - Music Synthesis: Human eval significantly better for Professor forcing
+  - Negative Results on word-level modeling: Professor forcing doesn&#x27;t have any effect. Perhaps because long-term dependencies are more pronounced in character-level modeling.
+  - The authors show using t-SNE that the hidden state distributions actually become more similar when using professor forcing
+
+### Thoughts
+
+- Props to the authors for a very clear and well-written paper. This is rarer than it should be :)
+- It&#x27;s an intersting idea to also match the states of the RNN instead of just the outputs. Intuitively, matching the outputs should implicitly match the state distribution. I wonder if the authors tried this and it didn&#x27;t work as expected.
+- Note from [Ethan Caballero](https://github.com/ethancaballero) about why they chose to match hidden states: It&#x27;s significantly harder to use GANs on sampled (argmax) output tokens because they are discrete as (as opposed to continuous like the hidden states and their respective softmaxes). They would have had to estimate discrete outputs with policy gradients like in [seqGAN](https://github.com/dennybritz/deeplearning-papernotes/blob/master/notes/seq-gan.md) which is [harder to get to converge](https://www.quora.com/Do-you-have-any-ideas-on-how-to-get-GANs-to-work-with-text), which is why they probably just stuck with the hidden states which already contain info about the discrete sampled outputs (the index of the highest probability in the the distribution) anyway. Professor Forcing method is unique in that one has access to the continuous probability distribution of each token at each timestep of the two sequence generation modes trying to be pushed closer together. Conversely, when applying GANs to pushing real samples and generated samples closer together as is traditionally done in models like seqGAN, one only has access to the next dicrete token (not continuous probability distributions of next token) at each timestep, which prevents straight-forward differentiation (used in professor forcing) from being applied and forces one to use policy gradient estimation. However, there&#x27;s a chance one might be able to use straight-forward differentiation to train seqGANs in the traditional sampling case if one swaps out each discrete sampled token with its continuous distributional word embedding (from pretrained word2vec, GloVe, etc.), but no one has tried it yet TTBOMK.
+- I would&#x27;ve liked to see a comparison of  the two regularization terms in the generator. The experiments don&#x27;t make it clear if both or only of them them is used.
+- I&#x27;m guessing that this architecture is quite challenging to train. Woul&#x27;ve liked to see a bit more detail about when/how they trade off the training of discriminator and generator.
+- Translation is another obvious task to apply this too. I&#x27;m interested whether or not this works for seq2seq.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="nipsreviews" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nipsreviews" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nipsreviews&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;NIPS Conference Reviews&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nipsreviews&lt;br&gt;Posted: 2017-04-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1610.09038&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-962').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1610.09038%26a%3Dnipsreviews" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-962" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.09038&amp;a=nipsreviews" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Dnipsreviews&amp;text=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks&amp;Body=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Dnipsreviews"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.09038%26a%3Dnipsreviews&amp;title=Summary%20of%20Professor%20Forcing%3A%20A%20New%20Algorithm%20for%20Training%20Recurrent%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.09038&amp;a=nipsreviews" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nipsreviews" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by NIPS Conference Reviews 2017-04-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Authors present a method similar to teacher forcing that uses generative adversarial networks to guide training on sequential tasks.
+
+This work describes a novel algorithm to ensure the dynamics of an LSTM during inference follows that during training. The motivating example is sampling for a long number of steps at test time while only training on shorter sequences at training time. Experimental results are shown on PTB language modelling, MNIST, handwriting generation and music synthesis.
+
+The paper is similar to Generative Adversarial Networks (GAN): in addition to a normal sequence model loss function, the parameters try to “fool” a classifier. That classifier is trying to distinguish generated sequences from the sequence model, from real data. A few Objectives are proposed in section 2.2. The key difference to GAN is the B in equations 1-4. B is a function outputs some statistics of the model, such as the hidden state of the RNN, whereas GAN tries rather to discriminate the actual output sequences.
+
+
+This paper proposes a method for training recurrent neural networks (RNN) in the framework of adversarial training. Since RNNs can be used to generate sequential data, the goal is to optimize the network parameters in such a way that the generated samples are hard to distinguish from real data. This is particularly interesting for RNNs as the classical training criterion only involves the prediction of the next symbol in the sequence. Given a sequence of symbols $x_1, ..., x_t$, the model is trained so as to output $y_t$ as close to $x_{t+1}$ as possible. Training that way does not provide models that are robust during generation, as a mistake at time t potentially makes the prediction at time $t+k$ totally unreliable. This idea is somewhat similar to the idea of computing a sentence-wide loss in the context of encode-decoder translation models. The loss can only be computed after a complete sequence has been generated.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diverse Beam Search: Decoding Diverse Solutions from Neural Sequence Models - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Diverse Beam Search: Decoding Diverse Solutions from Neural Sequence Models - ShortScience.org">
+<meta property="og:description" content="[Code]( ), [Live Demo]( ) ([code for demo site](  ))
+
+Diverse Beam Search (DBS) is an alternative to...">
+<meta name="description" content="[Code]( ), [Live Demo]( ) ([code for demo site](  ))
+
+Diverse Beam Search (DBS) is an alternative to...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.02424">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1610.02424" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Ashwin K Vijayakumar and Michael Cogswell and Ramprasath R. Selvaraju and Qing Sun and Stefan Lee and David Crandall and Dhruv Batra"}, "headline": "Diverse Beam Search: Decoding Diverse Solutions from Neural Sequence Models", "description": "Summary of Diverse Beam Search: Decoding Diverse Solutions from Neural Sequence Models", "datePublished": "2016-11-08 00:49:38", "dateModified": "2016-11-09 22:22:02", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1610.02424", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.AI,  cs.CL,  cs.CV">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1610.02424v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Diverse Beam Search: Decoding Diverse Solutions from Neural Sequence Models</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Ashwin%20K%20Vijayakumar">Ashwin K Vijayakumar</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Michael%20Cogswell">Michael Cogswell</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ramprasath%20R.%20Selvaraju">Ramprasath R. Selvaraju</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Qing%20Sun">Qing Sun</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Stefan%20Lee">Stefan Lee</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=David%20Crandall">David Crandall</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Dhruv%20Batra">Dhruv Batra</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.AI">cs.AI</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CL"> cs.CL</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/10/07<br><b>Abstract:</b>   Neural sequence models are widely used to model time-series data in many
+fields. Equally ubiquitous is the usage of beam search (BS) as an approximate
+inference algorithm to decode output sequences from these models. BS explores
+the search space in a greedy left-right fashion retaining only the top-$B$
+candidates -- resulting in sequences that differ only slightly from each other.
+Producing lists of nearly identical sequences is not only computationally
+wasteful but also typically fails to capture the inherent ambiguity of complex
+AI tasks. To overcome this problem, we propose \emph{Diverse Beam Search}
+(DBS), an alternative to BS that decodes a list of diverse outputs by
+optimizing for a diversity-augmented objective. We observe that our method
+finds better top-1 solutions by controlling for the exploration and
+exploitation of the search space -- implying that DBS is a \emph{better search
+algorithm}. Moreover, these gains are achieved with minimal computational or
+memory overhead as compared to beam search. To demonstrate the broad
+applicability of our method, we present results on image captioning, machine
+translation and visual question generation using both standard quantitative
+metrics and qualitative human studies. Our method consistently outperforms BS
+and previously proposed techniques for diverse decoding from neural sequence
+models.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950').hide());void($('#showless-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950').show());void($('#more-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950').show());void($('#showless-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950').hide());void($('#more-am91cm5hbHMvY29yci8xNjEwLjAyNDI0-950').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1610.02424">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="udibr" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=udibr" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=udibr&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Udibr&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: udibr&lt;br&gt;Posted: 2016-11-08&lt;br&gt;Edited: 2016-11-09&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1610.02424&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/3ff456f6460678f4924fb7d408b86a62?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-951').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1610.02424%26a%3Dudibr" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-951" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.02424&amp;a=udibr" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Dudibr&amp;text=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Dudibr" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models&amp;Body=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Dudibr"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Dudibr" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Dudibr&amp;title=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.02424&amp;a=udibr" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=udibr" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Udibr 2016-11-08</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">[Code](https://github.com/ashwinkalyan/dbs), [Live Demo](http://dbs.cloudcv.org/) ([code for demo site]( https://github.com/Cloud-CV/diverse-beam-search))
+
+Diverse Beam Search (DBS) is an alternative to Beam Search (BS). Decodes diverse lists by dividing the beam budget $B$ (e.g. 6) into groups $G$ (e.g. 3) and enforcing diversity between groups of beams.
+
+For every time step $t$ iterate over all groups. In 1st group find $B&#x27;=B/G$ (e.g. 2) partial beams $Y^1_{[t]} = \{y^1_{b,t} : b \in [B&#x27;]\}$ using BS with NLL. In 2nd group find partial beams $y^2_{b,t}$ using BS with partial beam score taken to be the sum of NLL and the distance between the partial beam and the partial beams in 1st group. The distance is multiplied by a factor $\lambda_t$. For group $g$ the distance is measured between the partial beam $y^g_{b,t}$ and all the partial beams in all groups that were already optimized for current time step. $\Delta(Y^1_{[t]},\ldots,Y^{g-1}_{[t]})[y^g_{b,t}]$
+
+Evaluation Metrics:
+* Oracle Accuracy: maximum value of the metric (BLEU) over a list of final beams
+* Diversity Statistics: number of distinct n-grams in all final beams
+* Human preference
+
+Parameters:
+* $G=B$ allows for the maximum exploration and  found to improve oracle accuracy.
+* $\lambda \in [0.2-0.8]$
+
+Distance between partial beam and all other groups is broken to a sum of the distances with each group:
+$$\Delta(Y^1_{[t]},\ldots,Y^{g-1}_{[t]}) = \sum^{g-1}_{h=1}\Delta(Y^h_{[t]})$$
+individual $\Delta(Y^h_{[t]})[y^g_{b,t}]$ is taken to be one of:
+* Hamming (gives best oracle performance): proportional to the number of times latest token in $y^g_{b,t}$ was selected as latest token in beams in $Y^h_{[t]}$.
+* Cumulative: cancels out Hamming: $\exp\{-(\sum_{\tau \in t} \sum_{b \in B&#x27;} \mathbb{1}_{[y^h_{b,\tau} \neq y^g_{b,\tau}]})/\Gamma\}$
+* n-gram: number of times each n-gram in a candidate occurred in previous groups
+* Neural-embedding: in all previous methods replace hamming similarity with cosine of word2vec of token (or sum of word2vec of n-gram tokens)
+
+
+My 2 cents:
+* Once a beam reaches EOS you need to stop comparing it with other groups
+* Using DBS cause results to be longer. Perhaps too much. You can reduce length by adding a penalty to length</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="dennybritz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2017-01-01&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1610.02424&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-952').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1610.02424%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-952" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.02424&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Ddennybritz&amp;text=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models&amp;Body=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.02424%26a%3Ddennybritz&amp;title=Summary%20of%20Diverse%20Beam%20Search%3A%20Decoding%20Diverse%20Solutions%20from%20Neural%20Sequence%20Models" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.02424&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2017-01-01</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors propose a new Diverse Beam Search (DBS) decoding procedure that produces more diverse responses than standard Beam Search (BS). The authors divide the beam of size B into G groups of size B/G. At each step they perform beam search for each group with an added similarity penalty (with scaling factor lambda) that encourages groups to be pick different outputs. This procedure is done greedily, i.e. group 1 does regular BS, group 2 is conditioned on group 1, group 3 is conditioned on group 1 and 2, and so on. Similarity functions include Hamming distance, Cumulative Diversity, n-gram diversity and neural embedding diversity. Hamming Distance tends to perform best. The authors evaluate their model on Image Captioning (COCO, PASCAL-50S), Machine Translation (europarl) and Visual Question Generation. For Image Captioning the authors perform a human evaluation (1000 examples on Mechanical Turk) and find that DBS is preferred over BS 60% of the time.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Using Fast Weights to Attend to the Recent Past - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Using Fast Weights to Attend to the Recent Past - ShortScience.org">
+<meta property="og:description" content="This paper presents a recurrent neural network architecture in which some of the recurrent weights d...">
+<meta name="description" content="This paper presents a recurrent neural network architecture in which some of the recurrent weights d...">
+<meta property="og:image" content="http://i.imgur.com/DCznSf4.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.06258">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1610.06258" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jimmy Ba and Geoffrey Hinton and Volodymyr Mnih and Joel Z. Leibo and Catalin Ionescu"}, "headline": "Using Fast Weights to Attend to the Recent Past", "description": "Summary of Using Fast Weights to Attend to the Recent Past", "datePublished": "2016-10-23 15:49:57", "dateModified": "2016-10-23 16:01:00", "image": {"@type": "ImageObject", "url": "http://i.imgur.com/DCznSf4.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1610.06258", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.LG,  cs.NE">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1610.06258v1"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Using Fast Weights to Attend to the Recent Past</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jimmy%20Ba">Jimmy Ba</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Geoffrey%20Hinton">Geoffrey Hinton</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Volodymyr%20Mnih">Volodymyr Mnih</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Joel%20Z.%20Leibo">Joel Z. Leibo</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Catalin%20Ionescu">Catalin Ionescu</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.NE"> cs.NE</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2016/10/20<br><b>Abstract:</b>   Until recently, research on artificial neural networks was largely restricted
+to systems with only two types of variable: Neural activities that represent
+the current or recent input and weights that learn to capture regularities
+among inputs, outputs and payoffs. There is no good reason for this
+restriction. Synapses have dynamics at many different time-scales and this
+suggests that artificial neural networks might benefit from variables that
+change slower than activities but much faster than the standard weights. These
+&quot;fast weights&quot; can be used to store temporary memories of the recent past and
+they provide a neurally plausible way of implementing the type of attention to
+the past that has recently proved very helpful in sequence-to-sequence models.
+By using fast weights we can avoid the need to store copies of neural activity
+patterns.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955').hide());void($('#showless-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955').show());void($('#more-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955').show());void($('#showless-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955').hide());void($('#more-am91cm5hbHMvY29yci8xNjEwLjA2MjU4-955').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1610.06258">Summaries/Notes <span class="badge">2</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-10-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1610.06258&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">28</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-956').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1610.06258%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-956" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.06258&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Dhlarochelle&amp;text=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past&amp;Body=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Dhlarochelle&amp;title=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.06258&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-10-23</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper presents a recurrent neural network architecture in which some of the recurrent weights dynamically change during the forward pass, using a hebbian-like rule. They correspond to the matrices $A(t)$ in the figure below:
+
+![Fast weights RNN figure](http://i.imgur.com/DCznSf4.png)
+
+These weights $A(t)$ are referred to as *fast weights*. Comparatively, the recurrent weights $W$ are referred to as slow weights, since they are only changing due to normal training and are otherwise kept constant at test time.
+
+More specifically, the proposed fast weights RNN compute a series of hidden states $h(t)$ over time steps $t$, but, unlike regular RNNs, the transition from $h(t)$ to $h(t+1)$ consists of multiple ($S$) recurrent layers $h_1(t+1), \dots, h_{S-1}(t+1), h_S(t+1)$, defined as follows:
+
+$$h_{s+1}(t+1) = f(W h(t) + C x(t) + A(t) h_s(t+1))$$
+
+where $f$ is an element-wise non-linearity such as the ReLU activation. The next hidden state $h(t+1)$ is simply defined as the last &quot;inner loop&quot; hidden state $h_S(t+1)$, before moving to the next time step. 
+
+As for the fast weights $A(t)$, they too change between time steps, using the hebbian-like rule:
+
+$$A(t+1) = \lambda A(t) + \eta h(t) h(t)^T$$
+
+where $\lambda$ acts as a decay rate (to partially forget some of what&#x27;s in the past)  and $\eta$ as the fast weight&#x27;s &quot;learning rate&quot; (not to be confused with the learning rate used during backprop). Thus, the role played by the fast weights is to rapidly adjust to the recent hidden states and remember the recent past.
+
+In fact, the authors show an explicit relation between these fast weights and memory-augmented architectures that have recently been popular. Indeed, by recursively applying and expending the equation for the fast weights, one obtains
+
+$$A(t) = \eta \sum_{\tau = 1}^{\tau = t-1}\lambda^{t-\tau-1} h(\tau) h(\tau)^T$$
+
+*(note the difference with Equation 3 of the paper... I think there was a typo)* which implies that when computing the $A(t) h_s(t+1)$ term in the expression to go from $h_s(t+1)$ to $h_{s+1}(t+1)$, this term actually corresponds to
+
+$$A(t) h_s(t+1) = \eta \sum_{\tau =1}^{\tau = t-1} \lambda^{t-\tau-1} h(\tau) (h(\tau)^T h_s(t+1))$$
+
+i.e. $A(t) h_s(t+1)$ is a weighted sum of all previous hidden states $h(\tau)$, with each hidden states weighted by an &quot;attention weight&quot; $h(\tau)^T h_s(t+1)$. The difference with many recent memory-augmented architectures is thus that the attention weights aren&#x27;t computed using a softmax non-linearity.
+
+Experimentally, they find it beneficial to use [layer normalization](https://arxiv.org/abs/1607.06450). Good values for $\eta$ and $\lambda$ seem to be 0.5 and 0.9 respectively. I&#x27;m not 100% sure, but I also understand that using $S=1$, i.e. using the fast weights only once per time steps, was usually found to be optimal. Also see Figure 3 for the architecture used on the image classification datasets, which is slightly more involved.
+
+The authors present a series 4 experiments, comparing with regular RNNs (IRNNs, which are RNNs with ReLU units and whose recurrent weights are initialized to a scaled identity matrix) and LSTMs (as well as an associative LSTM for a synthetic associative retrieval task and ConvNets for the two image datasets). Generally, experiments illustrate that the fast weights RNN tends to train faster (in number of updates) and better than the other recurrent architectures. Surprisingly, the fast weights RNN can even be competitive with a ConvNet on the two image classification benchmarks, where the RNN traverses glimpses from the image using a fixed policy.
+
+**My two cents**
+
+This is a very thought provoking paper which, based on the comparison with LSTMs, suggests that fast weights RNNs might be a very good alternative. I&#x27;d be quite curious to see what would happen if one was to replace LSTMs with them in the myriad of papers using LSTMs (e.g. all the Seq2Seq work). Intuitively, LSTMs seem to be able to do more than just attending to the recent past. But, for a given task, if one was to observe that fast weights RNNs are competitive to LSTMs, it would suggests that the LSTM isn&#x27;t doing something that much more complex. So it would be interesting to determine what are the tasks where the extra capacity of an LSTM is actually valuable and exploitable. Hopefully the authors will release some code, to facilitate this exploration. 
+
+The discussion at the end of Section 3 on how exploiting the &quot;memory augmented&quot; view of fast weights is useful to allow the use of minibatches is interesting. However, it also suggests that computations in the fast weights RNN scales quadratically with the sequence size (since in this view, the RNN technically must attend to all previous hidden states, since the beginning of the sequence). This is something to keep in mind, if one was to consider applying this to very long sequences (i.e. much longer than the hidden state dimensionality).
+
+Also, I don&#x27;t quite get the argument that the &quot;memory augmented&quot; view of fast weights is more amenable to mini-batch training. I understand that having an explicit weight matrix $A(t)$ for each minibatch sequence complicates things. However, in the memory augmented view, we also have a &quot;memory matrix&quot; that is different for each sequence, and yet we can handle that fine. The problem I can imagine is that storing a *sequence of arbitrary weight matrices* for each sequence might be storage demanding (and thus perhaps make it impossible to store a forward/backward pass for more than one sequence at a time), while the implicit memory matrix only requires appending a new row at each time step. Perhaps the argument to be made here is more that there&#x27;s already mini-batch compatible code out there for dealing with the use of a memory matrix of stored previous memory states.
+
+This work strikes some (partial) resemblance to other recent work, which may serve as food for thought here. The use of possibly multiple computation layers between time steps reminds me of [Adaptive Computation Time (ACT) RNN]( http://www.shortscience.org/paper?bibtexKey=journals/corr/Graves16). Also, expressing a backpropable architecture that involves updates to weights (here, hebbian-like updates) reminds me of recent work that does backprop through the updates of a gradient descent procedure (for instance as in [this work]( http://www.shortscience.org/paper?bibtexKey=conf/icml/MaclaurinDA15)). 
+
+Finally, while I was familiar with the notion of fast weights from the work on [Using Fast Weights to Improve Persistent Contrastive Divergence](http://people.ee.duke.edu/~lcarin/FastGibbsMixing.pdf), I didn&#x27;t realize that this concept dated as far back as the late 80s. So, for young researchers out there looking for inspiration for research ideas, this paper confirms that looking at the older neural network literature for inspiration is probably a very good strategy :-)
+
+To sum up, this is really nice work, and I&#x27;m looking forward to the NIPS 2016 oral presentation of it!</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="dennybritz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=dennybritz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=dennybritz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Denny Britz&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: dennybritz&lt;br&gt;Posted: 2017-01-01&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1610.06258&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96796456b4c1715dcfe264ebb51e85ae?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-957').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1610.06258%26a%3Ddennybritz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-957" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.06258&amp;a=dennybritz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Ddennybritz&amp;text=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past&amp;Body=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Ddennybritz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Ddennybritz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1610.06258%26a%3Ddennybritz&amp;title=Summary%20of%20Using%20Fast%20Weights%20to%20Attend%20to%20the%20Recent%20Past" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1610.06258&amp;a=dennybritz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=dennybritz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Denny Britz 2017-01-01</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">TLDR; The authors propose &quot;fast weights&quot;, a type of attention mechanism to the recent past that performs multiple steps of computation between each hidden state computation step in an RNN. The authors evaluate their architecture on various tasks that require short-term memory, arguing that the fast weights mechanism frees up the RNN from memorizing sthings in the hidden state which is freed up for other types of computation.
+
+### Key Points
+
+- Currently, RNNs have slow-changing long-term memory (Permanent Weights) and fast changing short-term memory (hidden state). We want something in the middle: Fast weights with higher storage capacity.
+- For each transition in the RNN, multiple transitions can be made by the fast weights. They are a kind of attention mechanism to the recent past that is not parameterized separately but depends on the past states.
+- Fast weights are decayed over time and based on the outer product of previous hidden states: `A(t+1) = lambdaA(t) + eta*h(t)h(t)^T`.
+- The next hidden state of the RNN is computed by a regular transition based on input adn previous state combined by an &quot;inner loop&quot; of S steps of the fast weights.
+- &quot;At each iteration of the inner loop the fast weight matrix A is eqivalent to attending to past hidden vectors in proportion to their scalar product with the current hidden state, weighted by a decay factor&quot; - And this is efficient to compute.
+- Added Layer Normalization to fast weights to prevent exploding/vanishign gradients.
+- Associative Retrieval Toy Task: Memorize recent key-value pairs. Fast weights siginifcantly outperform RNN, LSTM and Associative LSTM.
+- Visual Attention on MNIST: Beats RNN/LSTM and is comparable to CovnNet for large number of features.
+- Agents with Memory: Fast Weight net learns faster in a partially obseverable environment where the networks must remember the previous states.
+
+### Thoughts
+
+-Overall I think this is very exciting work. It kind of reminds me of Adaptive Computation Time where you dynamically decide how many steps to &quot;ponder&quot; before making another outputs. However, it is also quite different in that this work explicitly &quot;attends&quot; over past states and isn&#x27;t really about computation time.
+- In the experiments the authors say they set S=1 (i.e. just one inner loop step). Why is that? I thought one of the more important points of fast weights would be to have additional computation betwene each slow step. This also raises the question of how to pick this hyperparameter.
+- A lot of references to Machine Translation models with attention but not NLP experiments.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks - ShortScience.org">
+<meta property="og:description" content="* R-CNN and its successor Fast R-CNN both rely on a &quot;classical&quot; method to find region proposals in i...">
+<meta name="description" content="* R-CNN and its successor Fast R-CNN both rely on a &quot;classical&quot; method to find region proposals in i...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Faster_R-CNN__anchor_boxes.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Ren, Shaoqing and He, Kaiming and Girshick, Ross B. and Sun, Jian"}, "headline": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks", "description": "Summary of Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks", "datePublished": "2017-10-25 10:44:01", "dateModified": "2017-10-25 10:44:01", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Faster_R-CNN__anchor_boxes.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://papers.nips.cc/paper/5638-faster-r-cnn-towards-real-time-object-detection-with-region-proposal-networks"><span class="glyphicon glyphicon-link"></span> papers.nips.cc</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Ren%2C%20Shaoqing">Ren, Shaoqing</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=He%2C%20Kaiming">He, Kaiming</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Girshick%2C%20Ross%20B.">Girshick, Ross B.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sun%2C%20Jian">Sun, Jian</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2015">Neural Information Processing Systems Conference - 2015</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=conf/nips/RenHGS15">Summaries/Notes <span class="badge">4</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-25&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/RenHGS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">6</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-484').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/RenHGS15%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-484" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Daleju&amp;text=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;Body=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Daleju&amp;title=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-25</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">* R-CNN and its successor Fast R-CNN both rely on a &quot;classical&quot; method to find region proposals in images (i.e. &quot;Which regions of the image look like they *might* be objects?&quot;).
+  * That classical method is selective search.
+  * Selective search is quite slow (about two seconds per image) and hence the bottleneck in Fast R-CNN.
+  * They replace it with a neural network (region proposal network, aka RPN).
+  * The RPN reuses the same features used for the remainder of the Fast R-CNN network, making the region proposal step almost free (about 10ms).
+
+### How
+  * They now have three components in their network:
+    * A model for feature extraction, called the &quot;feature extraction network&quot; (**FEN**). Initialized with the weights of a pretrained network (e.g. VGG16).
+    * A model to use these features and generate region proposals, called the &quot;Region Proposal Network&quot; (**RPN**).
+    * A model to use these features and region proposals to classify each regions proposal&#x27;s object and readjust the bounding box, called the &quot;classification network&quot; (**CN**). Initialized with the weights of a pretrained network (e.g. VGG16).
+    * Usually, FEN will contain the convolutional layers of the pretrained model (e.g. VGG16), while CN will contain the fully connected layers.
+    * (Note: Only &quot;RPN&quot; really pops up in the paper, the other two remain more or less unnamed. I added the two names to simplify the description.)
+    * Rough architecture outline:
+      * ![Architecture](images/Faster_R-CNN__architecture.jpg?raw=true &quot;Architecture&quot;)
+  * The basic method at test is as follows:
+    1. Use FEN to convert the image to features.
+    2. Apply RPN to the features to generate region proposals.
+    3. Use Region of Interest Pooling (RoI-Pooling) to convert the features of each region proposal to a fixed sized vector.
+    4. Apply CN to the RoI-vectors to a) predict the class of each object (out of `K` object classes and `1` background class) and b) readjust the bounding box dimensions (top left coordinate, height, width).
+  * RPN
+    * Basic idea:
+      * Place anchor points on the image, all with the same distance to each other (regular grid).
+      * Around each anchor point, extract rectangular image areas in various shapes and sizes (&quot;anchor boxes&quot;), e.g. thin/square/wide and small/medium/large rectangles. (More precisely: The features of these areas are extracted.)
+      * Visualization:
+        * ![Anchor Boxes](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Faster_R-CNN__anchor_boxes.jpg?raw=true &quot;Anchor Boxes&quot;)
+      * Feed the features of these areas through a classifier and let it rate/predict the &quot;regionness&quot; of the rectangle in a range between 0 and 1. Values greater than 0.5 mean that the classifier thinks the rectangle might be a bounding box. (CN has to analyze that further.)
+      * Feed the features of these areas through a regressor and let it optimize the region size (top left coordinate, height, width). That way you get all kinds of possible bounding box shapes, even though you only use a few base shapes.
+    * Implementation:
+      * The regular grid of anchor points naturally arises due to the downscaling of the FEN, it doesn&#x27;t have to be implemented explicitly.
+      * The extraction of anchor boxes and classification + regression can be efficiently implemented using convolutions.
+        * They first apply a 3x3 convolution on the feature maps. Note that the convolution covers a large image area due to the downscaling.
+          * Not so clear, but sounds like they use 256 filters/kernels for that convolution.
+        * Then they apply some 1x1 convolutions for the classification and regression.
+          * They use `2*k` 1x1 convolutions for classification and `4*k` 1x1 convolutions for regression, where `k` is the number of different shapes of anchor boxes.
+      * They use `k=9` anchor box types: Three sizes (small, medium, large), each in three shapes (thin, square, wide).
+      * The way they build training examples (below) forces some 1x1 convolutions to react only to some anchor box types.
+    * Training:
+      * Positive examples are anchor boxes that have an IoU with a ground truth bounding box of 0.7 or more. If no anchor point has such an IoU with a specific box, the one with the highest IoU is used instead.
+      * Negative examples are all anchor boxes that have IoU that do not exceed 0.3 for any bounding box.
+      * Any anchor point that falls in neither of these groups does not contribute to the loss.
+      * Anchor boxes that would violate image boundaries are not used as examples.
+      * The loss is similar to the one in Fast R-CNN: A sum consisting of log loss for the classifier and smooth L1 loss (=smoother absolute distance) for regression.
+      * Per batch they only sample examples from one image (for efficiency).
+      * They use 128 positive examples and 128 negative ones. If they can&#x27;t come up with 128 positive examples, they add more negative ones.
+    * Test:
+      * They use non-maximum suppression (NMS) to remove too identical region proposals, i.e. among all region proposals that have an IoU overlap of 0.7 or more, they pick the one that has highest score.
+      * They use the 300 proposals with highest score after NMS (or less if there aren&#x27;t that many).
+  * Feature sharing
+    * They want to share the features of the FEN between the RPN and the CN.
+    * So they need a special training method that fine-tunes all three components while keeping the features extracted by FEN useful for both RPN and CN at the same time (not only for one of them).
+    * Their training methods are:
+      * Alternating traing: One batch for FEN+RPN, one batch for FEN+CN, then again one batch for FEN+RPN and so on.
+      * Approximate joint training: Train one network of FEN+RPN+CN. Merge the gradients of RPN and CN that arrive at FEN via simple summation. This method does not compute a gradient from CN through the RPN&#x27;s regression task, as that is non-trivial. (This runs 25-50% faster than alternating training, accuracy is mostly the same.)
+      * Non-approximate joint training: This would compute the above mentioned missing gradient, but isn&#x27;t implemented.
+      * 4-step alternating training:
+        1. Clone FEN to FEN1 and FEN2.
+        2. Train the pair FEN1 + RPN.
+        3. Train the pair FEN2 + CN using the region proposals from the trained RPN.
+        4. Fine-tune the pair FEN2 + RPN. FEN2 is fixed, RPN takes the weights from step 2.
+        5. Fine-tune the pair FEN2 + CN. FEN2 is fixed, CN takes the weights from step 3, region proposals come from RPN from step 4.
+
+* Results
+  * Example images:
+    * ![Example images](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Faster_R-CNN__examples.jpg?raw=true &quot;Example images&quot;)
+  * Pascal VOC (with VGG16 as FEN)
+    * Using an RPN instead of SS (selective search) slightly improved mAP from 66.9% to 69.9%.
+    * Training RPN and CN on the same FEN (sharing FEN&#x27;s weights) does not worsen the mAP, but instead improves it slightly from 68.5% to 69.9%.
+  * Using the RPN instead of SS significantly speeds up the network, from 1830ms/image (less than 0.5fps) to 198ms/image (5fps). (Both stats with VGG16. They also use ZF as the FEN, which puts them at 17fps, but mAP is lower.)
+  * Using per anchor point more scales and shapes (ratios) for the anchor boxes improves results.
+    * 1 scale, 1 ratio: 65.8% mAP (scale `128*128`, ratio 1:1) or 66.7% mAP (scale `256*256`, same ratio).
+    * 3 scales, 3 ratios: 69.9% mAP (scales `128*128`, `256*256`, `512*512`; ratios 1:1, 1:2, 2:1).
+  * Two-staged vs one-staged
+    * Instead of the two-stage system (first, generate proposals via RPN, then classify them via CN), they try a one-staged system.
+    * In the one-staged system they move a sliding window over the computed feature maps and regress at every location the bounding box sizes and classify the box.
+    * When doing this, their performance drops from 58.7% to about 54%.
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="martinthoma" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-05-02&lt;br&gt;Edited: 2017-04-23&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/RenHGS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-485').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/RenHGS15%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-485" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dmartinthoma&amp;text=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;Body=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dmartinthoma&amp;title=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-05-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">**Object detection** is the task of drawing one bounding box around each instance of the type of object one wants to detect. Typically, image classification is done before object detection. With neural networks, the usual procedure for object detection is to train a classification network, replace the last layer with a regression layer which essentially predicts pixel-wise if the object is there or not. An bounding box inference algorithm is added at last to make a consistent prediction (see [Deep Neural Networks for Object Detection](http://papers.nips.cc/paper/5207-deep-neural-networks-for-object-detection.pdf)).
+
+The paper introduces RPNs (Region Proposal Networks). They are end-to-end trained to generate region proposals.They simoultaneously regress region bounds and bjectness scores at each location on a regular grid.
+
+RPNs are one type of fully convolutional networks. They take an image of any size as input and output a set of rectangular object proposals, each with an objectness score.
+
+## See also
+* [R-CNN](http://www.shortscience.org/paper?bibtexKey=conf/iccv/Girshick15#joecohen)
+* [Fast R-CNN](http://www.shortscience.org/paper?bibtexKey=conf/iccv/Girshick15#joecohen)
+* [Faster R-CNN](http://www.shortscience.org/paper?bibtexKey=conf/nips/RenHGS15#martinthoma)
+* [Mask R-CNN](http://www.shortscience.org/paper?bibtexKey=journals/corr/HeGDG17)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="nipsreviews" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=nipsreviews" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=nipsreviews&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;NIPS Conference Reviews&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: nipsreviews&lt;br&gt;Posted: 2016-04-13&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/RenHGS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/ffd2aa168ad915c4e1a2cd9b7b8447fc?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-486').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/RenHGS15%26a%3Dnipsreviews" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-486" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=nipsreviews" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dnipsreviews&amp;text=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;Body=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dnipsreviews"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dnipsreviews" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dnipsreviews&amp;title=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=nipsreviews" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=nipsreviews" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by NIPS Conference Reviews 2016-04-13</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This work proposes a two stage object detection algorithm based on convolutional neural network (CNN). The first stage is region proposal, which is based on the traditional sliding window method but working on the top layer feature map of CNN (RPN). In the second stage, a fast R-CNN is applied to the proposed regions. Since the convolution layers are shared between RPN and R-CNN, and the calculation is speeded up using GPU, the algorithm can achieve near real-time (5fps).</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="leopaillier" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=leopaillier" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=leopaillier&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Léo Paillier&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: leopaillier&lt;br&gt;Posted: 2017-12-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;conf/nips/RenHGS15&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/60f81886e2570a8ac356d932e4597371?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">1</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-487').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dconf/nips/RenHGS15%26a%3Dleopaillier" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-487" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=leopaillier" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dleopaillier&amp;text=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks&amp;Body=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dleopaillier"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dleopaillier" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dconf%2Fnips%2FRenHGS15%26a%3Dleopaillier&amp;title=Summary%20of%20Faster%20R-CNN%3A%20Towards%20Real-Time%20Object%20Detection%20with%20Region%20Proposal%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=conf/nips/RenHGS15&amp;a=leopaillier" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=leopaillier" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Léo Paillier 2017-12-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">_Objective:_ Improve on Fast R-CNN and [SPPnet](https://arxiv.org/abs/1406.4729) by incorporating the region proposal network directly.
+
+_Dataset:_ [PASCAL VOC](http://host.robots.ox.ac.uk/pascal/VOC/) and [COCO](http://mscoco.org/).
+
+
+Both Fast R-CNN and SPPnet takes as input an image and several possibles objects (corresponding to regions of interest) and score each of them. They are thus two different entities:
+
+1.  A region proposal network.
+2.  A classification/detection network (Fast R-CNN/SSPnet).
+
+## Architecture:
+
+First image features are extracted using a state of the art ConvNet, then they are used for both Region proposal and actual detection/classification on those regions.
+
+[![screen shot 2017-04-14 at 2 59 28 pm](https://cloud.githubusercontent.com/assets/17261080/25043807/01a287b6-2123-11e7-944c-01493371df29.png)](https://cloud.githubusercontent.com/assets/17261080/25043807/01a287b6-2123-11e7-944c-01493371df29.png)
+
+## Results:
+
+By incorporating the region proposal network right after the feature ConvNet its computation cost becomes basically free which leads to an elegant solution (only one network) but more importantly greatly improve speed at test time.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

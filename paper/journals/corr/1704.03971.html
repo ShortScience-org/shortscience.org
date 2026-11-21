@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On the Effects of Batch and Weight Normalization in Generative Adversarial Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="On the Effects of Batch and Weight Normalization in Generative Adversarial Networks - ShortScience.org">
+<meta property="og:description" content="* They analyze the effects of using Batch Normalization (BN) and Weight Normalization (WN) in GANs...">
+<meta name="description" content="* They analyze the effects of using Batch Normalization (BN) and Weight Normalization (WN) in GANs...">
+<meta property="og:image" content="https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__strict_wn.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1704.03971">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1704.03971" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Sitao Xiang and Hao Li"}, "headline": "On the Effects of Batch and Weight Normalization in Generative Adversarial Networks", "description": "Summary of On the Effects of Batch and Weight Normalization in Generative Adversarial Networks", "datePublished": "2017-10-17 23:07:37", "dateModified": "2017-10-26 10:20:29", "image": {"@type": "ImageObject", "url": "https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__strict_wn.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1704.03971", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, stat.ML,  cs.CV,  cs.LG">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1704.03971v3"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22On%20the%20Effects%20of%20Batch%20and%20Weight%20Normalization%20in%20Generative%20Adversarial%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">On the Effects of Batch and Weight Normalization in Generative Adversarial Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Sitao%20Xiang">Sitao Xiang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hao%20Li">Hao Li</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2017">arXiv e-Print archive - 2017</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=stat.ML">stat.ML</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.LG"> cs.LG</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2017/04/13<br><b>Abstract:</b>   Generative adversarial networks (GANs) are highly effective unsupervised
+learning frameworks that can generate very sharp data, even for data such as
+images with complex, highly multimodal distributions. However GANs are known to
+be very hard to train, suffering from problems such as mode collapse and
+disturbing visual artifacts. Batch normalization (BN) techniques have been
+introduced to address the training problem. However, though BN accelerates
+training in the beginning, our experiments show that the use of BN can be
+unstable and negatively impact the quality of the trained model. The evaluation
+of BN and numerous other recent schemes for improving GAN training is hindered
+by the lack of an effective objective quality measure for GAN models. To
+address these issues, we first introduce a weight normalization (WN) approach
+for GAN training that significantly improves the stability, efficiency and the
+quality of the generated samples. To allow a methodical evaluation, we
+introduce a new objective measure based on a squared Euclidean reconstruction
+error metric, to assess training performance in terms of speed, stability, and
+quality of generated samples. Our experiments indicate that training using WN
+is generally superior to BN for GANs. We provide statistical evidence for
+commonly used datasets (CelebA, LSUN, and CIFAR-10), that WN achieves 10% lower
+mean squared loss for reconstruction and significantly better qualitative
+results than BN.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094').hide());void($('#showless-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094').show());void($('#more-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094').show());void($('#showless-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094').hide());void($('#more-am91cm5hbHMvY29yci8xNzA0LjAzOTcx-1094').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1704.03971">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="aleju" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1704.03971&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1095').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1704.03971%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1095" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1704.03971&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1704.03971%26a%3Daleju&amp;text=Summary%20of%20On%20the%20Effects%20of%20Batch%20and%20Weight%20Normalization%20in%20Generative%20Adversarial%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1704.03971%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20On%20the%20Effects%20of%20Batch%20and%20Weight%20Normalization%20in%20Generative%20Adversarial%20Networks&amp;Body=Summary%20of%20On%20the%20Effects%20of%20Batch%20and%20Weight%20Normalization%20in%20Generative%20Adversarial%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1704.03971%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1704.03971%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1704.03971%26a%3Daleju&amp;title=Summary%20of%20On%20the%20Effects%20of%20Batch%20and%20Weight%20Normalization%20in%20Generative%20Adversarial%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1704.03971&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">  * They analyze the effects of using Batch Normalization (BN) and Weight Normalization (WN) in GANs (classical algorithm, like DCGAN).
+  * They introduce a new measure to rate the quality of the generated images over time.
+
+### How
+  * They use BN as it is usually defined.
+  * They use WN with the following formulas:
+    * Strict weight-normalized layer:
+      * ![Strict WN layer](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__strict_wn.jpg?raw=true &quot;Strict WN layer&quot;)
+    * Affine weight-normalized layer:
+      * ![Affine WN layer](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__affine_wn.jpg?raw=true &quot;Affine WN layer&quot;)
+    * As activation units they use Translated ReLUs (aka &quot;threshold functions&quot;):
+      * ![TReLU](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__trelu.jpg?raw=true &quot;TReLU&quot;)
+      * `alpha` is a learned parameter.
+      * TReLUs play better with their WN layers than normal ReLUs.
+  * Reconstruction measure
+    * To evaluate the quality of the generated images during training, they introduce a new measure.
+    * The measure is based on a L2-Norm (MSE) between (1) a real image and (2) an image created by the generator that is as similar as possible to the real image.
+    * They generate (2) by starting `G(z)` with a noise vector `z` that is filled with zeros. The desired output is the real image. They compute a MSE between the generated and real image and backpropagate the result. Then they use the generated gradient to update `z`, while leaving the parameters of `G` unaltered. They repeat this for a defined number of steps.
+    * Note that the above described method is fairly time-consuming, so they don&#x27;t do it often.
+  * Networks
+    * Their networks are fairly standard.
+    * Generator: Starts at 1024 filters, goes down to 64 (then 3 for the output). Upsampling via fractionally strided convs.
+    * Discriminator: Starts at 64 filters, goes to 1024 (then 1 for the output). Downsampling via strided convolutions.
+    * They test three variations of these networks:
+      * Vanilla: No normalization. PReLUs in both G and D.
+      * BN: BN in G and D, but not in the last layers and not in the first layer of D. PReLUs in both G and D.
+      * WN: Strict weight-normalized layers in G and D, except for the last layers, which are affine weight-normalized layers. TPReLUs (Translated PReLUs) in both G and D.
+  * Other
+    * They train with RMSProp and batch size 32.
+
+### Results
+  * Their WN formulation trains stable, provided the learning rate is set to 0.0002 or lower.
+  * They argue, that their achieved stability is similar to the one in WGAN.
+  * BN had significant swings in quality.
+  * Vanilla collapsed sooner or later.
+  * Both BN and Vanilla reached an optimal point shortly after the start of the training. After that, the quality of the generated images only worsened.
+  * Plot of their quality measure:
+    * ![Losses over time](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__losses_over_time.jpg?raw=true &quot;Losses over time&quot;)
+  * Their quality measure is based on reconstruction of input images. The below image shows examples for that reconstruction (each person: original image, vanilla reconstruction, BN rec., WN rec.).
+    * ![Reconstructions](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__reconstructions.jpg?raw=true &quot;Reconstructions&quot;)
+  * Examples generated by their WN network:
+    * ![WN Examples](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/On_the_Effects_of_BN_and_WN_in_GANs__wn_examples.jpg?raw=true &quot;WN Examples&quot;)
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

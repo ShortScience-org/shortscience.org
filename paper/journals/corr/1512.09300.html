@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoencoding beyond pixels using a learned similarity metric - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Autoencoding beyond pixels using a learned similarity metric - ShortScience.org">
+<meta property="og:description" content="Variational Autoencoders are a type of generative model that seek to learn how to generate new data...">
+<meta name="description" content="Variational Autoencoders are a type of generative model that seek to learn how to generate new data...">
+<meta property="og:image" content="https://i.imgur.com/Bmtmac2.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/1512.09300">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/1512.09300" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Anders Boesen Lindbo Larsen and S\u00f8ren Kaae S\u00f8nderby and Hugo Larochelle and Ole Winther"}, "headline": "Autoencoding beyond pixels using a learned similarity metric", "description": "Summary of Autoencoding beyond pixels using a learned similarity metric", "datePublished": "2018-06-26 04:26:46", "dateModified": "2018-06-26 04:26:46", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/Bmtmac2.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/1512.09300", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, cs.LG,  cs.CV,  stat.ML">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1512.09300v2"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Autoencoding%20beyond%20pixels%20using%20a%20learned%20similarity%20metric%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Autoencoding beyond pixels using a learned similarity metric</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Anders%20Boesen%20Lindbo%20Larsen">Anders Boesen Lindbo Larsen</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=S%C3%B8ren%20Kaae%20S%C3%B8nderby">Søren Kaae Sønderby</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hugo%20Larochelle">Hugo Larochelle</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Ole%20Winther">Ole Winther</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2015">arXiv e-Print archive - 2015</a> <small>via Local arXiv</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=cs.LG">cs.LG</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20cs.CV"> cs.CV</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20stat.ML"> stat.ML</a>
+</small>
+<br>
+<small>
+<div style="display:none" id="more-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757">
+<hr style="border-color:gray;margin:5px;">
+<b>First published:</b> 2015/12/31<br><b>Abstract:</b>   We present an autoencoder that leverages learned representations to better
+measure similarities in data space. By combining a variational autoencoder with
+a generative adversarial network we can use learned feature representations in
+the GAN discriminator as basis for the VAE reconstruction objective. Thereby,
+we replace element-wise errors with feature-wise errors to better capture the
+data distribution while offering invariance towards e.g. translation. We apply
+our method to images of faces and show that it outperforms VAEs with
+element-wise similarity measures in terms of visual fidelity. Moreover, we show
+that the method learns an embedding in which high-level abstract visual
+features (e.g. wearing glasses) can be modified using simple arithmetic.
+
+</div>
+</small>
+<small>
+<span style="position:absolute;left:50%;width:100px;margin-left:-50px">
+<span id="showmore-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757').hide());void($('#showless-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757').show());void($('#more-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757').show());"><center><span class="glyphicon glyphicon-info-sign"></span> more</center></a></span>
+<span id="showless-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757" style="display:none;"><a style="color:gray;" href="javascript:void($('#showmore-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757').show());void($('#showless-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757').hide());void($('#more-am91cm5hbHMvY29yci8xNTEyLjA5MzAw-757').hide());"><center><span class="glyphicon glyphicon-info-sign"></span> less</center></a></span>
+</span>
+</small>
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/1512.09300">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2018-06-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/1512.09300&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-758').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/1512.09300%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-758" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/1512.09300&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1512.09300%26a%3Ddecodyng&amp;text=Summary%20of%20Autoencoding%20beyond%20pixels%20using%20a%20learned%20similarity%20metric&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1512.09300%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Autoencoding%20beyond%20pixels%20using%20a%20learned%20similarity%20metric&amp;Body=Summary%20of%20Autoencoding%20beyond%20pixels%20using%20a%20learned%20similarity%20metric%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1512.09300%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1512.09300%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2F1512.09300%26a%3Ddecodyng&amp;title=Summary%20of%20Autoencoding%20beyond%20pixels%20using%20a%20learned%20similarity%20metric" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/1512.09300&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2018-06-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Variational Autoencoders are a type of generative model that seek to learn how to generate new data by incentivizing the model to be able to reconstruct input data, after compressing it to a low-dimensional space. Typically, the way that the reconstruction is scored against the original is by comparing the pixel by pixel values: a reconstruction gets a high score if it is able to place pixels of color in the same places that the original did. However, there are compelling reasons why this is a sub-par way of scoring images. 
+
+The central one is: it focuses on and penalizes superficial differences, so if the model accurately reproduces the focal object of the image, but does so, say, 10 pixels to the right of where it was previously, that will incur a penalty we might not actually want to apply. The flip side of this is that a direct pixel-comparison loss doesn’t differentiate between pixel differences that do or don’t change the fundamental substance of the image. For instance, having 100 pixels wrong around the border of a dog, making it seem very slightly larger, would be the same amount of error as having 100 pixels concentrated in a weird bulb that appears to be growing out of a dog’s ear, even though the former does a better job of being recognizable as a dog.
+
+The authors of the VAE/GAN paper have a clever approach to solving this problem, that involves taking the typical pixel loss, and breaking it up into two conceptual parts. 
+The first focuses on aligning the conceptual features of the reconstructed image with the conceptual features of the input image. It does so by running both the input and the reconstruction through a discriminative convolutional model which - in the typical way of deep learning - learns ever more abstract features at each layer of the network. These “conceptual features” abstract out the precise pixel values, and instead capture the higher level features of the image. So, instead of calculating the pixelwise squared loss between the specific input x, and its after-bottleneck reconstruction x~, you take the squared loss between the feature maps at some layer for both x and x~, and push them to be closer together, so that the reconstruction shares the same features as the original. 
+The second focuses on detail-level specifics of images, but, cleverly, does so in a general, rather than a observation-specific way. This is done by training a GAN-style discriminator to tell the difference between generated images* and original image, and then using that loss to train the decoder part of the VAE. The cleverness of this comes from the fact that they are still enforcing that the details and structural features of the reconstructed image are not distinguishable from real images, but doing so in a general sense, rather than requiring the details to be an exact match to the details found in a given input x. 
+
+https://i.imgur.com/Bmtmac2.png
+
+The authors freely admit that existing metrics of scoring images (which themselves *use* pixelwise similarity) rate their method as being worse than existing VAEs. However, they argue, that’s inherently a flawed metric, that doesn’t capture the aspects of clean visual quality we want in generated image. A metric they propose instead involves using an dataset where a list of attributes are attached to each image (old, black, blond, etc). They add these as additional input while training the network, so that whatever signals the decoder part of the model needs to turn someone blonde, it gets those from the externally-given attribute vector, rather than a learned representation. This means that, once the model is trained, we can set some value of the attribute vector, and have the decoder generate samples conditional on that. The metric is constructed by taking the decoded samples conditioned on some attribute set, and then taking a classifier model that is trained on the real images to detect attribute values from the images. The generated images are then scored by how closely the predictions from the classifier model match the true values of the attributes. If the generator model were working perfectly, this error rate would as low as for real data. By this metric (which: grain of salt, since they invented), the VAE/GAN model is superior to both GANs and vanilla VAEs. 
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

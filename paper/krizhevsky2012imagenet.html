@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imagenet classification with deep convolutional neural networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Imagenet classification with deep convolutional neural networks - ShortScience.org">
+<meta property="og:description" content="This paper is about Convolutional Neural Networks for Computer Vision. It was the first break-throug...">
+<meta name="description" content="This paper is about Convolutional Neural Networks for Computer Vision. It was the first break-throug...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E"}, "headline": "Imagenet classification with deep convolutional neural networks", "description": "Summary of Imagenet classification with deep convolutional neural networks", "datePublished": "2016-04-20 21:50:53", "dateModified": "2016-11-20 06:21:56", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, image,  imagenet,  thema:deepwalk,  classification">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://scholar.google.com/scholar?q=%22Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Imagenet classification with deep convolutional neural networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Krizhevsky%2C%20Alex">Krizhevsky, Alex</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sutskever%2C%20Ilya">Sutskever, Ilya</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hinton%2C%20Geoffrey%20E">Hinton, Geoffrey E</a></span>
+<br>
+<a style="color:black;" href="/venue?key=conf/nips&amp;year=2012">Neural Information Processing Systems Conference - 2012</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=image">image</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20imagenet"> imagenet</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20thema%3Adeepwalk"> thema:deepwalk</a>, <a style="color:black;" rel="nofollow" href="/internalsearch?q=%20classification"> classification</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=krizhevsky2012imagenet">Summaries/Notes <span class="badge">4</span></a></li></ul><br>
+<div id="martinthoma" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=martinthoma" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=martinthoma&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Martin Thoma&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: martinthoma&lt;br&gt;Posted: 2016-04-20&lt;br&gt;Edited: 2016-11-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;krizhevsky2012imagenet&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/061299fea3b79d0e63b253a270504473?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2021').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dmartinthoma" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2021" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=martinthoma" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dmartinthoma&amp;text=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;Body=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dmartinthoma"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dmartinthoma" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dmartinthoma&amp;title=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=martinthoma" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=martinthoma" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Martin Thoma 2016-04-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper is about Convolutional Neural Networks for Computer Vision. It was the first break-through in the ImageNet classification challenge (LSVRC-2010, 1000 classes).
+
+ReLU was a key aspect which was not so often used before. The paper also used Dropout in the last two layers.
+
+## Training details
+
+* Momentum of 0.9
+* Learning rate of $\varepsilon$ (initialized at 0.01)
+* Weight decay of $0.0005 \cdot \varepsilon$.
+* Batch size of 128
+* The training took 5 to 6 days on two NVIDIA GTX 580 3GB GPUs.
+
+## See also
+
+* [Stanford presentation](http://vision.stanford.edu/teaching/cs231b_spring1415/slides/alexnet_tugce_kyunghee.pdf)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="evansu" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=evansu" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=evansu&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/4e8cdffe77e640a6014c7c3d8a4cf3b8?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Evan Su&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: evansu&lt;br&gt;Posted: 2016-04-03&lt;br&gt;Edited: 2016-04-12&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;krizhevsky2012imagenet&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/4e8cdffe77e640a6014c7c3d8a4cf3b8?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2022').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Devansu" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2022" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=evansu" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Devansu&amp;text=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Devansu" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;Body=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Devansu"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Devansu" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Devansu&amp;title=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=evansu" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=evansu" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Evan Su 2016-04-03</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Deep convolutional neural networks (DCNN) has been a popular model for image classification over the last few years. This paper proposes a DCNN structure, also known as AlexNet, for the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC). To train AlexNet, which has 60 million parameters, this paper uses Rectified Linear Units (ReLU) and multiple GPU to accelerate training. This paper also report that using local response normalization and overlapping pooling can reduce error rate. To prevent over fitting, they suggest data augmentation and apply dropout in the fully connected layer. 
+Technical details
+
+The following figure shows the architecture of AlexNet. It contains five convolutional and three fully connected layers. Response-normalization layers follow the first and second convolutional layers. Max-pooling layers follow the first and second response-normalization layers and the fifth convolutional layer.
+
+![](http://i.imgur.com/2iqwCq1.png)</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="abhshkdz" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=abhshkdz" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=abhshkdz&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Abhishek Das&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: abhshkdz&lt;br&gt;Posted: 2017-08-31&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;krizhevsky2012imagenet&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a36d4f1831b3e2c95fa1e42fc45f82d5?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2023').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dabhshkdz" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2023" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=abhshkdz" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dabhshkdz&amp;text=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;Body=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dabhshkdz"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dabhshkdz" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dabhshkdz&amp;title=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=abhshkdz" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=abhshkdz" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Abhishek Das 2017-08-31</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper introduces a deep convolutional neural network (CNN) architecture
+that achieved record-breaking performance in the 2012 ImageNet LSVRC. Notably,
+it brings together a bunch of neat ideas in an end-to-end, trainable model.
+Main contributions:
+
+- Achieves state-of-the-art performance in ILSVRC-2012.
+- Makes available an efficient, parallelized GPU implementation of their model.
+- Describes in detail the features of their model that help in improving performance
+and reducing training time, along with extensive ablative studies.
+- Uses data augmentation and dropout to prevent overfitting.
+
+## Strengths
+
+- Uses (and popularizes) ReLUs instead of tanh as the non-linear activation unit, which makes training six times faster.
+- Uses local response normalization and overlapped pooling.
+- Data augmentation
+    - Extracts random crops and performs image translations, horizontal reflections maintaining the label distribution.
+    - Alters RGB pixel values by performing PCA on training set, and adding multiples of eigenvalues times a random variable drawn from a Gaussian to image. Provides invariance to changes in intensity and color of illumination.
+- Dropout prevents overfitting. Randomly drops half of the neurons in the fully connected layers, and can be interpreted as averaging over exponentially-many dropout networks.
+
+## Weaknesses / Notes
+
+- Lacks theoretical insight. Design decisions are motivated solely by results.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="tiagotvv" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=tiagotvv" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=tiagotvv&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/a9b6f660a07324edd0e695611b04a7a3?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Tiago Vinhoza&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: tiagotvv&lt;br&gt;Posted: 2017-11-17&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;krizhevsky2012imagenet&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/a9b6f660a07324edd0e695611b04a7a3?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-2024').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dtiagotvv" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-2024" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=tiagotvv" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dtiagotvv&amp;text=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dtiagotvv" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks&amp;Body=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dtiagotvv"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dtiagotvv" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Dkrizhevsky2012imagenet%26a%3Dtiagotvv&amp;title=Summary%20of%20Imagenet%20classification%20with%20deep%20convolutional%20neural%20networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=krizhevsky2012imagenet&amp;a=tiagotvv" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=tiagotvv" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Tiago Vinhoza 2017-11-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Goal:
++ Train a deep convolutional neural network to classify 1.2 million images into 1000 different categories.
+
+#### Convolutional Neural Networks:
++ Make strong and correct assumptions about the nature of the images (stationarity, pixel dependencies). 
++ Much fewer connections and parameters: easier to train than fully connected neural networks.
+
+#### Dataset
++ ImageNet: 15 million labeled high-resolution images from 22000 categories. Labeled manually using Amazon Mechanical Turk.
++ ImageNet Large-Scale Visual Recognition Challenge (ILSVRC): subset of ImageNet
+    + 1.2 million training images, 50000 validation images, 150000 test images.
+    + 1000 categories
++ Variable resolution images:
+    + Images downsampled to a fixed resolution of 256 x 256.
+
+
+#### Architecture:
++ 8 layers: 5 convolutional and 3 fully-connected, 1000-way softmax at the output.
+
+![Architecture](https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Krizhevsky2012_architecture.png?raw=true &quot;Architecture&quot;)
+
+**Methodology**
+
++ ReLU activation function: train several times faster than tanh units.
+    + Faster learning had influence on the performance of large models trained on large datasets
++ Training on Multiple GPUs
++ Local Response Normalization
+    + mimics a form of lateral inhibition found on real neurons.
+    + applied after ReLU in the 1st and 2nd convolutional layers.
+    + improves top-1 and top-5 error rates by 1.4% and 1.2%
++ Overlapping pooling
+    + Neighborhood z = 3 and stride s = 2.
+    + Max-pooling employed in the 1st and 2nd convolutional layers (after response normalization) and as well as after the 5th convolutinal layer.
++ Reducing Overfitting
+    + Data Augmentation
+        + Generate image translations and horizontal reflections.
+        + Alter the intensities of RGB channels.
+    + Dropout
+        + Used in the first two fully-connected layers - p(keep) = 0.5
++ Learning
+    + Stochastic Gradient Descent, batch size = 128, momentum = 0.9, weight decay = 0.0005
+    + Weights initialized from Gaussian distribution with mean = 0 and standard deviation = 0.01
+        + Bias in 2nd, 4th, and 5th convolutional layers initialized as 1. This accelerated learning as the ReLU was fed with positive inputs from the start.
+        + Bias in remaining layers initialized as zeros.
+    + Learning rate ($\epsilon$)
+        + Equal for all layers
+        + Adjusted manually (divided by 10 when validation error stopped decreasing).
+        + Initialized at 0.01 and reduced 3 times during training.
+
+            ![Update equations](https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Krizhevsky2012_update.png?raw=true &quot;Update equations&quot;)
+
+    + Trained during 90 epochs (5-6 days on two NVIDIA GTX 580 3GB GPUs).
+
+#### Results
+
++ Results on ILSVRC-2010 images
+    + Baselines: sparse coding and Fisher vectors
+
+Model | Top-1 | Top-5
+------|-------|-------
+Sparse Coding | 47.1% | 28.2%
+SIFT + FVs | 45.7% | 25.7%
+CNN | 37.5% | 17.0%
+
++ Results on ILSVRC-2012
+
+Model | Top-1 (val) | Top-5 (val) | Top-5 (test)
+------|-------|-------|-------
+Sparse Coding | -- | -- | 26.2%
+1 CNN | 40.7% | 18.2% | --
+5 CNNs | 38.1% | 16.4% | 16.4%
+1 CNN* | 39.0% | 16.6% | --
+7 CNNs* | 36.7% | 15.4% | 15.3%
+
+CNN* are convolutional neural networks pretrained on ImageNet 2011 Fall release and fine-tuned on ILSVRC-2012 training data.
+
++ Qualitative assessment
+    + Convolutional kernels showed *specialization*
+
+    ![Kernels](https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Krizhevsky2012_weights.png?raw=true &quot;Convolutional kernels from 1st layer&quot;)
+
+    + Most of top-5 labels were reasonable
+    + Image similarity based on the feature activations induced at the last fully connected layer:
+
+    ![Qualitative Assessment](https://raw.githubusercontent.com/tiagotvv/ml-papers/master/convolutional/images/Krizhevsky2012_qualitative.png?raw=true &quot;Qualitative assessment&quot;)
+
+
+
+#### Caveat:
++ Most of the choices made in the paper were based on experimental results. There is not too much theory behind.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

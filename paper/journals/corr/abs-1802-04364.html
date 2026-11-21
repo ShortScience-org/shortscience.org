@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junction Tree Variational Autoencoder for Molecular Graph Generation - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Junction Tree Variational Autoencoder for Molecular Graph Generation - ShortScience.org">
+<meta property="og:description" content="Prior to this paper, most methods that used machine learning to generate molecular blueprints did so...">
+<meta name="description" content="Prior to this paper, most methods that used machine learning to generate molecular blueprints did so...">
+<meta property="og:image" content="https://i.imgur.com/yGzRPjT.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-04364">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-04364" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Jin, Wengong and Barzilay, Regina and Jaakkola, Tommi S."}, "headline": "Junction Tree Variational Autoencoder for Molecular Graph Generation", "description": "Summary of Junction Tree Variational Autoencoder for Molecular Graph Generation", "datePublished": "2020-04-20 04:48:28", "dateModified": "2020-04-20 04:48:28", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/yGzRPjT.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-04364", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1802.04364"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Junction%20Tree%20Variational%20Autoencoder%20for%20Molecular%20Graph%20Generation%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Junction Tree Variational Autoencoder for Molecular Graph Generation</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Jin%2C%20Wengong">Jin, Wengong</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Barzilay%2C%20Regina">Barzilay, Regina</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Jaakkola%2C%20Tommi%20S.">Jaakkola, Tommi S.</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2018">arXiv e-Print archive - 2018</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/abs-1802-04364">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2020-04-20&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-1802-04364&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1836').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-1802-04364%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1836" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-04364&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1802-04364%26a%3Ddecodyng&amp;text=Summary%20of%20Junction%20Tree%20Variational%20Autoencoder%20for%20Molecular%20Graph%20Generation&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1802-04364%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Junction%20Tree%20Variational%20Autoencoder%20for%20Molecular%20Graph%20Generation&amp;Body=Summary%20of%20Junction%20Tree%20Variational%20Autoencoder%20for%20Molecular%20Graph%20Generation%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1802-04364%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1802-04364%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1802-04364%26a%3Ddecodyng&amp;title=Summary%20of%20Junction%20Tree%20Variational%20Autoencoder%20for%20Molecular%20Graph%20Generation" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1802-04364&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2020-04-20</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">Prior to this paper, most methods that used machine learning to generate molecular blueprints did so using SMILES representations - a string format with characters representing different atoms and bond types. This preference came about because ML had existing methods for generating strings that could be built on for generating SMILES (a particular syntax of string). However, an arguably more accurate and fundamental way of representing molecules is as graphs (with atoms as nodes and bonds as edges). Dealing with molecules as graphs avoids the problem of a given molecule having many potential SMILES representations (because there&#x27;s no canonical atom to start working your way around the molecule on), and, hopefully, would have an inductive bias that somewhat more closely matches the actual biomechanical interactions within a molecule. 
+
+One way you could imagine generating a graph structure is by adding on single components (atoms or bonds) at a time. However, the authors of this paper argue that this approach is harder to constrain to only construct valid molecular graphs, since, in the course of sampling out a molecule, you&#x27;d have to go through intermediate stages that you expect to be invalid (for example, bonds with no attached atoms), making it hard to add in explicit validity checks. The alternate approach proposed here works as follows: 
+
+- Atoms within molecules are grouped into valid substructures, based on a combination of biologically-motivated rules (like treating aromatic rings as a single substructure) and computational heuristics. For the purpose of this paper, substructures are generally either 1) a ring, 2) two particular atoms on either end of a bond, or 3) a &quot;tail&quot; with a bond and an atom. Importantly, these substructures are designed to be overlapping - if you had a N bonded with O, and then O with C (this example are entirely made up, and I expect chemically incoherent), then you could have &quot;N-O&quot; as one substructure, and &quot;O-C&quot; as another.
+
+https://i.imgur.com/yGzRPjT.png
+
+- Using these substructures (or clusters), you can form a simplified representation of a molecule, as a connected, non-cyclic junction tree of clusters connected together. This doesn&#x27;t give you all the information you&#x27;d need to construct the molecule - since there could be multiple different ways, on a molecular level, to connect two substructures, but it does give a blueprint of what the molecule will look like.
+- Given these two representations, the paper proposes a two-step encoding and decoding process. For a given molecule, we encode both the full molecular graph and the simplified junction tree, getting out vectors Zg and Zt respectively.
+- The first step of decoding generates a tree given the Zt representation. This generation process works via graph message-passing, taking in the Zt vector in addition to whatever part of the tree exists, and predicting a probability for whether that node has a child, and, if it exists, a probability for what cluster is at that child node. Given this parametrized set of probabilities, we can calculate the probability of the junction tree representation of whatever ground truth molecule we&#x27;re decoding, and train the tree decoder to increase that model likelihood. (Importantly, although we frame this step as &quot;reconstruction,&quot; during training, we&#x27;re not actually sampling discrete nodes and edges, because we couldn&#x27;t backprop through that, we&#x27;re just defining a probability distribution and trying to increase the probability of our real data under it).
+- The second step of decoding takes in a tree - which at this point is a set of cluster labels with connections specified between one another - as well as the Zg vector, and generates a full, atom-level graph. This is done by enumerating all the ways that two substructures could be attached (this number is typically small, ≤4), and learning a parametrized function that scores each possible type of connection, based on the full tree &quot;blueprint&quot;, the Zg embedding, and the molecule that has been generated so far.
+- When you want to sample a new molecule, you can draw a sample from the prior distributions of Zg and Zt, and run the decoding process in a sampling mode, actually making discrete draws from the distributions given by your model
+
+https://i.imgur.com/QdSY25u.png
+
+The authors perform three empirical tests: ability to successfully sample-reconstruct a given molecule, ability to optimize for a desired chemical property by finding a Z that scores high on that property according to an auxiliary predictive model, and ability to optimize for a property while staying within a given similarity radius to an original anchor molecule. The Junction Tree approach outperforms on all three tasks. On reconstruction, it matches the best alternative method on reconstruction reliability, but with 100% valid molecules, rather than 43.5% on the competing method. 
+
+Overall, I found this paper really enjoyable and satisfying to read. Occasionally, ML-for-bio papers err on the side of too little domain thought (just throwing the most generic-for-images model structure at a problem), or too little machine learning thought (take hand-designed features and throw them at a whole range of models), where I think this one struck a nice balance of some amount of domain knowledge (around what makes for valid substructures) but embedded in a complex and thoughtfully designed neural network framework.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

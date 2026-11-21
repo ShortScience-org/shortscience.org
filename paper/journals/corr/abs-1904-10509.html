@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generating Long Sequences with Sparse Transformers - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Generating Long Sequences with Sparse Transformers - ShortScience.org">
+<meta property="og:description" content="The Transformer, a somewhat confusingly-named model structure that uses attention mechanisms to aggr...">
+<meta name="description" content="The Transformer, a somewhat confusingly-named model structure that uses attention mechanisms to aggr...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1904-10509">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1904-10509" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Child, Rewon and Gray, Scott and Radford, Alec and Sutskever, Ilya"}, "headline": "Generating Long Sequences with Sparse Transformers", "description": "Summary of Generating Long Sequences with Sparse Transformers", "datePublished": "2019-05-06 06:43:39", "dateModified": "2019-05-06 06:43:39", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/abs-1904-10509", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1904.10509"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Generating%20Long%20Sequences%20with%20Sparse%20Transformers%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Generating Long Sequences with Sparse Transformers</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Child%2C%20Rewon">Child, Rewon</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gray%2C%20Scott">Gray, Scott</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Radford%2C%20Alec">Radford, Alec</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Sutskever%2C%20Ilya">Sutskever, Ilya</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/abs-1904-10509">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2019-05-06&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-1904-10509&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1890').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-1904-10509%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1890" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1904-10509&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1904-10509%26a%3Ddecodyng&amp;text=Summary%20of%20Generating%20Long%20Sequences%20with%20Sparse%20Transformers&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1904-10509%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Generating%20Long%20Sequences%20with%20Sparse%20Transformers&amp;Body=Summary%20of%20Generating%20Long%20Sequences%20with%20Sparse%20Transformers%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1904-10509%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1904-10509%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1904-10509%26a%3Ddecodyng&amp;title=Summary%20of%20Generating%20Long%20Sequences%20with%20Sparse%20Transformers" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1904-10509&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2019-05-06</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">The Transformer, a somewhat confusingly-named model structure that uses attention mechanisms to aggregate information for understanding or generating data, has been having a real moment in the last year or so, with GPT-2 being only the most well-publicized tip of that iceberg. It has lots of advantages: the obvious attractions of strong performance, as well as the ability to train in parallel across parts of a sequence, which RNNs can’t do because of the need to build up and maintain state. However, a problematic fact about the Transformer approach is how it scales to large sequences of input data. Because attention is based on performing pairwise queries between each point in the data sequence and each other point, to allow for aggregation of information from places throughout the sequence, it scales as O(N^2), because every new element in the sequence needs to be queried by N other ones. This makes it resource-intensive to run transformer models on large architectures. 
+
+The Sparse Transformer design proposed in this OpenAI paper tries to cut down on this resource cost by loosening the requirement that, in every attention operation, each element directly pulls information from every other element. In this new system, each point doesn’t get information about each other point in a single operation, but, having two operations such limited operations being chained in a row provides that global visibility. This is done in one of two ways. 
+(1) The first, called the “strided” version, performs two operations in a row, one masked attention that only looks at the last k timesteps (for example, the last 7), and then a second masked attention that only looks at every kth timestep. So, at the end of the second operation, each point has pulled information from points at checkpoints 7, 14, 21 steps ago, and each of these has pulled information from the window between it and its preceding checkpoint, giving visibility into a full global receptive frame in the course of two operations
+(2) The second, called the “fixed” version, uses a similar sort of logic, but instead of having the “window accumulation points” be defined in reference to the point doing the querying, you instead have fixed accumulation points responsible for gathering information from the windows around them. So, using the example given in the paper, if you imagine a window of size 128, and an “accumulation points per window” of 8, then the points in indices 120-128 (say) would have visibility into points 0-128. That represents the first operation, and in the second one, all other points in the sequence pull in information by querying the designated accumulation points for all the windows that aren’t masked for it. 
+
+The paper argues that, between these two systems, the Strided system should work best when the data has some inherent periodicity, but I don’t know that I particularly follow that intuition. I have some sense that the important distinction here is that in the strided case you have many points of accumulation, each with not much context, whereas in the fixed case you have very few accumulation points each with a larger window, but I don’t know what performance differences exactly I’d expect these mechanical differences to predict.  
+
+This whole project of reducing access to global information seems initially a little counterintuitive, since the whole point of a transformer design, in some sense, was its ability to gain global context in a single layer, as opposed to a convnet needing multiple layers to build receptive field, or a RNN needing to maintain state throughout the sequence. However, I think this paper makes the most sense as a way of interpolating the space between something like a CNN and a full attention design, for the sake of efficiency. With a CNN, you have a fixed kernel, and so as your sequence gets longer, you need to add more and more layers in order for any given point to be able to incorporate into its representation information from the complete other side of the sequence. With a RNN, as your sequence gets longers, you pay the cost of needing to backpropogate state farther. So, by contrast, even though the Sparse Transformer seems to be giving up its signal advantage, it’s instead just trading one constant number of steps to achieve global visibility (1), for another (2, in this paper, but conceptually could be more), but still in a way that’s constant with respect to the length of the data. And, in exchange for this trade, they get very sparse, very masked operations, where many of the multiplications involved in these big query calculations can be ignored, making for faster computation speeds. 
+
+On the datasets tried, the Sparse Transformer increased speed, and in fact in I think all cases increased performance - not by much, the performance gain by itself isn’t that dramatic, but in the context of expecting if anything worse performance as a result of limiting model structure, it’s encouraging and interesting that it either stays about the same or possible improves. 
+
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

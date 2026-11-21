@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Once for All: Train One Network and Specialize it for Efficient Deployment - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Once for All: Train One Network and Specialize it for Efficient Deployment - ShortScience.org">
+<meta property="og:description" content="**Summary**: The goal of this work is to propose a &quot;Once-for-all” (OFA) network: a large network whi...">
+<meta name="description" content="**Summary**: The goal of this work is to propose a &quot;Once-for-all” (OFA) network: a large network whi...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-09791">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-09791" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Cai, Han and Gan, Chuang and Han, Song"}, "headline": "Once for All: Train One Network and Specialize it for Efficient Deployment", "description": "Summary of Once for All: Train One Network and Specialize it for Efficient Deployment", "datePublished": "2020-04-16 17:48:55", "dateModified": "2020-04-16 17:48:55", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-09791", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1908.09791"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Once%20for%20All%3A%20Train%20One%20Network%20and%20Specialize%20it%20for%20Efficient%20Deployment%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Once for All: Train One Network and Specialize it for Efficient Deployment</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Cai%2C%20Han">Cai, Han</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gan%2C%20Chuang">Gan, Chuang</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Han%2C%20Song">Han, Song</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2019">arXiv e-Print archive - 2019</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/abs-1908-09791">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="ameroyer" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=ameroyer" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=ameroyer&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/17b931f3c8de38e05694f1b5ba2282f0?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;ameroyer&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: ameroyer&lt;br&gt;Posted: 2020-04-16&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-1908-09791&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/17b931f3c8de38e05694f1b5ba2282f0?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">2</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1916').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-1908-09791%26a%3Dameroyer" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1916" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-09791&amp;a=ameroyer" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1908-09791%26a%3Dameroyer&amp;text=Summary%20of%20Once%20for%20All%3A%20Train%20One%20Network%20and%20Specialize%20it%20for%20Efficient%20Deployment&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1908-09791%26a%3Dameroyer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Once%20for%20All%3A%20Train%20One%20Network%20and%20Specialize%20it%20for%20Efficient%20Deployment&amp;Body=Summary%20of%20Once%20for%20All%3A%20Train%20One%20Network%20and%20Specialize%20it%20for%20Efficient%20Deployment%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1908-09791%26a%3Dameroyer"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1908-09791%26a%3Dameroyer" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-1908-09791%26a%3Dameroyer&amp;title=Summary%20of%20Once%20for%20All%3A%20Train%20One%20Network%20and%20Specialize%20it%20for%20Efficient%20Deployment" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-1908-09791&amp;a=ameroyer" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=ameroyer" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by ameroyer 2020-04-16</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">**Summary**: The goal of this work is to propose a &quot;Once-for-all” (OFA) network: a large network which is trained such that its subnetworks (subsets of the network with smaller width, convolutional kernel sizes, shallower units) are also trained towards the target task. This allows to adapt the architecture to a given budget at inference time while preserving performance.
+
+**Elastic Parameters.**
+The goal is to train a large architecture  that contains several well-trained subnetworks with different architecture configurations (in terms of depth, width, kernel size, and resolution). One of the key difficulties is to ensure that each subnetwork reaches high-accuracy even though it is not trained independently but as part of a larger architecture.
+This work considers standard CNN architectures (decreasing spatial resolution and increasing number of feature maps), which can be decomposed into units (A unit is a block of layers such that the first layer has stride 2, and the remaining ones have stride 1). The parameters of these units (depth, kernel size, input resolution, width) are denoted as *elastic parameters* in the sense that they can take different values, which defines different subnetworks, which still share the convolutional parameters.
+
+**Progressive Shrinking.**
+Additionally, the authors consider a curriculum-style training process which they call *progressive shrinking*. First, they train the model with the maximum depth, $D$, kernel size, $K$, and width, $W$, which yields convolutional parameters . Then they progressively fine-tune this weight, with an additional distillation term from the largest network, while considering different values for the elastic parameters, in the following order:
+  * Elastic kernel size: Training for a kernel size $k &lt; K$ is done by taking a linear transformation the center $k \times k$ patch in the full $K \times K$ kernels that are in . The linear transformation is useful to model the fact that different scales might be useful for different tasks.
+  * Elastic depth: To train for depth $d &lt; D$, simply skip the last $D-d$ layers of the unit (rather than looking at every subset of dlayers)
+  * Elastic width: For a width $w &lt; W$. First, the channels are reorganized by importance (decreasing order of the $L1$-norm of their weights), then use only the top wchannels
+  * Elastic resolution: Simply train with different image resolutions / resizing: This is actually used for all training processes.
+
+**Experiments.**
+Having trained the Once-for-all (OFA) network, the goal is now to find the adequate architecture configuration, given a specific task/budget constraints. To do this automatically, they propose to train a small performance predictive model. They randomly sample 16K subnetworks from OFA, evaluate their accuracy on a validation set, and learn to predict accuracy based on architecture and input image resolution. (Note: It seems that this predictor is then used to perform a cheap evolutionary search, given latency constraints,  to find the best architecture config but the whole process is not  entirely clear to me. Compared to a proper neural architecture search, however it should be inexpensive).
+
+The main experiments are on ImageNet, using MobileNetv3 as the base full architecture, with the goal of applying the model across different platforms with different inference budget constraints. Overall, the proposed model achieves comparable or higher accuracies for reduced search time, compared to neural architecture search baselines. More precisely their model has a fixed training cost (the OFA network) and a small search cost (find best config based on target latency), which is still lower than doing exhaustive neural architecture search. Furthermore, progressive shrinking does have a significant positive impact on the subnetworks accuracy (+4%).
+
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Recurrent Neural Networks - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Pixel Recurrent Neural Networks - ShortScience.org">
+<meta property="og:description" content="This paper explores the use of convolutional (PixelCNN) and recurrent units (PixelRNN) for modeling...">
+<meta name="description" content="This paper explores the use of convolutional (PixelCNN) and recurrent units (PixelRNN) for modeling...">
+<meta property="og:image" content="https://shortscience.org/res/albert-s.jpg" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Oord, A\u00e4ron Van Den and Kalchbrenner, Nal and Kavukcuoglu, Koray"}, "headline": "Pixel Recurrent Neural Networks", "description": "Summary of Pixel Recurrent Neural Networks", "datePublished": "2016-04-17 19:27:33", "dateModified": "2016-04-17 19:27:49", "image": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert-s.jpg"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="http://arxiv.org/abs/1601.06759"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Pixel%20Recurrent%20Neural%20Networks%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Pixel Recurrent Neural Networks</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Oord%2C%20A%C3%A4ron%20Van%20Den">Oord, Aäron Van Den</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kalchbrenner%2C%20Nal">Kalchbrenner, Nal</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kavukcuoglu%2C%20Koray">Kavukcuoglu, Koray</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2016">arXiv e-Print archive - 2016</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/OordKK16">Summaries/Notes <span class="badge">3</span></a></li></ul><br>
+<div id="hlarochelle" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=hlarochelle" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=hlarochelle&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Hugo Larochelle&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: hlarochelle&lt;br&gt;Posted: 2016-04-17&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/OordKK16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/aaca1d4ad6967efe02ae1a63c235b59c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">5</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1723').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/OordKK16%26a%3Dhlarochelle" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1723" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16&amp;a=hlarochelle" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dhlarochelle&amp;text=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks&amp;Body=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dhlarochelle"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dhlarochelle" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dhlarochelle&amp;title=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16&amp;a=hlarochelle" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=hlarochelle" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Hugo Larochelle 2016-04-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper explores the use of convolutional (PixelCNN) and recurrent units (PixelRNN) for modeling the distribution of images, in the framework of autoregression distribution estimation. In this framework, the input distribution $p(x)$ is factorized into a product of conditionals $\Pi p(x_i | x_i-1)$. Previous work has shown that very good models can be obtained by using a neural network parametrization of the conditionals (e.g. see our work on NADE \cite{journals/jmlr/LarochelleM11}). Moreover, unlike other approaches based on latent stochastic units that are directed or undirected, the autoregressive approach is able to compute log-probabilities tractably. 
+
+So in this paper, by considering the specific case of x being an image, they exploit the topology of pixels and investigate appropriate architectures for this.
+
+Among the paper&#x27;s contributions are:
+
+1. They propose Diagonal BiLSTM units for the PixelRNN, which are efficient (thanks to the use of convolutions) while making it possible to, in effect, condition a pixel&#x27;s distribution on all the pixels above it (see Figure 2 for an illustration).
+
+2. They demonstrate that the use of residual connections (a form of skip connections, from hidden layer i-1 to layer $i+1$) are very effective at learning very deep distribution estimators (they go as deep as 12 layers).
+
+3. They show that it is possible to successfully model the distribution over the pixel intensities (effectively an integer between 0 and 255) using a softmax of 256 units.
+
+4. They propose a multi-scale extension of their model, that they apply to larger 64x64 images.
+
+The experiments show that the PixelRNN model based on Diagonal BiLSTM units achieves state-of-the-art performance on the binarized MNIST benchmark, in terms of log-likelihood. They also report excellent log-likelihood on the CIFAR-10 dataset, comparing to previous work based on real-valued density models. Finally, they show that their model is able to generate high quality image samples.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="shagunsodhani" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=shagunsodhani" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=shagunsodhani&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Shagun Sodhani&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: shagunsodhani&lt;br&gt;Posted: 2016-10-26&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/OordKK16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/1579042ef77b9670ed2e189186d2e268?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1724').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/OordKK16%26a%3Dshagunsodhani" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1724" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16&amp;a=shagunsodhani" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dshagunsodhani&amp;text=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks&amp;Body=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dshagunsodhani"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dshagunsodhani" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Dshagunsodhani&amp;title=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16&amp;a=shagunsodhani" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=shagunsodhani" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Shagun Sodhani 2016-10-26</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">#### Introduction
+
+* Problem: Building an expressive, tractable and scalable image model which can be used in downstream tasks like image generation, reconstruction, compression etc.
+* [Link to the paper](https://arxiv.org/abs/1601.06759)
+
+#### Model
+
+* Scan the image, one row at a time and one pixel at a time (within each row).
+* Given the scanned content, predict the distribution over the possible values for the next pixel.
+* Joint distribution over the pixel values is factorised into a product of conditional distributions thus causing the problem as a sequence problem.
+* Parameters used in prediction are shared across all the pixel positions.
+* Since each pixel is jointly determined by 3 values (3 colour channels), each channel may be conditioned on other channels as well.
+
+##### Pixel as discrete value
+
+* The conditional distributions are multinomial (with channel variable taking 1 of 256 discrete values).
+* This discrete representation is simpler and easier to learn.
+
+#### Pixel RNN
+
+##### Row LSTM
+
+* Undirectional layer that processed image row by row.
+* Uses one-dimensional convolution (kernel of size kx1, k&gt;=3).
+* Refer image 2 in the [paper](https://arxiv.org/abs/1601.06759).
+* Weight sharing in convolution ensures translation invariance of computed feature along each row.
+* For LSTM, the input-to-state component is computed for the entire 2-d input map and then is masked to include only the valid context.
+* For equations related to state-to-state component, refer to equation 3 in the [paper](https://arxiv.org/abs/1601.06759)
+
+##### Diagonal BiLSTM
+
+* Bidirectional layer that processes the image in the diagonal fashion.
+* Input map skewed by offsetting each row of the image by one position with respect to the previous row.
+* Refer image 3 in the [paper](https://arxiv.org/abs/1601.06759)
+* For both directions, the input-to-state component is a 1 x 1 convolution while the state-to-state recurrent component is computed with column wise convolution using kernel size 2x1.
+* Kernel size of 2x1 processes minimal information yielding a highly non-linear computation.
+* Output map is skewed back by removing the offset positions.
+* To prevent layers from seeing further pixels, the right output map is shifted down by one row and added to left output map.
+
+##### Residual Connections
+
+* Residual connections (or skip connections) are used to increase convergence speed and to propagate signals more explicitly.
+* Refer image 4 in the [paper](https://arxiv.org/abs/1601.06759)
+
+##### Masked Convolutions
+
+* Masks are used to enforce certain restrictions on the connections in the network (eg when predicting values for R channel, values of B channel can not be used).
+* Mask A is applied to first convolution layer and restricts connections to only those neighbouring pixels and colour channels that have already been seen.
+* Mask B is applied to all subsequent input-to-state convolution transactions and allows connections from a colour channel to itself.
+* Refer image 4 in the [paper](https://arxiv.org/abs/1601.06759)
+
+##### PixelCNN
+
+* Uses multiple convolution layers that preserve spatial resolution.
+* Makes receptive field large but not unbounded.
+* Mask used to avoid seeing the future context.
+* Faster that PixelRNN at training or evaluation time (as convolutions can be parallelized easily).
+
+##### Multi-Scale PixelRNN
+
+* Composed of one unconditional PixelRNN and multiple conditional PixelRNNs.
+* Unconditional network generates a smaller s x s image which is fed as input to the conditional PixelRNN. (n is a multiple of s)
+* Conditional PixelRNN is a standard PixelRNN with layers biased with an upsampled version of the s x s image.
+* For upsampling, a convolution network with deconvolution layers constructs an enlarged feature map of size c x n x n.
+* For biasing, the c x n x n map is mapped to 4hxnxn map (using 1x1 unmasked convolution) and added to input-to-state map.
+
+#### Training and Evaluation
+
+* Pixel values are dequantized using real-valued noise and log likelihood of continuous and discrete models are compared.
+* Update rule - RMSProp
+* Batch size - 16 for MNIST and CIFAR 10 and 32(or 64) for IMAGENET.
+* Residual connections are as effective as Skip connections, in fact, the 2 can be used together as well.
+* PixelRNN outperforms other models for Binary MNIST and CIFAR10.
+* For CIFAR10, Diagonal BiLSTM &gt; Row LSTM &gt; PixelCNN. This is also the order of receptive field for the 3 architectures and the observation underlines the importance of having a large receptive field.
+* The paper also provides new benchmarks for generative image modelling on IMAGENET dataset.
+</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+<div id="aleju" class="vignette vignette-alt" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=aleju" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=aleju&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;Alexander Jung&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: aleju&lt;br&gt;Posted: 2017-10-17&lt;br&gt;Edited: 2017-10-27&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/OordKK16&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/97a3a8c2ee05264878493e00d02ef66f?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">4</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1725').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/OordKK16%26a%3Daleju" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1725" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16&amp;a=aleju" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Daleju&amp;text=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks&amp;Body=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Daleju"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Daleju" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2FOordKK16%26a%3Daleju&amp;title=Summary%20of%20Pixel%20Recurrent%20Neural%20Networks" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/OordKK16&amp;a=aleju" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=aleju" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by Alexander Jung 2017-10-17</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">*Note*: This paper felt rather hard to read. The summary might not have hit exactly what the authors tried to explain.
+
+  * The authors describe multiple architectures that can model the distributions of images.
+  * These networks can be used to generate new images or to complete existing ones.
+  * The networks are mostly based on RNNs.
+
+### How
+  * They define three architectures:
+    * Row LSTM:
+      * Predicts a pixel value based on all previous pixels in the image.
+      * It applies 1D convolutions (with kernel size 3) to the current and previous rows of the image.
+      * It uses the convolution results as features to predict a pixel value.
+    * Diagonal BiLSTM:
+      * Predicts a pixel value based on all previous pixels in the image.
+      * Instead of applying convolutions in a row-wise fashion, they apply them to the diagonals towards the top left and top right of the pixel.
+      * Diagonal convolutions can be applied by padding the n-th row with `n-1` pixels from the left (diagonal towards top left) or from the right (diagonal towards the top right), then apply a 3x1 column convolution.
+    * PixelCNN:
+      * Applies convolutions to the region around a pixel to predict its values.
+      * Uses masks to zero out pixels that follow after the target pixel.
+      * They use no pooling layers.
+      * While for the LSTMs each pixel is conditioned on all previous pixels, the dependency range of the CNN is bounded.
+  * They use up to 12 LSTM layers.
+  * They use residual connections between their LSTM layers.
+  * All architectures predict pixel values as a softmax over 255 distinct values (per channel). According to the authors that leads to better results than just using one continuous output (i.e. sigmoid) per channel.
+  * They also try a multi-scale approach: First, one network generates a small image. Then a second networks generates the full scale image while being conditioned on the small image.
+
+### Results
+  * The softmax layers learn reasonable distributions. E.g. neighboring colors end up with similar probabilities. Values 0 and 255 tend to have higher probabilities than others, especially for the very first pixel.
+  * In the 12-layer LSTM row model, residual and skip connections seem to have roughly the same effect on the network&#x27;s results. Using both yields a tiny improvement over just using one of the techniques alone.
+  * They achieve a slightly better result on MNIST than DRAW did.
+  * Their negative log likelihood results for CIFAR-10 improve upon previous models. The diagonal BiLSTM model performs best, followed by the row LSTM model, followed by PixelCNN.
+  * Their generated images for CIFAR-10 and Imagenet capture real local spatial dependencies. The multi-scale model produces better looking results. The images do not appear blurry. Overall they still look very unreal.
+
+
+![Generated ImageNet images](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Pixel_Recurrent_Neural_Networks__imagenet_multiscale.png?raw=true &quot;Generated ImageNet images&quot;)
+
+*Generated ImageNet 64x64 images.*
+
+
+![Image completion](https://raw.githubusercontent.com/aleju/papers/master/neural-nets/images/Pixel_Recurrent_Neural_Networks__occlusion.png?raw=true &quot;Image completion&quot;)
+
+*Completing partially occluded images.*</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning to Play No-Press Diplomacy with Best Response Policy Iteration - ShortScience.org</title>
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Learning to Play No-Press Diplomacy with Best Response Policy Iteration - ShortScience.org">
+<meta property="og:description" content="This paper focuses on an effort by a Deepmind team to train an agent that can play the game Diplomac...">
+<meta name="description" content="This paper focuses on an effort by a Deepmind team to train an agent that can play the game Diplomac...">
+<meta property="og:image" content="https://i.imgur.com/jrQAAQW.png" />
+<meta property="og:site_name" content="shortscience.org" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-04635">
+<meta property="og:url" content="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-04635" />
+
+<script type="application/ld+json">{"@context": "http://schema.org", "@type": "Article", "author": {"name": "Anthony, Thomas W. and Eccles, Tom and Tacchetti, Andrea and Kram\u00e1r, J\u00e1nos and Gemp, Ian M. and Hudson, Thomas C. and Porcel, Nicolas and Lanctot, Marc and P\u00e9rolat, Julien and Everett, Richard and Singh, Satinder and Graepel, Thore and Bachrach, Yoram"}, "headline": "Learning to Play No-Press Diplomacy with Best Response Policy Iteration", "description": "Summary of Learning to Play No-Press Diplomacy with Best Response Policy Iteration", "datePublished": "2020-11-02 06:15:17", "dateModified": "2020-11-02 06:15:17", "image": {"@type": "ImageObject", "url": "https://i.imgur.com/jrQAAQW.png"}, "mainEntityOfPage": "https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-04635", "publisher": {"@type": "Organization", "name": "ShortScience.org", "logo": {"@type": "ImageObject", "url": "https://shortscience.org/res/albert2.jpg"}}}</script>
+<meta name="keywords" content="summary, summaries, paper, dblp">
+<link rel="stylesheet" href="/res/local/bootstrap.min.css">
+<link rel="stylesheet" href="/res/local/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/res/css/standard.css?v=1">
+<script src="/res/local/jquery-2.2.2.min.js"></script>
+<script src="/res/local/bootstrap.min.js"></script>
+<noscript><style>.source{display:block!important} .rendered{display:none}</style></noscript>
+<script data-ad-client="ca-pub-2068283315745938" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse " style="margin:0px;background-image: url(/res/albert-ss.jpg); background-repeat: no-repeat; background-color:black;">
+  <div class="container">
+  <a class="navbar-brand" href="/" style="float:left;width:700px;margin-left:-500px"></a>
+  <div class="navbar-form navbar-right" style="border: none;">
+    <a href="/venue"><input class="btn btn-default" type="submit" value="Venues"/></a>
+    <a href="/random"><input class="btn btn-default" type="submit" value="Random"/></a>
+    <a href="/about"><input class="btn btn-default" type="submit" value="About"/></a>
+    <a href="/users"><input class="btn btn-default" type="submit" value="Users"/></a>
+  </div>
+  <form class="navbar-form navbar-right" role="search" action="/internalsearch" style="border: none;">
+    <div class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="Search for a summary...">
+      <span class="input-group-btn"><input class="btn btn-default" type="submit" value="Go!"/></span>
+    </div>
+  </form>
+  </div>
+</nav>
+<div class="alert alert-warning" role="alert" style="margin:0;border-radius:0;text-align:center;">
+<span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+<b>ShortScience.org is archived.</b> Since November 20, 2026 the site is read-only: summaries, comments and votes can no longer be added.
+<a href="/shortscience.json" download><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download all summaries and comments (JSON)</a>
+</div>
+<div class="container main" style="max-width:700px; margin:0 auto;"><div class="row">
+<div class="papertitle well papertitle" style="min-height:130px;position:relative;">
+<div name="links" style="font-size:1em;float:right;text-align: right;">
+<a target="_blank" href="https://arxiv.org/abs/2006.04635"><span class="glyphicon glyphicon-link"></span> arxiv.org</a><br><a target="_blank" href="https://scholar.google.com/scholar?q=%22Learning%20to%20Play%20No-Press%20Diplomacy%20with%20Best%20Response%20Policy%20Iteration%22"><span class="glyphicon glyphicon-link"></span> scholar.google.com</a><br>
+</div>
+<big><span class="papertitle">Learning to Play No-Press Diplomacy with Best Response Policy Iteration</span></big>
+<br>
+<small>
+<span class="paperauthors"><a style="color:black;" rel="nofollow" href="/internalsearch?q=Anthony%2C%20Thomas%20W.">Anthony, Thomas W.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Eccles%2C%20Tom">Eccles, Tom</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Tacchetti%2C%20Andrea">Tacchetti, Andrea</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Kram%C3%A1r%2C%20J%C3%A1nos">Kramár, János</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Gemp%2C%20Ian%20M.">Gemp, Ian M.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Hudson%2C%20Thomas%20C.">Hudson, Thomas C.</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Porcel%2C%20Nicolas">Porcel, Nicolas</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Lanctot%2C%20Marc">Lanctot, Marc</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=P%C3%A9rolat%2C%20Julien">Pérolat, Julien</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Everett%2C%20Richard">Everett, Richard</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Singh%2C%20Satinder">Singh, Satinder</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Graepel%2C%20Thore">Graepel, Thore</a> and <a style="color:black;" rel="nofollow" href="/internalsearch?q=Bachrach%2C%20Yoram">Bachrach, Yoram</a></span>
+<br>
+<a style="color:black;" href="/venue?key=journals/corr&amp;year=2020">arXiv e-Print archive - 2020</a> <small>via Local Bibsonomy</small>
+<br>
+Keywords: <a style="color:black;" rel="nofollow" href="/internalsearch?q=dblp">dblp</a>
+</small>
+<br>
+
+</div>
+<ul class="nav nav-tabs"><li role="presentation" class="active"><a href="/paper?bibtexKey=journals/corr/abs-2006-04635">Summaries/Notes <span class="badge">1</span></a></li></ul><br>
+<div id="decodyng" class="vignette vignette-top" style="width:100%;margin-bottom:20px;">
+<table style="table-layout:fixed;width:100%;"><tr>
+<td style="text-align:center;vertical-align:top;width:35px;">
+<div class="vignette-left"><div style="width:35px;"><center>
+<div class="row userblock"><a href="/user?name=decodyng" class="usericonpop" title="&lt;center&gt;&lt;a href=&quot;/user?name=decodyng&quot;&gt;&lt;img src=&quot;https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=150&amp;d=identicon&amp;r=g&quot; style=&quot;border-radius: 50%;height:150px;&quot; alt=&quot;&quot; /&gt;&lt;br&gt;&lt;span style=&quot;font-size:15pt&quot;&gt;CodyWild&lt;/span&gt;&lt;/a&gt;&lt;/center&gt;" data-content="Username: decodyng&lt;br&gt;Posted: 2020-11-02&lt;br&gt;Paper ID:&lt;br&gt;&lt;small&gt;journals/corr/abs-2006-04635&lt;/small&gt;"><img src="https://www.gravatar.com/avatar/96f7bbee5f98931c3560acb7303eea1c?s=30&d=identicon&r=g" style="border-radius: 50%;height:30px;" alt="" /></a></div>
+<div class="row voteblock" style="width:40px;font-size:1.5em;padding-top:15px;">
+<div class="row" title="Final score based on community votes"><span class="votevalue">3</span></div>
+</div>
+<div class="row toolblock" style="padding-top:10px;">
+<a class="viewsource" style="cursor:pointer;font-size:1.5em" title="View the source of this summary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a><br>
+<a href="javascript:void($('#share-1932').toggle());" title="Share" style="font-size:1.5em;"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a><br>
+<a href="mailto:joseph@josephpcohen.com?subject=ShortScience.org%20Summary%20Report&amp;body=I%20am%20reporting%20the%20summary%3A%20https%3A//shortscience.org/paper%3FbibtexKey%3Djournals/corr/abs-2006-04635%26a%3Ddecodyng" title="Report" style="font-size:1.5em;"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+</div>
+</center></div></div>
+</td>
+<td class="vignette-right" style="width:100%;">
+<div class="share-buttons" id="share-1932" style="text-align: center;display:none;margin:10px">
+<a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-04635&amp;a=decodyng" title="Direct link to this summary"><img style="height:40px" src="/res/img/sharebuttons/urli.png" alt="URL" /></a>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2006-04635%26a%3Ddecodyng&amp;text=Summary%20of%20Learning%20to%20Play%20No-Press%20Diplomacy%20with%20Best%20Response%20Policy%20Iteration&amp;hashtags=shortscience" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/twitter.png" alt="Twitter" /></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2006-04635%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/facebook.png" alt="Facebook" /></a>
+<a href="mailto:?Subject=Summary%20of%20Learning%20to%20Play%20No-Press%20Diplomacy%20with%20Best%20Response%20Policy%20Iteration&amp;Body=Summary%20of%20Learning%20to%20Play%20No-Press%20Diplomacy%20with%20Best%20Response%20Policy%20Iteration%20https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2006-04635%26a%3Ddecodyng"><img style="height:40px" src="/res/img/sharebuttons/simple/email.png" alt="Email" /></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2006-04635%26a%3Ddecodyng" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/linkedin.png" alt="LinkedIn" /></a>
+<a href="https://reddit.com/submit?url=https%3A%2F%2Fshortscience.org%2Fpaper%3FbibtexKey%3Djournals%2Fcorr%2Fabs-2006-04635%26a%3Ddecodyng&amp;title=Summary%20of%20Learning%20to%20Play%20No-Press%20Diplomacy%20with%20Best%20Response%20Policy%20Iteration" target="_blank"><img style="height:40px" src="/res/img/sharebuttons/simple/reddit.png" alt="Reddit" /></a>
+</div>
+<div class="panel panel-default" style="min-height:250px;margin-bottom:5px;position:relative;">
+<span style="position:absolute;right:0px;"><a href="https://shortscience.org/paper?bibtexKey=journals/corr/abs-2006-04635&amp;a=decodyng" title="Link">[link]</a></span>
+<a class="authorbanner" href="/user?name=decodyng" style="cursor: pointer;color:gray;"><span><center style="background-color: #eeeeee;">Summary by CodyWild 2020-11-02</center></span></a>
+<pre class="source panel-body entry" style="width:100%;min-height:250px;overflow:hidden; white-space: pre-wrap;word-wrap: break-word; display:none;margin:0px">This paper focuses on an effort by a Deepmind team to train an agent that can play the game Diplomacy - a complex, multiplayer game where players play as countries controlling units, trying to take over the map of Europe. Some relevant factors of this game, for the purposes of this paper, are: 
+
+1) All players move at the same time, which means you need to model your opponent&#x27;s current move, and play a move that succeeds in expectation over that predicted move distribution. This also means that, in order to succeed, your policy can&#x27;t be easily predictable, since, if it is, you&#x27;re much easier to exploit, since your opponents can more easily optimize their response to what they predict you&#x27;ll do 
+
+2) The action space is huge, even compared to something like Chess 
+
+3) The game has significant multiagent complexity: rather than being straightforwardly zero-sum in its reward structure, like Chess or Go, it&#x27;s designed to require alliances between players in order to succeed 
+
+Prior work - DipNet -  had been able to outperform other hand-coded models through a deep network that imitated human actions, but the authors hadn&#x27;t been able to get RL to successfully learn on top of that imitation baseline. 
+
+The basic approach this model takes is one that will probably feel familiar if you&#x27;ve read Deepmind&#x27;s prior work on Chess or Go: an interplay between a fast-to-evaluate neural net component, and a slower, more explicit, strategically designed component. The slower &quot;expert&quot; component uses the fast network component as part of its evaluation of different moves&#x27; consequences, and then, once the slow expert has generated a series of decisions, the neural net policy learns to imitate those decisions. 
+
+In this case, the slower expert tries to explicitly calculate a Best Response strategy, given some belief about what your opponents will do at the state you&#x27;re in. Since the action space is so large, it isn&#x27;t possible to calculate a full best response (that is, your best *possible* action given the actions you expect your opponents to take), so this paper instead lays out a Sampled Best Response algorithm. It takes as input a state, as well as an opponent policy, a candidate policy, and a value network. (More on how those come to be layer). In the simplest case, the SBR algorithm works by: 
+
+1. Sampling some number (B) of actions from the opponent policy given the state. These represent a sample distribution of what moves you think your opponents are likely to play
+2. Sampling some number (C) of candidate actions from your candidate policy. 
+3. For each candidate action, evaluating - for each opponent action - the state you&#x27;d reach if you took the candidate action and the opponent took the opponent action, according to your value network. 
+4. This gives you an estimated Q value for each of your candidate actions; if you pick the action with the highest Q value, this approximates your best response action to the opponent policy distribution you pass in 
+
+Once you have this SBR procedure, you can use it to bootstrap a better policy and a value network by starting with a policy and value learned from pure human-imitation, and then using SBR - with your current policy as both the opponent and candidate policy - to generate a dataset of trajectories (where each action in the trajectory is chosen according to the SBR procedure). With that trajectory dataset, you can train your policy and value networks to be able to better approximate the actions that SBR would have taken. 
+
+The basic version of this procedure is called IBR - Iterated Best Response. This is because, at each stage, SBR will return a policy that tries to perform well against the current version of the opponent policy. This kind of behavior is potentially troublesome, since you can theoretically have it lead to cycles, like those in Rock Paper Scissors where paper beats rock, scissors beat paper, and then rock beats scissors again. At each stage, you find the best response to what your opponent is doing right now, but you don&#x27;t actually make transitive progress. A common way of improving along the axis of this particular failure mode is to learn via a &quot;fictitious play&quot; rather than &quot;self play&quot;. Putting aside the name - which I don&#x27;t find very usefully descriptive - this translates to simulating playing against, not the current version of your opponent, but a distribution made up of past versions of the opponent. This helps prevent cycling, because choosing a strategy that only defeats the current version but would lose to a prior version is no longer a rewarding option. 
+
+The Fictitious Play-based approach this paper proposes - FPPI2 - tries to resolve this problem. Instead of sampling actions in step (1) from only your current opponent policy, it uses a sampling procedure where, for each opponent action, it first samples a point in history, and then samples the opponent policy vector at that point in history (so the multiple opponent moves collectively represent a coherent point in strategy space). Given this action profile, the final version of the algorithm continues to use the most recent/updated timestep of the policy and value network for the candidate policy and value network used in SBR, so that you&#x27;re (hopefully) sampling high quality actions, and making accurate assessments of states, even while you use the distribution of (presumably worse) policies to construct the opponent action distribution that you evaluate your candidate actions against. 
+
+https://i.imgur.com/jrQAAQW.png
+
+The authors don&#x27;t evaluate against human players, but do show that their FPPI2 approach consistently outperforms the prior DipNet state of the art, and performed the best overall, though Iterated Best Response performs better than they say they expected.
+
+Some other thoughts: 
+
+- This system is still fairly exploitable, and doesn&#x27;t become meaningfully less so during training, though it does become more difficult to exploit quickly
+- This does seem like a problem overall where you do a lot of modeling of what you expect your opponents strategies to be, and it seems hard to be robust, especially to collusion of your opponents
+- I was a bit disappointed that the initial framing of the paper put a lot of emphasis on the alliance-focused nature of the game, but then neither suggested mechanisms targeting that aspect of the game, nor seemed to do any specific analysis of
+- I would have expected this game to benefit from some explicit modeling of different agents having different policies; possibly this just isn&#x27;t something they could have had be the case under their evaluation scheme, which played against copies of a given policy?
+
+Overall, my sense is that this is still a pretty early-stage checkpoint in the effort of playing Diplomacy, and that we&#x27;ve still got a ways to go, but it is interesting early work, and I&#x27;m curious where it leads.</pre>
+<div class="rendered panel-body" style="width:100%;min-height:250px;overflow:hidden;max-height:400px;"></div>
+<a class="more" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> more</small></center></span></a>
+<a class="less" style="cursor: pointer;color:gray;display:none;"><span><center style="background-color: #eeeeee;"><small><span class="glyphicon glyphicon-info-sign"></span> less</small></center></span></a>
+</div>
+
+</td>
+</tr></table>
+</div>
+</div></div>
+<center>
+<div class="adunit" style="width:330px;">
+<ins class="adsbygoogle" style="display:inline-block;width:330px;height:127px" data-ad-client="ca-pub-2068283315745938" data-ad-slot="5217750003"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></center>
+<script src="/res/marked/marked.min.js"></script>
+<script src="/res/js/standard.js?v=archive"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML,Safe"></script>
+<a href="https://github.com/ShortScience-org/shortscience.org/issues" id="chat-link" target="_blank" style="position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf"><i class="glyphicon glyphicon-envelope" style="margin-right:5px"></i>Send Feedback</a>
+<hr>
+<center>
+ShortScience.org allowed researchers to publish paper summaries that were voted on and ranked!<br>
+<a href="/about">About</a><br><br>
+</center>
+<center style="padding:0px;padding-bottom:40px;line-height:70px">
+<span style="padding-right:10px;">Sponsored by:</span><a href="https://reproducibilityinstitute.org/"><img style="height:90px;padding:10px;" src="/res/IRR-Logo.svg" alt="Institute for Reproducible Research"></a>
+</center>
+</body>
+</html>
